@@ -1,8 +1,28 @@
-# :bar_chart: VBench 
+# :bar_chart: VBench: Comprehensive Benchmark Suite for Video Generative Models 
 
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2311.99999-b31b1b.svg)](https://arxiv.org/abs/2311.99999) -->
 [![Project Page](https://img.shields.io/badge/VBench-Website-green)](https://vchitect.github.io/VBench-project/)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/VBench/T2V-Leaderboard)
+
+
+This repository contains the implementation of the following paper:
+> **VBench: Comprehensive Benchmark Suite for Video Generative Models**<br>
+> [Ziqi Huang](https://ziqihuangg.github.io/)<sup>∗</sup>, Yinan He(https://github.com/yinanhe)<sup>∗</sup>, [Jiashuo Yu](https://scholar.google.com/citations?user=iH0Aq0YAAAAJ&hl=zh-CN)<sup>∗</sup>, [Fan Zhang](https://github.com/zhangfan-p)<sup>∗</sup>, [Chenyang Si](https://chenyangsi.top/), [Yuming Jiang](https://yumingj.github.io/), [Yuanhan Zhang](https://zhangyuanhan-ai.github.io/),  [Tianxing Wu](https://tianxingwu.github.io/), Qingyang Jin, [Nattapol Chanpaisit](https://nattapolchan.github.io/me), [Yaohui Wang](https://wyhsirius.github.io/), [Xinyuan Chen](https://scholar.google.com/citations?user=3fWSC8YAAAAJ), [Limin Wang](https://wanglimin.github.io), [Dahua Lin](http://dahua.site/)<sup>+</sup>, [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/index.html)<sup>+</sup>, [Ziwei Liu](https://liuziwei7.github.io/)<sup>+</sup><br>
+
+
+[[Paper]()] |
+[[Project Page](https://vchitect.github.io/VBench-project/)] |
+[[Video](https://www.youtube.com/watch?v=7IhCC8Qqn8Y)] |
+<!-- [[Dataset](https://drive.google.com/drive/folders/1FU1Ni-oDpxQCNYKo-ZLEfSGqO-j_Hw7X?usp=sharing)] -->
+[[Huggingface Demo](https://vbench-t2v-leaderboard.hf.space/)] |
+
+## Overview
+![overall_structure](./assets/fig_teaser_new.jpg)
+We propose **VBench**, a comprehensive benchmark suite for video generative models. We design a comprehensive and hierarchical <b>Evaluation Dimension Suite</b> to decompose "video generation quality" into multiple well-defined dimensions to facilitate fine-grained and objective evaluation. For each dimension and each content category, we carefully design a <b>Prompt Suite</b> as test cases, and sample <b>Generated Videos</b> from a set of video generation models. For each evaluation dimension, we specifically design an <b>Evaluation Method Suite</b>, which uses carefully crafted method or designated pipeline for automatic objective evaluation. We also conduct <b>Human Preference Annotation</b> for the generated videos for each dimension, and show that VBench evaluation results are <b>well aligned with human perceptions</b>. VBench provides valuable insights.
+
+## Updates
+- [11/2023] Evaluation code for released for this list of dimensions: `['subject_consistency', 'background_consistency', 'aesthetic_quality', 'object_class', 'multiple_objects', 'human_action', 'color', 'spatial_relationship', 'scene', 'temporal_style', 'appearance_style', 'overall_consistency']`
+- [11/2023] Prompt Suites released. (See prompt lists [here](https://github.com/Vchitect/VBench/tree/master/prompts))
 
 ## :hammer: Installation
 
@@ -24,7 +44,7 @@
 
 ## :bookmark_tabs: Prompt Suite
 
-We provide prompt lists are at `prompts/`, see [instructions](https://github.com/Vchitect/VBench/tree/main/prompts) for details.
+We provide prompt lists are at `prompts/`, see [instructions](https://github.com/Vchitect/VBench/tree/master/prompts) for details.
 
 ## :surfer: Evaluation Method Suite
 
@@ -46,10 +66,9 @@ my_VBench.evaluate(
 )
 ```
 
-List of dimensions supported:
-```
-['subject_consistency', 'background_consistency', 'temporal_flickering', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', "imaging_quality', 'object_class', 'multiple_objects', 'human_action', 'color', 'spatial_relationship', 'scene', 'temporal_style', 'appearance_style', 'overall_consistency']
-```
+The complete list of dimensions to support:
+```['subject_consistency', 'background_consistency', 'temporal_flickering', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality', 'object_class', 'multiple_objects', 'human_action', 'color', 'spatial_relationship', 'scene', 'temporal_style', 'appearance_style', 'overall_consistency']```
+
 
 ## :black_nib: Citation
 
@@ -67,15 +86,7 @@ List of dimensions supported:
 
 ## :hearts: Acknowledgement
 
-The codebase is maintained by [Ziqi Huang](https://ziqihuangg.github.io/), [Yinan He](https://github.com/yinanhe), [Jiashuo Yu](https://scholar.google.com/citations?user=iH0Aq0YAAAAJ&hl=zh-CN), and [Fan Zhang](https://github.com/zhangfan-p).
+This codebase is maintained by [Ziqi Huang](https://ziqihuangg.github.io/), [Yinan He](https://github.com/yinanhe), [Jiashuo Yu](https://scholar.google.com/citations?user=iH0Aq0YAAAAJ&hl=zh-CN), [Fan Zhang](https://github.com/zhangfan-p), and [Nattapol Chanpaisit](https://nattapolchan.github.io/me).
 
-This project is built using the following open-sourced repositories:
-- [AMT](https://github.com/MCG-NKU/AMT/)
-- [UMT](https://github.com/OpenGVLab/unmasked_teacher)
-- [RAM](https://github.com/xinyu1205/recognize-anything)
-- [CLIP](https://github.com/openai/CLIP)
-- [RAFT](https://github.com/princeton-vl/RAFT)
-- [GRiT](https://github.com/JialianW/GRiT)
-- [MUSIQ](https://github.com/chaofengc/IQA-PyTorch/)
-- [ViCLIP](https://github.com/OpenGVLab/InternVideo/tree/main/Data/InternVid)
-- [LAION Aesthetic Predictor](https://github.com/LAION-AI/aesthetic-predictor)
+This project wouldn't be possible without the following open-sourced repositories:
+[AMT](https://github.com/MCG-NKU/AMT/), [UMT](https://github.com/OpenGVLab/unmasked_teacher), [RAM](https://github.com/xinyu1205/recognize-anything), [CLIP](https://github.com/openai/CLIP), [RAFT](https://github.com/princeton-vl/RAFT), [GRiT](https://github.com/JialianW/GRiT), [MUSIQ](https://github.com/chaofengc/IQA-PyTorch/), [ViCLIP](https://github.com/OpenGVLab/InternVideo/tree/main/Data/InternVid), [LAION Aesthetic Predictor](https://github.com/LAION-AI/aesthetic-predictor)
