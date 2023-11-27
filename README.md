@@ -11,6 +11,7 @@
 
 2. Create Conda Environment and Install Dependencies
     ```
+    conda env create -f vbench_env.yml
     conda activate vbench
     ```
 
