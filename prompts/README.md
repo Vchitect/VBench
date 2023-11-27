@@ -1,4 +1,4 @@
-# Prompt Suite
+# :bookmark_tabs: Prompt Suite
 
 We design compact yet representative prompts in terms of both the evaluation dimensions and the content categories.
 
