@@ -1,0 +1,318 @@
+[
+    {
+        "prompt_en": "a person",
+        "object_en": "person"
+    },
+    {
+        "prompt_en": "a bicycle",
+        "object_en": "bicycle"
+    },
+    {
+        "prompt_en": "a car",
+        "object_en": "car"
+    },
+    {
+        "prompt_en": "a motorcycle",
+        "object_en": "motorcycle"
+    },
+    {
+        "prompt_en": "an airplane",
+        "object_en": "airplane"
+    },
+    {
+        "prompt_en": "a bus",
+        "object_en": "bus"
+    },
+    {
+        "prompt_en": "a train",
+        "object_en": "train"
+    },
+    {
+        "prompt_en": "a truck",
+        "object_en": "truck"
+    },
+    {
+        "prompt_en": "a boat",
+        "object_en": "boat"
+    },
+    {
+        "prompt_en": "a traffic light",
+        "object_en": "traffic light"
+    },
+    {
+        "prompt_en": "a fire hydrant",
+        "object_en": "fire hydrant"
+    },
+    {
+        "prompt_en": "a stop sign",
+        "object_en": "stop sign"
+    },
+    {
+        "prompt_en": "a parking meter",
+        "object_en": "parking meter"
+    },
+    {
+        "prompt_en": "a bench",
+        "object_en": "bench"
+    },
+    {
+        "prompt_en": "a bird",
+        "object_en": "bird"
+    },
+    {
+        "prompt_en": "a cat",
+        "object_en": "cat"
+    },
+    {
+        "prompt_en": "a dog",
+        "object_en": "dog"
+    },
+    {
+        "prompt_en": "a horse",
+        "object_en": "horse"
+    },
+    {
+        "prompt_en": "a sheep",
+        "object_en": "sheep"
+    },
+    {
+        "prompt_en": "a cow",
+        "object_en": "cow"
+    },
+    {
+        "prompt_en": "an elephant",
+        "object_en": "elephant"
+    },
+    {
+        "prompt_en": "a bear",
+        "object_en": "bear"
+    },
+    {
+        "prompt_en": "a zebra",
+        "object_en": "zebra"
+    },
+    {
+        "prompt_en": "a giraffe",
+        "object_en": "giraffe"
+    },
+    {
+        "prompt_en": "a backpack",
+        "object_en": "backpack"
+    },
+    {
+        "prompt_en": "an umbrella",
+        "object_en": "umbrella"
+    },
+    {
+        "prompt_en": "a handbag",
+        "object_en": "handbag"
+    },
+    {
+        "prompt_en": "a tie",
+        "object_en": "tie"
+    },
+    {
+        "prompt_en": "a suitcase",
+        "object_en": "suitcase"
+    },
+    {
+        "prompt_en": "a frisbee",
+        "object_en": "frisbee"
+    },
+    {
+        "prompt_en": "skis",
+        "object_en": "skis"
+    },
+    {
+        "prompt_en": "a snowboard",
+        "object_en": "snowboard"
+    },
+    {
+        "prompt_en": "a sports ball",
+        "object_en": "sports ball"
+    },
+    {
+        "prompt_en": "a kite",
+        "object_en": "kite"
+    },
+    {
+        "prompt_en": "a baseball bat",
+        "object_en": "baseball bat"
+    },
+    {
+        "prompt_en": "a baseball glove",
+        "object_en": "baseball glove"
+    },
+    {
+        "prompt_en": "a skateboard",
+        "object_en": "skateboard"
+    },
+    {
+        "prompt_en": "a surfboard",
+        "object_en": "surfboard"
+    },
+    {
+        "prompt_en": "a tennis racket",
+        "object_en": "tennis racket"
+    },
+    {
+        "prompt_en": "a bottle",
+        "object_en": "bottle"
+    },
+    {
+        "prompt_en": "a wine glass",
+        "object_en": "wine glass"
+    },
+    {
+        "prompt_en": "a cup",
+        "object_en": "cup"
+    },
+    {
+        "prompt_en": "a fork",
+        "object_en": "fork"
+    },
+    {
+        "prompt_en": "a knife",
+        "object_en": "knife"
+    },
+    {
+        "prompt_en": "a spoon",
+        "object_en": "spoon"
+    },
+    {
+        "prompt_en": "a bowl",
+        "object_en": "bowl"
+    },
+    {
+        "prompt_en": "a banana",
+        "object_en": "banana"
+    },
+    {
+        "prompt_en": "an apple",
+        "object_en": "apple"
+    },
+    {
+        "prompt_en": "a sandwich",
+        "object_en": "sandwich"
+    },
+    {
+        "prompt_en": "an orange",
+        "object_en": "orange"
+    },
+    {
+        "prompt_en": "broccoli",
+        "object_en": "broccoli"
+    },
+    {
+        "prompt_en": "a carrot",
+        "object_en": "carrot"
+    },
+    {
+        "prompt_en": "a hot dog",
+        "object_en": "hot dog"
+    },
+    {
+        "prompt_en": "a pizza",
+        "object_en": "pizza"
+    },
+    {
+        "prompt_en": "a donut",
+        "object_en": "donut"
+    },
+    {
+        "prompt_en": "a cake",
+        "object_en": "cake"
+    },
+    {
+        "prompt_en": "a chair",
+        "object_en": "chair"
+    },
+    {
+        "prompt_en": "a couch",
+        "object_en": "couch"
+    },
+    {
+        "prompt_en": "a potted plant",
+        "object_en": "potted plant"
+    },
+    {
+        "prompt_en": "a bed",
+        "object_en": "bed"
+    },
+    {
+        "prompt_en": "a dining table",
+        "object_en": "dining table"
+    },
+    {
+        "prompt_en": "a toilet",
+        "object_en": "toilet"
+    },
+    {
+        "prompt_en": "a tv",
+        "object_en": "tv"
+    },
+    {
+        "prompt_en": "a laptop",
+        "object_en": "laptop"
+    },
+    {
+        "prompt_en": "a remote",
+        "object_en": "remote"
+    },
+    {
+        "prompt_en": "a keyboard",
+        "object_en": "keyboard"
+    },
+    {
+        "prompt_en": "a cell phone",
+        "object_en": "cell phone"
+    },
+    {
+        "prompt_en": "a microwave",
+        "object_en": "microwave"
+    },
+    {
+        "prompt_en": "an oven",
+        "object_en": "oven"
+    },
+    {
+        "prompt_en": "a toaster",
+        "object_en": "toaster"
+    },
+    {
+        "prompt_en": "a sink",
+        "object_en": "sink"
+    },
+    {
+        "prompt_en": "a refrigerator",
+        "object_en": "refrigerator"
+    },
+    {
+        "prompt_en": "a book",
+        "object_en": "book"
+    },
+    {
+        "prompt_en": "a clock",
+        "object_en": "clock"
+    },
+    {
+        "prompt_en": "a vase",
+        "object_en": "vase"
+    },
+    {
+        "prompt_en": "scissors",
+        "object_en": "scissors"
+    },
+    {
+        "prompt_en": "a teddy bear",
+        "object_en": "teddy bear"
+    },
+    {
+        "prompt_en": "a hair drier",
+        "object_en": "hair drier"
+    },
+    {
+        "prompt_en": "a toothbrush",
+        "object_en": "toothbrush"
+    }
+]

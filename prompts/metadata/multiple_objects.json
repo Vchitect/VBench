@@ -1,0 +1,330 @@
+[
+    {
+        "prompt_en": "a bird and a cat",
+        "object_en": "bird and cat"
+    },
+    {
+        "prompt_en": "a cat and a dog",
+        "object_en": "cat and dog"
+    },
+    {
+        "prompt_en": "a dog and a horse",
+        "object_en": "dog and horse"
+    },
+    {
+        "prompt_en": "a horse and a sheep",
+        "object_en": "horse and sheep"
+    },
+    {
+        "prompt_en": "a sheep and a cow",
+        "object_en": "sheep and cow"
+    },
+    {
+        "prompt_en": "a cow and an elephant",
+        "object_en": "cow and elephant"
+    },
+    {
+        "prompt_en": "an elephant and a bear",
+        "object_en": "elephant and bear"
+    },
+    {
+        "prompt_en": "a bear and a zebra",
+        "object_en": "bear and zebra"
+    },
+    {
+        "prompt_en": "a zebra and a giraffe",
+        "object_en": "zebra and giraffe"
+    },
+    {
+        "prompt_en": "a giraffe and a bird",
+        "object_en": "giraffe and bird"
+    },
+    {
+        "prompt_en": "a chair and a couch",
+        "object_en": "chair and couch"
+    },
+    {
+        "prompt_en": "a couch and a potted plant",
+        "object_en": "couch and potted plant"
+    },
+    {
+        "prompt_en": "a potted plant and a tv",
+        "object_en": "potted plant and tv"
+    },
+    {
+        "prompt_en": "a tv and a laptop",
+        "object_en": "tv and laptop"
+    },
+    {
+        "prompt_en": "a laptop and a remote",
+        "object_en": "laptop and remote"
+    },
+    {
+        "prompt_en": "a remote and a keyboard",
+        "object_en": "remote and keyboard"
+    },
+    {
+        "prompt_en": "a keyboard and a cell phone",
+        "object_en": "keyboard and cell phone"
+    },
+    {
+        "prompt_en": "a cell phone and a book",
+        "object_en": "cell phone and book"
+    },
+    {
+        "prompt_en": "a book and a clock",
+        "object_en": "book and clock"
+    },
+    {
+        "prompt_en": "a clock and a backpack",
+        "object_en": "clock and backpack"
+    },
+    {
+        "prompt_en": "a backpack and an umbrella",
+        "object_en": "backpack and umbrella"
+    },
+    {
+        "prompt_en": "an umbrella and a handbag",
+        "object_en": "umbrella and handbag"
+    },
+    {
+        "prompt_en": "a handbag and a tie",
+        "object_en": "handbag and tie"
+    },
+    {
+        "prompt_en": "a tie and a suitcase",
+        "object_en": "tie and suitcase"
+    },
+    {
+        "prompt_en": "a suitcase and a vase",
+        "object_en": "suitcase and vase"
+    },
+    {
+        "prompt_en": "a vase and scissors",
+        "object_en": "vase and scissors"
+    },
+    {
+        "prompt_en": "scissors and a teddy bear",
+        "object_en": "scissors and teddy bear"
+    },
+    {
+        "prompt_en": "a teddy bear and a frisbee",
+        "object_en": "teddy bear and frisbee"
+    },
+    {
+        "prompt_en": "a frisbee and skis",
+        "object_en": "frisbee and skis"
+    },
+    {
+        "prompt_en": "skis and a snowboard",
+        "object_en": "skis and snowboard"
+    },
+    {
+        "prompt_en": "a snowboard and a sports ball",
+        "object_en": "snowboard and sports ball"
+    },
+    {
+        "prompt_en": "a sports ball and a kite",
+        "object_en": "sports ball and kite"
+    },
+    {
+        "prompt_en": "a kite and a baseball bat",
+        "object_en": "kite and baseball bat"
+    },
+    {
+        "prompt_en": "a baseball bat and a baseball glove",
+        "object_en": "baseball bat and baseball glove"
+    },
+    {
+        "prompt_en": "a baseball glove and a skateboard",
+        "object_en": "baseball glove and skateboard"
+    },
+    {
+        "prompt_en": "a skateboard and a surfboard",
+        "object_en": "skateboard and surfboard"
+    },
+    {
+        "prompt_en": "a surfboard and a tennis racket",
+        "object_en": "surfboard and tennis racket"
+    },
+    {
+        "prompt_en": "a tennis racket and a bottle",
+        "object_en": "tennis racket and bottle"
+    },
+    {
+        "prompt_en": "a bottle and a chair",
+        "object_en": "bottle and chair"
+    },
+    {
+        "prompt_en": "an airplane and a train",
+        "object_en": "airplane and train"
+    },
+    {
+        "prompt_en": "a train and a boat",
+        "object_en": "train and boat"
+    },
+    {
+        "prompt_en": "a boat and an airplane",
+        "object_en": "boat and airplane"
+    },
+    {
+        "prompt_en": "a bicycle and a car",
+        "object_en": "bicycle and car"
+    },
+    {
+        "prompt_en": "a car and a motorcycle",
+        "object_en": "car and motorcycle"
+    },
+    {
+        "prompt_en": "a motorcycle and a bus",
+        "object_en": "motorcycle and bus"
+    },
+    {
+        "prompt_en": "a bus and a traffic light",
+        "object_en": "bus and traffic light"
+    },
+    {
+        "prompt_en": "a traffic light and a fire hydrant",
+        "object_en": "traffic light and fire hydrant"
+    },
+    {
+        "prompt_en": "a fire hydrant and a stop sign",
+        "object_en": "fire hydrant and stop sign"
+    },
+    {
+        "prompt_en": "a stop sign and a parking meter",
+        "object_en": "stop sign and parking meter"
+    },
+    {
+        "prompt_en": "a parking meter and a truck",
+        "object_en": "parking meter and truck"
+    },
+    {
+        "prompt_en": "a truck and a bicycle",
+        "object_en": "truck and bicycle"
+    },
+    {
+        "prompt_en": "a toilet and a hair drier",
+        "object_en": "toilet and hair drier"
+    },
+    {
+        "prompt_en": "a hair drier and a toothbrush",
+        "object_en": "hair drier and toothbrush"
+    },
+    {
+        "prompt_en": "a toothbrush and a sink",
+        "object_en": "toothbrush and sink"
+    },
+    {
+        "prompt_en": "a sink and a toilet",
+        "object_en": "sink and toilet"
+    },
+    {
+        "prompt_en": "a wine glass and a chair",
+        "object_en": "wine glass and chair"
+    },
+    {
+        "prompt_en": "a cup and a couch",
+        "object_en": "cup and couch"
+    },
+    {
+        "prompt_en": "a fork and a potted plant",
+        "object_en": "fork and potted plant"
+    },
+    {
+        "prompt_en": "a knife and a tv",
+        "object_en": "knife and tv"
+    },
+    {
+        "prompt_en": "a spoon and a laptop",
+        "object_en": "spoon and laptop"
+    },
+    {
+        "prompt_en": "a bowl and a remote",
+        "object_en": "bowl and remote"
+    },
+    {
+        "prompt_en": "a banana and a keyboard",
+        "object_en": "banana and keyboard"
+    },
+    {
+        "prompt_en": "an apple and a cell phone",
+        "object_en": "apple and cell phone"
+    },
+    {
+        "prompt_en": "a sandwich and a book",
+        "object_en": "sandwich and book"
+    },
+    {
+        "prompt_en": "an orange and a clock",
+        "object_en": "orange and clock"
+    },
+    {
+        "prompt_en": "broccoli and a backpack",
+        "object_en": "broccoli and backpack"
+    },
+    {
+        "prompt_en": "a carrot and an umbrella",
+        "object_en": "carrot and umbrella"
+    },
+    {
+        "prompt_en": "a hot dog and a handbag",
+        "object_en": "hot dog and handbag"
+    },
+    {
+        "prompt_en": "a pizza and a tie",
+        "object_en": "pizza and tie"
+    },
+    {
+        "prompt_en": "a donut and a suitcase",
+        "object_en": "donut and suitcase"
+    },
+    {
+        "prompt_en": "a cake and a vase",
+        "object_en": "cake and vase"
+    },
+    {
+        "prompt_en": "an oven and scissors",
+        "object_en": "oven and scissors"
+    },
+    {
+        "prompt_en": "a toaster and a teddy bear",
+        "object_en": "toaster and teddy bear"
+    },
+    {
+        "prompt_en": "a microwave and a frisbee",
+        "object_en": "microwave and frisbee"
+    },
+    {
+        "prompt_en": "a refrigerator and skis",
+        "object_en": "refrigerator and skis"
+    },
+    {
+        "prompt_en": "a bicycle and an airplane",
+        "object_en": "bicycle and airplane"
+    },
+    {
+        "prompt_en": "a car and a train",
+        "object_en": "car and train"
+    },
+    {
+        "prompt_en": "a motorcycle and a boat",
+        "object_en": "motorcycle and boat"
+    },
+    {
+        "prompt_en": "a person and a toilet",
+        "object_en": "person and toilet"
+    },
+    {
+        "prompt_en": "a person and a hair drier",
+        "object_en": "person and hair drier"
+    },
+    {
+        "prompt_en": "a person and a toothbrush",
+        "object_en": "person and toothbrush"
+    },
+    {
+        "prompt_en": "a person and a sink",
+        "object_en": "person and sink"
+    }
+]

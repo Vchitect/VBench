@@ -1,0 +1,506 @@
+[
+    {
+        "prompt_en": "a bicycle on the left of a car, front view",
+        "object_a_en": "bicycle",
+        "object_b_en": "car",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a car on the right of a motorcycle, front view",
+        "object_a_en": "car",
+        "object_b_en": "motorcycle",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a motorcycle on the left of a bus, front view",
+        "object_a_en": "motorcycle",
+        "object_b_en": "bus",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a bus on the right of a traffic light, front view",
+        "object_a_en": "bus",
+        "object_b_en": "traffic light",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a traffic light on the left of a fire hydrant, front view",
+        "object_a_en": "traffic light",
+        "object_b_en": "fire hydrant",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a fire hydrant on the right of a stop sign, front view",
+        "object_a_en": "fire hydrant",
+        "object_b_en": "stop sign",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a stop sign on the left of a parking meter, front view",
+        "object_a_en": "stop sign",
+        "object_b_en": "parking meter",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a parking meter on the right of a bench, front view",
+        "object_a_en": "parking meter",
+        "object_b_en": "bench",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a bench on the left of a truck, front view",
+        "object_a_en": "bench",
+        "object_b_en": "truck",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a truck on the right of a bicycle, front view",
+        "object_a_en": "truck",
+        "object_b_en": "bicycle",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a bird on the left of a cat, front view",
+        "object_a_en": "bird",
+        "object_b_en": "cat",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a cat on the right of a dog, front view",
+        "object_a_en": "cat",
+        "object_b_en": "dog",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a dog on the left of a horse, front view",
+        "object_a_en": "dog",
+        "object_b_en": "horse",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a horse on the right of a sheep, front view",
+        "object_a_en": "horse",
+        "object_b_en": "sheep",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a sheep on the left of a cow, front view",
+        "object_a_en": "sheep",
+        "object_b_en": "cow",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a cow on the right of an elephant, front view",
+        "object_a_en": "cow",
+        "object_b_en": "elephant",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "an elephant on the left of a bear, front view",
+        "object_a_en": "elephant",
+        "object_b_en": "bear",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a bear on the right of a zebra, front view",
+        "object_a_en": "bear",
+        "object_b_en": "zebra",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a zebra on the left of a giraffe, front view",
+        "object_a_en": "zebra",
+        "object_b_en": "giraffe",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a giraffe on the right of a bird, front view",
+        "object_a_en": "giraffe",
+        "object_b_en": "bird",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a bottle on the left of a wine glass, front view",
+        "object_a_en": "bottle",
+        "object_b_en": "wine glass",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a wine glass on the right of a cup, front view",
+        "object_a_en": "wine glass",
+        "object_b_en": "cup",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a cup on the left of a fork, front view",
+        "object_a_en": "cup",
+        "object_b_en": "fork",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a fork on the right of a knife, front view",
+        "object_a_en": "fork",
+        "object_b_en": "knife",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a knife on the left of a spoon, front view",
+        "object_a_en": "knife",
+        "object_b_en": "spoon",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a spoon on the right of a bowl, front view",
+        "object_a_en": "spoon",
+        "object_b_en": "bowl",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a bowl on the left of a bottle, front view",
+        "object_a_en": "bowl",
+        "object_b_en": "bottle",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a potted plant on the left of a remote, front view",
+        "object_a_en": "potted plant",
+        "object_b_en": "remote",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a remote on the right of a clock, front view",
+        "object_a_en": "remote",
+        "object_b_en": "clock",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a clock on the left of a vase, front view",
+        "object_a_en": "clock",
+        "object_b_en": "vase",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a vase on the right of scissors, front view",
+        "object_a_en": "vase",
+        "object_b_en": "scissors",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "scissors on the left of a teddy bear, front view",
+        "object_a_en": "scissors",
+        "object_b_en": "teddy bear",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a teddy bear on the right of a potted plant, front view",
+        "object_a_en": "teddy bear",
+        "object_b_en": "potted plant",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a frisbee on the left of a sports ball, front view",
+        "object_a_en": "frisbee",
+        "object_b_en": "sports ball",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a sports ball on the right of a baseball bat, front view",
+        "object_a_en": "sports ball",
+        "object_b_en": "baseball bat",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a baseball bat on the left of a baseball glove, front view",
+        "object_a_en": "baseball bat",
+        "object_b_en": "baseball glove",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a baseball glove on the right of a tennis racket, front view",
+        "object_a_en": "baseball glove",
+        "object_b_en": "tennis racket",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a tennis racket on the left of a frisbee, front view",
+        "object_a_en": "tennis racket",
+        "object_b_en": "frisbee",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a toilet on the left of a hair drier, front view",
+        "object_a_en": "toilet",
+        "object_b_en": "hair drier",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a hair drier on the right of a toothbrush, front view",
+        "object_a_en": "hair drier",
+        "object_b_en": "toothbrush",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a toothbrush on the left of a sink, front view",
+        "object_a_en": "toothbrush",
+        "object_b_en": "sink",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a sink on the right of a toilet, front view",
+        "object_a_en": "sink",
+        "object_b_en": "toilet",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a chair on the left of a couch, front view",
+        "object_a_en": "chair",
+        "object_b_en": "couch",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a couch on the right of a bed, front view",
+        "object_a_en": "couch",
+        "object_b_en": "bed",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a bed on the left of a tv, front view",
+        "object_a_en": "bed",
+        "object_b_en": "tv",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a tv on the right of a dining table, front view",
+        "object_a_en": "tv",
+        "object_b_en": "dining table",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a dining table on the left of a chair, front view",
+        "object_a_en": "dining table",
+        "object_b_en": "chair",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "an airplane on the left of a train, front view",
+        "object_a_en": "airplane",
+        "object_b_en": "train",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "a train on the right of a boat, front view",
+        "object_a_en": "train",
+        "object_b_en": "boat",
+        "relationship_en": "on the right of"
+    },
+    {
+        "prompt_en": "a boat on the left of an airplane, front view",
+        "object_a_en": "boat",
+        "object_b_en": "airplane",
+        "relationship_en": "on the left of"
+    },
+    {
+        "prompt_en": "an oven on the top of a toaster, front view",
+        "object_a_en": "oven",
+        "object_b_en": "toaster",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "an oven on the bottom of a toaster, front view",
+        "object_a_en": "oven",
+        "object_b_en": "toaster",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "a toaster on the top of a microwave, front view",
+        "object_a_en": "toaster",
+        "object_b_en": "microwave",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "a toaster on the bottom of a microwave, front view",
+        "object_a_en": "toaster",
+        "object_b_en": "microwave",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "a microwave on the top of an oven, front view",
+        "object_a_en": "microwave",
+        "object_b_en": "oven",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "a microwave on the bottom of an oven, front view",
+        "object_a_en": "microwave",
+        "object_b_en": "oven",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "a banana on the top of an apple, front view",
+        "object_a_en": "banana",
+        "object_b_en": "apple",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "a banana on the bottom of an apple, front view",
+        "object_a_en": "banana",
+        "object_b_en": "apple",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "an apple on the top of a sandwich, front view",
+        "object_a_en": "apple",
+        "object_b_en": "sandwich",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "an apple on the bottom of a sandwich, front view",
+        "object_a_en": "apple",
+        "object_b_en": "sandwich",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "a sandwich on the top of an orange, front view",
+        "object_a_en": "sandwich",
+        "object_b_en": "orange",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "a sandwich on the bottom of an orange, front view",
+        "object_a_en": "sandwich",
+        "object_b_en": "orange",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "an orange on the top of a carrot, front view",
+        "object_a_en": "orange",
+        "object_b_en": "carrot",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "an orange on the bottom of a carrot, front view",
+        "object_a_en": "orange",
+        "object_b_en": "carrot",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "a carrot on the top of a hot dog, front view",
+        "object_a_en": "carrot",
+        "object_b_en": "hot dog",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "a carrot on the bottom of a hot dog, front view",
+        "object_a_en": "carrot",
+        "object_b_en": "hot dog",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "a hot dog on the top of a pizza, front view",
+        "object_a_en": "hot dog",
+        "object_b_en": "pizza",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "a hot dog on the bottom of a pizza, front view",
+        "object_a_en": "hot dog",
+        "object_b_en": "pizza",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "a pizza on the top of a donut, front view",
+        "object_a_en": "pizza",
+        "object_b_en": "donut",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "a pizza on the bottom of a donut, front view",
+        "object_a_en": "pizza",
+        "object_b_en": "donut",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "a donut on the top of broccoli, front view",
+        "object_a_en": "donut",
+        "object_b_en": "broccoli",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "a donut on the bottom of broccoli, front view",
+        "object_a_en": "donut",
+        "object_b_en": "broccoli",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "broccoli on the top of a banana, front view",
+        "object_a_en": "broccoli",
+        "object_b_en": "banana",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "broccoli on the bottom of a banana, front view",
+        "object_a_en": "broccoli",
+        "object_b_en": "banana",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "skis on the top of a snowboard, front view",
+        "object_a_en": "skis",
+        "object_b_en": "snowboard",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "skis on the bottom of a snowboard, front view",
+        "object_a_en": "skis",
+        "object_b_en": "snowboard",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "a snowboard on the top of a kite, front view",
+        "object_a_en": "snowboard",
+        "object_b_en": "kite",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "a snowboard on the bottom of a kite, front view",
+        "object_a_en": "snowboard",
+        "object_b_en": "kite",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "a kite on the top of a skateboard, front view",
+        "object_a_en": "kite",
+        "object_b_en": "skateboard",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "a kite on the bottom of a skateboard, front view",
+        "object_a_en": "kite",
+        "object_b_en": "skateboard",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "a skateboard on the top of a surfboard, front view",
+        "object_a_en": "skateboard",
+        "object_b_en": "surfboard",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "a skateboard on the bottom of a surfboard, front view",
+        "object_a_en": "skateboard",
+        "object_b_en": "surfboard",
+        "relationship_en": "on the bottom of"
+    },
+    {
+        "prompt_en": "a surfboard on the top of skis, front view",
+        "object_a_en": "surfboard",
+        "object_b_en": "skis",
+        "relationship_en": "on the top of"
+    },
+    {
+        "prompt_en": "a surfboard on the bottom of skis, front view",
+        "object_a_en": "surfboard",
+        "object_b_en": "skis",
+        "relationship_en": "on the bottom of"
+    }
+]

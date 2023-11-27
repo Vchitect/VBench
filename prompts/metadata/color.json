@@ -1,0 +1,342 @@
+[
+    {
+        "prompt_en": "a red bicycle",
+        "color_en": "red"
+    },
+    {
+        "prompt_en": "a green bicycle",
+        "color_en": "green"
+    },
+    {
+        "prompt_en": "a blue bicycle",
+        "color_en": "blue"
+    },
+    {
+        "prompt_en": "a yellow bicycle",
+        "color_en": "yellow"
+    },
+    {
+        "prompt_en": "an orange bicycle",
+        "color_en": "orange"
+    },
+    {
+        "prompt_en": "a purple bicycle",
+        "color_en": "purple"
+    },
+    {
+        "prompt_en": "a pink bicycle",
+        "color_en": "pink"
+    },
+    {
+        "prompt_en": "a black bicycle",
+        "color_en": "black"
+    },
+    {
+        "prompt_en": "a white bicycle",
+        "color_en": "white"
+    },
+    {
+        "prompt_en": "a red car",
+        "color_en": "red"
+    },
+    {
+        "prompt_en": "a green car",
+        "color_en": "green"
+    },
+    {
+        "prompt_en": "a blue car",
+        "color_en": "blue"
+    },
+    {
+        "prompt_en": "a yellow car",
+        "color_en": "yellow"
+    },
+    {
+        "prompt_en": "an orange car",
+        "color_en": "orange"
+    },
+    {
+        "prompt_en": "a purple car",
+        "color_en": "purple"
+    },
+    {
+        "prompt_en": "a pink car",
+        "color_en": "pink"
+    },
+    {
+        "prompt_en": "a black car",
+        "color_en": "black"
+    },
+    {
+        "prompt_en": "a white car",
+        "color_en": "white"
+    },
+    {
+        "prompt_en": "a red bird",
+        "color_en": "red"
+    },
+    {
+        "prompt_en": "a green bird",
+        "color_en": "green"
+    },
+    {
+        "prompt_en": "a blue bird",
+        "color_en": "blue"
+    },
+    {
+        "prompt_en": "a yellow bird",
+        "color_en": "yellow"
+    },
+    {
+        "prompt_en": "an orange bird",
+        "color_en": "orange"
+    },
+    {
+        "prompt_en": "a purple bird",
+        "color_en": "purple"
+    },
+    {
+        "prompt_en": "a pink bird",
+        "color_en": "pink"
+    },
+    {
+        "prompt_en": "a black bird",
+        "color_en": "black"
+    },
+    {
+        "prompt_en": "a white bird",
+        "color_en": "white"
+    },
+    {
+        "prompt_en": "a black cat",
+        "color_en": "black"
+    },
+    {
+        "prompt_en": "a white cat",
+        "color_en": "white"
+    },
+    {
+        "prompt_en": "an orange cat",
+        "color_en": "orange"
+    },
+    {
+        "prompt_en": "a yellow cat",
+        "color_en": "yellow"
+    },
+    {
+        "prompt_en": "a red umbrella",
+        "color_en": "red"
+    },
+    {
+        "prompt_en": "a green umbrella",
+        "color_en": "green"
+    },
+    {
+        "prompt_en": "a blue umbrella",
+        "color_en": "blue"
+    },
+    {
+        "prompt_en": "a yellow umbrella",
+        "color_en": "yellow"
+    },
+    {
+        "prompt_en": "an orange umbrella",
+        "color_en": "orange"
+    },
+    {
+        "prompt_en": "a purple umbrella",
+        "color_en": "purple"
+    },
+    {
+        "prompt_en": "a pink umbrella",
+        "color_en": "pink"
+    },
+    {
+        "prompt_en": "a black umbrella",
+        "color_en": "black"
+    },
+    {
+        "prompt_en": "a white umbrella",
+        "color_en": "white"
+    },
+    {
+        "prompt_en": "a red suitcase",
+        "color_en": "red"
+    },
+    {
+        "prompt_en": "a green suitcase",
+        "color_en": "green"
+    },
+    {
+        "prompt_en": "a blue suitcase",
+        "color_en": "blue"
+    },
+    {
+        "prompt_en": "a yellow suitcase",
+        "color_en": "yellow"
+    },
+    {
+        "prompt_en": "an orange suitcase",
+        "color_en": "orange"
+    },
+    {
+        "prompt_en": "a purple suitcase",
+        "color_en": "purple"
+    },
+    {
+        "prompt_en": "a pink suitcase",
+        "color_en": "pink"
+    },
+    {
+        "prompt_en": "a black suitcase",
+        "color_en": "black"
+    },
+    {
+        "prompt_en": "a white suitcase",
+        "color_en": "white"
+    },
+    {
+        "prompt_en": "a red bowl",
+        "color_en": "red"
+    },
+    {
+        "prompt_en": "a green bowl",
+        "color_en": "green"
+    },
+    {
+        "prompt_en": "a blue bowl",
+        "color_en": "blue"
+    },
+    {
+        "prompt_en": "a yellow bowl",
+        "color_en": "yellow"
+    },
+    {
+        "prompt_en": "an orange bowl",
+        "color_en": "orange"
+    },
+    {
+        "prompt_en": "a purple bowl",
+        "color_en": "purple"
+    },
+    {
+        "prompt_en": "a pink bowl",
+        "color_en": "pink"
+    },
+    {
+        "prompt_en": "a black bowl",
+        "color_en": "black"
+    },
+    {
+        "prompt_en": "a white bowl",
+        "color_en": "white"
+    },
+    {
+        "prompt_en": "a red chair",
+        "color_en": "red"
+    },
+    {
+        "prompt_en": "a green chair",
+        "color_en": "green"
+    },
+    {
+        "prompt_en": "a blue chair",
+        "color_en": "blue"
+    },
+    {
+        "prompt_en": "a yellow chair",
+        "color_en": "yellow"
+    },
+    {
+        "prompt_en": "an orange chair",
+        "color_en": "orange"
+    },
+    {
+        "prompt_en": "a purple chair",
+        "color_en": "purple"
+    },
+    {
+        "prompt_en": "a pink chair",
+        "color_en": "pink"
+    },
+    {
+        "prompt_en": "a black chair",
+        "color_en": "black"
+    },
+    {
+        "prompt_en": "a white chair",
+        "color_en": "white"
+    },
+    {
+        "prompt_en": "a red clock",
+        "color_en": "red"
+    },
+    {
+        "prompt_en": "a green clock",
+        "color_en": "green"
+    },
+    {
+        "prompt_en": "a blue clock",
+        "color_en": "blue"
+    },
+    {
+        "prompt_en": "a yellow clock",
+        "color_en": "yellow"
+    },
+    {
+        "prompt_en": "an orange clock",
+        "color_en": "orange"
+    },
+    {
+        "prompt_en": "a purple clock",
+        "color_en": "purple"
+    },
+    {
+        "prompt_en": "a pink clock",
+        "color_en": "pink"
+    },
+    {
+        "prompt_en": "a black clock",
+        "color_en": "black"
+    },
+    {
+        "prompt_en": "a white clock",
+        "color_en": "white"
+    },
+    {
+        "prompt_en": "a red vase",
+        "color_en": "red"
+    },
+    {
+        "prompt_en": "a green vase",
+        "color_en": "green"
+    },
+    {
+        "prompt_en": "a blue vase",
+        "color_en": "blue"
+    },
+    {
+        "prompt_en": "a yellow vase",
+        "color_en": "yellow"
+    },
+    {
+        "prompt_en": "an orange vase",
+        "color_en": "orange"
+    },
+    {
+        "prompt_en": "a purple vase",
+        "color_en": "purple"
+    },
+    {
+        "prompt_en": "a pink vase",
+        "color_en": "pink"
+    },
+    {
+        "prompt_en": "a black vase",
+        "color_en": "black"
+    },
+    {
+        "prompt_en": "a white vase",
+        "color_en": "white"
+    }
+]

@@ -1,0 +1,1 @@
+wget https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth
