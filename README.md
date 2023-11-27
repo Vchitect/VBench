@@ -1,10 +1,10 @@
-# VBench
+# :bar_chart: VBench 
 
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2311.99999-b31b1b.svg)](https://arxiv.org/abs/2311.99999) -->
 [![Project Page](https://img.shields.io/badge/VBench-Website-green)](https://vchitect.github.io/VBench-project/)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/VBench/T2V-Leaderboard)
 
-## Installation
+## :hammer: Installation
 
 1. Clone Repo
 
@@ -19,14 +19,14 @@
     conda activate vbench
     ```
 
-## Pre-Trained Models
+## :gem: Pre-Trained Models
 [Optional] Please download the pre-trained weights according to the guidance in the `model_path.txt` file for each model in the `pretrain` folder.
 
-## Prompt Suite
+## :bookmark_tabs: Prompt Suite
 
 We provide prompt lists are at `prompts/`, see [instructions](https://github.com/Vchitect/VBench/tree/main/prompts) for details.
 
-## Evaluation Method Suite
+## :surfer: Evaluation Method Suite
 
 To perform evaluation, run this:
 ```
@@ -51,7 +51,7 @@ List of dimensions supported:
 ['subject_consistency', 'background_consistency', 'temporal_flickering', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', "imaging_quality', 'object_class', 'multiple_objects', 'human_action', 'color', 'spatial_relationship', 'scene', 'temporal_style', 'appearance_style', 'overall_consistency']
 ```
 
-## Citation
+## :black_nib: Citation
 
    If you find our repo useful for your research, please consider citing our paper:
 
@@ -65,7 +65,7 @@ List of dimensions supported:
    ```
 
 
-## Acknowledgement
+## :hearts: Acknowledgement
 
 The codebase is maintained by [Ziqi Huang](https://ziqihuangg.github.io/), [Yinan He](https://github.com/yinanhe), [Jiashuo Yu](https://scholar.google.com/citations?user=iH0Aq0YAAAAJ&hl=zh-CN), and [Fan Zhang](https://github.com/zhangfan-p).
 
