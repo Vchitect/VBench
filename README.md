@@ -68,6 +68,7 @@ The codebase is maintained by [Ziqi Huang](https://ziqihuangg.github.io/), [Yina
 This project is built using the following open-sourced repositories:
 - [AMT](https://github.com/MCG-NKU/AMT/)
 - [UMT](https://github.com/OpenGVLab/unmasked_teacher)
+- [RAM](https://github.com/xinyu1205/recognize-anything)
 - [CLIP](https://github.com/openai/CLIP)
 - [RAFT](https://github.com/princeton-vl/RAFT)
 - [GRiT](https://github.com/JialianW/GRiT)
