@@ -1,5 +1,9 @@
 # VBench
 
+<!-- [![arXiv](https://img.shields.io/badge/arXiv-2311.99999-b31b1b.svg)](https://arxiv.org/abs/2311.99999) -->
+[![Project Page](https://img.shields.io/badge/VBench-Website-green)](https://vchitect.github.io/VBench-project/)
+[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/VBench/T2V-Leaderboard)
+
 ## Installation
 
 1. Clone Repo
