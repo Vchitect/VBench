@@ -10,9 +10,6 @@ dependencies:
   - debugpy=1.6.7=py38h6a678d5_0
   - decorator=5.1.1=pyhd3eb1b0_0
   - importlib_metadata=6.0.0=hd3eb1b0_0
-  - ipykernel=6.25.0=py38h2f386ee_0
-  - jupyter_client=8.1.0=py38h06a4308_0
-  - jupyter_core=5.3.0=py38h06a4308_0
   - ld_impl_linux-64=2.38=h1181459_1
   - libffi=3.4.4=h6a678d5_0
   - libgcc-ng=11.2.0=h1234567_1
@@ -193,9 +190,7 @@ dependencies:
       - pathspec==0.11.2
       - pathy==0.10.2
       - peft==0.5.0
-      - petrel-oss-sdk==v2.2.2-4-ge70974b-big-stream-lazyloading
       - pillow==9.5.0
-      - pip==22.0
       - pkgutil-resolve-name==1.3.10
       - plotly==5.16.1
       - portalocker==2.7.0
@@ -241,7 +236,6 @@ dependencies:
       - s3transfer==0.6.2
       - sacremoses==0.0.53
       - safetensors==0.3.2
-      - salesforce-lavis==1.0.2
       - scenedetect==0.6.2
       - scikit-image==0.21.0
       - scikit-learn==1.3.2
@@ -254,7 +248,6 @@ dependencies:
       - setuptools==59.1.1
       - shapely==2.0.1
       - shortuuid==1.0.11
-      - simplet5==0.1.4
       - smart-open==6.3.0
       - smmap==5.0.0
       - sniffio==1.3.0
@@ -265,7 +258,6 @@ dependencies:
       - srsly==2.4.7
       - stack-data==0.6.2
       - starlette==0.27.0
-      - streamlit==1.25.0
       - submitit==1.4.6
       - svgwrite==1.4.3
       - tabulate==0.9.0
@@ -303,7 +295,6 @@ dependencies:
       - uvicorn==0.23.2
       - validators==0.21.2
       - virtualenv==20.24.3
-      - wandb==0.16.0
       - wasabi==1.1.2
       - watchdog==3.0.0
       - wavedrom==2.0.3.post3
@@ -312,7 +303,6 @@ dependencies:
       - webencodings==0.5.1
       - websockets==11.0.3
       - werkzeug==2.3.7
-      - wordcloud==1.9.2
       - yacs==0.1.8
       - yapf==0.40.1
       - yarl==1.9.2
