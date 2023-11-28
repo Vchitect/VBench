@@ -1,10 +1,10 @@
 # :bar_chart: VBench 
 
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2311.99999-b31b1b.svg)](https://arxiv.org/abs/2311.99999) -->
-[![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b.svg)](https://vchitect.github.io/VBench-project/assets/vbench/VBench_paper.pdf)
-[![Project Page](https://img.shields.io/badge/VBench-Website-green)](https://vchitect.github.io/VBench-project/)
+[![Paper](https://img.shields.io/badge/cs.CV-Paper-b31b1b?logo=arxiv&logoColor=red)](https://vchitect.github.io/VBench-project/assets/vbench/VBench_paper.pdf)
+[![Project Page](https://img.shields.io/badge/VBench-Website-green?logo=googlechrome&logoColor=green)](https://vchitect.github.io/VBench-project/)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/VBench/T2V-Leaderboard)
-[![Paper](https://img.shields.io/badge/YouTube-Video-c4302b.svg)](https://www.youtube.com/watch?v=7IhCC8Qqn8Y)
+[![Paper](https://img.shields.io/badge/YouTube-Video-c4302b?logo=youtube&logoColor=red)](https://www.youtube.com/watch?v=7IhCC8Qqn8Y)
 
 
 This repository contains the implementation of the following paper:
