@@ -53,3 +53,4 @@ def compute_scene(json_dir, device, submodules_dict):
     logger.info("Initialize caption model success")
     _, prompt_dict_ls = load_dimension_info(json_dir, dimension='scene', lang='en')
     all_results, video_results = scene(model, prompt_dict_ls, device)
+    return all_results, video_results
