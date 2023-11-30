@@ -192,6 +192,33 @@ def init_submodules(dimension_list, local=False):
             if not os.path.isfile(umt_path):
                 os.system(f'wget  -q --show-progress https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/umt/single_modality/l16_ptk710_ftk710_ftk400_f16_res224.pth -O {umt_path}')
             submodules_dict[dimension] = [umt_path,]
+        elif dimension == 'temporal_flickering':
+            submodules_dict[dimension] = []
+        elif dimension == 'motion_smoothness':
+            submodules_dict[dimension] = {
+                    'config':'pretrained/amt_model/AMT-S.yaml',
+                    'ckpt':'pretrained/amt_model/amt-s.pth'
+                }
+            if local:
+                details = submodules_dict[dimension]
+                # Check if the file exists, if not, download it with wget
+                if not os.path.isfile(details['ckpt']):
+                    print(f"File {details['ckpt']} does not exist. Downloading...")
+                    wget_command = ['wget', '-P', os.path.dirname(details['ckpt']),
+                                    'https://huggingface.co/lalala125/AMT/resolve/main/amt-s.pth']
+                    subprocess.run(wget_command)
+
+        elif dimension == 'dynamic_degree':
+            submodules_dict[dimension] = {
+                'model':'pretrained/raft_model/models/raft-things.pth'
+            }
+            if local:
+                details = submodules_dict[dimension]
+                if not os.path.isfile(details['model']):
+                    print(f"File {details['model']} does not exist. Downloading...")
+                    os.system(f'wget -P pretrained/raft_model/ https://dl.dropboxusercontent.com/s/4j4z58wuv8o0mfz/models.zip')
+                    os.system(f'unzip -d pretrained/raft_model/ pretrained/raft_model/models.zip')
+                    os.system(f'rm -f pretrained/raft_model/models.zip')
         # Assign the DINO model path for subject consistency dimension
         elif dimension == 'subject_consistency':
             if local:

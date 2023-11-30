@@ -11,6 +11,11 @@ from .spatial_relationship import compute_spatial_relationship
 from .scene import compute_scene
 from .temporal_style import compute_temporal_style
 from .overall_consistency import compute_overall_consistency
+from .temporal_flickering import compute_temporal_flickering
+from .motion_smoothness import compute_motion_smoothness
+from .dynamic_degree import compute_dynamic_degree
+from .human_action import compute_human_action
+from .appearance_style import compute_appearance_style
 
 class VBench(object):
     def __init__(self, device, full_info_dir, output_path):
@@ -21,7 +26,7 @@ class VBench(object):
             os.makedirs(self.output_path, exist_ok=False)
 
     def build_full_dimension_list(self, ):
-        return ["subject_consistency", "background_consistency", "aesthetic_quality", "imaging_quality", "object_class", "multiple_objects", "color", "spatial_relationship", "scene", "temporal_style", 'overall_consistency', "human_action"]        
+        return ["subject_consistency", "background_consistency", "aesthetic_quality", "imaging_quality", "object_class", "multiple_objects", "color", "spatial_relationship", "scene", "temporal_style", 'overall_consistency', "human_action", "temporal_flickering", "motion_smoothness", "dynamic_degree", "appearance_style"]        
 
     def build_full_info_json(self, videos_path, name, dimension_list):
         cur_full_info_list = load_json(self.full_info_dir)
