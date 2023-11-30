@@ -46,7 +46,7 @@ We provide prompt lists are at `prompts/`, see [instructions](https://github.com
 ## :surfer: Evaluation Method Suite
 
 To perform evaluation, run this:
-```
+<!-- ```
 import torch
 from vbench import VBench
 
@@ -61,6 +61,9 @@ my_VBench.evaluate(
     dimension_list = {list_of_dimension}, # change to the list of dimension, e.g. ['human_action','scene']
     local=False, # Whether to use local checkpoints. If true, vbench will load model weights locally.
 )
+``` -->
+```
+python evaluate.py --videos_path $VIDEOS_PATH --dimension $DIMENSION
 ```
 
 - The complete list of dimensions:
