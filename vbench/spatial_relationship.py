@@ -127,3 +127,4 @@ def compute_spatial_relationship(json_dir, device, submodules_dict):
     logger.info("Initialize detection model success")
     _, prompt_dict_ls = load_dimension_info(json_dir, dimension='spatial_relationship', lang='en')
     all_results, video_results = spatial_relationship(dense_caption_model, prompt_dict_ls, device)
+    return all_results, video_results

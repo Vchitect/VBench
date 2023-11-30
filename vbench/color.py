@@ -73,3 +73,4 @@ def compute_color(json_dir, device, submodules_dict):
     logger.info("Initialize detection model success")
     _, prompt_dict_ls = load_dimension_info(json_dir, dimension='color', lang='en')
     all_results, video_results = color(dense_caption_model, prompt_dict_ls, device)
+    return all_results, video_results
