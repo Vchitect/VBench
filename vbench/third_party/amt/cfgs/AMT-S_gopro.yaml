@@ -1,0 +1,56 @@
+exp_name: wofloloss_400epoch_bs24_lr2e-4
+seed: 2023
+epochs: 400
+distributed: true
+lr: 2e-4
+lr_min: 2e-5
+weight_decay: 0.0
+resume_state: null
+save_dir: work_dir
+eval_interval: 1
+
+network:
+  name: networks.AMT-S.Model
+  params:
+    corr_radius: 3
+    corr_lvls: 4
+    num_flows: 3
+
+data:
+  train: 
+    name: datasets.gopro_datasets.GoPro_Train_Dataset
+    params: 
+      dataset_dir: data/GOPRO
+  val:
+    name: datasets.gopro_datasets.GoPro_Test_Dataset
+    params: 
+      dataset_dir: data/GOPRO
+  train_loader:
+    batch_size: 24
+    num_workers: 12
+  val_loader:
+    batch_size: 24
+    num_workers: 3
+
+logger:
+  use_wandb: false  
+  resume_id: null
+
+losses:
+  - {
+    name: losses.loss.CharbonnierLoss,
+    nickname: l_rec,
+    params: {
+      loss_weight: 1.0,
+      keys: [imgt_pred, imgt]
+    }
+  }
+  - {
+    name: losses.loss.TernaryLoss,
+    nickname: l_ter,
+    params: {
+      loss_weight: 1.0,
+      keys: [imgt_pred, imgt]
+    }
+  }
+

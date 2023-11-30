@@ -1,0 +1,67 @@
+exp_name: floloss1e-2_geoloss1e-2_300epoch_bs24_lr1e-4
+seed: 2023
+epochs: 300
+distributed: true
+lr: 1e-4
+lr_min: 1e-5
+weight_decay: 1e-6
+resume_state: null
+save_dir: work_dir
+eval_interval: 1
+
+network:
+  name: networks.IFRNet.Model
+
+data:
+  train: 
+    name: datasets.datasets.Vimeo90K_Train_Dataset
+    params: 
+      dataset_dir: data/vimeo_triplet
+  val:
+    name: datasets.datasets.Vimeo90K_Test_Dataset
+    params: 
+      dataset_dir: data/vimeo_triplet
+  train_loader:
+    batch_size: 24
+    num_workers: 12
+  val_loader:
+    batch_size: 24
+    num_workers: 3
+
+logger:
+  use_wandb: true 
+  resume_id: null
+
+losses:
+  - {
+    name: losses.loss.CharbonnierLoss,
+    nickname: l_rec,
+    params: {
+      loss_weight: 1.0,
+      keys: [imgt_pred, imgt]
+    }
+  }
+  - {
+    name: losses.loss.TernaryLoss,
+    nickname: l_ter,
+    params: {
+      loss_weight: 1.0,
+      keys: [imgt_pred, imgt]
+    }
+  }
+  - {
+    name: losses.loss.IFRFlowLoss,
+    nickname: l_flo,
+    params: {
+      loss_weight: 0.01,
+      keys: [flow0_pred, flow1_pred, flow]
+    }
+  }
+  - {
+    name: losses.loss.GeometryLoss,
+    nickname: l_geo,
+    params: {
+      loss_weight: 0.01,
+      keys: [ft_pred, ft_gt]
+    }
+  }
