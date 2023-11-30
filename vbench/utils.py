@@ -199,14 +199,22 @@ def init_submodules(dimension_list, local=False):
                     'config':'pretrained/amt_model/AMT-S.yaml',
                     'ckpt':'pretrained/amt_model/amt-s.pth'
                 }
-            if local:
-                details = submodules_dict[dimension]
-                # Check if the file exists, if not, download it with wget
-                if not os.path.isfile(details['ckpt']):
-                    print(f"File {details['ckpt']} does not exist. Downloading...")
-                    wget_command = ['wget', '-P', os.path.dirname(details['ckpt']),
-                                    'https://huggingface.co/lalala125/AMT/resolve/main/amt-s.pth']
-                    subprocess.run(wget_command)
+            # if local:
+            #     details = submodules_dict[dimension]
+            #     # Check if the file exists, if not, download it with wget
+            #     if not os.path.isfile(details['ckpt']):
+            #         print(f"File {details['ckpt']} does not exist. Downloading...")
+            #         wget_command = ['wget', '-P', os.path.dirname(details['ckpt']),
+            #                         'https://huggingface.co/lalala125/AMT/resolve/main/amt-s.pth']
+            #         subprocess.run(wget_command)
+            
+            details = submodules_dict[dimension]
+            # Check if the file exists, if not, download it with wget
+            if not os.path.isfile(details['ckpt']):
+                print(f"File {details['ckpt']} does not exist. Downloading...")
+                wget_command = ['wget', '-P', os.path.dirname(details['ckpt']),
+                                'https://huggingface.co/lalala125/AMT/resolve/main/amt-s.pth']
+                subprocess.run(wget_command)
 
         elif dimension == 'dynamic_degree':
             submodules_dict[dimension] = {

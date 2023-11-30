@@ -47,7 +47,7 @@ def main():
     my_VBench = VBench(device, args.full_json_dir, args.output_path)
     my_VBench.evaluate(
         videos_path = args.videos_path,
-        name = 'test',
+        name = args.dimension,
         dimension_list = [args.dimension],
         local=args.load_ckpt_from_local,
     )
