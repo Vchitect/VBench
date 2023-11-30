@@ -86,6 +86,7 @@ def human_action(umt_path, video_list, device):
                 break
         if flag is False:
             # print(f"{cnt}: {video_path} false, gt: {video_label_ls}, top-5: {cat_ls}, logits: {results}", flush=True)
+            pass
         video_results.append({'video_path': video_path, 'video_results': flag})
     # print(f"cor num: {cor_num}, total: {cnt}")
     acc = cor_num / cnt
