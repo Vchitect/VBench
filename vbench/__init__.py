@@ -1,21 +1,24 @@
 import os
+
 from .utils import init_submodules, save_json, load_json
-from .aesthetic_quality import compute_aesthetic_quality
-from .background_consistency import compute_background_consistency
+
 from .subject_consistency import compute_subject_consistency
-from .imaging_quality import compute_imaging_quality
-from .object_class import compute_object_class
-from .multiple_objects import compute_multiple_objects
-from .color import compute_color
-from .spatial_relationship import compute_spatial_relationship
-from .scene import compute_scene
-from .temporal_style import compute_temporal_style
-from .overall_consistency import compute_overall_consistency
+from .background_consistency import compute_background_consistency
 from .temporal_flickering import compute_temporal_flickering
 from .motion_smoothness import compute_motion_smoothness
 from .dynamic_degree import compute_dynamic_degree
+from .aesthetic_quality import compute_aesthetic_quality
+from .imaging_quality import compute_imaging_quality
+from .object_class import compute_object_class
+from .multiple_objects import compute_multiple_objects
 from .human_action import compute_human_action
+from .color import compute_color
+from .spatial_relationship import compute_spatial_relationship
+from .scene import compute_scene
+from .overall_consistency import compute_overall_consistency
+from .temporal_style import compute_temporal_style
 from .appearance_style import compute_appearance_style
+
 
 class VBench(object):
     def __init__(self, device, full_info_dir, output_path):
