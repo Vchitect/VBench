@@ -31,6 +31,7 @@ def clip_transform(n_px):
 def dino_transform(n_px):
     return Compose([
         Resize(size=n_px),
+        transforms.Lambda(lambda x: x.float().div(255.0)),
         Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
     ])
 
