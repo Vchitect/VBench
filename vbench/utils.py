@@ -180,13 +180,14 @@ def init_submodules(dimension_list, local=False):
         logger.info("\x1b[32m[Local Mode]\x1b[0m Working in local mode, please make sure that the pre-trained model has been fully downloaded.")
     for dimension in dimension_list:
         if dimension == 'background_consistency':
+            read_frame = False
             if local:
                 vit_b_path = 'pretrained/clip_model/ViT-B-32.pt'
                 if not os.path.isfile(vit_b_path):
                     os.system(f'wget  -q --show-progress https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt -O {vit_b_path}')
             else:
                 vit_b_path = 'ViT-B/32'
-            submodules_dict[dimension] = [vit_b_path,]
+            submodules_dict[dimension] = [vit_b_path, read_frame]
         elif dimension == 'human_action':
             umt_path = "pretrained/umt_model/l16_ptk710_ftk710_ftk400_f16_res224.pth"
             if not os.path.isfile(umt_path):
