@@ -28,7 +28,7 @@ def parse_args():
         "--dimension",
         type=str,
         required=True,
-        help="folder that contains the sampled videos",
+        help="evaluation dimensions",
     )
     parser.add_argument(
         "--load_ckpt_from_local",
