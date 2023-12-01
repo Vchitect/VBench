@@ -41,7 +41,6 @@ def scene(model, video_dict, device):
             success_frame_count += cur_success_frame_count
             frame_count += len(cur_video_pred)
             video_results.append({'video_path': video_path, 'video_results': cur_success_frame_rate})
-            print(video_results)
     success_rate = success_frame_count / frame_count
     return success_rate, video_results
         
