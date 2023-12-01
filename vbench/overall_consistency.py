@@ -51,7 +51,6 @@ def overall_consistency(clip_model, video_dict, tokenizer, device):
                 score_per_video =  float(logit_per_text[0][0].cpu())
                 sim.append(score_per_video)
                 video_results.append({'video_path': video_path, 'video_results': score_per_video})
-                print(video_results)
     avg_score = np.mean(sim)
     return avg_score, video_results
 
