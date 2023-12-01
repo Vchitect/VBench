@@ -34,6 +34,11 @@ def dino_transform(n_px):
         Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
     ])
 
+def tag2text_transform(n_px):
+    normalize = Normalize(mean=[0.485, 0.456, 0.406],
+                                        std=[0.229, 0.224, 0.225])
+    return Compose([ToPILImage(),Resize((n_px, n_px)),ToTensor(),normalize])
+
 def get_frame_indices(num_frames, vlen, sample='rand', fix_start=None, input_fps=1, max_num_frames=-1):
     if sample in ["rand", "middle"]: # uniform sampling
         acc_samples = min(num_frames, vlen)
@@ -74,7 +79,7 @@ def get_frame_indices(num_frames, vlen, sample='rand', fix_start=None, input_fps
         raise ValueError
     return frame_indices
 
-def load_video(video_path, data_transform=None, num_frames=None):
+def load_video(video_path, data_transform=None, num_frames=None, return_tensor=True):
     """
     Load a video from a given path and apply optional data transformations.
 
@@ -121,9 +126,7 @@ def load_video(video_path, data_transform=None, num_frames=None):
             return buffer
     elif video_path.endswith('.mp4'):
         video_reader = VideoReader(video_path, num_threads=1)
-        vlen = len(video_reader)
-        frame_indices = np.linspace(0, vlen-1, vlen)
-        frames = video_reader.get_batch(frame_indices)  # (T, H, W, C), torch.uint8
+        frames = video_reader.get_batch(range(len(video_reader)))  # (T, H, W, C), torch.uint8
         buffer = frames.asnumpy().astype(np.uint8)
         if data_transform:
             buffer = data_transform(buffer)
@@ -131,13 +134,14 @@ def load_video(video_path, data_transform=None, num_frames=None):
     else:
         raise NotImplementedError
     frames = buffer
-    frames = torch.Tensor(buffer)
+    if return_tensor:
+        frames = torch.Tensor(buffer)
+        frames = frames.permute(0, 3, 1, 2)  # (T, C, H, W), torch.uint8
     if num_frames:
         frame_indices = get_frame_indices(
         num_frames, len(frames), sample="middle"
         )
         frames = frames[frame_indices]
-    frames = frames.permute(0, 3, 1, 2)  # (T, C, H, W), torch.uint8
     return frames
 
 def load_dimension_info(json_dir, dimension, lang):
