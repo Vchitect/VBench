@@ -4,7 +4,7 @@ import json
 import torch
 import numpy as np
 from tqdm import tqdm
-from .utils import load_video, load_dimension_info, dino_transform
+from .utils import load_video, load_dimension_info, tag2text_transform
 from .third_party.tag2Text.tag2text import tag2text_caption
 
 import logging
@@ -27,14 +27,17 @@ def check_generate(key_info, predictions):
 def scene(model, video_dict, device):
     success_frame_count, frame_count = 0,0
     video_results = []
-    transform = dino_transform(384)
+    transform = tag2text_transform(384)
     for info in tqdm(video_dict):
         if 'auxiliary_info' not in info:
             raise "Auxiliary info is not in json, please check your json."
         scene_info = info['auxiliary_info']['scene']
         for video_path in info['video_list']:
-            video_tensor = load_video(video_path)
-            video_tensor = transform(video_tensor).to(device)
+            video_array = load_video(video_path, return_tensor=False)
+            video_tensor_list = []
+            for i in video_array:
+                video_tensor_list.append(transform(i).to(device).unsqueeze(0))
+            video_tensor = torch.cat(video_tensor_list)
             cur_video_pred = get_caption(model, video_tensor)
             cur_success_frame_count = check_generate(scene_info, cur_video_pred)
             cur_success_frame_rate = cur_success_frame_count/len(cur_video_pred)
