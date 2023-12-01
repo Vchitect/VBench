@@ -33,7 +33,9 @@ def check_generate(color_key, object_key, predictions):
         object_flag, color_flag = False, False
         for pred in frame_pred:
             if object_key == pred[1]:
-                object_flag =True
+                for color_query in ["white","red","pink","blue","silver","purple","orange","green","gray","yellow","black","grey"]:
+                    if color_query in pred[0]:
+                        object_flag =True
                 if color_key in pred[0]:
                     color_flag = True
         if color_flag:
