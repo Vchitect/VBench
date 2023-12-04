@@ -41,6 +41,7 @@ class VBench(object):
                 prompt_dict['video_list'] = [os.path.join(videos_path, prompt+'_0033-'+str(i)+postfix) for i in range(5)]
         cur_full_info_path = os.path.join(self.output_path, name+'_full_info.json')
         save_json(cur_full_info_list, cur_full_info_path)
+        print(f'Evaluation meta data saved to {cur_full_info_path}')
         return cur_full_info_path
 
     def evaluate(self, videos_path, name, dimension_list=None, local=False):
@@ -59,3 +60,4 @@ class VBench(object):
             results_dict[dimension] = results
         output_name = os.path.join(self.output_path, name+'_eval_results.json')
         save_json(results_dict, output_name)
+        print(f'Evaluation results saved to {output_name}')

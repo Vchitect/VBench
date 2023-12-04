@@ -42,9 +42,12 @@ def parse_args():
 
 def main():
     args = parse_args()
+    print(f'args: {args}')
 
     device = torch.device("cuda")
     my_VBench = VBench(device, args.full_json_dir, args.output_path)
+    
+    print(f'start evaluation')
     my_VBench.evaluate(
         videos_path = args.videos_path,
         name = args.dimension,
