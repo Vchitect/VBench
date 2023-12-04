@@ -8,7 +8,7 @@ import clip
 from tqdm import tqdm
 from .third_party.ViCLIP.viclip import ViCLIP
 from .third_party.ViCLIP.simple_tokenizer import SimpleTokenizer
-from .utils import load_video, load_dimension_info, clip_transform
+from .utils import load_video, load_dimension_info, clip_transform, read_frames_decord_by_fps
 
 def get_text_features(model, input_text, tokenizer, text_feature_dict={}):
     if input_text in text_feature_dict:
@@ -42,7 +42,7 @@ def overall_consistency(clip_model, video_dict, tokenizer, device):
         for video_path in video_list:
             cur_video = []
             with torch.no_grad():
-                images = load_video(video_path, num_frames=8)
+                images = read_frames_decord_by_fps(video_path, num_frames=8)
                 images = image_transform(images)
                 images = images.to(device)
                 clip_feat = get_vid_features(clip_model,images.unsqueeze(0))
