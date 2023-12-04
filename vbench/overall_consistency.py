@@ -31,7 +31,7 @@ def get_predict_label(clip_feature, text_feats_tensor, top=5):
     top_probs, top_labels = label_probs.cpu().topk(top, dim=-1)
     return top_probs, top_labels
 
-def overall_consistency(clip_model, video_dict, tokenizer, device):
+def overall_consistency(clip_model, video_dict, tokenizer, device, sample="middle"):
     sim = []
     video_results = []
     image_transform = clip_transform(224)
@@ -42,7 +42,7 @@ def overall_consistency(clip_model, video_dict, tokenizer, device):
         for video_path in video_list:
             cur_video = []
             with torch.no_grad():
-                images = read_frames_decord_by_fps(video_path, num_frames=8)
+                images = read_frames_decord_by_fps(video_path, num_frames=8, sample=sample)
                 images = image_transform(images)
                 images = images.to(device)
                 clip_feat = get_vid_features(clip_model,images.unsqueeze(0))
