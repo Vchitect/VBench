@@ -256,13 +256,13 @@ def init_submodules(dimension_list, local=False):
             submodules_dict[dimension] = {
                 'model':'pretrained/raft_model/models/raft-things.pth'
             }
-            if local:
-                details = submodules_dict[dimension]
-                if not os.path.isfile(details['model']):
-                    print(f"File {details['model']} does not exist. Downloading...")
-                    os.system(f'wget -P pretrained/raft_model/ https://dl.dropboxusercontent.com/s/4j4z58wuv8o0mfz/models.zip')
-                    os.system(f'unzip -d pretrained/raft_model/ pretrained/raft_model/models.zip')
-                    os.system(f'rm -f pretrained/raft_model/models.zip')
+            details = submodules_dict[dimension]
+            if not os.path.isfile(details['model']):
+                raise NotImplementedError
+                print(f"File {details['model']} does not exist. Downloading...")
+                os.system(f'wget -P pretrained/raft_model/ https://dl.dropboxusercontent.com/s/4j4z58wuv8o0mfz/models.zip')
+                os.system(f'unzip -d pretrained/raft_model/ pretrained/raft_model/models.zip')
+                os.system(f'rm -f pretrained/raft_model/models.zip')
         # Assign the DINO model path for subject consistency dimension
         elif dimension == 'subject_consistency':
             if local:
@@ -294,22 +294,21 @@ def init_submodules(dimension_list, local=False):
             if local:
                 vit_l_path = 'pretrained/clip_model/ViT-L-14.pt'
                 if not os.path.isfile(vit_l_path):
-                    os.system(f'wget  -q --show-progress https://openaipublic.azureedge.net/clip/models/b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836/ViT-L-14.pt -O {vit_l_path}')
+                    os.system(f'wget  -q https://openaipublic.azureedge.net/clip/models/b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836/ViT-L-14.pt -O {vit_l_path}')
             else:
                 vit_l_path = 'ViT-L/14'
             submodules_dict[dimension] = [vit_l_path, aes_path]
         elif dimension == 'imaging_quality':
             musiq_spaq_path = 'pretrained/pyiqa_model/musiq_spaq_ckpt-358bb6af.pth'
-            if local:
-                if not os.path.isfile(musiq_spaq_path):
-                    os.system(f'wget https://github.com/chaofengc/IQA-PyTorch/releases/download/v0.1-weights/musiq_spaq_ckpt-358bb6af.pth -O {musiq_spaq_path}')
+            if not os.path.isfile(musiq_spaq_path):
+                os.system(f'wget -q https://github.com/chaofengc/IQA-PyTorch/releases/download/v0.1-weights/musiq_spaq_ckpt-358bb6af.pth -O {musiq_spaq_path}')
             submodules_dict[dimension] = {'model_path': musiq_spaq_path}
         elif dimension in ["object_class", "multiple_objects", "color", "spatial_relationship" ]:
             submodules_dict[dimension] = {
                 "model_weight": "pretrained/grit_model/grit_b_densecap_objectdet.pth"
             }
             if not os.path.exists(submodules_dict[dimension]['model_weight']):
-                os.system(f'wget https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth -O {submodules_dict[dimension]["model_weight"]}')
+                os.system(f'wget -q https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth -O {submodules_dict[dimension]["model_weight"]}')
         elif dimension == 'scene':
             submodules_dict[dimension] = {
                 "pretrained": "pretrained/caption_model/tag2text_swin_14m.pth", 
@@ -330,7 +329,7 @@ def init_submodules(dimension_list, local=False):
                 "pretrain": "pretrained/viclip_model/ViClip-InternVid-10M-FLT.pth",
             }
             if not os.path.exists(submodules_dict[dimension]['pretrain']):
-                os.system(f'wget -q --show-progress https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/internvideo/viclip/ViClip-InternVid-10M-FLT.pth -O {submodules_dict[dimension]["pretrain"]}')
+                os.system(f'wget -q https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/internvideo/viclip/ViClip-InternVid-10M-FLT.pth -O {submodules_dict[dimension]["pretrain"]}')
     return submodules_dict
 
 
