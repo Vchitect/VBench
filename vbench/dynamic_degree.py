@@ -5,6 +5,7 @@ import glob
 import numpy as np
 import torch
 from tqdm import tqdm
+from easydict import EasyDict as edict
 
 from .utils import load_dimension_info
 
@@ -131,17 +132,12 @@ def dynamic_degree(dynamic, video_list):
     return avg_score, video_results
 
 
+
 def compute_dynamic_degree(json_dir, device, submodules_list):
     model_path = submodules_list["model"] 
     # set_args
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--model', type=str, default=model_path, help="restore checkpoint")
-    parser.add_argument('--small', action='store_true', help='use small model')
-    parser.add_argument('--mixed_precision', action='store_true', help='use mixed precision')
-    parser.add_argument('--alternate_corr', action='store_true', help='use efficent correlation implementation')
-    args = parser.parse_args()
-
-    dynamic = DynamicDegree(args, device)
+    args_new = edict({"model":model_path, "small":False, "mixed_precision":False, "alternate_corr":False})
+    dynamic = DynamicDegree(args_new, device)
     video_list, _ = load_dimension_info(json_dir, dimension='dynamic_degree', lang='en')
     all_results, video_results = dynamic_degree(dynamic, video_list)
     return all_results, video_results
