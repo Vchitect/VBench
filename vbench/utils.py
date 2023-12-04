@@ -35,6 +35,13 @@ def dino_transform(n_px):
         Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
     ])
 
+def dino_transform_Image(n_px):
+    return Compose([
+        Resize(size=n_px),
+        ToTensor(),
+        Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
+    ])
+
 def tag2text_transform(n_px):
     normalize = Normalize(mean=[0.485, 0.456, 0.406],
                                         std=[0.229, 0.224, 0.225])
