@@ -145,6 +145,29 @@ def load_video(video_path, data_transform=None, num_frames=None, return_tensor=T
         frames = frames[frame_indices]
     return frames
 
+def read_frames_decord_by_fps(
+        video_path, sample_fps=2, sample='rand', fix_start=None, 
+        max_num_frames=-1,  trimmed30=False, num_frames=8
+    ):
+    import decord
+    decord.bridge.set_bridge("torch")
+    video_reader = VideoReader(video_path, num_threads=1)
+    vlen = len(video_reader)
+    fps = video_reader.get_avg_fps()
+    duration = vlen / float(fps)
+
+    if trimmed30 and duration > 30:
+        duration = 30
+        vlen = int(30 * float(fps))
+
+    frame_indices = get_frame_indices(
+        num_frames, vlen, sample=sample, fix_start=fix_start,
+        input_fps=fps, max_num_frames=max_num_frames
+    )
+    frames = video_reader.get_batch(frame_indices)  # (T, H, W, C), torch.uint8
+    frames = frames.permute(0, 3, 1, 2)  # (T, C, H, W), torch.uint8
+    return frames
+    
 def load_dimension_info(json_dir, dimension, lang):
     """
     Load video list and prompt information based on a specified dimension and language from a JSON file.
