@@ -27,7 +27,8 @@ def subject_consistency(model, video_list, device, read_frame=True):
     for video_path in tqdm(video_list):
         video_sim = 0.0
         if read_frame:
-            video_path = video_path[:-4].replace('videos', 'frames')
+            # video_path = video_path[:-4].replace('videos', 'frames') # TODO: original
+            video_path = video_path[:-4].replace('videos', 'frames').replace("yujiashuo/sample/sample_subject_consistency_20230927_027_0095000_128_512x512",'heyinan/aigc-eval/sample/origin_sample_subject_consistency_20230927_027_0095000_128_512x512') # TODO: DO NOT PUSH
             tmp_paths = [os.path.join(video_path, f) for f in sorted(os.listdir(video_path))]
             images = []
             for tmp_path in tmp_paths:

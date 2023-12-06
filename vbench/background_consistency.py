@@ -9,7 +9,7 @@ import torch.nn.functional as F
 from .utils import load_video, load_dimension_info, clip_transform
 
 
-def background_consistency(clip_model, preprocess, video_list, device, read_frame=False):
+def background_consistency(clip_model, preprocess, video_list, device, read_frame):
     sim = 0.0
     cnt = 0
     video_results = []
