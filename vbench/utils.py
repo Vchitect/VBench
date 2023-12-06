@@ -209,13 +209,13 @@ def load_dimension_info(json_dir, dimension, lang):
                 prompt_dict_ls += [{'prompt': prompt, 'video_list': cur_video_list}]
     return video_list, prompt_dict_ls
 
-def init_submodules(dimension_list, local=False):
+def init_submodules(dimension_list, local=False, read_frame=False):
     submodules_dict = {}
     if local:
         logger.info("\x1b[32m[Local Mode]\x1b[0m Working in local mode, please make sure that the pre-trained model has been fully downloaded.")
     for dimension in dimension_list:
         if dimension == 'background_consistency':
-            read_frame = False
+            # read_frame = False
             if local:
                 vit_b_path = 'pretrained/clip_model/ViT-B-32.pt'
                 if not os.path.isfile(vit_b_path):
@@ -226,7 +226,7 @@ def init_submodules(dimension_list, local=False):
         elif dimension == 'human_action':
             umt_path = "pretrained/umt_model/l16_ptk710_ftk710_ftk400_f16_res224.pth"
             if not os.path.isfile(umt_path):
-                os.system(f'wget  -q --show-progress https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/umt/single_modality/l16_ptk710_ftk710_ftk400_f16_res224.pth -O {umt_path}')
+                os.system(f'wget -q https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/umt/single_modality/l16_ptk710_ftk710_ftk400_f16_res224.pth -O {umt_path}')
             submodules_dict[dimension] = [umt_path,]
         elif dimension == 'temporal_flickering':
             submodules_dict[dimension] = []

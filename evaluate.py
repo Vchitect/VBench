@@ -34,7 +34,13 @@ def parse_args():
         "--load_ckpt_from_local",
         type=bool,
         required=False,
-        help="whether load checkpoints from local default paths (assuming you have downloaded the checkpoints locally)",
+        help="whether load checkpoints from local default paths (assuming you have downloaded the checkpoints locally",
+    )
+    parser.add_argument(
+        "--read_frame",
+        type=bool,
+        required=False,
+        help="whether directly read frames, or directly read videos",
     )
     args = parser.parse_args()
     return args
@@ -53,6 +59,7 @@ def main():
         name = args.dimension,
         dimension_list = [args.dimension],
         local=args.load_ckpt_from_local,
+        read_frame=args.read_frame,
     )
     print('done')
 
