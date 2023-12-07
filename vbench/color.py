@@ -4,7 +4,7 @@ import json
 import torch
 import numpy as np
 from tqdm import tqdm
-from .utils import load_video, load_dimension_info
+from .utils import load_video, load_dimension_info, read_frames_decord_by_fps
 from .third_party.grit_model import DenseCaptioning
 
 import logging
@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 def get_dect_from_grit(model, image_arrays):
     pred = []
-    if type(image_arrays) is not list:
+    if type(image_arrays) is not list and type(image_arrays) is not np.ndarray:
         image_arrays = image_arrays.numpy()
     with torch.no_grad():
         for frame in image_arrays:
@@ -23,7 +23,7 @@ def get_dect_from_grit(model, image_arrays):
                 cur_pred.append(['',''])
             else:
                 for idx, cap_det in enumerate(ret[0]):
-                    cur_pred.append([cap_det[0], cap_det[2][idx]])
+                    cur_pred.append([cap_det[0], cap_det[2][0]])
             pred.append(cur_pred)
     return pred
 
@@ -45,7 +45,7 @@ def check_generate(color_key, object_key, predictions):
     return cur_object, cur_object_color
 
 def color(model, video_dict, device):
-    success_frame_count, frame_count = 0,0
+    success_frame_count_all, video_count = 0, 0
     video_results = []
     for info in tqdm(video_dict):
         if 'auxiliary_info' not in info:
@@ -55,17 +55,16 @@ def color(model, video_dict, device):
         object_info = info['prompt']
         object_info = object_info.replace('a ','').replace('an ','').replace(color_info,'').strip()
         for video_path in info['video_list']:
-            video_tensor = load_video(video_path)
-            cur_video_pred = get_dect_from_grit(model, video_tensor.permute(0,2,3,1))
+            video_arrays = load_video(video_path, return_tensor=False)
+            cur_video_pred = get_dect_from_grit(model ,video_arrays)
             cur_object, cur_object_color = check_generate(color_info, object_info, cur_video_pred)
             if cur_object>0:
                 cur_success_frame_rate = cur_object_color/cur_object
-            else:
-                cur_success_frame_rate = 1.
-            success_frame_count += cur_object_color
-            frame_count += cur_object
-            video_results.append({'video_path': video_path, 'video_results': cur_success_frame_rate})
-    success_rate = success_frame_count / frame_count
+                success_frame_count_all += cur_success_frame_rate
+                video_count += 1
+                video_results.append({'video_path': video_path, 'video_results': cur_success_frame_rate})
+                print({'video_path': video_path, 'video_results': cur_success_frame_rate})
+    success_rate = success_frame_count_all / video_count
     return success_rate, video_results
         
 

@@ -5,7 +5,8 @@ from tqdm import tqdm
 
 import torch
 import clip
-from .utils import load_video, load_dimension_info, clip_transform
+from PIL import Image
+from .utils import load_video, load_dimension_info, clip_transform, read_frames_decord_by_fps, clip_transform_Image
 
 def get_text_features(model, input_text, tokenizer, text_feature_dict={}):
     if input_text in text_feature_dict:
@@ -28,11 +29,11 @@ def get_predict_label(clip_feature, text_feats_tensor, top=5):
     top_probs, top_labels = label_probs.cpu().topk(top, dim=-1)
     return top_probs, top_labels
 
-def appearance_style(clip_model, video_dict, device):
+def appearance_style(clip_model, video_dict, device, sample="rand"):
     sim = 0.0
     cnt = 0
     video_results = []
-    image_transform = clip_transform(224)
+    image_transform = clip_transform_Image(224)
     for info in tqdm(video_dict):
         if 'auxiliary_info' not in info:
             raise "Auxiliary info is not in json, please check your json."
@@ -42,17 +43,18 @@ def appearance_style(clip_model, video_dict, device):
         for video_path in video_list:
             cur_video = []
             with torch.no_grad():
-                images = load_video(video_path)
-                images = image_transform(images)
-                images = images.to(device)
+                video_arrays = load_video(video_path, return_tensor=False)
+                images = [Image.fromarray(i) for i in video_arrays]
                 for image in images:
+                    image = image_transform(image)
+                    image = image.to(device)
                     logits_per_image, logits_per_text = clip_model(image.unsqueeze(0), text)
                     cur_sim = float(logits_per_text[0][0].cpu())
                     cur_video.append(cur_sim)
                     sim += cur_sim
                     cnt +=1
                 video_sim = np.mean(cur_video)
-                video_results.append({'video_path': video_path, 'video_results': video_sim})
+                video_results.append({'video_path': video_path, 'video_results': video_sim, 'frame_results':cur_video})
     sim_per_frame = sim / cnt
     return sim_per_frame, video_results
 
