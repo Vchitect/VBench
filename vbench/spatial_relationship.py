@@ -116,7 +116,7 @@ def spatial_relationship(model, video_dict, device):
             cur_video_frame_score = check_generate(object_info, cur_video_pred)
             cur_success_frame_rate = np.mean(cur_video_frame_score)
             frame_score_overall.extend(cur_video_frame_score)
-            video_results.append({'video_path': video_path, 'video_results': cur_success_frame_rate})
+            video_results.append({'video_path': video_path, 'video_results': cur_success_frame_rate, 'frame_results':cur_video_frame_score})
     success_rate = np.mean(frame_score_overall)
     return success_rate, video_results
         
