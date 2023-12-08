@@ -8,6 +8,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from urllib.request import urlretrieve
 from .utils import load_video, load_dimension_info, clip_transform
+from tqdm import tqdm
 
 
 def get_aesthetic_model(cache_folder):
@@ -39,7 +40,7 @@ def laion_aesthetic(aesthetic_model, clip_model, video_list, device):
     aesthetic_avg = 0.0
     num = 0
     video_results = []
-    for video_path in video_list:
+    for video_path in tqdm(video_list):
         images = load_video(video_path)
         image_transform = clip_transform(224)
         images = image_transform(images)
