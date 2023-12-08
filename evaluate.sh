@@ -25,6 +25,6 @@ for model in "${models[@]}"; do
         echo "$dimension $videos_path"
 
         # Run the evaluation script
-        srun -p Video-aigc-general --gres=gpu:1 --cpus-per-task=16 --job-name=eval-vbench python evaluate.py --videos_path $videos_path --dimension $dimension
+        python evaluate.py --videos_path $videos_path --dimension $dimension
     done
 done
