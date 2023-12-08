@@ -16,6 +16,7 @@ from .third_party.umt.datasets.video_transforms import (
 from .third_party.umt.datasets.volume_transforms import ClipToTensor
 from timm.models import create_model
 from .third_party.umt.models import vit_large_patch16_224
+from tqdm import tqdm
 
 def build_dict():
     path = 'pretrained/umt_model/kinetics_400_categroies.txt'
@@ -61,7 +62,7 @@ def human_action(umt_path, video_list, device):
     cnt= 0
     cor_num = 0
     video_results = []
-    for video_path in video_list:
+    for video_path in tqdm(video_list):
         video_label_ls = video_path.split('/')[-1].lower().split('-')[0].split("person is ")[-1].split('_')[0]
         cnt += 1
         images = load_video(video_path, data_transform)
