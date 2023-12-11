@@ -25,7 +25,7 @@ To sample videos for VBench evaluation:
     ├── A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-4.mp4 
     ```
 
-  The pseudo codes of video sampling:
+The pseudo codes of video sampling:
 
       if args.seed:
         torch.manual_seed(args.seed)    # set random seed
