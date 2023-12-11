@@ -95,7 +95,7 @@ def get_frame_indices(num_frames, vlen, sample='rand', fix_start=None, input_fps
         raise ValueError
     return frame_indices
 
-def load_video(video_path, data_transform=None, num_frames=None, return_tensor=True):
+def load_video(video_path, data_transform=None, num_frames=None, return_tensor=True, width=None, height=None):
     """
     Load a video from a given path and apply optional data transformations.
 
@@ -141,7 +141,10 @@ def load_video(video_path, data_transform=None, num_frames=None, return_tensor=T
             buffer = data_transform(buffer)
             return buffer
     elif video_path.endswith('.mp4'):
-        video_reader = VideoReader(video_path, num_threads=1)
+        if width:
+            video_reader = VideoReader(video_path, width=width, height=height, num_threads=1)
+        else:
+            video_reader = VideoReader(video_path, num_threads=1)
         frames = video_reader.get_batch(range(len(video_reader)))  # (T, H, W, C), torch.uint8
         buffer = frames.asnumpy().astype(np.uint8)
         if data_transform:

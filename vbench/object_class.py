@@ -17,7 +17,10 @@ def get_dect_from_grit(model, image_arrays):
         image_arrays = image_arrays.numpy()
     with torch.no_grad():
         for frame in image_arrays:
-            pred.append(set(model.run_caption_tensor(frame)[0][0][2]))
+            try:
+                pred.append(set(model.run_caption_tensor(frame)[0][0][2]))
+            except:
+                pred.append(set())
     return pred
 
 def check_generate(key_info, predictions):
