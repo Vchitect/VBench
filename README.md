@@ -41,27 +41,13 @@ We propose **VBench**, a comprehensive benchmark suite for video generative mode
 
 ## :bookmark_tabs: Prompt Suite
 
-We provide prompt lists are at `prompts/`, see [instructions](https://github.com/Vchitect/VBench/tree/master/prompts) for details.
+We provide prompt lists are at `prompts/`. 
+
+Check out [details of prompt suites](https://github.com/Vchitect/VBench/tree/master/prompts), and instructions for [**how to sample videos for evaluation**](https://github.com/Vchitect/VBench/tree/master/prompts).
 
 ## :surfer: Evaluation Method Suite
 
 To perform evaluation on one dimension, run this:
-<!-- ```
-import torch
-from vbench import VBench
-
-device = torch.device("cuda")
-output_path = './evaluation_results/'
-full_json_dir = './VBench_full_info.json'
-videos_path = "{your_video_dir}" # change to folder that contains the sampled videos
-my_VBench = VBench(device, full_json_dir, output_path)
-my_VBench.evaluate(
-    videos_path = videos_path,
-    name = 'test',
-    dimension_list = {list_of_dimension}, # change to the list of dimension, e.g. ['human_action','scene']
-    local=False, # Whether to use local checkpoints. If true, vbench will load model weights locally.
-)
-``` -->
 ```
 python evaluate.py --videos_path $VIDEOS_PATH --dimension $DIMENSION
 ```
