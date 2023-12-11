@@ -30,6 +30,9 @@ The pseudo codes of video sampling:
       if args.seed:
         torch.manual_seed(args.seed)    # set random seed
       for dimension in dimension_list:
+          with open(f'./prompts/prompts_per_dimension/{dimension}.txt', 'r') as f:
+              prompt_list = f.readlines()
+          prompt_list = [prompt.strip() for prompt in prompt_list]
           for prompt in prompt_list:
               for idx in range(5):
                   video_, video_path = sample_per_video(dimension, prompt, idx)    # sampling
