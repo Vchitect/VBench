@@ -50,6 +50,7 @@ def appearance_style(clip_model, video_dict, device, sample="rand"):
                     image = image.to(device)
                     logits_per_image, logits_per_text = clip_model(image.unsqueeze(0), text)
                     cur_sim = float(logits_per_text[0][0].cpu())
+                    cur_sim = cur_sim / 100
                     cur_video.append(cur_sim)
                     sim += cur_sim
                     cnt +=1

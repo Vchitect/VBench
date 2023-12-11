@@ -45,7 +45,7 @@ We provide prompt lists are at `prompts/`, see [instructions](https://github.com
 
 ## :surfer: Evaluation Method Suite
 
-To perform evaluation, run this:
+To perform evaluation on one dimension, run this:
 <!-- ```
 import torch
 from vbench import VBench
@@ -65,15 +65,21 @@ my_VBench.evaluate(
 ```
 python evaluate.py --videos_path $VIDEOS_PATH --dimension $DIMENSION
 ```
-
 - The complete list of dimensions:
     ```
     ['subject_consistency', 'background_consistency', 'temporal_flickering', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality', 'object_class', 'multiple_objects', 'human_action', 'color', 'spatial_relationship', 'scene', 'temporal_style', 'appearance_style', 'overall_consistency']
     ```
-- Dimensions currently open-sourced (the remaining will be added soon):
+
+Alternatively, you can evaluate multiple models and multiple dimensions using this script:
+```
+bash evaluate.sh
+```
+- The default sampled video paths:
     ```
-    ['subject_consistency', 'background_consistency', 'aesthetic_quality', 'object_class', 'multiple_objects', 'human_action', 'color', 'spatial_relationship', 'scene', 'temporal_style', 'appearance_style', 'overall_consistency']
+    vbench_videos/{model}/{dimension}/{prompt}-{index}.mp4/gif
     ```
+
+
 
 
 ## :black_nib: Citation
