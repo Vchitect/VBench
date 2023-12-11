@@ -230,7 +230,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
             if local:
                 vit_b_path = 'pretrained/clip_model/ViT-B-32.pt'
                 if not os.path.isfile(vit_b_path):
-                    os.system(f'wget  -q --show-progress https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt -O {vit_b_path}')
+                    os.system(f'wget -q https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt -O {vit_b_path}')
             else:
                 vit_b_path = 'ViT-B/32'
             submodules_dict[dimension] = [vit_b_path, read_frame]
@@ -332,7 +332,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
             if local:
                 submodules_dict[dimension] = {"name":'pretrained/clip_model/ViT-B-32.pt'}
                 if not os.path.isfile(submodules_dict[dimension]["name"]):
-                    os.system(f'wget -q --show-progress https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt -O {submodules_dict[dimension]["name"]}')
+                    os.system(f'wget -q https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt -O {submodules_dict[dimension]["name"]}')
             else:
                 submodules_dict[dimension] = {"name": 'ViT-B/32'}
         elif dimension in ["temporal_style", "overall_consistency"]:

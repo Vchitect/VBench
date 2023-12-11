@@ -63,7 +63,6 @@ def color(model, video_dict, device):
                 success_frame_count_all += cur_success_frame_rate
                 video_count += 1
                 video_results.append({'video_path': video_path, 'video_results': cur_success_frame_rate})
-                print({'video_path': video_path, 'video_results': cur_success_frame_rate})
     success_rate = success_frame_count_all / video_count
     return success_rate, video_results
         

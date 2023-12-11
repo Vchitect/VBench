@@ -7,6 +7,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from .utils import load_video, load_dimension_info, clip_transform
+from tqdm import tqdm
 
 
 def background_consistency(clip_model, preprocess, video_list, device, read_frame):
@@ -14,7 +15,7 @@ def background_consistency(clip_model, preprocess, video_list, device, read_fram
     cnt = 0
     video_results = []
     image_transform = clip_transform(224)
-    for video_path in video_list:
+    for video_path in tqdm(video_list):
         video_sim = 0.0
         if read_frame:
             video_path = video_path[:-4].replace('videos', 'frames').replace(' ', '_')
