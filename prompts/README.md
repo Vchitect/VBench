@@ -26,10 +26,9 @@ for dimension in dimension_list:
         for index in range(5):
 
             # perform sampling
-            video_, video_path = sample_per_video(dimension, prompt, idx)    
-            
-            # save sampled video to f'{base_path}/{model_name}/{dimension_name}/{prompt}-{index}.mp4'
-            torchvision.io.write_video(video_path, video_, fps=8)
+            video_ = sample_per_video(dimension, prompt, idx)    
+            cur_save_path = f'{args.save_path}/{prompt}-{index}.mp4'
+            torchvision.io.write_video(cur_save_path, video_, fps=8)
 ```
 
 ### Further Explanations
@@ -37,9 +36,8 @@ To sample videos for VBench evaluation:
 - Sample videos from all the `txt` files in `prompts/prompts_per_dimension`. 
 - For each prompt, sample 5 videos.
 - At the beginning of sampling from each `txt` file, set the random seed.
-- Save the videos in the form of `$base_path/$model_name/$dimension_name/$prompt-$index.mp4`, `$index` takes value of `0, 1, 2, 3, 4`. For example:
-    ```
-    vbench_videos/lavie/overall_consistency                    
+- Name the videos in the form of `$prompt-$index.mp4`, `$index` takes value of `0, 1, 2, 3, 4`. For example:
+    ```                   
     ├── A 3D model of a 1800s victorian house.-0.mp4                                       
     ├── A 3D model of a 1800s victorian house.-1.mp4                                       
     ├── A 3D model of a 1800s victorian house.-2.mp4                                       
