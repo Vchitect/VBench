@@ -37,7 +37,7 @@ We propose **VBench**, a comprehensive benchmark suite for video generative mode
     ```
 
 ## :gem: Pre-Trained Models
-[Optional] Please download the pre-trained weights according to the guidance in the `model_path.txt` file for each model in the `pretrain` folder.
+[Optional] Please download the pre-trained weights according to the guidance in the `model_path.txt` file for each model in the `pretrained` folder.
 
 ## :bookmark_tabs: Prompt Suite
 
@@ -75,8 +75,8 @@ bash evaluate.sh
    ```bibtex
     @article{huang2023vbench,
         title={{VBench}: Comprehensive Benchmark Suite for Video Generative Models},
-        author={Huang, Ziqi and He, Yinan and Yu, Jiashuo and Zhang, Fan and Si, Chenyang and Jiang, Yuming and Zhang, Yuanhan and Wu, Tianxing and Jin, Qingyang and Chanpaisit, Nattapol and Wang, Yaohui and Chen, Xinyuan and Wang, Limin and Lin, Dahua and Qiao, Yu and Liu, Ziwei}
-        journal={arXiv preprint arXiv:2311.17982}
+        author={Huang, Ziqi and He, Yinan and Yu, Jiashuo and Zhang, Fan and Si, Chenyang and Jiang, Yuming and Zhang, Yuanhan and Wu, Tianxing and Jin, Qingyang and Chanpaisit, Nattapol and Wang, Yaohui and Chen, Xinyuan and Wang, Limin and Lin, Dahua and Qiao, Yu and Liu, Ziwei},
+        journal={arXiv preprint arXiv:2311.17982},
         year={2023}
     }
    ```
