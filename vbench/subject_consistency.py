@@ -16,7 +16,7 @@ import logging
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-def subject_consistency(model, video_list, device, read_frame=True):
+def subject_consistency(model, video_list, device, read_frame):
     sim = 0.0
     cnt = 0
     video_results = []
@@ -59,7 +59,8 @@ def subject_consistency(model, video_list, device, read_frame=True):
 
 def compute_subject_consistency(json_dir, device, submodules_list):
     dino_model = torch.hub.load(**submodules_list).to(device)
+    read_frame = submodules_list['read_frame']
     logger.info("Initialize DINO success")
     video_list, _ = load_dimension_info(json_dir, dimension='subject_consistency', lang='en')
-    all_results, video_results = subject_consistency(dino_model, video_list, device)
+    all_results, video_results = subject_consistency(dino_model, video_list, device, read_frame)
     return all_results, video_results

@@ -246,15 +246,6 @@ def init_submodules(dimension_list, local=False, read_frame=False):
                     'config':'pretrained/amt_model/AMT-S.yaml',
                     'ckpt':'pretrained/amt_model/amt-s.pth'
                 }
-            # if local:
-            #     details = submodules_dict[dimension]
-            #     # Check if the file exists, if not, download it with wget
-            #     if not os.path.isfile(details['ckpt']):
-            #         print(f"File {details['ckpt']} does not exist. Downloading...")
-            #         wget_command = ['wget', '-P', os.path.dirname(details['ckpt']),
-            #                         'https://huggingface.co/lalala125/AMT/resolve/main/amt-s.pth']
-            #         subprocess.run(wget_command)
-            
             details = submodules_dict[dimension]
             # Check if the file exists, if not, download it with wget
             if not os.path.isfile(details['ckpt']):
@@ -269,7 +260,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
             }
             details = submodules_dict[dimension]
             if not os.path.isfile(details['model']):
-                raise NotImplementedError
+                # raise NotImplementedError
                 print(f"File {details['model']} does not exist. Downloading...")
                 os.system(f'wget -P pretrained/raft_model/ https://dl.dropboxusercontent.com/s/4j4z58wuv8o0mfz/models.zip')
                 os.system(f'unzip -d pretrained/raft_model/ pretrained/raft_model/models.zip')
@@ -281,7 +272,8 @@ def init_submodules(dimension_list, local=False, read_frame=False):
                     'repo_or_dir':'pretrained/dino_model/facebookresearch_dino_main/',
                     'path':'pretrained/dino_model/dino_vitbase16_pretrain.pth', 
                     'model': 'dino_vitb16',
-                    'source': 'local'
+                    'source': 'local',
+                    'read_frame': read_frame
                     }
                 details = submodules_dict[dimension]
                 # Check if the file exists, if not, download it with wget
@@ -298,7 +290,8 @@ def init_submodules(dimension_list, local=False, read_frame=False):
                 submodules_dict[dimension] = {
                     'repo_or_dir':'facebookresearch/dino:main',
                     'source':'github',
-                    'model': 'dino_vitb16'
+                    'model': 'dino_vitb16',
+                    'read_frame': read_frame
                     }
         elif dimension == 'aesthetic_quality':
             aes_path = "pretrained/aesthetic_model/emb_reader"
