@@ -146,7 +146,13 @@ def load_video(video_path, data_transform=None, num_frames=None, return_tensor=T
         else:
             video_reader = VideoReader(video_path, num_threads=1)
         frames = video_reader.get_batch(range(len(video_reader)))  # (T, H, W, C), torch.uint8
+
         buffer = frames.asnumpy().astype(np.uint8)
+        if num_frames:
+            frame_indices = get_frame_indices(
+            num_frames, len(buffer), sample="middle"
+            )
+            buffer = buffer[frame_indices]
         if data_transform:
             buffer = data_transform(buffer)
             return buffer
