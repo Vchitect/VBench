@@ -44,7 +44,10 @@ def temporal_flickering(video_list):
     sim = []
     video_results = []
     for video_path in tqdm(video_list):
-        score_per_video = cal_score(video_path)
+        try:
+            score_per_video = cal_score(video_path)
+        except AssertionError:
+            continue
         video_results.append({'video_path': video_path, 'video_results': score_per_video})
         sim.append(score_per_video)
     avg_score = np.mean(sim)
