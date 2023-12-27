@@ -65,7 +65,7 @@ def human_action(umt_path, video_list, device):
     for video_path in tqdm(video_list):
         video_label_ls = video_path.split('/')[-1].lower().split('-')[0].split("person is ")[-1].split('_')[0]
         cnt += 1
-        images = load_video(video_path, data_transform)
+        images = load_video(video_path, data_transform, num_frames=16)
         images = images.unsqueeze(0)
         images = images.to(device)
         with torch.no_grad():

@@ -65,7 +65,10 @@ bash evaluate.sh
     vbench_videos/{model}/{dimension}/{prompt}-{index}.mp4/gif
     ```
 
-
+To filter static videos in the temporal flickering dimension, run this:
+```
+python static_filter.py --videos_path $VIDEOS_PATH
+```
 
 
 ## :black_nib: Citation
