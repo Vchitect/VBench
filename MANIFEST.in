@@ -1,0 +1,2 @@
+include version.txt 
+include requirements.txt

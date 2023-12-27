@@ -7,13 +7,10 @@ import torch
 from tqdm import tqdm
 from easydict import EasyDict as edict
 
-from .utils import load_dimension_info
+from vbench.utils import load_dimension_info
 
-from .third_party.RAFT.core.raft import RAFT
-from .third_party.RAFT.core.utils_core.utils import InputPadder
-
-
-
+from vbench.third_party.RAFT.core.raft import RAFT
+from vbench.third_party.RAFT.core.utils_core.utils import InputPadder
 
 class DynamicDegree:
     def __init__(self, args, device):

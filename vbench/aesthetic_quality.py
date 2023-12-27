@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from urllib.request import urlretrieve
-from .utils import load_video, load_dimension_info, clip_transform
+from vbench.utils import load_video, load_dimension_info, clip_transform
 from tqdm import tqdm
 
 

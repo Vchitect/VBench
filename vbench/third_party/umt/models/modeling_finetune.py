@@ -326,42 +326,42 @@ class VisionTransformer(nn.Module):
         return x
 
 
-@register_model
-def vit_base_patch16_224(pretrained=False, **kwargs):
-    model = VisionTransformer(
-        patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
-    model.default_cfg = _cfg()
-    return model
+# @register_model
+# def vit_base_patch16_224(pretrained=False, **kwargs):
+#     model = VisionTransformer(
+#         patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4, qkv_bias=True,
+#         norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
+#     model.default_cfg = _cfg()
+#     return model
+# 
+# 
+# # @register_model
+# def vit_base_patch16_384(pretrained=False, **kwargs):
+#     model = VisionTransformer(
+#         img_size=384, patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4, qkv_bias=True,
+#         norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
+#     model.default_cfg = _cfg()
+#     return model
 
 
-@register_model
-def vit_base_patch16_384(pretrained=False, **kwargs):
-    model = VisionTransformer(
-        img_size=384, patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
-    model.default_cfg = _cfg()
-    return model
+# @register_model
+# def vit_large_patch16_224(pretrained=False, **kwargs):
+#     kwargs.pop('pretrained_cfg', None) # added by Ziqi to accommodate timm=0.9.12
+#     kwargs.pop('pretrained_cfg_overlay', None) # added by Ziqi to accommodate timm=0.9.12
+#     model = VisionTransformer(
+#         patch_size=16, embed_dim=1024, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
+#         norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
+#     model.default_cfg = _cfg()
+#     return model
 
 
-@register_model
-def vit_large_patch16_224(pretrained=False, **kwargs):
-    kwargs.pop('pretrained_cfg', None) # added by Ziqi to accommodate timm=0.9.12
-    kwargs.pop('pretrained_cfg_overlay', None) # added by Ziqi to accommodate timm=0.9.12
-    model = VisionTransformer(
-        patch_size=16, embed_dim=1024, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
-    model.default_cfg = _cfg()
-    return model
-
-
-@register_model
-def vit_large_patch16_384(pretrained=False, **kwargs):
-    model = VisionTransformer(
-        img_size=384, patch_size=16, embed_dim=1024, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
-        norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
-    model.default_cfg = _cfg()
-    return model
+# @register_model
+# def vit_large_patch16_384(pretrained=False, **kwargs):
+#     model = VisionTransformer(
+#         img_size=384, patch_size=16, embed_dim=1024, depth=24, num_heads=16, mlp_ratio=4, qkv_bias=True,
+#         norm_layer=partial(nn.LayerNorm, eps=1e-6), **kwargs)
+#     model.default_cfg = _cfg()
+#     return model
 
 
 if __name__ == '__main__':
@@ -378,7 +378,7 @@ if __name__ == '__main__':
     num_frames = 8
 
     # model = vit_base_patch16_384(all_frames=num_frames, tubelet_size=1)
-    model = vit_large_patch16_384(all_frames=num_frames, tubelet_size=1)
+    # model = vit_large_patch16_384(all_frames=num_frames, tubelet_size=1)
     # print(model)
 
     flops = FlopCountAnalysis(model, torch.rand(1, 3, num_frames, 384, 384))

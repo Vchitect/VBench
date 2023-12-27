@@ -4,8 +4,8 @@ import json
 import torch
 import numpy as np
 from tqdm import tqdm
-from .utils import load_video, load_dimension_info, tag2text_transform
-from .third_party.tag2Text.tag2text import tag2text_caption
+from vbench.utils import load_video, load_dimension_info, tag2text_transform
+from vbench.third_party.tag2Text.tag2text import tag2text_caption
 
 import logging
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')

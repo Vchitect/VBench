@@ -1,0 +1,17 @@
+Pillow
+numpy
+matplotlib
+timm>=0.9
+torch>=1.12
+torchvision>=0.13
+tensorboard
+scipy
+opencv-python
+detectron2
+scikit-learn
+requests
+scikit-image
+pyyaml
+easydict
+lvis
+fairscale

@@ -1,30 +1,42 @@
-import argparse
-import multiprocessing as mp
 import os
-import time
-import cv2
-import tqdm
-import sys
-
+import torch
+from itertools import compress
 from detectron2.config import get_cfg
 from detectron2.data.detection_utils import read_image
-from detectron2.utils.logger import setup_logger
 
 # constants
 WINDOW_NAME = "GRiT"
 CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 
-sys.path.insert(0, f"{CUR_DIR}/../")
-sys.path.insert(0, os.path.join(CUR_DIR,'third_party/CenterNet2/projects/CenterNet2/'))
-from centernet.config import add_centernet_config
-from grit_src.grit.config import add_grit_config
+# sys.path.insert(0, f"{CUR_DIR}/../")
+# print(CUR_DIR)
+# sys.path.insert(0, os.path.join(CUR_DIR,'third_party/CenterNet2/projects/CenterNet2/'))
+# from centernet.config import add_centernet_config
+from .centernet_config import add_centernet_config
+from .grit.config import add_grit_config
+from .grit.predictor import VisualizationDemo
 
-from grit_src.grit.predictor import VisualizationDemo
-import json
+class ObjDescription:
+    def __init__(self, object_descriptions):
+        self.data = object_descriptions
 
+    def __getitem__(self, item):
+        assert type(item) == torch.Tensor
+        assert item.dim() == 1
+        if len(item) > 0:
+            assert item.dtype == torch.int64 or item.dtype == torch.bool
+            if item.dtype == torch.int64:
+                return ObjDescription([self.data[x.item()] for x in item])
+            elif item.dtype == torch.bool:
+                return ObjDescription(list(compress(self.data, item)))
 
+        return ObjDescription(list(compress(self.data, item)))
 
+    def __len__(self):
+        return len(self.data)
 
+    def __repr__(self):
+        return "ObjDescription({})".format(self.data)
 
 def dense_pred_to_caption(predictions):
     boxes = predictions["instances"].pred_boxes if predictions["instances"].has("pred_boxes") else None
