@@ -9,8 +9,9 @@ from functools import partial
 from detectron2.layers import CNNBlockBase, Conv2d, get_norm
 from detectron2.modeling.backbone.build import BACKBONE_REGISTRY
 from detectron2.layers import ShapeSpec
-from centernet.modeling.backbone.fpn_p5 import LastLevelP6P7_P5
 
+# from centernet.modeling.backbone.fpn_p5 import LastLevelP6P7_P5
+from .centernet_last_layer import LastLevelP6P7_P5
 import torch.utils.checkpoint as checkpoint
 from timm.models.layers import DropPath, Mlp, trunc_normal_
 

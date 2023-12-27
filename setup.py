@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+
+from setuptools import find_packages, setup
+import os
+
+def fetch_readme():
+    with open('README.md', encoding='utf-8') as f:
+        text = f.read()
+    return text
+
+def fetch_requirements():
+    filename = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'requirements.txt')
+    with open(filename, 'r') as f:
+        envs = [line.rstrip('\n') for line in f.readlines()]
+    return envs
+
+version = open('version.txt', 'r').read().rstrip('\n')
+install_requires = fetch_requirements()
+setup(name='vbench',
+      version='0.1.0',
+      description='Video generation benchmark',
+      long_description=fetch_readme(),
+      long_description_content_type='text/markdown',
+      project_urls={
+          'Source': 'https://github.com/Vchitect/VBench',
+      },
+      entry_points={
+          'console_scripts': ['evaluate=vbench.cli.evaluate:main']
+      },
+      install_requires=install_requires,
+      packages=find_packages(),
+      include_package_data=True,
+      license='Apache Software License 2.0',
+      scripts=['bin/evaluate'],
+)

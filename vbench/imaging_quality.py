@@ -1,7 +1,7 @@
 import torch
 from tqdm import tqdm
 from pyiqa.archs.musiq_arch import MUSIQ
-from .utils import load_video, load_dimension_info
+from vbench.utils import load_video, load_dimension_info
 
 def transform(images):
     return images / 255.

@@ -1,7 +1,7 @@
 import numpy as np
 from tqdm import tqdm
 import cv2
-from .utils import load_dimension_info
+from vbench.utils import load_dimension_info
 
 
 def get_frames(video_path):
