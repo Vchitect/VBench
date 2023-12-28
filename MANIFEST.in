@@ -1,2 +1,3 @@
 include version.txt 
 include requirements.txt
+recursive-include vbench/third_party *.yaml
