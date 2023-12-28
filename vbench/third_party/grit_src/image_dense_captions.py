@@ -11,8 +11,8 @@ CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 # sys.path.insert(0, f"{CUR_DIR}/../")
 # print(CUR_DIR)
 # sys.path.insert(0, os.path.join(CUR_DIR,'third_party/CenterNet2/projects/CenterNet2/'))
-# from centernet.config import add_centernet_config
 from .centernet_config import add_centernet_config
+# from .centernet2.centernet.config import add_centernet_config
 from .grit.config import add_grit_config
 from .grit.predictor import VisualizationDemo
 
