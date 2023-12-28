@@ -38,7 +38,22 @@ We propose **VBench**, a comprehensive benchmark suite for video generative mode
 
 ## :hammer: Installation (pip install)
 ```
-python setup.py sdist && python -m pip install dist/vbench-0.1.0.tar.gz
+    python setup.py sdist && python -m pip install dist/vbench-0.1.0.tar.gz
+```
+### Usage
+##### command line 
+```bash
+    evaluate --videos_path $VIDEO_PATH --dimension $DIMENSION
+```
+##### python
+```python
+    from vbench import VBench
+    my_VBench = VBench(device, <path/to/VBench_full_info.json>, <path/to/save/dir>)
+    my_VBench.evaluate(
+        videos_path = <video_path>,
+        name = <name>,
+        dimension_list = [<dimension>, <dimension>, ...],
+    )
 ```
 
 ## :gem: Pre-Trained Models
