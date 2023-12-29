@@ -15,7 +15,7 @@ from vbench.third_party.umt.datasets.video_transforms import (
 )
 from vbench.third_party.umt.datasets.volume_transforms import ClipToTensor
 from timm.models import create_model
-# from vbench.third_party.umt.models import vit_large_patch16_224
+from vbench.third_party.umt.models.modeling_finetune import vit_large_patch16_224
 from tqdm import tqdm
 
 def build_dict():
