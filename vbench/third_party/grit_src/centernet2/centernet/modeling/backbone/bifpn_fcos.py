@@ -368,7 +368,7 @@ def _assert_strides_are_log2_contiguous(strides):
         )
 
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_fcos_resnet_bifpn_backbone(cfg, input_shape: ShapeSpec):
     """
     Args:
@@ -394,7 +394,7 @@ def build_fcos_resnet_bifpn_backbone(cfg, input_shape: ShapeSpec):
 
 
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_p35_fcos_resnet_bifpn_backbone(cfg, input_shape: ShapeSpec):
     """
     Args:
@@ -419,7 +419,7 @@ def build_p35_fcos_resnet_bifpn_backbone(cfg, input_shape: ShapeSpec):
     return backbone
 
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_p35_fcos_dla_bifpn_backbone(cfg, input_shape: ShapeSpec):
     """
     Args:
@@ -443,7 +443,7 @@ def build_p35_fcos_dla_bifpn_backbone(cfg, input_shape: ShapeSpec):
     )
     return backbone
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_p37_fcos_dla_bifpn_backbone(cfg, input_shape: ShapeSpec):
     """
     Args:

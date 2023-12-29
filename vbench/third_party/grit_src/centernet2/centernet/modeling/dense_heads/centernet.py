@@ -27,7 +27,7 @@ __all__ = ["CenterNet"]
 
 INF = 100000000
 
-# @PROPOSAL_GENERATOR_REGISTRY.register()
+@PROPOSAL_GENERATOR_REGISTRY.register()
 class CenterNet(nn.Module):
     @configurable
     def __init__(self, 

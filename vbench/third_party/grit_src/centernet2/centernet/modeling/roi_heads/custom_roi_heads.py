@@ -19,7 +19,7 @@ from detectron2.modeling.roi_heads.box_head import build_box_head
 from .custom_fast_rcnn import CustomFastRCNNOutputLayers
 
 
-# @ROI_HEADS_REGISTRY.register()
+@ROI_HEADS_REGISTRY.register()
 class CustomROIHeads(StandardROIHeads):
     @classmethod
     def _init_box_head(self, cfg, input_shape):
@@ -67,7 +67,7 @@ class CustomROIHeads(StandardROIHeads):
             return pred_instances, {}
 
 
-# @ROI_HEADS_REGISTRY.register()
+@ROI_HEADS_REGISTRY.register()
 class CustomCascadeROIHeads(CascadeROIHeads):
     @classmethod
     def _init_box_head(self, cfg, input_shape):

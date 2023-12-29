@@ -421,7 +421,7 @@ class DLASeg(Backbone):
         return ret
 
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_dla_backbone(cfg, input_shape):
     """
     Create a ResNet instance from config.
@@ -456,7 +456,7 @@ class LastLevelP6P7(nn.Module):
         p7 = self.p7(F.relu(p6))
         return [p6, p7]
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_retinanet_dla_fpn_backbone(cfg, input_shape: ShapeSpec):
     """
     Args:

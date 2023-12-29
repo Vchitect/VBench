@@ -666,7 +666,7 @@ class ResNet(Backbone):
         return self
 
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_res2net_backbone(cfg, input_shape):
     """
     Create a Res2Net instance from config.
@@ -755,7 +755,7 @@ def build_res2net_backbone(cfg, input_shape):
     return ResNet(stem, stages, out_features=out_features).freeze(freeze_at)
 
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_p67_res2net_fpn_backbone(cfg, input_shape: ShapeSpec):
     """
     Args:
@@ -778,7 +778,7 @@ def build_p67_res2net_fpn_backbone(cfg, input_shape: ShapeSpec):
     return backbone
 
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_res2net_bifpn_backbone(cfg, input_shape: ShapeSpec):
     """
     Args:
