@@ -9,7 +9,7 @@ from detectron2.modeling import build_backbone, build_proposal_generator
 from detectron2.modeling import detector_postprocess
 from detectron2.structures import ImageList
 
-# @META_ARCH_REGISTRY.register()
+@META_ARCH_REGISTRY.register()
 class CenterNetDetector(nn.Module):
     def __init__(self, cfg):
         super().__init__()

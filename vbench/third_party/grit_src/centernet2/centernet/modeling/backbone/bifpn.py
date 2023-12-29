@@ -377,7 +377,7 @@ class BiFPN(Backbone):
         return out
 
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_resnet_bifpn_backbone(cfg, input_shape: ShapeSpec):
     """
     Args:
@@ -400,7 +400,7 @@ def build_resnet_bifpn_backbone(cfg, input_shape: ShapeSpec):
     )
     return backbone
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_p37_dla_bifpn_backbone(cfg, input_shape: ShapeSpec):
     """
     Args:

@@ -419,7 +419,7 @@ class LastLevelP6P7(nn.Module):
         return [p6, p7]
 
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_dla_fpn3_backbone(cfg, input_shape: ShapeSpec):
     """
     Args:
@@ -444,7 +444,7 @@ def build_dla_fpn3_backbone(cfg, input_shape: ShapeSpec):
 
     return backbone
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_dla_fpn5_backbone(cfg, input_shape: ShapeSpec):
     """
     Args:
@@ -471,7 +471,7 @@ def build_dla_fpn5_backbone(cfg, input_shape: ShapeSpec):
     return backbone
 
 
-# @BACKBONE_REGISTRY.register()
+@BACKBONE_REGISTRY.register()
 def build_dlaup_backbone(cfg, input_shape: ShapeSpec):
     """
     Args:
