@@ -1,6 +1,6 @@
 import torch
 import torch.nn.functional as F
-from utils_core.utils import bilinear_sampler, coords_grid
+from .utils_core.utils import bilinear_sampler, coords_grid
 
 try:
     import alt_cuda_corr
