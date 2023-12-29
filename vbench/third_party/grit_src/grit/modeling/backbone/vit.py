@@ -10,7 +10,12 @@ from detectron2.layers import CNNBlockBase, Conv2d, get_norm
 from detectron2.modeling.backbone.build import BACKBONE_REGISTRY
 from detectron2.layers import ShapeSpec
 
-from vbench.third_party.grit_src.centernet2.centernet.modeling.backbone.fpn_p5 import LastLevelP6P7_P5
+import os
+import sys
+CUR_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(CUR_DIR, '../../../centernet2'))
+from centernet.modeling.backbone.fpn_p5 import LastLevelP6P7_P5
+
 import torch.utils.checkpoint as checkpoint
 from timm.models.layers import DropPath, Mlp, trunc_normal_
 
