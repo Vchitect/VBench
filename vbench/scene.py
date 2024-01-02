@@ -33,7 +33,7 @@ def scene(model, video_dict, device):
             raise "Auxiliary info is not in json, please check your json."
         scene_info = info['auxiliary_info']['scene']
         for video_path in info['video_list']:
-            video_array = load_video(video_path, return_tensor=False, width=384, height=384)
+            video_array = load_video(video_path, num_frames=16, return_tensor=False, width=384, height=384)
             video_tensor_list = []
             for i in video_array:
                 video_tensor_list.append(transform(i).to(device).unsqueeze(0))

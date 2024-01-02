@@ -111,7 +111,7 @@ def spatial_relationship(model, video_dict, device):
             raise "Auxiliary info is not in json, please check your json."
         object_info = info['auxiliary_info']['spatial_relationship']
         for video_path in info['video_list']:
-            video_tensor = load_video(video_path)
+            video_tensor = load_video(video_path, num_frames=16)
             cur_video_pred = get_dect_from_grit(model, video_tensor.permute(0,2,3,1))
             cur_video_frame_score = check_generate(object_info, cur_video_pred)
             cur_success_frame_rate = np.mean(cur_video_frame_score)
