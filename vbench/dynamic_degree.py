@@ -89,6 +89,8 @@ class DynamicDegree:
     def get_frames(self, video_path):
         frame_list = []
         video = cv2.VideoCapture(video_path)
+        fps = video.get(cv2.CAP_PROP_FPS) # get fps
+        interval = round(fps/8)
         while video.isOpened():
             success, frame = video.read()
             if success:
@@ -100,7 +102,15 @@ class DynamicDegree:
                 break
         video.release()
         assert frame_list != []
+        frame_list = self.extract_frame(frame_list, interval)
         return frame_list 
+    
+    
+    def extract_frame(self, frame_list, interval=1):
+        extract = []
+        for i in range(0, len(frame_list), interval):
+            extract.append(frame_list[i])
+        return extract
 
 
     def get_frames_from_img_folder(self, img_folder):
