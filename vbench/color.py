@@ -55,7 +55,7 @@ def color(model, video_dict, device):
         object_info = info['prompt']
         object_info = object_info.replace('a ','').replace('an ','').replace(color_info,'').strip()
         for video_path in info['video_list']:
-            video_arrays = load_video(video_path, return_tensor=False)
+            video_arrays = load_video(video_path, num_frames=16, return_tensor=False)
             cur_video_pred = get_dect_from_grit(model ,video_arrays)
             cur_object, cur_object_color = check_generate(color_info, object_info, cur_video_pred)
             if cur_object>0:
