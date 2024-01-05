@@ -6,10 +6,14 @@ import numpy as np
 import torch
 from tqdm import tqdm
 import json
+import shutil
 
 from vbench.third_party.RAFT.core.raft import RAFT
 from vbench.third_party.RAFT.core.utils_core.utils import InputPadder
 
+import logging
+logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 DEVICE = 'cuda'
 
@@ -99,6 +103,19 @@ class StaticFilter:
         return frame_list
 
 
+def check_and_move(args, filter_results, target_path=None):
+    if target_path is None:
+        target_path = os.path.join(args.result_path, "filtered_videos")
+    os.makedirs(target_path, exist_ok=True)
+    for prompt, v in filter_results.items():
+        if v["static_count"] < 5:
+            logger.warning(f"Prompt: '{prompt}' has fewer than 5 filter results.")
+        for i, video_path in enumerate(v["static_path"]):
+            target_name = os.path.join(target_path, f"{prompt}-{i}.mp4")
+            shutil.copy(video_path, target_name)
+    logger.info(f"All filtered videos are saved in the '{target_path}' path")
+
+
 def filter_static(args):
     static_filter = StaticFilter(args, device=DEVICE)
     prompt_dict = {}
@@ -116,8 +133,11 @@ def filter_static(args):
                     prompt_dict[name]["static_count"] += 1
                     prompt_dict[name]["static_path"].append(path)
     os.makedirs(args.result_path, exist_ok=True)
-    json.dump(prompt_dict, open(os.path.join(args.result_path, args.store_name), "w"))
-
+    info_file = os.path.join(args.result_path, args.store_name)
+    json.dump(prompt_dict, open(info_file, "w"))
+    logger.info(f"Filtered results info is saved in the '{info_file}' file")
+    check_and_move(args, prompt_dict)
+    
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
