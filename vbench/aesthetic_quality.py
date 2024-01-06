@@ -26,7 +26,7 @@ def get_aesthetic_model(cache_folder):
                 urlretrieve(url_model, path_to_model) # unable to download https://github.com/LAION-AI/aesthetic-predictor/blob/main/sa_0_4_vit_l_14_linear.pth?raw=true to pretrained/aesthetic_model/emb_reader/sa_0_4_vit_l_14_linear.pth 
             except:
                 print(f'unable to download {url_model} to {path_to_model} using urlretrieve, trying wget')
-                os.system(f"wget {url_model} -O {path_to_model}")  
+                os.system(f"wget {url_model} -P {os.path.dirname(path_to_model)}")  
     m = nn.Linear(768, 1)
     s = torch.load(path_to_model)
     m.load_state_dict(s)
