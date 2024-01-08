@@ -8,7 +8,7 @@ import clip
 from tqdm import tqdm
 from vbench.utils import load_video, load_dimension_info, clip_transform, read_frames_decord_by_fps
 from vbench.third_party.ViCLIP.viclip import ViCLIP
-    from vbench.third_party.ViCLIP.simple_tokenizer import SimpleTokenizer
+from vbench.third_party.ViCLIP.simple_tokenizer import SimpleTokenizer
 
 def get_text_features(model, input_text, tokenizer, text_feature_dict={}):
     if input_text in text_feature_dict:
