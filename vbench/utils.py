@@ -255,8 +255,9 @@ def init_submodules(dimension_list, local=False, read_frame=False):
         elif dimension == 'temporal_flickering':
             submodules_dict[dimension] = []
         elif dimension == 'motion_smoothness':
+            CUR_DIR = os.path.dirname(os.path.abspath(__file__))
             submodules_dict[dimension] = {
-                    'config': f'{CACHE_DIR}/amt_model/AMT-S.yaml',
+                    'config': f'{CUR_DIR}/third_party/amt/cfgs/AMT-S.yaml',
                     'ckpt': f'{CACHE_DIR}/amt_model/amt-s.pth'
                 }
             details = submodules_dict[dimension]
