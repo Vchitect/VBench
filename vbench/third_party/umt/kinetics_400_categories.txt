@@ -1,0 +1,400 @@
+riding a bike	0
+marching	1
+dodgeball	2
+playing cymbals	3
+checking tires	4
+roller skating	5
+tasting beer	6
+clapping	7
+drawing	8
+juggling fire	9
+bobsledding	10
+petting animal (not cat)	11
+spray painting	12
+training dog	13
+eating watermelon	14
+building cabinet	15
+applauding	16
+playing harp	17
+balloon blowing	18
+sled dog racing	19
+wrestling	20
+pole vault	21
+hurling (sport)	22
+riding scooter	23
+shearing sheep	24
+sweeping floor	25
+eating carrots	26
+skateboarding	27
+dunking basketball	28
+disc golfing	29
+eating spaghetti	30
+playing flute	31
+riding mechanical bull	32
+making sushi	33
+trapezing	34
+picking fruit	35
+stretching leg	36
+playing ukulele	37
+tying tie	38
+skydiving	39
+playing cello	40
+jumping into pool	41
+shooting goal (soccer)	42
+trimming trees	43
+bookbinding	44
+ski jumping	45
+walking the dog	46
+riding unicycle	47
+shaving head	48
+hopscotch	49
+playing piano	50
+parasailing	51
+bartending	52
+kicking field goal	53
+finger snapping	54
+dining	55
+yawning	56
+peeling potatoes	57
+canoeing or kayaking	58
+front raises	59
+laughing	60
+dancing macarena	61
+digging	62
+reading newspaper	63
+hitting baseball	64
+clay pottery making	65
+exercising with an exercise ball	66
+playing saxophone	67
+shooting basketball	68
+washing hair	69
+lunge	70
+brushing hair	71
+curling hair	72
+kitesurfing	73
+tapping guitar	74
+bending back	75
+skipping rope	76
+situp	77
+folding paper	78
+cracking neck	79
+assembling computer	80
+cleaning gutters	81
+blowing out candles	82
+shaking hands	83
+dancing gangnam style	84
+windsurfing	85
+tap dancing	86
+skiing (not slalom or crosscountry)	87
+bandaging	88
+push up	89
+doing nails	90
+punching person (boxing)	91
+bouncing on trampoline	92
+scrambling eggs	93
+singing	94
+cleaning floor	95
+krumping	96
+drumming fingers	97
+snowmobiling	98
+gymnastics tumbling	99
+headbanging	100
+catching or throwing frisbee	101
+riding elephant	102
+bee keeping	103
+feeding birds	104
+snatch weight lifting	105
+mowing lawn	106
+fixing hair	107
+playing trumpet	108
+flying kite	109
+crossing river	110
+swinging legs	111
+sanding floor	112
+belly dancing	113
+sneezing	114
+clean and jerk	115
+side kick	116
+filling eyebrows	117
+shuffling cards	118
+recording music	119
+cartwheeling	120
+feeding fish	121
+folding clothes	122
+water skiing	123
+tobogganing	124
+blowing leaves	125
+smoking	126
+unboxing	127
+tai chi	128
+waxing legs	129
+riding camel	130
+slapping	131
+tossing salad	132
+capoeira	133
+playing cards	134
+playing organ	135
+playing violin	136
+playing drums	137
+tapping pen	138
+vault	139
+shoveling snow	140
+playing tennis	141
+getting a tattoo	142
+making a sandwich	143
+making tea	144
+grinding meat	145
+squat	146
+eating doughnuts	147
+ice fishing	148
+snowkiting	149
+kicking soccer ball	150
+playing controller	151
+giving or receiving award	152
+welding	153
+throwing discus	154
+throwing axe	155
+ripping paper	156
+swimming butterfly stroke	157
+air drumming	158
+blowing nose	159
+hockey stop	160
+taking a shower	161
+bench pressing	162
+planting trees	163
+pumping fist	164
+climbing tree	165
+tickling	166
+high kick	167
+waiting in line	168
+slacklining	169
+tango dancing	170
+hurdling	171
+carrying baby	172
+celebrating	173
+sharpening knives	174
+passing American football (in game)	175
+headbutting	176
+playing recorder	177
+brush painting	178
+garbage collecting	179
+robot dancing	180
+shredding paper	181
+pumping gas	182
+rock climbing	183
+hula hooping	184
+braiding hair	185
+opening present	186
+texting	187
+decorating the christmas tree	188
+answering questions	189
+playing keyboard	190
+writing	191
+bungee jumping	192
+sniffing	193
+eating burger	194
+playing accordion	195
+making pizza	196
+playing volleyball	197
+tasting food	198
+pushing cart	199
+spinning poi	200
+cleaning windows	201
+arm wrestling	202
+changing oil	203
+swimming breast stroke	204
+tossing coin	205
+deadlifting	206
+hoverboarding	207
+cutting watermelon	208
+cheerleading	209
+snorkeling	210
+washing hands	211
+eating cake	212
+pull ups	213
+surfing water	214
+eating hotdog	215
+holding snake	216
+playing harmonica	217
+ironing	218
+cutting nails	219
+golf chipping	220
+shot put	221
+hugging	222
+playing clarinet	223
+faceplanting	224
+trimming or shaving beard	225
+drinking shots	226
+riding mountain bike	227
+tying bow tie	228
+swinging on something	229
+skiing crosscountry	230
+unloading truck	231
+cleaning pool	232
+jogging	233
+ice climbing	234
+mopping floor	235
+making bed	236
+diving cliff	237
+washing dishes	238
+grooming dog	239
+weaving basket	240
+frying vegetables	241
+stomping grapes	242
+moving furniture	243
+cooking sausages	244
+doing laundry	245
+dying hair	246
+knitting	247
+reading book	248
+baby waking up	249
+punching bag	250
+surfing crowd	251
+cooking chicken	252
+pushing car	253
+springboard diving	254
+swing dancing	255
+massaging legs	256
+beatboxing	257
+breading or breadcrumbing	258
+somersaulting	259
+brushing teeth	260
+stretching arm	261
+juggling balls	262
+massaging person's head	263
+eating ice cream	264
+extinguishing fire	265
+hammer throw	266
+whistling	267
+crawling baby	268
+using remote controller (not gaming)	269
+playing cricket	270
+opening bottle	271
+playing xylophone	272
+motorcycling	273
+driving car	274
+exercising arm	275
+passing American football (not in game)	276
+playing kickball	277
+sticking tongue out	278
+flipping pancake	279
+catching fish	280
+eating chips	281
+shaking head	282
+sword fighting	283
+playing poker	284
+cooking on campfire	285
+doing aerobics	286
+paragliding	287
+using segway	288
+folding napkins	289
+playing bagpipes	290
+gargling	291
+skiing slalom	292
+strumming guitar	293
+javelin throw	294
+waxing back	295
+riding or walking with horse	296
+plastering	297
+long jump	298
+parkour	299
+wrapping present	300
+egg hunting	301
+archery	302
+cleaning toilet	303
+swimming backstroke	304
+snowboarding	305
+catching or throwing baseball	306
+massaging back	307
+blowing glass	308
+playing guitar	309
+playing chess	310
+golf driving	311
+presenting weather forecast	312
+rock scissors paper	313
+high jump	314
+baking cookies	315
+using computer	316
+washing feet	317
+arranging flowers	318
+playing bass guitar	319
+spraying	320
+cutting pineapple	321
+waxing chest	322
+auctioning	323
+jetskiing	324
+drinking	325
+busking	326
+playing monopoly	327
+salsa dancing	328
+waxing eyebrows	329
+watering plants	330
+zumba	331
+chopping wood	332
+pushing wheelchair	333
+carving pumpkin	334
+building shed	335
+making jewelry	336
+catching or throwing softball	337
+bending metal	338
+ice skating	339
+dancing charleston	340
+abseiling	341
+climbing a rope	342
+crying	343
+cleaning shoes	344
+dancing ballet	345
+driving tractor	346
+triple jump	347
+throwing ball	348
+getting a haircut	349
+running on treadmill	350
+climbing ladder	351
+blasting sand	352
+playing trombone	353
+drop kicking	354
+country line dancing	355
+changing wheel	356
+feeding goats	357
+tying knot (not on a tie)	358
+setting table	359
+shaving legs	360
+kissing	361
+riding mule	362
+counting money	363
+laying bricks	364
+barbequing	365
+news anchoring	366
+smoking hookah	367
+cooking egg	368
+peeling apples	369
+yoga	370
+sharpening pencil	371
+dribbling basketball	372
+petting cat	373
+playing ice hockey	374
+milking cow	375
+shining shoes	376
+juggling soccer ball	377
+scuba diving	378
+playing squash or racquetball	379
+drinking beer	380
+sign language interpreting	381
+playing basketball	382
+breakdancing	383
+testifying	384
+making snowman	385
+golf putting	386
+playing didgeridoo	387
+biking through snow	388
+sailing	389
+jumpstyle dancing	390
+water sliding	391
+grooming horse	392
+massaging feet	393
+playing paintball	394
+making a cake	395
+bowling	396
+contact juggling	397
+applying cream	398
+playing badminton	399

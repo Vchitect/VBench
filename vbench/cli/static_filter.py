@@ -7,6 +7,7 @@ import torch
 from tqdm import tqdm
 import json
 
+from vbench.utils import CACHE_DIR
 from vbench.third_party.RAFT.core.raft import RAFT
 from vbench.third_party.RAFT.core.utils_core.utils import InputPadder
 
@@ -120,7 +121,7 @@ def filter_static(args):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', type=str, default="./pretrained/raft_model/models/raft-things.pth", help="restore checkpoint")
+    parser.add_argument('--model', type=str, default=f"{CACHE_DIR}/raft_model/models/raft-things.pth", help="restore checkpoint")
     parser.add_argument('--videos_path', default="", required=True, help="video path for filtering")
     parser.add_argument('--result_path', type=str, default="./filter_results", help='result save path')
     parser.add_argument('--store_name', type=str, default="filtered_static_video.json", help='result file name')
