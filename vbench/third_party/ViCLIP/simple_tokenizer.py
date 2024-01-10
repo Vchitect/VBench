@@ -11,7 +11,7 @@ def default_bpe():
     tokenizer_file = os.path.join(CACHE_DIR, "ViCLIP/bpe_simple_vocab_16e6.txt.gz")
     print(f'save tokenizer_file to {tokenizer_file}')
     if not os.path.exists(tokenizer_file):
-        wget_command = ['wget', 'https://raw.githubusercontent.com/openai/CLIP/main/clip/bpe_simple_vocab_16e6.txt.gz', '-O', tokenizer_file]
+        wget_command = ['wget', 'https://raw.githubusercontent.com/openai/CLIP/main/clip/bpe_simple_vocab_16e6.txt.gz', '-P', os.path.dirname(tokenizer_file)]
         subprocess.run(wget_command)
     return tokenizer_file
 

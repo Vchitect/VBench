@@ -241,7 +241,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
                 vit_b_path = f'{CACHE_DIR}/clip_model/ViT-B-32.pt'
                 if not os.path.isfile(vit_b_path):
                     wget_command = ['wget', 'https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt', '-P', os.path.dirname(vit_b_path)]
-                    subprocess.run(wget_command)
+                    subprocess.run(wget_command, check=True)
             else:
                 vit_b_path = 'ViT-B/32'
 
@@ -250,7 +250,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
             umt_path = f'{CACHE_DIR}/umt_model/l16_ptk710_ftk710_ftk400_f16_res224.pth'
             if not os.path.isfile(umt_path):
                 wget_command = ['wget', 'https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/umt/single_modality/l16_ptk710_ftk710_ftk400_f16_res224.pth', '-P', os.path.dirname(umt_path)]
-                subprocess.run(wget_command)
+                subprocess.run(wget_command, check=True)
             submodules_dict[dimension] = [umt_path,]
         elif dimension == 'temporal_flickering':
             submodules_dict[dimension] = []
@@ -265,7 +265,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
                 print(f"File {details['ckpt']} does not exist. Downloading...")
                 wget_command = ['wget', '-P', os.path.dirname(details['ckpt']),
                                 'https://huggingface.co/lalala125/AMT/resolve/main/amt-s.pth']
-                subprocess.run(wget_command)
+                subprocess.run(wget_command, check=True)
 
         elif dimension == 'dynamic_degree':
             submodules_dict[dimension] = {
@@ -276,7 +276,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
                 # raise NotImplementedError
                 print(f"File {details['model']} does not exist. Downloading...")
                 wget_command = ['wget', '-P', f'{CACHE_DIR}/raft_model/', 'https://dl.dropboxusercontent.com/s/4j4z58wuv8o0mfz/models.zip']
-                unzip_command = ['unzip', 'd', f'{CACHE_DIR}/raft_model/', f'{CACHE_DIR}/raft_model/models.zip']
+                unzip_command = ['unzip', '-d', f'{CACHE_DIR}/raft_model/', f'{CACHE_DIR}/raft_model/models.zip']
                 remove_command = ['rm', '-r', f'{CACHE_DIR}/raft_model/models.zip']
                 try:
                     subprocess.run(wget_command, check=True)
@@ -298,13 +298,13 @@ def init_submodules(dimension_list, local=False, read_frame=False):
                 # Check if the file exists, if not, download it with wget
                 if not os.path.isdir(details['repo_or_dir']):
                     print(f"Directory {details['repo_or_dir']} does not exist. Cloning repository...")
-                    subprocess.run(['git', 'clone', 'https://github.com/facebookresearch/dino', details['repo_or_dir']])
+                    subprocess.run(['git', 'clone', 'https://github.com/facebookresearch/dino', details['repo_or_dir']], check=True)
 
                 if not os.path.isfile(details['path']):
                     print(f"File {details['path']} does not exist. Downloading...")
                     wget_command = ['wget', '-P', os.path.dirname(details['path']),
                                     'https://github.com/facebookresearch/dino/blob/main/dino_vitbase16_pretrain.pth']
-                    subprocess.run(wget_command)
+                    subprocess.run(wget_command, check=True)
             else:
                 submodules_dict[dimension] = {
                     'repo_or_dir':'facebookresearch/dino:main',
@@ -318,7 +318,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
                 vit_l_path = f'{CACHE_DIR}/clip_model/ViT-L-14.pt'
                 if not os.path.isfile(vit_l_path):
                     wget_command = ['wget' ,'https://openaipublic.azureedge.net/clip/models/b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836/ViT-L-14.pt', '-P', os.path.dirname(vit_l_path)]
-                    subprocess.run(wget_command)
+                    subprocess.run(wget_command, check=True)
             else:
                 vit_l_path = 'ViT-L/14'
             submodules_dict[dimension] = [vit_l_path, aes_path]
@@ -326,7 +326,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
             musiq_spaq_path = f'{CACHE_DIR}/pyiqa_model/musiq_spaq_ckpt-358bb6af.pth'
             if not os.path.isfile(musiq_spaq_path):
                 wget_command = ['wget', 'https://github.com/chaofengc/IQA-PyTorch/releases/download/v0.1-weights/musiq_spaq_ckpt-358bb6af.pth', '-P', os.path.dirname(musiq_spaq_path)]
-                subprocess.run(wget_command)
+                subprocess.run(wget_command, check=True)
             submodules_dict[dimension] = {'model_path': musiq_spaq_path}
         elif dimension in ["object_class", "multiple_objects", "color", "spatial_relationship" ]:
             submodules_dict[dimension] = {
@@ -334,7 +334,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
             }
             if not os.path.exists(submodules_dict[dimension]['model_weight']):
                 wget_command = ['wget', 'https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth', '-P', os.path.dirname(submodules_dict[dimension]["model_weight"])]
-                subprocess.run(wget_command)
+                subprocess.run(wget_command, check=True)
         elif dimension == 'scene':
             submodules_dict[dimension] = {
                 "pretrained": f'{CACHE_DIR}/caption_model/tag2text_swin_14m.pth',
@@ -343,12 +343,13 @@ def init_submodules(dimension_list, local=False, read_frame=False):
             }
             if not os.path.exists(submodules_dict[dimension]['pretrained']):
                 wget_command = ['wget', 'https://huggingface.co/spaces/xinyu1205/recognize-anything/resolve/main/tag2text_swin_14m.pth', '-P', os.path.dirname(submodules_dict[dimension]["pretrained"])]
+                subprocess.run(wget_command, check=True)
         elif dimension == 'appearance_style':
             if local:
                 submodules_dict[dimension] = {"name": f'{CACHE_DIR}/clip_model/ViT-B-32.pt'}
                 if not os.path.isfile(submodules_dict[dimension]["name"]):
                     wget_command = ['wget', 'https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt', '-P', os.path.dirname(submodules_dict[dimension]["name"])]
-                    subprocess.run(wget_command)
+                    subprocess.run(wget_command, check=True)
             else:
                 submodules_dict[dimension] = {"name": 'ViT-B/32'}
         elif dimension in ["temporal_style", "overall_consistency"]:
@@ -357,7 +358,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
             }
             if not os.path.exists(submodules_dict[dimension]['pretrain']):
                 wget_command = ['wget', 'https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/internvideo/viclip/ViClip-InternVid-10M-FLT.pth', '-P', os.path.dirname(submodules_dict[dimension]["pretrain"])]
-                subprocess.run(wget_command)
+                subprocess.run(wget_command, check=True)
     return submodules_dict
 
 
