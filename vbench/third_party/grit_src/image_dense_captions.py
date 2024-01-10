@@ -7,6 +7,7 @@ from detectron2.data.detection_utils import read_image
 # constants
 WINDOW_NAME = "GRiT"
 CUR_DIR = os.path.dirname(os.path.abspath(__file__))
+from vbench.utils import CACHE_DIR
 
 # sys.path.insert(0, f"{CUR_DIR}/../")
 # print(CUR_DIR)
@@ -83,7 +84,7 @@ def setup_cfg(args):
     return cfg
 
 
-def get_parser(device, model_weight="pretrained/grit_model/grit_b_densecap_objectdet.pth"):
+def get_parser(device, model_weight=f"{CACHE_DIR}/grit_model/grit_b_densecap_objectdet.pth"):
     arg_dict = {'config_file': f"{CUR_DIR}/configs/GRiT_B_DenseCap_ObjectDet.yaml", 'cpu': False, 'confidence_threshold': 0.5, 'test_task': 'DenseCap', 'opts': ["MODEL.WEIGHTS", model_weight]}
     if device.type == "cpu":
         arg_dict["cpu"] = True

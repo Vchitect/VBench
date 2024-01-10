@@ -19,7 +19,8 @@ from vbench.third_party.umt.models.modeling_finetune import vit_large_patch16_22
 from tqdm import tqdm
 
 def build_dict():
-    path = 'pretrained/umt_model/kinetics_400_categroies.txt'
+    CUR_DIR = os.path.dirname(os.path.abspath(__file__))
+    path = f'{CUR_DIR}/third_party/umt/kinetics_400_categories.txt'
     results = {}
     with open(path, 'r') as f:
         cat_list = f.readlines()
