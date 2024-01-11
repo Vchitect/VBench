@@ -53,7 +53,7 @@ If there is an error during [detectron2](https://github.com/facebookresearch/det
 ```
 
 ## :gem: Pre-Trained Models
-[Optional] Please download the pre-trained weights according to the guidance in the `model_path.txt` file for each model in the `~/.cache/vbench` directory.
+[Optional] Please download the pre-trained weights according to the guidance in the `model_path.txt` file for each model in the `pretrained` folder to `~/.cache/vbench`.
 
 ## :bookmark_tabs: Prompt Suite
 
