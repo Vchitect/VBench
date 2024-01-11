@@ -100,7 +100,7 @@ class StaticFilter:
         return frame_list
 
 
-def filter_static(args):
+def static_filter(args):
     static_filter = StaticFilter(args, device=DEVICE)
     prompt_dict = {}
     with open(args.prompt_file, "r") as f:
@@ -119,8 +119,8 @@ def filter_static(args):
     os.makedirs(args.result_path, exist_ok=True)
     json.dump(prompt_dict, open(os.path.join(args.result_path, args.store_name), "w"))
 
-def main():
-    parser = argparse.ArgumentParser()
+def register_subparsers(subparser):
+    parser = subparser.add_parser('static_filter')
     parser.add_argument('--model', type=str, default=f"{CACHE_DIR}/raft_model/models/raft-things.pth", help="restore checkpoint")
     parser.add_argument('--videos_path', default="", required=True, help="video path for filtering")
     parser.add_argument('--result_path', type=str, default="./filter_results", help='result save path')
@@ -129,9 +129,5 @@ def main():
     parser.add_argument('--small', action='store_true', help='use small model')
     parser.add_argument('--mixed_precision', action='store_true', help='use mixed precision')
     parser.add_argument('--alternate_corr', action='store_true', help='use efficent correlation implementation')
-    args = parser.parse_args()
+    parser.set_defaults(func=static_filter)
 
-    filter_static(args)
-
-if __name__ == "__main__":
-    main()

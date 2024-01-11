@@ -39,7 +39,7 @@ If there is an error during [detectron2](https://github.com/facebookresearch/det
 ## Usage
 ##### command line 
 ```bash
-    evaluate --videos_path $VIDEO_PATH --dimension $DIMENSION
+    vbench evaluate --videos_path $VIDEO_PATH --dimension $DIMENSION
 ```
 ##### python
 ```python
