@@ -2,3 +2,4 @@ include version.txt
 include requirements.txt
 recursive-include vbench/third_party *.yaml
 recursive-include vbench/third_party *.json
+recursive-include vbench/third_party *.txt

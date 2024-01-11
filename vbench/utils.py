@@ -304,7 +304,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
                 if not os.path.isfile(details['path']):
                     print(f"File {details['path']} does not exist. Downloading...")
                     wget_command = ['wget', '-P', os.path.dirname(details['path']),
-                                    'https://github.com/facebookresearch/dino/blob/main/dino_vitbase16_pretrain.pth']
+                                    'https://dl.fbaipublicfiles.com/dino/dino_vitbase16_pretrain/dino_vitbase16_pretrain.pth']
                     subprocess.run(wget_command, check=True)
             else:
                 submodules_dict[dimension] = {

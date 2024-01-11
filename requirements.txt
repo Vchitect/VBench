@@ -12,7 +12,7 @@ opencv-python
 scikit-learn
 scikit-image
 openai-clip
-# decord
+decord
 requests
 pyyaml
 easydict
