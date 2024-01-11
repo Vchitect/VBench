@@ -21,27 +21,22 @@ We propose **VBench**, a comprehensive benchmark suite for video generative mode
 - [12/2023] Evaluation code for released for 16 Text-to-Video (T2V) evaluation dimensions. 
     - `['subject_consistency', 'background_consistency', 'temporal_flickering', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality', 'object_class', 'multiple_objects', 'human_action', 'color', 'spatial_relationship', 'scene', 'temporal_style', 'appearance_style', 'overall_consistency']`
 - [11/2023] Prompt Suites released. (See prompt lists [here](https://github.com/Vchitect/VBench/tree/master/prompts))
-
+  
 ## :hammer: Installation
-
-1. Clone Repo
-
-   ```bash
-   git clone https://github.com/Vchitect/VBench
-   cd VBench
+#### Install with pip
+   ```
+   pip install detectron2@git+https://github.com/facebookresearch/detectron2.git
+   pip install git+https://github.com/Vchitect/VBench.git
    ```
 
-2. Create Conda Environment and Install Dependencies
-    ```
-    conda env create -f vbench_env.yml
-    conda activate vbench
-    ```
+#### Install with git clone
+    git clone https://github.com/Vchitect/VBench.git
+    pip install -r VBench/requirements.txt
+    pip install VBench
+    
+If there is an error during [detectron2](https://github.com/facebookresearch/detectron2) installation, see [here](https://detectron2.readthedocs.io/en/latest/tutorials/install.html).
 
-## :hammer: Installation (pip install)
-```
-    python setup.py sdist && python -m pip install dist/vbench-0.1.0.tar.gz
-```
-### Usage
+## Usage
 ##### command line 
 ```bash
     evaluate --videos_path $VIDEO_PATH --dimension $DIMENSION
@@ -58,7 +53,7 @@ We propose **VBench**, a comprehensive benchmark suite for video generative mode
 ```
 
 ## :gem: Pre-Trained Models
-[Optional] Please download the pre-trained weights according to the guidance in the `model_path.txt` file for each model in the `pretrained` folder.
+[Optional] Please download the pre-trained weights according to the guidance in the `model_path.txt` file for each model in the `~/.cache/vbench` directory.
 
 ## :bookmark_tabs: Prompt Suite
 
