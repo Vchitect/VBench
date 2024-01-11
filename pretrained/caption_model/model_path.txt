@@ -1,1 +1,1 @@
-wget https://huggingface.co/spaces/xinyu1205/recognize-anything/resolve/main/tag2text_swin_14m.pth
+wget https://huggingface.co/spaces/xinyu1205/recognize-anything/resolve/main/tag2text_swin_14m.pth -P ~/.cache/vbench/caption_model
