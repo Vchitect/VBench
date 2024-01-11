@@ -3,9 +3,8 @@ from vbench import VBench
 
 import argparse
 
-def parse_args():
-
-    parser = argparse.ArgumentParser(description='VBench')
+def register_subparsers(subparser):
+    parser = subparser.add_parser('evaluate')
     parser.add_argument(
         "--output_path",
         type=str,
@@ -42,12 +41,9 @@ def parse_args():
         required=False,
         help="whether directly read frames, or directly read videos",
     )
-    args = parser.parse_args()
-    return args
+    parser.set_defaults(func=evaluate)
 
-
-def main():
-    args = parse_args()
+def evaluate(args):
     print(f'args: {args}')
 
     device = torch.device("cuda")
@@ -63,5 +59,3 @@ def main():
     )
     print('done')
 
-if __name__ == "__main__":
-    main()

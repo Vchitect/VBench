@@ -25,7 +25,7 @@ setup(name='vbench',
           'Source': 'https://github.com/Vchitect/VBench',
       },
       entry_points={
-          'console_scripts': ['evaluate=vbench.cli.evaluate:main', 'static_filter=vbench.cli.static_filter:main']
+          'console_scripts': ['vbench=vbench.cli.vbench:main']
       },
       install_requires=install_requires,
       packages=find_packages(),
