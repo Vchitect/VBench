@@ -1,8 +1,6 @@
 import torch
 from vbench import VBench
 
-import argparse
-
 def register_subparsers(subparser):
     parser = subparser.add_parser('evaluate')
     parser.add_argument(
