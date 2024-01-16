@@ -41,6 +41,10 @@ If there is an error during [detectron2](https://github.com/facebookresearch/det
 ```bash
     vbench evaluate --videos_path $VIDEO_PATH --dimension $DIMENSION
 ```
+For example:
+```bash
+    vbench evaluate --videos_path "sampled_videos/lavie/human_action" --dimension "human_action"
+```
 ##### python
 ```python
     from vbench import VBench
@@ -51,6 +55,17 @@ If there is an error during [detectron2](https://github.com/facebookresearch/det
         dimension_list = [<dimension>, <dimension>, ...],
     )
 ```
+For example: 
+```python
+    from vbench import VBench
+    my_VBench = VBench(device, "VBench_full_info.json", "evaluation_results")
+    my_VBench.evaluate(
+        videos_path = "sampled_videos/lavie/human_action",
+        name = "lavie_human_action",
+        dimension_list = ["human_action"],
+    )
+```
+
 
 ## :gem: Pre-Trained Models
 [Optional] Please download the pre-trained weights according to the guidance in the `model_path.txt` file for each model in the `pretrained` folder to `~/.cache/vbench`.
