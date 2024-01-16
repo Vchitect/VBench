@@ -31,5 +31,4 @@ setup(name='vbench',
       packages=find_packages(),
       include_package_data=True,
       license='Apache Software License 2.0',
-      scripts=['bin/evaluate'],
 )
