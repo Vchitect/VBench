@@ -11,7 +11,7 @@ import logging
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-from vbench.utils import CACHE_DIR
+from vbench.utils import CACHE_DIR, load_json
 from vbench.third_party.RAFT.core.raft import RAFT
 from vbench.third_party.RAFT.core.utils_core.utils import InputPadder
 
@@ -118,15 +118,17 @@ def check_and_move(args, filter_results, target_path=None):
 def static_filter(args):
     static_filter = StaticFilter(args, device=DEVICE)
     prompt_dict = {}
-    with open(args.prompt_file, "r") as f:
-        lines = [line.strip() for line in f.readlines()]
-        for line in lines:
-            prompt_dict[line] = {"static_count":0, "static_path":[]}
+    prompt_list = []
+    full_prompt_list = load_json(args.prompt_file)
+    for prompt in full_prompt_list:
+        if 'temporal_flickering' in prompt['dimension']:
+            prompt_dict[prompt['prompt_en']] = {"static_count":0, "static_path":[]}
+            prompt_list.append(prompt['prompt_en'])
     
     paths = sorted(glob.glob(os.path.join(args.videos_path, "*.mp4")))
     for path in tqdm(paths):
         name = '-'.join(path.split('/')[-1].split('-')[:-1]) 
-        if name in lines:
+        if name in prompt_list:
             if prompt_dict[name]["static_count"] < 5:
                 if static_filter.infer(path):
                     prompt_dict[name]["static_count"] += 1
@@ -143,7 +145,7 @@ def register_subparsers(subparser):
     parser.add_argument('--videos_path', default="", required=True, help="video path for filtering")
     parser.add_argument('--result_path', type=str, default="./filter_results", help='result save path')
     parser.add_argument('--store_name', type=str, default="filtered_static_video.json", help='result file name')
-    parser.add_argument('--prompt_file', type=str, default="./prompts/prompts_per_dimension/temporal_flickering.txt", help='static_prompt')
+    parser.add_argument('--prompt_file', type=str, default="./VBench_full_info.json", help='static_prompt')
     parser.add_argument('--small', action='store_true', help='use small model')
     parser.add_argument('--mixed_precision', action='store_true', help='use mixed precision')
     parser.add_argument('--alternate_corr', action='store_true', help='use efficent correlation implementation')
