@@ -131,18 +131,12 @@ def load_video(video_path, data_transform=None, num_frames=None, return_tensor=T
             frame = np.array(frame).astype(np.uint8)
             frame_ls.append(frame)
         buffer = np.array(frame_ls).astype(np.uint8)
-        if data_transform:
-            buffer = data_transform(buffer)
-            return buffer
     elif video_path.endswith('.png'):
         frame = Image.open(video_path)
         frame = frame.convert('RGB')
         frame = np.array(frame).astype(np.uint8)
         frame_ls = [frame]
         buffer = np.array(frame_ls)
-        if data_transform:
-            buffer = data_transform(buffer)
-            return buffer
     elif video_path.endswith('.mp4'):
         if width:
             video_reader = VideoReader(video_path, width=width, height=height, num_threads=1)
@@ -151,25 +145,22 @@ def load_video(video_path, data_transform=None, num_frames=None, return_tensor=T
         frames = video_reader.get_batch(range(len(video_reader)))  # (T, H, W, C), torch.uint8
 
         buffer = frames.asnumpy().astype(np.uint8)
-        if num_frames:
-            frame_indices = get_frame_indices(
-            num_frames, len(buffer), sample="middle"
-            )
-            buffer = buffer[frame_indices]
-        if data_transform:
-            buffer = data_transform(buffer)
-            return buffer
     else:
         raise NotImplementedError
+    
     frames = buffer
-    if return_tensor:
-        frames = torch.Tensor(buffer)
-        frames = frames.permute(0, 3, 1, 2)  # (T, C, H, W), torch.uint8
     if num_frames:
         frame_indices = get_frame_indices(
         num_frames, len(frames), sample="middle"
         )
         frames = frames[frame_indices]
+    
+    if data_transform:
+        frames = data_transform(frames)
+    elif return_tensor:
+        frames = torch.Tensor(frames)
+        frames = frames.permute(0, 3, 1, 2)  # (T, C, H, W), torch.uint8
+
     return frames
 
 def read_frames_decord_by_fps(
