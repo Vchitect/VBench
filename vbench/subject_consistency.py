@@ -11,7 +11,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.transforms as transforms
 
-from .utils import load_video, load_dimension_info, dino_transform, dino_transform_Image
+from vbench.utils import load_video, load_dimension_info, dino_transform, dino_transform_Image
 import logging
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)

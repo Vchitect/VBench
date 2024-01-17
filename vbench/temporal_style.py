@@ -1,14 +1,13 @@
 import os
-CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 import json
 import numpy as np
 
 import torch
 import clip
 from tqdm import tqdm
-from .third_party.ViCLIP.viclip import ViCLIP
-from .third_party.ViCLIP.simple_tokenizer import SimpleTokenizer
-from .utils import load_video, load_dimension_info, clip_transform, read_frames_decord_by_fps
+from vbench.utils import load_video, load_dimension_info, clip_transform, read_frames_decord_by_fps, CACHE_DIR
+from vbench.third_party.ViCLIP.viclip import ViCLIP
+from vbench.third_party.ViCLIP.simple_tokenizer import SimpleTokenizer
 
 def get_text_features(model, input_text, tokenizer, text_feature_dict={}):
     if input_text in text_feature_dict:
@@ -56,7 +55,7 @@ def temporal_style(clip_model, video_dict, tokenizer, device, sample="middle"):
     return avg_score, video_results
 
 def compute_temporal_style(json_dir, device, submodules_list):
-    tokenizer = SimpleTokenizer(os.path.join(CUR_DIR,"third_party/ViCLIP/bpe_simple_vocab_16e6.txt.gz"))
+    tokenizer = SimpleTokenizer(os.path.join(CACHE_DIR, "ViCLIP/bpe_simple_vocab_16e6.txt.gz"))
     viclip = ViCLIP(tokenizer= tokenizer, **submodules_list).to(device)
     _, video_dict = load_dimension_info(json_dir, dimension='temporal_style', lang='en')
     all_results, video_results = temporal_style(viclip, video_dict, tokenizer, device)

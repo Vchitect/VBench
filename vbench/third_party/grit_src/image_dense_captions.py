@@ -1,30 +1,44 @@
-import argparse
-import multiprocessing as mp
 import os
-import time
-import cv2
-import tqdm
-import sys
-
+import torch
+from itertools import compress
 from detectron2.config import get_cfg
 from detectron2.data.detection_utils import read_image
-from detectron2.utils.logger import setup_logger
 
 # constants
 WINDOW_NAME = "GRiT"
 CUR_DIR = os.path.dirname(os.path.abspath(__file__))
+from vbench.utils import CACHE_DIR
 
-sys.path.insert(0, f"{CUR_DIR}/../")
-sys.path.insert(0, os.path.join(CUR_DIR,'third_party/CenterNet2/projects/CenterNet2/'))
+# sys.path.insert(0, f"{CUR_DIR}/../")
+# print(CUR_DIR)
+import sys
+sys.path.append(os.path.join(CUR_DIR, './centernet2/'))
 from centernet.config import add_centernet_config
-from grit_src.grit.config import add_grit_config
 
-from grit_src.grit.predictor import VisualizationDemo
-import json
+from .grit.config import add_grit_config
+from .grit.predictor import VisualizationDemo
 
+class ObjDescription:
+    def __init__(self, object_descriptions):
+        self.data = object_descriptions
 
+    def __getitem__(self, item):
+        assert type(item) == torch.Tensor
+        assert item.dim() == 1
+        if len(item) > 0:
+            assert item.dtype == torch.int64 or item.dtype == torch.bool
+            if item.dtype == torch.int64:
+                return ObjDescription([self.data[x.item()] for x in item])
+            elif item.dtype == torch.bool:
+                return ObjDescription(list(compress(self.data, item)))
 
+        return ObjDescription(list(compress(self.data, item)))
 
+    def __len__(self):
+        return len(self.data)
+
+    def __repr__(self):
+        return "ObjDescription({})".format(self.data)
 
 def dense_pred_to_caption(predictions):
     boxes = predictions["instances"].pred_boxes if predictions["instances"].has("pred_boxes") else None
@@ -70,7 +84,7 @@ def setup_cfg(args):
     return cfg
 
 
-def get_parser(device, model_weight="pretrained/grit_model/grit_b_densecap_objectdet.pth"):
+def get_parser(device, model_weight=f"{CACHE_DIR}/grit_model/grit_b_densecap_objectdet.pth"):
     arg_dict = {'config_file': f"{CUR_DIR}/configs/GRiT_B_DenseCap_ObjectDet.yaml", 'cpu': False, 'confidence_threshold': 0.5, 'test_task': 'DenseCap', 'opts': ["MODEL.WEIGHTS", model_weight]}
     if device.type == "cpu":
         arg_dict["cpu"] = True

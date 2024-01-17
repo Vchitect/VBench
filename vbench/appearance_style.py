@@ -6,7 +6,7 @@ from tqdm import tqdm
 import torch
 import clip
 from PIL import Image
-from .utils import load_video, load_dimension_info, clip_transform, read_frames_decord_by_fps, clip_transform_Image
+from vbench.utils import load_video, load_dimension_info, clip_transform, read_frames_decord_by_fps, clip_transform_Image
 
 def get_text_features(model, input_text, tokenizer, text_feature_dict={}):
     if input_text in text_feature_dict:

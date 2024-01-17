@@ -16,7 +16,8 @@ from .grit_fast_rcnn import GRiTFastRCNNOutputLayers
 from ..text.text_decoder import TransformerDecoderTextualHead, GRiTTextDecoder, AutoRegressiveBeamSearch
 from ..text.load_text_token import LoadTextTokens
 from transformers import BertTokenizer
-from grit_src.grit.data.custom_dataset_mapper import ObjDescription
+
+from vbench.third_party.grit_src.grit.data.custom_dataset_mapper import ObjDescription
 from ..soft_nms import batched_soft_nms
 
 import logging
