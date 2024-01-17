@@ -1,12 +1,13 @@
 import os
 import json
+import logging
 import numpy as np
 import clip
 from PIL import Image
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .utils import load_video, load_dimension_info, clip_transform
+from vbench.utils import load_video, load_dimension_info, clip_transform
 from tqdm import tqdm
 
 
@@ -51,8 +52,6 @@ def background_consistency(clip_model, preprocess, video_list, device, read_fram
 
 def compute_background_consistency(json_dir, device, submodules_list):
     vit_path, read_frame = submodules_list[0], submodules_list[1]
-    if not os.path.isfile(vit_path):
-        os.system(f'wget  -q --show-progress https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt -O {vit_path}')
     clip_model, preprocess = clip.load(vit_path, device=device)
     video_list, _ = load_dimension_info(json_dir, dimension='background_consistency', lang='en')
     all_results, video_results = background_consistency(clip_model, preprocess, video_list, device, read_frame)

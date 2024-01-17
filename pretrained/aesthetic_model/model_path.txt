@@ -1,1 +1,1 @@
-wget https://github.com/LAION-AI/aesthetic-predictor/blob/main/sa_0_4_vit_l_14_linear.pth?raw=true
+wget https://github.com/LAION-AI/aesthetic-predictor/blob/main/sa_0_4_vit_l_14_linear.pth -P ~/.cache/vbench/aesthetic_model/emb_reader

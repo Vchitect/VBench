@@ -1,7 +1,7 @@
 import torch
 from tqdm import tqdm
 from pyiqa.archs.musiq_arch import MUSIQ
-from .utils import load_video, load_dimension_info
+from vbench.utils import load_video, load_dimension_info
 
 def transform(images):
     return images / 255.
@@ -18,6 +18,7 @@ def technical_quality(model, video_list, device):
             acc_score_video += float(score)
         video_results.append({'video_path': video_path, 'video_results': acc_score_video/len(images)})
     average_score = sum([o['video_results'] for o in video_results]) / len(video_results)
+    average_score = average_score / 100.
     return average_score, video_results
 
 

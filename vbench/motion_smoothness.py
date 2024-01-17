@@ -6,14 +6,14 @@ import numpy as np
 from tqdm import tqdm
 from omegaconf import OmegaConf
 
-from .utils import load_dimension_info
+from vbench.utils import load_dimension_info
 
-from .third_party.amt.utils.utils import (
+from vbench.third_party.amt.utils.utils import (
     img2tensor, tensor2img,
     check_dim_and_resize
     )
-from .third_party.amt.utils.build_utils import build_from_cfg
-from .third_party.amt.utils.utils import InputPadder
+from vbench.third_party.amt.utils.build_utils import build_from_cfg
+from vbench.third_party.amt.utils.utils import InputPadder
 
 
 class FrameProcess:

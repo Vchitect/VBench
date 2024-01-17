@@ -4,8 +4,8 @@ import json
 import torch
 import numpy as np
 from tqdm import tqdm
-from .utils import load_video, load_dimension_info, read_frames_decord_by_fps
-from .third_party.grit_model import DenseCaptioning
+from vbench.utils import load_video, load_dimension_info, read_frames_decord_by_fps
+from vbench.third_party.grit_model import DenseCaptioning
 
 import logging
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')

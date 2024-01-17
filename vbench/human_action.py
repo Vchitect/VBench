@@ -6,20 +6,21 @@ from PIL import Image
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .utils import load_video, load_dimension_info
-from .third_party.umt.datasets.video_transforms import (
+from vbench.utils import load_video, load_dimension_info
+from vbench.third_party.umt.datasets.video_transforms import (
     Compose, Resize, CenterCrop, Normalize,
     create_random_augment, random_short_side_scale_jitter, 
     random_crop, random_resized_crop_with_shift, random_resized_crop,
     horizontal_flip, random_short_side_scale_jitter, uniform_crop, 
 )
-from .third_party.umt.datasets.volume_transforms import ClipToTensor
+from vbench.third_party.umt.datasets.volume_transforms import ClipToTensor
 from timm.models import create_model
-from .third_party.umt.models import vit_large_patch16_224
+from vbench.third_party.umt.models.modeling_finetune import vit_large_patch16_224
 from tqdm import tqdm
 
 def build_dict():
-    path = 'pretrained/umt_model/kinetics_400_categroies.txt'
+    CUR_DIR = os.path.dirname(os.path.abspath(__file__))
+    path = f'{CUR_DIR}/third_party/umt/kinetics_400_categories.txt'
     results = {}
     with open(path, 'r') as f:
         cat_list = f.readlines()
