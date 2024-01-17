@@ -38,7 +38,7 @@ def object_class(model, video_dict, device):
             raise "Auxiliary info is not in json, please check your json."
         object_info = info['auxiliary_info']['object']
         for video_path in info['video_list']:
-            video_tensor = load_video(video_path)
+            video_tensor = load_video(video_path, num_frames=16)
             cur_video_pred = get_dect_from_grit(model, video_tensor.permute(0,2,3,1))
             cur_success_frame_count = check_generate(object_info, cur_video_pred)
             cur_success_frame_rate = cur_success_frame_count/len(cur_video_pred)
