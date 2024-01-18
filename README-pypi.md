@@ -1,4 +1,4 @@
-![vbench_logo](./asset/vbench_logo.jpg)
+![vbench_logo](./asset/vbench_logo_short.jpg)
 
 ## Project Description
 
