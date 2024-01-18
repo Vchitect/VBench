@@ -1,6 +1,4 @@
-![vbench_logo](./asset/vbench_logo_short.jpg)
-
-## Project Description
+![vbench_logo](https://raw.githubusercontent.com/Vchitect/VBench/master/asset/vbench_logo_short.jpg)
 
 **VBench** is a comprehensive benchmark suite for video generative models. You can use **VBench** to evaluate video generation models from 16 different ability aspects.
 
