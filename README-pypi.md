@@ -1,4 +1,6 @@
-# Project Description
+![vbench_logo](./asset/vbench_logo.jpg)
+
+## Project Description
 
 **VBench** is a comprehensive benchmark suite for video generative models. You can use **VBench** to evaluate video generation models from 16 different ability aspects.
 
@@ -13,10 +15,9 @@ This project is the PyPI implementation of the following research:
 [![Visitor](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FVchitect%2FVBench&count_bg=%23FFA500&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false)](https://hits.seeyoufarm.com)
 
 ## Installation
-#### Install with pip
-    ```
-    pip install vbench
-    ```
+```
+pip install vbench
+```
 
 To evaluate some video generation ability aspects, you need to install [detectron2](https://github.com/facebookresearch/detectron2) via:
    ```
