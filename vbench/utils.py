@@ -138,6 +138,8 @@ def load_video(video_path, data_transform=None, num_frames=None, return_tensor=T
         frame_ls = [frame]
         buffer = np.array(frame_ls)
     elif video_path.endswith('.mp4'):
+        import decord
+        decord.bridge.set_bridge('native')
         if width:
             video_reader = VideoReader(video_path, width=width, height=height, num_threads=1)
         else:

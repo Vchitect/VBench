@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
-from utils.flow_utils import warp
-from networks.blocks.ifrnet import (
+from vbench.third_party.amt.utils.flow_utils import warp
+from vbench.third_party.amt.networks.blocks.ifrnet import (
     convrelu, resize,
     ResBlock,
 )
