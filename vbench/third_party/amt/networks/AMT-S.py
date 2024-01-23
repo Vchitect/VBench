@@ -1,23 +1,23 @@
 import torch
 import torch.nn as nn
-from networks.blocks.raft import (
+from vbench.third_party.amt.networks.blocks.raft import (
+    SmallUpdateBlock,
     coords_grid,
-    SmallUpdateBlock, BidirCorrBlock
+    BidirCorrBlock
 )
-from networks.blocks.feat_enc import (
+from vbench.third_party.amt.networks.blocks.feat_enc import (
     SmallEncoder
 )
-from networks.blocks.ifrnet import (
+from vbench.third_party.amt.networks.blocks.ifrnet import (
     resize,
     Encoder,
     InitDecoder,
     IntermediateDecoder
 )
-from networks.blocks.multi_flow import (
+from vbench.third_party.amt.networks.blocks.multi_flow import (
     multi_flow_combine,
     MultiFlowDecoder
 )
-
 
 class Model(nn.Module):
     def __init__(self, 

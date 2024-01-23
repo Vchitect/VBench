@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from utils.flow_utils import warp
+from vbench.third_party.amt.utils.flow_utils import warp
 
 
 def resize(x, scale_factor):

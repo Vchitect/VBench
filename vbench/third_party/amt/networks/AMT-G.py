@@ -1,20 +1,20 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from networks.blocks.raft import (
+from vbench.third_party.amt.networks.blocks.raft import (
     coords_grid,
     BasicUpdateBlock, BidirCorrBlock
 )
-from networks.blocks.feat_enc import (
+from vbench.third_party.amt.networks.blocks.feat_enc import (
     LargeEncoder
 )
-from networks.blocks.ifrnet import (
+from vbench.third_party.amt.networks.blocks.ifrnet import (
     resize,
     Encoder,
     InitDecoder,
     IntermediateDecoder
 )
-from networks.blocks.multi_flow import (
+from vbench.third_party.amt.networks.blocks.multi_flow import (
     multi_flow_combine,
     MultiFlowDecoder
 )
