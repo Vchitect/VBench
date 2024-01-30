@@ -1,0 +1,1 @@
+wget https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/umt/single_modality/l16_ptk710_ftk710_ftk400_f16_res224.pth -P  ~/.cache/vbench/umt_model/
