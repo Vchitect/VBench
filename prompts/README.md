@@ -44,9 +44,9 @@ We specify how to sample from `Prompts per Category` for VBench evaluation, and 
             for index in range(5):
 
                 # perform sampling
-                video_ = sample_per_video(dimension, prompt, idx)    
+                video = sample_func(prompt, index)    
                 cur_save_path = f'{args.save_path}/{prompt}-{index}.mp4'
-                torchvision.io.write_video(cur_save_path, video_, fps=8)
+                torchvision.io.write_video(cur_save_path, video, fps=8)
     ```
 
 ### Further Explanations
@@ -88,8 +88,8 @@ To sample videos for VBench evaluation:
         for index in range(5):
 
             # perform sampling
-            video_ = sample_per_video(dimension, prompt, idx)    
+            video = sample_func(prompt, index)    
             cur_save_path = f'{args.save_path}/{prompt}-{index}.mp4'
-            torchvision.io.write_video(cur_save_path, video_, fps=8)
+            torchvision.io.write_video(cur_save_path, video, fps=8)
     ```
 
