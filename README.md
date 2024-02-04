@@ -18,6 +18,18 @@ This repository contains the implementation of the following paper:
 ![overall_structure](./asset/fig_teaser_new.jpg)
 We propose **VBench**, a comprehensive benchmark suite for video generative models. We design a comprehensive and hierarchical <b>Evaluation Dimension Suite</b> to decompose "video generation quality" into multiple well-defined dimensions to facilitate fine-grained and objective evaluation. For each dimension and each content category, we carefully design a <b>Prompt Suite</b> as test cases, and sample <b>Generated Videos</b> from a set of video generation models. For each evaluation dimension, we specifically design an <b>Evaluation Method Suite</b>, which uses carefully crafted method or designated pipeline for automatic objective evaluation. We also conduct <b>Human Preference Annotation</b> for the generated videos for each dimension, and show that VBench evaluation results are <b>well aligned with human perceptions</b>. VBench can provide valuable insights from multiple perspectives.
 
+
+## :mortar_board: Evaluation Results
+<p align="center">
+  <img src="./asset/radar-open.jpg" width="48%" style="margin-right: 4%;" />
+  <img src="./asset/radar-close.jpg" width="48%" />
+</p>
+
+We visualize the evaluation results of various publicly available video generation models, as well as the Gen-2 and Pika from startup companies, in 16 VBench dimensions. We normalize the results per dimension for clearer comparisons. (See Leaderboard [here](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard))
+
+The values have been normalized for better readability of the chart. The normalization process involves scaling each set of performance values to a common scale between 0.3 and 0.8. The formula used for normalization is: (value - min value) / (max value - min value).
+
+
 ## :fire: Updates
 - [01/2024] PyPI pacakge is released! [![PyPI](https://img.shields.io/pypi/v/vbench)](https://pypi.org/project/vbench/)
 - [12/2023] Evaluation code released for 16 Text-to-Video (T2V) evaluation dimensions. 
