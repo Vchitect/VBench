@@ -16,6 +16,7 @@ from vbench.third_party.RAFT.core.raft import RAFT
 from vbench.third_party.RAFT.core.utils_core.utils import InputPadder
 
 
+CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 DEVICE = 'cuda'
 
 
@@ -145,7 +146,7 @@ def register_subparsers(subparser):
     parser.add_argument('--videos_path', default="", required=True, help="video path for filtering")
     parser.add_argument('--result_path', type=str, default="./filter_results", help='result save path')
     parser.add_argument('--store_name', type=str, default="filtered_static_video.json", help='result file name')
-    parser.add_argument('--prompt_file', type=str, default="./VBench_full_info.json", help='static_prompt')
+    parser.add_argument('--prompt_file', type=str, default=f"{CUR_DIR}/../VBench_full_info.json", help='static_prompt')
     parser.add_argument('--small', action='store_true', help='use small model')
     parser.add_argument('--mixed_precision', action='store_true', help='use mixed precision')
     parser.add_argument('--alternate_corr', action='store_true', help='use efficent correlation implementation')
