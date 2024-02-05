@@ -1,6 +1,7 @@
 import torch
 import os
 from vbench import VBench
+from datetime import datetime
 
 CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 def register_subparsers(subparser):
@@ -50,10 +51,12 @@ def evaluate(args):
     my_VBench = VBench(device, args.full_json_dir, args.output_path)
     
     print(f'start evaluation')
-
+    
+    current_time = datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
+    
     my_VBench.evaluate(
         videos_path = args.videos_path,
-        name = str(args.dimension),
+        name = f'results_{current_time}',
         dimension_list = args.dimension,
         local=args.load_ckpt_from_local,
         read_frame=args.read_frame,
