@@ -1,6 +1,8 @@
 import torch
+import os
 from vbench import VBench
 
+CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 def register_subparsers(subparser):
     parser = subparser.add_parser('evaluate')
     parser.add_argument(
@@ -12,7 +14,7 @@ def register_subparsers(subparser):
     parser.add_argument(
         "--full_json_dir",
         type=str,
-        default='./VBench_full_info.json',
+        default=f'{CUR_DIR}/../VBench_full_info.json',
         help="path to save the json file that contains the prompt and dimension information",
     )
     parser.add_argument(
