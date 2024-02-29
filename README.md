@@ -130,11 +130,11 @@ python static_filter.py --videos_path $VIDEOS_PATH
    If you find our repo useful for your research, please consider citing our paper:
 
    ```bibtex
-    @InProceedings{huang2023vbench,
+    @InProceedings{huang2024vbench,
         title={{VBench}: Comprehensive Benchmark Suite for Video Generative Models},
         author={Huang, Ziqi and He, Yinan and Yu, Jiashuo and Zhang, Fan and Si, Chenyang and Jiang, Yuming and Zhang, Yuanhan and Wu, Tianxing and Jin, Qingyang and Chanpaisit, Nattapol and Wang, Yaohui and Chen, Xinyuan and Wang, Limin and Lin, Dahua and Qiao, Yu and Liu, Ziwei},
         booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-        year={2023}
+        year={2024}
     }
    ```
 
