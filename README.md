@@ -50,7 +50,7 @@ To evaluate some video generation ability aspects, you need to install [detectro
     
 If there is an error during [detectron2](https://github.com/facebookresearch/detectron2) installation, see [here](https://detectron2.readthedocs.io/en/latest/tutorials/install.html).
 
-Download [VBench_full_info.json](https://raw.githubusercontent.com/Vchitect/VBench/master/VBench_full_info.json) to your running directory to read the benchmark prompt suites.
+Download [VBench_full_info.json](https://github.com/Vchitect/VBench/blob/master/vbench/VBench_full_info.json) to your running directory to read the benchmark prompt suites.
 
 ### Install with git clone
     git clone https://github.com/Vchitect/VBench.git
