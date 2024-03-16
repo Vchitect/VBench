@@ -17,17 +17,21 @@ class VBench(object):
     def build_full_info_json(self, videos_path, name, dimension_list, special_str='', verbose=False, custom_prompt=False):
         full_info_list = load_json(self.full_info_dir)
         cur_full_info_list=[] # to save the prompt and video path info for the current dimensions
-        video_names = os.listdir(videos_path)
-        postfix = '.'+ video_names[0].split('.')[-1]
-
         if custom_prompt:
             dim_custom_not_supported = set(dimension_list) & set([
                 'background_consistency', 'object_class', 'multiple_objects', 'scene', 'appearance_style', 'color', 'spatial_relationship'
             ])
             assert len(dim_custom_not_supported) == 0, f"dimensions : {dim_custom_not_supported} not supported for custom input"
             dimension_list = [dim for dim in dimension_list if dim not in dim_custom_not_supported]
-            cur_full_info_list = [{'prompt_en': name, 'dimension': dimension_list, 'video_list': [name]} for name in video_names]
+            if os.path.isfile(videos_path):
+                cur_full_info_list = [{"prompt_en": videos_path.split(".")[:-1], "dimension": dimension_list, "video_list": [videos_path]}]
+            else:
+                video_names = os.listdir(videos_path)
+                postfix = '.'+ video_names[0].split('.')[-1]
+                cur_full_info_list = [{'prompt_en': name, 'dimension': dimension_list, 'video_list': [os.path.join(videos_path, name)]} for name in video_names]
         else:
+            video_names = os.listdir(videos_path)
+            postfix = '.'+ video_names[0].split('.')[-1]
             for prompt_dict in full_info_list:
                 # if the prompt belongs to any dimension we want to evaluate
                 if set(dimension_list) & set(prompt_dict["dimension"]): 
