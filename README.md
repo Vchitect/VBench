@@ -124,22 +124,6 @@ To filter static videos in the temporal flickering dimension, run this:
 python static_filter.py --videos_path $VIDEOS_PATH
 ```
 
-To videos with custom input prompt:
-```
-python evaluate.py \
-    --dimension $DIMENSION \
-    --videos_path /path/to/folder_or_video/ \
-    --custom_input
-
-# or 
-
-vbench evaluate \
-    --dimension $DIMENSION \
-    --videos_path /path/to/folder_or_video/ \
-    --custom_input
-```
-
-Note: The following dimensions do not support custom prompt: `'background_consistency', 'object_class', 'multiple_objects', 'scene', 'appearance_style', 'color', 'spatial_relationship'`
 
 ## :black_nib: Citation
 
