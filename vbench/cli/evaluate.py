@@ -42,6 +42,12 @@ def register_subparsers(subparser):
         required=False,
         help="whether directly read frames, or directly read videos",
     )
+    parser.add_argument(
+        "--custom_input",
+        action="store_true",
+        required=False,
+        help="whether use custom input prompt or vbench prompt"
+    )
     parser.set_defaults(func=evaluate)
 
 def evaluate(args):
@@ -60,6 +66,7 @@ def evaluate(args):
         dimension_list = args.dimension,
         local=args.load_ckpt_from_local,
         read_frame=args.read_frame,
+        custom_prompt=args.custom_input,
     )
     print('done')
 
