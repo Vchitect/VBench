@@ -1,6 +1,7 @@
 import torch
 import os
 from vbench import VBench
+from datetime import datetime
 
 import argparse
 
@@ -17,7 +18,7 @@ def parse_args():
     parser.add_argument(
         "--full_json_dir",
         type=str,
-        default=f'{CUR_DIR}/VBench_full_info.json',
+        default=f'{CUR_DIR}/vbench/VBench_full_info.json',
         help="path to save the json file that contains the prompt and dimension information",
     )
     parser.add_argument(
@@ -28,9 +29,9 @@ def parse_args():
     )
     parser.add_argument(
         "--dimension",
-        type=str,
+        nargs='+',
         required=True,
-        help="evaluation dimensions",
+        help="list of evaluation dimensions, usage: --dimension <dim_1> <dim_2>",
     )
     parser.add_argument(
         "--load_ckpt_from_local",
@@ -44,6 +45,12 @@ def parse_args():
         required=False,
         help="whether directly read frames, or directly read videos",
     )
+    parser.add_argument(
+        "--custom_input",
+        action="store_true",
+        required=False,
+        help="whether use custom input prompt or vbench prompt"
+    )
     args = parser.parse_args()
     return args
 
@@ -56,12 +63,14 @@ def main():
     my_VBench = VBench(device, args.full_json_dir, args.output_path)
     
     print(f'start evaluation')
+    current_time = datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
     my_VBench.evaluate(
         videos_path = args.videos_path,
-        name = args.dimension,
-        dimension_list = [args.dimension],
+        name = f'results_{current_time}',
+        dimension_list = args.dimension,
         local=args.load_ckpt_from_local,
         read_frame=args.read_frame,
+        custom_prompt=args.custom_input,
     )
     print('done')
 

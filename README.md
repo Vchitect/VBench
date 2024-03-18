@@ -50,7 +50,7 @@ To evaluate some video generation ability aspects, you need to install [detectro
     
 If there is an error during [detectron2](https://github.com/facebookresearch/detectron2) installation, see [here](https://detectron2.readthedocs.io/en/latest/tutorials/install.html).
 
-Download [VBench_full_info.json](https://github.com/Vchitect/VBench/blob/master/vbench/VBench_full_info.json) to your running directory to read the benchmark prompt suites.
+Download [VBench_full_info.json](https://raw.githubusercontent.com/Vchitect/VBench/master/VBench_full_info.json) to your running directory to read the benchmark prompt suites.
 
 ### Install with git clone
     git clone https://github.com/Vchitect/VBench.git
@@ -60,6 +60,32 @@ Download [VBench_full_info.json](https://github.com/Vchitect/VBench/blob/master/
 If there is an error during [detectron2](https://github.com/facebookresearch/detectron2) installation, see [here](https://detectron2.readthedocs.io/en/latest/tutorials/install.html).
 
 ## Usage
+Use VBench to evaluate videos, and video generative models.
+- A Side Note: VBench is designed for evaluating different models on a standard benchmark. Therefore, by default, we enforce evaluation on the **standard VBench prompt lists** to ensure **fair comparisons** among different video generation models. That's also why we give warnings when a required video is not found. This is done via defining the set of prompts in [VBench_full_info.json](https://github.com/Vchitect/VBench/blob/master/VBench_full_info.json). However, we understand that many users would like to use VBench to evaluate their own videos, or videos generated from prompts that does not belong to the VBench Prompt Suite, so we also added the function of **Evaluating Your Own Videos**. Simply turn the `custom_input` flag on, and you can evaluate your own videos.
+
+
+### **[New]** Evaluate Your Own Videos
+We support evaluating any video. Simply provide the path to the video file, or the path to the folder that contains your videos. There is no requirement on the videos' names.
+- Note: We support customized videos / prompts for the following dimensions: `'subject_consistency', 'background_consistency', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality'`
+
+
+To evaluate videos with customed input prompt, run our script with the `custom_input` flag on:
+```
+python evaluate.py \
+    --dimension $DIMENSION \
+    --videos_path /path/to/folder_or_video/ \
+    --custom_input
+```
+alternatively you can use our command:
+```
+vbench evaluate \
+    --dimension $DIMENSION \
+    --videos_path /path/to/folder_or_video/ \
+    --custom_input
+```
+
+### Evaluation on the Standard Prompt Suite of VBench
+
 ##### command line 
 ```bash
     vbench evaluate --videos_path $VIDEO_PATH --dimension $DIMENSION
@@ -88,6 +114,8 @@ For example:
         dimension_list = ["human_action"],
     )
 ```
+
+
 
 
 ## :gem: Pre-Trained Models
