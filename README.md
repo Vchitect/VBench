@@ -32,6 +32,7 @@ The values have been normalized for better readability of the chart. The normali
 
 
 ## :fire: Updates
+- [03/2024] We support evaluating customized video! See [here](https://github.com/Vchitect/VBench/?tab=readme-ov-file#new-evaluate-your-own-videos).
 - [01/2024] PyPI pacakge is released! [![PyPI](https://img.shields.io/pypi/v/vbench)](https://pypi.org/project/vbench/)
 - [12/2023] Evaluation code released for 16 Text-to-Video (T2V) evaluation dimensions. 
     - `['subject_consistency', 'background_consistency', 'temporal_flickering', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality', 'object_class', 'multiple_objects', 'human_action', 'color', 'spatial_relationship', 'scene', 'temporal_style', 'appearance_style', 'overall_consistency']`
