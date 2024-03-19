@@ -50,7 +50,7 @@ To evaluate some video generation ability aspects, you need to install [detectro
     
 If there is an error during [detectron2](https://github.com/facebookresearch/detectron2) installation, see [here](https://detectron2.readthedocs.io/en/latest/tutorials/install.html).
 
-Download [VBench_full_info.json](https://raw.githubusercontent.com/Vchitect/VBench/master/VBench_full_info.json) to your running directory to read the benchmark prompt suites.
+Download [VBench_full_info.json](https://github.com/Vchitect/VBench/blob/master/vbench/VBench_full_info.json) to your running directory to read the benchmark prompt suites.
 
 ### Install with git clone
     git clone https://github.com/Vchitect/VBench.git
@@ -61,7 +61,7 @@ If there is an error during [detectron2](https://github.com/facebookresearch/det
 
 ## Usage
 Use VBench to evaluate videos, and video generative models.
-- A Side Note: VBench is designed for evaluating different models on a standard benchmark. Therefore, by default, we enforce evaluation on the **standard VBench prompt lists** to ensure **fair comparisons** among different video generation models. That's also why we give warnings when a required video is not found. This is done via defining the set of prompts in [VBench_full_info.json](https://github.com/Vchitect/VBench/blob/master/VBench_full_info.json). However, we understand that many users would like to use VBench to evaluate their own videos, or videos generated from prompts that does not belong to the VBench Prompt Suite, so we also added the function of **Evaluating Your Own Videos**. Simply turn the `custom_input` flag on, and you can evaluate your own videos.
+- A Side Note: VBench is designed for evaluating different models on a standard benchmark. Therefore, by default, we enforce evaluation on the **standard VBench prompt lists** to ensure **fair comparisons** among different video generation models. That's also why we give warnings when a required video is not found. This is done via defining the set of prompts in [VBench_full_info.json](https://github.com/Vchitect/VBench/blob/master/vbench/VBench_full_info.json). However, we understand that many users would like to use VBench to evaluate their own videos, or videos generated from prompts that does not belong to the VBench Prompt Suite, so we also added the function of **Evaluating Your Own Videos**. Simply turn the `custom_input` flag on, and you can evaluate your own videos.
 
 
 ### **[New]** Evaluate Your Own Videos
@@ -107,7 +107,7 @@ For example:
 For example: 
 ```python
     from vbench import VBench
-    my_VBench = VBench(device, "VBench_full_info.json", "evaluation_results")
+    my_VBench = VBench(device, "vbench/VBench_full_info.json", "evaluation_results")
     my_VBench.evaluate(
         videos_path = "sampled_videos/lavie/human_action",
         name = "lavie_human_action",
