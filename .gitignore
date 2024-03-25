@@ -167,3 +167,10 @@ cython_debug/
 private_dev/*
 evaluation_results/*.json
 vbench/third_party/ViCLIP/bpe_simple_vocab_16e6.txt.gz
+trash*
+
+# image suite
+vbench2_beta_i2v/data
+# vbench2_beta_i2v/third_party*
+vbench2_beta_reliable/third_party*
+vbench2_beta_reliable/*
