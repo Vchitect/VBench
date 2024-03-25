@@ -26,14 +26,16 @@ We propose **VBench**, a comprehensive benchmark suite for video generative mode
   <img src="./asset/radar-close.jpg" width="48%" />
 </p>
 
-We visualize the evaluation results of various publicly available video generation models, as well as the Gen-2 and Pika from startup companies, in 16 VBench dimensions. We normalize the results per dimension for clearer comparisons. (See Leaderboard [here](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard))
+We visualize VBench evaluation results of various publicly available video generation models, as well as Gen-2 and Pika, across 16 VBench dimensions. We normalize the results per dimension for clearer comparisons. (See numeric values at our [Leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard))
 
-The values have been normalized for better readability of the chart. The normalization process involves scaling each set of performance values to a common scale between 0.3 and 0.8. The formula used for normalization is: (value - min value) / (max value - min value).
+<!-- The values have been normalized for better readability of the chart. The normalization process involves scaling each set of performance values to a common scale between 0.3 and 0.8. The formula used for normalization is: (value - min value) / (max value - min value). -->
 
 
 ## :fire: Updates
-- [03/2024] We support evaluating customized video! See [here](https://github.com/Vchitect/VBench/?tab=readme-ov-file#new-evaluate-your-own-videos).
-- [01/2024] PyPI pacakge is released! [![PyPI](https://img.shields.io/pypi/v/vbench)](https://pypi.org/project/vbench/)
+- [03/2024] :fire: We now support evaluating the **reliability** (*e.g.*, culture, fairness, bias, safety) of video generative models at **[VBench-Reliability](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_reliability)**.
+- [03/2024] :fire: We now support evaluating **Image-to-Video (I2V)** models at **[VBench-I2V](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_i2v)**.
+- [03/2024] We support **evaluating customized videos**! See [here](https://github.com/Vchitect/VBench/?tab=readme-ov-file#new-evaluate-your-own-videos) for instructions.
+- [01/2024] PyPI pacakge is released! [![PyPI](https://img.shields.io/pypi/v/vbench)](https://pypi.org/project/vbench/). Simply `pip install vbench`.
 - [12/2023] Evaluation code released for 16 Text-to-Video (T2V) evaluation dimensions. 
     - `['subject_consistency', 'background_consistency', 'temporal_flickering', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality', 'object_class', 'multiple_objects', 'human_action', 'color', 'spatial_relationship', 'scene', 'temporal_style', 'appearance_style', 'overall_consistency']`
 - [11/2023] Prompt Suites released. (See prompt lists [here](https://github.com/Vchitect/VBench/tree/master/prompts))
@@ -170,7 +172,10 @@ python static_filter.py --videos_path $VIDEOS_PATH
 
 ## :hearts: Acknowledgement
 
-This codebase is maintained by [Ziqi Huang](https://ziqihuangg.github.io/), [Yinan He](https://github.com/yinanhe), [Jiashuo Yu](https://scholar.google.com/citations?user=iH0Aq0YAAAAJ&hl=zh-CN), [Fan Zhang](https://github.com/zhangfan-p), and [Nattapol Chanpaisit](https://nattapolchan.github.io/me).
+### VBench Contributors
+Order is based on the time joining the project: 
+> [Ziqi Huang](https://ziqihuangg.github.io/), [Yinan He](https://github.com/yinanhe), [Jiashuo Yu](https://scholar.google.com/citations?user=iH0Aq0YAAAAJ&hl=zh-CN), [Fan Zhang](https://github.com/zhangfan-p), [Nattapol Chanpaisit](https://nattapolchan.github.io/me), [Xiaojie Xu](https://github.com/xjxu21).
 
+### Open-Sourced Repositories
 This project wouldn't be possible without the following open-sourced repositories:
 [AMT](https://github.com/MCG-NKU/AMT/), [UMT](https://github.com/OpenGVLab/unmasked_teacher), [RAM](https://github.com/xinyu1205/recognize-anything), [CLIP](https://github.com/openai/CLIP), [RAFT](https://github.com/princeton-vl/RAFT), [GRiT](https://github.com/JialianW/GRiT), [IQA-PyTorch](https://github.com/chaofengc/IQA-PyTorch/), [ViCLIP](https://github.com/OpenGVLab/InternVideo/tree/main/Data/InternVid), and [LAION Aesthetic Predictor](https://github.com/LAION-AI/aesthetic-predictor).
