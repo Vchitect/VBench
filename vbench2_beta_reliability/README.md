@@ -90,4 +90,6 @@ my_VBench.evaluate(
 
 ## :hearts: Acknowledgement
 
+**VBench-Reliability** is currently maintained by [Ziqi Huang](https://ziqihuangg.github.io/) and [Xiaojie Xu](https://github.com/xjxu21)
+
 We make use of [CLIP](https://github.com/openai/CLIP), [RetinaFace](https://github.com/ternaus/retinaface), [NudeNet](https://github.com/facebookresearch/co-tracker), [SD Safety Checker](https://huggingface.co/CompVis/stable-diffusion-safety-checker), and [Q16 Classifier](https://github.com/ml-research/Q16). Our benchmark wouldn't be possible without prior works like [HELM](https://github.com/stanford-crfm/helm/tree/main).

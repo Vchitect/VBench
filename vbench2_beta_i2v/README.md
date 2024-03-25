@@ -116,6 +116,6 @@ my_VBench.evaluate(
 
 ## :hearts: Acknowledgement
 
-This codebase is maintained by [Ziqi Huang](https://ziqihuangg.github.io/), [Fan Zhang](https://github.com/zhangfan-p)
+**VBench-I2V** is currently maintained by [Ziqi Huang](https://ziqihuangg.github.io/) and [Fan Zhang](https://github.com/zhangfan-p).
 
 We made use of [DINO](https://github.com/facebookresearch/dino) and [Co-Tracker](https://github.com/facebookresearch/co-tracker).

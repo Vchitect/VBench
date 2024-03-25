@@ -171,6 +171,3 @@ trash*
 
 # image suite
 vbench2_beta_i2v/data
-# vbench2_beta_i2v/third_party*
-vbench2_beta_reliable/third_party*
-vbench2_beta_reliable/*
