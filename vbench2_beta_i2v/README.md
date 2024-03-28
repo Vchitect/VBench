@@ -61,6 +61,34 @@ To prepare the sampled videos for evaluation:
     ......
     ```
 
+### Pseudo-Code for Sampling
+- If you want to evaluate certain dimensions, below are the pseudo-code for sampling.
+    ```
+    dimension_list = ["i2v_subject", "i2v_background", "camera_motion"]
+
+    for dimension in dimension_list:
+
+        # set random seed
+        if args.seed:
+            torch.manual_seed(args.seed)    
+        
+        # prepare inputs
+
+        image_folder = "./vbench2_beta_i2v/data/crop/{resolution} # resolution = 1-1/8-5/7-4/16-9
+        info_list = json.load(open("./vbench2_beta_i2v/vbench2_i2v_full_info.json", "r"))
+        inputs = [(os.path.join(image_folder, info["image_name"]), info["prompt_en"]) for info in info_list if dimension in info["dimension"]]
+        
+        for image_path, prompt in inputs:
+
+            # sample 5 videos for each prompt
+            for index in range(5):
+
+                # perform sampling
+                video = sample_func(image_path, prompt, index)    
+                cur_save_path = f'{args.save_path}/{prompt}-{index}.mp4'
+                torchvision.io.write_video(cur_save_path, video, fps=fps, video_codec='h264', options={'crf': '10'})
+    ```
+
 ## Usage
 
 We have introduced three dimensions for the image-to-video task, namely: `i2v_subject`, `i2v_background`, and `camera_motion`. 
