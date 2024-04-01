@@ -120,6 +120,15 @@ For example:
     )
 ```
 
+### Example of Evaluating VideoCrafter-1.0
+We have provided scripts to download VideoCrafter-1.0 samples, and the corresponding evaluation scripts.
+```
+# download sampled videos
+sh scripts/download_videocrafter1.sh
+
+# evaluate VideoCrafter-1.0
+sh scripts/evaluate_videocrafter1.sh
+```
 
 
 
