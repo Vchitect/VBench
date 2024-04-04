@@ -48,6 +48,24 @@ def register_subparsers(subparser):
         required=False,
         help="whether use custom input prompt or vbench prompt"
     )
+    parser.add_argument(
+        "--prompt",
+        type=str,
+        required=False,
+        help="""Specify the input prompt
+        If not specified, filenames will be used as input prompts
+        *Mutually exclusive to --prompt_file.
+        """
+    )
+    parser.add_argument(
+        "--prompt_file",
+        type=str,
+        required=False,
+        help="""Specify the path of the file that contains prompt lists,
+        If not specified, filenames will be used as input prompts.
+        *Mutually exclusive to --prompt.
+        """
+    )
     parser.set_defaults(func=evaluate)
 
 def evaluate(args):
@@ -59,10 +77,22 @@ def evaluate(args):
     print(f'start evaluation')
     
     current_time = datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
+
+    prompt = []
+    
+    if args.prompt_file != "" and len(args.prompt) != 0:
+        raise Exception("--prompt_file and --prompt cannot be used together")
+
+    elif args.prompt_file:
+        with open(args.prompt_file, 'r') as f:
+            prompt = [line.strip() for line in f.readlines()]
+    elif args.prompt:
+        prompt = [args.prompt]
     
     my_VBench.evaluate(
         videos_path = args.videos_path,
         name = f'results_{current_time}',
+        prompt_list=prompt,
         dimension_list = args.dimension,
         local=args.load_ckpt_from_local,
         read_frame=args.read_frame,
