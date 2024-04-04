@@ -54,14 +54,22 @@ class VBench(object):
         return cur_full_info_path
 
 
-    def evaluate(self, videos_path, name, dimension_list=None, local=False, read_frame=False, custom_prompt=False):
+    def evaluate(self, videos_path, name, prompt_list, dimension_list=None, local=False, read_frame=False, custom_prompt=False):
         results_dict = {}
         if dimension_list is None:
             dimension_list = self.build_full_dimension_list()
         submodules_dict = init_submodules(dimension_list, local=local, read_frame=read_frame)
-        # print('BEFORE BUILDING')
+
         cur_full_info_path = self.build_full_info_json(videos_path, name, dimension_list, custom_prompt=custom_prompt)
-        # print('AFTER BUILDING')
+        
+        if len(prompt_list) > 0:
+            assert len(prompt_list) == len(cur_full_info_path), "Number of prompts must match with number of videos. To read the prompt from filename, delete --prompt_file and --prompt_list"
+
+            for info_dict, prompt in zip(cur_full_info_path, prompt_list):
+                info_dict["prompt_en"] = prompt
+
+            print("[DEBUGG] : ", cur_full_info_path)
+
         for dimension in dimension_list:
             try:
                 dimension_module = importlib.import_module(f'vbench.{dimension}')
