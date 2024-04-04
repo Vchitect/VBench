@@ -2,6 +2,7 @@ import os
 
 from .utils import init_submodules, save_json, load_json
 import importlib
+from pathlib import Path
 
 class VBench(object):
     def __init__(self, device, full_info_dir, output_path):
@@ -14,7 +15,7 @@ class VBench(object):
     def build_full_dimension_list(self, ):
         return ["subject_consistency", "background_consistency", "aesthetic_quality", "imaging_quality", "object_class", "multiple_objects", "color", "spatial_relationship", "scene", "temporal_style", 'overall_consistency', "human_action", "temporal_flickering", "motion_smoothness", "dynamic_degree", "appearance_style"]        
 
-    def build_full_info_json(self, videos_path, name, dimension_list, special_str='', verbose=False, custom_prompt=False):
+    def build_full_info_json(self, videos_path, name, dimension_list, prompt_list=[], special_str='', verbose=False, custom_prompt=False):
         full_info_list = load_json(self.full_info_dir)
         cur_full_info_list=[] # to save the prompt and video path info for the current dimensions
         if custom_prompt:
@@ -24,14 +25,37 @@ class VBench(object):
             assert len(dim_custom_not_supported) == 0, f"dimensions : {dim_custom_not_supported} not supported for custom input"
             dimension_list = [dim for dim in dimension_list if dim not in dim_custom_not_supported]
             if os.path.isfile(videos_path):
-                cur_full_info_list = [{"prompt_en": videos_path.split(".")[:-1], "dimension": dimension_list, "video_list": [videos_path]}]
+                cur_full_info_list = [{"prompt_en": Path(videos_path).stem, "dimension": dimension_list, "video_list": [videos_path]}]
+                if len(prompt_list) == 1:
+                    cur_full_info_list[0]["prompt_en"] = prompt_list[0]
             else:
                 video_names = os.listdir(videos_path)
-                postfix = '.'+ video_names[0].split('.')[-1]
-                cur_full_info_list = [{'prompt_en': name, 'dimension': dimension_list, 'video_list': [os.path.join(videos_path, name)]} for name in video_names]
+
+                cur_full_info_list = []
+
+                for filename in video_names:
+                    postfix = Path(os.path.join(videos_path, filename)).suffix
+                    if postfix.lower() not in ['.mp4', '.gif', '.jpg', '.png']:
+                        continue
+                    cur_full_info_list.append({
+                        "prompt_en": Path(filename).stem, 
+                        "dimension": dimension_list, 
+                        "video_list": [os.path.join(videos_path, filename)]
+                    })
+                if len(prompt_list) > 0:
+                    assert len(prompt_list) == len(cur_full_info_list), f"""
+                    Number of prompts must match with number of videos.\n
+                    Got {len(prompt_list)=}, {len(cur_full_info_list)=}\n
+                    To read the prompt from filename, delete --prompt_file and --prompt_list
+                    """
+                    for video_info in cur_full_info_list:
+                        try:
+                            video_info["prompt_en"] = prompt_list[video_info["video_list"][0].split('/')[-1]]
+                        except:
+                            video_info["prompt_en"] = prompt_list[video_info["video_list"][0]]
         else:
             video_names = os.listdir(videos_path)
-            postfix = '.'+ video_names[0].split('.')[-1]
+            postfix = Path(video_names[0]).suffix
             for prompt_dict in full_info_list:
                 # if the prompt belongs to any dimension we want to evaluate
                 if set(dimension_list) & set(prompt_dict["dimension"]): 
@@ -54,22 +78,14 @@ class VBench(object):
         return cur_full_info_path
 
 
-    def evaluate(self, videos_path, name, prompt_list, dimension_list=None, local=False, read_frame=False, custom_prompt=False):
+    def evaluate(self, videos_path, name, prompt_list=[], dimension_list=None, local=False, read_frame=False, custom_prompt=False):
         results_dict = {}
         if dimension_list is None:
             dimension_list = self.build_full_dimension_list()
         submodules_dict = init_submodules(dimension_list, local=local, read_frame=read_frame)
 
-        cur_full_info_path = self.build_full_info_json(videos_path, name, dimension_list, custom_prompt=custom_prompt)
+        cur_full_info_path = self.build_full_info_json(videos_path, name, dimension_list, prompt_list, custom_prompt=custom_prompt)
         
-        if len(prompt_list) > 0:
-            assert len(prompt_list) == len(cur_full_info_path), "Number of prompts must match with number of videos. To read the prompt from filename, delete --prompt_file and --prompt_list"
-
-            for info_dict, prompt in zip(cur_full_info_path, prompt_list):
-                info_dict["prompt_en"] = prompt
-
-            print("[DEBUGG] : ", cur_full_info_path)
-
         for dimension in dimension_list:
             try:
                 dimension_module = importlib.import_module(f'vbench.{dimension}')
