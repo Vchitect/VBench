@@ -2,6 +2,7 @@ import os
 
 from .utils import init_submodules, save_json, load_json
 import importlib
+from itertools import chain
 from pathlib import Path
 
 class VBench(object):
@@ -43,16 +44,25 @@ class VBench(object):
                         "video_list": [os.path.join(videos_path, filename)]
                     })
                 if len(prompt_list) > 0:
-                    assert len(prompt_list) == len(cur_full_info_list), f"""
-                    Number of prompts must match with number of videos.\n
-                    Got {len(prompt_list)=}, {len(cur_full_info_list)=}\n
-                    To read the prompt from filename, delete --prompt_file and --prompt_list
+                    assert len(prompt_list) >= len(cur_full_info_list), """
+                        Number of prompts should match with number of videos.\n
+                        Got {len(prompt_list)=}, {len(cur_full_info_list)=}\n
+                        To read the prompt from filename, delete --prompt_file and --prompt_list
+                        """
+
+                    all_video_path = [os.path.abspath(file) for file in list(chain.from_iterable(vid["video_list"] for vid in cur_full_info_list))]
+                    backslash = "\n"
+                    assert len(set(all_video_path) - set([os.path.abspath(path_key) for path_key in prompt_list])) == 0, f"""
+                    The prompts for the following videos are not found in the prompt file: \n
+                    {backslash.join(set(all_video_path) - set([os.path.abspath(path_key) for path_key in prompt_list]))}
                     """
+
+                    video_map = {}
+                    for prompt_key in prompt_list:
+                        video_map[os.path.abspath(prompt_key)] = prompt_list[prompt_key]
+
                     for video_info in cur_full_info_list:
-                        try:
-                            video_info["prompt_en"] = prompt_list[video_info["video_list"][0].split('/')[-1]]
-                        except:
-                            video_info["prompt_en"] = prompt_list[video_info["video_list"][0]]
+                        video_info["prompt_en"] = video_map[os.path.abspath(video_info["video_list"][0])]
         else:
             video_names = os.listdir(videos_path)
             postfix = Path(video_names[0]).suffix
