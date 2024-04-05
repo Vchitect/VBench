@@ -44,6 +44,7 @@ class VBench(object):
                         "video_list": [os.path.join(videos_path, filename)]
                     })
                 if len(prompt_list) > 0:
+                    prompt_list = {os.path.join(videos_path, path): prompt_list[path] for path in prompt_list}
                     assert len(prompt_list) >= len(cur_full_info_list), """
                         Number of prompts should match with number of videos.\n
                         Got {len(prompt_list)=}, {len(cur_full_info_list)=}\n
