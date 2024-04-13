@@ -25,6 +25,29 @@ To evaluate some video generation ability aspects, you need to install [detectro
 If there is an error during [detectron2](https://github.com/facebookresearch/detectron2) installation, see [here](https://detectron2.readthedocs.io/en/latest/tutorials/install.html).
 
 ## Usage
+
+### Evaluate Your Own Videos
+We support evaluating any video. Simply provide the path to the video file, or the path to the folder that contains your videos. There is no requirement on the videos' names.
+- Note: We support customized videos / prompts for the following dimensions: `'subject_consistency', 'background_consistency', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality'`
+
+
+To evaluate videos with customed input prompt, run our script with the `custom_input` flag on:
+```
+python evaluate.py \
+    --dimension $DIMENSION \
+    --videos_path /path/to/folder_or_video/ \
+    --custom_input
+```
+alternatively you can use our command:
+```
+vbench evaluate \
+    --dimension $DIMENSION \
+    --videos_path /path/to/folder_or_video/ \
+    --custom_input
+```
+
+### Evaluation on the Standard Prompt Suite of VBench
+
 ##### command line 
 ```bash
     vbench evaluate --videos_path $VIDEO_PATH --dimension $DIMENSION
@@ -46,7 +69,7 @@ For example:
 For example: 
 ```python
     from vbench import VBench
-    my_VBench = VBench(device, "VBench_full_info.json", "evaluation_results")
+    my_VBench = VBench(device, "vbench/VBench_full_info.json", "evaluation_results")
     my_VBench.evaluate(
         videos_path = "sampled_videos/lavie/human_action",
         name = "lavie_human_action",
