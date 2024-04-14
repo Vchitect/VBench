@@ -107,7 +107,7 @@ def main():
         dimension_list = args.dimension,
         local=args.load_ckpt_from_local,
         read_frame=args.read_frame,
-        custom_prompt=args.custom_input,
+        mode=args.custom_input,
     )
     print('done')
 
