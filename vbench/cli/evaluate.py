@@ -44,10 +44,21 @@ def register_subparsers(subparser):
         help="whether directly read frames, or directly read videos",
     )
     parser.add_argument(
+        "--mode",
+        choices=['custom_input', 'vbench_standard', 'vbench_category'],
+        default='vbench_standard',
+        help="""
+        This flags determine the mode of evaluations, choose one of the following:\n
+        1. "custom_input": receive input prompt from either --prompt/--prompt_file flags or the filename.
+        2. "vbench_standard": evaluate on standard prompt suite of VBench.
+        3. "vbench_category": evaluate on specific category 
+        """,
+    )
+    parser.add_argument(
         "--custom_input",
         action="store_true",
         required=False,
-        help="whether use custom input prompt or vbench prompt"
+        help="(deprecated) use --mode=\"custom_input\" instead",
     )
     parser.add_argument(
         "--prompt",
@@ -69,6 +80,15 @@ def register_subparsers(subparser):
         ** This option must be used with --custom_input flag
         """
     )
+    parser.add_argument(
+        "--category",
+        type=str,
+        required=False,
+        help="""
+        This is for mode=='category'\n
+        The category to evaluate on, usage: --category=animal.
+        """,
+    )
     parser.set_defaults(func=evaluate)
 
 def evaluate(args):
@@ -81,12 +101,16 @@ def evaluate(args):
     
     current_time = datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
 
+    kwargs = {}
+
     prompt = []
+
+    assert args.custom_input == False, "(Deprecated) use --mode=custom_input instead"
     
     if (args.prompt_file is not None) and (args.prompt != ""):
         raise Exception("--prompt_file and --prompt cannot be used together")
-    if (args.prompt_file is not None or args.prompt != "") and (not args.custom_input):
-        raise Exception("must set --custom_input for using external prompt")
+    if (args.prompt_file is not None or args.prompt != "") and (not args.mode=='custom_input'):
+        raise Exception("must set --mode=custom_input for using external prompt")
 
     if args.prompt_file:
         with open(args.prompt_file, 'r') as f:
@@ -94,6 +118,10 @@ def evaluate(args):
         assert type(prompt) == dict, "Invalid prompt file format. The correct format is {\"video_path\": prompt, ... }"
     elif args.prompt != "":
         prompt = [args.prompt]
+
+    if args.category != "":
+        kwargs['category'] = args.category
+
     
     my_VBench.evaluate(
         videos_path = args.videos_path,
@@ -102,7 +130,8 @@ def evaluate(args):
         dimension_list = args.dimension,
         local=args.load_ckpt_from_local,
         read_frame=args.read_frame,
-        custom_prompt=args.custom_input,
+        mode=args.mode,
+        **kwargs
     )
     print('done')
 
