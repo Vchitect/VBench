@@ -5,7 +5,7 @@ import subprocess
 vbench_cmd = ['evaluate', 'static_filter']
 
 def main():
-    parser = argparse.ArgumentParser(prog="vbench")
+    parser = argparse.ArgumentParser(prog="vbench", formatter_class=argparse.RawTextHelpFormatter)
     subparsers = parser.add_subparsers(title='vbench subcommands')
 
     for cmd in vbench_cmd:
