@@ -4,6 +4,8 @@ import numpy as np
 import logging
 import subprocess
 import torch
+import re
+from pathlib import Path
 from PIL import Image, ImageSequence
 from decord import VideoReader, cpu
 from torchvision import transforms
@@ -355,7 +357,16 @@ def init_submodules(dimension_list, local=False, read_frame=False):
                 subprocess.run(wget_command, check=True)
     return submodules_dict
 
-
+def get_prompt_from_filename(path: str):
+    """
+    1. prompt-0.suffix -> prompt
+    2. prompt.suffix -> prompt
+    """
+    prompt = Path(path).stem
+    number_ending = r'-\d+$' # checks ending with -<number>
+    if re.search(number_ending, path):
+        return re.sub(number_ending, '', path)
+    return prompt
 
 def save_json(data, path, indent=4):
     with open(path, 'w', encoding='utf-8') as f:
