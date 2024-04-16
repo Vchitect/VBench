@@ -2,11 +2,12 @@ import torch
 import os
 from vbench import VBench
 from datetime import datetime
+import argparse
 import json
 
 CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 def register_subparsers(subparser):
-    parser = subparser.add_parser('evaluate')
+    parser = subparser.add_parser('evaluate', formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument(
         "--output_path",
         type=str,
@@ -47,11 +48,10 @@ def register_subparsers(subparser):
         "--mode",
         choices=['custom_input', 'vbench_standard', 'vbench_category'],
         default='vbench_standard',
-        help="""
-        This flags determine the mode of evaluations, choose one of the following:\n
-        1. "custom_input": receive input prompt from either --prompt/--prompt_file flags or the filename.
-        2. "vbench_standard": evaluate on standard prompt suite of VBench.
-        3. "vbench_category": evaluate on specific category 
+        help="""This flags determine the mode of evaluations, choose one of the following:
+        1. "custom_input": receive input prompt from either --prompt/--prompt_file flags or the filename
+        2. "vbench_standard": evaluate on standard prompt suite of VBench
+        3. "vbench_category": evaluate on specific category
         """,
     )
     parser.add_argument(
@@ -64,9 +64,9 @@ def register_subparsers(subparser):
         "--prompt",
         type=str,
         default="",
-        help="""Specify the input prompt\n
-        If not specified, filenames will be used as input prompts\n
-        * Mutually exclusive to --prompt_file.\n
+        help="""Specify the input prompt
+        If not specified, filenames will be used as input prompts
+        * Mutually exclusive to --prompt_file.
         ** This option must be used with --custom_input flag
         """
     )
@@ -74,9 +74,9 @@ def register_subparsers(subparser):
         "--prompt_file",
         type=str,
         required=False,
-        help="""Specify the path of the file that contains prompt lists\n
-        If not specified, filenames will be used as input prompts\n
-        * Mutually exclusive to --prompt.\n
+        help="""Specify the path of the file that contains prompt lists
+        If not specified, filenames will be used as input prompts
+        * Mutually exclusive to --prompt.
         ** This option must be used with --custom_input flag
         """
     )
@@ -84,8 +84,7 @@ def register_subparsers(subparser):
         "--category",
         type=str,
         required=False,
-        help="""
-        This is for mode=='category'\n
+        help="""This is for mode=='vbench_category'
         The category to evaluate on, usage: --category=animal.
         """,
     )
