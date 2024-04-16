@@ -1,6 +1,6 @@
 import os
 
-from .utils import init_submodules, save_json, load_json
+from .utils import get_prompt_from_filename, init_submodules, save_json, load_json
 import importlib
 from itertools import chain
 from pathlib import Path
@@ -28,7 +28,7 @@ class VBench(object):
         if mode=='custom_input':
             self.check_dimension_requires_extra_info(dimension_list)
             if os.path.isfile(videos_path):
-                cur_full_info_list = [{"prompt_en": Path(videos_path).stem, "dimension": dimension_list, "video_list": [videos_path]}]
+                cur_full_info_list = [{"prompt_en": get_prompt_from_filename(videos_path), "dimension": dimension_list, "video_list": [videos_path]}]
                 if len(prompt_list) == 1:
                     cur_full_info_list[0]["prompt_en"] = prompt_list[0]
             else:
@@ -41,10 +41,11 @@ class VBench(object):
                     if postfix.lower() not in ['.mp4', '.gif', '.jpg', '.png']:
                         continue
                     cur_full_info_list.append({
-                        "prompt_en": Path(filename).stem, 
+                        "prompt_en": get_prompt_from_filename(filename), 
                         "dimension": dimension_list, 
                         "video_list": [os.path.join(videos_path, filename)]
                     })
+
                 if len(prompt_list) > 0:
                     prompt_list = {os.path.join(videos_path, path): prompt_list[path] for path in prompt_list}
                     assert len(prompt_list) >= len(cur_full_info_list), """
