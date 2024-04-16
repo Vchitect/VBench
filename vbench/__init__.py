@@ -25,7 +25,7 @@ class VBench(object):
 
     def build_full_info_json(self, videos_path, name, dimension_list, prompt_list=[], special_str='', verbose=False, mode='vbench_standard', **kwargs):
         cur_full_info_list=[] # to save the prompt and video path info for the current dimensions
-        if mode=='custom_prompt':
+        if mode=='custom_input':
             self.check_dimension_requires_extra_info(dimension_list)
             if os.path.isfile(videos_path):
                 cur_full_info_list = [{"prompt_en": Path(videos_path).stem, "dimension": dimension_list, "video_list": [videos_path]}]
