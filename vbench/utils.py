@@ -364,8 +364,8 @@ def get_prompt_from_filename(path: str):
     """
     prompt = Path(path).stem
     number_ending = r'-\d+$' # checks ending with -<number>
-    if re.search(number_ending, path):
-        return re.sub(number_ending, '', path)
+    if re.search(number_ending, prompt):
+        return re.sub(number_ending, '', prompt)
     return prompt
 
 def save_json(data, path, indent=4):
