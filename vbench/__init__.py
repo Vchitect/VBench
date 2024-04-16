@@ -67,6 +67,7 @@ class VBench(object):
 
                     for video_info in cur_full_info_list:
                         video_info["prompt_en"] = video_map[os.path.abspath(video_info["video_list"][0])]
+
         elif mode=='vbench_category':
             self.check_dimension_requires_extra_info(dimension_list)
             CUR_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -95,7 +96,7 @@ class VBench(object):
                     postfix = Path(os.path.join(videos_path, filename)).suffix
                     if postfix.lower() not in ['.mp4', '.gif', '.jpg', '.png']:
                         continue
-                    video_list.append(filename)
+                    video_list.append(os.path.join(videos_path, filename))
 
                 cur_full_info_list.append({
                     "prompt_en": prompt, 
