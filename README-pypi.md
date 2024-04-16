@@ -31,19 +31,19 @@ We support evaluating any video. Simply provide the path to the video file, or t
 - Note: We support customized videos / prompts for the following dimensions: `'subject_consistency', 'background_consistency', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality'`
 
 
-To evaluate videos with customed input prompt, run our script with the `custom_input` flag on:
+To evaluate videos with customed input prompt, run our script with `--mode=custom_input`:
 ```
 python evaluate.py \
     --dimension $DIMENSION \
     --videos_path /path/to/folder_or_video/ \
-    --custom_input
+    --mode=custom_input
 ```
 alternatively you can use our command:
 ```
 vbench evaluate \
     --dimension $DIMENSION \
     --videos_path /path/to/folder_or_video/ \
-    --custom_input
+    --mode=custom_input
 ```
 
 ### Evaluation on the Standard Prompt Suite of VBench
@@ -75,6 +75,24 @@ For example:
         name = "lavie_human_action",
         dimension_list = ["human_action"],
     )
+```
+
+### Evaluation on a specific category from VBench
+
+##### command line 
+```bash
+vbench evaluate \
+    --videos_path $VIDEO_PATH \
+    --dimension $DIMENSION \
+    --mode=vbench_category \
+    --category=$CATEGORY
+```
+or 
+```
+python evaluate.py \
+    --dimension $DIMENSION \
+    --videos_path /path/to/folder_or_video/ \
+    --mode=vbench_category
 ```
 
 ## Prompt Suite
