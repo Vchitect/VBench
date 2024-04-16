@@ -4,6 +4,7 @@ import glob
 import numpy as np
 import torch
 from tqdm import tqdm
+from pathlib import Path
 import json
 import shutil
 
@@ -11,7 +12,7 @@ import logging
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-from vbench.utils import CACHE_DIR, load_json
+from vbench.utils import CACHE_DIR, get_prompt_from_filename, load_json
 from vbench.third_party.RAFT.core.raft import RAFT
 from vbench.third_party.RAFT.core.utils_core.utils import InputPadder
 
@@ -109,7 +110,7 @@ def check_and_move(args, filter_results, target_path=None):
          target_path = os.path.join(args.result_path, "filtered_videos")
     os.makedirs(target_path, exist_ok=True)
     for prompt, v in filter_results.items():
-        if v["static_count"] < 5:
+        if v["static_count"] < 5 and args.filter_scope=='temporal_flickering':
             logger.warning(f"Prompt: '{prompt}' has fewer than 5 filter results.")
         for i, video_path in enumerate(v["static_path"]):
             target_name = os.path.join(target_path, f"{prompt}-{i}.mp4")
@@ -120,20 +121,40 @@ def static_filter(args):
     static_filter = StaticFilter(args, device=DEVICE)
     prompt_dict = {}
     prompt_list = []
-    full_prompt_list = load_json(args.prompt_file)
-    for prompt in full_prompt_list:
-        if 'temporal_flickering' in prompt['dimension']:
-            prompt_dict[prompt['prompt_en']] = {"static_count":0, "static_path":[]}
-            prompt_list.append(prompt['prompt_en'])
-    
     paths = sorted(glob.glob(os.path.join(args.videos_path, "*.mp4")))
+    
+    if args.filter_scope=='temporal_flickering':
+        full_prompt_list = load_json(f"{CUR_DIR}/../VBench_full_info.json")
+        for prompt in full_prompt_list:
+            if 'temporal_flickering' in prompt['dimension']:
+                prompt_dict[prompt['prompt_en']] = {"static_count":0, "static_path":[]}
+                prompt_list.append(prompt['prompt_en'])
+
+    elif args.filter_scope=='all':
+        for prompt in paths:
+            prompt = get_prompt_from_filename(prompt)
+            prompt_dict[prompt] = {"static_count":0, "static_path":[]}
+            prompt_list.append(prompt)
+
+    else:
+        assert os.path.isfile(args.filter_scope) and Path(args.filter_scope).suffix.lower() == '.json', f"""
+        --filter_scope flag is not correctly set, set to 'all' to filter all videos in the --videos_path directory, 
+        or provide the correct path to the JSON file
+        """
+        full_prompt_list = load_json(args.filter_scope)
+        for prompt in full_prompt_list:
+            prompt = get_prompt_from_filename(prompt)
+            prompt_dict[prompt] = {"static_count":0, "static_path":[]}
+            prompt_list.append(prompt)
+    
     for path in tqdm(paths):
-        name = '-'.join(path.split('/')[-1].split('-')[:-1]) 
+        name = get_prompt_from_filename(path)
         if name in prompt_list:
-            if prompt_dict[name]["static_count"] < 5:
+            if prompt_dict[name]["static_count"] < 5 or args.filter_scope != 'temporal_flickering':
                 if static_filter.infer(path):
                     prompt_dict[name]["static_count"] += 1
                     prompt_dict[name]["static_path"].append(path)
+
     os.makedirs(args.result_path, exist_ok=True)
     info_file = os.path.join(args.result_path, args.store_name)
     json.dump(prompt_dict, open(info_file, "w"))
@@ -146,9 +167,14 @@ def register_subparsers(subparser):
     parser.add_argument('--videos_path', default="", required=True, help="video path for filtering")
     parser.add_argument('--result_path', type=str, default="./filter_results", help='result save path')
     parser.add_argument('--store_name', type=str, default="filtered_static_video.json", help='result file name')
-    parser.add_argument('--prompt_file', type=str, default=f"{CUR_DIR}/../VBench_full_info.json", help='static_prompt')
     parser.add_argument('--small', action='store_true', help='use small model')
     parser.add_argument('--mixed_precision', action='store_true', help='use mixed precision')
     parser.add_argument('--alternate_corr', action='store_true', help='use efficent correlation implementation')
+    parser.add_argument('--filter_scope', default='temporal_flickering', help=f'''For specifying the scope for filtering videos
+        1. 'temporal_flickering' (default): filter videos based on matches with temporal_flickering dimension of VBench.
+        2. 'all': filter all video in the current directory.
+        3. '$filename': if a filepath to a JSON file is provided, only the filename exists in JSON file will be filtered.
+                >       usage: --filter_scope example.json
+    ''')
     parser.set_defaults(func=static_filter)
 
