@@ -125,7 +125,7 @@ def static_filter(args):
     paths = sorted(glob.glob(os.path.join(args.videos_path, "*.mp4")))
     
     if args.filter_scope=='temporal_flickering':
-        full_prompt_list = load_json(f"{CUR_DIR}/../VBench_full_info.json")
+        full_prompt_list = load_json(f"{CUR_DIR}/vbench/VBench_full_info.json")
         for prompt in full_prompt_list:
             if 'temporal_flickering' in prompt['dimension']:
                 prompt_dict[prompt['prompt_en']] = {"static_count":0, "static_path":[]}
