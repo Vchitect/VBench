@@ -18,8 +18,9 @@ This repository contains the implementation of the following paper:
 
 
 ## :fire: Updates
-- [03/2024] :fire::fire: **[VBench-Reliability](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_reliability)** :fire::fire: We now support evaluating the **reliability** (*e.g.*, culture, fairness, bias, safety) of video generative models.
-- [03/2024] :fire::fire: **[VBench-I2V](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_i2v)** :fire::fire: We now support evaluating **Image-to-Video (I2V)** models. We also provide [Image Suite](https://drive.google.com/drive/folders/1fdOZKQ7HWZtgutCKKA7CMzOhMFUGv4Zx?usp=sharing).
+- [03/2024] We release all the videos we sampled and used for VBench evaluation. [![Dataset Download](https://img.shields.io/badge/Dataset-Download-red?logo=googlechrome&logoColor=red)](https://drive.google.com/drive/folders/13pH95aUN-hVgybUZJBx1e_08R6xhZs5X) See details [here](https://github.com/Vchitect/VBench/tree/master/sampled_videos).
+- [03/2024] :fire: **[VBench-Reliability](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_reliability)** :fire: We now support evaluating the **reliability** (*e.g.*, culture, fairness, bias, safety) of video generative models.
+- [03/2024] :fire: **[VBench-I2V](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_i2v)** :fire: We now support evaluating **Image-to-Video (I2V)** models. We also provide [Image Suite](https://drive.google.com/drive/folders/1fdOZKQ7HWZtgutCKKA7CMzOhMFUGv4Zx?usp=sharing).
 - [03/2024] We support **evaluating customized videos**! See [here](https://github.com/Vchitect/VBench/?tab=readme-ov-file#new-evaluate-your-own-videos) for instructions.
 - [01/2024] PyPI pacakge is released! [![PyPI](https://img.shields.io/pypi/v/vbench)](https://pypi.org/project/vbench/). Simply `pip install vbench`.
 - [12/2023] :fire::fire: **[VBench](https://github.com/Vchitect/VBench?tab=readme-ov-file#usage)** :fire::fire: Evaluation code released for 16 **Text-to-Video (T2V) evaluation** dimensions. 
@@ -141,6 +142,16 @@ sh scripts/evaluate_videocrafter1.sh
 We provide prompt lists are at `prompts/`. 
 
 Check out [details of prompt suites](https://github.com/Vchitect/VBench/tree/master/prompts), and instructions for [**how to sample videos for evaluation**](https://github.com/Vchitect/VBench/tree/master/prompts).
+
+## :bookmark_tabs: Sampled Videos
+
+[![Dataset Download](https://img.shields.io/badge/Dataset-Download-red?logo=googlechrome&logoColor=red)](https://drive.google.com/drive/folders/13pH95aUN-hVgybUZJBx1e_08R6xhZs5X)
+
+To facilitate future research and to ensure full transparency, we release all the videos we sampled and used for VBench evaluation. You can download them on [Google Drive](https://drive.google.com/drive/folders/13pH95aUN-hVgybUZJBx1e_08R6xhZs5X).
+
+See detailed explanations of the sampled videos [here](https://github.com/Vchitect/VBench/tree/master/sampled_videos).
+
+We also provide detailed setting for the models under evaluation [here](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models).
 
 ## :surfer: Evaluation Method Suite
 
