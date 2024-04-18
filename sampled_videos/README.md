@@ -1,12 +1,45 @@
-# Sampled Video
-We provide videos sampled from the current evaluation of 8 T2V models, including [lavie](https://github.com/Vchitect/LaVie), [modelscope](https://modelscope.cn/models/iic/text-to-video-synthesis/summary), [cogvideo](https://github.com/THUDM/CogVideo), [videocrafter-0.9](https://github.com/AILab-CVC/VideoCrafter/tree/30048d49873cbcd21077a001e6a3232e0909d254), [videocrafter-1](https://github.com/AILab-CVC/VideoCrafter), [show-1](https://github.com/showlab/Show-1), pika, gen-2. You can access them on [Google Drive](https://drive.google.com/drive/folders/13pH95aUN-hVgybUZJBx1e_08R6xhZs5X).
+# Sampled Videos
 
-You can utilize **gdown** to download from Google Drive. Below is an example:
-- First, install `gdown` by running following command:
+[![Project Page](https://img.shields.io/badge/Download-Videos-red?logo=googlechrome&logoColor=red)](https://drive.google.com/drive/folders/13pH95aUN-hVgybUZJBx1e_08R6xhZs5X)
+
+To facilitate future research and to ensure full transparency, we release all the videos we sampled and used for VBench evaluation. You can download them on [Google Drive](https://drive.google.com/drive/folders/13pH95aUN-hVgybUZJBx1e_08R6xhZs5X).
+
+## What Videos Do We Provide?
+- **8 T2V Models**:
+    - including [lavie](https://github.com/Vchitect/LaVie), [modelscope](https://modelscope.cn/models/iic/text-to-video-synthesis/summary), [cogvideo](https://github.com/THUDM/CogVideo), [videocrafter-0.9](https://github.com/AILab-CVC/VideoCrafter/tree/30048d49873cbcd21077a001e6a3232e0909d254), [videocrafter-1](https://github.com/AILab-CVC/VideoCrafter), [show-1](https://github.com/showlab/Show-1), pika, gen-2. More details of models are provided below.
+- **2 Suites of Videos for each Model**: 
+    - *Per Dimension*: The sampled videos for each ability dimension evaluated by VBench. The per-dimension prompts are available under [`prompts/prompts_per_dimension`](https://github.com/Vchitect/VBench/tree/master/prompts/prompts_per_dimension), and we also provide a combined list of all the dimensions' prompts at [`prompts/all_dimension.txt`](https://github.com/Vchitect/VBench/blob/master/prompts/all_dimension.txt).
+    - *Per Category*: The sampled videos for each ability dimension evaluated by VBench. The per-dimension prompts are available under [`prompts/prompts_per_category`](https://github.com/Vchitect/VBench/tree/master/prompts/prompts_per_category), and we also provide a combined list of all the dimensions' prompts at [`prompts/all_category.txt`](https://github.com/Vchitect/VBench/blob/master/prompts/all_category.txt).
+
+Below is the folder structure of different models' sampled videos:
+```
+t2v_sampled_videos
+├── per_dimension
+│   ├── cogvideo.zip
+│   ├── gen-2-all-dimension.tar.gz
+│   ├── lavie.zip
+│   ├── modelscope.zip
+│   ├── pika-all-dimension.zip
+│   ├── show-1.tar.gz
+│   ├── videocrafter-1.tar.gz
+│   └── videocrafter-09.zip
+└── per_category
+    ├── cogvideo.zip
+    ├── gen-2-all-category.tar.gz
+    ├── lavie.zip
+    ├── modelscope.zip
+    ├── pika-all-category.zip
+    ├── show-1.tar.gz
+    ├── videocrafter-0.9.zip
+    └── videocrafter-1.zip
+```
+## How to Download the Videos?
+You can utilize **gdown** to download from [Google Drive](https://drive.google.com/drive/folders/13pH95aUN-hVgybUZJBx1e_08R6xhZs5X). Below is an example:
+- First, install `gdown`:
 ```
 pip install gdown
 ```
-- Then, download file use below script:
+- Then, download zip file using `gdown`:
 ```
 gdown --id <file_id> --output <output_filename>
 
@@ -14,28 +47,38 @@ gdown --id <file_id> --output <output_filename>
 gdown --id 1FCRj48-Yv7LM7XGgfDCvIo7Kb9EId5KX --output videocrafter-1.tar.gz
 ```
 
-## Model Setting
-The table below is the setting information for sampling videos using different models.
-| Model | Release Time | Resolution | FPS | Frame Count | Video Length | Checkpoint |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [`LaVie`](https://github.com/Vchitect/LaVie) | 2023-09-26 | 512x512 | 8 | 16 | 2.0s | - |
-| [`ModelScope`](https://modelscope.cn/models/iic/text-to-video-synthesis/summary) | 2023-08-12 | 256x256 | 8 | 16 | 2.0s | [link](https://modelscope.cn/models/iic/text-to-video-synthesis/files) |
-| [`CogVideo`](https://github.com/THUDM/CogVideo) | 2022-05-29 | 480x480 | 10 | 33 | 3.3s | [link](https://github.com/THUDM/CogVideo?tab=readme-ov-file#download) |
-| [`VideoCrafter-0.9`](https://github.com/AILab-CVC/VideoCrafter/tree/30048d49873cbcd21077a001e6a3232e0909d254) | 2023-04-05 | 256x256 | 8 | 16 | 2.0s | [link](https://huggingface.co/VideoCrafter/t2v-version-1-1/blob/main/models/base_t2v/model_rm_wtm.ckpt) |
-| [`VideoCrafter-1.0`](https://github.com/AILab-CVC/VideoCrafter) | 2023-10-30 | 1024x576 | 10 | 16 | 1.6s | [link](https://huggingface.co/VideoCrafter/Text2Video-1024/blob/main/model.ckpt) |
-| [`Show-1`](https://github.com/showlab/Show-1) | 2023-09-27 | 576x320 | 8 | 29 | 3.6s | [link](https://huggingface.co/showlab/show-1-sr2#:~:text=git%20lfs%20install%0A%0A%23%20base%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dbase%0A%23%20interp%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dinterpolation%0A%23%20sr1%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dsr1%0A%23%20sr2%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dsr2) |
-| [`Gen-2`](https://runwayml.com/ai-tools/gen-2/) | 2023-06-07 | 1408x768 | 24 | 96 | 4.0s | - |
-| [`Pika`](https://discord.com/invite/pika) | 2023-06-29 | 1088x640 | 24 | 72 | 3.0s | - |
-## Folder Structure for Sampled Videos
+## What are the Details of the Video Generation Models?
+We list the setting for sampling videos from these models.
+| Model | Release Time | Resolution | FPS | Frame Count | Video Length | Checkpoint | Video Format | 
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [`LaVie`](https://github.com/Vchitect/LaVie) | 2023-09-26 | 512x512 | 8 | 16 | 2.0s | - | MP4 |
+| [`ModelScope`](https://modelscope.cn/models/iic/text-to-video-synthesis/summary) | 2023-08-12 | 256x256 | 8 | 16 | 2.0s | [link](https://modelscope.cn/models/iic/text-to-video-synthesis/files) | MP4 |
+| [`CogVideo`](https://github.com/THUDM/CogVideo) | 2022-05-29 | 480x480 | 10 | 33 | 3.3s | [link](https://github.com/THUDM/CogVideo?tab=readme-ov-file#download) | GIF |
+| [`VideoCrafter-0.9`](https://github.com/AILab-CVC/VideoCrafter/tree/30048d49873cbcd21077a001e6a3232e0909d254) | 2023-04-05 | 256x256 | 8 | 16 | 2.0s | [link](https://huggingface.co/VideoCrafter/t2v-version-1-1/blob/main/models/base_t2v/model_rm_wtm.ckpt) | MP4 |
+| [`VideoCrafter-1.0`](https://github.com/AILab-CVC/VideoCrafter) | 2023-10-30 | 1024x576 | 10 | 16 | 1.6s | [link](https://huggingface.co/VideoCrafter/Text2Video-1024/blob/main/model.ckpt) | MP4 |
+| [`Show-1`](https://github.com/showlab/Show-1) | 2023-09-27 | 576x320 | 8 | 29 | 3.6s | [link](https://huggingface.co/showlab/show-1-sr2#:~:text=git%20lfs%20install%0A%0A%23%20base%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dbase%0A%23%20interp%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dinterpolation%0A%23%20sr1%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dsr1%0A%23%20sr2%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dsr2) | MP4 |
+| [`Gen-2`](https://runwayml.com/ai-tools/gen-2/) | 2023-06-07 | 1408x768 | 24 | 96 | 4.0s | - | MP4 |
+| [`Pika`](https://discord.com/invite/pika) | 2023-06-29 | 1088x640 | 24 | 72 | 3.0s | - | MP4 |
 
-Below is the folder structure of different models' sampled videos.
+## How are Files Structured in Google Drive?
 
-**The folders `LaVie`, `ModelScope`, `CogVideo`, `VideoCrafter-0.9`, `Show-1`, and `VideoCrafter-1` contain videos for "all_dimension" and "all_category," and are respectively divided into 11 subfolders and 8 subfolders, each corresponding to a specific dimension or category.**
 
-*The file structure of `lavie`, `modelscope`, `cogvideo`, and `videocrafter-0.9` is as follows. Videos for models such as `lavie`, `modelscope`, and `videocrafter-0.9` are in mp4 format, while the videos for `cogvideo` are in gif format.*
+### 1. Sub-Folder Organization (LaVie, ModelScope, CogVideo, VideoCrafter-0.9, Show-1, VideoCrafter-1)
+
+For these models, 
+- (1) The `per_dimension` zip contains 11 subfolders corresponding to videos sampled for evaluating different dimensions. 
+- (1) The `per_category` zip contains 8 subfolders corresponding to videos sampled for evaluating different content categories. 
+
+
+#### 1.1. Single-Stage Outputs (LaVie, ModelScope, CogVideo, VideoCrafter-0.9)
+
+For LaVie, ModelScope, CogVideo, VideoCrafter-0.9, we provide their single-stage outputs.
+
+We take `LaVie` as an example:
+
 ```
 - per_dimension
-    - lavie # or modelscope, cogvideo, videocrafter-0.9
+    - lavie
         - appearance_style   
             - The bund Shanghai, Van Gogh style-0.mp4
             - The bund Shanghai, Van Gogh style-1.mp4
@@ -116,11 +159,14 @@ Below is the folder structure of different models' sampled videos.
             - ...
 ```
 
-*Under each dimension or category in `show-1`, there are two folders corresponding to the last two stages of show-1 generated videos, namely super1 and super2. The leaderboard contains the evaluation results for the final stage, super2.*
+#### 1.2. Multi-Stage Outputs (Show-1)
+
+For `show-1`, there are two folders corresponding to the last two stages of show-1 generated videos, namely `super1` and `super2`. The leaderboard results correspond to evaluation on the final stage, namely `super2`.
+
 ```
 - per_dimension
     - show-1
-        - appearance_style/{super1/super2}       # Optional subfolders super1 and super2
+        - appearance_style/{super1/super2}       # subfolder super1 or super2
             - The bund Shanghai, Van Gogh style-0.mp4
             - The bund Shanghai, Van Gogh style-1.mp4
             - ...
@@ -199,12 +245,14 @@ Below is the folder structure of different models' sampled videos.
             - video of yacht sailing in the ocean-1.mp4
             - ...
 ```
-*Under each dimension or category in `videocrafter-1`, there are two folders corresponding to the two resolution options for videocrafter-1 generated videos, namely 1024x576 and 512x320. The leaderboard contains the evaluation results for the 1024x576 resolution.*
+#### 1.3. Multi-Resolution Outputs (VideoCrafter-1)
+
+Under each dimension or category in `videocrafter-1`, there are two folders corresponding to the two resolution options for videocrafter-1 generated videos, namely 1024x576 and 512x320. The leaderboard currently contains the evaluation results for the 1024x576 resolution.
 
 ```
 - per_dimension
     - videocrafter-1
-        - appearance_style/{1024x576/512x320}       # Optional subfolders 1024x576 and 512x320
+        - appearance_style/{1024x576/512x320}       # subfolder 1024x576 or 512x320
             - The bund Shanghai, Van Gogh style-0.mp4
             - The bund Shanghai, Van Gogh style-1.mp4
             - ...
@@ -284,7 +332,9 @@ Below is the folder structure of different models' sampled videos.
             - ...
 ```
 
-**`Gen-2` and `Pika` also include videos for "all_dimension" and "all_category", with each folder containing all the respective videos.**
+### Single-Folder Organization (Gen-2, Pika)
+
+`Gen-2` and `Pika` also include videos for "all_dimension" and "all_category", but we haven't divide the videos into subfolders according to specific dimensions or categories yet.
 ```
 - per_dimension
     - gen-2
