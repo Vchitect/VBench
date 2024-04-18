@@ -11,6 +11,10 @@ To facilitate future research and to ensure full transparency, we release all th
     - *Per Dimension*: The sampled videos for each ability dimension evaluated by VBench. The per-dimension prompts are available under [`prompts/prompts_per_dimension`](https://github.com/Vchitect/VBench/tree/master/prompts/prompts_per_dimension), and we also provide a combined list of all the dimensions' prompts at [`prompts/all_dimension.txt`](https://github.com/Vchitect/VBench/blob/master/prompts/all_dimension.txt).
     - *Per Category*: The sampled videos for each ability dimension evaluated by VBench. The per-dimension prompts are available under [`prompts/prompts_per_category`](https://github.com/Vchitect/VBench/tree/master/prompts/prompts_per_category), and we also provide a combined list of all the dimensions' prompts at [`prompts/all_category.txt`](https://github.com/Vchitect/VBench/blob/master/prompts/all_category.txt).
 
+What's the potential usage of these videos:
+- Further labeling on video quality
+- For Instruction Tuning, using our videos and our human preference labels
+
 Below is the folder structure of different models' sampled videos:
 ```
 t2v_sampled_videos
@@ -332,7 +336,7 @@ Under each dimension or category in `videocrafter-1`, there are two folders corr
             - ...
 ```
 
-### Single-Folder Organization (Gen-2, Pika)
+### 2. Single-Folder Organization (Gen-2, Pika)
 
 `Gen-2` and `Pika` also include videos for "all_dimension" and "all_category", but we haven't divide the videos into subfolders according to specific dimensions or categories yet.
 ```
@@ -359,3 +363,8 @@ Under each dimension or category in `videocrafter-1`, there are two folders corr
             - young people celebrating new year at the office-1.mp4
             - ...
 ```
+
+## Human Preference Labels
+Available for download at [Google Drive](https://drive.google.com/drive/folders/1jYAybu2BazShGV-DLityFi4j7BjTE-my?usp=sharing).
+
+Usage instruction and reading scripts will be added soon.
