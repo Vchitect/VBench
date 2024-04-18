@@ -24,8 +24,8 @@ The table below is the setting information for sampling videos using different m
 | [`VideoCrafter-0.9`](https://github.com/AILab-CVC/VideoCrafter/tree/30048d49873cbcd21077a001e6a3232e0909d254) | 2023-04-05 | 256x256 | 8 | 16 | 2s | [link](https://huggingface.co/VideoCrafter/t2v-version-1-1/blob/main/models/base_t2v/model_rm_wtm.ckpt) |
 | [`VideoCrafter-1.0`](https://github.com/AILab-CVC/VideoCrafter) | 2023-10-30 | 1024x576 | 10 | 16 | 1.6s | [link](https://huggingface.co/VideoCrafter/Text2Video-1024/blob/main/model.ckpt) |
 | [`Show-1`](https://github.com/showlab/Show-1) | 2023-09-27 | 576x320 | 8 | 29 | 3.6s | [link](https://huggingface.co/showlab/show-1-sr2#:~:text=git%20lfs%20install%0A%0A%23%20base%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dbase%0A%23%20interp%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dinterpolation%0A%23%20sr1%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dsr1%0A%23%20sr2%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dsr2) |
-| [`Gen-2`](https://runwayml.com/ai-tools/gen-2/) | 2023-12-14 | 1408x768 | 24 | 96 | 4.0s | - |
-| [`Pika`](https://discord.com/invite/pika) | 2023-12-14 | 1088x640 | 24 | 72 | 3.0s | - |
+| [`Gen-2`](https://runwayml.com/ai-tools/gen-2/) | 2023-06-07 | 1408x768 | 24 | 96 | 4.0s | - |
+| [`Pika`](https://discord.com/invite/pika) | 2023-06-29 | 1088x640 | 24 | 72 | 3.0s | - |
 ## Folder Structure for Sampled Videos
 
 Below is the folder structure of different models' sampled videos.
