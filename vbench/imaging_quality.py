@@ -1,9 +1,14 @@
 import torch
 from tqdm import tqdm
+from torchvision import transforms
 from pyiqa.archs.musiq_arch import MUSIQ
 from vbench.utils import load_video, load_dimension_info
 
 def transform(images):
+    _, _, h, w = images.size()
+    if min(h,w) > 512:
+        scale = 512./min(h,w)
+        images = transforms.Resize(size=( int(scale * h), int(scale * w) ))(images)
     return images / 255.
 
 def technical_quality(model, video_list, device):
