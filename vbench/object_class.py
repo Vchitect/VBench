@@ -49,7 +49,7 @@ def object_class(model, video_dict, device):
     return success_rate, video_results
         
 
-def compute_object_class(json_dir, device, submodules_dict):
+def compute_object_class(json_dir, device, submodules_dict, **kwargs):
     dense_caption_model = DenseCaptioning(device)
     dense_caption_model.initialize_model_det(**submodules_dict)
     logger.info("Initialize detection model success")

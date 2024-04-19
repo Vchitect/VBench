@@ -48,7 +48,7 @@ def scene(model, video_dict, device):
     return success_rate, video_results
         
 
-def compute_scene(json_dir, device, submodules_dict):
+def compute_scene(json_dir, device, submodules_dict, **kwargs):
     model = tag2text_caption(**submodules_dict)
     model.eval()
     model = model.to(device)

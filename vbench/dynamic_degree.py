@@ -140,7 +140,7 @@ def dynamic_degree(dynamic, video_list):
 
 
 
-def compute_dynamic_degree(json_dir, device, submodules_list):
+def compute_dynamic_degree(json_dir, device, submodules_list, **kwargs):
     model_path = submodules_list["model"] 
     # set_args
     args_new = edict({"model":model_path, "small":False, "mixed_precision":False, "alternate_corr":False})

@@ -57,7 +57,7 @@ def subject_consistency(model, video_list, device, read_frame):
     return sim_per_frame, video_results
 
 
-def compute_subject_consistency(json_dir, device, submodules_list):
+def compute_subject_consistency(json_dir, device, submodules_list, **kwargs):
     dino_model = torch.hub.load(**submodules_list).to(device)
     read_frame = submodules_list['read_frame']
     logger.info("Initialize DINO success")

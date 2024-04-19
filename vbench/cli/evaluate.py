@@ -88,6 +88,20 @@ def register_subparsers(subparser):
         The category to evaluate on, usage: --category=animal.
         """,
     )
+
+    ## for dimension specific params ###
+    parser.add_argument(
+        "--imaging_quality_preprocessing_mode",
+        type=str,
+        required=False,
+        default='shorter_centercrop',
+        help="""This is for setting preprocessing in imaging_quality
+        1. 'shorter': if the shorter side is more than 512, the image is resized so that the shorter side is 512.
+        2. 'longer': if the longer side is more than 512, the image is resized so that the longer side is 512.
+        3. 'shorter_centercrop': if the shorter side is more than 512, the image is resized so that the shorter side is 512. 
+        Then the center 512 x 512 after resized is used for evaluation.
+        """,
+    )
     parser.set_defaults(func=evaluate)
 
 def evaluate(args):
@@ -121,7 +135,8 @@ def evaluate(args):
     if args.category != "":
         kwargs['category'] = args.category
 
-    
+    kwargs['imaging_quality_preprocessing_mode'] = args.imaging_quality_preprocessing_mode
+
     my_VBench.evaluate(
         videos_path = args.videos_path,
         name = f'results_{current_time}',
