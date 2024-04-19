@@ -54,7 +54,7 @@ def temporal_flickering(video_list):
     return avg_score, video_results
 
 
-def compute_temporal_flickering(json_dir, device, submodules_list):
+def compute_temporal_flickering(json_dir, device, submodules_list, **kwargs):
     video_list, _ = load_dimension_info(json_dir, dimension='temporal_flickering', lang='en')
     all_results, video_results = temporal_flickering(video_list)
     return all_results, video_results

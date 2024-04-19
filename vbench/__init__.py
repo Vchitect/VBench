@@ -147,7 +147,7 @@ class VBench(object):
                 raise NotImplementedError(f'UnImplemented dimension {dimension}!, {e}')
             submodules_list = submodules_dict[dimension]
             print(f'cur_full_info_path: {cur_full_info_path}') # TODO: to delete
-            results = evaluate_func(cur_full_info_path, self.device, submodules_list)
+            results = evaluate_func(cur_full_info_path, self.device, submodules_list, **kwargs)
             results_dict[dimension] = results
         output_name = os.path.join(self.output_path, name+'_eval_results.json')
         save_json(results_dict, output_name)

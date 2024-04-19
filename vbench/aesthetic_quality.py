@@ -56,7 +56,7 @@ def laion_aesthetic(aesthetic_model, clip_model, video_list, device):
     return aesthetic_avg, video_results
 
 
-def compute_aesthetic_quality(json_dir, device, submodules_list):
+def compute_aesthetic_quality(json_dir, device, submodules_list, **kwargs):
     vit_path = submodules_list[0]
     aes_path = submodules_list[1]
     aesthetic_model = get_aesthetic_model(aes_path).to(device)

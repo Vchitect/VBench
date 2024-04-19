@@ -171,7 +171,7 @@ def motion_smoothness(motion, video_list):
 
 
 
-def compute_motion_smoothness(json_dir, device, submodules_list):
+def compute_motion_smoothness(json_dir, device, submodules_list, **kwargs):
     config = submodules_list["config"] # pretrained/amt_model/AMT-S.yaml
     ckpt = submodules_list["ckpt"] # pretrained/amt_model/amt-s.pth
     motion = MotionSmoothness(config, ckpt, device)

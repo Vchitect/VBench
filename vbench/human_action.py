@@ -95,7 +95,7 @@ def human_action(umt_path, video_list, device):
     return acc, video_results
 
 
-def compute_human_action(json_dir, device, submodules_list):
+def compute_human_action(json_dir, device, submodules_list, **kwargs):
     umt_path = submodules_list[0]
     video_list, _ = load_dimension_info(json_dir, dimension='human_action', lang='en')
     all_results, video_results = human_action(umt_path, video_list, device)

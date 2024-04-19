@@ -4,18 +4,33 @@ from torchvision import transforms
 from pyiqa.archs.musiq_arch import MUSIQ
 from vbench.utils import load_video, load_dimension_info
 
-def transform(images):
-    _, _, h, w = images.size()
-    if min(h,w) > 512:
-        scale = 512./min(h,w)
-        images = transforms.Resize(size=( int(scale * h), int(scale * w) ))(images)
+def transform(images, preprocess_mode='shorter'):
+    if preprocess_mode.startswith('shorter'):
+        _, _, h, w = images.size()
+        if min(h,w) > 512:
+            scale = 512./min(h,w)
+            # print(images.size())
+            images = transforms.Resize(size=( int(scale * h), int(scale * w) ))(images)
+        if preprocess_mode == 'shorter_centercrop':
+            images = transforms.CenterCrop(512)(images)
+            # print(images.size())
+
+    elif preprocess_mode == 'longer':
+        _, _, h, w = images.size()
+        if max(h,w) > 512:
+            scale = 512./max(h,w)
+            images = transforms.Resize(size=( int(scale * h), int(scale * w) ))(images)
+            # print(images.size())
+    else:
+        raise ValueError("Please recheck imaging_quality_mode")
     return images / 255.
 
-def technical_quality(model, video_list, device):
+def technical_quality(model, video_list, device, **kwargs):
+    preprocess_mode = kwargs['imaging_quality_preprocessing_mode']
     video_results = []
     for video_path in tqdm(video_list):
         images = load_video(video_path)
-        images = transform(images)
+        images = transform(images, preprocess_mode)
         acc_score_video = 0.
         for i in range(len(images)):
             frame = images[i].unsqueeze(0).to(device)
@@ -27,7 +42,7 @@ def technical_quality(model, video_list, device):
     return average_score, video_results
 
 
-def compute_imaging_quality(json_dir, device, submodules_list):
+def compute_imaging_quality(json_dir, device, submodules_list, **kwargs):
     model_path = submodules_list['model_path']
 
     model = MUSIQ(pretrained_model_path=model_path)
@@ -35,5 +50,5 @@ def compute_imaging_quality(json_dir, device, submodules_list):
     model.training = False
     
     video_list, _ = load_dimension_info(json_dir, dimension='imaging_quality', lang='en')
-    all_results, video_results = technical_quality(model, video_list, device)
+    all_results, video_results = technical_quality(model, video_list, device, **kwargs)
     return all_results, video_results

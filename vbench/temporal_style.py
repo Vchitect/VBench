@@ -54,7 +54,7 @@ def temporal_style(clip_model, video_dict, tokenizer, device, sample="middle"):
     avg_score = np.mean(sim)
     return avg_score, video_results
 
-def compute_temporal_style(json_dir, device, submodules_list):
+def compute_temporal_style(json_dir, device, submodules_list, **kwargs):
     tokenizer = SimpleTokenizer(os.path.join(CACHE_DIR, "ViCLIP/bpe_simple_vocab_16e6.txt.gz"))
     viclip = ViCLIP(tokenizer= tokenizer, **submodules_list).to(device)
     _, video_dict = load_dimension_info(json_dir, dimension='temporal_style', lang='en')

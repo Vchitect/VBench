@@ -59,7 +59,7 @@ def appearance_style(clip_model, video_dict, device, sample="rand"):
     sim_per_frame = sim / cnt
     return sim_per_frame, video_results
 
-def compute_appearance_style(json_dir, device, submodules_list):
+def compute_appearance_style(json_dir, device, submodules_list, **kwargs):
     clip_model, preprocess = clip.load(device=device, **submodules_list)
     _, video_dict = load_dimension_info(json_dir, dimension='appearance_style', lang='en')
     all_results, video_results = appearance_style(clip_model, video_dict, device)
