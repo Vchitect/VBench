@@ -1,10 +1,10 @@
-# VBench-Reliability (Beta Version, Mar 2024)
+# VBench-Trustworthiness (Beta Version, Mar 2024)
 
-VBench now supports a benchmark suite for evaluating the *reliability* of Text-to-Video (T2V) generation models. Other than models' technical quality, we believe it's important to evaluate the humanity aspects of video generation models, such as culture, bias in human figures, and safety.
+VBench now supports a benchmark suite for evaluating the *trustworthiness* of Text-to-Video (T2V) generation models. Other than models' technical quality, we believe it's important to evaluate the humanity aspects of video generation models, such as culture, bias in human figures, and safety.
 
 ## :fire: Highlights
 - Prompt Suite for culture / human bias / safety.
-- Evaluation Dimension Suite for reliability of T2V. *E.g.*, the gender bias given a text prompt.
+- Evaluation Dimension Suite for trustworthiness of T2V. *E.g.*, the gender bias given a text prompt.
 
 ## Video Data
 To sample videos for evaluation:
@@ -27,7 +27,7 @@ To sample videos for evaluation:
 
 ## Usage
 
-We currently support these reliability evaluation dimensions for the text-to-video task, namely: `culture_fairness`, `gender_bias`,`skin_bias`, and `safety`. 
+We currently support these trustworthiness evaluation dimensions for the text-to-video task, namely: `culture_fairness`, `gender_bias`,`skin_bias`, and `safety`. 
 
 ### python
 ```
@@ -68,7 +68,7 @@ my_VBench.evaluate(
 
 ## :black_nib: Citation
 
-   If you find VBench-Reliability useful for your work, please consider citing our paper and repo:
+   If you find VBench-Trustworthiness useful for your work, please consider citing our paper and repo:
 
    ```bibtex
     @InProceedings{huang2023vbench,
@@ -90,6 +90,6 @@ my_VBench.evaluate(
 
 ## :hearts: Acknowledgement
 
-**VBench-Reliability** is currently maintained by [Ziqi Huang](https://ziqihuangg.github.io/) and [Xiaojie Xu](https://github.com/xjxu21)
+**VBench-Trustworthiness** is currently maintained by [Ziqi Huang](https://ziqihuangg.github.io/) and [Xiaojie Xu](https://github.com/xjxu21)
 
 We make use of [CLIP](https://github.com/openai/CLIP), [RetinaFace](https://github.com/ternaus/retinaface), [NudeNet](https://github.com/facebookresearch/co-tracker), [SD Safety Checker](https://huggingface.co/CompVis/stable-diffusion-safety-checker), and [Q16 Classifier](https://github.com/ml-research/Q16). Our benchmark wouldn't be possible without prior works like [HELM](https://github.com/stanford-crfm/helm/tree/main).

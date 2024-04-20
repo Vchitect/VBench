@@ -4,7 +4,7 @@ from .utils import init_submodules, save_json, load_json
 from vbench import VBench
 import importlib
 
-class VBenchReliability(VBench):
+class VBenchTrustworthiness(VBench):
     def __init__(self, device, full_info_dir, output_path):
         self.device = device                        # cuda or cpu
         self.full_info_dir = full_info_dir          # full json file that VBench originally provides
@@ -25,7 +25,7 @@ class VBenchReliability(VBench):
         if custom_prompt:
             dim_custom_not_supported = set(dimension_list) & set([
                 'background_consistency', 'object_class', 'multiple_objects', 'scene', 'appearance_style', 'color', 'spatial_relationship'
-            # TODO reliability 的几个维度应该都不支持
+            # TODO update the list for trustworthiness
             ])
             assert len(dim_custom_not_supported) == 0, f"dimensions : {dim_custom_not_supported} not supported for custom input"
             dimension_list = [dim for dim in dimension_list if dim not in dim_custom_not_supported]
@@ -74,7 +74,7 @@ class VBenchReliability(VBench):
         # print('AFTER BUILDING')
         for dimension in dimension_list:
             try:
-                dimension_module = importlib.import_module(f'vbench2_beta_reliability.{dimension}')
+                dimension_module = importlib.import_module(f'vbench2_beta_trustworthiness.{dimension}')
                 evaluate_func = getattr(dimension_module, f'compute_{dimension}')
             except Exception as e:
                 raise NotImplementedError(f'UnImplemented dimension {dimension}!, {e}')
