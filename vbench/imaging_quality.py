@@ -9,18 +9,19 @@ def transform(images, preprocess_mode='shorter'):
         _, _, h, w = images.size()
         if min(h,w) > 512:
             scale = 512./min(h,w)
-            # print(images.size())
             images = transforms.Resize(size=( int(scale * h), int(scale * w) ))(images)
         if preprocess_mode == 'shorter_centercrop':
             images = transforms.CenterCrop(512)(images)
-            # print(images.size())
 
     elif preprocess_mode == 'longer':
         _, _, h, w = images.size()
         if max(h,w) > 512:
             scale = 512./max(h,w)
             images = transforms.Resize(size=( int(scale * h), int(scale * w) ))(images)
-            # print(images.size())
+
+    elif preprocess_mode == 'None':
+        return images / 255.
+
     else:
         raise ValueError("Please recheck imaging_quality_mode")
     return images / 255.
