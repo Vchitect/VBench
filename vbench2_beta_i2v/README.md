@@ -1,10 +1,10 @@
 # VBench-I2V (Beta Version, Mar 2024)
 
-VBench now supports a benchmark suite for evaluating Image-to-Video (I2V) generation models.
+VBench now supports evaluating Image-to-Video (I2V) generation models.
 
 ## :fire: Highlights
-- Image Suite.
-- Evaluation Dimension Suite for I2V. *E.g.*, the control of camera motion given an input image.
+- 🖼️ Image Suite: multi-scale, multi-aspect-ratio, comprehensive content variety
+- 📏 Dimensions: video-image consistency, camera motion, video quality, etc.
 
 ## :bookmark_tabs: I2V Image Suite
 We provide a suite of input images to benchmark the Image-to-Video (I2V) task.
