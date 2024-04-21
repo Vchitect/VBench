@@ -71,7 +71,7 @@ class VBench(object):
         elif mode=='vbench_category':
             self.check_dimension_requires_extra_info(dimension_list)
             CUR_DIR = os.path.dirname(os.path.abspath(__file__))
-            category_supported = [ Path(category).stem for category in os.listdir(f'{CUR_DIR}/prompts_per_category/') ]# need refactoring
+            category_supported = [ Path(category).stem for category in os.listdir(f'prompts/prompts_per_category') ]# TODO: probably need refactoring again
             if 'category' not in kwargs:
                 category = category_supported
             else:
