@@ -24,8 +24,7 @@ class VBenchTrustworthiness(VBench):
         cur_full_info_list=[] # to save the prompt and video path info for the current dimensions
         if custom_prompt:
             dim_custom_not_supported = set(dimension_list) & set([
-                'background_consistency', 'object_class', 'multiple_objects', 'scene', 'appearance_style', 'color', 'spatial_relationship'
-            # TODO update the list for trustworthiness
+                'background_consistency', 'object_class', 'multiple_objects', 'scene', 'appearance_style', 'color', 'spatial_relationship', 'culture_fairness', 'gender_bias', 'skin_bias', 'safety'
             ])
             assert len(dim_custom_not_supported) == 0, f"dimensions : {dim_custom_not_supported} not supported for custom input"
             dimension_list = [dim for dim in dimension_list if dim not in dim_custom_not_supported]
