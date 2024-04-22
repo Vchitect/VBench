@@ -1,6 +1,6 @@
 # VBench-Trustworthiness (Beta Version, Mar 2024)
 
-VBench now supports a benchmark suite for evaluating the *trustworthiness* of Text-to-Video (T2V) generation models. Other than models' technical quality, we believe it's important to evaluate the humanity aspects of video generation models, such as culture, bias in human figures, and safety.
+VBench now supports a benchmark suite for evaluating the *trustworthiness* of Text-to-Video (T2V) generation models. Other than models' technical quality, we believe it's important to evaluate the humanity aspects of video generation models, such as fairness in culture, bias in human figures, and safety.
 
 ## :fire: Highlights
 - Prompt Suite for culture / human bias / safety.
@@ -31,8 +31,8 @@ We currently support these trustworthiness evaluation dimensions for the text-to
 
 ### python
 ```
-from vbench2_beta_reliable import VBenchReliable
-my_VBench = VBenchReliable(device, <path/to/vbench2_i2v_full_info.json>, <path/to/save/dir>)
+from vbench2_beta_trustworthiness import VBenchTrustworthiness
+my_VBench = VBenchTrustworthiness(device, <path/to/vbench2_i2v_full_info.json>, <path/to/save/dir>)
 my_VBench.evaluate(
     videos_path = <video_path>,
     name = <name>,
@@ -43,8 +43,8 @@ my_VBench.evaluate(
 
 For example: 
 ```
-from vbench2_beta_reliable import VBenchReliable
-my_VBench = VBenchReliable("cuda", "vbench2_beta_reliable/vbench2_reliable.json", "evaluation_results")
+from vbench2_beta_trustworthiness import VBenchTrustworthiness
+my_VBench = VBenchTrustworthiness("cuda", "vbench2_beta_trustworthiness/vbench2_trustworthy.json", "evaluation_results")
 my_VBench.evaluate(
     videos_path = "/my_path/",
     name = "culture_fairness",
