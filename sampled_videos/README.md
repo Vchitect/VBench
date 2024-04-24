@@ -23,9 +23,11 @@ t2v_sampled_videos
 │   ├── gen-2-all-dimension.tar.gz
 │   ├── lavie.zip
 │   ├── modelscope.zip
+│   ├── opensora.tar
 │   ├── pika-all-dimension.zip
 │   ├── show-1.tar.gz
 │   ├── videocrafter-1.tar.gz
+│   ├── videocrafter-2.tar
 │   └── videocrafter-09.zip
 └── per_category
     ├── cogvideo.zip
@@ -53,16 +55,18 @@ gdown --id 1FCRj48-Yv7LM7XGgfDCvIo7Kb9EId5KX --output videocrafter-1.tar.gz
 
 ## What are the Details of the Video Generation Models?
 We list the setting for sampling videos from these models.
-| Model | Release Time | Resolution | FPS | Frame Count | Video Length | Checkpoint | Video Format | 
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [`LaVie`](https://github.com/Vchitect/LaVie) | 2023-09-26 | 512x512 | 8 | 16 | 2.0s | - | MP4 |
-| [`ModelScope`](https://modelscope.cn/models/iic/text-to-video-synthesis/summary) | 2023-08-12 | 256x256 | 8 | 16 | 2.0s | [link](https://modelscope.cn/models/iic/text-to-video-synthesis/files) | MP4 |
-| [`CogVideo`](https://github.com/THUDM/CogVideo) | 2022-05-29 | 480x480 | 10 | 33 | 3.3s | [link](https://github.com/THUDM/CogVideo?tab=readme-ov-file#download) | GIF |
-| [`VideoCrafter-0.9`](https://github.com/AILab-CVC/VideoCrafter/tree/30048d49873cbcd21077a001e6a3232e0909d254) | 2023-04-05 | 256x256 | 8 | 16 | 2.0s | [link](https://huggingface.co/VideoCrafter/t2v-version-1-1/blob/main/models/base_t2v/model_rm_wtm.ckpt) | MP4 |
-| [`VideoCrafter-1.0`](https://github.com/AILab-CVC/VideoCrafter) | 2023-10-30 | 1024x576 | 10 | 16 | 1.6s | [link](https://huggingface.co/VideoCrafter/Text2Video-1024/blob/main/model.ckpt) | MP4 |
-| [`Show-1`](https://github.com/showlab/Show-1) | 2023-09-27 | 576x320 | 8 | 29 | 3.6s | [link](https://huggingface.co/showlab/show-1-sr2#:~:text=git%20lfs%20install%0A%0A%23%20base%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dbase%0A%23%20interp%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dinterpolation%0A%23%20sr1%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dsr1%0A%23%20sr2%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dsr2) | MP4 |
-| [`Gen-2`](https://runwayml.com/ai-tools/gen-2/) | 2023-06-07 | 1408x768 | 24 | 96 | 4.0s | - | MP4 |
-| [`Pika`](https://discord.com/invite/pika) | 2023-06-29 | 1088x640 | 24 | 72 | 3.0s | - | MP4 |
+| Model | Release Time | Resolution | FPS | Frame Count | Video Length | Checkpoint | Code Commit ID | Video Format | Sampled Videos (Dimension) | Sampled Videos (Category) |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [`LaVie`](https://github.com/Vchitect/LaVie) | 2023-09-26 | 512x512 | 8 | 16 | 2.0s | - | - | MP4 | - | - |
+| [`ModelScope`](https://modelscope.cn/models/iic/text-to-video-synthesis/summary) | 2023-08-12 | 256x256 | 8 | 16 | 2.0s | [link](https://modelscope.cn/models/iic/text-to-video-synthesis/files) | - | MP4 | - | - |
+| [`CogVideo`](https://github.com/THUDM/CogVideo) | 2022-05-29 | 480x480 | 10 | 33 | 3.3s | [link](https://github.com/THUDM/CogVideo?tab=readme-ov-file#download) | - | GIF | - | - |
+| [`VideoCrafter-0.9`](https://github.com/AILab-CVC/VideoCrafter/tree/30048d49873cbcd21077a001e6a3232e0909d254) | 2023-04-05 | 256x256 | 8 | 16 | 2.0s | [link](https://huggingface.co/VideoCrafter/t2v-version-1-1/blob/main/models/base_t2v/model_rm_wtm.ckpt) | - | MP4 | - | - |
+| [`VideoCrafter-1.0`](https://github.com/AILab-CVC/VideoCrafter) | 2023-10-30 | 1024x576 | 10 | 16 | 1.6s | [link](https://huggingface.co/VideoCrafter/Text2Video-1024/blob/main/model.ckpt) | - | MP4 | - | - |
+| [`Show-1`](https://github.com/showlab/Show-1) | 2023-09-27 | 576x320 | 8 | 29 | 3.6s | [link](https://huggingface.co/showlab/show-1-sr2#:~:text=git%20lfs%20install%0A%0A%23%20base%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dbase%0A%23%20interp%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dinterpolation%0A%23%20sr1%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dsr1%0A%23%20sr2%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dsr2) | - | MP4 | - | - |
+| [`Gen-2`](https://runwayml.com/ai-tools/gen-2/) | 2023-06-07 | 1408x768 | 24 | 96 | 4.0s | - | - | MP4 | - | - |
+| [`Pika`](https://discord.com/invite/pika) | 2023-06-29 | 1088x640 | 24 | 72 | 3.0s | - | - | MP4 | - | - |
+| [`Open-Sora`](https://github.com/hpcaitech/Open-Sora) | 2024-03-18 | 512x512 | 8 | 16 | 2.0s | [link](https://huggingface.co/hpcai-tech/Open-Sora/blob/main/OpenSora-v1-HQ-16x512x512.pth ) |  [link](https://github.com/hpcaitech/Open-Sora/commit/a5afed2fc3f7d14f6f2d1ea81dd90cb8fff92d93) | MP4 | [Google Drive](https://drive.google.com/file/d/1LCyTaVT_N_sM3HkSF1lPIPC0w80fqkEe/view?usp=sharing) | - |
+| [`VideoCrafter-2.0`](https://github.com/AILab-CVC/VideoCrafter) | 2024-01-18 | 320x512 | 10 | 16 | 1.6s | [link](https://huggingface.co/VideoCrafter/VideoCrafter2/blob/main/model.ckpt) | - | MP4 | [Google Drive](https://drive.google.com/file/d/17podJKS0tbfUS8dVAPNyDv4vYo4dIDqL/view?usp=sharing) | - |
 
 ## How are Files Structured in Google Drive?
 
