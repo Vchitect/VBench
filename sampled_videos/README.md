@@ -65,8 +65,8 @@ We list the setting for sampling videos from these models.
 | [`Show-1`](https://github.com/showlab/Show-1) | 2023-09-27 | 576x320 | 8 | 29 | 3.6s | [link](https://huggingface.co/showlab/show-1-sr2#:~:text=git%20lfs%20install%0A%0A%23%20base%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dbase%0A%23%20interp%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dinterpolation%0A%23%20sr1%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dsr1%0A%23%20sr2%0Agit%20clone%20https%3A//huggingface.co/showlab/show%2D1%2Dsr2) | - | MP4 | - | - |
 | [`Gen-2`](https://runwayml.com/ai-tools/gen-2/) | 2023-06-07 | 1408x768 | 24 | 96 | 4.0s | - | - | MP4 | - | - |
 | [`Pika`](https://discord.com/invite/pika) | 2023-06-29 | 1088x640 | 24 | 72 | 3.0s | - | - | MP4 | - | - |
-| [`Open-Sora`](https://github.com/hpcaitech/Open-Sora) | 2024-03-18 | 512x512 | 8 | 16 | 2.0s | [link](https://huggingface.co/hpcai-tech/Open-Sora/blob/main/OpenSora-v1-HQ-16x512x512.pth ) |  [link](https://github.com/hpcaitech/Open-Sora/commit/a5afed2fc3f7d14f6f2d1ea81dd90cb8fff92d93) | MP4 | [Google Drive](https://drive.google.com/file/d/1LCyTaVT_N_sM3HkSF1lPIPC0w80fqkEe/view?usp=sharing) | - |
-| [`VideoCrafter-2.0`](https://github.com/AILab-CVC/VideoCrafter) | 2024-01-18 | 320x512 | 10 | 16 | 1.6s | [link](https://huggingface.co/VideoCrafter/VideoCrafter2/blob/main/model.ckpt) | - | MP4 | [Google Drive](https://drive.google.com/file/d/17podJKS0tbfUS8dVAPNyDv4vYo4dIDqL/view?usp=sharing) | - |
+| [`Open-Sora`](https://github.com/hpcaitech/Open-Sora) | 2024-03-18 | 512x512 | 8 | 16 | 2.0s | [link](https://huggingface.co/hpcai-tech/Open-Sora/blob/main/OpenSora-v1-HQ-16x512x512.pth ) |  [Commit ID](https://github.com/hpcaitech/Open-Sora/tree/a5afed2fc3f7d14f6f2d1ea81dd90cb8fff92d93) | MP4 | [Google Drive](https://drive.google.com/file/d/1LCyTaVT_N_sM3HkSF1lPIPC0w80fqkEe/view?usp=sharing) | - |
+| [`VideoCrafter-2.0`](https://github.com/AILab-CVC/VideoCrafter) | 2024-01-18 | 320x512 | 10 | 16 | 1.6s | [link](https://huggingface.co/VideoCrafter/VideoCrafter2/blob/main/model.ckpt) | [Commit ID](https://github.com/AILab-CVC/VideoCrafter/tree/89c201c52933f5f3db7cebd46320c002dd434c0e) | MP4 | [Google Drive](https://drive.google.com/file/d/17podJKS0tbfUS8dVAPNyDv4vYo4dIDqL/view?usp=sharing) | - |
 
 ## How are Files Structured in Google Drive?
 
@@ -78,9 +78,9 @@ For these models,
 - (1) The `per_category` zip contains 8 subfolders corresponding to videos sampled for evaluating different content categories. 
 
 
-#### 1.1. Single-Stage Outputs (LaVie, ModelScope, CogVideo, VideoCrafter-0.9)
+#### 1.1. Single-Stage Outputs (LaVie, ModelScope, CogVideo, VideoCrafter-0.9, Open-Sora, VideoCrafter-2.0)
 
-For LaVie, ModelScope, CogVideo, VideoCrafter-0.9, we provide their single-stage outputs.
+For LaVie, ModelScope, CogVideo, VideoCrafter-0.9, Open-Sora, VideoCrafter-2.0 we provide their single-stage outputs.
 
 We take `LaVie` as an example:
 
