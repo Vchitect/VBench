@@ -10,7 +10,11 @@ VBench now supports evaluating Image-to-Video (I2V) generation models.
 We provide a suite of input images to benchmark the Image-to-Video (I2V) task.
 You can access our image suite on [Google Drive](https://drive.google.com/drive/folders/1fdOZKQ7HWZtgutCKKA7CMzOhMFUGv4Zx?usp=sharing). 
 
-Alternatively, you can use the following script to automatically obtain our image suite.
+This directory contains the original images, images cropped to different resolutions, and the corresponding meta information for each image, which correspond to `origin.zip`, `crop.zip`, and `i2v-bench-info.json` respectively.
+
+In addition, we have also provided the folders for the extracted `origin` and `crop` files, so that you can directly view the corresponding image data on Google Drive.
+
+You can use the following script to automatically obtain our image suite.
 
 - First install `gdown`,
     ```
@@ -20,6 +24,47 @@ Alternatively, you can use the following script to automatically obtain our imag
     ```
     sh vbench2_beta_i2v/download_data.sh
     ```
+
+### Meta Information
+The `i2v-bench-info.json` file contains the meta information for each image, including the `filename`, `category`, `URL`, and `caption`, with a general structure as follows:
+
+```
+[
+    ...
+    {
+        "file_name": "a beach with a lot of buildings on the side of a cliff.jpg",
+        "url": "www.pexels.com/photo/colorful-cliffside-village-3225528",
+        "type": "architecture",
+        "caption": "a beach with a lot of buildings on the side of a cliff"
+    },
+    ...
+    {
+        "file_name": "a squirrel sitting on the ground eating a piece of bread.jpg",
+        "url": "www.pexels.com/photo/photography-of-brown-chipmunk-eating-on-top-of-rock-751829",
+        "type": "animal",
+        "caption": "a squirrel sitting on the ground eating a piece of bread"
+    },
+    ...
+]
+```
+
+The image data consists of a total of `11 categories`, which are further divided into two main groups. The specific structure is as follows:
+```
+- subject data
+    - single-human
+    - multiple-human
+    - animal
+    - transportation
+    - food
+    - plant
+    - other
+- background data
+    - architecture
+    - scenery
+    - indoor
+    - abstract
+```
+
 
 **Main philosophy behind our Image Suite**:
 
@@ -89,6 +134,28 @@ To prepare the sampled videos for evaluation:
                 torchvision.io.write_video(cur_save_path, video, fps=fps, video_codec='h264', options={'crf': '10'})
     ```
 
+
+
+## Evaluation Setting
+For different evaluation dimensions, we will use different data. You can directly use `vbench2_i2v_full_info.json` to automatically obtain the corresponding data for different dimensions.
+
+The table below shows the usage of data in different dimensions:
+| Video-Condition Dimension | Subject Data | Background Data | All Data |
+| :---: | :---: | :---: | :---: |
+| `i2v_subject` | Yes | - | - |
+| `i2v_background` | - | Yes | - |
+| `camera_motion` | - | Yes | - |
+
+| Video-Quality Dimension | Subject Data | Background Data | All Data |
+| :---: | :---: | :---: | :---: |
+| `subject_consistency` | Yes | - | - |
+| `background_consistency` | - | Yes | - |
+| `motion_smoothness` | Yes | - | - |
+| `dynamic_degree` | Yes | - | - |
+| `aesthetic_quality` | - | - | Yes |
+| `imaging_quality` | - | - | Yes |
+
+
 ## Usage
 
 We have introduced three dimensions for the image-to-video task, namely: `i2v_subject`, `i2v_background`, and `camera_motion`. 
@@ -118,6 +185,26 @@ my_VBench.evaluate(
 )
 ```
 
+For video quality dimensions, including `subject consistency`, `background_consistency`, `motion_smoothness`, `dynamic_degree`, `aesthetic_quality`, `imaging_quality`, you can refer to the script below.
+```
+from vbench import VBench
+my_VBench = VBench("cuda", <path/to/vbench2_i2v_full_info.json>, <path/to/save/dir>)
+my_VBench.evaluate(
+    videos_path = <video_path>,
+    name = <name>,
+    dimension_list = [<dimension>, <dimension>, ...],
+)
+```
+For example: 
+```
+from vbench import VBench
+my_VBench = VBench("cuda", "vbench2_beta_i2v/vbench2_i2v_full_info.json", "evaluation_results")
+my_VBench.evaluate(
+    videos_path = "sampled_videos",
+    name = "subject_consistency",
+    dimension_list = ["subject_consistency"],
+)
+```
 
 ## :black_nib: Citation
 
