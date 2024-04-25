@@ -71,7 +71,7 @@ We list the setting for sampling videos from these models.
 ## How are Files Structured in Google Drive?
 
 
-### 1. Sub-Folder Organization (LaVie, ModelScope, CogVideo, VideoCrafter-0.9, Show-1, VideoCrafter-1)
+### 1. Sub-Folder Organization (LaVie, ModelScope, CogVideo, VideoCrafter-0.9, Show-1, VideoCrafter-1, Open-Sora, VideoCrafter-2.0)
 
 For these models, 
 - (1) The `per_dimension` zip contains 11 subfolders corresponding to videos sampled for evaluating different dimensions. 
