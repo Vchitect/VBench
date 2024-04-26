@@ -59,7 +59,7 @@ pip install vbench
 
 To evaluate some video generation ability aspects, you need to install [detectron2](https://github.com/facebookresearch/detectron2) via:
    ```
-   pip install detectron2@git+https://github.com/facebookresearch/detectron2.git
+   pip install detectron2@git+https://github.com/facebookresearch/detectron2.git@v0.6
    ```
     
 If there is an error during [detectron2](https://github.com/facebookresearch/detectron2) installation, see [here](https://detectron2.readthedocs.io/en/latest/tutorials/install.html).
