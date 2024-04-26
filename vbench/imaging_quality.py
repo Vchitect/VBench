@@ -9,7 +9,7 @@ def transform(images, preprocess_mode='shorter'):
         _, _, h, w = images.size()
         if min(h,w) > 512:
             scale = 512./min(h,w)
-            images = transforms.Resize(size=( int(scale * h), int(scale * w) ))(images)
+            images = transforms.Resize(size=( int(scale * h), int(scale * w) ), antialias=False)(images)
             if preprocess_mode == 'shorter_centercrop':
                 images = transforms.CenterCrop(512)(images)
 
@@ -17,7 +17,7 @@ def transform(images, preprocess_mode='shorter'):
         _, _, h, w = images.size()
         if max(h,w) > 512:
             scale = 512./max(h,w)
-            images = transforms.Resize(size=( int(scale * h), int(scale * w) ))(images)
+            images = transforms.Resize(size=( int(scale * h), int(scale * w) ), antialias=False)(images)
 
     elif preprocess_mode == 'None':
         return images / 255.
