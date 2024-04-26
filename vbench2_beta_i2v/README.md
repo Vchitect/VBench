@@ -115,7 +115,7 @@ About bounding box:
 ### Statistics of Image Resolution
 ![resolution_statistics](https://github.com/Vchitect/VBench/blob/master/asset/image_size_distribution.png?raw=true)
 
-
+We have provided a scatter plot showing the statistics of the resolution of all images in the image suite, and have added reference lines representing 1k, 2k, and 4k resolutions, as shown in the figure above.
 
 
 TODO
