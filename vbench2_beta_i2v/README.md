@@ -7,15 +7,31 @@ VBench now supports evaluating Image-to-Video (I2V) generation models.
 - 📏 Dimensions: video-image consistency, camera motion, video quality, etc.
 
 ## :bookmark_tabs: I2V Image Suite
-We provide a suite of input images to benchmark the Image-to-Video (I2V) task.
+
+We provide a suite of input images in order to benchmark the Image-to-Video (I2V) task.
+
+
+### What's Special
+**Main philosophy behind our Image Suite**: :bulb: ***Adaptive aspect ratio*** :bulb:
+*Since different Image-to-Video (I2V) models have different default resolutions for the input images, we believe it's only fair to compare models when each model is evaluated on its default / best resolution. To this end, we introduced an automatic pipeline to obtain images in different resolutions and aspect ratios while preserving their main content*. 
+
+***Diverse and fair content for both foreground and background***.
+We ensure that the image content is diverse, in terms of several aspects: scene category, object type, fairness of human-centric images, etc. More statistics will be released.
+
+***High resolution***.
+The original images are of high resolution (mainly 2-4k and above), and this enable arbitrary tasks that requires high-resolution and high quality images. More statistics will be provided.
+
+***Text prompts paired with input images***.
+For each input image, we carefully designed text prompt via a series of captioning techniques. Detailed pipeline will be released.
+
+
+
+### Download
+
 You can access our image suite on [Google Drive](https://drive.google.com/drive/folders/1fdOZKQ7HWZtgutCKKA7CMzOhMFUGv4Zx?usp=sharing). 
 
-This directory contains the original images, images cropped to different resolutions, and the corresponding meta information for each image, which correspond to `origin.zip`, `crop.zip`, and `i2v-bench-info.json` respectively.
-
-In addition, we have also provided the folders for the extracted `origin` and `crop` files, so that you can directly view the corresponding image data on Google Drive.
-
-You can use the following script to automatically obtain our image suite.
-
+**Automatic Download**
+- You can use the following script to automatically obtain our image suite.
 - First install `gdown`,
     ```
     pip install gdown
@@ -25,13 +41,20 @@ You can use the following script to automatically obtain our image suite.
     sh vbench2_beta_i2v/download_data.sh
     ```
 
+**What data do we provide**
+- `origin.zip`: the original images, 
+- `crop.zip`: images cropped to different resolutions, 
+- `i2v-bench-info.json`: the corresponding meta information for each image
+- `origin`: unzipped version of `origin.zip` for online viewing
+- `crop`: unzipped version of `crop.zip` for online viewing
+
+
 ### Meta Information
 
-The `i2v-bench-info.json` file contains the meta information for each image, including the `filename`, `category`, `URL`, `crop_info`, and `caption`, with a general structure as follows:
+The `i2v-bench-info.json` file contains the meta information for each image, including the `filename`, `category`, `url`, `crop_info`, and `caption`, for example:
 
-```
+```json
 [
-    ...
     {
         "file_name": "a beach with a lot of buildings on the side of a cliff.jpg",
         "url": "www.pexels.com/photo/colorful-cliffside-village-3225528",
@@ -52,12 +75,10 @@ The `i2v-bench-info.json` file contains the meta information for each image, inc
             "1-1": [0, 530, 4882, 4882],
             "8-5": [0, 1345, 4880, 3050],
             "7-4": [0, 1584, 4879, 2788],
-            "16-9": [0, 1624, 4880, 2745
-            ]
+            "16-9": [0, 1624, 4880, 2745]
         },
         "caption": "a beach with a lot of buildings on the side of a cliff"
     },
-    ...
     {
         "file_name": "a squirrel sitting on the ground eating a piece of bread.jpg",
         "url": "www.pexels.com/photo/photography-of-brown-chipmunk-eating-on-top-of-rock-751829",
@@ -82,10 +103,19 @@ The `i2v-bench-info.json` file contains the meta information for each image, inc
         },
         "caption": "a squirrel sitting on the ground eating a piece of bread"
     },
-    ...
 ]
 ```
 
+About bounding box:
+- The 4 numbers in `bbox` is [x, y, w, h]
+- `first_crop` `bbox` is relative to original image. 
+- `second_crop` `bbox` is relative to the `first_crop` image. 
+- `diff_ratio_crop` `bbox` is relative to original image.
+
+TODO
+- [ ] To add the cropping pipeline illustration
+
+### Image Content
 The image data consists of a total of `11 categories`, which are further divided into two main groups. The specific structure is as follows:
 ```
 - subject data
@@ -103,9 +133,15 @@ The image data consists of a total of `11 categories`, which are further divided
     - abstract
 ```
 
-### How to crop images to different ratios
+This information is recorded in `vbench2_beta_i2v/data/i2v-bench-info.json`, under `type` key for each image. It is also recorded in `vbench2_beta_i2v/vbench2_i2v_full_info.json`, under `image_type` key for each image.
 
-Our image suite currently provides four types of image ratios: `1:1`, `8:5`, `7:4`, and `16:9`. It also supports cropping the original image to any ratio between `1:1` and `16:9`, such as `5:4`. 
+### Captioning
+
+- [ ] TODO
+
+### How to crop images to different aspect ratios
+
+Our image suite currently provides four types of image ratios: `1:1`, `8:5`, `7:4`, and `16:9` for each original image. It also supports cropping the original image to any ratio between `1:1` and `16:9`, such as `5:4`. 
 
 Before cropping, you first need to use the `download_data.sh` script to download the image data to the specified path.
 
@@ -125,14 +161,6 @@ python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio <target_ratio> --re
 python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio 5-4 --result_path vbench2_beta_i2v/data/target_crop
 ```
 
-**Main philosophy behind our Image Suite**:
-
-1. *Adaptive resolution and aspect ratio*.
-Since different Image-to-Video (I2V) models have different default resolutions for the input images, we believe it's only fair to compare models when each model is evaluated on its default / best resolution. To this end, we have also introduced a pipeline to **obtain images in different resolutions and aspect ratios while preserving their main content**. More details will be released.
-2. *Diverse and fair content for both foreground and background*.
-We ensure that the image content is diverse, in terms of several aspects: scene category, object type, fairness of human-centric images, etc. More statistics will be released.
-3. *Text prompts paired with input images*.
-For each input image, we carefully designed text prompt via a series of captioning techniques. Detailed pipeline will be released.
 
 
 ## Dimension Suite
@@ -291,5 +319,7 @@ my_VBench.evaluate(
 ## :hearts: Acknowledgement
 
 **VBench-I2V** is currently maintained by [Ziqi Huang](https://ziqihuangg.github.io/) and [Fan Zhang](https://github.com/zhangfan-p).
+
+The images are sourced from [Pexels](https://www.pexels.com) and [Pixabay](https://pixabay.com).
 
 We made use of [DINO](https://github.com/facebookresearch/dino) and [Co-Tracker](https://github.com/facebookresearch/co-tracker).
