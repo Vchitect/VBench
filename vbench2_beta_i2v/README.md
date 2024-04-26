@@ -112,6 +112,12 @@ About bounding box:
 - `second_crop` `bbox` is relative to the `first_crop` image. 
 - `diff_ratio_crop` `bbox` is relative to original image.
 
+### Statistics of Image Resolution
+![resolution_statistics](https://github.com/Vchitect/VBench/blob/master/asset/image_size_distribution.png?raw=true)
+
+
+
+
 TODO
 - [ ] To add the cropping pipeline illustration
 
@@ -137,7 +143,7 @@ This information is recorded in `vbench2_beta_i2v/data/i2v-bench-info.json`, und
 
 ### Captioning
 
-- [ ] TODO
+First, we use captioning models like [CoCa](https://laion.ai/blog/coca/) and [BLIP2](https://github.com/salesforce/LAVIS/blob/main/examples/blip2_instructed_generation.ipynb) to generate captions for each image. Then, we manually screen and optimize the captions generated for each image. For example, we remove expressions referring to the image, such as "an image of" or "a picture of", or modify descriptions that do not match the image, and add descriptions about motion. Finally, we obtain the current captions.
 
 ### How to crop images to different aspect ratios
 
