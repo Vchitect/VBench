@@ -10,8 +10,8 @@ def transform(images, preprocess_mode='shorter'):
         if min(h,w) > 512:
             scale = 512./min(h,w)
             images = transforms.Resize(size=( int(scale * h), int(scale * w) ))(images)
-        if preprocess_mode == 'shorter_centercrop':
-            images = transforms.CenterCrop(512)(images)
+            if preprocess_mode == 'shorter_centercrop':
+                images = transforms.CenterCrop(512)(images)
 
     elif preprocess_mode == 'longer':
         _, _, h, w = images.size()
