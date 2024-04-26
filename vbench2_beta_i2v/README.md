@@ -26,7 +26,8 @@ You can use the following script to automatically obtain our image suite.
     ```
 
 ### Meta Information
-The `i2v-bench-info.json` file contains the meta information for each image, including the `filename`, `category`, `URL`, and `caption`, with a general structure as follows:
+
+The `i2v-bench-info.json` file contains the meta information for each image, including the `filename`, `category`, `URL`, `crop_info`, and `caption`, with a general structure as follows:
 
 ```
 [
@@ -35,6 +36,25 @@ The `i2v-bench-info.json` file contains the meta information for each image, inc
         "file_name": "a beach with a lot of buildings on the side of a cliff.jpg",
         "url": "www.pexels.com/photo/colorful-cliffside-village-3225528",
         "type": "architecture",
+        "origin_width": 4882,
+        "origin_height": 6102,
+        "first_crop": {  # 1-1
+            "width": 4882,
+            "height": 6102,
+            "first_bbox": [0, 530, 4882, 4882]  # relative to the original image
+        },
+        "second_crop": {  # 16-9
+            "width": 4882,
+            "height": 4882,
+            "second_bbox": [0, 1094, 4880, 2745]  # relative to the first cropped image
+        },
+        "diff_ratio_crop": {  # relative to the original image
+            "1-1": [0, 530, 4882, 4882],
+            "8-5": [0, 1345, 4880, 3050],
+            "7-4": [0, 1584, 4879, 2788],
+            "16-9": [0, 1624, 4880, 2745
+            ]
+        },
         "caption": "a beach with a lot of buildings on the side of a cliff"
     },
     ...
@@ -42,6 +62,24 @@ The `i2v-bench-info.json` file contains the meta information for each image, inc
         "file_name": "a squirrel sitting on the ground eating a piece of bread.jpg",
         "url": "www.pexels.com/photo/photography-of-brown-chipmunk-eating-on-top-of-rock-751829",
         "type": "animal",
+        "origin_width": 3381,
+        "origin_height": 2254,
+        "first_crop": {  # 16-9
+            "width": 3381,
+            "height": 2254,
+            "first_bbox": [0, 252, 3376, 1899]  # relative to the original image
+        },
+        "second_crop": {  # 1-1
+            "width": 3376,
+            "height": 1899,
+            "second_bbox": [720, 0, 1899, 1899]  # relative to the first cropped image
+        },
+        "diff_ratio_crop": {  # relative to the original image
+            "1-1": [720, 252, 1899, 1899],
+            "8-5": [26, 252, 3032, 1895],
+            "7-4": [3, 252, 3318, 1896],
+            "16-9": [0, 252, 3376, 1899]
+        },
         "caption": "a squirrel sitting on the ground eating a piece of bread"
     },
     ...
@@ -65,6 +103,27 @@ The image data consists of a total of `11 categories`, which are further divided
     - abstract
 ```
 
+### How to crop images to different ratios
+
+Our image suite currently provides four types of image ratios: `1:1`, `8:5`, `7:4`, and `16:9`. It also supports cropping the original image to any ratio between `1:1` and `16:9`, such as `5:4`. 
+
+Before cropping, you first need to use the `download_data.sh` script to download the image data to the specified path.
+
+Below are the instructions for using the automatic cropping script:
+```
+python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio <target_ratio>
+
+# For example
+python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio 5-4   # or 13-8
+```
+
+You can also use the `result_path` flag to specify the location to store the output results.
+```
+python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio <target_ratio> --result_path <result_path>
+
+# For example
+python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio 5-4 --result_path vbench2_beta_i2v/data/target_crop
+```
 
 **Main philosophy behind our Image Suite**:
 
