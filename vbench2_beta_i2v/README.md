@@ -2,31 +2,36 @@
 
 VBench now supports evaluating Image-to-Video (I2V) generation models.
 
-## :fire: Highlights
+## 1. :fire: Highlights 
 - 🖼️ Image Suite: multi-scale, multi-aspect-ratio, comprehensive content variety
 - 📏 Dimensions: video-image consistency, camera motion, video quality, etc.
 
-## :bookmark_tabs: I2V Image Suite
+## 2. :bookmark_tabs: I2V Image Suite
 
 We provide a suite of input images in order to benchmark the Image-to-Video (I2V) task.
 
 
-### What's Special
-**Main philosophy behind our Image Suite**: :bulb: ***Adaptive aspect ratio*** :bulb:
-*Since different Image-to-Video (I2V) models have different default resolutions for the input images, we believe it's only fair to compare models when each model is evaluated on its default / best resolution. To this end, we introduced an automatic pipeline to obtain images in different resolutions and aspect ratios while preserving their main content*. 
+### 2.1. What's Special about VBench-I2V's Image Suite
+1. **Main philosophy behind our Image Suite**: :bulb: ***Adaptive aspect ratio*** :bulb:
+*Since different Image-to-Video (I2V) models have different default resolutions for the input images, we believe it's only fair to compare models when each model is evaluated on its default / best resolution. To this end, we introduced an automatic pipeline to obtain images in different resolutions and aspect ratios while preserving their main content*. More implementation details are provided [here](#crop)
 
-***Diverse and fair content for both foreground and background***.
-We ensure that the image content is diverse, in terms of several aspects: scene category, object type, fairness of human-centric images, etc. More statistics will be released.
+2. ***Diverse and fair content for both foreground and background***.
+We ensure that the image content is diverse, in terms of several aspects: scene category, object type, fairness of human-centric images, etc. More statistics will be released [here](#cotent).
 
-***High resolution***.
-The original images are of high resolution (mainly 2-4k and above), and this enable arbitrary tasks that requires high-resolution and high quality images. More statistics will be provided.
+3. ***High resolution***.
+The original images are of very high resolutions (mainly around 4k and above), and this enable many tasks that requires high-resolution and high quality images.
+    <p>
+        <img src="../asset/vbench_i2v/image_size_distribution.png" alt="drawing" width="50%" alt/><br>
+        <em>The figure aboves shows the image resolution distribution in our image suite. Each dot represent an image in our image suite. The three reference lines represent 1K (red), 2K (green), and 4K (yellow) resolutions.
+        </em>
+    </p>
 
-***Text prompts paired with input images***.
-For each input image, we carefully designed text prompt via a series of captioning techniques. Detailed pipeline will be released.
+4. ***Text prompts paired with the images***.
+For each input image, we carefully designed text prompt via a series of captioning techniques. See more details [here](#captions).
 
 
 
-### Download
+### 2.2. Download
 
 You can access our image suite on [Google Drive](https://drive.google.com/drive/folders/1fdOZKQ7HWZtgutCKKA7CMzOhMFUGv4Zx?usp=sharing). 
 
@@ -49,7 +54,7 @@ You can access our image suite on [Google Drive](https://drive.google.com/drive/
 - `crop`: unzipped version of `crop.zip` for online viewing
 
 
-### Meta Information
+### 2.3. Meta Information
 
 The `i2v-bench-info.json` file contains the meta information for each image, including the `filename`, `category`, `url`, `crop_info`, and `caption`, for example:
 
@@ -112,15 +117,43 @@ About bounding box:
 - `second_crop` `bbox` is relative to the `first_crop` image. 
 - `diff_ratio_crop` `bbox` is relative to original image.
 
-### Statistics of Image Resolution
-![resolution_statistics](https://github.com/Vchitect/VBench/blob/master/asset/image_size_distribution.png?raw=true)
-
-We have provided a scatter plot showing the statistics of the resolution of all images in the image suite, and have added reference lines representing 1k, 2k, and 4k resolutions, as shown in the figure above.
 
 
-TODO
-- [ ] To add the cropping pipeline illustration
+<a name="crop"></a>
+### 2.4. Image Cropping Pipeline
 
+
+Our image suite currently provides four types of image ratios: `1:1`, `8:5`, `7:4`, and `16:9` for each original image. It also supports cropping the original image to any user-customized aspect ratio between `1:1` and `16:9`, such as `5:4`. 
+
+**Open-sourced cropping pipeline**
+
+- Before cropping, you first need to use the `download_data.sh` script to download the image data to the specified path.
+- Below are the instructions for using the automatic cropping script:
+    ```python
+    python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio <target_ratio>
+    ```
+    For example,
+    ```python
+    python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio 5-4   # or 13-8
+    ```
+- You can use `result_path` to specify the location to store the output results.
+    ```python
+    python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio <target_ratio> --result_path <result_path>
+    ```
+    For example:
+    ```python
+    python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio 5-4 --result_path vbench2_beta_i2v/data/target_crop
+    ```
+**How to crop images to different aspect ratios**
+- The figures below show the image cropping pipeline. For each "original image" (i.e., the raw image), we manually label the red bbox and yellow bbox for extreme aspect ratios, while ensuring that both the red and yellow bbox contain the main content / subject of the image. Then the rest of the common aspect ratios can be viewed as interpolants of the red and yellow boxes, and can be produced automatically.
+    <p>
+        <img src="../asset/vbench_i2v/fig_image_crop_pipeline_horizontal.jpg" alt="drawing" width="50%" alt/><br>
+        <em>Cropping pipeline when the original image is `landscape` ratio.</em><br>
+        <img src="../asset/vbench_i2v/fig_image_crop_pipeline_vertical.jpg" alt="drawing" width="50%" alt/><br>
+        <em>Cropping pipeline when the original image is `portrait` ratio.</em><br>
+    </p>
+
+<a name="content"></a>
 ### Image Content
 The image data consists of a total of `11 categories`, which are further divided into two main groups. The specific structure is as follows:
 ```
@@ -139,48 +172,28 @@ The image data consists of a total of `11 categories`, which are further divided
     - abstract
 ```
 
-This information is recorded in `vbench2_beta_i2v/data/i2v-bench-info.json`, under `type` key for each image. It is also recorded in `vbench2_beta_i2v/vbench2_i2v_full_info.json`, under `image_type` key for each image.
+This information is recorded in `vbench2_beta_i2v/data/i2v-bench-info.json`, under `type` key for each image. It is also recorded in `vbench2_beta_i2v/vbench2_i2v_full_info.json`, under `image_type` key for each image. More statistics will be released.
 
-### Captioning
+<a name="caption"></a>
+### 2.5. Captions
 
 First, we use captioning models like [CoCa](https://laion.ai/blog/coca/) and [BLIP2](https://github.com/salesforce/LAVIS/blob/main/examples/blip2_instructed_generation.ipynb) to generate captions for each image. Then, we manually screen and optimize the captions generated for each image. For example, we remove expressions referring to the image, such as "an image of" or "a picture of", or modify descriptions that do not match the image, and add descriptions about motion. Finally, we obtain the current captions.
 
-### How to crop images to different aspect ratios
 
-Our image suite currently provides four types of image ratios: `1:1`, `8:5`, `7:4`, and `16:9` for each original image. It also supports cropping the original image to any ratio between `1:1` and `16:9`, such as `5:4`. 
+## 3. Dimension Suite
 
-Before cropping, you first need to use the `download_data.sh` script to download the image data to the specified path.
-
-Below are the instructions for using the automatic cropping script:
-```
-python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio <target_ratio>
-
-# For example
-python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio 5-4   # or 13-8
-```
-
-You can also use the `result_path` flag to specify the location to store the output results.
-```
-python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio <target_ratio> --result_path <result_path>
-
-# For example
-python vbench2_beta_i2v/crop_to_diff_ratio.py --target_ratio 5-4 --result_path vbench2_beta_i2v/data/target_crop
-```
-
-
-
-## Dimension Suite
-
-### Video-Image Alignment | Subject Consistency
+**Video-Image Alignment | Subject Consistency**
 - This dimension evaluates the alignment between the subject in the input image and the subject in the resulting video. We make use of [DINO](https://github.com/facebookresearch/dino) features, with carefully designed order-statistics schemes.
-### Video-Image Alignment | Background Consistency
+
+**Video-Image Alignment | Background Consistency**
 - This dimension assesses the coherence between the background scene in the input image and the generated video. We make use of [DINO](https://github.com/facebookresearch/dino) features, with carefully designed order-statistics schemes.
-### Video-Text Alignment | Camera Motion
+
+**Video-Text Alignment | Camera Motion**
 - This dimension assesses whether the generated video adheres to the camera control instructions specified in the prompt. We make use of [Co-Tracker](https://github.com/facebookresearch/co-tracker), with carefully designed rules to predict the camera motion type.
 
 
 
-## Video Data
+## 4. Video Data
 To prepare the sampled videos for evaluation:
 - For each image-prompt pair, sample 5 videos.
 - **Random Seed**: At the beginning of sampling, set the random seed. For some models, the random seed is independently and randomly drawn for each video sample, and this is also acceptable, but it would be the best to record the random seed of every video being sampled. We need to ensure: (1) The random seeds are random, and not cherry picked. (2) The sampling process is reproducible, so that the evaluation results are reproducible.
@@ -199,9 +212,9 @@ To prepare the sampled videos for evaluation:
     ......
     ```
 
-### Pseudo-Code for Sampling
+#### Pseudo-Code for Sampling
 - If you want to evaluate certain dimensions, below are the pseudo-code for sampling.
-    ```
+    ```python
     dimension_list = ["i2v_subject", "i2v_background", "camera_motion"]
 
     for dimension in dimension_list:
@@ -229,32 +242,32 @@ To prepare the sampled videos for evaluation:
 
 
 
-## Evaluation Setting
+#### Evaluation Setting
 For different evaluation dimensions, we will use different data. You can directly use `vbench2_i2v_full_info.json` to automatically obtain the corresponding data for different dimensions.
 
 The table below shows the usage of data in different dimensions:
-| Video-Condition Dimension | Subject Data | Background Data | All Data |
-| :---: | :---: | :---: | :---: |
-| `i2v_subject` | Yes | - | - |
-| `i2v_background` | - | Yes | - |
-| `camera_motion` | - | Yes | - |
+| Video-Condition Dimension | Subject Data | Background Data |
+| :---: | :---: | :---: |
+| `i2v_subject` | Yes | - | 
+| `i2v_background` | - | Yes |
+| `camera_motion` | - | Yes |
 
-| Video-Quality Dimension | Subject Data | Background Data | All Data |
-| :---: | :---: | :---: | :---: |
-| `subject_consistency` | Yes | - | - |
-| `background_consistency` | - | Yes | - |
-| `motion_smoothness` | Yes | - | - |
-| `dynamic_degree` | Yes | - | - |
-| `aesthetic_quality` | - | - | Yes |
-| `imaging_quality` | - | - | Yes |
+| Video-Quality Dimension | Subject Data | Background Data |
+| :---: | :---: | :---: |
+| `subject_consistency` | Yes | - |
+| `background_consistency` | - | Yes |
+| `motion_smoothness` | Yes | - |
+| `dynamic_degree` | Yes | - |
+| `aesthetic_quality` | Yes | Yes |
+| `imaging_quality` | Yes | Yes |
 
 
-## Usage
+## 5. Evaluation
 
-We have introduced three dimensions for the image-to-video task, namely: `i2v_subject`, `i2v_background`, and `camera_motion`. 
+We have introduced three new dimensions for the image-to-video task, namely: `i2v_subject`, `i2v_background`, and `camera_motion`. 
 
-#### python
-```
+To perform evaluation, use the following script:
+```python
 from vbench2_beta_i2v import VBenchI2V
 my_VBench = VBenchI2V("cuda", <path/to/vbench2_i2v_full_info.json>, <path/to/save/dir>)
 my_VBench.evaluate(
@@ -267,7 +280,7 @@ my_VBench.evaluate(
 The `resolution` parameter specifies the image resolution. You can select the suitable ratio according to the video resolution, with options including 1:1, 8:5, 7:4, and 16:9.
 
 For example: 
-```
+```python
 from vbench2_beta_i2v import VBenchI2V
 my_VBench = VBenchI2V("cuda", "vbench2_beta_i2v/vbench2_i2v_full_info.json", "evaluation_results")
 my_VBench.evaluate(
@@ -279,7 +292,7 @@ my_VBench.evaluate(
 ```
 
 For video quality dimensions, including `subject consistency`, `background_consistency`, `motion_smoothness`, `dynamic_degree`, `aesthetic_quality`, `imaging_quality`, you can refer to the script below.
-```
+```python
 from vbench import VBench
 my_VBench = VBench("cuda", <path/to/vbench2_i2v_full_info.json>, <path/to/save/dir>)
 my_VBench.evaluate(
@@ -289,7 +302,7 @@ my_VBench.evaluate(
 )
 ```
 For example: 
-```
+```python
 from vbench import VBench
 my_VBench = VBench("cuda", "vbench2_beta_i2v/vbench2_i2v_full_info.json", "evaluation_results")
 my_VBench.evaluate(
