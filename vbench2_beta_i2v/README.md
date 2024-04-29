@@ -28,6 +28,60 @@ The original images are of very high resolutions (mainly around 4k and above), a
         <em>The figure aboves shows the image resolution distribution in our image suite. Each dot represent an image in our image suite. The three reference lines represent 1K (red), 2K (green), and 4K (yellow) resolutions.
         </em>
     </p>
+    <table>
+        <tr>
+            <th style="background-color: #e0e0e0;">Image Resolution</th>
+            <th style="background-color: #e0e0e0;">Image Area</th>
+            <th style="background-color: #e0e0e0;">Percentage</th>
+            <th style="background-color: #e0e0e0;">Image Side Length</th>
+            <th style="background-color: #e0e0e0;">Percentage</th>
+        </tr>
+        <tr>
+            <td style="background-color: #f8f8f8;">res < 1K</td>
+            <td style="background-color: #ffffff;">WxH < 1920x1080</td>
+            <td style="background-color: #ffffff;">0.0%</td>
+            <td style="background-color: #f8f8f8;">W<1920 or H<1080</td>
+            <td style="background-color: #f8f8f8;">0.3%</td>
+        </tr>
+        <tr>
+            <td style="background-color: #f8f8f8;">1K <= res < 2K</td>
+            <td style="background-color: #ffffff;">1920x1080 <= WxH < 2560x1440</td>
+            <td style="background-color: #ffffff;">3.4%</td>
+            <td style="background-color: #f8f8f8;">(1920 <= W and 1080 <= H) and (W<2560 or H<1440)</td>
+            <td style="background-color: #f8f8f8;">5.4%</td>
+        </tr>
+        <tr>
+            <td style="background-color: #f8f8f8;">2K <= res < 4K</td>
+            <td style="background-color: #ffffff;">2560x1440 <= WxH < 3840x2160</td>
+            <td style="background-color: #ffffff;">6.8%</td>
+            <td style="background-color: #f8f8f8;">(2560 <= W and 1440 <= H) and (W<3840 or H<2160)</td>
+            <td style="background-color: #f8f8f8;">23.1%</td>
+        </tr>
+        <tr>
+            <td style="background-color: #f8f8f8;">4K <= res < 8K</td>
+            <td style="background-color: #ffffff;">3840x2160 <= WxH < 7680x4320</td>
+            <td style="background-color: #ffffff;">85.6%</td>
+            <td style="background-color: #f8f8f8;">(3840 <= W and 2160 <= H) and (W<7680 or H<4320)</td>
+            <td style="background-color: #f8f8f8;">68.7%</td>
+        </tr>
+        <tr>
+            <td style="background-color: #f8f8f8;">8K = res</td>
+            <td style="background-color: #ffffff;">7680x4320 <= WxH</td>
+            <td style="background-color: #ffffff;">4.2%</td>
+            <td style="background-color: #f8f8f8;">7680 <= W and 4320 <= H</td>
+            <td style="background-color: #f8f8f8;">2.5%</td>
+        </tr>
+    </table>
+<!--     
+| Image Resolution | Image Area | Percentage | Image Side Length | Percentage
+| :--------: | :--------: | :--------: | :--------: | :--------: |
+| res < 1K | WxH < 1920x1080 | 0.0% | W<1920 or H<1080 | 0.3% <tr></tr> |
+| 1K <= res < 2K | 1920x1080 <= WxH < 2560x1080 | 3.4% | (1920 <= W and 1080 <= H) and (W<2560 or H<1440) | 5.4% <tr></tr> |
+| 2K <= res < 4K | 2560x1080 <= WxH < 3840x2160 | 6.8% | (2560 <= W and 1440 <= H) and (W<3840 or H<2160) | 23.1% <tr></tr> |
+| 4K <= res < 8K | 3840x2160 <= WxH < 7680x4320 | 85.6% | (3840 <= W and 2160 <= H) and (W<7680 or H<4320) | 68.7% <tr></tr> |
+| 8K= res | 7680x4320 <= WxH | 4.2% | 7680 <= W and 4320 <= H | 2.5% <tr></tr> | -->
+
+
 
 4. ***Text prompts paired with the images***.
 For each input image, we carefully designed text prompt via a series of captioning techniques. See more details [here](#caption).
