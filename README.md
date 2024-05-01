@@ -200,7 +200,16 @@ bash evaluate.sh
 
 To filter static videos in the temporal flickering dimension, run this:
 ```
+# This only filter out static videos whose prompt matches the prompt in the temporal_flickering.
 python static_filter.py --videos_path $VIDEOS_PATH
+```
+You can adjust the filtering scope by:
+```
+# 1. Change the filtering scope to consider all files inside videos_path for filtering.
+python static_filter.py --videos_path $VIDEOS_PATH --filter_scope all
+
+# 2. Specify the path to a JSON file ($filename) to consider only videos whose prompts match those listed in $filename.
+python static_filter.py --videos_path $VIDEOS_PATH --filter_scope $filename
 ```
 
 
