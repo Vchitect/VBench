@@ -6,7 +6,7 @@ import numpy as np
 from tqdm import tqdm
 from omegaconf import OmegaConf
 
-from vbench.utils import load_dimension_info
+from vbench.utils import load_dimension_info, load_video
 
 from vbench.third_party.amt.utils.utils import (
     img2tensor, tensor2img,
@@ -19,37 +19,6 @@ from vbench.third_party.amt.utils.utils import InputPadder
 class FrameProcess:
     def __init__(self):
         pass
-
-
-    def get_frames(self, video_path):
-        frame_list = []
-        video = cv2.VideoCapture(video_path)
-        while video.isOpened():
-            success, frame = video.read()
-            if success:
-                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)  # convert to rgb
-                frame_list.append(frame)
-            else:
-                break
-        video.release()
-        assert frame_list != []
-        return frame_list 
-    
-
-    def get_frames_from_img_folder(self, img_folder):
-        exts = ['jpg', 'png', 'jpeg', 'bmp', 'tif', 
-                'tiff', 'JPG', 'PNG', 'JPEG', 'BMP', 
-                'TIF', 'TIFF']
-        frame_list = []
-        imgs = sorted([p for p in glob.glob(os.path.join(img_folder, "*")) if os.path.splitext(p)[1][1:] in exts])
-        # imgs = sorted(glob.glob(os.path.join(img_folder, "*.png")))
-        for img in imgs:
-            frame = cv2.imread(img, cv2.IMREAD_COLOR)
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            frame_list.append(frame)
-        assert frame_list != []
-        return frame_list
-
 
     def extract_frame(self, frame_list, start_from=0):
         extract = []
@@ -75,7 +44,7 @@ class MotionSmoothness:
         network_name = network_cfg.name
         print(f'Loading [{network_name}] from [{ckpt_path}]...')
         self.model = build_from_cfg(network_cfg)
-        ckpt = torch.load(ckpt_path)
+        ckpt = torch.load(ckpt_path, map_location=self.device)
         self.model.load_state_dict(ckpt['state_dict'])
         self.model = self.model.to(self.device)
         self.model.eval()
@@ -101,16 +70,11 @@ class MotionSmoothness:
 
     def motion_score(self, video_path):
         iters = int(self.niters)
-        # get inputs
-        if video_path.endswith('.mp4'):
-            frames = self.fp.get_frames(video_path)
-        elif os.path.isdir(video_path):
-            frames = self.fp.get_frames_from_img_folder(video_path)
-        else:
-            raise NotImplementedError
+
+        frames = load_video(video_path).permute(0, 2, 3, 1)
         frame_list = self.fp.extract_frame(frames, start_from=0)
-        # print(f'Loading [images] from [{video_path}], the number of images = [{len(frame_list)}]')
         inputs = [img2tensor(frame).to(self.device) for frame in frame_list]
+
         assert len(inputs) > 1, f"The number of input should be more than one (current {len(inputs)})"
         inputs = check_dim_and_resize(inputs)
         h, w = inputs[0].shape[-2:]

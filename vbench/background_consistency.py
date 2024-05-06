@@ -18,16 +18,8 @@ def background_consistency(clip_model, preprocess, video_list, device, read_fram
     image_transform = clip_transform(224)
     for video_path in tqdm(video_list):
         video_sim = 0.0
-        if read_frame:
-            video_path = video_path[:-4].replace('videos', 'frames').replace(' ', '_')
-            tmp_paths = [os.path.join(video_path, f) for f in sorted(os.listdir(video_path))]
-            images = []
-            for tmp_path in tmp_paths:
-                images.append(preprocess(Image.open(tmp_path)))
-            images = torch.stack(images)
-        else:
-            images = load_video(video_path)
-            images = image_transform(images)
+        images = load_video(video_path)
+        images = image_transform(images)
         images = images.to(device)
         image_features = clip_model.encode_image(images)
         image_features = F.normalize(image_features, dim=-1, p=2)

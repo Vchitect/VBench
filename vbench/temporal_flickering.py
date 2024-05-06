@@ -1,21 +1,7 @@
 import numpy as np
 from tqdm import tqdm
 import cv2
-from vbench.utils import load_dimension_info
-
-
-def get_frames(video_path):
-        frames = []
-        video = cv2.VideoCapture(video_path)
-        while video.isOpened():
-            success, frame = video.read()
-            if success:
-                frames.append(frame)
-            else:
-                break
-        video.release()
-        assert frames != []
-        return frames
+from vbench.utils import load_video, load_dimension_info
 
 
 def mae_seq(frames):
@@ -35,7 +21,7 @@ def calculate_mae(img1, img2):
 
 def cal_score(video_path):
     """please ensure the video is static"""
-    frames = get_frames(video_path)
+    frames = load_video(video_path)
     score_seq = mae_seq(frames)
     return (255.0 - np.mean(score_seq).item())/255.0
 

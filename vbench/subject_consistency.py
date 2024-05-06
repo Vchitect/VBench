@@ -11,7 +11,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.transforms as transforms
 
-from vbench.utils import load_video, load_dimension_info, dino_transform, dino_transform_Image
+from vbench.utils import load_video, load_dimension_info, dino_transform
 import logging
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -20,21 +20,11 @@ def subject_consistency(model, video_list, device, read_frame):
     sim = 0.0
     cnt = 0
     video_results = []
-    if read_frame:
-        image_transform = dino_transform_Image(224)
-    else:
-        image_transform = dino_transform(224)
+    image_transform = dino_transform(224)
     for video_path in tqdm(video_list):
         video_sim = 0.0
-        if read_frame:
-            video_path = video_path[:-4].replace('videos', 'frames').replace(' ', '_')
-            tmp_paths = [os.path.join(video_path, f) for f in sorted(os.listdir(video_path))]
-            images = []
-            for tmp_path in tmp_paths:
-                images.append(image_transform(Image.open(tmp_path)))
-        else:
-            images = load_video(video_path)
-            images = image_transform(images)
+        images = load_video(video_path)
+        images = image_transform(images)
         for i in range(len(images)):
             with torch.no_grad():
                 image = images[i].unsqueeze(0)

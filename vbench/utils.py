@@ -90,8 +90,8 @@ def get_frame_indices(num_frames, vlen, sample='rand', fix_start=None, input_fps
         output_fps = float(sample[3:])
         duration = float(vlen) / input_fps
         delta = 1 / output_fps  # gap between frames, this is also the clip length each frame represents
-        frame_seconds = np.arange(0 + delta / 2, duration + delta / 2, delta)
-        frame_indices = np.around(frame_seconds * input_fps).astype(int)
+        # frame_seconds = np.arange(0 + delta / 2, duration + delta / 2, delta) 
+        frame_indices = np.arange(0, input_fps * duration, round(delta * input_fps)).astype(int) # for dynamic_degree
         frame_indices = [e for e in frame_indices if e < vlen]
         if max_num_frames > 0 and len(frame_indices) > max_num_frames:
             frame_indices = frame_indices[:max_num_frames]
@@ -149,6 +149,15 @@ def load_video(video_path, data_transform=None, num_frames=None, return_tensor=T
         frames = video_reader.get_batch(range(len(video_reader)))  # (T, H, W, C), torch.uint8
 
         buffer = frames.asnumpy().astype(np.uint8)
+    elif os.path.isdir(video_path):
+        frame_ls = []
+        video_list = os.scandir(video_path)
+        for file in video_list:
+            frame = Image.open(os.path.join(video_path, file))
+            frame = frame.convert('RGB')
+            frame = np.array(frame).astype(np.uint8)
+            frame_ls.append(frame)
+        buffer = np.array(frame_ls)
     else:
         raise NotImplementedError
     
