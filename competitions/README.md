@@ -32,6 +32,7 @@ TODO
 - [ ] Add video (FPS, resolution, duration) requirements
 - [ ] Add evaluation pipeline for long videos -->
 
+
 ## Submission Requirement
 
 ### 1. Prompt List
@@ -171,5 +172,165 @@ Both short and long videos will be automatically evaluated in terms of 3 aspects
 Additionally, long videos will be evaluated on `subject_consistency` as a stand-alone aspect via `Human Evaluation.`
 
 
-TODO
-- [ ] Provide evaluation pipeline for all dimensions
+
+## Automatic Evaluation
+
+
+### 1.Install Environment via Anaconda
+```
+conda create -n vbench-competition python=3.9
+conda activate vbench-competition
+pip install -r competitions/requirements.txt
+```
+
+### 2.Evaluation Scripts
+
+We support two forms of input, one is to directly input the path containing all mp4 format videos (using the `--video_path flag`). The other is to input the root directory of the videos saved in png format and the corresponding frame rate of the videos, and we will automatically convert the videos to the specified format and then evaluate them (using the `--submission_path` flag and `--frame_rate` flag).
+
+Additionally, you need to use the `--prompt_file` flag to specify the category that the videos you want to evaluate belong to, whether it's short_video or long_video.
+
+You can use the `--dimension` flag to specify one or more dimensions to be evaluated, and the `--output_path` flag to specify the path to store the results.
+
+To perform evaluation, use the following script:
+```
+python run_eval.py --video_path <videos_path> --output_path <output_path>  --prompt_file <prompt_file> --dimension <dim1>
+```
+or
+```
+python run_eval.py --submission_path <submission_path> --frame_rate <fps> --output_path <output_path>  --prompt_file <prompt_file> --dimension <dim1> <dim2> <dim3>
+```
+
+For example:
+
+```
+python run_eval.py --submission_path ./Short_Videos --frame_rate 8 --output_path ./eval_results  --prompt_file ./short_prompt_list.txt --dimension temporal_quality frame_wise_quality text_alignment
+```
+The structure of `submission_path` should like this:
+```
+├── Short_Videos
+│   ├── 0001_Close_up_of     # folder name corresponds to each prompt
+│   │   ├── 00000.png
+│   │   │── 00001.png
+│   │   │── ...
+│   ├── 0002_Turtle_swimming_in     
+│   │   ├── 00000.png
+│   │   │── 00001.png
+│   │   │── ...
+│   ├── ...
+│   ├── 0200_cruise_ship_in
+│   │   ├── 00000.png
+│   │   │── 00001.png
+│   │   │── ...
+```
+
+### 3.Evaluation Results
+
+The evaluation results will be saved in a JSON file in the following format, which includes the results of the **target evaluation dimensions** as well as the results of their **corresponding sub-dimensions**.
+
+```json
+{
+    "temporal_quality": [   # result of temporal_quality dimension
+        0.8530498955750241,
+        {
+            "subject_consistency": [
+                0.9986579449971517,
+                [
+                    ...
+                    {
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_results": 14.991820216178894
+                    },
+                    ...
+                ]
+            ],
+            "background_consistency": [
+                0.9924527994791666,
+                [
+                    ...
+                    {
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_results": 0.9943684895833333
+                    },
+                    ...
+                ]
+            ],
+            "motion_smoothness": [
+                0.9945638900362661,
+                [
+                    ...
+                    {
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_results": 0.9937908449241242
+                    },
+                    ...
+                ]
+            ],
+            "dynamic_degree": [
+                0.0,
+                [
+                    ...
+                    {
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_results": false
+                    },
+                    ...
+                ]
+            ]
+        }
+    ],
+    "frame_wise_quality": [   # result of frame_wise_quality dimension
+        0.6555798406600952,
+        {
+            "aesthetic_quality": [
+                0.5653051853179931,
+                [
+                    ...
+                    {
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_results": 0.709746241569519
+                    },
+                    ...
+                ]
+            ],
+            "imaging_quality": [
+                0.7458544960021973,
+                [
+                    ...
+                    {
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_results": 66.22727489471436
+                    },
+                    ...
+                ]
+            ]
+        }
+    ],
+    "text_alignment": [   # result of text_alignment dimension
+        0.2807383455336094,
+        {
+            "overall_consistency": [
+                0.24468591958284377,
+                [
+                    ...
+                    {
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_results": 0.2743408977985382
+                    },
+                    ...
+                ]
+            ],
+            "clip_score": [
+                0.316790771484375,
+                [
+                    ...
+                    {
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_results": 0.31317138671875
+                    },
+                    ...
+                ]
+            ]
+        }
+    ]
+}
+```
