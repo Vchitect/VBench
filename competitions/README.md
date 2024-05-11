@@ -237,7 +237,7 @@ The evaluation results will be saved in a JSON file in the following format, whi
                 [
                     ...
                     {
-                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in.mp4",
                         "video_results": 14.991820216178894
                     },
                     ...
@@ -248,7 +248,7 @@ The evaluation results will be saved in a JSON file in the following format, whi
                 [
                     ...
                     {
-                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in.mp4",
                         "video_results": 0.9943684895833333
                     },
                     ...
@@ -259,7 +259,7 @@ The evaluation results will be saved in a JSON file in the following format, whi
                 [
                     ...
                     {
-                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in.mp4",
                         "video_results": 0.9937908449241242
                     },
                     ...
@@ -270,7 +270,7 @@ The evaluation results will be saved in a JSON file in the following format, whi
                 [
                     ...
                     {
-                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in.mp4",
                         "video_results": false
                     },
                     ...
@@ -286,7 +286,7 @@ The evaluation results will be saved in a JSON file in the following format, whi
                 [
                     ...
                     {
-                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in.mp4",
                         "video_results": 0.709746241569519
                     },
                     ...
@@ -297,7 +297,7 @@ The evaluation results will be saved in a JSON file in the following format, whi
                 [
                     ...
                     {
-                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in.mp4",
                         "video_results": 66.22727489471436
                     },
                     ...
@@ -313,7 +313,7 @@ The evaluation results will be saved in a JSON file in the following format, whi
                 [
                     ...
                     {
-                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in.mp4",
                         "video_results": 0.2743408977985382
                     },
                     ...
@@ -324,7 +324,7 @@ The evaluation results will be saved in a JSON file in the following format, whi
                 [
                     ...
                     {
-                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in .mp4",
+                        "video_path": "./evaluated_videos/0002_Turtle_swimming_in.mp4",
                         "video_results": 0.31317138671875
                     },
                     ...
