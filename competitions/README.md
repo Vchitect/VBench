@@ -334,3 +334,25 @@ The evaluation results will be saved in a JSON file in the following format, whi
     ]
 }
 ```
+
+## :black_nib: Citation
+
+   If you use VBench for evaluating your models, please consider citing our paper or repo:
+
+   ```bibtex
+    @InProceedings{huang2023vbench,
+        title={{VBench}: Comprehensive Benchmark Suite for Video Generative Models},
+        author={Huang, Ziqi and He, Yinan and Yu, Jiashuo and Zhang, Fan and Si, Chenyang and Jiang, Yuming and Zhang, Yuanhan and Wu, Tianxing and Jin, Qingyang and Chanpaisit, Nattapol and Wang, Yaohui and Chen, Xinyuan and Wang, Limin and Lin, Dahua and Qiao, Yu and Liu, Ziwei},
+        booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+        year={2024}
+    }
+
+    @article{huang2023vbenchgithub,
+        author = {VBench Contributors},
+        title = {VBench},
+        year = {2023},
+        publisher = {GitHub},
+        journal = {GitHub repository},
+        howpublished = {\url{https://github.com/Vchitect/VBench}},
+    }    
+   ```
