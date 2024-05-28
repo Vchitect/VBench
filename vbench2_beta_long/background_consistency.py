@@ -9,7 +9,7 @@ from dreamsim import dreamsim
 from tqdm import tqdm
 from vbench.background_consistency import compute_background_consistency, background_consistency
 from vbench.utils import load_video, load_dimension_info, dino_transform, dino_transform_Image, clip_transform
-from vbench2_beta_long.utils import reorganize_clips_results, save_segment, create_video_from_first_frames, fuse_inclip_clip2clip
+from vbench2_beta_long.utils import reorganize_clips_results, save_segment, create_video_from_first_frames, fuse_inclip_clip2clip, dreamsim_transform
 import logging
 import clip
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -38,13 +38,14 @@ def compute_long_background_consistency(json_dir, device, submodules_list, **kwa
         video_list.append(os.path.join(new_cat_video_path, video_path))
     
     def _compute_background_consistency(video_list, device, submodules_list, **kwargs):
-        if kwargs['feature_extractor'] == 'vbench':
+        if kwargs['bg_clip2clip_feat_extractor'] == 'clip':
             vit_path, read_frame = submodules_list[0], submodules_list[1]
             clip_model, preprocess = clip.load(vit_path, device=device)
             all_results, video_results = background_consistency(clip_model, preprocess, video_list, device, read_frame)
-        elif kwargs['feature_extractor'] == 'dreamsim':
+        elif kwargs['bg_clip2clip_feat_extractor'] == 'dreamsim':
             read_frame = submodules_list[1]
-            dreamsim_model, preprocess = dreamsim(pretrained=True, cache_dir="~/.cache")
+            cache_dir = os.path.expanduser("~/.cache")
+            dreamsim_model, preprocess = dreamsim(pretrained=True, cache_dir=cache_dir)
             all_results, video_results = background_consistency_dreamsim(dreamsim_model, preprocess, video_list, device, read_frame)
         return all_results, video_results
 
@@ -62,7 +63,7 @@ def background_consistency_dreamsim(model, preprocess, video_list, device, read_
     sim = 0.0
     cnt = 0
     video_results = []
-    image_transform = clip_transform(224)
+    image_transform = dreamsim_transform(224)
     for video_path in tqdm(video_list):
         video_sim = 0.0
         if read_frame:
@@ -78,7 +79,7 @@ def background_consistency_dreamsim(model, preprocess, video_list, device, read_
 
         images = images.to(device)
         image_features = model.embed(images)
-
+        image_features = F.normalize(image_features, dim=-1, p=2)
         for i in range(len(image_features)):
             image_feature = image_features[i].unsqueeze(0)
             if i == 0:

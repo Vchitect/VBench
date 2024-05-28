@@ -1,5 +1,7 @@
 import torch
 import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 from vbench2_beta_long import VBenchLong
 from datetime import datetime
 import argparse
@@ -18,7 +20,7 @@ def parse_args():
     parser.add_argument(
         "--full_json_dir",
         type=str,
-        default=f'{CUR_DIR}/vbench/VBench_full_info.json',
+        default=f'{CUR_DIR}/VBench_full_info.json',
         help="path to save the json file that contains the prompt and dimension information",
     )
     parser.add_argument(
@@ -114,16 +116,27 @@ def parse_args():
         """,
     )
 
-    # for dreamsim & other models
+    # for background consistency's feature extractor models
     parser.add_argument(
-        "--feature_extractor",
+        "--bg_clip2clip_feat_extractor",
         type=str,
-        default='vbench',
-        choices=['vbench', 'dreamsim'],
-        help="""This will select the model to caculate 
+        default='clip',
+        choices=['clip', 'dreamsim'],
+        help="""This will select the model to caculate background
         consistency dimension's scores.
         """,
     )
+    # for subject consistency's feature extractor models
+    parser.add_argument(
+        "--sb_clip2clip_feat_extractor",
+        type=str,
+        default='dino',
+        choices=['dino', 'dinov2', 'dreamsim'],
+        help="""This will select the model to caculate subject 
+        consistency dimension's scores.
+        """,
+    )
+
     parser.add_argument(
         "--w_inclip",
         type=float,
@@ -144,6 +157,13 @@ def parse_args():
         type=str,
         default='clip_length_mix.yaml',
         help="""Config files for different clip length.
+        """,
+    )
+    # for dev branch
+    parser.add_argument(
+        "--dev_flag",
+        action="store_true",
+        help="""Denote the current state of pipeline
         """,
     )
 
@@ -183,13 +203,24 @@ def main():
     if args.category != "":
         kwargs['category'] = args.category
 
+    if not args.dev_flag:
+        args.sb_clip2clip_feat_extractor = 'dino'
+        args.bg_clip2clip_feat_extractor = 'clip'
+        args.w_inclip = 1.0
+        args.w_clip2clip = 0.0
 
-    kwargs['feature_extractor'] = args.feature_extractor
+    kwargs['sb_clip2clip_feat_extractor'] = args.sb_clip2clip_feat_extractor
+    kwargs['bg_clip2clip_feat_extractor'] = args.bg_clip2clip_feat_extractor
     kwargs['imaging_quality_preprocessing_mode'] = args.imaging_quality_preprocessing_mode
     kwargs['clip_length_config'] = args.clip_length_config
     kwargs['w_inclip'] = args.w_inclip
     kwargs['w_clip2clip'] = args.w_clip2clip
     kwargs['use_semantic_splitting'] = args.use_semantic_splitting
+
+    kwargs['inclip_mean'] = 0.
+    kwargs['inclip_std'] = 1.
+    kwargs['clip2clip_mean'] = 0.
+    kwargs['clip2clip_std'] = 1.
 
     my_VBench.evaluate(
         videos_path = args.videos_path,
