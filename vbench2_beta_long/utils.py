@@ -294,6 +294,11 @@ def fuse_inclip_clip2clip(inclip_dict, clip2clip_dict, **kwargs):
 
     w_inclip = kwargs['w_inclip']
     w_clip2clip = kwargs['w_clip2clip']
+    inclip_mean = kwargs['inclip_mean']
+    inclip_std = kwargs['inclip_std']
+    clip2clip_mean = kwargs['clip2clip_mean']
+    clip2clip_std = kwargs['clip2clip_std']
+
     clip2clip_dict = {os.path.basename(item['video_path']): item['video_results'] for item in clip2clip_dict}
 
     for inclip_item in inclip_dict:
@@ -301,10 +306,18 @@ def fuse_inclip_clip2clip(inclip_dict, clip2clip_dict, **kwargs):
         inclip_score = inclip_item['video_results']
 
         clip2clip_score = clip2clip_dict.get(os.path.basename(video_path), 0)
+
+
+        # Normalize scores
+        inclip_score = (inclip_score - inclip_mean) / inclip_std
+        clip2clip_score = (clip2clip_score - clip2clip_mean) / clip2clip_std
+
         fused_score = inclip_score * w_inclip + clip2clip_score * w_clip2clip
         # fused_detailed_results[video_path] = fused_score
         fused_detailed_results.append({
             "video_path": video_path,
+            'inclip_score': inclip_score,
+            'clip2clip_score': clip2clip_score,
             "video_results": fused_score
         })
 
@@ -356,3 +369,42 @@ def get_prompt_from_filename(path: str):
     if re.search(number_ending, prompt):
         return re.sub(number_ending, '', prompt)
     return prompt
+
+
+def dreamsim_transform(n_px):
+    t = transforms.Compose([
+        transforms.Resize((n_px, n_px),
+                          interpolation=transforms.InterpolationMode.BICUBIC),
+        transforms.Lambda(lambda x: x.float().div(255.0)),
+    ])
+
+    return t
+
+def dreamsim_transform_Image(n_px):
+    t = transforms.Compose([
+        transforms.Resize((n_px, n_px),
+                          interpolation=transforms.InterpolationMode.BICUBIC),
+        transforms.ToTensor(),
+    ])
+
+    return t
+
+def dinov2_transform(n_px):
+    t = transforms.Compose([
+        transforms.Resize(256, interpolation=transforms.InterpolationMode.BICUBIC),
+        transforms.CenterCrop(n_px),
+        transforms.Lambda(lambda x: x.float().div(255.0)),
+        transforms.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)),
+    ])
+
+    return t
+
+def dinov2_transform_Image(n_px):
+    t = transforms.Compose([
+        transforms.Resize(256, interpolation=transforms.InterpolationMode.BICUBIC),
+        transforms.CenterCrop(n_px),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)),
+    ])
+
+    return t
