@@ -355,6 +355,14 @@ def init_submodules(dimension_list, local=False, read_frame=False):
             if not os.path.exists(submodules_dict[dimension]['pretrain']):
                 wget_command = ['wget', 'https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/internvideo/viclip/ViClip-InternVid-10M-FLT.pth', '-P', os.path.dirname(submodules_dict[dimension]["pretrain"])]
                 subprocess.run(wget_command, check=True)
+
+            if local:
+                submodules_dict[dimension]['name'] = f'{CACHE_DIR}/clip_model/ViT-B-32.pt'
+                if not os.path.isfile(submodules_dict[dimension]["name"]):
+                    wget_command = ['wget', 'https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt', '-P', os.path.dirname(submodules_dict[dimension]["name"])]
+                    subprocess.run(wget_command, check=True)
+            else:
+                submodules_dict[dimension]['name'] = 'ViT-B/32'
     return submodules_dict
 
 def get_prompt_from_filename(path: str):
