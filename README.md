@@ -198,6 +198,9 @@ bash evaluate.sh
     vbench_videos/{model}/{dimension}/{prompt}-{index}.mp4/gif
     ```
 
+
+
+#### Before evaluating the temporal flickering dimension, it is necessary to filter out the static videos first.
 To filter static videos in the temporal flickering dimension, run this:
 ```
 # This only filter out static videos whose prompt matches the prompt in the temporal_flickering.
