@@ -18,6 +18,7 @@ This repository contains the implementation of the following paper:
 
 
 ## :fire: Updates
+- [05/2024] PyPI package is updated to version 0.1.2. This includes changes in the preprocessing for high-resolution images/videos, custom prompt support, and minor bug fixes.
 - [04/2024] We release all the videos we sampled and used for VBench evaluation. [![Dataset Download](https://img.shields.io/badge/Dataset-Download-red?logo=googlechrome&logoColor=red)](https://drive.google.com/drive/folders/13pH95aUN-hVgybUZJBx1e_08R6xhZs5X) See details [here](https://github.com/Vchitect/VBench/tree/master/sampled_videos).
 - [03/2024] :fire: **[VBench-Trustworthiness](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_trustworthiness)** :fire: We now support evaluating the **trustworthiness** (*e.g.*, culture, fairness, bias, safety) of video generative models.
 - [03/2024] :fire: **[VBench-I2V](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_i2v)** :fire: We now support evaluating **Image-to-Video (I2V)** models. We also provide [Image Suite](https://drive.google.com/drive/folders/1fdOZKQ7HWZtgutCKKA7CMzOhMFUGv4Zx?usp=sharing).
