@@ -289,8 +289,25 @@ def build_filerted_info_json(videos_path, output_path, name):
 
 
 
-def fuse_inclip_clip2clip(inclip_dict, clip2clip_dict, **kwargs):
+def fuse_inclip_clip2clip(inclip_avg_results, clip2clip_avg_results, inclip_dict, clip2clip_dict, dimension, **kwargs):
     fused_detailed_results = []
+
+    if dimension == 'subject_consistency':
+        postfix = 'sb'
+    elif dimension == 'background_consistency':
+        postfix = 'bg'
+
+    with open(kwargs['slow_fast_eval_config'] , 'r') as f:
+        params = yaml.safe_load(f)
+
+    kwargs['inclip_mean'] = params.get(f'inclip_mean_{postfix}')
+    kwargs['inclip_std'] = params.get(f'inclip_std_{postfix}')
+    kwargs['clip2clip_mean'] = params.get(f'clip2clip_mean_{postfix}')
+    kwargs['clip2clip_std'] = params.get(f'clip2clip_std_{postfix}')
+    if kwargs['dev_flag']:
+        kwargs['w_inclip'] = params.get(f'w_inclip_{postfix}')
+        kwargs['w_clip2clip'] = params.get(f'w_clip2clip_{postfix}')
+
 
     w_inclip = kwargs['w_inclip']
     w_clip2clip = kwargs['w_clip2clip']
@@ -308,20 +325,20 @@ def fuse_inclip_clip2clip(inclip_dict, clip2clip_dict, **kwargs):
         clip2clip_score = clip2clip_dict.get(os.path.basename(video_path), 0)
 
 
-        # Normalize scores
-        inclip_score = (inclip_score - inclip_mean) / inclip_std
-        clip2clip_score = (clip2clip_score - clip2clip_mean) / clip2clip_std
+        # Map clip2clip_score to the scale of inclip_score
+        mapped_clip2clip_score = (clip2clip_score - clip2clip_mean) / clip2clip_std * inclip_std + inclip_mean
 
-        fused_score = inclip_score * w_inclip + clip2clip_score * w_clip2clip
+        fused_score = inclip_score * w_inclip + mapped_clip2clip_score * w_clip2clip
         # fused_detailed_results[video_path] = fused_score
         fused_detailed_results.append({
             "video_path": video_path,
             'inclip_score': inclip_score,
             'clip2clip_score': clip2clip_score,
+            'mapped_clip2clip_score': mapped_clip2clip_score,
             "video_results": fused_score
         })
-
-    return fused_detailed_results
+    fused_all_results = inclip_avg_results * w_inclip + clip2clip_avg_results * w_clip2clip
+    return fused_all_results, fused_detailed_results
 
 
 def get_duration_from_json(video_path, full_info_list, clip_lengths):

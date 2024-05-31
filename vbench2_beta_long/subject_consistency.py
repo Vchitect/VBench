@@ -68,9 +68,9 @@ def compute_long_subject_consistency(json_dir, device, submodules_list, **kwargs
 
 
     clip2clip_all_results, clip2clip_detailed_results = _compute_subject_consistency(video_list, device, submodules_list, **kwargs)
-
-    fused_detailed_results = fuse_inclip_clip2clip(inclip_average_scores, clip2clip_detailed_results, **kwargs)
-    fused_all_results = inclip_all_results * kwargs['w_inclip'] + clip2clip_all_results * kwargs['w_clip2clip']
+    dimension = 'subject_consistency'
+    fused_all_results, fused_detailed_results = fuse_inclip_clip2clip(inclip_all_results, clip2clip_all_results, inclip_average_scores, clip2clip_detailed_results, dimension, **kwargs)
+    # fused_all_results = inclip_all_results * kwargs['w_inclip'] + clip2clip_all_results * kwargs['w_clip2clip']
     return fused_all_results, fused_detailed_results
 
 
@@ -117,8 +117,9 @@ def subject_consistency_dreamsim(model, video_list, device, read_frame):
                     cnt += 1
 
             former_image_features = image_features
+        sim_per_images = video_sim / (len(images) - 1)
         sim += video_sim
-        video_results.append({'video_path': video_path, 'video_results': video_sim})
+        video_results.append({'video_path': video_path, 'video_results': sim_per_images})
     sim_per_video = sim / (len(video_list) - 1)
     sim_per_frame = sim / cnt
     return sim_per_frame, video_results
@@ -158,8 +159,9 @@ def subject_consistency_dinov2(model, video_list, device, read_frame):
                     video_sim += cur_sim
                     cnt += 1
             former_image_features = image_features
+        sim_per_images = video_sim / (len(images) - 1)
         sim += video_sim
-        video_results.append({'video_path': video_path, 'video_results': video_sim})
+        video_results.append({'video_path': video_path, 'video_results': sim_per_images})
     sim_per_video = sim / (len(video_list) - 1)
     sim_per_frame = sim / cnt
     return sim_per_frame, video_results
