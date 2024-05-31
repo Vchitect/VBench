@@ -2,7 +2,7 @@
 
 VBench now supports evaluating Long Video generation models.
 
-## Video Splitting
+## 1. Video Splitting
 This section includes dividing a long video into multiple semantically consistent short clips and dividing a long video into multiple fixed-length short clips.
 
 ### :hammer: Setup Repository and Enviroment
@@ -17,7 +17,7 @@ pip install VBench
 pip install scenedetect[opencv] --upgrade
 pip install ffmpeg
 ```
-### Splitting Long Video into Semantically Consistent Short Vidoes
+### 1.1 Splitting Long Video into Semantically Consistent Short Vidoes
 Here we offer a function using PySceneDetect to split a long video into multiple semantics-consistent short videos and save these short videos.
 
 For example
@@ -26,7 +26,7 @@ from vbench2_beta_long.utils import split_video_into_scenes
 split_video_into_scenes(video_path, output_dir, threshold)
 ```
 
-### Splitting Long Video into Fixed-length Clips
+### 1.2 Splitting Long Video into Fixed-length Clips
 
 In order to adapt to the settings in VBench, we split long videos into short videos of fixed lengths. Considering that some models are trained on different duration videos, such as UMT and ViCLIP, used for `temporal_style` and `overall_consistency`, we established different splitting strategies, which can be found in `vbench2_beta_long/configs`.
 
@@ -40,10 +40,15 @@ split_video_into_clips(video_path, base_output_dir, duration, fps)
 
 * Note: We have integrated the code for Semantically Consistent Clips Splitting and Fixed-length Clips splitting into the preprocessing process of `VBench-Long`, so users do not need to perform this processing in advance.
 
+## 2. Slow-Fast Evaluation for Consistency Dimensions
+Considering the characteristics of the consistency dimensions such as `subject_consistency` and `background_consistency`, it is clearly unreasonable to evaluate consistency dimensions only in fixed-length short video clips. Therefore, we introduce Slow-Fast Evaluation Method. 
 
-## Usage
+Specifically, we first evaluate the consistency dimensions' score within each clip, then calculate the consistency dimensions' score between clips. Finally, we weight and combine the two scores to obtain the final consistency dimension score.
 
-### Evaluation on the Standard Prompt Suite of VBench
+
+## 3. Usage
+
+### 3.1 Evaluation on the Standard Prompt Suite of VBench
 
 python
 ```python
@@ -69,7 +74,7 @@ For example:
     )
 ```
 
-### Evaluation on Your Own Videos
+### 3.2 Evaluation on Your Own Videos
 
 * Note: We support customized videos / prompts for the following dimensions: 'subject_consistency', 'background_consistency', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality'
 
@@ -113,4 +118,4 @@ python
 
 **VBench-Long** is currently maintained by [Ziqi Huang](https://ziqihuangg.github.io/) and [Qianli Ma](https://github.com/MqLeet).
 
-We made use of [PySceneDetect](https://github.com/Breakthrough/PySceneDetect) and [DINO](https://github.com/facebookresearch/dino)
+In addition to the open-sourced repositories used in VBench, we also made use of [PySceneDetect](https://github.com/Breakthrough/PySceneDetect), [DINOv2](https://github.com/facebookresearch/dinov2), [DreamSim](https://github.com/ssundaram21/dreamsim).
