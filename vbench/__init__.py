@@ -18,7 +18,7 @@ class VBench(object):
 
     def check_dimension_requires_extra_info(self, dimension_list):
         dim_custom_not_supported = set(dimension_list) & set([
-            'background_consistency', 'object_class', 'multiple_objects', 'scene', 'appearance_style', 'color', 'spatial_relationship'
+            'object_class', 'multiple_objects', 'scene', 'appearance_style', 'color', 'spatial_relationship'
         ])
         assert len(dim_custom_not_supported) == 0, f"dimensions : {dim_custom_not_supported} not supported for custom input"
 
