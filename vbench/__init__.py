@@ -10,8 +10,7 @@ class VBench(object):
         self.device = device                        # cuda or cpu
         self.full_info_dir = full_info_dir          # full json file that VBench originally provides
         self.output_path = output_path              # output directory to save VBench results
-        if not os.path.exists(self.output_path):
-            os.makedirs(self.output_path, exist_ok=False)
+        os.makedirs(self.output_path, exist_ok=True)
 
     def build_full_dimension_list(self, ):
         return ["subject_consistency", "background_consistency", "aesthetic_quality", "imaging_quality", "object_class", "multiple_objects", "color", "spatial_relationship", "scene", "temporal_style", 'overall_consistency', "human_action", "temporal_flickering", "motion_smoothness", "dynamic_degree", "appearance_style"]        
