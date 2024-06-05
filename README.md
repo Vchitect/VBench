@@ -1,4 +1,4 @@
-![vbench_logo](https://raw.githubusercontent.com/Vchitect/VBench/master/asset/vbench_logo_short.jpg)
+![vbench_logo](https://raw.githubusercontent.com/Vchitect/VBench/master/asset/vbench_logo_github_20240605.jpg)
 
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2311.99999-b31b1b.svg)](https://arxiv.org/abs/2311.99999) -->
 [![Paper](https://img.shields.io/badge/cs.CV-Paper-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2311.17982)
@@ -10,15 +10,29 @@
 [![Visitor](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FVchitect%2FVBench&count_bg=%23FFA500&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false)](https://hits.seeyoufarm.com)
 
 
-This repository contains the implementation of the following paper:
+This repository contains the implementation of the following paper and its related serial works in progress. We evaluate video generative models!
 > **VBench: Comprehensive Benchmark Suite for Video Generative Models**<br>
 > [Ziqi Huang](https://ziqihuangg.github.io/)<sup>∗</sup>, [Yinan He](https://github.com/yinanhe)<sup>∗</sup>, [Jiashuo Yu](https://scholar.google.com/citations?user=iH0Aq0YAAAAJ&hl=zh-CN)<sup>∗</sup>, [Fan Zhang](https://github.com/zhangfan-p)<sup>∗</sup>, [Chenyang Si](https://chenyangsi.top/), [Yuming Jiang](https://yumingj.github.io/), [Yuanhan Zhang](https://zhangyuanhan-ai.github.io/),  [Tianxing Wu](https://tianxingwu.github.io/), [Qingyang Jin](https://github.com/Vchitect/VBench), [Nattapol Chanpaisit](https://nattapolchan.github.io/me), [Yaohui Wang](https://wyhsirius.github.io/), [Xinyuan Chen](https://scholar.google.com/citations?user=3fWSC8YAAAAJ), [Limin Wang](https://wanglimin.github.io), [Dahua Lin](http://dahua.site/)<sup>+</sup>, [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/index.html)<sup>+</sup>, [Ziwei Liu](https://liuziwei7.github.io/)<sup>+</sup><br>
 > IEEE/CVF Conference on Computer Vision and Pattern Recognition (**CVPR**), 2024
 
 
 
+### Table of Contents
+- [Updates](#updates)
+- [Overview](#overview)
+- [Evaluation Results](#evaluation_results)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Prompt Suite](#prompt_suite)
+- [Sampled Videos](#sampled_videos)
+- [Evaluation Method Suite](#evaluation_method_suite)
+- [Citation and Acknowledgement](#citation_and_acknowledgement)
+
+<a name="updates"></a>
 ## :fire: Updates
-- [05/2024] PyPI package is updated to version 0.1.2. This includes changes in the preprocessing for high-resolution images/videos for imaging_quality, custom prompt support, and minor bug fixes.
+- [06/2024] **VBench Leaderboard**: Information on video generative models in our [VBench Leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard) 
+ is documented [HERE](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models). All video generative models are encouraged to participate! We have 14 *T2V models*, 12 *I2V models* so far. [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
+- [05/2024] **PyPI Update**: PyPI package `vbench` is updated to version 0.1.2. This includes changes in the preprocessing for high-resolution images/videos for `imaging_quality`, support for evaluating customized videos, and minor bug fixes.
 - [04/2024] We release all the videos we sampled and used for VBench evaluation. [![Dataset Download](https://img.shields.io/badge/Dataset-Download-red?logo=googlechrome&logoColor=red)](https://drive.google.com/drive/folders/13pH95aUN-hVgybUZJBx1e_08R6xhZs5X) See details [here](https://github.com/Vchitect/VBench/tree/master/sampled_videos).
 - [03/2024] :fire: **[VBench-Trustworthiness](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_trustworthiness)** :fire: We now support evaluating the **trustworthiness** (*e.g.*, culture, fairness, bias, safety) of video generative models.
 - [03/2024] :fire: **[VBench-I2V](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_i2v)** :fire: We now support evaluating **Image-to-Video (I2V)** models. We also provide [Image Suite](https://drive.google.com/drive/folders/1fdOZKQ7HWZtgutCKKA7CMzOhMFUGv4Zx?usp=sharing).
@@ -28,12 +42,12 @@ This repository contains the implementation of the following paper:
     - `['subject_consistency', 'background_consistency', 'temporal_flickering', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality', 'object_class', 'multiple_objects', 'human_action', 'color', 'spatial_relationship', 'scene', 'temporal_style', 'appearance_style', 'overall_consistency']`
 - [11/2023] Prompt Suites released. (See prompt lists [here](https://github.com/Vchitect/VBench/tree/master/prompts))
   
-
+<a name="overview"></a>
 ## :mega: Overview
 ![overall_structure](./asset/fig_teaser_new.jpg)
 We propose **VBench**, a comprehensive benchmark suite for video generative models. We design a comprehensive and hierarchical <b>Evaluation Dimension Suite</b> to decompose "video generation quality" into multiple well-defined dimensions to facilitate fine-grained and objective evaluation. For each dimension and each content category, we carefully design a <b>Prompt Suite</b> as test cases, and sample <b>Generated Videos</b> from a set of video generation models. For each evaluation dimension, we specifically design an <b>Evaluation Method Suite</b>, which uses carefully crafted method or designated pipeline for automatic objective evaluation. We also conduct <b>Human Preference Annotation</b> for the generated videos for each dimension, and show that VBench evaluation results are <b>well aligned with human perceptions</b>. VBench can provide valuable insights from multiple perspectives.
 
-
+<a name="evaluation_results"></a>
 ## :mortar_board: Evaluation Results
 <p align="center">
   <img src="./asset/radar-open.jpg" width="48%" style="margin-right: 4%;" />
@@ -51,7 +65,7 @@ See [model info](https://github.com/Vchitect/VBench/tree/master/sampled_videos#w
 
 <!-- The values have been normalized for better readability of the chart. The normalization process involves scaling each set of performance values to a common scale between 0.3 and 0.8. The formula used for normalization is: (value - min value) / (max value - min value). -->
 
-
+<a name="installation"></a>
 ## :hammer: Installation
 ### Install with pip
 ```
@@ -74,6 +88,7 @@ Download [VBench_full_info.json](https://github.com/Vchitect/VBench/blob/master/
     
 If there is an error during [detectron2](https://github.com/facebookresearch/detectron2) installation, see [here](https://detectron2.readthedocs.io/en/latest/tutorials/install.html).
 
+<a name="usage"></a>
 ## Usage
 Use VBench to evaluate videos, and video generative models.
 - A Side Note: VBench is designed for evaluating different models on a standard benchmark. Therefore, by default, we enforce evaluation on the **standard VBench prompt lists** to ensure **fair comparisons** among different video generation models. That's also why we give warnings when a required video is not found. This is done via defining the set of prompts in [VBench_full_info.json](https://github.com/Vchitect/VBench/blob/master/vbench/VBench_full_info.json). However, we understand that many users would like to use VBench to evaluate their own videos, or videos generated from prompts that does not belong to the VBench Prompt Suite, so we also added the function of **Evaluating Your Own Videos**. Simply set `mode=custom_input`, and you can evaluate your own videos.
@@ -159,16 +174,18 @@ sh scripts/evaluate_videocrafter1.sh
 ```
 
 
-
+<a name="pretrained_models"></a>
 ## :gem: Pre-Trained Models
 [Optional] Please download the pre-trained weights according to the guidance in the `model_path.txt` file for each model in the `pretrained` folder to `~/.cache/vbench`.
 
+<a name="prompt_suite"></a>
 ## :bookmark_tabs: Prompt Suite
 
 We provide prompt lists are at `prompts/`. 
 
 Check out [details of prompt suites](https://github.com/Vchitect/VBench/tree/master/prompts), and instructions for [**how to sample videos for evaluation**](https://github.com/Vchitect/VBench/tree/master/prompts).
 
+<a name="sampled_videos"></a>
 ## :bookmark_tabs: Sampled Videos
 
 [![Dataset Download](https://img.shields.io/badge/Dataset-Download-red?logo=googlechrome&logoColor=red)](https://drive.google.com/drive/folders/13pH95aUN-hVgybUZJBx1e_08R6xhZs5X)
@@ -179,6 +196,7 @@ See detailed explanations of the sampled videos [here](https://github.com/Vchite
 
 We also provide detailed setting for the models under evaluation [here](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models).
 
+<a name="evaluation_method_suite"></a>
 ## :surfer: Evaluation Method Suite
 
 To perform evaluation on one dimension, run this:
@@ -216,7 +234,7 @@ python static_filter.py --videos_path $VIDEOS_PATH --filter_scope all
 python static_filter.py --videos_path $VIDEOS_PATH --filter_scope $filename
 ```
 
-
+<a name="citation_and_acknowledgement"></a>
 ## :black_nib: Citation
 
    If you find our repo useful for your research, please consider citing our paper:
