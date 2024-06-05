@@ -60,6 +60,15 @@ We visualize VBench evaluation results of various publicly available video gener
 
 See numeric values at our [Leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard) :1st_place_medal::2nd_place_medal::3rd_place_medal:
 
+**How to join VBench Leaderboard?**
+See the 3 options below:
+| Sampling Party | Evaluation Party |              Comments                         |
+| :---: |  :---: |        :--------------    | 
+| VBench Team | VBench Team | We periodically allocate resources to sample newly released models and perform evaluations. You can request us to perform sampling and evaluation, but the progress depends on our available resources. |
+| Your Team | VBench Team | For non-open-source models interested in joining our leaderboard, submit your video samples to us for evaluation. If you prefer to provide the evaluation results directly, see the row below. |
+| Your Team | Your Team | If you have already used VBench for full evaluation in your report/paper, submit your eval_results.json files to the [VBench Leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard) using the `Submit here!` form. The evaluation results will be automatically updated to the leaderboard. Also, share your model information for our records for any columns [here](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models). |
+
+
 #### :film_projector: Model Info
 See [model info](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models) for video generation models we used for evaluation.
 
