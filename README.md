@@ -127,31 +127,31 @@ vbench evaluate \
 
 ##### command line 
 ```bash
-    vbench evaluate --videos_path $VIDEO_PATH --dimension $DIMENSION
+vbench evaluate --videos_path $VIDEO_PATH --dimension $DIMENSION
 ```
 For example:
 ```bash
-    vbench evaluate --videos_path "sampled_videos/lavie/human_action" --dimension "human_action"
+vbench evaluate --videos_path "sampled_videos/lavie/human_action" --dimension "human_action"
 ```
 ##### python
 ```python
-    from vbench import VBench
-    my_VBench = VBench(device, <path/to/VBench_full_info.json>, <path/to/save/dir>)
-    my_VBench.evaluate(
-        videos_path = <video_path>,
-        name = <name>,
-        dimension_list = [<dimension>, <dimension>, ...],
-    )
+from vbench import VBench
+my_VBench = VBench(device, <path/to/VBench_full_info.json>, <path/to/save/dir>)
+my_VBench.evaluate(
+    videos_path = <video_path>,
+    name = <name>,
+    dimension_list = [<dimension>, <dimension>, ...],
+)
 ```
 For example: 
 ```python
-    from vbench import VBench
-    my_VBench = VBench(device, "vbench/VBench_full_info.json", "evaluation_results")
-    my_VBench.evaluate(
-        videos_path = "sampled_videos/lavie/human_action",
-        name = "lavie_human_action",
-        dimension_list = ["human_action"],
-    )
+from vbench import VBench
+my_VBench = VBench(device, "vbench/VBench_full_info.json", "evaluation_results")
+my_VBench.evaluate(
+    videos_path = "sampled_videos/lavie/human_action",
+    name = "lavie_human_action",
+    dimension_list = ["human_action"],
+)
 ```
 
 ### Evaluation of Different Content Categories
