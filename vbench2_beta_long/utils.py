@@ -10,6 +10,7 @@ import numpy as np
 from PIL import Image
 from tqdm import tqdm
 from pathlib import Path
+from bisect import bisect_left
 
 import torch
 import torch.nn as nn
@@ -28,6 +29,45 @@ from scenedetect import open_video, SceneManager, split_video_ffmpeg
 from scenedetect.detectors import ContentDetector
 from scenedetect.video_splitter import split_video_ffmpeg
 from moviepy.editor import VideoFileClip
+from scipy.stats import rankdata
+
+###################################################################################################
+# Consistency Dimensions' Score Distribution Transformation
+
+def quantile_map(inclip_scores, clip2clip_scores, step=0.01):
+    """
+    Perform quantile mapping from clip2clip_scores to inclip_scores.
+
+    Parameters:
+    inclip_scores (array-like): Array of Inclip scores.
+    clip2clip_scores (array-like): Array of Clip2Clip scores.
+    step (float): Step size for generating the mapping table. Default is 0.01.
+
+    Returns:
+    tuple: Mapped Clip2Clip scores, Mapping table between original Clip2Clip scores and mapped scores.
+    """
+    # Convert clip2clip_scores to quantiles
+    ranks = rankdata(clip2clip_scores, method='ordinal')
+    clip2clip_quantiles = ranks / (len(clip2clip_scores) + 1)
+
+    # Use the inverse CDF of inclip_scores to map quantiles to actual values
+    inclip_sorted = np.sort(inclip_scores)
+    inclip_quantiles = np.linspace(0, 1, len(inclip_scores), endpoint=False)
+
+    # Interpolate to find corresponding inclip values for clip2clip quantiles
+    clip2clip_scores_mapped = np.interp(clip2clip_quantiles, inclip_quantiles, inclip_sorted)
+
+    # Generate the mapping table
+    mapping_range = np.arange(0, 1, step)
+    mapping_table = {}
+    
+    for score in mapping_range:
+        # Find the index of the closest quantile to the current score
+        closest_idx = (np.abs(clip2clip_quantiles - score)).argmin()
+        # Map the score to the corresponding mapped value
+        mapping_table[round(float(score), 2)] = round(float(clip2clip_scores_mapped[closest_idx]), 15)
+    
+    return clip2clip_scores_mapped, mapping_table
 
 
 
@@ -287,7 +327,8 @@ def build_filerted_info_json(videos_path, output_path, name):
     print(f'Evaluation meta data saved to {cur_full_info_path}')
     return cur_full_info_path
 
-
+def linear_interpolate(x, x0, x1, y0, y1):
+    return y0 + (y1 - y0) * (x - x0) / (x1 - x0)
 
 def fuse_inclip_clip2clip(inclip_avg_results, clip2clip_avg_results, inclip_dict, clip2clip_dict, dimension, **kwargs):
     fused_detailed_results = []
@@ -316,6 +357,13 @@ def fuse_inclip_clip2clip(inclip_avg_results, clip2clip_avg_results, inclip_dict
     clip2clip_mean = kwargs['clip2clip_mean']
     clip2clip_std = kwargs['clip2clip_std']
 
+    # Load the mapping table from the YAML file
+    with open(kwargs[f'{postfix}_mapping_file_path'], 'r') as f:
+        mapping_table = yaml.safe_load(f)
+
+    # Find the interval in the mapping table for clip2clip_score
+    keys = sorted(mapping_table.keys())
+
     clip2clip_dict = {os.path.basename(item['video_path']): item['video_results'] for item in clip2clip_dict}
 
     for inclip_item in inclip_dict:
@@ -325,8 +373,21 @@ def fuse_inclip_clip2clip(inclip_avg_results, clip2clip_avg_results, inclip_dict
         clip2clip_score = clip2clip_dict.get(os.path.basename(video_path), 0)
 
 
+        # Find the interval in the mapping table for clip2clip_score using bisect
+        idx = bisect_left(keys, clip2clip_score)
+        if idx == 0:
+            mapped_clip2clip_score = mapping_table[keys[0]]
+        elif idx == len(keys):
+            mapped_clip2clip_score = mapping_table[keys[-1]]
+        else:
+            k0, k1 = keys[idx - 1], keys[idx]
+            mapped_clip2clip_score = linear_interpolate(
+                clip2clip_score, k0, k1,
+                mapping_table[k0], mapping_table[k1]
+            )
+
         # Map clip2clip_score to the scale of inclip_score
-        mapped_clip2clip_score = (clip2clip_score - clip2clip_mean) / clip2clip_std * inclip_std + inclip_mean
+        # mapped_clip2clip_score = (clip2clip_score - clip2clip_mean) / clip2clip_std * inclip_std + inclip_mean
 
         fused_score = inclip_score * w_inclip + mapped_clip2clip_score * w_clip2clip
         # fused_detailed_results[video_path] = fused_score
