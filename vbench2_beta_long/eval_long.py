@@ -152,6 +152,22 @@ def parse_args():
         """,
     )
 
+    parser.add_argument(
+        "--subject_mapping_file_path",
+        type=str,
+        default=f'{CUR_DIR}/configs/subject_mapping_table.yaml',
+        help="""Mapping table of subject consistency.
+        """,
+    )
+
+    parser.add_argument(
+        "--background_mapping_file_path",
+        type=str,
+        default=f'{CUR_DIR}/configs/background_mapping_table.yaml',
+        help="""Mapping table of background consistency.
+        """,
+    )
+
     # Weight params for slow-fast evaluation, subject consistency
     parser.add_argument(
         "--slow_fast_eval_config",
@@ -228,6 +244,8 @@ def main():
     kwargs['use_semantic_splitting'] = args.use_semantic_splitting
     kwargs['slow_fast_eval_config'] = args.slow_fast_eval_config
     kwargs['dev_flag'] = args.dev_flag
+    kwargs['sb_mapping_file_path'] = args.subject_mapping_file_path
+    kwargs['bg_mapping_file_path'] = args.background_mapping_file_path
 
     my_VBench.evaluate(
         videos_path = args.videos_path,
