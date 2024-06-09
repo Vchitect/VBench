@@ -169,6 +169,7 @@ private_dev/*
 evaluation_results/*.json
 vbench/third_party/ViCLIP/bpe_simple_vocab_16e6.txt.gz
 trash*
+prepublish-ci/*
 
 # image suite
 vbench2_beta_i2v/data
