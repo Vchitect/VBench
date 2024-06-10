@@ -1,9 +1,9 @@
 # VBench-Long (Beta Version, May 2024)
 
-VBench now supports evaluating Long Video generation models.
+VBench now supports evaluating **long** video generative models.
 
 ## 1. Video Splitting
-This section includes dividing a long video into multiple semantically consistent short clips and dividing a long video into multiple fixed-length short clips.
+We split the long video into video clips in two steps
 
 ### :hammer: Setup Repository and Enviroment
 ```bash
@@ -17,8 +17,9 @@ pip install VBench
 pip install scenedetect[opencv] --upgrade
 pip install ffmpeg
 ```
-### 1.1 Splitting Long Video into Semantically Consistent Short Vidoes
-Here we offer a function using PySceneDetect to split a long video into multiple semantics-consistent short videos and save these short videos.
+### 1.1 Bypass Scene Cut
+First, we use PySceneDetect to split a long video into multiple semantically consistent short clips and save these clips. After this step, each split video clip ideally contains no scene cuts.
+
 
 For example
 ```python
@@ -26,67 +27,68 @@ from vbench2_beta_long.utils import split_video_into_scenes
 split_video_into_scenes(video_path, output_dir, threshold)
 ```
 
-### 1.2 Splitting Long Video into Fixed-length Clips
+### 1.2 Create Slow-Fast Branches
 
-In order to adapt to the settings in VBench, we split long videos into short videos of fixed lengths. Considering that some models are trained on different duration videos, such as UMT and ViCLIP, used for `temporal_style` and `overall_consistency`, we established different splitting strategies, which can be found in `vbench2_beta_long/configs`.
+Next, we split the videos from the previous step into shorter fixed-length clips to enable the slow-fast evaluation introduced in the next section.  Since some evaluation dimensions use models trained on longer video clips, such as UMT and ViCLIP, for `human_action` and `overall_consistency`, we established different fixed-length durations for different dimensions. These durations can be found in `vbench2_beta_long/configs/clip_length_mix.yaml`.
 
 
-For example
+Usage:
 ```python
 from vbench2_beta_long.utils import split_video_into_clips
 split_video_into_clips(video_path, base_output_dir, duration, fps)
 ```
 
 
-* Note: We have integrated the code for Semantically Consistent Clips Splitting and Fixed-length Clips splitting into the preprocessing process of `VBench-Long`, so users do not need to perform this processing in advance.
+**Note: The two video splitting steps has been integrated into `VBench-Long` for automatic execution, so users do not need to manually perform this processing in advance.**
 
-## 2. Slow-Fast Evaluation for Consistency Dimensions
-Considering the characteristics of the consistency dimensions such as `subject_consistency` and `background_consistency`, it is clearly unreasonable to evaluate consistency dimensions only in fixed-length short video clips. Therefore, we introduce Slow-Fast Evaluation Method. 
+## 2. Slow-Fast Approach to Evaluate Temporal Consistency
+<!-- Considering the characteristics of the consistency dimensions such as `subject_consistency` and `background_consistency`, it is clearly unreasonable to evaluate consistency dimensions only in fixed-length short video clips. Therefore, we introduce Slow-Fast Evaluation Method.  -->
+Previously, VBench evaluated temporal consistency primarily by calculating the consistency between adjacent video frames. However, for longer videos, it is also crucial to consider the long-range consistency of background scenes and foreground subjects. To address this, we have adopted a slow-fast approach for evaluating temporal consistency.
+- **Slow Branch**: This high-frame-rate branch includes every frame in the short video clip. The slow branch evaluation follows VBench's short video evaluation approach.
+- **Fast branch**: This low-frame-rate branch extracts the first frame of each very short video clip from the same long video. We then evaluate the long-range consistency using a new set of feature extractors that emphasize high-level visual similarity over lower-level details.
 
-Specifically, we first evaluate the consistency dimensions' score within each clip, then calculate the consistency dimensions' score between clips. Finally, we weight and combine the two scores to obtain the final consistency dimension score.
+<!-- Specifically, we first evaluate the consistency dimensions' score within each clip, then calculate the consistency dimensions' score between clips. Finally, we weight and combine the two scores to obtain the final consistency dimension score. -->
 
 
 ## 3. Usage
 
 ### 3.1 Evaluation on the Standard Prompt Suite of VBench
 
-python
 ```python
-    from vbench2_beta_long import VBenchLong
-    my_VBench = VBenchLong(device, <path/to/VBench_full_info.json>, <path/to/save/dir>)
-    my_VBench.evaluate(
-        videos_path = <video_path>,
-        name = <name>,
-        dimension_list = [<dimension>, <dimension>, ...],
-        mode = 'long_vbench_standard',
-    )
+from vbench2_beta_long import VBenchLong
+my_VBench = VBenchLong(device, <path/to/VBench_full_info.json>, <path/to/save/dir>)
+my_VBench.evaluate(
+    videos_path = <video_path>,
+    name = <name>,
+    dimension_list = [<dimension>, <dimension>, ...],
+    mode = 'long_vbench_standard',
+)
 ```
 
 For example:
 ```python
-    from vbench2_beta_long import VBenchLong
-    my_VBench = VBenchLong(device, "vbench/VBench_full_info.json", "evaluation_results")
-    my_VBench.evaluate(
-        videos_path = 'sampled_videos/latte/subject_consistency',
-        name ='results_latte_subject_consistency',
-        dimension_list = ["subject_consistency"],
-        mode = 'long_vbench_standard',
-    )
+from vbench2_beta_long import VBenchLong
+my_VBench = VBenchLong(device, "vbench/VBench_full_info.json", "evaluation_results")
+my_VBench.evaluate(
+    videos_path = 'sampled_videos/latte/subject_consistency',
+    name ='results_latte_subject_consistency',
+    dimension_list = ["subject_consistency"],
+    mode = 'long_vbench_standard',
+)
 ```
 
 ### 3.2 Evaluation on Your Own Videos
 
-* Note: We support customized videos / prompts for the following dimensions: 'subject_consistency', 'background_consistency', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality'
+For long video evaluation, we support customized videos / prompts for the following dimensions: `subject_consistency`, `background_consistency`, `motion_smoothness`, `dynamic_degree`, `aesthetic_quality`, `imaging_quality`
 
-python
 ```python
-    from vbench2_beta_long import VBenchLong
-    my_VBench = VBenchLong(device, <path/to/VBench_full_info.json>, <path/to/save/dir>)
-    my_VBench.evaluate(
-        videos_path = </path/to/folder_or_video/>,
-        name = <name>,
-        mode = 'long_custom_input',
-    )
+from vbench2_beta_long import VBenchLong
+my_VBench = VBenchLong(device, <path/to/VBench_full_info.json>, <path/to/save/dir>)
+my_VBench.evaluate(
+    videos_path = </path/to/folder_or_video/>,
+    name = <name>,
+    mode = 'long_custom_input',
+)
 ```
 
 
