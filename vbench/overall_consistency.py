@@ -63,21 +63,20 @@ def overall_consistency_t2i(clip_model, image_dict, device):
     for info in tqdm(image_dict):
         query = info['prompt']
         text = clip.tokenize([query]).to(device)
-        video_list = info['video_list']
-        for video_path in video_list:
+        image_list = info['video_list']
+        for image_path in image_list:
             with torch.no_grad():
-                image = load_video(video_path, return_tensor=False)[0]
+                image = load_video(image_path, return_tensor=False)[0]
                 image = Image.fromarray(image)
                 image = image_transform(image)
                 image = image.to(device)
                 text = clip.tokenize([query]).to(device)
                 _ , logits_per_text = clip_model(image.unsqueeze(0), text)
-                score_per_video = float(logits_per_text[0][0].cpu())
-                score_per_video = score_per_video / 100
-                sim.append(score_per_video)
-                video_results.append({'video_path': video_path, 'video_results': score_per_video})
-
-    return score_per_video, video_results
+                score_per_image = float(logits_per_text[0][0].cpu())
+                score_per_image = score_per_image / 100
+                sim.append(score_per_image)
+                video_results.append({'video_path': image_path, 'video_results': score_per_image})
+    return sum(sim)/len(sim), video_results
 
 def compute_overall_consistency(json_dir, device, submodules_list, **kwargs):
     _, video_dict = load_dimension_info(json_dir, dimension='overall_consistency', lang='en')
