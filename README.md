@@ -30,6 +30,7 @@ This repository contains the implementation of the following paper and its relat
 
 <a name="updates"></a>
 ## :fire: Updates
+- [06/2024] :fire: **[VBench-Long](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_long)** :fire: is ready to use for evaluating longer Sora-like videos!
 - [06/2024] **VBench Leaderboard**: Information on video generative models in our [VBench Leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard) 
  is documented [HERE](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models). All video generative models are encouraged to participate! We have 14 *T2V models*, 12 *I2V models* so far. [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
 - [05/2024] **PyPI Update**: PyPI package `vbench` is updated to version 0.1.2. This includes changes in the preprocessing for high-resolution images/videos for `imaging_quality`, support for evaluating customized videos, and minor bug fixes.
@@ -37,7 +38,7 @@ This repository contains the implementation of the following paper and its relat
 - [03/2024] :fire: **[VBench-Trustworthiness](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_trustworthiness)** :fire: We now support evaluating the **trustworthiness** (*e.g.*, culture, fairness, bias, safety) of video generative models.
 - [03/2024] :fire: **[VBench-I2V](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_i2v)** :fire: We now support evaluating **Image-to-Video (I2V)** models. We also provide [Image Suite](https://drive.google.com/drive/folders/1fdOZKQ7HWZtgutCKKA7CMzOhMFUGv4Zx?usp=sharing).
 - [03/2024] We support **evaluating customized videos**! See [here](https://github.com/Vchitect/VBench/?tab=readme-ov-file#new-evaluate-your-own-videos) for instructions.
-- [01/2024] PyPI pacakge is released! [![PyPI](https://img.shields.io/pypi/v/vbench)](https://pypi.org/project/vbench/). Simply `pip install vbench`.
+- [01/2024] PyPI package is released! [![PyPI](https://img.shields.io/pypi/v/vbench)](https://pypi.org/project/vbench/). Simply `pip install vbench`.
 - [12/2023] :fire: **[VBench](https://github.com/Vchitect/VBench?tab=readme-ov-file#usage)** :fire: Evaluation code released for 16 **Text-to-Video (T2V) evaluation** dimensions. 
     - `['subject_consistency', 'background_consistency', 'temporal_flickering', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality', 'object_class', 'multiple_objects', 'human_action', 'color', 'spatial_relationship', 'scene', 'temporal_style', 'appearance_style', 'overall_consistency']`
 - [11/2023] Prompt Suites released. (See prompt lists [here](https://github.com/Vchitect/VBench/tree/master/prompts))
@@ -108,7 +109,7 @@ We support evaluating any video. Simply provide the path to the video file, or t
 - Note: We support customized videos / prompts for the following dimensions: `'subject_consistency', 'background_consistency', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality'`
 
 
-To evaluate videos with customed input prompt, run our script with `--mode=custom_input`:
+To evaluate videos with customized input prompt, run our script with `--mode=custom_input`:
 ```
 python evaluate.py \
     --dimension $DIMENSION \
@@ -125,7 +126,7 @@ vbench evaluate \
 
 ### Evaluation on the Standard Prompt Suite of VBench
 
-##### command line 
+##### Command Line 
 ```bash
 vbench evaluate --videos_path $VIDEO_PATH --dimension $DIMENSION
 ```
@@ -133,7 +134,7 @@ For example:
 ```bash
 vbench evaluate --videos_path "sampled_videos/lavie/human_action" --dimension "human_action"
 ```
-##### python
+##### Python
 ```python
 from vbench import VBench
 my_VBench = VBench(device, <path/to/VBench_full_info.json>, <path/to/save/dir>)

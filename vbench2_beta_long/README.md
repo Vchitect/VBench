@@ -5,11 +5,11 @@ VBench now supports evaluating **long** video generative models.
 ## 1. Video Splitting
 We split the long video into video clips in two steps
 
-### :hammer: Setup Repository and Enviroment
+### :hammer: Setup Repository and Environment
 ```bash
 git clone https://github.com/Vchitect/VBench.git
 
-# create conda environment, following instrcutions in VBench README
+# create conda environment, following instructions in VBench README
 pip install -r VBench/requirements.txt
 pip install VBench
 
@@ -17,7 +17,7 @@ pip install VBench
 pip install scenedetect[opencv] --upgrade
 pip install ffmpeg
 ```
-### 1.1 Bypass Scene Cut
+### 1.1 Bypass Scene Cuts
 First, we use PySceneDetect to split a long video into multiple semantically consistent short clips and save these clips. After this step, each split video clip ideally contains no scene cuts.
 
 
@@ -39,7 +39,7 @@ split_video_into_clips(video_path, base_output_dir, duration, fps)
 ```
 
 
-**Note: The two video splitting steps has been integrated into `VBench-Long` for automatic execution, so users do not need to manually perform this processing in advance.**
+**Note: The two video splitting steps have been integrated into `VBench-Long` for automatic execution, so users do not need to manually perform this processing in advance.**
 
 ## 2. Slow-Fast Approach to Evaluate Temporal Consistency
 <!-- Considering the characteristics of the consistency dimensions such as `subject_consistency` and `background_consistency`, it is clearly unreasonable to evaluate consistency dimensions only in fixed-length short video clips. Therefore, we introduce Slow-Fast Evaluation Method.  -->
