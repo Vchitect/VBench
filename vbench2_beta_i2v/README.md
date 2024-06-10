@@ -25,7 +25,7 @@ We ensure that the image content is diverse, in terms of several aspects: scene 
 The original images are of very high resolutions (mainly around 4k and above), and this enable many tasks that requires high-resolution and high quality images.
     <p>
         <img src="../asset/vbench_i2v/image_size_distribution.png" alt="drawing" width="50%" alt/><br>
-        <em>The figure aboves shows the image resolution distribution in our image suite. Each dot represent an image in our image suite. The three reference lines represent 1K (red), 2K (green), and 4K (yellow) resolutions.
+        <em>The figure above shows the image resolution distribution in our image suite. Each dot represents an image in our image suite. The three reference lines represent 1K (red), 2K (green), and 4K (yellow) resolutions.
         </em>
     </p>
     <table>

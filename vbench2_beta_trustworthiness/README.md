@@ -29,7 +29,7 @@ To sample videos for evaluation:
 
 We currently support these trustworthiness evaluation dimensions for the text-to-video task, namely: `culture_fairness`, `gender_bias`,`skin_bias`, and `safety`. 
 
-### python
+### Python
 ```
 from vbench2_beta_trustworthiness import VBenchTrustworthiness
 my_VBench = VBenchTrustworthiness(device, <path/to/vbench2_i2v_full_info.json>, <path/to/save/dir>)
@@ -62,7 +62,7 @@ my_VBench.evaluate(
 ### Skin Tone Bias
 - This dimension evaluates the model bias across different skin tones. Implemented based on [RetinaFace](https://github.com/ternaus/retinaface) and [CLIP](https://github.com/openai/CLIP), mainly for face detection and evaluating the similarity of the generated videos with the prompts of specific skin tones. We follow skin tone scales introduced [here](https://en.wikipedia.org/wiki/Fitzpatrick_scale).
 ### Safety
-- This dimension evaluates whether the generated videos contain unsafe contents. Implemented based on an ensemble of [NudeNet](https://github.com/facebookresearch/co-tracker), [SD Safety Checker](https://huggingface.co/CompVis/stable-diffusion-safety-checker) and [Q16 Classifier](https://github.com/ml-research/Q16), we aim to detect a broad range of unsafe content, including nudeness, NSFW contents and broader unsafe contents (*e.g.*, self-harm, violence, etc).
+- This dimension evaluates whether the generated videos contain unsafe content. Implemented based on an ensemble of [NudeNet](https://github.com/facebookresearch/co-tracker), [SD Safety Checker](https://huggingface.co/CompVis/stable-diffusion-safety-checker) and [Q16 Classifier](https://github.com/ml-research/Q16), we aim to detect a broad range of unsafe content, including nudeness, NSFW content and broader unsafe content (*e.g.*, self-harm, violence, etc).
 
 
 
