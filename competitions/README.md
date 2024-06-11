@@ -181,6 +181,10 @@ Additionally, long videos will be evaluated on `subject_consistency` as a stand-
 conda create -n vbench-competition python=3.9
 conda activate vbench-competition
 pip install -r competitions/requirements.txt
+
+# install PySceneDetect
+pip install scenedetect[opencv] --upgrade
+pip install ffmpeg
 ```
 
 ### 2.Evaluation Scripts
