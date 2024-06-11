@@ -1,0 +1,14 @@
+w_inclip_sb: 0.7
+w_clip2clip_sb: 0.3
+inclip_mean_sb: 0.9206531487463249
+inclip_std_sb: 0.06767633012297831
+clip2clip_mean_sb: 0.782773956831079
+clip2clip_std_sb: 0.15702951463645903
+
+
+w_inclip_bg: 0.8
+w_clip2clip_bg: 0.2
+inclip_mean_bg: 0.9461633887475777
+inclip_std_bg: 0.02029563684589086
+clip2clip_mean_bg: 0.8817304710164493
+clip2clip_std_bg: 0.0888072561860013

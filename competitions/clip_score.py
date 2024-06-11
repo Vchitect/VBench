@@ -5,6 +5,7 @@ import clip
 import torch
 import torch.nn.functional as F
 
+from vbench2_beta_long.utils import reorganize_clips_results
 from vbench.utils import load_dimension_info, clip_transform, read_frames_decord_by_fps
 import logging
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -18,7 +19,7 @@ def clip_alignment(clip_model, video_dict, preprocess, device):
     for info in tqdm(video_dict):
         
         query = info["prompt"]
-        text = clip.tokenize([query]).to(device)
+        text = clip.tokenize([query], truncate=True).to(device)
         text_feature = clip_model.encode_text(text)
         text_feature = F.normalize(text_feature, dim=-1)
         
@@ -51,3 +52,9 @@ def compute_clip_score(json_dir, device, submodules_list, **kwargs):
     _, video_dict = load_dimension_info(json_dir, dimension='clip_score', lang='en')
     all_results, video_results = clip_alignment(clip_model, video_dict, preprocess, device)
     return all_results, video_results
+
+
+def compute_long_clip_score(json_dir, device, submodules_list, **kwargs):
+    all_results, detailed_results = compute_clip_score(json_dir, device, submodules_list, **kwargs)
+
+    return reorganize_clips_results(detailed_results)

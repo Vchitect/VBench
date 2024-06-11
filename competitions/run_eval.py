@@ -47,8 +47,8 @@ def parse_args():
     parser.add_argument(
         "--prompt_file",
         type=str,
-        required=False,
-        default="./short_prompt_list_test2.txt",
+        required=True,
+        default="./short_prompt_list.txt",
         help="Specify the path of the file that contains prompt lists"
     )
     
@@ -79,19 +79,40 @@ def main():
     }
     
 
-    if args.prompt_file:
-        with open(args.prompt_file, "r") as f:
-            prompts = [line.strip() for line in f.readlines()]
+    with open(args.prompt_file, "r") as f:
+        prompts = [line.strip() for line in f.readlines()]
+
     
-    myvbench.evaluate(
-        videos_path = args.video_path,
-        name = f'results_{current_time}',
-        prompt_list=prompts,
-        dimension_list = args.dimension,
-        **kwargs
-    )
+    if "short_prompt_list" in args.prompt_file:
+        myvbench.evaluate(
+            videos_path = args.video_path,
+            name = f'results_short_{current_time}',
+            prompt_list=prompts,
+            dimension_list = args.dimension,
+            **kwargs
+        )
+        
+    elif "long_prompt_list" in args.prompt_file:   
+        
+        kwargs['sb_clip2clip_feat_extractor'] = 'dino'
+        kwargs['bg_clip2clip_feat_extractor'] = 'clip'
+        kwargs['clip_length_config'] = "clip_length_mix.yaml"
+        kwargs['w_inclip'] = 1.0
+        kwargs['w_clip2clip'] = 0.0
+        kwargs['use_semantic_splitting'] = True
+        kwargs['slow_fast_eval_config'] = "configs/slow_fast_params.yaml"
+        kwargs['dev_flag'] = False
+        
+        myvbench.evaluate_long(
+            videos_path = args.video_path,
+            name = f'results_long_{current_time}',
+            prompt_list=prompts,
+            dimension_list = args.dimension,
+            **kwargs
+        )
     print("done")
     
 
 if __name__ == "__main__":
     main()
+ 

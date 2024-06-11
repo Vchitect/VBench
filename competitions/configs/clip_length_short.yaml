@@ -1,0 +1,17 @@
+subject_consistency: 2.0
+background_consistency: 2.0
+motion_smoothness: 2.0
+temporal_flickering: 2.0
+dynamic_degree: 2.0
+imaging_quality: 2.0
+aesthetic_quality: 2.0
+
+object_class: 2.0
+multiple_objects: 2.0
+human_action: 2.0
+color: 2.0
+spatial_relationship: 2.0
+scene: 2.0
+appearance_style: 2.0
+temporal_style: 2.0
+overall_consistency: 2.0
