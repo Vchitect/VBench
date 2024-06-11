@@ -1,0 +1,17 @@
+subject_consistency: 0.5
+background_consistency: 0.5
+motion_smoothness: 0.5
+temporal_flickering: 0.5
+dynamic_degree: 0.5
+imaging_quality: 0.5
+aesthetic_quality: 0.5
+
+object_class: 0.5
+multiple_objects: 0.5
+human_action: 0.5
+color: 0.5
+spatial_relationship: 0.5
+scene: 0.5
+appearance_style: 0.5
+temporal_style: 0.5
+overall_consistency: 0.5

@@ -28,3 +28,4 @@ boto3
 omegaconf
 pyav
 av
+moviepy
