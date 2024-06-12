@@ -120,7 +120,7 @@ def subject_consistency_dreamsim(model, video_list, device, read_frame):
         sim_per_images = video_sim / (len(images) - 1)
         sim += video_sim
         video_results.append({'video_path': video_path, 'video_results': sim_per_images})
-    sim_per_video = sim / (len(video_list) - 1)
+    # sim_per_video = sim / (len(video_list) - 1)
     sim_per_frame = sim / cnt
     return sim_per_frame, video_results
 
@@ -162,6 +162,6 @@ def subject_consistency_dinov2(model, video_list, device, read_frame):
         sim_per_images = video_sim / (len(images) - 1)
         sim += video_sim
         video_results.append({'video_path': video_path, 'video_results': sim_per_images})
-    sim_per_video = sim / (len(video_list) - 1)
+    # sim_per_video = sim / (len(video_list) - 1)
     sim_per_frame = sim / cnt
     return sim_per_frame, video_results
