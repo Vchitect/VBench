@@ -102,6 +102,8 @@ def main():
         kwargs['use_semantic_splitting'] = True
         kwargs['slow_fast_eval_config'] = "configs/slow_fast_params.yaml"
         kwargs['dev_flag'] = False
+        kwargs['sb_mapping_file_path'] = "configs/subject_mapping_table.yaml"
+        kwargs['bg_mapping_file_path'] = "configs/background_mapping_table.yaml"
         
         myvbench.evaluate_long(
             videos_path = args.video_path,
