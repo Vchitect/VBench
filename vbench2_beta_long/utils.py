@@ -299,12 +299,11 @@ def get_video_properties(video_path):
 
 ####################################################################################################
 # for temporal flickering
-def build_filerted_info_json(videos_path, output_path, name):
+def build_filtered_info_json(videos_path, output_path, name):
     cur_full_info_dict = {} # to save the prompt and video path info for the current dimensions
 
     # get splitted video paths
-    filtered_clips_path = os.path.join(videos_path, 'filtered_videos')
-
+    filtered_clips_path = os.path.join(videos_path, 'split_clip')
     for filtered_video_name in os.listdir(filtered_clips_path):
         filtered_video_path = os.path.join(filtered_clips_path, filtered_video_name)
         base_prompt = get_prompt_from_filename(filtered_video_name)
@@ -316,8 +315,10 @@ def build_filerted_info_json(videos_path, output_path, name):
                 "video_list": []
             }
 
-        if filtered_video_path.endswith(('.mp4', '.avi', '.mov')):
-            cur_full_info_dict[base_prompt]["video_list"].append(filtered_video_path)
+        if os.path.isdir(filtered_video_path):
+            for split_clip_name in os.listdir(filtered_video_path):
+                if split_clip_name.endswith(('.mp4', '.avi', '.mov')):
+                    cur_full_info_dict[base_prompt]["video_list"].append(os.path.join(filtered_video_path, split_clip_name))
 
     cur_full_info_list = list(cur_full_info_dict.values())
 
