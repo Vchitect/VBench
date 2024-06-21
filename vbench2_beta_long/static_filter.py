@@ -115,8 +115,7 @@ def check_and_move(args, filter_results, target_path=None):
         if v["static_count"] < 5 and args.filter_scope=='temporal_flickering':
             logger.warning(f"Prompt: '{prompt}' has fewer than 5 filter results.")
         for i, video_path in enumerate(v["static_path"]):
-            target_name = os.path.join(target_path, os.path.basename(video_path))
-            # target_name = os.path.join(target_path, f"{prompt}-{i}.mp4")
+            target_name = os.path.join(target_path, f"{prompt}-{i}.mp4")
             shutil.copy(video_path, target_name)
     logger.info(f"All filtered videos are saved in the '{target_path}' path")
 
@@ -126,7 +125,8 @@ def static_filter(args):
     prompt_list = []
 
     
-    paths = sorted(glob.glob(os.path.join(args.videos_path, "*", "*.mp4")))
+    # paths = sorted(glob.glob(os.path.join(args.videos_path, "*", "*.mp4")))
+    paths = sorted(glob.glob(os.path.join(args.videos_path, "*.mp4")))
     
     if args.filter_scope=='temporal_flickering':
         full_prompt_list = load_json(f"{CUR_PARENT_DIR}/vbench/VBench_full_info.json")
