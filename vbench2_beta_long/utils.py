@@ -334,6 +334,7 @@ def linear_interpolate(x, x0, x1, y0, y1):
 def fuse_inclip_clip2clip(inclip_avg_results, clip2clip_avg_results, inclip_dict, clip2clip_dict, dimension, **kwargs):
     fused_detailed_results = [] # to record detailed clip2clip & inclip
     fused_all_results_sum = 0 # to record sum of results for each video
+    fused_all_results_count = 0 # to record nummber of results in each detailed dict
 
     if dimension == 'subject_consistency':
         postfix = 'sb'
