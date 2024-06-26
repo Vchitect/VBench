@@ -332,7 +332,8 @@ def linear_interpolate(x, x0, x1, y0, y1):
     return y0 + (y1 - y0) * (x - x0) / (x1 - x0)
 
 def fuse_inclip_clip2clip(inclip_avg_results, clip2clip_avg_results, inclip_dict, clip2clip_dict, dimension, **kwargs):
-    fused_detailed_results = []
+    fused_detailed_results = [] # to record detailed clip2clip & inclip
+    fused_all_results_sum = 0 # to record sum of results for each video
 
     if dimension == 'subject_consistency':
         postfix = 'sb'
@@ -399,7 +400,10 @@ def fuse_inclip_clip2clip(inclip_avg_results, clip2clip_avg_results, inclip_dict
             'mapped_clip2clip_score': mapped_clip2clip_score,
             "video_results": fused_score
         })
-    fused_all_results = inclip_avg_results * w_inclip + clip2clip_avg_results * w_clip2clip
+        fused_all_results_sum += fused_score
+        fused_all_results_count += 1
+    fused_all_results = fused_all_results_sum / fused_all_results_count
+
     return fused_all_results, fused_detailed_results
 
 
