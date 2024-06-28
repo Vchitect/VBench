@@ -68,8 +68,8 @@ def get_final_score(quality_score,semantic_score):
 
 if __name__=="__main__":
     parser = argparse.ArgumentParser(description='Load submission file')
-    parser.add_argument('--zip_file', type=str, required=True, help='Name of the zip file')
-    parser.add_argument('--model_name', type=str, required=True, help='Name of the model')
+    parser.add_argument('--zip_file', type=str, required=True, help='Name of the zip file', default='evaluation_results.zip')
+    parser.add_argument('--model_name', type=str, required=True, help='Name of the model', default='t2v_model')
     args = parser.parse_args()
 
     upload_dict = submission(args.model_name, args.zip_file)
