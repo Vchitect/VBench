@@ -193,7 +193,7 @@ zip -r ../evaluation_results.zip .
 # [Optional] get the final score of your submission file.
 python scripts/cal_final_score.py --zip_file {path_to_evaluation_results.zip} --model_name {your_model_name}
 ```
-You can submit the json file to [HuggingFce](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
+You can submit the json file to [HuggingFace](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
 
 
 <a name="pretrained_models"></a>
