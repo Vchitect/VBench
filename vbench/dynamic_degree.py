@@ -87,7 +87,7 @@ class DynamicDegree:
         frame_list = []
         video = cv2.VideoCapture(video_path)
         fps = video.get(cv2.CAP_PROP_FPS) # get fps
-        interval = round(fps/8)
+        interval = max(1, round(fps/8))
         while video.isOpened():
             success, frame = video.read()
             if success:
