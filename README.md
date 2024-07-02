@@ -67,7 +67,7 @@ See the 3 options below:
 | :---: |  :---: |        :--------------    | 
 | VBench Team | VBench Team | We periodically allocate resources to sample newly released models and perform evaluations. You can request us to perform sampling and evaluation, but the progress depends on our available resources. |
 | Your Team | VBench Team | For non-open-source models interested in joining our leaderboard, submit your video samples to us for evaluation. If you prefer to provide the evaluation results directly, see the row below. |
-| Your Team | Your Team | If you have already used VBench for full evaluation in your report/paper, submit your eval_results.json files to the [VBench Leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard) using the `Submit here!` form. The evaluation results will be automatically updated to the leaderboard. Also, share your model information for our records for any columns [here](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models). |
+| Your Team | Your Team | If you have already used VBench for full evaluation in your report/paper, submit your `eval_results.zip` files to the [VBench Leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard) using the `Submit here!` form. The evaluation results will be automatically updated to the leaderboard. Also, share your model information for our records for any columns [here](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models).  |
 
 
 #### :film_projector: Model Info
@@ -182,6 +182,18 @@ sh scripts/download_videocrafter1.sh
 # evaluate VideoCrafter-1.0
 sh scripts/evaluate_videocrafter1.sh
 ```
+#### Get Final Score and Submit to Leaderboard
+We have provided scripts for calculating the `Final Score`, `Quality Score`, and `Semantic Score` in the Leaderboard. You can run them locally to obtain the final scores or as a final check before submitting to the Leaderboard.
+##### command line 
+```bash
+# Pack the evaluation results into a zip file.
+cd evaluation_results
+zip -r ../evaluation_results.zip .
+
+# [Optional] get the final score of your submission file.
+python scripts/cal_final_score.py --zip_file {path_to_evaluation_results.zip} --model_name {your_model_name}
+```
+You can submit the json file to [HuggingFace](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
 
 
 <a name="pretrained_models"></a>

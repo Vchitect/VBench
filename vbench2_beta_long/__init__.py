@@ -4,6 +4,7 @@ from itertools import chain
 from pathlib import Path
 from vbench.utils import get_prompt_from_filename, init_submodules, save_json, load_json
 from vbench2_beta_long.utils import split_video_into_scenes, split_video_into_clips, load_clip_lengths, get_duration_from_json
+from vbench2_beta_long.temporal_flickering import filter_static_clips
 from vbench import VBench
 
 
@@ -14,9 +15,10 @@ class VBenchLong(VBench):
         return ["subject_consistency", "background_consistency", "aesthetic_quality", "imaging_quality", "object_class", "multiple_objects", "color", "spatial_relationship", "scene", "temporal_style", 'overall_consistency', "human_action", "temporal_flickering", "motion_smoothness", "dynamic_degree", "appearance_style"]
 
     def preprocess(self, videos_path, mode, threshold = 35.0, segment_length=16, duration=2, **kwargs):
-        if "split_clip" in os.listdir(videos_path):
-            print(f"Videos have been splitted into clips in {videos_path}/split_clip")
-            return 
+        for root, dirs, files in os.walk(videos_path):
+            if "split_clip" in dirs:
+                print(f"Videos have been splitted into clips in {os.path.join(root, 'split_clip')}")
+                return 
 
         # detect transistions
         split_scene_video_path = []
@@ -40,6 +42,17 @@ class VBenchLong(VBench):
         full_info_list = load_json(self.full_info_dir)
         dimension_clip_length_config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "configs", kwargs['clip_length_config'])
         dimension_clip_length = load_clip_lengths(dimension_clip_length_config_path)
+
+        # static filter
+        if mode == 'long_vbench_standard' and videos_path.split('/')[-1] == 'temporal_flickering':
+            if "temporal_filtered_cilps" in os.listdir(videos_path):
+                print(f"Static Filter has been executed, videos have been saved in {videos_path}/temporal_filtered_cilps/filtered_videos")
+                videos_path = os.path.join(videos_path, 'temporal_filtered_cilps', 'filtered_videos')
+            else:
+                output_path = os.path.join(videos_path, "temporal_filtered_cilps")
+                os.makedirs(output_path, exist_ok=True)
+                filter_static_clips(videos_path, output_path)
+                videos_path = os.path.join(output_path, 'filtered_videos')
 
 
         # split video into clips
@@ -192,6 +205,8 @@ class VBenchLong(VBench):
                 })
 
         elif mode=='long_vbench_standard':
+            if 'temporal_flickering' in dimension_list:
+                videos_path = os.path.join(videos_path, 'temporal_filtered_cilps', 'filtered_videos')
             full_info_list = load_json(self.full_info_dir)
             video_names = os.listdir(videos_path)
             postfix = Path(video_names[0]).suffix
@@ -207,7 +222,7 @@ class VBenchLong(VBench):
                         intended_video_clips_name_floder = os.path.join(videos_path, "split_clip", intended_video_name_floder)
 
                         if not os.path.exists(intended_video_clips_name_floder):
-                            print(f'WARNING!!! This required video clips are not found! Missing benchmark videos can lead to unfair evaluation result. The missing video is: {intended_video_clips_name_floder}')
+                            print(f'WARNING!!! This required video clips are not found! Missing benchmark videos can lead to unfair evaluation result. The missing video clips folder is: {intended_video_clips_name_floder}')
                             continue
                         for video_clip_name in os.listdir(intended_video_clips_name_floder):
                             if video_clip_name.split('_')[0] in video_clip_folder_names:
