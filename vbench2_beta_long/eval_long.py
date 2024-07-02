@@ -193,6 +193,15 @@ def parse_args():
         """,
     )
 
+    # control number of video samples for each prompt
+    parser.add_argument(
+        "--num_of_samples_per_prompt",
+        type=int,
+        default=5,
+        help="""Number of samples for each prompt, i.e. prompt-index.mp4
+        """,
+    )
+
     args = parser.parse_args()
     return args
 
@@ -246,6 +255,7 @@ def main():
     kwargs['dev_flag'] = args.dev_flag
     kwargs['sb_mapping_file_path'] = args.subject_mapping_file_path
     kwargs['bg_mapping_file_path'] = args.background_mapping_file_path
+    kwargs['num_of_samples_per_prompt'] = args.num_of_samples_per_prompt
 
     my_VBench.evaluate(
         videos_path = args.videos_path,

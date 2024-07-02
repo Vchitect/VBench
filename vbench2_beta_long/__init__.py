@@ -15,10 +15,25 @@ class VBenchLong(VBench):
         return ["subject_consistency", "background_consistency", "aesthetic_quality", "imaging_quality", "object_class", "multiple_objects", "color", "spatial_relationship", "scene", "temporal_style", 'overall_consistency', "human_action", "temporal_flickering", "motion_smoothness", "dynamic_degree", "appearance_style"]
 
     def preprocess(self, videos_path, mode, threshold = 35.0, segment_length=16, duration=2, **kwargs):
-        for root, dirs, files in os.walk(videos_path):
-            if "split_clip" in dirs:
-                print(f"Videos have been splitted into clips in {os.path.join(root, 'split_clip')}")
-                return 
+        static_filter_flag = (mode == 'long_vbench_standard' and (videos_path.split('/')[-1] == 'temporal_flickering' or 'temporal_flickering' in kwargs['preprocess_dimension_flag']))
+        # for root, dirs, files in os.walk(videos_path):
+        #     if static_filter_flag and 'temporal_filtered_cilps' not in dirs:
+        #         break
+        #     if static_filter_flag and 'temporal_filtered_cilps' in dirs:
+        #         print(f"Videos have been splitted into clips in {os.path.join(root, 'temporal_filtered_cilps', 'filtered_videos', 'split_clip')}")
+        #         return
+        #     if "split_clip" in dirs:
+        #         print(f"Videos have been splitted into clips in {os.path.join(root, 'split_clip')}")
+        #         return
+            
+        if static_filter_flag and 'temporal_filtered_cilps' in os.listdir(videos_path):
+            for root, dirs, files in os.walk(os.path.join(videos_path, 'temporal_filtered_cilps')):
+                if "split_clip" in dirs:
+                    print(f"Videos have been splitted into clips in {os.path.join(root, 'split_clip')}")
+                    return
+        if "split_clip" in os.listdir(videos_path):
+            print(f"Videos have been splitted into clips in {os.path.join(videos_path, 'split_clip')}")
+            return
 
         # detect transistions
         split_scene_video_path = []
@@ -44,7 +59,7 @@ class VBenchLong(VBench):
         dimension_clip_length = load_clip_lengths(dimension_clip_length_config_path)
 
         # static filter
-        if mode == 'long_vbench_standard' and videos_path.split('/')[-1] == 'temporal_flickering':
+        if static_filter_flag:
             if "temporal_filtered_cilps" in os.listdir(videos_path):
                 print(f"Static Filter has been executed, videos have been saved in {videos_path}/temporal_filtered_cilps/filtered_videos")
                 videos_path = os.path.join(videos_path, 'temporal_filtered_cilps', 'filtered_videos')
@@ -88,6 +103,7 @@ class VBenchLong(VBench):
     def evaluate(self, videos_path, name, prompt_list=[], dimension_list=None, local=False, read_frame=False, mode='vbench_standard', **kwargs):
         _dimensions = self.build_full_dimension_list()
         is_dimensional_structure = any(os.path.isdir(os.path.join(videos_path, dim)) for dim in _dimensions)
+        kwargs['preprocess_dimension_flag'] = dimension_list
         if is_dimensional_structure:
             # 1. Under dimensions folders
             for dimension in _dimensions:
@@ -216,7 +232,7 @@ class VBenchLong(VBench):
                 if set(dimension_list) & set(prompt_dict["dimension"]): 
                     prompt = prompt_dict['prompt_en']
                     prompt_dict['video_list'] = []
-                    for i in range(5): # video index for the same prompt
+                    for i in range(kwargs['num_of_samples_per_prompt']): # video index for the same prompt
                         intended_video_name = f'{prompt}{special_str}-{str(i)}{postfix}'
                         intended_video_name_floder = f'{prompt}{special_str}-{str(i)}'
                         intended_video_clips_name_floder = os.path.join(videos_path, "split_clip", intended_video_name_floder)
