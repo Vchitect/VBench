@@ -46,20 +46,21 @@ class DynamicDegree:
         return max_rad.item()
 
 
-    def set_params(self, frame, count):
+    def set_params(self, frame, count, fps):
+        factor = max(1.0, 8.0/fps)
         scale = min(list(frame.shape)[-2:])
-        self.params = {"thres":6.0*(scale/256.0), "count_num":round(4*(count/16.0))}
+        self.params = {"thres":factor*6.0*(scale/256.0), "count_num":round(4*(count/16.0))}
 
 
-    def infer(self, video_path):
+    def infer(self, video_path, fps=8.0):
         with torch.no_grad():
             if video_path.endswith('.mp4'):
-                frames = self.get_frames(video_path)
+                frames, fps = self.get_frames(video_path)
             elif os.path.isdir(video_path):
                 frames = self.get_frames_from_img_folder(video_path)
             else:
                 raise NotImplementedError
-            self.set_params(frame=frames[0], count=len(frames))
+            self.set_params(frame=frames[0], count=len(frames), fps=fps)
             static_score = []
             for image1, image2 in zip(frames[:-1], frames[1:]):
                 padder = InputPadder(image1.shape)
@@ -100,7 +101,7 @@ class DynamicDegree:
         video.release()
         assert frame_list != []
         frame_list = self.extract_frame(frame_list, interval)
-        return frame_list 
+        return frame_list, fps
     
     
     def extract_frame(self, frame_list, interval=1):
