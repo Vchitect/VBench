@@ -56,9 +56,9 @@ my_VBench.evaluate(
 ## Dimension Suite
 
 ### Culture Fairness
-- Can a model generate scenes that belong to different culture groups? This dimension evaluates the fairness on different cultures of the generated videos with designated prompt templates. Implemented based on [CLIP](https://github.com/openai/CLIP), mainly for evaluating the similarity of the generated videos with the prompts of specific cultures. We use the broad culture classification based on [here](https://en.m.wikipedia.org/wiki/Clash_of_Civilizations).
+- Can a model generate scenes that belong to different culture groups? This dimension evaluates the fairness on different cultures of the generated videos with designated prompt templates. Implemented based on [ViCLIP](https://github.com/OpenGVLab/InternVideo/tree/main/InternVideo1/Pretrain/ViCLIP), mainly for evaluating the similarity of the generated videos with the prompts of specific cultures. We use the broad culture classification based on [here](https://en.m.wikipedia.org/wiki/Clash_of_Civilizations).
 ### Gender Bias
-- Given a specific description of a person, we evaluate whether the video generative model has a bias for specific genders. Implemented based on [RetinaFace](https://github.com/ternaus/retinaface) and [CLIP](https://github.com/openai/CLIP), mainly for face detection and evaluating the similarity of the generated videos with the prompts of specific genders.
+- Given a specific description of a person, we evaluate whether the video generative model has a bias for specific genders. Implemented based on [RetinaFace](https://github.com/ternaus/retinaface) and [BLIP2](https://github.com/salesforce/LAVIS/tree/main/projects/blip2), mainly for face detection and evaluating the similarity of the generated videos with the prompts of specific genders.
 ### Skin Tone Bias
 - This dimension evaluates the model bias across different skin tones. Implemented based on [RetinaFace](https://github.com/ternaus/retinaface) and [CLIP](https://github.com/openai/CLIP), mainly for face detection and evaluating the similarity of the generated videos with the prompts of specific skin tones. We follow skin tone scales introduced [here](https://en.wikipedia.org/wiki/Fitzpatrick_scale).
 ### Safety
@@ -92,4 +92,4 @@ my_VBench.evaluate(
 
 **VBench-Trustworthiness** is currently maintained by [Ziqi Huang](https://ziqihuangg.github.io/) and [Xiaojie Xu](https://github.com/xjxu21)
 
-We make use of [CLIP](https://github.com/openai/CLIP), [RetinaFace](https://github.com/ternaus/retinaface), [NudeNet](https://github.com/facebookresearch/co-tracker), [SD Safety Checker](https://huggingface.co/CompVis/stable-diffusion-safety-checker), and [Q16 Classifier](https://github.com/ml-research/Q16). Our benchmark wouldn't be possible without prior works like [HELM](https://github.com/stanford-crfm/helm/tree/main).
+We make use of [CLIP](https://github.com/openai/CLIP), [ViCLIP](https://github.com/OpenGVLab/InternVideo/tree/main/InternVideo1/Pretrain/ViCLIP), [BLIP2](https://github.com/salesforce/LAVIS/tree/main/projects/blip2), [RetinaFace](https://github.com/ternaus/retinaface), [NudeNet](https://github.com/facebookresearch/co-tracker), [SD Safety Checker](https://huggingface.co/CompVis/stable-diffusion-safety-checker), and [Q16 Classifier](https://github.com/ml-research/Q16). Our benchmark wouldn't be possible without prior works like [HELM](https://github.com/stanford-crfm/helm/tree/main).

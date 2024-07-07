@@ -169,6 +169,7 @@ def read_frames_decord_by_fps(
         video_path, sample_fps=2, sample='rand', fix_start=None, 
         max_num_frames=-1,  trimmed30=False, num_frames=8
     ):
+
     import decord
     decord.bridge.set_bridge("torch")
     video_reader = VideoReader(video_path, num_threads=1)
@@ -184,6 +185,8 @@ def read_frames_decord_by_fps(
         num_frames, vlen, sample=sample, fix_start=fix_start,
         input_fps=fps, max_num_frames=max_num_frames
     )
+
+
     frames = video_reader.get_batch(frame_indices)  # (T, H, W, C), torch.uint8
     frames = frames.permute(0, 3, 1, 2)  # (T, C, H, W), torch.uint8
     return frames
@@ -339,7 +342,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
             if not os.path.exists(submodules_dict[dimension]['pretrained']):
                 wget_command = ['wget', 'https://huggingface.co/spaces/xinyu1205/recognize-anything/resolve/main/tag2text_swin_14m.pth', '-P', os.path.dirname(submodules_dict[dimension]["pretrained"])]
                 subprocess.run(wget_command, check=True)
-        elif dimension in ['appearance_style', 'culture_fairness']:
+        elif dimension in ['appearance_style']:
             if local:
                 submodules_dict[dimension] = {"name": f'{CACHE_DIR}/clip_model/ViT-B-32.pt'}
                 if not os.path.isfile(submodules_dict[dimension]["name"]):
@@ -347,7 +350,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
                     subprocess.run(wget_command, check=True)
             else:
                 submodules_dict[dimension] = {"name": 'ViT-B/32'}
-        elif dimension in ["temporal_style", "overall_consistency"]:
+        elif dimension in ["temporal_style", "overall_consistency", 'culture_fairness']:
             submodules_dict[dimension] = {
                 "pretrain": f'{CACHE_DIR}/ViCLIP/ViClip-InternVid-10M-FLT.pth',
             }
@@ -400,7 +403,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
 
 def save_json(data, path, indent=4):
     with open(path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, indent=indent)
+        json.dump(data, f, indent=indent, ensure_ascii=False)
 
 def load_json(path):
     """
