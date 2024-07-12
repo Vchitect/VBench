@@ -53,6 +53,34 @@ def dino_transform_Image(n_px):
         Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
     ])
 
+def dino_transform_internet(resize_size=256, center_size=224):
+    return Compose([
+        Resize(resize_size, interpolation=BICUBIC),
+        CenterCrop(center_size),
+        transforms.Lambda(lambda x: x.float().div(255.0)),
+        Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
+    ])
+
+def dino_transform_Image_internet(resize_size=256, center_size=224):
+    return Compose([
+        Resize(resize_size, interpolation=BICUBIC),
+        CenterCrop(center_size),
+        ToTensor(),
+        Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
+    ])
+
+def dreamsim_transform(n_px):
+    return Compose([
+        Resize((n_px, n_px), interpolation=BICUBIC),
+        transforms.Lambda(lambda x: x.float().div(255.0)),
+    ])
+
+def dreamsim_transform_Image(n_px):
+    return Compose([
+        Resize((n_px, n_px), interpolation=BICUBIC),
+        ToTensor(),
+    ])
+
 def tag2text_transform(n_px):
     normalize = Normalize(mean=[0.485, 0.456, 0.406],
                                         std=[0.229, 0.224, 0.225])
@@ -269,7 +297,7 @@ def init_submodules(dimension_list, local=False, read_frame=False, resolution="1
         logger.info("\x1b[32m[Local Mode]\x1b[0m Working in local mode, please make sure that the pre-trained model has been fully downloaded.")
     for dimension in dimension_list:
         os.makedirs(CACHE_DIR, exist_ok=True)
-        if dimension == 'i2v_subject' or dimension == 'i2v_background':
+        if dimension == 'i2v_subject':
             if local:
                 submodules_dict[dimension] = {
                     'repo_or_dir': f'{CACHE_DIR}/dino_model/facebookresearch_dino_main/',
@@ -294,6 +322,10 @@ def init_submodules(dimension_list, local=False, read_frame=False, resolution="1
                     'repo_or_dir':'facebookresearch/dino:main',
                     'source':'github',
                     'model': 'dino_vitb16',
+                    'resolution': resolution
+                    }
+        elif dimension == 'i2v_background':
+            submodules_dict[dimension] = {
                     'resolution': resolution
                     }
         elif dimension == 'camera_motion':
