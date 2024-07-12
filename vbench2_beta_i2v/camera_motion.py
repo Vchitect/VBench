@@ -2,7 +2,7 @@ import torch
 import os
 import numpy as np
 from tqdm import tqdm
-
+from math import ceil
 from vbench2_beta_i2v.third_party.cotracker.utils.visualizer import Visualizer
 from vbench2_beta_i2v.utils import load_video, load_dimension_info
 
@@ -36,6 +36,7 @@ class CameraPredict:
     def __init__(self, device, submodules_list):
         self.device = device
         self.grid_size = 10
+        self.number_points = 1
         try:
             self.model = torch.hub.load(submodules_list["repo"], submodules_list["model"]).to(self.device)
         except:
@@ -63,10 +64,15 @@ class CameraPredict:
 
     def get_edge_point(self, track):
         middle = self.grid_size // 2
-        top = [list(track[0, i, :]) for i in range(middle-2, middle+2)]
-        down = [list(track[self.grid_size-1, i, :]) for i in range(middle-2, middle+2)]
-        left = [list(track[i, 0, :]) for i in range(middle-2, middle+2)]
-        right = [list(track[i, self.grid_size-1, :]) for i in range(middle-2, middle+2)]
+        number = self.number_points / 2.0
+        
+        start = ceil(middle-number)
+        end = ceil(middle+number)
+        
+        top = [list(track[0, i, :]) for i in range(start, end)]
+        down = [list(track[self.grid_size-1, i, :]) for i in range(start, end)]
+        left = [list(track[i, 0, :]) for i in range(start, end)]
+        right = [list(track[i, self.grid_size-1, :]) for i in range(start, end)]
         
         return top, down, left, right
     

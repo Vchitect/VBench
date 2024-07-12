@@ -11,28 +11,29 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.transforms as transforms
 
-from vbench2_beta_i2v.utils import load_video, load_i2v_dimension_info, dino_transform, dino_transform_Image
+from dreamsim import dreamsim
+from vbench2_beta_i2v.utils import load_video, load_i2v_dimension_info, dreamsim_transform, dreamsim_transform_Image
 import logging
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-def i2v_background(model, video_pair_list, device):
+def i2v_background(dream_model, video_pair_list, device):
     video_results = []
     sim_list = []
 
-    max_weight = 0.5
-    mean_weight = 0.5
-    min_weight = 0.0
+    max_weight = 0.4
+    mean_weight = 0.3
+    min_weight = 0.3
 
-    image_transform = dino_transform_Image(224)
-    frames_transform = dino_transform(224)
+    image_transform = dreamsim_transform_Image(224)
+    frames_transform = dreamsim_transform(224)
 
     for image_path, video_path in tqdm(video_pair_list):
         # input image preprocess & extract feature
         input_image = image_transform(Image.open(image_path))
         input_image = input_image.unsqueeze(0)
         input_image = input_image.to(device)
-        input_image_features = model(input_image)
+        input_image_features = dream_model.embed(input_image)
         input_image_features = F.normalize(input_image_features, dim=-1, p=2)
 
         # get frames from video
@@ -46,7 +47,7 @@ def i2v_background(model, video_pair_list, device):
             with torch.no_grad():
                 image = images[i].unsqueeze(0)
                 image = image.to(device)
-                image_features = model(image)
+                image_features = dream_model.embed(image)
                 image_features = F.normalize(image_features, dim=-1, p=2)
                 if i != 0:
                     sim_consec = max(0.0, F.cosine_similarity(former_image_features, image_features).item())
@@ -65,9 +66,11 @@ def i2v_background(model, video_pair_list, device):
 
 
 def compute_i2v_background(json_dir, device, submodules_list):
-    dino_model = torch.hub.load(**submodules_list).to(device)
+    
+    dream_model, preprocess = dreamsim(pretrained=True)
     resolution = submodules_list['resolution']
-    logger.info("Initialize DINO success")
+    logger.info("Initialize DreamSim success")
+    
     video_pair_list, _ = load_i2v_dimension_info(json_dir, dimension='i2v_background', lang='en', resolution=resolution)
-    all_results, video_results = i2v_background(dino_model, video_pair_list, device)
+    all_results, video_results = i2v_background(dream_model, video_pair_list, device)
     return all_results, video_results

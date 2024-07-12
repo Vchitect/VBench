@@ -11,7 +11,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.transforms as transforms
 
-from vbench2_beta_i2v.utils import load_video, load_i2v_dimension_info, dino_transform, dino_transform_Image
+from vbench2_beta_i2v.utils import load_video, load_i2v_dimension_info, dino_transform_internet, dino_transform_Image_internet
 import logging
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -20,12 +20,12 @@ def i2v_subject(model, video_pair_list, device):
     video_results = []
     sim_list = []
 
-    max_weight = 0.5
-    mean_weight = 0.5
-    min_weight = 0.0
+    max_weight = 0.4
+    mean_weight = 0.3
+    min_weight = 0.3
 
-    image_transform = dino_transform_Image(224)
-    frames_transform = dino_transform(224)
+    image_transform = dino_transform_Image_internet()
+    frames_transform = dino_transform_internet()
 
     for image_path, video_path in tqdm(video_pair_list):
         # input image preprocess & extract feature
