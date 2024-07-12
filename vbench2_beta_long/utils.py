@@ -392,7 +392,7 @@ def fuse_inclip_clip2clip(inclip_avg_results, clip2clip_avg_results, inclip_dict
         # Map clip2clip_score to the scale of inclip_score
         # mapped_clip2clip_score = (clip2clip_score - clip2clip_mean) / clip2clip_std * inclip_std + inclip_mean
 
-        fused_score = inclip_score * w_inclip + mapped_clip2clip_score * w_clip2clip
+        fused_score = inclip_score * w_inclip + mapped_clip2clip_score * w_clip2clip if mapped_clip2clip_score != 0.0 else inclip_score
         # fused_detailed_results[video_path] = fused_score
         fused_detailed_results.append({
             "video_path": video_path,
