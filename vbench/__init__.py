@@ -5,6 +5,9 @@ import importlib
 from itertools import chain
 from pathlib import Path
 
+from .distributed import get_rank
+
+
 class VBench(object):
     def __init__(self, device, full_info_dir, output_path):
         self.device = device                        # cuda or cpu
@@ -150,5 +153,6 @@ class VBench(object):
             results = evaluate_func(cur_full_info_path, self.device, submodules_list, **kwargs)
             results_dict[dimension] = results
         output_name = os.path.join(self.output_path, name+'_eval_results.json')
-        save_json(results_dict, output_name)
-        print(f'Evaluation results saved to {output_name}')
+        if get_rank() == 0:
+            save_json(results_dict, output_name)
+            print(f'Evaluation results saved to {output_name}')

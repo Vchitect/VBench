@@ -8,6 +8,16 @@ import clip
 from PIL import Image
 from vbench.utils import load_video, load_dimension_info, clip_transform, read_frames_decord_by_fps, clip_transform_Image
 
+from .distributed import (
+    get_world_size,
+    get_rank,
+    all_gather,
+    barrier,
+    distribute_list_to_rank,
+    gather_list_of_dict,
+)
+
+
 def get_text_features(model, input_text, tokenizer, text_feature_dict={}):
     if input_text in text_feature_dict:
         return text_feature_dict[input_text]
@@ -34,7 +44,7 @@ def appearance_style(clip_model, video_dict, device, sample="rand"):
     cnt = 0
     video_results = []
     image_transform = clip_transform_Image(224)
-    for info in tqdm(video_dict):
+    for info in tqdm(video_dict, disable=get_rank() > 0):
         if 'auxiliary_info' not in info:
             raise "Auxiliary info is not in json, please check your json."
         query = info['auxiliary_info']['appearance_style']
@@ -55,12 +65,20 @@ def appearance_style(clip_model, video_dict, device, sample="rand"):
                     sim += cur_sim
                     cnt +=1
                 video_sim = np.mean(cur_video)
-                video_results.append({'video_path': video_path, 'video_results': video_sim, 'frame_results':cur_video})
+                video_results.append({
+                    'video_path': video_path, 
+                    'video_results': video_sim, 
+                    'frame_results': cur_video,
+                    'cur_sim': cur_sim})
     sim_per_frame = sim / cnt
     return sim_per_frame, video_results
 
 def compute_appearance_style(json_dir, device, submodules_list, **kwargs):
     clip_model, preprocess = clip.load(device=device, **submodules_list)
     _, video_dict = load_dimension_info(json_dir, dimension='appearance_style', lang='en')
+    video_dict = distribute_list_to_rank(video_dict)
     all_results, video_results = appearance_style(clip_model, video_dict, device)
+    if get_world_size() > 1:
+        video_results = gather_list_of_dict(video_results)
+        all_results = sum([d['cur_sim'] for d in video_results]) / len(video_results)
     return all_results, video_results
