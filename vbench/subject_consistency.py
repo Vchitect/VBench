@@ -13,8 +13,19 @@ import torchvision.transforms as transforms
 
 from vbench.utils import load_video, load_dimension_info, dino_transform, dino_transform_Image
 import logging
+
+from .distributed import (
+    get_world_size,
+    get_rank,
+    all_gather,
+    barrier,
+    distribute_list_to_rank,
+    gather_list_of_dict,
+)
+
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
 
 def subject_consistency(model, video_list, device, read_frame):
     sim = 0.0
@@ -24,7 +35,7 @@ def subject_consistency(model, video_list, device, read_frame):
         image_transform = dino_transform_Image(224)
     else:
         image_transform = dino_transform(224)
-    for video_path in tqdm(video_list):
+    for video_path in tqdm(video_list, disable=get_rank() > 0):
         video_sim = 0.0
         if read_frame:
             video_path = video_path[:-4].replace('videos', 'frames').replace(' ', '_')
@@ -63,5 +74,9 @@ def compute_subject_consistency(json_dir, device, submodules_list, **kwargs):
     read_frame = submodules_list['read_frame']
     logger.info("Initialize DINO success")
     video_list, _ = load_dimension_info(json_dir, dimension='subject_consistency', lang='en')
+    video_list = distribute_list_to_rank(video_list)
     all_results, video_results = subject_consistency(dino_model, video_list, device, read_frame)
+    if get_world_size() > 1:
+        video_results = gather_list_of_dict(video_results)
+        all_results = sum([d['video_results'] for d in video_results]) / len(video_results)
     return all_results, video_results
