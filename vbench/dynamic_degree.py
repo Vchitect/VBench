@@ -12,6 +12,17 @@ from vbench.utils import load_dimension_info
 from vbench.third_party.RAFT.core.raft import RAFT
 from vbench.third_party.RAFT.core.utils_core.utils import InputPadder
 
+
+from .distributed import (
+    get_world_size,
+    get_rank,
+    all_gather,
+    barrier,
+    distribute_list_to_rank,
+    gather_list_of_dict,
+)
+
+
 class DynamicDegree:
     def __init__(self, args, device):
         self.args = args
@@ -46,21 +57,20 @@ class DynamicDegree:
         return max_rad.item()
 
 
-    def set_params(self, frame, count, fps):
-        factor = max(1.0, 8.0/fps)
+    def set_params(self, frame, count):
         scale = min(list(frame.shape)[-2:])
-        self.params = {"thres":factor*6.0*(scale/256.0), "count_num":round(4*(count/16.0))}
+        self.params = {"thres":6.0*(scale/256.0), "count_num":round(4*(count/16.0))}
 
 
-    def infer(self, video_path, fps=8.0):
+    def infer(self, video_path):
         with torch.no_grad():
             if video_path.endswith('.mp4'):
-                frames, fps = self.get_frames(video_path)
+                frames = self.get_frames(video_path)
             elif os.path.isdir(video_path):
                 frames = self.get_frames_from_img_folder(video_path)
             else:
                 raise NotImplementedError
-            self.set_params(frame=frames[0], count=len(frames), fps=fps)
+            self.set_params(frame=frames[0], count=len(frames))
             static_score = []
             for image1, image2 in zip(frames[:-1], frames[1:]):
                 padder = InputPadder(image1.shape)
@@ -88,7 +98,7 @@ class DynamicDegree:
         frame_list = []
         video = cv2.VideoCapture(video_path)
         fps = video.get(cv2.CAP_PROP_FPS) # get fps
-        interval = max(1, round(fps/8))
+        interval = round(fps/8)
         while video.isOpened():
             success, frame = video.read()
             if success:
@@ -101,7 +111,7 @@ class DynamicDegree:
         video.release()
         assert frame_list != []
         frame_list = self.extract_frame(frame_list, interval)
-        return frame_list, fps
+        return frame_list 
     
     
     def extract_frame(self, frame_list, interval=1):
@@ -132,7 +142,7 @@ class DynamicDegree:
 def dynamic_degree(dynamic, video_list):
     sim = []
     video_results = []
-    for video_path in tqdm(video_list):
+    for video_path in tqdm(video_list, disable=get_rank() > 0):
         score_per_video = dynamic.infer(video_path)
         video_results.append({'video_path': video_path, 'video_results': score_per_video})
         sim.append(score_per_video)
@@ -147,5 +157,9 @@ def compute_dynamic_degree(json_dir, device, submodules_list, **kwargs):
     args_new = edict({"model":model_path, "small":False, "mixed_precision":False, "alternate_corr":False})
     dynamic = DynamicDegree(args_new, device)
     video_list, _ = load_dimension_info(json_dir, dimension='dynamic_degree', lang='en')
+    video_list = distribute_list_to_rank(video_list)
     all_results, video_results = dynamic_degree(dynamic, video_list)
+    if get_world_size() > 1:
+        video_results = gather_list_of_dict(video_results)
+        all_results = sum([d['video_results'] for d in video_results]) / len(video_results)
     return all_results, video_results

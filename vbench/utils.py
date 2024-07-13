@@ -22,6 +22,11 @@ CACHE_DIR = os.environ.get('VBENCH_CACHE_DIR')
 if CACHE_DIR is None:
     CACHE_DIR = os.path.join(os.path.expanduser('~'), '.cache', 'vbench')
 
+from .distributed import (
+    get_rank,
+    barrier,
+)
+
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
@@ -234,6 +239,8 @@ def init_submodules(dimension_list, local=False, read_frame=False):
         logger.info("\x1b[32m[Local Mode]\x1b[0m Working in local mode, please make sure that the pre-trained model has been fully downloaded.")
     for dimension in dimension_list:
         os.makedirs(CACHE_DIR, exist_ok=True)
+        if get_rank() > 0:
+            barrier()
         if dimension == 'background_consistency':
             # read_frame = False
             if local:
@@ -359,7 +366,11 @@ def init_submodules(dimension_list, local=False, read_frame=False):
             if not os.path.exists(submodules_dict[dimension]['pretrain']):
                 wget_command = ['wget', 'https://huggingface.co/OpenGVLab/VBench_Used_Models/resolve/main/ViClip-InternVid-10M-FLT.pth', '-P', os.path.dirname(submodules_dict[dimension]["pretrain"])]
                 subprocess.run(wget_command, check=True)
+
+        if get_rank() == 0:
+            barrier()
     return submodules_dict
+
 
 def get_prompt_from_filename(path: str):
     """

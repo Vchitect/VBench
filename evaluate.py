@@ -1,6 +1,7 @@
 import torch
 import os
 from vbench import VBench
+from vbench.distributed import dist_init
 from datetime import datetime
 import argparse
 import json
@@ -111,7 +112,7 @@ def parse_args():
 def main():
     args = parse_args()
     print(f'args: {args}')
-
+    dist_init()
     device = torch.device("cuda")
     my_VBench = VBench(device, args.full_json_dir, args.output_path)
     
