@@ -1,5 +1,5 @@
 Pillow
-numpy
+numpy<2.0.0
 matplotlib
 timm>=0.9
 torch>=1.12,<2.0.0
