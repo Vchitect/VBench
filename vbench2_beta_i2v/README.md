@@ -347,7 +347,7 @@ my_VBench.evaluate(
 )
 ```
 
-For video quality dimensions, including `subject consistency`, `background_consistency`, `motion_smoothness`, `dynamic_degree`, `aesthetic_quality`, `imaging_quality`, you can refer to the script below.
+<!-- For video quality dimensions, including `subject consistency`, `background_consistency`, `motion_smoothness`, `dynamic_degree`, `aesthetic_quality`, `imaging_quality`, you can refer to the script below.
 ```python
 from vbench import VBench
 my_VBench = VBench("cuda", <path/to/vbench2_i2v_full_info.json>, <path/to/save/dir>)
@@ -365,8 +365,21 @@ my_VBench.evaluate(
     videos_path = "sampled_videos",
     name = "subject_consistency",
     dimension_list = ["subject_consistency"],
-)
+) 
+``` -->
+
+To perform evaluation on one dimension, run this:
 ```
+python evaluate_trustworthy.py \
+    --videos_path $VIDEOS_PATH \
+    --dimension $DIMENSION
+```
+
+- The complete list of dimensions:
+    ```
+    ['subject_consistency', 'background_consistency', 'temporal_flickering', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality', 'i2v_subject', 'i2v_background', 'camera_motion']
+    ```
+
 
 ## :black_nib: Citation
 
