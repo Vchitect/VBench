@@ -64,7 +64,7 @@ def i2v_subject(model, video_pair_list, device):
     return np.mean(sim_list), video_results
 
 
-def compute_i2v_subject(json_dir, device, submodules_list):
+def compute_i2v_subject(json_dir, device, submodules_list, **kwargs):
     dino_model = torch.hub.load(**submodules_list).to(device)
     resolution = submodules_list['resolution']
     logger.info("Initialize DINO success")

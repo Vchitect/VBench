@@ -333,6 +333,93 @@ def init_submodules(dimension_list, local=False, read_frame=False, resolution="1
                 "repo":"facebookresearch/co-tracker",
                 "model":"cotracker2"
             }
+        elif dimension == 'background_consistency':
+            # read_frame = False
+            if local:
+                vit_b_path = f'{CACHE_DIR}/clip_model/ViT-B-32.pt'
+                if not os.path.isfile(vit_b_path):
+                    wget_command = ['wget', 'https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt', '-P', os.path.dirname(vit_b_path)]
+                    subprocess.run(wget_command, check=True)
+            else:
+                vit_b_path = 'ViT-B/32'
+            submodules_dict[dimension] = [vit_b_path, read_frame]
+        elif dimension == 'temporal_flickering':
+            submodules_dict[dimension] = []
+        elif dimension == 'motion_smoothness':
+            CUR_DIR = os.path.abspath(os.path.join(__file__, "../.."))
+            submodules_dict[dimension] = {
+                    'config': f'{CUR_DIR}/vbench/third_party/amt/cfgs/AMT-S.yaml',
+                    'ckpt': f'{CACHE_DIR}/amt_model/amt-s.pth'
+                }
+            details = submodules_dict[dimension]
+            # Check if the file exists, if not, download it with wget
+            if not os.path.isfile(details['ckpt']):
+                print(f"File {details['ckpt']} does not exist. Downloading...")
+                wget_command = ['wget', '-P', os.path.dirname(details['ckpt']),
+                                'https://huggingface.co/lalala125/AMT/resolve/main/amt-s.pth']
+                subprocess.run(wget_command, check=True)
+
+        elif dimension == 'dynamic_degree':
+            submodules_dict[dimension] = {
+                'model': f'{CACHE_DIR}/raft_model/models/raft-things.pth'
+            }
+            details = submodules_dict[dimension]
+            if not os.path.isfile(details['model']):
+                # raise NotImplementedError
+                print(f"File {details['model']} does not exist. Downloading...")
+                wget_command = ['wget', '-P', f'{CACHE_DIR}/raft_model/', 'https://dl.dropboxusercontent.com/s/4j4z58wuv8o0mfz/models.zip']
+                unzip_command = ['unzip', '-d', f'{CACHE_DIR}/raft_model/', f'{CACHE_DIR}/raft_model/models.zip']
+                remove_command = ['rm', '-r', f'{CACHE_DIR}/raft_model/models.zip']
+                try:
+                    subprocess.run(wget_command, check=True)
+                    subprocess.run(unzip_command, check=True)
+                    subprocess.run(remove_command, check=True)
+                except subprocess.CalledProcessError as err:
+                    print(f"Error during downloading RAFT model: {err}")
+        # Assign the DINO model path for subject consistency dimension
+        elif dimension == 'subject_consistency':
+            if local:
+                submodules_dict[dimension] = {
+                    'repo_or_dir': f'{CACHE_DIR}/dino_model/facebookresearch_dino_main/',
+                    'path': f'{CACHE_DIR}/dino_model/dino_vitbase16_pretrain.pth', 
+                    'model': 'dino_vitb16',
+                    'source': 'local',
+                    'read_frame': read_frame
+                    }
+                details = submodules_dict[dimension]
+                # Check if the file exists, if not, download it with wget
+                if not os.path.isdir(details['repo_or_dir']):
+                    print(f"Directory {details['repo_or_dir']} does not exist. Cloning repository...")
+                    subprocess.run(['git', 'clone', 'https://github.com/facebookresearch/dino', details['repo_or_dir']], check=True)
+
+                if not os.path.isfile(details['path']):
+                    print(f"File {details['path']} does not exist. Downloading...")
+                    wget_command = ['wget', '-P', os.path.dirname(details['path']),
+                                    'https://dl.fbaipublicfiles.com/dino/dino_vitbase16_pretrain/dino_vitbase16_pretrain.pth']
+                    subprocess.run(wget_command, check=True)
+            else:
+                submodules_dict[dimension] = {
+                    'repo_or_dir':'facebookresearch/dino:main',
+                    'source':'github',
+                    'model': 'dino_vitb16',
+                    'read_frame': read_frame
+                    }
+        elif dimension == 'aesthetic_quality':
+            aes_path = f'{CACHE_DIR}/aesthetic_model/emb_reader'
+            if local:
+                vit_l_path = f'{CACHE_DIR}/clip_model/ViT-L-14.pt'
+                if not os.path.isfile(vit_l_path):
+                    wget_command = ['wget' ,'https://openaipublic.azureedge.net/clip/models/b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836/ViT-L-14.pt', '-P', os.path.dirname(vit_l_path)]
+                    subprocess.run(wget_command, check=True)
+            else:
+                vit_l_path = 'ViT-L/14'
+            submodules_dict[dimension] = [vit_l_path, aes_path]
+        elif dimension == 'imaging_quality':
+            musiq_spaq_path = f'{CACHE_DIR}/pyiqa_model/musiq_spaq_ckpt-358bb6af.pth'
+            if not os.path.isfile(musiq_spaq_path):
+                wget_command = ['wget', 'https://github.com/chaofengc/IQA-PyTorch/releases/download/v0.1-weights/musiq_spaq_ckpt-358bb6af.pth', '-P', os.path.dirname(musiq_spaq_path)]
+                subprocess.run(wget_command, check=True)
+            submodules_dict[dimension] = {'model_path': musiq_spaq_path}
     return submodules_dict
 
 
