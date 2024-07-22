@@ -370,7 +370,7 @@ my_VBench.evaluate(
 
 To perform evaluation on one dimension, run this:
 ```
-python evaluate_trustworthy.py \
+python evaluate_i2v.py \
     --videos_path $VIDEOS_PATH \
     --dimension $DIMENSION
 ```
