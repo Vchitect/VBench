@@ -197,7 +197,7 @@ def camera_motion(camera, video_list):
     return avg_score, diff_type_results, video_results
 
 
-def compute_camera_motion(json_dir, device, submodules_list):
+def compute_camera_motion(json_dir, device, submodules_list, **kwargs):
     camera = CameraPredict(device, submodules_list)
     video_list, _ = load_dimension_info(json_dir, dimension='camera_motion', lang='en')
     all_results, diff_type_results, video_results = camera_motion(camera, video_list)
