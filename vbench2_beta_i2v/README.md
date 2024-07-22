@@ -372,7 +372,8 @@ To perform evaluation on one dimension, run this:
 ```
 python evaluate_i2v.py \
     --videos_path $VIDEOS_PATH \
-    --dimension $DIMENSION
+    --dimension $DIMENSION \
+    --ratio $RATIO
 ```
 
 - The complete list of dimensions:
