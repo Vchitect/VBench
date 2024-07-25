@@ -80,6 +80,8 @@ We list the setting for sampling videos from these models.
 | [`OpenSora V1.1`](https://github.com/hpcaitech/Open-Sora) | VBench Team | 2024-04-25 | 424x240 | 8 | 64 | 8.0s | [link](https://github.com/hpcaitech/Open-Sora?tab=readme-ov-file#open-sora-11-model-weights:~:text=Open%2DSora%201.1%20Model%20Weights) |  [Commit ID](https://github.com/hpcaitech/Open-Sora/commit/ea41df3d6cc5f389b6824572854d97fa9f7779c3) | MP4 | [Google Drive](https://drive.google.com/file/d/1mGxjDIf7IT_mNibG8Nmg3E1WcXYRVDoo/view?usp=drive_link) | - |
 | [`OpenSoraPlan V1.1`](https://github.com/PKU-YuanGroup/Open-Sora-Plan) | VBench Team | 2024-05-27 | 512x512 | 24 | 221 | 9.2s | [link](https://huggingface.co/LanguageBind/Open-Sora-Plan-v1.1.0/tree/main) |  [Commit ID](https://github.com/PKU-YuanGroup/Open-Sora-Plan/commit/b08681f697658c81361e1ec6c07fba55c79bb4bd) | MP4 | [Google Drive](https://drive.google.com/file/d/1zsg-HPiqYZJoryTXw6cG_9deBlIbZN87/view?usp=drive_link) | - |
 | [`Mira`](https://github.com/mira-space/Mira) | VBench Team | 2024-04-01 | 384x240 | 6 | 60 | 10.0s | [link](https://github.com/mira-space/Mira) |  [Commit ID](https://github.com/mira-space/Mira/commit/12f8458f082405839a73c867016d60ee40b4f514) | MP4 | [Google Drive](https://drive.google.com/file/d/1lx0evF0HN0jY3FQ41RhQL9UJbOa-gve6/view?usp=drive_link) | - |
+| [`Pika 1.0`](https://pika.art/home) | VBench Team | 2023-12-28 | 1280x720 | 24 | 72 | 3.0s | - | - | MP4 | Coming Soon | Coming Soon |
+| [`Gen-3`](https://runwayml.com/ai-tools/gen-3-alpha/) | VBench Team | 2024-06-17 | 1280x768 | 24 | 256 | 10.7s | - | - | MP4 | Coming Soon | Coming Soon |
 
 ## How are Files Structured in Google Drive?
 
