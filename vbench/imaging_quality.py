@@ -27,7 +27,10 @@ def transform(images, preprocess_mode='shorter'):
     return images / 255.
 
 def technical_quality(model, video_list, device, **kwargs):
-    preprocess_mode = kwargs['imaging_quality_preprocessing_mode']
+    if 'imaging_quality_preprocessing_mode' not in kwargs:
+        preprocess_mode = 'longer'
+    else:
+        preprocess_mode = kwargs['imaging_quality_preprocessing_mode']
     video_results = []
     for video_path in tqdm(video_list):
         images = load_video(video_path)
