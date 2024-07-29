@@ -202,6 +202,14 @@ def parse_args():
         """,
     )
 
+    # for dev branch
+    parser.add_argument(
+        "--static_filter_flag",
+        action="store_true",
+        help="""Denote the current state of pipeline
+        """,
+    )
+
     args = parser.parse_args()
     return args
 
@@ -256,6 +264,7 @@ def main():
     kwargs['sb_mapping_file_path'] = args.subject_mapping_file_path
     kwargs['bg_mapping_file_path'] = args.background_mapping_file_path
     kwargs['num_of_samples_per_prompt'] = args.num_of_samples_per_prompt
+    kwargs['static_filter_flag'] = args.static_filter_flag
 
     my_VBench.evaluate(
         videos_path = args.videos_path,
