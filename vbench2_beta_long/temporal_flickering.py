@@ -16,9 +16,10 @@ def compute_long_temporal_flickering(json_dir, device, submodules_list, **kwargs
 
 
     output_path = base_video_path.split('filtered_videos')[0]
-    new_json_dir = build_filtered_info_json(videos_path=base_video_path, output_path=output_path, name='filtered_temporal_flickering')
-
-    all_results, detailed_results = compute_temporal_flickering(new_json_dir, device, submodules_list)
+    if kwargs['static_filter_flag']:
+        json_dir = build_filtered_info_json(videos_path=base_video_path, output_path=output_path, name='filtered_temporal_flickering')
+    
+    all_results, detailed_results = compute_temporal_flickering(json_dir, device, submodules_list)
  
     return reorganize_clips_results(detailed_results)
 
