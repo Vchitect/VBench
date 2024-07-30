@@ -151,14 +151,18 @@ def load_video(video_path, data_transform=None, num_frames=None, return_tensor=T
             video_reader = VideoReader(video_path, width=width, height=height, num_threads=1)
         else:
             video_reader = VideoReader(video_path, num_threads=1)
-        frames = video_reader.get_batch(range(len(video_reader)))  # (T, H, W, C), torch.uint8
-
+        frame_indices = range(len(video_reader))
+        if num_frames:
+            frame_indices = get_frame_indices(
+            num_frames, len(video_reader), sample="middle"
+            )
+        frames = video_reader.get_batch(frame_indices)  # (T, H, W, C), torch.uint8
         buffer = frames.asnumpy().astype(np.uint8)
     else:
         raise NotImplementedError
     
     frames = buffer
-    if num_frames:
+    if num_frames and not video_path.endswith('.mp4'):
         frame_indices = get_frame_indices(
         num_frames, len(frames), sample="middle"
         )

@@ -95,5 +95,5 @@ def background_consistency_dreamsim(model, preprocess, video_list, device, read_
         sim += video_sim
         video_results.append({'video_path': video_path, 'video_results': sim_per_images})
     # sim_per_video = sim / (len(video_list) - 1)
-    sim_per_frame = sim / cnt
+    sim_per_frame = sim / cnt if cnt != 0 else None
     return sim_per_frame, video_results

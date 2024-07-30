@@ -65,7 +65,7 @@ def i2v_background(dream_model, video_pair_list, device):
     return np.mean(sim_list), video_results
 
 
-def compute_i2v_background(json_dir, device, submodules_list):
+def compute_i2v_background(json_dir, device, submodules_list, **kwargs):
     
     dream_model, preprocess = dreamsim(pretrained=True)
     resolution = submodules_list['resolution']

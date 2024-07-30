@@ -49,10 +49,37 @@ Previously, VBench evaluated temporal consistency primarily by calculating the c
 
 <!-- Specifically, we first evaluate the consistency dimensions' score within each clip, then calculate the consistency dimensions' score between clips. Finally, we weight and combine the two scores to obtain the final consistency dimension score. -->
 
+## 3. Static Filter
+For dimension `temporal_flickering`, **static filter** shoulde be implemented before evaluaing videos. You can run this to filter static videos:
+```python []
+# This only filter out static videos whose prompt matches the prompt in the temporal_flickering.
+python static_filter.py --videos_path $VIDEOS_PATH
+```
 
-## 3. Usage
+We ensembled static filter function into preprocess for **VBench-Long**, and a flag `static_filter_flag` was designed to decide wheter to execute static filter or not. 
 
-### 3.1 Evaluation on the Standard Prompt Suite of VBench
+Static filter will be executed if set `static_filter_flag` flag, for example:
+```bash []
+python vbench2_beta_long/eval_long.py \
+    --videos_path $videos_path \
+    --dimension $dimension \ 
+    --mode 'long_vbench_standard' \
+    --dev_flag \
+    --static_filter_flag \
+```
+
+If you have filtered videos manually, you can unset the `static_filter_flag` flag, for example
+```bash []
+python vbench2_beta_long/eval_long.py \
+    --videos_path $videos_path \
+    --dimension $dimension \ 
+    --mode 'long_vbench_standard' \
+    --dev_flag \
+```
+
+## 4. Usage
+
+### 4.1 Evaluation on the Standard Prompt Suite of VBench
 
 ```python
 from vbench2_beta_long import VBenchLong
@@ -77,7 +104,7 @@ my_VBench.evaluate(
 )
 ```
 
-### 3.2 Evaluation on Your Own Videos
+### 4.2 Evaluation on Your Own Videos
 
 For long video evaluation, we support customized videos / prompts for the following dimensions: `subject_consistency`, `background_consistency`, `motion_smoothness`, `dynamic_degree`, `aesthetic_quality`, `imaging_quality`
 
@@ -91,6 +118,15 @@ my_VBench.evaluate(
 )
 ```
 
+### 4.3 Example of Evaluating OpenSoraPlan
+We have provided scripts to download OpenSoraPlanv1.1 samples, and the corresponding evaluation scripts.
+```bash []
+# download sampled videos of OpenSoraPlan
+sh scripts/download_OpenSoraPlan.sh
+
+# evaluate OpenSoraPlan
+sh scripts/evaluate_OpenSoraPlan.sh
+```
 
 
 ## :black_nib: Citation
