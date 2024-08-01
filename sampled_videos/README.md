@@ -82,7 +82,7 @@ We list the setting for sampling videos from these models.
 | [`Mira`](https://github.com/mira-space/Mira) | VBench Team | 2024-04-01 | 384x240 | 6 | 60 | 10.0s | [link](https://github.com/mira-space/Mira) |  [Commit ID](https://github.com/mira-space/Mira/commit/12f8458f082405839a73c867016d60ee40b4f514) | MP4 | [Google Drive](https://drive.google.com/file/d/1lx0evF0HN0jY3FQ41RhQL9UJbOa-gve6/view?usp=drive_link) | - |
 | [`Pika 1.0`](https://pika.art/home) | VBench Team | 2023-12-28 | 1280x720 | 24 | 72 | 3.0s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1FH157pt3KSy7O9HqSF6V9_CxMXijbAXK/view?usp=drive_link) | [Google Drive](https://drive.google.com/file/d/1akR-7EhrNOpkWd-5pRR4StMKjj7bOrQJ/view?usp=drive_link) |
 | [`Gen-3`](https://runwayml.com/ai-tools/gen-3-alpha/) | VBench Team | 2024-06-17 | 1280x768 | 24 | 256 | 10.7s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1AFV48EOAXydz2ZB-q2ml7b0ojYrAsl-K) | [Google Drive](https://drive.google.com/drive/u/1/folders/1JhWU509RSif78q4lwSrfKVoy9m7_ZoDp) |
-| [`Kling`](https://klingai.kuaishou.com/) | VBench Team | 2024-06-06 | 1280x720 | 30 | 153 | 5.1s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/1/folders/1g5Y9j2gb9I5FUg4Ql28jSCCPH-Pv-HDg) | - |
+| [`Kling`](https://klingai.kuaishou.com/) | VBench Team | 2024-06-06 | 1280x720 | 30 | 153 | 5.1s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/1/folders/1g5Y9j2gb9I5FUg4Ql28jSCCPH-Pv-HDg) | We used High-Performance Mode (lower sampling cost), not High-Quality Mode (better quality) |
 
 ## How are Files Structured in Google Drive?
 
