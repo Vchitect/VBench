@@ -84,6 +84,7 @@ We list the setting for sampling videos from these models.
 | [`Pika 1.0`](https://pika.art/home) | VBench Team | 2023-12-28 | 1280x720 | 24 | 72 | 3.0s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1FH157pt3KSy7O9HqSF6V9_CxMXijbAXK/view?usp=drive_link) | [Google Drive](https://drive.google.com/file/d/1akR-7EhrNOpkWd-5pRR4StMKjj7bOrQJ/view?usp=drive_link) |
 | [`Gen-3`](https://runwayml.com/ai-tools/gen-3-alpha/) | VBench Team | 2024-06-17 | 1280x768 | 24 | 256 | 10.7s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1AFV48EOAXydz2ZB-q2ml7b0ojYrAsl-K) | [Google Drive](https://drive.google.com/drive/u/1/folders/1JhWU509RSif78q4lwSrfKVoy9m7_ZoDp) |
 | [`Kling`](https://klingai.kuaishou.com/) | VBench Team | 2024-06-06 | 1280x720 | 30 | 153 | 5.1s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/1/folders/1g5Y9j2gb9I5FUg4Ql28jSCCPH-Pv-HDg) | We used High-Performance Mode (lower sampling cost), not High-Quality Mode (better quality) |
+| [`Data-Juicer (T2V-Turbo)`](https://modelscope.cn/models/Data-Juicer/Data-Juicer-T2V) | Data-Juicer Team | 2024-07-23 | 320x512 | 8 | 16 | 2.0s | - | - | MP4 | - | based on T2V-Turbo, with Data-Juicer's data and loss enhancement  |
 
 ## How are Files Structured in Google Drive?
 
