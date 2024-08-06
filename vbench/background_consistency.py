@@ -10,14 +10,24 @@ import torch.nn.functional as F
 from vbench.utils import load_video, load_dimension_info, clip_transform
 from tqdm import tqdm
 
+from .distributed import (
+    get_world_size,
+    get_rank,
+    all_gather,
+    barrier,
+    distribute_list_to_rank,
+    gather_list_of_dict,
+)
+
 
 def background_consistency(clip_model, preprocess, video_list, device, read_frame):
     sim = 0.0
     cnt = 0
     video_results = []
     image_transform = clip_transform(224)
-    for video_path in tqdm(video_list):
+    for video_path in tqdm(video_list, disable=get_rank() > 0):
         video_sim = 0.0
+        cnt_per_video = 0
         if read_frame:
             video_path = video_path[:-4].replace('videos', 'frames').replace(' ', '_')
             tmp_paths = [os.path.join(video_path, f) for f in sorted(os.listdir(video_path))]
@@ -41,10 +51,15 @@ def background_consistency(clip_model, preprocess, video_list, device, read_fram
                 cur_sim = (sim_pre + sim_fir) / 2
                 video_sim += cur_sim
                 cnt += 1
+                cnt_per_video += 1
             former_image_feature = image_feature
         sim_per_image = video_sim / (len(image_features) - 1)
         sim += video_sim
-        video_results.append({'video_path': video_path, 'video_results': sim_per_image})
+        video_results.append({
+            'video_path': video_path, 
+            'video_results': sim_per_image,
+            'video_sim': video_sim,
+            'cnt_per_video': cnt_per_video})
     # sim_per_video = sim / (len(video_list) - 1)
     sim_per_frame = sim / cnt
     return sim_per_frame, video_results
@@ -54,6 +69,12 @@ def compute_background_consistency(json_dir, device, submodules_list, **kwargs):
     vit_path, read_frame = submodules_list[0], submodules_list[1]
     clip_model, preprocess = clip.load(vit_path, device=device)
     video_list, _ = load_dimension_info(json_dir, dimension='background_consistency', lang='en')
+    video_list = distribute_list_to_rank(video_list)
     all_results, video_results = background_consistency(clip_model, preprocess, video_list, device, read_frame)
+    if get_world_size() > 1:
+        video_results = gather_list_of_dict(video_results)
+        sim = sum([d['video_sim'] for d in video_results])
+        cnt = sum([d['cnt_per_video'] for d in video_results])
+        all_results = sim / cnt
     return all_results, video_results
 

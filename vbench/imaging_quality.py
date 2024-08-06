@@ -4,6 +4,16 @@ from torchvision import transforms
 from pyiqa.archs.musiq_arch import MUSIQ
 from vbench.utils import load_video, load_dimension_info
 
+from .distributed import (
+    get_world_size,
+    get_rank,
+    all_gather,
+    barrier,
+    distribute_list_to_rank,
+    gather_list_of_dict,
+)
+
+
 def transform(images, preprocess_mode='shorter'):
     if preprocess_mode.startswith('shorter'):
         _, _, h, w = images.size()
@@ -32,7 +42,7 @@ def technical_quality(model, video_list, device, **kwargs):
     else:
         preprocess_mode = kwargs['imaging_quality_preprocessing_mode']
     video_results = []
-    for video_path in tqdm(video_list):
+    for video_path in tqdm(video_list, disable=get_rank() > 0):
         images = load_video(video_path)
         images = transform(images, preprocess_mode)
         acc_score_video = 0.
@@ -54,5 +64,10 @@ def compute_imaging_quality(json_dir, device, submodules_list, **kwargs):
     model.training = False
     
     video_list, _ = load_dimension_info(json_dir, dimension='imaging_quality', lang='en')
+    video_list = distribute_list_to_rank(video_list)
     all_results, video_results = technical_quality(model, video_list, device, **kwargs)
+    if get_world_size() > 1:
+        video_results = gather_list_of_dict(video_results)
+        all_results = sum([d['video_results'] for d in video_results]) / len(video_results)
+        all_results = all_results / 100.
     return all_results, video_results

@@ -9,6 +9,16 @@ from vbench.utils import load_video, load_dimension_info, clip_transform, read_f
 from vbench.third_party.ViCLIP.viclip import ViCLIP
 from vbench.third_party.ViCLIP.simple_tokenizer import SimpleTokenizer
 
+from .distributed import (
+    get_world_size,
+    get_rank,
+    all_gather,
+    barrier,
+    distribute_list_to_rank,
+    gather_list_of_dict,
+)
+
+
 def get_text_features(model, input_text, tokenizer, text_feature_dict={}):
     if input_text in text_feature_dict:
         return text_feature_dict[input_text]
@@ -34,7 +44,7 @@ def temporal_style(clip_model, video_dict, tokenizer, device, sample="middle"):
     sim = []
     video_results = []
     image_transform = clip_transform(224)
-    for info in tqdm(video_dict):
+    for info in tqdm(video_dict, disable=get_rank() > 0):
         query = info['prompt']
         # text = clip.tokenize([query]).to(device)
         video_list = info['video_list']
@@ -58,5 +68,9 @@ def compute_temporal_style(json_dir, device, submodules_list, **kwargs):
     tokenizer = SimpleTokenizer(os.path.join(CACHE_DIR, "ViCLIP/bpe_simple_vocab_16e6.txt.gz"))
     viclip = ViCLIP(tokenizer= tokenizer, **submodules_list).to(device)
     _, video_dict = load_dimension_info(json_dir, dimension='temporal_style', lang='en')
+    video_dict = distribute_list_to_rank(video_dict)
     all_results, video_results = temporal_style(viclip, video_dict, tokenizer, device)
+    if get_world_size() > 1:
+        video_results = gather_list_of_dict(video_results)
+        all_results = sum([d['video_results'] for d in video_results]) / len(video_results)
     return all_results, video_results
