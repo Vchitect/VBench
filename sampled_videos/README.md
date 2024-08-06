@@ -85,6 +85,7 @@ We list the setting for sampling videos from these models.
 | [`Gen-3`](https://runwayml.com/ai-tools/gen-3-alpha/) | VBench Team | 2024-06-17 | 1280x768 | 24 | 256 | 10.7s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1AFV48EOAXydz2ZB-q2ml7b0ojYrAsl-K) | [Google Drive](https://drive.google.com/drive/u/1/folders/1JhWU509RSif78q4lwSrfKVoy9m7_ZoDp) |
 | [`Kling`](https://klingai.kuaishou.com/) | VBench Team | 2024-06-06 | 1280x720 | 30 | 153 | 5.1s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/1/folders/1g5Y9j2gb9I5FUg4Ql28jSCCPH-Pv-HDg) | - | <small>high-performance mode (lower sampling cost), not high-quality mode (better quality)</small> |
 | [`Data-Juicer (T2V-Turbo)`](https://modelscope.cn/models/Data-Juicer/Data-Juicer-T2V) | Data-Juicer Team | 2024-07-23 | 320x512 | 8 | 16 | 2.0s | - | - | MP4 | - | - | <small>from Data-Juicer Team: based on T2V-Turbo, with Data-Juicer's data and loss enhancement</small>  |
+| [`LaVie-2`](https://github.com/Vchitect/LaVie) | LaVie-2 Team | - | 512x512 | 8 | 16 | 2.0s | - | - | MP4 | - | - | <small>info provided by LaVie-2 Team</small>
 
 ## How are Files Structured in Google Drive?
 
