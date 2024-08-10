@@ -248,7 +248,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
         elif dimension == 'human_action':
             umt_path = f'{CACHE_DIR}/umt_model/l16_ptk710_ftk710_ftk400_f16_res224.pth'
             if not os.path.isfile(umt_path):
-                wget_command = ['wget', 'https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/umt/single_modality/l16_ptk710_ftk710_ftk400_f16_res224.pth', '-P', os.path.dirname(umt_path)]
+                wget_command = ['wget', 'https://huggingface.co/OpenGVLab/VBench_Used_Models/resolve/main/l16_ptk710_ftk710_ftk400_f16_res224.pth', '-P', os.path.dirname(umt_path)]
                 subprocess.run(wget_command, check=True)
             submodules_dict[dimension] = [umt_path,]
         elif dimension == 'temporal_flickering':
