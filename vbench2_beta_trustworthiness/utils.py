@@ -355,7 +355,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
                 "pretrain": f'{CACHE_DIR}/ViCLIP/ViClip-InternVid-10M-FLT.pth',
             }
             if not os.path.exists(submodules_dict[dimension]['pretrain']):
-                wget_command = ['wget', 'https://huggingface.co/OpenGVLab/VBench_Used_Models/resolve/main/ViCLIP-L_InternVid-FLT-10M.pth', '-P', os.path.dirname(submodules_dict[dimension]["pretrain"])]
+                wget_command = ['wget', 'https://huggingface.co/OpenGVLab/VBench_Used_Models/resolve/main/ViClip-InternVid-10M-FLT.pth', '-P', os.path.dirname(submodules_dict[dimension]["pretrain"])]
                 subprocess.run(wget_command, check=True)
         elif dimension in ["gender_bias", "skin_bias"]:
             if local:
