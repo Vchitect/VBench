@@ -52,6 +52,9 @@ We propose **VBench**, a comprehensive benchmark suite for video generative mode
 
 <a name="evaluation_results"></a>
 ## :mortar_board: Evaluation Results
+
+***See our leaderboard for the most updated ranking and numerical results (with models like Gen-3, Kling, Pika)***. [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
+
 <p align="center">
   <img src="./asset/radar-open.jpg" width="48%" style="margin-right: 4%;" />
   <img src="./asset/radar-close.jpg" width="48%" />
