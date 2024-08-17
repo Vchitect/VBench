@@ -31,13 +31,12 @@ class DynamicDegree:
     
 
     def load_model(self):
-        self.model = torch.nn.DataParallel(RAFT(self.args))
-        self.model.load_state_dict(torch.load(self.args.model))
-
-        self.model = self.model.module
+        self.model = RAFT(self.args)
+        ckpt = torch.load(self.args.model, map_location="cpu")
+        new_ckpt = {k.replace('module.', ''): v for k, v in ckpt.items()}
+        self.model.load_state_dict(new_ckpt)
         self.model.to(self.device)
         self.model.eval()
-
 
 
     def get_score(self, img, flo):
