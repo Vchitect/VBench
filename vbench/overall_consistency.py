@@ -70,6 +70,6 @@ def compute_overall_consistency(json_dir, device, submodules_list, **kwargs):
     video_dict = distribute_list_to_rank(video_dict)
     all_results, video_results = overall_consistency(viclip, video_dict, tokenizer, device)
     if get_world_size() > 1:
-        video_results = all_gather(video_results)
+        video_results = gather_list_of_dict(video_results)
         all_results = sum([d['video_results'] for d in video_results]) / len(video_results)
     return all_results, video_results

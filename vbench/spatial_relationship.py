@@ -141,5 +141,5 @@ def compute_spatial_relationship(json_dir, device, submodules_dict, **kwargs):
     all_results, video_results = spatial_relationship(dense_caption_model, prompt_dict_ls, device)
     if get_world_size() > 1:
         video_results = gather_list_of_dict(video_results)
-        all_results = sum([d['frame_results'] for d in video_results]) / len(video_results)
+        all_results = sum([d['video_results'] for d in video_results]) / len(video_results)
     return all_results, video_results
