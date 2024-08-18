@@ -111,6 +111,7 @@ def parse_args():
 
 def main():
     args = parse_args()
+
     dist_init()
     print0(f'args: {args}')
     device = torch.device("cuda")

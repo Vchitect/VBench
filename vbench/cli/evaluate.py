@@ -1,6 +1,7 @@
 import torch
 import os
 from vbench import VBench
+from vbench.distributed import dist_init, print0
 from datetime import datetime
 import argparse
 import json
@@ -106,12 +107,13 @@ def register_subparsers(subparser):
     parser.set_defaults(func=evaluate)
 
 def evaluate(args):
-    print(f'args: {args}')
+    dist_init()
+    print0(f'args: {args}')
 
     device = torch.device("cuda")
     my_VBench = VBench(device, args.full_json_dir, args.output_path)
     
-    print(f'start evaluation')
+    print0(f'start evaluation')
     
     current_time = datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
 
@@ -148,5 +150,5 @@ def evaluate(args):
         mode=args.mode,
         **kwargs
     )
-    print('done')
+    print0('done')
 
