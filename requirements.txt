@@ -16,7 +16,7 @@ decord
 requests
 pyyaml
 easydict
-pyiqa>=0.1.8
+pyiqa==0.1.10
 lvis
 fairscale>=0.4.4
 fvcore
