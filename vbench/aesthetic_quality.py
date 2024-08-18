@@ -17,6 +17,8 @@ from .distributed import (
     gather_list_of_dict,
 )
 
+batch_size = 32
+
 
 def get_aesthetic_model(cache_folder):
     """load the aethetic model"""
@@ -51,16 +53,27 @@ def laion_aesthetic(aesthetic_model, clip_model, video_list, device):
     for video_path in tqdm(video_list, disable=get_rank() > 0):
         images = load_video(video_path)
         image_transform = clip_transform(224)
-        images = image_transform(images)
-        images = images.to(device)
-        image_feats = clip_model.encode_image(images).to(torch.float32)
-        image_feats = F.normalize(image_feats, dim=-1, p=2)
-        aesthetic_scores = aesthetic_model(image_feats).squeeze()
-        normalized_aesthetic_scores = aesthetic_scores/10
+
+        aesthetic_scores_list = []
+        for i in range(0, len(images), batch_size):
+            image_batch = images[i:i + batch_size]
+            image_batch = image_transform(image_batch)
+            image_batch = image_batch.to(device)
+
+            with torch.no_grad():
+                image_feats = clip_model.encode_image(image_batch).to(torch.float32)
+                image_feats = F.normalize(image_feats, dim=-1, p=2)
+                aesthetic_scores = aesthetic_model(image_feats).squeeze()
+
+            aesthetic_scores_list.append(aesthetic_scores)
+
+        aesthetic_scores = torch.cat(aesthetic_scores_list, dim=0)
+        normalized_aesthetic_scores = aesthetic_scores / 10
         cur_avg = torch.mean(normalized_aesthetic_scores, dim=0, keepdim=True)
         aesthetic_avg += cur_avg.item()
         num += 1
         video_results.append({'video_path': video_path, 'video_results': cur_avg.item()})
+
     aesthetic_avg /= num
     return aesthetic_avg, video_results
 
