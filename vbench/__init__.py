@@ -5,8 +5,7 @@ import importlib
 from itertools import chain
 from pathlib import Path
 
-from .distributed import get_rank
-
+from .distributed import get_rank, print0
 
 class VBench(object):
     def __init__(self, device, full_info_dir, output_path):
@@ -122,15 +121,15 @@ class VBench(object):
                             intended_video_path = os.path.join(videos_path, intended_video_name)
                             prompt_dict['video_list'].append(intended_video_path)
                             if verbose:
-                                print(f'Successfully found video: {intended_video_name}')
+                                print0(f'Successfully found video: {intended_video_name}')
                         else:
-                            print(f'WARNING!!! This required video is not found! Missing benchmark videos can lead to unfair evaluation result. The missing video is: {intended_video_name}')
+                            print0(f'WARNING!!! This required video is not found! Missing benchmark videos can lead to unfair evaluation result. The missing video is: {intended_video_name}')
                     cur_full_info_list.append(prompt_dict)
 
         
         cur_full_info_path = os.path.join(self.output_path, name+'_full_info.json')
         save_json(cur_full_info_list, cur_full_info_path)
-        print(f'Evaluation meta data saved to {cur_full_info_path}')
+        print0(f'Evaluation meta data saved to {cur_full_info_path}')
         return cur_full_info_path
 
 
@@ -149,10 +148,10 @@ class VBench(object):
             except Exception as e:
                 raise NotImplementedError(f'UnImplemented dimension {dimension}!, {e}')
             submodules_list = submodules_dict[dimension]
-            print(f'cur_full_info_path: {cur_full_info_path}') # TODO: to delete
+            print0(f'cur_full_info_path: {cur_full_info_path}') # TODO: to delete
             results = evaluate_func(cur_full_info_path, self.device, submodules_list, **kwargs)
             results_dict[dimension] = results
         output_name = os.path.join(self.output_path, name+'_eval_results.json')
         if get_rank() == 0:
             save_json(results_dict, output_name)
-            print(f'Evaluation results saved to {output_name}')
+            print0(f'Evaluation results saved to {output_name}')

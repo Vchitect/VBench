@@ -21,6 +21,7 @@ This repository contains the implementation of the following paper and its relat
 - [Updates](#updates)
 - [Overview](#overview)
 - [Evaluation Results](#evaluation_results)
+- [Video Generation Models Info](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Prompt Suite](#prompt_suite)
@@ -30,9 +31,10 @@ This repository contains the implementation of the following paper and its relat
 
 <a name="updates"></a>
 ## :fire: Updates
+- [08/2024] **VBench Leaderboard** update: Our leaderboard has 28 *T2V models*, 12 *I2V models* so far. All video generative models are encouraged to participate! [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
 - [06/2024] :fire: **[VBench-Long](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_long)** :fire: is ready to use for evaluating longer Sora-like videos!
-- [06/2024] **VBench Leaderboard**: Information on video generative models in our [VBench Leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard) 
- is documented [HERE](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models). All video generative models are encouraged to participate! We have 14 *T2V models*, 12 *I2V models* so far. [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
+- [06/2024] **Model Info Documentation**: Information on video generative models in our [VBench Leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard) 
+ is documented [HERE](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models).
 - [05/2024] **PyPI Update**: PyPI package `vbench` is updated to version 0.1.2. This includes changes in the preprocessing for high-resolution images/videos for `imaging_quality`, support for evaluating customized videos, and minor bug fixes.
 - [04/2024] We release all the videos we sampled and used for VBench evaluation. [![Dataset Download](https://img.shields.io/badge/Dataset-Download-red?logo=googlechrome&logoColor=red)](https://drive.google.com/drive/folders/13pH95aUN-hVgybUZJBx1e_08R6xhZs5X) See details [here](https://github.com/Vchitect/VBench/tree/master/sampled_videos).
 - [03/2024] :fire: **[VBench-Trustworthiness](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_trustworthiness)** :fire: We now support evaluating the **trustworthiness** (*e.g.*, culture, fairness, bias, safety) of video generative models.
@@ -50,6 +52,9 @@ We propose **VBench**, a comprehensive benchmark suite for video generative mode
 
 <a name="evaluation_results"></a>
 ## :mortar_board: Evaluation Results
+
+***See our leaderboard for the most updated ranking and numerical results (with models like Gen-3, Kling, Pika)***. [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
+
 <p align="center">
   <img src="./asset/radar-open.jpg" width="48%" style="margin-right: 4%;" />
   <img src="./asset/radar-close.jpg" width="48%" />
