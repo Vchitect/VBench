@@ -15,9 +15,9 @@ The enhanced prompts are available in the `.txt` files within the current folder
 
 Simply run this script:
 
-    ```bash
+   ```
     sh convert_vbench_prompt.sh
-    ```
+   ```
 
 Some explanations:
 1. **Configure API Key and Proxy:**
@@ -95,7 +95,7 @@ with open(original_file_path, 'r') as f:
 for i, prompt in enumerate(longer_prompt_list):
 
     original_prompt = original_prompt_list[i]
-    samples_per_prompt = 40 if dimension=="temporal_flickering" else 5
+    samples_per_prompt = 5
 
     for ind in range(samples_per_prompt):
         print(f"Sampling {prompt} ...")
