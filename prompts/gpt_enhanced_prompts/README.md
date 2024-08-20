@@ -4,7 +4,7 @@
 
 ## Introduction
 
-We follow [CogVideoX](https://github.com/THUDM/CogVideo?tab=readme-ov-file#prompt-optimization)'s prompt optimization technique to enhance VBench prompts, making them longer and more descriptive without altering their original meaning. This enhancement is achieved by adapting a [script](https://github.com/THUDM/CogVideo/blob/1c2e487820e35ac7f53d2634b69d48c1811f236c/inference/convert_demo.py) from CogVideoX, and it requires OpenAI API keys to call GPT-4o.
+We follow [CogVideoX](https://github.com/THUDM/CogVideo?tab=readme-ov-file#prompt-optimization), and use GPT-4o to enhance VBench prompts, making them longer and more descriptive without altering their original meaning. This enhancement is achieved by adapting a [script](https://github.com/THUDM/CogVideo/blob/1c2e487820e35ac7f53d2634b69d48c1811f236c/inference/convert_demo.py) from CogVideoX, and it requires OpenAI API keys to call GPT-4o.
 
 
 The enhanced prompts are available in the `.txt` files within the current folder, with filenames concatenated with `_longer` to indicate the optimized versions.
