@@ -57,15 +57,9 @@ def parse_args():
         """,
     )
     parser.add_argument(
-        "--custom_input",
-        action="store_true",
-        required=False,
-        help="(deprecated) use --mode=\"custom_input\" instead",
-    )
-    parser.add_argument(
         "--prompt",
         type=str,
-        default="",
+        default="None",
         help="""Specify the input prompt
         If not specified, filenames will be used as input prompts
         * Mutually exclusive to --prompt_file.
@@ -125,11 +119,9 @@ def main():
 
     prompt = []
 
-    assert args.custom_input == False, "(Deprecated) use --mode=custom_input instead"
-    
-    if (args.prompt_file is not None) and (args.prompt != ""):
+    if (args.prompt_file is not None) and (args.prompt != "None"):
         raise Exception("--prompt_file and --prompt cannot be used together")
-    if (args.prompt_file is not None or args.prompt != "") and (not args.mode=='custom_input'):
+    if (args.prompt_file is not None or args.prompt != "None") and (not args.mode=='custom_input'):
         raise Exception("must set --mode=custom_input for using external prompt")
 
     if args.prompt_file:
