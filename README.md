@@ -130,6 +130,15 @@ vbench evaluate \
     --mode=custom_input
 ```
 
+To evaluate using multiple gpus, we can use the following commands:
+```
+torchrun --nproc_per_node=${GPUS} --standalone evaluate.py ...args...
+```
+or 
+```
+vbench evaluate --ngpus=${GPUS} ...args...
+```
+
 ### Evaluation on the Standard Prompt Suite of VBench
 
 ##### Command Line 
