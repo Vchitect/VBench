@@ -69,7 +69,7 @@ def parse_args():
         help="""Specify the input prompt
         If not specified, filenames will be used as input prompts
         * Mutually exclusive to --prompt_file.
-        ** This option must be used with --custom_input flag
+        ** This option must be used with --mode=custom_input flag
         """
     )
     parser.add_argument(
@@ -136,7 +136,7 @@ def main():
         with open(args.prompt_file, 'r') as f:
             prompt = json.load(f)
         assert type(prompt) == dict, "Invalid prompt file format. The correct format is {\"video_path\": prompt, ... }"
-    elif args.prompt != "":
+    elif args.prompt != "None":
         prompt = [args.prompt]
 
     if args.category != "":
