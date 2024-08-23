@@ -1,16 +1,15 @@
+import torch
 import os
-import subprocess
+from vbench import VBench
+from vbench.distributed import dist_init, print0
+from datetime import datetime
 import argparse
+import json
 
-CUR_DIR = os.path.dirname(os.path.abspath(__file__))
-def register_subparsers(subparser):
-    parser = subparser.add_parser('evaluate', formatter_class=argparse.RawTextHelpFormatter)
-    parser.add_argument(
-        "--ngpus",
-        type=int,
-        default=1,
-        help="Number of GPUs to run evaluation on"
-        )
+def parse_args():
+
+    CUR_DIR = os.path.dirname(os.path.abspath(__file__))
+    parser = argparse.ArgumentParser(description='VBench', formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument(
         "--output_path",
         type=str,
@@ -31,7 +30,7 @@ def register_subparsers(subparser):
     )
     parser.add_argument(
         "--dimension",
-        type=str,
+        nargs='+',
         required=True,
         help="list of evaluation dimensions, usage: --dimension <dim_1> <dim_2>",
     )
@@ -58,13 +57,19 @@ def register_subparsers(subparser):
         """,
     )
     parser.add_argument(
+        "--custom_input",
+        action="store_true",
+        required=False,
+        help="(deprecated) use --mode=\"custom_input\" instead",
+    )
+    parser.add_argument(
         "--prompt",
         type=str,
-        default="None",
+        default="",
         help="""Specify the input prompt
         If not specified, filenames will be used as input prompts
         * Mutually exclusive to --prompt_file.
-        ** This option must be used with --custom_input flag
+        ** This option must be used with --mode=custom_input flag
         """
     )
     parser.add_argument(
@@ -100,22 +105,57 @@ def register_subparsers(subparser):
         4. 'None': no preprocessing
         """,
     )
-    parser.set_defaults(func=evaluate)
+    args = parser.parse_args()
+    return args
 
-def stringify_cmd(cmd_ls):
-    cmd = ""
-    for string in cmd_ls:
-        cmd += string + " "
-    return cmd
 
-## TODO
-def evaluate(args):
-    cmd = ['python', '-m', 'torch.distributed.run', '--standalone', '--nproc_per_node', str(args.ngpus), f'{CUR_DIR}/../launch/evaluate.py']
-    args_dict = vars(args)
-    for arg in args_dict:
-        if arg != "ngpus" and (args_dict[arg] != None) and arg != "func":
-            cmd.append(f'--{arg}')
-            cmd.append(str(args_dict[arg]))
-    print("running command , ", stringify_cmd(cmd))
-    subprocess.run(stringify_cmd(cmd), shell=True)
+def main():
+    args = parse_args()
 
+    dist_init()
+    print0(f'args: {args}')
+    device = torch.device("cuda")
+    my_VBench = VBench(device, args.full_json_dir, args.output_path)
+    
+    print0(f'start evaluation')
+
+    current_time = datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
+
+    kwargs = {}
+
+    prompt = []
+
+    assert args.custom_input == False, "(Deprecated) use --mode=custom_input instead"
+    
+    if (args.prompt_file is not None) and (args.prompt != ""):
+        raise Exception("--prompt_file and --prompt cannot be used together")
+    if (args.prompt_file is not None or args.prompt != "") and (not args.mode=='custom_input'):
+        raise Exception("must set --mode=custom_input for using external prompt")
+
+    if args.prompt_file:
+        with open(args.prompt_file, 'r') as f:
+            prompt = json.load(f)
+        assert type(prompt) == dict, "Invalid prompt file format. The correct format is {\"video_path\": prompt, ... }"
+    elif args.prompt != "None":
+        prompt = [args.prompt]
+
+    if args.category != "":
+        kwargs['category'] = args.category
+
+    kwargs['imaging_quality_preprocessing_mode'] = args.imaging_quality_preprocessing_mode
+
+    my_VBench.evaluate(
+        videos_path = args.videos_path,
+        name = f'results_{current_time}',
+        prompt_list=prompt, # pass in [] to read prompt from filename
+        dimension_list = args.dimension,
+        local=args.load_ckpt_from_local,
+        read_frame=args.read_frame,
+        mode=args.mode,
+        **kwargs
+    )
+    print0('done')
+
+
+if __name__ == "__main__":
+    main()
