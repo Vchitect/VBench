@@ -64,7 +64,7 @@ def register_subparsers(subparser):
         help="""Specify the input prompt
         If not specified, filenames will be used as input prompts
         * Mutually exclusive to --prompt_file.
-        ** This option must be used with --custom_input flag
+        ** This option must be used with --mode=custom_input flag
         """
     )
     parser.add_argument(
@@ -74,7 +74,7 @@ def register_subparsers(subparser):
         help="""Specify the path of the file that contains prompt lists
         If not specified, filenames will be used as input prompts
         * Mutually exclusive to --prompt.
-        ** This option must be used with --custom_input flag
+        ** This option must be used with --mode=custom_input flag
         """
     )
     parser.add_argument(
