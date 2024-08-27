@@ -16,7 +16,7 @@ def fetch_requirements():
 
 install_requires = fetch_requirements()
 setup(name='vbench',
-      version='0.1.3',
+      version='0.1.4',
       description='Video generation benchmark',
       long_description=fetch_readme(),
       long_description_content_type='text/markdown',
