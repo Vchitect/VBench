@@ -113,9 +113,14 @@ def evaluate(args):
     cmd = ['python', '-m', 'torch.distributed.run', '--standalone', '--nproc_per_node', str(args.ngpus), f'{CUR_DIR}/../launch/evaluate.py']
     args_dict = vars(args)
     for arg in args_dict:
-        if arg != "ngpus" and (args_dict[arg] != None) and arg != "func":
-            cmd.append(f'--{arg}')
-            cmd.append(str(args_dict[arg]))
-    print("running command , ", stringify_cmd(cmd))
+        if arg == "ngpus" or (args_dict[arg] == None) or arg == "func":
+            continue
+        if arg == "videos_path":
+            cmd.append(f"--videos_path=\"{str(args_dict[arg])}\"")
+            continue
+        cmd.append(f'--{arg}')
+        cmd.append(str(args_dict[arg]))
+
+
     subprocess.run(stringify_cmd(cmd), shell=True)
 
