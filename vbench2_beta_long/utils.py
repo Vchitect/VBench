@@ -198,12 +198,11 @@ def reorganize_clips_results(detailed_results, dimension=None):
     prompt_scores = defaultdict(list)
     for video_result in detailed_results:
         # Extracting the prompt name (long video name) from the path
-        prompt_name = os.path.basename(os.path.dirname(video_result['video_path']))
-        
-        long_video_path = video_result['video_path'].split("split_clip")[0]
+        prompt_name = os.path.basename((video_result['video_path'])).split('_')[0]
+
+        long_video_path = video_result['video_path'].split("filtered_clips")[0]
         prompt_name = os.path.join(long_video_path, prompt_name) + ".mp4"
         prompt_scores[prompt_name].append(video_result['video_results'])
-
 
     average_scores_list = []
     for prompt, scores in prompt_scores.items():
@@ -214,8 +213,14 @@ def reorganize_clips_results(detailed_results, dimension=None):
         })
 
     # Calculate the overall average of all scores
-    all_scores_flat = [score for scores in prompt_scores.values() for score in scores]
-    all_results = sum(all_scores_flat) / len(all_scores_flat) if all_scores_flat else 0
+    # all_scores_flat = [average_score for average_score in prompt_scores.values() for score in scores]
+    # all_results = sum(all_scores_flat) / len(all_scores_flat) if all_scores_flat else 0
+    all_results = sum([item['video_results'] for item in average_scores_list]) / len(average_scores_list) if average_scores_list else 0
+    video_cnt=len([item['video_results'] for item in average_scores_list])
+    if dimension == 'temporal_flickering':
+        average_scores_list.append({
+                'long_video_cnt': video_cnt
+            })
     if dimension == 'imaging_quality':
         all_results = all_results / 100
 
@@ -303,7 +308,8 @@ def build_filtered_info_json(videos_path, output_path, name):
     cur_full_info_dict = {} # to save the prompt and video path info for the current dimensions
 
     # get splitted video paths
-    filtered_clips_path = os.path.join(videos_path, 'split_clip')
+    # filtered_clips_path = os.path.join(videos_path, 'split_clip')
+    filtered_clips_path = os.path.join(videos_path, 'filtered_videos','filtered_clips')
     for filtered_video_name in os.listdir(filtered_clips_path):
         filtered_video_path = os.path.join(filtered_clips_path, filtered_video_name)
         base_prompt = get_prompt_from_filename(filtered_video_name)
@@ -314,11 +320,12 @@ def build_filtered_info_json(videos_path, output_path, name):
                 "dimension": 'temporal_flickering',
                 "video_list": []
             }
-
-        if os.path.isdir(filtered_video_path):
-            for split_clip_name in os.listdir(filtered_video_path):
-                if split_clip_name.endswith(('.mp4', '.avi', '.mov')):
-                    cur_full_info_dict[base_prompt]["video_list"].append(os.path.join(filtered_video_path, split_clip_name))
+        if filtered_video_path.endswith(('.mp4', '.avi', '.mov')):
+            cur_full_info_dict[base_prompt]["video_list"].append(filtered_video_path)
+        # if os.path.isdir(filtered_video_path):
+        #     for split_clip_name in os.listdir(filtered_video_path):
+        #         if split_clip_name.endswith(('.mp4', '.avi', '.mov')):
+        #             cur_full_info_dict[base_prompt]["video_list"].append(os.path.join(filtered_video_path, split_clip_name))
 
     cur_full_info_list = list(cur_full_info_dict.values())
 
