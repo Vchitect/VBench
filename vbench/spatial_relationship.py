@@ -6,7 +6,7 @@ import numpy as np
 from tqdm import tqdm
 from vbench.utils import load_video, load_dimension_info
 from vbench.third_party.grit_model import DenseCaptioning
-
+from torchvision import transforms
 import logging
 
 from .distributed import (
@@ -123,6 +123,11 @@ def spatial_relationship(model, video_dict, device):
         object_info = info['auxiliary_info']['spatial_relationship']
         for video_path in info['video_list']:
             video_tensor = load_video(video_path, num_frames=16)
+            _, _, h, w = video_tensor.size()
+            if min(h,w) > 768:
+                scale = 720./min(h,w)
+                output_tensor = transforms.Resize(size=( int(scale * h), int(scale * w) ),)(video_tensor)
+                video_tensor=output_tensor
             cur_video_pred = get_dect_from_grit(model, video_tensor.permute(0,2,3,1))
             cur_video_frame_score = check_generate(object_info, cur_video_pred)
             cur_success_frame_rate = np.mean(cur_video_frame_score)
