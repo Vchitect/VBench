@@ -1,6 +1,6 @@
 import os
 import json
-
+import cv2
 import torch
 import numpy as np
 from tqdm import tqdm
@@ -67,6 +67,15 @@ def color(model, video_dict, device):
         object_info = object_info.replace('a ','').replace('an ','').replace(color_info,'').strip()
         for video_path in info['video_list']:
             video_arrays = load_video(video_path, num_frames=16, return_tensor=False)
+            _, h, w, _ = video_arrays.shape
+            if min(h, w) > 768:
+                scale = 720.0 / min(h, w)
+                new_h = int(scale * h)
+                new_w = int(scale * w)
+                resized_video = np.zeros((video_arrays.shape[0], new_h, new_w, 3), dtype=video_arrays.dtype)
+                for i in range(video_arrays.shape[0]):
+                    resized_video[i] = cv2.resize(video_arrays[i], (new_w, new_h), interpolation=cv2.INTER_LINEAR)
+                video_arrays = resized_video
             cur_video_pred = get_dect_from_grit(model ,video_arrays)
             cur_object, cur_object_color = check_generate(color_info, object_info, cur_video_pred)
             if cur_object>0:
