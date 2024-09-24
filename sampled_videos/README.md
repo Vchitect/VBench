@@ -90,7 +90,7 @@ We list the setting for sampling videos from these models.
 | [`CogVideoX-5B (SAT, prompt-optimized)`](https://github.com/THUDM/CogVideo) | VBench Team | 2024-08-27 | 720x480 | 8 | 49 | 6.1s | [link](https://github.com/THUDM/CogVideo/tree/f37582f80121059cae8e68f50e089396463a0e85/sat) |  [Commit ID](https://github.com/THUDM/CogVideo/tree/f37582f80121059cae8e68f50e089396463a0e85) | MP4 | [Google Drive](https://drive.google.com/file/d/11KOdeSHxjRqplpy3sYNsQtJyYm416sTk/view?usp=drive_link) | - | <small>Prompt Optimization is used, see [here](https://github.com/Vchitect/VBench/tree/master/prompts/gpt_enhanced_prompts)</small> |
 | [`Vchitect-2.0-2B`](https://github.com/Vchitect/Vchitect-2.0) | VBench Team | 2024-09-14 | 768x432 | 8 | 40 | 5.0s | [link](https://huggingface.co/Vchitect/Vchitect-2.0-2B/tree/main) |  [Commit ID](https://github.com/Vchitect/Vchitect-2.0/tree/299618fe2051fc12c0c83e70a69dcf6f9746702a)| MP4 | [Google Drive](https://drive.google.com/file/d/1wy52woeJ3Tf3G54TyrjHtFP94oRVYFdF/view?usp=drive_link) | - | - |
 | [`Vchitect-2.0 (VEnhancer)`](https://github.com/Vchitect/Vchitect-2.0) | VBench Team | 2024-09-14 | 1920x1080 | 16 | 79 | 4.9s | - |  [Commit ID](https://github.com/Vchitect/Vchitect-2.0/tree/299618fe2051fc12c0c83e70a69dcf6f9746702a)| MP4 | [Google Drive](https://drive.google.com/drive/folders/1G7M_cz1VoigVQLCuSL9lPSX_Yv6N8Vb_?usp=drive_link) | - | - |
-| [`JT-CV-9B`](https://github.com/jiutiancv) | JiuTianCV Team | 2024-09-24 | 2158x1214 | 24 | 51 | 2.1s | - |  -| MP4 | - | - | - |
+| [`JT-CV-9B`](https://github.com/jiutiancv/JV-CV-T2V) | JiuTianCV Team | 2024-09-24 | 2158x1214 | 24 | 51 | 2.1s | - |  -| MP4 | - | - | - |
 
 ## How are Files Structured in Google Drive?
 
