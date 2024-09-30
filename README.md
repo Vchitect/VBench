@@ -31,6 +31,8 @@ This repository contains the implementation of the following paper and its relat
 
 <a name="updates"></a>
 ## :fire: Updates
+- [09/2024] **VBench-Long Leaderboard** available: Our VBench-Long leaderboard now has 10 long video generation models. VBench leaderboard now has 40 text-to-video (both long and short) models. All video generative models are encouraged to participate! [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
+
 - [09/2024] **PyPI Updates: PyPI package is updated to version [0.1.4](https://github.com/Vchitect/VBench/releases/tag/v0.1.4):** bug fixes and multi-gpu inference.
 - [08/2024] **Longer and More Descriptive Prompts**: [Available Here](https://github.com/Vchitect/VBench/tree/master/prompts/gpt_enhanced_prompts)! We follow [CogVideoX](https://github.com/THUDM/CogVideo?tab=readme-ov-file#prompt-optimization)'s prompt optimization technique to enhance VBench prompts using GPT-4o, making them longer and more descriptive without altering their original meaning.
 - [08/2024] **VBench Leaderboard** update: Our leaderboard has 28 *T2V models*, 12 *I2V models* so far. All video generative models are encouraged to participate! [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
