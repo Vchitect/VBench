@@ -92,7 +92,11 @@ We list the setting for sampling videos from these models.
 | [`Vchitect-2.0 (VEnhancer)`](https://github.com/Vchitect/Vchitect-2.0) | VBench Team | 2024-09-14 | 1920x1080 | 16 | 79 | 4.9s | - |  [Commit ID](https://github.com/Vchitect/Vchitect-2.0/tree/299618fe2051fc12c0c83e70a69dcf6f9746702a)| MP4 | [Google Drive](https://drive.google.com/drive/folders/1G7M_cz1VoigVQLCuSL9lPSX_Yv6N8Vb_?usp=drive_link) | - | - |
 | [`JT-CV-9B`](https://github.com/jiutiancv/JV-CV-T2V) | JiuTianCV Team | 2024-09-24 | 2158x1214 | 24 | 51 | 2.1s | - |  -| MP4 | - | - | - |
 | [`Data-Juicer (2024-09-23, T2V-Turbo)`](https://huggingface.co/datajuicer/Data-Juicer-T2V-v2/tree/main) | Data-Juicer Team | 2024-09-23 | 512*320 | 8 | 16 | 2.0s | [link](https://huggingface.co/datajuicer/Data-Juicer-T2V-v2/tree/main) | - | MP4 | - | - | <small>from Data-Juicer Team: based on T2V-Turbo, with Data-Juicer's data and loss enhancement</small>  |
-| [`T2V-Turbo-v2`](https://t2v-turbo-v2.github.io/) | T2V-Turbo Team | 2024-10-02 | 320x512 | 16 | 8 | 2.0s | - | - | - | - | - | |
+<<<<<<< HEAD
+=======
+| [`MiniMax`](https://platform.minimaxi.com/) | VBench Team | 2024-10-01 | 1280x720 | 25 | 141 | 5.6s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/18Ow5wbUqlHbU_8azah6hWDUtM8P-3Xwf/view?usp=drive_link) | - | - |
+| [`T2V-Turbo-v2`](https://t2v-turbo-v2.github.io/) | T2V-Turbo Team | 2024-10-02 | 320x512 | 16 | 8 | 2.0s | - | - | - | - | - | - |
+>>>>>>> origin/master
 
 ## How are Files Structured in Google Drive?
 
