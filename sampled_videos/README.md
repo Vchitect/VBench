@@ -94,6 +94,7 @@ We list the setting for sampling videos from these models.
 | [`Data-Juicer (2024-09-23, T2V-Turbo)`](https://huggingface.co/datajuicer/Data-Juicer-T2V-v2/tree/main) | Data-Juicer Team | 2024-09-23 | 512*320 | 8 | 16 | 2.0s | [link](https://huggingface.co/datajuicer/Data-Juicer-T2V-v2/tree/main) | - | MP4 | - | - | <small>from Data-Juicer Team: based on T2V-Turbo, with Data-Juicer's data and loss enhancement</small>  |
 | [`MiniMax-Video-01`](https://platform.minimaxi.com/) | VBench Team | 2024-10-01 | 1280x720 | 25 | 141 | 5.6s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/18Ow5wbUqlHbU_8azah6hWDUtM8P-3Xwf/view?usp=drive_link) | - | - |
 | [`T2V-Turbo-v2`](https://t2v-turbo-v2.github.io/) | T2V-Turbo Team | 2024-10-02 | 320x512 | 16 | 8 | 2.0s | - | - | - | - | - | - |
+| [`OpenSoraPlan V1.2`](https://github.com/PKU-YuanGroup/Open-Sora-Plan) | VBench Team | 2024-07-24 | 1280x720 | 24 | 93 | 3.9s | [link](https://huggingface.co/LanguageBind/Open-Sora-Plan-v1.2.0/tree/main) |  [Commit ID](https://github.com/PKU-YuanGroup/Open-Sora-Plan/tree/294993ca78bf65dec1c3b6fb25541432c545eda9) | MP4 | [Google Drive](https://drive.google.com/file/d/1HLiO-_OhKGElfxgIQwXhzlSa8XqVrGQr/view?usp=drive_link) | - |
 
 ## How are Files Structured in Google Drive?
 
