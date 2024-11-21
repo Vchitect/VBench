@@ -290,7 +290,7 @@ python static_filter.py --videos_path $VIDEOS_PATH --filter_scope $filename
     @article{huang2024vbench++,
         title={VBench++: Comprehensive and Versatile Benchmark Suite for Video Generative Models},
         author={Huang, Ziqi and Zhang, Fan and Xu, Xiaojie and He, Yinan and Yu, Jiashuo and Dong, Ziyue and Ma, Qianli and Chanpaisit, Nattapol and Si, Chenyang and Jiang, Yuming and Wang, Yaohui and Chen, Xinyuan and Chen, Ying-Cong and Wang, Limin and Lin, Dahua and Qiao, Yu and Liu, Ziwei},
-        journal={preprint},
+        journal={arXiv preprint arXiv:2411.13503},
         year={2024}
     }
    ```
