@@ -1,7 +1,8 @@
 ![vbench_logo](https://raw.githubusercontent.com/Vchitect/VBench/master/asset/vbench_logo_github_20240605.jpg)
 
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2311.99999-b31b1b.svg)](https://arxiv.org/abs/2311.99999) -->
-[![Paper](https://img.shields.io/badge/cs.CV-Paper-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2311.17982)
+[![VBench Paper (CVPR 2024)](https://img.shields.io/badge/VBench-CVPR%202024-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2311.17982)
+[![VBench++ Report (arXiv)](https://img.shields.io/badge/VBench++-arXiv%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2411.13503)
 [![Project Page](https://img.shields.io/badge/VBench-Website-green?logo=googlechrome&logoColor=green)](https://vchitect.github.io/VBench-project/)
 [![Dataset Download](https://img.shields.io/badge/Dataset-Download-red?logo=googlechrome&logoColor=red)](https://drive.google.com/drive/folders/1on66fnZ8atRoLDimcAXMxSwRxqN8_0yS?usp=sharing)
 [![PyPI](https://img.shields.io/pypi/v/vbench)](https://pypi.org/project/vbench/)
@@ -31,6 +32,7 @@ This repository contains the implementation of the following paper and its relat
 
 <a name="updates"></a>
 ## :fire: Updates
+- [11/2024] **VBench++** released: [![VBench++ Report (arXiv)](https://img.shields.io/badge/VBench++-arXiv%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2411.13503)
 - [09/2024] **VBench-Long Leaderboard** available: Our VBench-Long leaderboard now has 10 long video generation models. VBench leaderboard now has 40 text-to-video (both long and short) models. All video generative models are encouraged to participate! [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
 
 - [09/2024] **PyPI Updates: PyPI package is updated to version [0.1.4](https://github.com/Vchitect/VBench/releases/tag/v0.1.4):** bug fixes and multi-gpu inference.
