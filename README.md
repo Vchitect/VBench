@@ -17,6 +17,10 @@ This repository contains the implementation of the following paper and its relat
 > IEEE/CVF Conference on Computer Vision and Pattern Recognition (**CVPR**), 2024
 
 
+> **VBench++: Comprehensive and Versatile Benchmark Suite for Video Generative Models**<br>
+> [Ziqi Huang](https://ziqihuangg.github.io/)<sup>∗</sup>, [Fan Zhang](https://github.com/zhangfan-p)<sup>∗</sup>, [Xiaojie Xu](https://github.com/xjxu21), [Yinan He](https://github.com/yinanhe), [Jiashuo Yu](https://scholar.google.com/citations?user=iH0Aq0YAAAAJ&hl=zh-CN), [Ziyue Dong](https://github.com/DZY-irene), [Qianli Ma](https://github.com/MqLeet), [Nattapol Chanpaisit](https://nattapolchan.github.io/me), [Chenyang Si](https://chenyangsi.top/), [Yuming Jiang](https://yumingj.github.io/), [Yaohui Wang](https://wyhsirius.github.io/), [Xinyuan Chen](https://scholar.google.com/citations?user=3fWSC8YAAAAJ), [Ying-Cong Chen](https://www.yingcong.me/), [Limin Wang](https://wanglimin.github.io), [Dahua Lin](http://dahua.site/)<sup>+</sup>, [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/index.html)<sup>+</sup>, [Ziwei Liu](https://liuziwei7.github.io/)<sup>+</sup><br>
+<!-- > IEEE/CVF Conference on Computer Vision and Pattern Recognition (**CVPR**), 2024 -->
+
 
 ### Table of Contents
 - [Updates](#updates)
