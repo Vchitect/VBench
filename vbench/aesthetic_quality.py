@@ -63,7 +63,7 @@ def laion_aesthetic(aesthetic_model, clip_model, video_list, device):
             with torch.no_grad():
                 image_feats = clip_model.encode_image(image_batch).to(torch.float32)
                 image_feats = F.normalize(image_feats, dim=-1, p=2)
-                aesthetic_scores = aesthetic_model(image_feats).squeeze()
+                aesthetic_scores = aesthetic_model(image_feats).squeeze(dim=-1)
 
             aesthetic_scores_list.append(aesthetic_scores)
 
