@@ -32,7 +32,7 @@ logger = logging.getLogger(__name__)
 
 def clip_transform(n_px):
     return Compose([
-        Resize(n_px, interpolation=BICUBIC),
+        Resize(n_px, interpolation=BICUBIC, antialias=False),
         CenterCrop(n_px),
         transforms.Lambda(lambda x: x.float().div(255.0)),
         Normalize((0.48145466, 0.4578275, 0.40821073), (0.26862954, 0.26130258, 0.27577711)),
@@ -40,7 +40,7 @@ def clip_transform(n_px):
 
 def clip_transform_Image(n_px):
     return Compose([
-        Resize(n_px, interpolation=BICUBIC),
+        Resize(n_px, interpolation=BICUBIC, antialias=False),
         CenterCrop(n_px),
         ToTensor(),
         Normalize((0.48145466, 0.4578275, 0.40821073), (0.26862954, 0.26130258, 0.27577711)),
@@ -48,14 +48,14 @@ def clip_transform_Image(n_px):
 
 def dino_transform(n_px):
     return Compose([
-        Resize(size=n_px),
+        Resize(size=n_px, antialias=False),
         transforms.Lambda(lambda x: x.float().div(255.0)),
         Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
     ])
 
 def dino_transform_Image(n_px):
     return Compose([
-        Resize(size=n_px),
+        Resize(size=n_px, antialias=False),
         ToTensor(),
         Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
     ])
@@ -63,7 +63,7 @@ def dino_transform_Image(n_px):
 def tag2text_transform(n_px):
     normalize = Normalize(mean=[0.485, 0.456, 0.406],
                                         std=[0.229, 0.224, 0.225])
-    return Compose([ToPILImage(),Resize((n_px, n_px)),ToTensor(),normalize])
+    return Compose([ToPILImage(),Resize((n_px, n_px), antialias=False),ToTensor(),normalize])
 
 def get_frame_indices(num_frames, vlen, sample='rand', fix_start=None, input_fps=1, max_num_frames=-1):
     if sample in ["rand", "middle"]: # uniform sampling
