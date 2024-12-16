@@ -101,6 +101,7 @@ We list the setting for sampling videos from these models.
 | [`Vidu`](https://www.vidu.studio/) | VBench Team | 2024-07-30 | 688x384 | 16 | 124 | 7.8s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1s_kH08rHeHxTcNH07cyWCiv48_vhDxFc/view?usp=drive_link) | [Google Drive](https://drive.google.com/file/d/1XQ3eers2We4QJ50FjytW7H3LqmG02xFL/view?usp=drive_link) | - |
 | [`TeleAI-VAST`](https://teleai-vast.github.io/) | TeleAI | 2024-12-02 | 480x720 | 5 | 25 | 5.0s | - | - | MP4 | - | - | <small>info provided by TeleAI</small> |
 | [`HunyuanVideo (Open-Source Version)`](https://github.com/Tencent/HunyuanVideo) | VBench Team | 2024-12-03 | 1280x720 | 24 | 129 | 5.4s | [link](https://huggingface.co/tencent/HunyuanVideo/tree/main) |  [Commit ID](https://github.com/Tencent/HunyuanVideo/tree/ba7b223c782695bdeebc02289cd9e45070d7a1ed) | MP4 | [Google Drive](https://drive.google.com/file/d/1gjg9fO6_k5OIRAZtqIIxXd6-k4c1Tjb4/view?usp=drive_link) | - | <small>[Prompt Rewrite](https://github.com/Tencent/HunyuanVideo/tree/main?tab=readme-ov-file#prompt-rewrite) provided by HunyuanVideo is used</small>|
+| [`Jimeng`](https://jimeng.jianying.com/) | VBench Team | 2024-05-09 | 1280x720 | 8 | 96 | 12.0s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1lPJp8qspt5h6H6OTX37-BSl73DlLezOL?usp=drive_link) | [Google Drive](https://drive.google.com/drive/folders/15y8Ecy0gedv65SbIxhmRo9UNf3Ala8mk?usp=drive_link) | - |
 
 ## How are Files Structured in Google Drive?
 
