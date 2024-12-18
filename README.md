@@ -206,8 +206,8 @@ sh scripts/download_videocrafter1.sh
 # evaluate VideoCrafter-1.0
 sh scripts/evaluate_videocrafter1.sh
 ```
-#### Get Final Score and Submit to Leaderboard
-We have provided scripts for calculating the `Final Score`, `Quality Score`, and `Semantic Score` in the Leaderboard. You can run them locally to obtain the final scores or as a final check before submitting to the Leaderboard. The minimum and maximum values for normalization in each dimension, as well as the coefficients used in the final score calculation, can be found in the `scripts/constant.py` file.
+### Get Final Score and Submit to Leaderboard
+We have provided scripts for calculating the `Final Score`, `Quality Score`, and `Semantic Score` in the Leaderboard. You can run them locally to obtain the final scores or as a final check before submitting to the Leaderboard.
 ##### command line 
 ```bash
 # Pack the evaluation results into a zip file.
@@ -217,7 +217,39 @@ zip -r ../evaluation_results.zip .
 # [Optional] get the final score of your submission file.
 python scripts/cal_final_score.py --zip_file {path_to_evaluation_results.zip} --model_name {your_model_name}
 ```
+
 You can submit the json file to [HuggingFace](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
+
+#### The Process of Calculating the Final Score
+
+To calculate the **Final Score**, we follow these steps:
+
+1. **Normalization**:  
+   Each dimension's results are normalized using the following formula:
+
+   $$
+   \text{Normalized Score} = \frac{\text{dim\_score} - \text{min\_val}}{\text{max\_val} - \text{min\_val}}
+   $$
+
+2. **Weighted Average Calculation**:  
+   The **Final Score** is derived as a weighted average of the `Quality Score` and `Semantic Score`:
+
+   $$
+   \text{Final Score} = w_1 \times \text{Quality Score} + w_2 \times \text{Semantic Score}
+   $$
+
+3. **Quality Score**:  
+   The `Quality Score` is computed as a weighted average of the following dimensions:  
+   **subject consistency**, **background consistency**, **temporal flickering**, **motion smoothness**, **aesthetic quality**, **imaging quality**, and **dynamic degree**.
+
+4. **Semantic Score**:  
+   The `Semantic Score` is calculated as a weighted average of the following dimensions:  
+   **object class**, **multiple objects**, **human action**, **color**, **spatial relationship**, **scene**, **appearance style**, **temporal style**, and **overall consistency**.
+
+For reference, the minimum and maximum values used for normalization in each dimension, as well as the coefficients for the final score calculation, can be found in the `scripts/constant.py` file.
+
+
+
 
 
 <a name="pretrained_models"></a>
