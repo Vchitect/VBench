@@ -227,16 +227,17 @@ To calculate the **Final Score**, we follow these steps:
 1. **Normalization**:  
    Each dimension's results are normalized using the following formula:
 
-   $$
-   \text{Normalized Score} = \frac{\text{dim\_score} - \text{min\_val}}{\text{max\_val} - \text{min\_val}}
-   $$
+    ```bash
+    Normalized Score = (dim_score - min_val) / (max_val - min_val)
+    ```
 
 2. **Weighted Average Calculation**:  
    The **Final Score** is derived as a weighted average of the `Quality Score` and `Semantic Score`:
+    ```bash
+    Final Score = w1 * Quality Score + w2 * Semantic Score
+    ```
 
-   $$
-   \text{Final Score} = w_1 \times \text{Quality Score} + w_2 \times \text{Semantic Score}
-   $$
+   
 
 3. **Quality Score**:  
    The `Quality Score` is computed as a weighted average of the following dimensions:  
