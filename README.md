@@ -206,9 +206,9 @@ sh scripts/download_videocrafter1.sh
 # evaluate VideoCrafter-1.0
 sh scripts/evaluate_videocrafter1.sh
 ```
-### How to Calculate Total Score
+### Submit to Leaderboard
 We have provided scripts for calculating the `Total Score`, `Quality Score`, and `Semantic Score` in the Leaderboard. You can run them locally to obtain the aggregate scores or as a final check before submitting to the Leaderboard.
-##### command line 
+
 ```bash
 # Pack the evaluation results into a zip file.
 cd evaluation_results
@@ -220,7 +220,7 @@ python scripts/cal_final_score.py --zip_file {path_to_evaluation_results.zip} --
 
 You can submit the json file to [HuggingFace](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
 
-#### The Process of Calculating the Total Score
+### How to Calculate Total Score
 
 To calculate the **Total Score**, we follow these steps:
 
@@ -231,26 +231,26 @@ To calculate the **Total Score**, we follow these steps:
     Normalized Score = (dim_score - min_val) / (max_val - min_val)
     ```
 
-2. **Weighted Average Calculation**:  
-   The **Total Score** is derived as a weighted average of the `Quality Score` and `Semantic Score`:
+2. **Quality Score**:  
+   The `Quality Score` is a weighted average of the following dimensions:  
+   **subject consistency**, **background consistency**, **temporal flickering**, **motion smoothness**, **aesthetic quality**, **imaging quality**, and **dynamic degree**.
+
+3. **Semantic Score**:  
+   The `Semantic Score` is a weighted average of the following dimensions:  
+   **object class**, **multiple objects**, **human action**, **color**, **spatial relationship**, **scene**, **appearance style**, **temporal style**, and **overall consistency**.
+
+
+4. **Weighted Average Calculation**:  
+   The **Total Score** is a weighted average of the `Quality Score` and `Semantic Score`:
     ```bash
     Total Score = w1 * Quality Score + w2 * Semantic Score
     ```
 
    
+The minimum and maximum values used for normalization in each dimension, as well as the weighting coefficients for the average calculation, can be found in the `scripts/constant.py` file.
 
-3. **Quality Score**:  
-   The `Quality Score` is computed as a weighted average of the following dimensions:  
-   **subject consistency**, **background consistency**, **temporal flickering**, **motion smoothness**, **aesthetic quality**, **imaging quality**, and **dynamic degree**.
-
-4. **Semantic Score**:  
-   The `Semantic Score` is calculated as a weighted average of the following dimensions:  
-   **object class**, **multiple objects**, **human action**, **color**, **spatial relationship**, **scene**, **appearance style**, **temporal style**, and **overall consistency**.
-
-For reference, the minimum and maximum values used for normalization in each dimension, as well as the coefficients for the final score calculation, can be found in the `scripts/constant.py` file.
-
-
-
+**TODO**
+- [ ] Total Score Calculation for VBench-I2V
 
 
 <a name="pretrained_models"></a>
