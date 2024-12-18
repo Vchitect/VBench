@@ -207,7 +207,7 @@ sh scripts/download_videocrafter1.sh
 sh scripts/evaluate_videocrafter1.sh
 ```
 #### Get Final Score and Submit to Leaderboard
-We have provided scripts for calculating the `Final Score`, `Quality Score`, and `Semantic Score` in the Leaderboard. You can run them locally to obtain the final scores or as a final check before submitting to the Leaderboard.
+We have provided scripts for calculating the `Final Score`, `Quality Score`, and `Semantic Score` in the Leaderboard. You can run them locally to obtain the final scores or as a final check before submitting to the Leaderboard. The minimum and maximum values for normalization in each dimension, as well as the coefficients used in the final score calculation, can be found in the `scripts/constant.py` file.
 ##### command line 
 ```bash
 # Pack the evaluation results into a zip file.
