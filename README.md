@@ -206,23 +206,23 @@ sh scripts/download_videocrafter1.sh
 # evaluate VideoCrafter-1.0
 sh scripts/evaluate_videocrafter1.sh
 ```
-### Get Final Score and Submit to Leaderboard
-We have provided scripts for calculating the `Final Score`, `Quality Score`, and `Semantic Score` in the Leaderboard. You can run them locally to obtain the final scores or as a final check before submitting to the Leaderboard.
+### How to Calculate Total Score
+We have provided scripts for calculating the `Total Score`, `Quality Score`, and `Semantic Score` in the Leaderboard. You can run them locally to obtain the aggregate scores or as a final check before submitting to the Leaderboard.
 ##### command line 
 ```bash
 # Pack the evaluation results into a zip file.
 cd evaluation_results
 zip -r ../evaluation_results.zip .
 
-# [Optional] get the final score of your submission file.
+# [Optional] get the total score of your submission file.
 python scripts/cal_final_score.py --zip_file {path_to_evaluation_results.zip} --model_name {your_model_name}
 ```
 
 You can submit the json file to [HuggingFace](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
 
-#### The Process of Calculating the Final Score
+#### The Process of Calculating the Total Score
 
-To calculate the **Final Score**, we follow these steps:
+To calculate the **Total Score**, we follow these steps:
 
 1. **Normalization**:  
    Each dimension's results are normalized using the following formula:
@@ -232,9 +232,9 @@ To calculate the **Final Score**, we follow these steps:
     ```
 
 2. **Weighted Average Calculation**:  
-   The **Final Score** is derived as a weighted average of the `Quality Score` and `Semantic Score`:
+   The **Total Score** is derived as a weighted average of the `Quality Score` and `Semantic Score`:
     ```bash
-    Final Score = w1 * Quality Score + w2 * Semantic Score
+    Total Score = w1 * Quality Score + w2 * Semantic Score
     ```
 
    
