@@ -88,6 +88,11 @@ See the 3 options below:
 #### :film_projector: Model Info
 See [model info](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models) for video generation models we used for evaluation.
 
+#### Evaluation Criterion
+
+- For videos with a duration `>= 5.0s`, we use [**VBench-Long**](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_long) for evaluation.  
+- For videos with a duration `< 5.0s`, we use [**VBench**](https://github.com/Vchitect/VBench?tab=readme-ov-file#usage) for evaluation.
+
 <!-- The values have been normalized for better readability of the chart. The normalization process involves scaling each set of performance values to a common scale between 0.3 and 0.8. The formula used for normalization is: (value - min value) / (max value - min value). -->
 
 <a name="installation"></a>
