@@ -17,7 +17,7 @@ We provide a combined list `prompts/all_category.txt`, which combines all the pr
 
 # How to Sample Videos for Evaluation
 
-We specify how to sample from `Prompts per Category` for VBench evaluation, and that for `Prompts per Category` can be carried out similarly. 
+We specify how to sample from `Prompts per Dimension` for VBench evaluation, and that for `Prompts per Category` can be carried out similarly. 
 
 
 ## Evaluate Some Dimensions
