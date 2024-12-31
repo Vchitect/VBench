@@ -382,6 +382,56 @@ python evaluate_i2v.py \
     ```
 
 
+### Submit to Leaderboard
+We have provided scripts for calculating the `Total Score`, `Quality Score`, and `I2V Score` in the Leaderboard. You can run them locally to obtain the aggregate scores or as a final check before submitting to the Leaderboard.
+
+```bash
+# Pack the evaluation results into a zip file.
+cd evaluation_results
+zip -r ../evaluation_results.zip .
+
+# [Optional] get the total score of your submission file.
+python scripts/cal_i2v_final_score.py --zip_file {path_to_evaluation_results.zip} --model_name {your_model_name}
+```
+
+You can submit the json file to [HuggingFace](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
+
+### How to Calculate Total Score
+
+To calculate the **Total Score**, we follow these steps:
+
+1. **Normalization**:  
+   Each dimension's results are normalized using the following formula:
+
+    ```bash
+    Normalized Score = (dim_score - min_val) / (max_val - min_val)
+    ```
+
+2. **Quality Score**:  
+   The `Quality Score` is a weighted average of the following dimensions:  
+   **subject consistency**, **background consistency**, **motion smoothness**, **aesthetic quality**, **imaging quality**, and **dynamic degree**.
+
+3. **I2V Score**:  
+   The `I2V Score` is a weighted average of the following dimensions:  
+   **i2v subject**, **i2v background**, and **camera motion**.
+
+
+4. **Weighted Average Calculation**:  
+   The **Total Score** is a weighted average of the `Quality Score` and `I2V Score`:
+    ```bash
+    Total Score = w1 * Quality Score + w2 * I2V Score
+    ```
+
+   
+The minimum and maximum values used for normalization in each dimension, as well as the weighting coefficients for the average calculation, can be found in the `scripts/constant.py` file.
+
+
+
+
+
+
+
+
 ## :black_nib: Citation
 
    If you find VBench-I2V useful for your work, please consider citing our paper and repo:
