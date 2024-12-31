@@ -254,9 +254,8 @@ To calculate the **Total Score**, we follow these steps:
    
 The minimum and maximum values used for normalization in each dimension, as well as the weighting coefficients for the average calculation, can be found in the `scripts/constant.py` file.
 
-**TODO**
-- [ ] Total Score Calculation for VBench-I2V
-
+### Total Score for VBench-I2V
+For Total Score Calculation for VBench-I2V, you can refer to [link](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_i2v#submit-to-leaderboard).
 
 <a name="pretrained_models"></a>
 ## :gem: Pre-Trained Models
