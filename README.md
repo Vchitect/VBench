@@ -66,15 +66,16 @@ We propose **VBench**, a comprehensive benchmark suite for video generative mode
 ***See our leaderboard for the most updated ranking and numerical results (with models like Gen-3, Kling, Pika)***. [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
 
 <p align="center">
-  <img src="./asset/all-dim.jpg" width="80%"/>
+  <img src="./asset/all-dim.jpg" width="65%"/>
 </p>
+We visualize the evaluation results of the 12 most recent top-performing long video generation models across 16 VBench dimensions.
 
 <p align="center">
   <img src="./asset/radar-open-new.jpg" width="48%" style="margin-right: 4%;" />
   <img src="./asset/radar-close-new.jpg" width="48%" />
 </p>
 
-We visualize VBench evaluation results of various top-performing open-source and closed-source video generation models across 16 VBench dimensions. We normalize the results per dimension for clearer comparisons. 
+Additionally, we present radar charts separately for the evaluation results of open-source and closed-source models. The results are normalized per dimension for clearer comparisons.
 
 #### :trophy: Leaderboard
 
