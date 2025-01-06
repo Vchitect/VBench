@@ -18,9 +18,9 @@ We provide a combined list `prompts/all_category.txt`, which combines all the pr
 # How to Sample Videos for Evaluation
 
 We specify how to sample from `Prompts per Dimension` for VBench evaluation, and that for `Prompts per Category` can be carried out similarly. 
-#### Please make sure to use a different `random seed` for sampling each video to ensure diversity in the sampled content.
+#### Please make sure to use a different `random seed` for sampling each video to ensure diversity in the sampled content. And, for the `Temporal Flickering` dimension, sample 25 videos to ensure sufficient coverage after applying the static filter.
 
-## Evaluate Some Dimensions
+## Sample Some Dimensions
 
 ### Pseudo-Code for Sampling
 - If you only want to evaluate certain dimensions, below are the pseudo-code for sampling.
@@ -53,7 +53,7 @@ We specify how to sample from `Prompts per Dimension` for VBench evaluation, and
 
 To sample videos for VBench evaluation:
 - Sample videos from all the `txt` files in `prompts/prompts_per_dimension`. 
-- For each prompt, sample 5 videos.
+- For each prompt, sample 5 videos. However, for the `Temporal Flickering` dimension, sample 25 videos to ensure sufficient coverage after applying the static filter.
 - **Random Seed**: At the beginning of sampling from each `txt` file, set the random seed. For some models, the random seed is independently and randomly drawn for each video sample, and this is also acceptable, but it would be the best to record the random seed of every video being sampled. We need to ensure: (1) The random seeds are random, and not cherry picked. (2) The sampling process is reproducible, so that the evaluation results are reproducible.
 - Name the videos in the form of `$prompt-$index.mp4`, `$index` takes value of `0, 1, 2, 3, 4`. For example:
     ```                   
