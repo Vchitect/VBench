@@ -107,6 +107,7 @@ We list the setting for sampling videos from these models.
 | [`STIV (Apple)`](https://huggingface.co/papers/2412.07730) | VBench Team | 2024-12-19 | 512x512 | 60 | 60 | 1.0s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/19ENw3mbyhz-JjW4ddWypJ8x6xvWOHsyr/view) | - | - |
 | [`CausVid (2025-01-02 5s)`](https://causvid.github.io/) | VBench Team | 2025-01-02 | 640x352 | 24 | 120 | 5.0s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/1/folders/1SHD4CFuzBXLrsk1_fmQFBz7wvUvedY2O) | - | - |
 | [`Wanx 2.1`](https://tongyi.aliyun.com/wanxiang/) | VBench Team | 2025-01-08 | 1280x720 | 16 | 80 | 5.0s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/1/folders/1GHH7xOQCPb0kRjlyzH9APaddAw_hFRla) | - | - |
+| [`Luma`](https://lumalabs.ai/dream-machine) | VBench Team | 2024-06-13 | 1360x752 | 24 | 121 | 5.0s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1NuL9oRIMPuPk98PfI0lA34LL6XLtjMnr/view?usp=drive_link) | [Google Drive](https://drive.google.com/file/d/1OOrMXxVwPebHcRZffj1i1Ru7d7ShByWj/view?usp=drive_link) | - |
 
 ## How are Files Structured in Google Drive?
 
