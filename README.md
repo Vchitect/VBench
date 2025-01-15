@@ -104,8 +104,9 @@ See [model info](https://github.com/Vchitect/VBench/tree/master/sampled_videos#w
 
 <a name="installation"></a>
 ## :hammer: Installation
-### Install with pip
+### Install with pip 
 ```
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118 # or any other PyTorch version with CUDA<=12.1
 pip install vbench
 ```
 
@@ -114,13 +115,13 @@ To evaluate some video generation ability aspects, you need to install [detectro
    pip install detectron2@git+https://github.com/facebookresearch/detectron2.git
    ```
     
-If there is an error during [detectron2](https://github.com/facebookresearch/detectron2) installation, see [here](https://detectron2.readthedocs.io/en/latest/tutorials/install.html).
+If there is an error during [detectron2](https://github.com/facebookresearch/detectron2) installation, see [here](https://detectron2.readthedocs.io/en/latest/tutorials/install.html). Detectron2 is working only with CUDA 12.1 or 11.X.
 
 Download [VBench_full_info.json](https://github.com/Vchitect/VBench/blob/master/vbench/VBench_full_info.json) to your running directory to read the benchmark prompt suites.
 
 ### Install with git clone
     git clone https://github.com/Vchitect/VBench.git
-    pip install -r VBench/requirements.txt
+    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118 # or other version with CUDA<=12.1
     pip install VBench
     
 If there is an error during [detectron2](https://github.com/facebookresearch/detectron2) installation, see [here](https://detectron2.readthedocs.io/en/latest/tutorials/install.html).
