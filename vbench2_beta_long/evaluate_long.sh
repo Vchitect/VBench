@@ -1,30 +1,28 @@
 #!/bin/bash
 
-# Define the model list
-models=("Sora")
-
 # Define the dimension list
-dimensions=("subject_consistency" "background_consistency"  "motion_smoothness" "dynamic_degree" "aesthetic_quality" "imaging_quality")
+dimensions=("subject_consistency" "background_consistency" "aesthetic_quality" "imaging_quality" "object_class" "multiple_objects" "color" "spatial_relationship" "scene" "temporal_style" "overall_consistency" "human_action" "temporal_flickering" "motion_smoothness" "dynamic_degree" "appearance_style")
 
 # Corresponding folder names
+folders=("subject_consistency" "scene" "overall_consistency" "overall_consistency" "object_class" "multiple_objects" "color" "spatial_relationship" "scene" "temporal_style" "overall_consistency" "human_action" "temporal_flickering" "subject_consistency" "subject_consistency" "appearance_style")
 
 # Base path for videos
-base_path='./long_videos/' # TODO: change to local path
-output_path="evaluation_results/${model}"
+base_path='./sampled_long_videos'  # TODO: change to local path
 
-# Loop over each model
-for model in "${models[@]}"; do
-    # Loop over each dimension
-    for i in "${!dimensions[@]}"; do
-        # Get the dimension and corresponding folder
-        dimension=${dimensions[i]}
-        
+# Loop over each dimension
+for i in "${!dimensions[@]}"; do
+    # Get the dimension and corresponding folder
+    dimension=${dimensions[i]}
+    folder=${folders[i]}
 
-        # Construct the video path
-        videos_path="${base_path}${model}"
-        echo "$dimension $videos_path"
+    # Construct the video path
+    videos_path="${base_path}/${folder}"
+    echo "$dimension $videos_path"
 
-        # Run the evaluation script
-        python eval_long.py --videos_path $videos_path --dimension $dimension --output_path $output_path --mode 'long_custom_input' --use_semantic_splitting
-    done
+    # Run the evaluation script
+    if [ "$dimension" == "temporal_flickering" ]; then
+        python vbench2_beta_long/eval_long.py --videos_path $videos_path --dimension $dimension --mode 'long_vbench_standard' --dev_flag --static_filter_flag
+    else
+        python vbench2_beta_long/eval_long.py --videos_path $videos_path --dimension $dimension --mode 'long_vbench_standard' --dev_flag
+    fi
 done
