@@ -85,9 +85,9 @@ python vbench2_beta_long/eval_long.py \
 ```
 
 ### 3.3 Automatic Evaluation Script
-We provide the [evaluate_long.sh](https://github.com/Vchitect/VBench/blob/master/vbench2_beta_long/evaluate_long.sh) script for automating the evaluation across all dimensions. To use it, simply replace the `base_path` with the path to your videos and run the following command:
+We provide the [evaluate_long.sh](https://github.com/Vchitect/VBench/blob/master/vbench2_beta_long/evaluate_long.sh) script for automating the evaluation across all dimensions. To use the script, simply provide the path to your videos in the following command and run it:
 ```
-sh vbench2_beta_long/evaluate_long.sh
+sh vbench2_beta_long/evaluate_long.sh $VIDEOS_PATH
 ```
 
 ### 3.4 Example of Evaluating OpenSoraPlan
