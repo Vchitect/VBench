@@ -12,7 +12,7 @@ def parse_args():
     parser.add_argument(
         "--output_path",
         type=str,
-        default='./evaluation_i2v_results/',
+        default='./evaluation_i2v_results_test_20250210/',
         help="output path to save the evaluation results",
     )
     parser.add_argument(
@@ -52,6 +52,21 @@ def parse_args():
         help="specify the target ratio",
     )
     parser.add_argument(
+        "--custom_image_folder",
+        type=str,
+        default=None,
+        help="the path for customed images",
+    )
+    parser.add_argument(
+        "--mode",
+        choices=['custom_input', 'vbench_standard'],
+        default='vbench_standard',
+        help="""This flags determine the mode of evaluations, choose one of the following:
+        1. "custom_input": receive input prompt from either --prompt/--prompt_file flags or the filename
+        2. "vbench_standard": evaluate on standard prompt suite of VBench
+        """,
+    )
+    parser.add_argument(
         "--imaging_quality_preprocessing_mode",
         type=str,
         required=False,
@@ -87,6 +102,8 @@ def main():
         name = f'results_{current_time}',
         dimension_list = args.dimension,
         resolution = args.ratio,
+        custom_image_folder = args.custom_image_folder,
+        mode=args.mode,
         **kwargs
     )
     print('done')

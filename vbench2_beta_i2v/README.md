@@ -347,6 +347,7 @@ my_VBench.evaluate(
 )
 ```
 
+
 <!-- For video quality dimensions, including `subject consistency`, `background_consistency`, `motion_smoothness`, `dynamic_degree`, `aesthetic_quality`, `imaging_quality`, you can refer to the script below.
 ```python
 from vbench import VBench
@@ -378,11 +379,32 @@ python evaluate_i2v.py \
 
 - The complete list of dimensions:
     ```
-    ['subject_consistency', 'background_consistency', 'temporal_flickering', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality', 'i2v_subject', 'i2v_background', 'camera_motion']
+    ['subject_consistency', 'background_consistency', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality', 'i2v_subject', 'i2v_background', 'camera_motion']
     ```
 
 
-### Submit to Leaderboard
+### Evaluate Your Own Videos
+
+We support evaluating any video. Simply provide the video file path along with the corresponding image file path. The only requirement is that the video and image share the same file name. For example, video_name: `prompt-index.mp4`, image_name: `prompt.jpg`.
+- Note: We support customized videos for the following dimensions: `'i2v_subject', 'i2v_background', 'camera_motion', 'subject_consistency', 'background_consistency', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality'`
+
+To evaluate videos with customized input, run our script with `--mode=custom_input`:
+```
+python evaluate_i2v.py \
+    --dimension $DIMENSION \
+    --videos_path /path/to/folder_or_video/ \
+    --custom_image_folder /path/to/folder_or_image/ \
+    --ratio $RATIO \
+    --mode=custom_input
+```
+
+For the `camera_motion` dimension, you need to ensure that the video and image file names include the corresponding camera motion-related instructions, which are one of the following seven:
+    ```
+    ['camera pans left', 'camera pans right', 'camera tilts up', 'camera tilts down', 'camera zooms in', 'camera zooms out', 'camera static']
+    ```
+
+
+## 6. Submit to Leaderboard
 We have provided scripts for calculating the `Total Score`, `Quality Score`, and `I2V Score` in the Leaderboard. You can run them locally to obtain the aggregate scores or as a final check before submitting to the Leaderboard.
 
 ```bash

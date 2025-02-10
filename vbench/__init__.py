@@ -25,13 +25,35 @@ class VBench(object):
 
         assert len(dim_custom_not_supported) == 0, f"dimensions : {dim_custom_not_supported} not supported for custom input"
 
+    def build_custom_image_dict(self, directory):
+        image_dict = {}
+        
+        for filename in os.listdir(directory):
+            file_path = os.path.join(directory, filename)
 
-    def build_full_info_json(self, videos_path, name, dimension_list, prompt_list=[], special_str='', verbose=False, mode='vbench_standard', **kwargs):
+            if os.path.isfile(file_path):
+                image_name, extension = os.path.splitext(filename)
+                extension = extension.lower()
+
+                if extension in ['.jpg', '.jpeg', '.png']:
+                    image_dict[image_name] = file_path
+        
+        return image_dict
+ 
+
+    def build_full_info_json(self, videos_path, name, dimension_list, prompt_list=[],  special_str='', verbose=False, custom_image_folder=None, mode='vbench_standard', **kwargs):
         cur_full_info_list=[] # to save the prompt and video path info for the current dimensions
         if mode=='custom_input':
             self.check_dimension_requires_extra_info(dimension_list)
+            if custom_image_folder:
+                custom_image_dict = self.build_custom_image_dict(custom_image_folder)
+            
             if os.path.isfile(videos_path):
-                cur_full_info_list = [{"prompt_en": get_prompt_from_filename(videos_path), "dimension": dimension_list, "video_list": [videos_path]}]
+                if custom_image_folder is None:
+                    cur_full_info_list = [{"prompt_en": get_prompt_from_filename(videos_path), "dimension": dimension_list, "video_list": [videos_path]}]
+                else:
+                    cur_full_info_list = [{"prompt_en": get_prompt_from_filename(videos_path), "dimension": dimension_list, "video_list": [videos_path], "custom_image_path": custom_image_dict[get_prompt_from_filename(videos_path)]}]
+                
                 if len(prompt_list) == 1:
                     cur_full_info_list[0]["prompt_en"] = prompt_list[0]
             else:
@@ -39,15 +61,27 @@ class VBench(object):
 
                 cur_full_info_list = []
 
-                for filename in video_names:
-                    postfix = Path(os.path.join(videos_path, filename)).suffix
-                    if postfix.lower() not in ['.mp4', '.gif', '.jpg', '.png']:
-                        continue
-                    cur_full_info_list.append({
-                        "prompt_en": get_prompt_from_filename(filename), 
-                        "dimension": dimension_list, 
-                        "video_list": [os.path.join(videos_path, filename)]
-                    })
+                if custom_image_folder is None:
+                    for filename in video_names:
+                        postfix = Path(os.path.join(videos_path, filename)).suffix
+                        if postfix.lower() not in ['.mp4', '.gif',]: #  '.jpg', '.png'
+                            continue
+                        cur_full_info_list.append({
+                            "prompt_en": get_prompt_from_filename(filename), 
+                            "dimension": dimension_list, 
+                            "video_list": [os.path.join(videos_path, filename)]
+                        })
+                else:
+                    for filename in video_names:
+                        postfix = Path(os.path.join(videos_path, filename)).suffix
+                        if postfix.lower() not in ['.mp4', '.gif']: #  '.jpg', '.png'
+                            continue
+                        cur_full_info_list.append({
+                            "prompt_en": get_prompt_from_filename(filename), 
+                            "dimension": dimension_list, 
+                            "video_list": [os.path.join(videos_path, filename)],
+                            "custom_image_path": custom_image_dict[get_prompt_from_filename(filename)]
+                        })
 
                 if len(prompt_list) > 0:
                     prompt_list = {os.path.join(videos_path, path): prompt_list[path] for path in prompt_list}
