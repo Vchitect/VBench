@@ -55,15 +55,15 @@ def parse_args():
         "--custom_image_folder",
         type=str,
         default=None,
-        help="the path for customed images",
+        help="the path for customized images",
     )
     parser.add_argument(
         "--mode",
         choices=['custom_input', 'vbench_standard'],
         default='vbench_standard',
         help="""This flags determine the mode of evaluations, choose one of the following:
-        1. "custom_input": receive input prompt from either --prompt/--prompt_file flags or the filename
-        2. "vbench_standard": evaluate on standard prompt suite of VBench
+        1. "custom_input": receive reference images from --custom_image_folder flag
+        2. "vbench_standard": evaluate on standard prompt suite of VBench++
         """,
     )
     parser.add_argument(
