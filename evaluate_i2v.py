@@ -12,7 +12,7 @@ def parse_args():
     parser.add_argument(
         "--output_path",
         type=str,
-        default='./evaluation_i2v_results_test_20250210/',
+        default='./evaluation_i2v_results/',
         help="output path to save the evaluation results",
     )
     parser.add_argument(
