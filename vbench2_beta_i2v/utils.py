@@ -281,7 +281,13 @@ def load_i2v_dimension_info(json_dir, dimension, lang, resolution):
             prompt = prompt_dict[f'prompt_{lang}']
             cur_video_list = prompt_dict['video_list'] if isinstance(prompt_dict['video_list'], list) else [prompt_dict['video_list']]
             # create image-video pair
-            image_path = os.path.join(image_root, prompt_dict["image_name"])
+            if "image_name" in prompt_dict:
+                image_path = os.path.join(image_root, prompt_dict["image_name"])
+            elif "custom_image_path" in prompt_dict:
+                image_path = prompt_dict["custom_image_path"]
+            else:
+                raise Exception("prompt_dict doesn't contain 'image_name' or 'custom_image_path' key")
+            
             cur_video_pair = [(image_path, video) for video in cur_video_list]
             video_pair_list += cur_video_pair
             if 'auxiliary_info' in prompt_dict and dimension in prompt_dict['auxiliary_info']:

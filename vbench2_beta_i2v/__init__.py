@@ -14,13 +14,13 @@ class VBenchI2V(VBench):
     def build_full_dimension_list(self, ):
         return self.i2v_dims + self.quality_dims
 
-    def evaluate(self, videos_path, name, dimension_list=None, local=False, read_frame=False, custom_prompt=False, resolution="1-1", **kwargs):
+    def evaluate(self, videos_path, name, dimension_list=None, custom_image_folder=None, mode='vbench_standard', local=False, read_frame=False, resolution="1-1", **kwargs):
         results_dict = {}
         if dimension_list is None:
             dimension_list = self.build_full_dimension_list()
         submodules_dict = init_submodules(dimension_list, local=local, read_frame=read_frame, resolution=resolution)
         # print('BEFORE BUILDING')
-        cur_full_info_path = self.build_full_info_json(videos_path, name, dimension_list, custom_prompt=custom_prompt)
+        cur_full_info_path = self.build_full_info_json(videos_path, name, dimension_list, custom_image_folder=custom_image_folder, mode=mode)
         # print('AFTER BUILDING')
         for dimension in dimension_list:
             try:
