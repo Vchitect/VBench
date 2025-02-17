@@ -340,7 +340,7 @@ def init_submodules(dimension_list, local=False, read_frame=False):
                 "model_weight": f'{CACHE_DIR}/grit_model/grit_b_densecap_objectdet.pth'
             }
             if not os.path.exists(submodules_dict[dimension]['model_weight']):
-                wget_command = ['wget', 'https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth', '-P', os.path.dirname(submodules_dict[dimension]["model_weight"])]
+                wget_command = ['wget', 'https://huggingface.co/OpenGVLab/VBench_Used_Models/resolve/main/grit_b_densecap_objectdet.pth', '-P', os.path.dirname(submodules_dict[dimension]["model_weight"])]
                 subprocess.run(wget_command, check=True)
         elif dimension == 'scene':
             submodules_dict[dimension] = {
