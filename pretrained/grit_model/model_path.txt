@@ -1,1 +1,1 @@
-wget https://datarelease.blob.core.windows.net/grit/models/grit_b_densecap_objectdet.pth -P ~/.cache/vbench/grit_model
+wget https://huggingface.co/OpenGVLab/VBench_Used_Models/resolve/main/grit_b_densecap_objectdet.pth -P ~/.cache/vbench/grit_model
