@@ -106,13 +106,13 @@ We list the setting for sampling videos from these models.
 | [`CausVid`](https://causvid.github.io/) | VBench Team | 2024-12-07 | 640x352 | 12 | 120 | 10.0s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/1/folders/1mmitg-4f6OWDZIdmSu2iNXrkcsVCT_5B) | - | - |
 | [`STIV (Apple)`](https://huggingface.co/papers/2412.07730) | VBench Team | 2024-12-19 | 512x512 | 60 | 60 | 1.0s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/19ENw3mbyhz-JjW4ddWypJ8x6xvWOHsyr/view) | - | - |
 | [`CausVid (2025-01-02 5s)`](https://causvid.github.io/) | VBench Team | 2025-01-02 | 640x352 | 24 | 120 | 5.0s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/1/folders/1SHD4CFuzBXLrsk1_fmQFBz7wvUvedY2O) | - | - |
-| [`Wanx 2.1`](https://tongyi.aliyun.com/wanxiang/) | VBench Team | 2025-01-08 | 1280x720 | 16 | 80 | 5.0s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/1/folders/1GHH7xOQCPb0kRjlyzH9APaddAw_hFRla) | - | - |
+| [`Wan2.1`](https://tongyi.aliyun.com/wanxiang/) | VBench Team | 2025-01-08 | 1280x720 | 16 | 80 | 5.0s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/1/folders/1GHH7xOQCPb0kRjlyzH9APaddAw_hFRla) | - | - |
 | [`Luma`](https://lumalabs.ai/dream-machine) | VBench Team | 2024-06-13 | 1360x752 | 24 | 121 | 5.0s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1NuL9oRIMPuPk98PfI0lA34LL6XLtjMnr/view?usp=drive_link) | [Google Drive](https://drive.google.com/file/d/1OOrMXxVwPebHcRZffj1i1Ru7d7ShByWj/view?usp=drive_link) | - |
 | [`RepVideo`](https://vchitect.github.io/RepVid-Webpage/) | VBench Team | 2025-01-16 | 720x480 | 8 | 49 | 6.1s | - | [Code](https://github.com/Vchitect/RepVideo) | MP4 | [Google Drive](https://drive.google.com/file/d/1H4eL4SOgidlOZeFPhX_4nzef7OGqpOQM/view?usp=drive_link) | - | - |
 | [`MiracleVision V5`](https://www.miraclevision.com/) | VBench Team | 2025-01-21 | 720x480 | 24 | 120 | 5.0s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/18gen90zZOaRBe7IuukqaJOj60Aedl8Vb/view?usp=drive_link) | - | - |
 | [`Sora`](https://sora.com/library) | VBench Team | 2025-01-14 | 854x480 | 30 | 150 | 5.0s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/1/folders/1ZxANm9HssrOY7aPAKRi579eJaQV6fsbk) | - | - |
 | [`EasyAnimateV5.1`](https://github.com/aigc-apps/EasyAnimate) | VBench Team | 2025-01-22 | 672x384 | 8 | 49 | 6.0s | - | [Code](https://github.com/aigc-apps/EasyAnimate) | MP4 | [Google Drive](https://drive.google.com/file/d/1prDDDov2rRObcTvnq6jNvmSjfNm5jUe7/view?usp=drive_link) | - | - |
-
+| [`Wan2.1(2025-02-24)`](https://tongyi.aliyun.com/wanxiang/videoCreation) | VBench Team | 2025-02-24 | 1280x720 | 16 | 80 | 5.0s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/1/folders/1c3RgpkQ5AMuYTZbCk7gkIVYvusjfrs_a) | - | - |
 
 ## How are Files Structured in Google Drive?
 
