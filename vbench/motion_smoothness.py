@@ -84,7 +84,7 @@ class MotionSmoothness:
         network_name = network_cfg.name
         print(f'Loading [{network_name}] from [{ckpt_path}]...')
         self.model = build_from_cfg(network_cfg)
-        ckpt = torch.load(ckpt_path, map_location="cpu")
+        ckpt = torch.load(ckpt_path, map_location="cpu", weights_only=False)
         self.model.load_state_dict(ckpt['state_dict'])
         self.model = self.model.to(self.device)
         self.model.eval()
