@@ -114,6 +114,9 @@ We list the setting for sampling videos from these models.
 | [`EasyAnimateV5.1`](https://github.com/aigc-apps/EasyAnimate) | VBench Team | 2025-01-22 | 672x384 | 8 | 49 | 6.0s | - | [Code](https://github.com/aigc-apps/EasyAnimate) | MP4 | [Google Drive](https://drive.google.com/file/d/1prDDDov2rRObcTvnq6jNvmSjfNm5jUe7/view?usp=drive_link) | - | - |
 | [`Wan2.1(2025-02-24)`](https://tongyi.aliyun.com/wanxiang/videoCreation) | VBench Team | 2025-02-24 | 1280x720 | 16 | 80 | 5.0s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/1/folders/1c3RgpkQ5AMuYTZbCk7gkIVYvusjfrs_a) | - | - |
 | [`IPOC`](https://yangxlarge.github.io/ipoc/) | VBench Team | 2025-02-28 | 1360x768 | 16 | 81 | 5.0s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1yG4Rb6x6ij2E_0I-5eoZ0v-KSk0cgriQ/view?usp=drive_link) | - | - |
+small>
+| [`CogVideoX-2B (Diffusers)`](https://github.com/THUDM/CogVideo) | VBench Team | 2025-03-03 | 720x480 | 8 | 49 | 6.1s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1qFf0GAYFZ4aF5jAI_n4HsNP5tMN3l1y2/view?usp=drive_link) | - | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/prompts/augmented_prompts/gpt_enhanced_prompts/all_dimension_longer.txt)</small> |
+| [`CogVideoX-5B (Diffusers)`](https://github.com/THUDM/CogVideo) | VBench Team | 2025-03-04 | 720x480 | 8 | 49 | 6.1s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1FSAccPXyJR_uw5ldkQJAMzIVphLRuh39/view?usp=drive_link) | - | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/prompts/augmented_prompts/gpt_enhanced_prompts/all_dimension_longer.txt)</small> |
 
 ## How are Files Structured in Google Drive?
 
