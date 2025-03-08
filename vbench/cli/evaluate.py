@@ -115,12 +115,11 @@ def evaluate(args):
     for arg in args_dict:
         if arg == "ngpus" or (args_dict[arg] == None) or arg == "func":
             continue
-        if arg == "videos_path":
+        if arg in ["videos_path", "prompt", "prompt_file", "output_path", "full_json_dir"]:
             cmd.append(f"--videos_path=\"{str(args_dict[arg])}\"")
             continue
         cmd.append(f'--{arg}')
         cmd.append(str(args_dict[arg]))
-
-
+    
     subprocess.run(stringify_cmd(cmd), shell=True)
 
