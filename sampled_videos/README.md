@@ -118,6 +118,7 @@ We list the setting for sampling videos from these models.
 | [`CogVideoX-5B (Diffusers)`](https://github.com/THUDM/CogVideo) | VBench Team | 2025-03-04 | 720x480 | 8 | 49 | 6.1s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1FSAccPXyJR_uw5ldkQJAMzIVphLRuh39/view?usp=drive_link) | - | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/prompts/augmented_prompts/gpt_enhanced_prompts/all_dimension_longer.txt)</small> |
 | [`Step-Video-T2V`](https://yuewen.cn/videos) | VBench Team | 2025-03-13 | 992x544 | 25 | 200 | 8s | - | - | MP4 | | - |  |
 | [`Open-Sora 2.0`](https://hpcaitech.github.io/Open-Sora/) | VBench Team | 2025-03-14 | 1024x576 | 24 | 120 | 5s | - | - | MP4 |  | - | |
+| [`Wan2.1-T2V-1.3B`](https://github.com/Wan-Video/Wan2.1/tree/main) | VBench Team | 2025-03-20 | 832x480 | 16 | 81 | 5s | - | - | MP4 |  | - | |
 
 ## How are Files Structured in Google Drive?
 
