@@ -1,0 +1,662 @@
+[
+    {
+        "prompt_en": "The race began, and the first runner quickly took off, leading the other teams. Everyone was focused on his performance. During the baton handoff of the first runner, Team A made a slight mistake, and the baton nearly fell. Despite this, the runner quickly passed it to the second runner. The second runner showed great determination and chased hard, finally overtaking Team B on the bend. However, due to the earlier mistake, Team A's lead was not significant. During the third runner's handoff, the runner from Team A nervously accelerated and managed to maintain the lead, but Team C quickly caught up thanks to their excellent pace control. During the fourth runner's handoff, the final sprint became crucial. The Team A runner started to accelerate in the second-to-last turn and, with a burst of strength, successfully widened the gap, steadily running toward the finish line and winning the race.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The first runner from one team quickly took off, leading the race.",
+            "During the baton handoff, the runner from one team made a slight mistake, nearly dropping the baton.",
+            "The second runner from one team chased hard and overtook the runner from another team.",
+            "The runner from one team nervously accelerated during the third handoff to maintain the lead, but the runner from another team quickly caught up.",
+            "In the final sprint, the runner from one team accelerated in the second-to-last turn, widening the gap and winning the race."
+        ]
+    },
+    {
+        "prompt_en": "The match began, and Team A quickly organized an attack, breaking through Team B's defense with fast passes. The forward accurately kicked the ball into the goal, taking a 1-0 lead. Team B did not panic; they used a long pass to quickly counterattack. The forward calmly shot past the goalkeeper, and the ball went straight into the net, making it 1-1. At this point, the game entered a stalemate. Both teams' defenses were solid, and the match became a fierce battle. In the second half, Team A had a corner kick. The high ball delivered by the player was headed in by the center-back who jumped high, putting Team A in the lead at 2-1. In the final moments of the game, Team B got a penalty kick. The forward took the shot without hesitation, sending the ball into the net to make it 2-2. Finally, in the last moments of extra time, Team A used a quick counterattack and a long-range shot from outside the box flew straight into the corner, securing the win with a 3-2 score.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "A player from one team quickly organized an attack, breaking through the defense of another team.",
+            "The forward from one team kicked the ball into the goal to take the lead.",
+            "A player from another team used a long pass to counterattack and equalize the score.",
+            "In the second half, one team scored from a corner kick to take the lead again.",
+            "In the final moments, a quick counterattack and long-range shot from one team secured the win."
+        ]
+    },
+    {
+        "prompt_en": "The race began, and all the runners sprinted quickly. The runner from Team A quickly took the lead. After a period of steady running, the runners from Team A and Team B gradually created a gap, almost running shoulder to shoulder. However, at the 25 km mark, the runner from Team A suddenly began to feel unwell, slowing down noticeably. The runner from Team B seized the opportunity and caught up, eventually overtaking Team A to take the lead at the 30 km mark. As the race entered the second half, the Team A runner gave it their all, regained their rhythm, and caught up with Team B at the 35 km mark. The two were neck and neck in the final sprint, and with only 200 meters remaining, the Team A runner pushed through with determination and accelerated to cross the finish line first by a narrow margin, winning the tough race.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The runner from one team quickly took the lead at the start of the race.",
+            "The runners from one team and another team created a gap, running shoulder to shoulder.",
+            "At the 25 km mark, the runner from one team began to feel unwell, allowing the runner from another team to catch up and overtake.",
+            "The runner from one team regained their rhythm and caught up with another team at the 35 km mark.",
+            "In the final sprint, the runner from one team pushed through with determination and won by a narrow margin."
+        ]
+    },
+    {
+        "prompt_en": "The race began, and the runners quickly started. The Team A runner took the lead initially due to a powerful start. However, the Team B runner did not rush to chase but instead steadily adjusted their pace, ensuring they had more energy for the latter part of the race. By the third lap, the Team A runner began to tire, and the Team B runner gradually reduced the gap, eventually overtaking Team A in the fourth lap. The Team C runner, meanwhile, began to accelerate, and in the last two laps, with strong willpower, they overtook Team B and moved into the lead. In the final sprint, the Team A runner gritted their teeth and tried to close the gap, but with only 50 meters left, the Team C runner exploded with speed, crossing the finish line with a clear lead and winning the race.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The runner from one team took the lead initially with a powerful start.",
+            "The runner from another team adjusted their pace, conserving energy for the latter part of the race.",
+            "The runner from another team gradually reduced the gap and overtook one team in the fourth lap.",
+            "The runner from yet another team accelerated and overtook the runner from another team, moving into the lead.",
+            "In the final sprint, the runner from yet another team exploded with speed and won the race."
+        ]
+    },
+    {
+        "prompt_en": "The match began, and Team A quickly found their rhythm. A series of fast attacks put pressure on Team B’s defense. Team A's forward made two three-pointers, quickly increasing the lead. After the first quarter, Team B adjusted their tactics, strengthened their defense, and gradually started to counterattack, narrowing the gap. In the third quarter, Team A’s key player was injured and forced to leave the game. Team B took advantage of this by speeding up their attacks, overtaking the score. In the fourth quarter, Team A's bench players caught up with a series of fast breaks, and in the final moments, a player from Team A calmly made a game-winning three-pointer from beyond the arc, securing a narrow 1-point victory.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "A player from one team initiated a series of fast attacks, putting pressure on the defense.",
+            "The forward from one team made two three-pointers, increasing their lead.",
+            "A player from another team adjusted tactics and began to counterattack, narrowing the gap.",
+            "With one team's key player injured, a player from another team sped up their attacks and overtook the score.",
+            "In the final moments, a player from one team made a calm three-pointer to win by 1 point."
+        ]
+    },
+    {
+        "prompt_en": "The match began, and Team A quickly gained the upper hand with several precise kills, taking a 11-6 lead. The Team B player stayed calm and gradually adjusted, finding ways to respond. In the second set, Team B improved their serving quality, scoring several powerful smashes to win a set, leveling the score at 1-1. In the deciding set, the Team A player showed signs of fatigue, but with precise net control and quick reflexes, they pulled ahead. In the crucial final point, a lightning-fast smash left Team B with no chance to return, and Team A won the match 21-19.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "A player from one team gained the upper hand with several precise kills.",
+            "A player from another team stayed calm and gradually adjusted their tactics.",
+            "A player from another team improved their serve and scored several smashes to win a set.",
+            "A player from one team showed signs of fatigue but pulled ahead with net control and quick reflexes.",
+            "In the final point, a lightning-fast smash secured the win for one team."
+        ]
+    },
+    {
+        "prompt_en": "The match started, and Team A quickly scored points with a series of high-quality serves, taking the lead early on. Team B kept up the pressure in the first set but was unable to break through Team A's defense and blocks. As the match progressed into the second set, Team B found their rhythm, especially during the serving phase, scoring several points in a row and tying the score. In the third set, both sides fought fiercely, but a crucial smash by Team A stabilized the game, and they won 25-23, leading 2-1 going into the final set. In the final set, Team A’s smooth coordination and solid defense pressed Team B’s attacks. Team A won the final set 15-12.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "A player from one team scored several high-quality serves, gaining an early lead.",
+            "A player from another team applied pressure but couldn't break through one team's defense.",
+            "A player from another team found their rhythm and tied the score during the serving phase.",
+            "A player from one team made a crucial smash to stabilize the game in the third set.",
+            "In the final set, one team's smooth coordination and defense secured the win."
+        ]
+    },
+    {
+        "prompt_en": "The race began, and Team A quickly took the lead, securing the front position. Throughout the race, Team B kept pushing, gradually closing the gap on Team A, especially on the downhill segment. In the next uphill section, the Team C runner displayed strong endurance and stamina, overtaking both Team A and Team B in a few short kilometers, taking the lead. As the race entered its final stage, Team B increased their speed, but Team C maintained a steady pace and continued to lead. At the finish line, Team C sprinted to victory with a clear advantage.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The runner from one team quickly took the lead and secured the front position.",
+            "The runner from another team gradually closed the gap, especially on the downhill segment.",
+            "The runner from another team displayed strong endurance and overtook both competitors.",
+            "The runner from another team increased their speed but couldn't catch up with one team.",
+            "The runner from one team sprinted to victory with a clear advantage."
+        ]
+    },
+    {
+        "prompt_en": "A brave young girl set off on an adventure to find five ancient artifacts. First, she crossed the desolate desert, finding the endless water bottle with the help of a giant desert turtle. Next, she went to the ancient library, solved the guardian spirit’s riddle, and obtained the book of eternity. She entered the mysterious forest, fought against a giant beast, and earned the heart of the forest. She then climbed the dangerous lightning mountains, passed the god of lightning's trials, and obtained the lightning staff. Lastly, she ventured into the deep underground caves, defeated the underworld guards, and obtained the stone of life. The girl combined all five artifacts, defeated the dark sorcerer, and saved the world.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The girl found the endless water bottle in the desert with the help of the desert turtle.",
+            "The girl solved the guardian spirit’s riddle in the ancient library and obtained the book.",
+            "The girl defeated a giant beast in the mysterious forest and earned the heart of the forest.",
+            "The girl passed the trials of the god of lightning and obtained the lightning staff.",
+            "The girl defeated the underworld guards and obtained the stone of life to save the world."
+        ]
+    },
+    {
+        "prompt_en": "A young mage apprentice at the magic academy was given the task of finding five ancient runes. First, he traveled to the land of fire, using the power of the runes to ignite the eternal fire, obtaining the fire rune. Next, he submerged into an ice-covered lake and faced the ice witch’s challenge, earning the water rune. He then entered the ancient forest and found a mysterious elf guardian, obtaining the wood rune. Afterward, he crossed the desert, solved the riddle of the sandstorm, and earned the wind rune. Lastly, he entered the tower of light, passed multiple trials, and obtained the light rune. The apprentice combined the five runes, became a master of magic, and protected the entire kingdom.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The young mage apprentice traveled to the land of fire and ignited the eternal fire, earning the fire rune.",
+            "He submerged into an ice-covered lake, facing the ice witch’s challenge and earning the water rune.",
+            "In the ancient forest, he encountered a mysterious elf guardian and obtained the wood rune.",
+            "He crossed the desert, solved the riddle of the sandstorm, and earned the wind rune.",
+            "Finally, he entered the tower of light, passed multiple trials, and obtained the light rune."
+        ]
+    },
+    {
+        "prompt_en": "Five brave warriors were summoned to face the awakening dark demon king. The first warrior embarked on a journey to find the sword of courage, defeating the dark knight in a shadowy cave and obtaining the legendary sword. The second warrior arrived at the moonlight forest and, under the full moon, battled the lost phantom elf to earn the soul bow. The third warrior went to the thunder mountains, fought the thunder giant, and gained the thunder hammer. The fourth warrior solved an ancient riddle in a desert temple and obtained the desert shield. Finally, the fifth warrior underwent a spiritual baptism in a sacred land and obtained the light amulet. The five warriors combined the five legendary artifacts, defeated the dark demon king, and saved the world.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The first warrior traveled to a shadowy cave and defeated the dark knight to obtain the sword of courage.",
+            "The second warrior entered the moonlight forest and battled the lost phantom elf to earn the soul bow.",
+            "The third warrior journeyed to the thunder mountains and fought the thunder giant to gain the thunder hammer.",
+            "The fourth warrior solved an ancient riddle in a desert temple to obtain the desert shield.",
+            "The fifth warrior underwent a spiritual baptism and obtained the light amulet."
+        ]
+    },
+    {
+        "prompt_en": "In an ancient magical kingdom, a young sorcerer was assigned the task of finding five legendary magic crystals. First, he arrived at a volcano, defeated the volcanic beast, and earned the flame crystal. He then traveled to the distant snow kingdom, using wisdom and courage to earn the snow crystal. Next, he entered the celestial tower, solved the starry riddle, and obtained the star crystal. The fourth stop took him to a mysterious forest, where he rescued a trapped elf and obtained the life crystal. Finally, he crossed the desert, enduring harsh conditions to earn the earth crystal. The sorcerer combined all five crystals, awakened the kingdom's magical power, and restored peace and prosperity.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The young sorcerer defeated the volcanic beast at a volcano to earn the flame crystal.",
+            "He traveled to the snow kingdom and used wisdom and courage to earn the snow crystal.",
+            "He entered the celestial tower, solved the starry riddle, and obtained the star crystal.",
+            "In a mysterious forest, he rescued a trapped elf to earn the life crystal.",
+            "He crossed the desert and endured harsh conditions to earn the earth crystal."
+        ]
+    },
+    {
+        "prompt_en": "A young adventurer set off in search of five mysterious trial towers. He first arrived at the fire tower, solved the riddle of the fire giant, and earned the flame symbol. He then crossed the icy lands, faced the ice queen, and earned the frost symbol. Next, he entered an ancient temple, defeated the necromancer, and obtained the soul symbol. He then ventured into the thunder mountain range, underwent the lightning god's trial, and earned the thunder symbol. Finally, he reached the tower of light, faced the mysterious celestial being, and earned the light symbol. The adventurer combined the five symbols, uncovered a hidden world, and restored the lost glory.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The adventurer arrived at the fire tower, solved the riddle of the fire giant, and earned the flame symbol.",
+            "He crossed the icy lands, faced the ice queen, and earned the frost symbol.",
+            "He entered an ancient temple, defeated the necromancer, and obtained the soul symbol.",
+            "He ventured into the thunder mountain range, underwent the lightning god's trial, and earned the thunder symbol.",
+            "He reached the tower of light, faced the celestial being, and earned the light symbol."
+        ]
+    },
+    {
+        "prompt_en": "A young hero was chosen to open the five gates of the realms. First, he arrived at the realm of fire, using wisdom and courage to earn the fire key. He then crossed the ocean, solved the sea god's riddle, and obtained the ocean key. Next, he entered the realm of the forest, harnessed the power of nature, and obtained the forest key. Afterward, he traveled through the desert realm, defeated desert monsters, and earned the desert key. Finally, he entered the sky realm, using strength and strategy to obtain the sky key. The hero combined all five keys, opened the five gates of the realms, gained the world's power, and defeated the evil dark force.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The hero arrived at the realm of fire and earned the fire key using wisdom and courage.",
+            "He crossed the ocean, solved the sea god's riddle, and obtained the ocean key.",
+            "He entered the realm of the forest, harnessed nature's power, and obtained the forest key.",
+            "He traveled through the desert realm, defeated desert monsters, and earned the desert key.",
+            "He entered the sky realm, used strength and strategy, and obtained the sky key."
+        ]
+    },
+    {
+        "prompt_en": "In a distant kingdom, there was an ancient legend about the power of five stars. The first adventurer entered the sky mountains and found the star of Mars. Next, he crossed the snowy plains and discovered the star of Mercury. He then ventured into the shadowy forest and obtained the star of Jupiter. The fourth stop took him to the thunder valley, where he found the star of Saturn. Finally, he arrived at the island of light, where he found the star of Venus. The adventurer combined all five stars, solved the ancient riddle, and restored the kingdom's glory and peace.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The adventurer entered the sky mountains and found the star of Mars.",
+            "He crossed the snowy plains and discovered the star of Mercury.",
+            "He ventured into the shadowy forest and obtained the star of Jupiter.",
+            "He traveled to the thunder valley and found the star of Saturn.",
+            "Finally, he arrived at the island of light and found the star of Venus."
+        ]
+    },
+    {
+        "prompt_en": "A little girl received a mysterious gift—the ancient time key. She used the key to open a sealed door and entered the time house. On the first day, she found a room filled with books, each with a different story. On the second day, she was taken to an ancient kitchen filled with strange smells, where a kind witch taught her how to make magic cookies that could change the past. On the third day, she found a mirror where her reflection looked completely different, even unrecognizable. On the fourth day, she planted a seed in the secret garden of the time house, and miraculously, it grew into a huge tree overnight. Finally, she discovered that she had always been living in a world unaffected by time, and the time house was her true home.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The little girl received the ancient time key and opened a sealed door into the time house.",
+            "On the first day, she found a room filled with books, each telling a different story.",
+            "On the second day, she visited an ancient kitchen and learned to make magic cookies from a kind witch.",
+            "On the third day, she found a mirror where her reflection looked completely different.",
+            "On the fourth day, she planted a seed in the secret garden, which grew into a huge tree overnight."
+        ]
+    },
+    {
+        "prompt_en": "A young girl walked under the moonlight every night, until one night, she met an invisible friend. On the first night, she felt a warm breeze and heard whispers in her ear. On the second night, she noticed shiny footprints on the ground, glowing softly under the moonlight. On the third night, the footprints led her to a mysterious lake with crystal-clear water. On the fourth night, a golden fox appeared in the lake and told her that only by crossing the water could she find her destiny. On the fifth night, she made a decision and jumped into the lake. The water surface became clear like a mirror, and she saw an image of her future—she had always been the guardian of the moonlight.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "On the first night, the young girl felt a warm breeze and heard whispers.",
+            "On the second night, she saw glowing footprints in the moonlight.",
+            "On the third night, the footprints led her to a mysterious lake with crystal-clear water.",
+            "On the fourth night, a golden fox told her to cross the lake to find her destiny.",
+            "On the fifth night, she jumped into the lake and saw her future reflected in the water."
+        ]
+    },
+    {
+        "prompt_en": "A young girl with extraordinary musical talent has never been able to produce a sound. On the first day, she hears an old man playing ancient tunes in the market, feeling her soul deeply moved. The next day, the old man gives her a silver flute and tells her that it will allow her to express the voice deep within her. On the third day, she sits by a stream playing the flute, and the notes flow like water, causing the flowers around her to bloom. On the fourth day, she feels a strange power as her music seems to change people’s emotions, calming them down. On the fifth day, when she plays the final tune, she herself emits a sound, realizing that she has always sung with her soul, and the notes were her true language.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The young girl hears an old man playing ancient tunes in the market, and her soul is deeply moved.",
+            "The old man gives her a silver flute, telling her it will allow her to express her inner voice.",
+            "She sits by a stream playing the flute, and the notes flow like water, causing the flowers to bloom.",
+            "Her music starts to change people's emotions, calming them down.",
+            "When she plays the final tune, she herself emits a sound, realizing her soul's true language."
+        ]
+    },
+    {
+        "prompt_en": "In an ancient city, a young painter always looks out of the glass window of his studio at the street. On the first day, he notices a figure who appears at a specific time at the street corner, mysterious yet familiar. The next day, he paints the figure and, upon closer inspection, realizes he has seen her in his dreams. On the third day, the painting begins to come to life, and the girl in the painting suddenly starts moving and disappears in the blink of an eye. On the fourth day, the painter finds the girl’s trace in the street but discovers she seems to never have existed. On the fifth day, the painter realizes that the girl in his painting was actually his unfulfilled dream, and to move forward, he must learn to let go.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The young painter notices a mysterious figure who appears at a specific time in the street.",
+            "He paints the figure and realizes she resembles someone from his dreams.",
+            "The painting comes to life, and the girl in it disappears suddenly.",
+            "He finds her trace in the street, but discovers she seems not to have existed.",
+            "The painter realizes the girl was his unfulfilled dream, and to move forward, he must let go."
+        ]
+    },
+    {
+        "prompt_en": "A young boy receives a letter from the future, saying that he will discover a secret that will change the world. On the first day, he finds a dusty book filled with unknown symbols. The next day, he finds a map in the book, guiding him to an abandoned castle. On the third day, he enters the castle and finds a closed room containing an ancient clock. On the fourth day, he follows the clock’s instructions, activates a mechanism, and the second hand of the clock begins to turn backward. On the fifth day, he realizes that the secret of the world does not lie in the outside world, but in how he perceives his past and future. This secret allows him to live in the present without being bound by time.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The young boy receives a letter from the future about a world-changing secret.",
+            "He finds a dusty book with unknown symbols and a map guiding him to an abandoned castle.",
+            "He enters the castle and finds a closed room with an ancient clock.",
+            "He activates the clock’s mechanism, and the second hand begins to turn backward.",
+            "The boy realizes the secret lies in his perception of time, allowing him to live freely in the present."
+        ]
+    },
+    {
+        "prompt_en": "A man lives alone in a remote cabin, day after day, year after year. On the first day, he notices that the view outside his window seems unchanged, with snow still covering the ground. On the second day, he starts to realize that the seasons outside do not pass with time, as spring, summer, autumn, and winter all seem to cycle endlessly. On the third day, he realizes he is trapped in a time loop, unable to escape. On the fourth day, he tries to break free but finds that with every seasonal change, new challenges arise. On the fifth day, he understands that the cycle itself is a test, and only by fully accepting it can he find a way to escape, ending the endless seasons.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The man lives alone in a remote cabin, noticing the unchanged view outside.",
+            "He realizes that the seasons outside do not pass, cycling endlessly.",
+            "He realizes he's trapped in a time loop and cannot escape.",
+            "He tries to break free but faces new challenges with each seasonal change.",
+            "He understands that only by accepting the cycle can he find a way to escape."
+        ]
+    },
+    {
+        "prompt_en": "A young artist is invited to a remote town to work on restoring life to an ancient sculpture. On the first day, he discovers that the sculpture is covered in the marks of time, seeming to have lost its original form. The next day, he begins cleaning the sculpture, surprised to find that it slowly starts to change shape. On the third day, the sculpture suddenly transforms from a stone figure into a living person who resembles the artist’s family. On the fourth day, the sculpture is fully restored to life, but has no memory. On the fifth day, the artist finally realizes that the sculpture is a lost memory, and restoring it means confronting his own unresolved inner struggles.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The young artist discovers the sculpture covered in the marks of time, losing its form.",
+            "He begins cleaning the sculpture, finding it slowly changing shape.",
+            "The sculpture transforms into a living person resembling the artist's family.",
+            "The sculpture is restored to life but has no memory.",
+            "The artist realizes the sculpture represents a lost memory and confronting it will resolve his inner struggles."
+        ]
+    },
+    {
+        "prompt_en": "A child sees a lonely tree every day in a park near his school, always appearing to be alone. On the first day, the child stops under the tree, gently touching its bark, feeling a warm energy. On the second day, he notices some small animals he has never seen before dancing around the tree. On the third day, the tree suddenly begins to bloom, with unusually beautiful flowers that attract many people. On the fourth day, the petals fall, emitting a strange fragrance, and the air around becomes fresh. On the fifth day, the child understands that the tree was never lonely; it had always been waiting for someone who could understand it, and he was the one who became its guardian.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The child stops under the lonely tree and feels a warm energy.",
+            "He notices small animals dancing around the tree.",
+            "The tree begins to bloom with beautiful flowers that attract many people.",
+            "The petals fall, emitting a fragrance that refreshes the air.",
+            "The child realizes the tree was waiting for someone who could understand it, and he becomes its guardian."
+        ]
+    },
+    {
+        "prompt_en": "Little Red Riding Hood brings food to visit her sick grandmother and encounters a cunning wolf along the way. The wolf pretends not to know her and guides her down a longer path. Along the way, she discovers an ancient tree hollow in a dark forest, where she finds letters from her grandmother’s younger days, mentioning secrets of the forest. She continues her journey and finds the wolf already at her grandmother’s house, disguised as her grandmother. Realizing the wolf’s deception, she hides the letters she found in the tree hollow. Eventually, Little Red Riding Hood uses the clues from the letters to expose the wolf’s lies, save her grandmother, and uncover the mysterious history of the forest.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Little Red Riding Hood encounters the cunning wolf, who guides her down a longer path.",
+            "Along the way, she finds an ancient tree hollow with letters from her grandmother’s younger days.",
+            "She discovers the wolf disguised as her grandmother at her house.",
+            "Realizing the wolf’s deception, she hides the letters she found in the tree hollow.",
+            "She uses the letters to expose the wolf’s lies, save her grandmother, and uncover the forest's secrets."
+        ]
+    },
+    {
+        "prompt_en": "The three little pigs decide to build their own houses. The eldest pig chooses straw, the second pig uses wood, and the youngest pig carefully selects bricks to build a sturdy home. When the big bad wolf appears, he easily blows down the straw and wood houses, but the brick house resists the wolf’s attack. However, the wolf doesn’t give up and tries to enter the brick house through the chimney. In the end, the little pig cleverly sets a trap with the stove and drives the wolf away. With the wolf gone, the three little pigs finally realize that patience and effort are the true secrets to building a home.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The three little pigs each build a house: straw, wood, and brick.",
+            "The wolf blows down the straw and wood houses but fails to destroy the brick house.",
+            "The wolf tries to enter the brick house through the chimney.",
+            "The little pig sets a trap with the stove to drive the wolf away.",
+            "The three little pigs realize that patience and effort are the true secrets to building a home."
+        ]
+    },
+    {
+        "prompt_en": "Sleeping Beauty was cursed by an evil witch from the moment of her birth. The witch prophesied that on her sixteenth birthday, she would prick her finger and fall into an eternal sleep. To break the curse, the king and queen invited all the fairies, except for one forgotten good fairy who had not been invited. Quietly, she cast a gentle spell to lessen the curse’s power. On her sixteenth birthday, Sleeping Beauty indeed pricked her finger at a ball and fell into a deep slumber. After centuries of waiting, a handsome prince finally found her and awoke her with a kiss, breaking the evil witch’s curse. In the end, Sleeping Beauty and the prince lived happily ever after, and the kingdom was restored to peace and prosperity.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The evil witch curses Sleeping Beauty to prick her finger and fall into an eternal sleep on her sixteenth birthday.",
+            "The king and queen invite all fairies, except one, who casts a gentler spell to lessen the curse.",
+            "On her sixteenth birthday, Sleeping Beauty pricks her finger and falls into a deep slumber.",
+            "After centuries of waiting, a prince finds her and awakens her with a kiss, breaking the curse.",
+            "Sleeping Beauty and the prince live happily ever after, and peace is restored to the kingdom."
+        ]
+    },
+    {
+        "prompt_en": "On a distant island, a pirate captain told his crew about a legendary treasure hidden in the wreck of a sunken ship deep in the sea. On the first day, the crew found an old map. On the second day, they sailed through a storm but discovered that the location on the map had become unclear. On the third day, they dived into the sea and found the wreckage of the sunken ship. On the fourth day, the crew found a locked chest inside the wreck. After much struggle, they finally opened the chest. On the fifth day, the crew discovered that the treasure inside wasn’t just gold and jewels; it also contained the pirate captain’s final wish, leading them to decide to abandon the riches and search for their true life’s purpose.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The pirate captain tells his crew about a legendary treasure hidden in the wreck of a sunken ship.",
+            "The crew finds an old map, and they sail through a storm to find the treasure, but the map is unclear.",
+            "They dive into the sea and find the wreckage of the sunken ship.",
+            "The crew finds a locked chest inside the wreck and struggles to open it.",
+            "Inside the chest, the crew discovers the pirate captain’s final wish and decides to abandon the treasure in search of their true purpose."
+        ]
+    },
+    {
+        "prompt_en": "Snow White was driven into the forest by the evil queen who was jealous of her beauty. In the forest, Snow White met seven kind dwarfs who offered her shelter. However, the evil queen disguised herself as an old woman and gave Snow White a poisoned apple. After biting the apple, Snow White fell into a deep sleep. At that moment, a prince heard of her plight and came to save her. He kissed her, breaking the spell. After Snow White regained consciousness, she decided to take revenge on the queen. She, along with the prince and the dwarfs, returned to the palace and overthrew the evil queen, restoring peace to the kingdom.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Snow White is driven into the forest by the jealous queen, where she meets seven kind dwarfs who offer shelter.",
+            "The evil queen disguises herself as an old woman and gives Snow White a poisoned apple.",
+            "Snow White falls into a deep sleep after biting the apple.",
+            "A prince hears of Snow White’s plight and awakens her with a kiss.",
+            "Snow White, with the prince and dwarfs, takes revenge on the queen and restores peace to the kingdom."
+        ]
+    },
+    {
+        "prompt_en": "The Ugly Duckling was born into a warm family of ducks but was rejected by the other ducklings because of its different appearance. It decided to leave home and set off on a journey to find its true place. Along the way, the ugly duckling faced many difficulties, feeling lonely and sad. After enduring a cold winter, it discovered in the spring that it had transformed into a beautiful swan. The ugly duckling finally found its true home and soared with other swans, becoming the most striking one. It realized that one should never be defined by the opinions of others but should instead trust in the beauty within oneself.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The ugly duckling is rejected by other ducklings because of its different appearance and decides to leave home.",
+            "The ugly duckling faces many difficulties and feels lonely on its journey.",
+            "After enduring a cold winter, the ugly duckling transforms into a beautiful swan in spring.",
+            "The ugly duckling finds its true home and soars with other swans, becoming the most striking one.",
+            "It realizes that beauty lies within and should never be defined by others’ opinions."
+        ]
+    },
+    {
+        "prompt_en": "Cinderella’s stepmother and stepsisters made her do all the household chores, and she had to endure their mistreatment. One day, her fairy godmother appeared and gave her a beautiful gown and a pair of glass slippers, helping her attend the royal ball. At the ball, she met the prince, and they fell in love at first sight. But when the clock struck midnight, Cinderella rushed away, leaving behind a glass slipper. The prince searched the kingdom and finally found her by the slipper she left behind. However, when Cinderella put the glass slipper back on, she decided that she would no longer endure her stepmother’s cruelty. In the end, she and the prince changed their fate, and she began to fight for her freedom and rights.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Cinderella is mistreated by her stepmother and stepsisters, doing all the household chores.",
+            "Her fairy godmother appears and gives her a beautiful gown and glass slippers to attend the royal ball.",
+            "At the ball, Cinderella meets the prince and they fall in love, but she must leave before midnight.",
+            "The prince searches the kingdom and finds Cinderella by the glass slipper she left behind.",
+            "Cinderella decides to change her fate, no longer enduring cruelty, and begins fighting for her freedom and rights."
+        ]
+    },
+    {
+        "prompt_en": "In a small town, there were constant rumors about a forest ghost, and the townspeople were afraid to go out at night. One day, a young girl decided to uncover the secret. She entered the forest and encountered the mysterious ghost, who revealed that she had once been a princess in an ancient kingdom, cursed by a wizard, and trapped in the forest. The girl decided to help the ghost break the curse, and after an adventure, she found the wizard’s ancient relic and used its power to release the ghost. The ghost regained her original form and became the girl’s friend. Over time, the townspeople no longer feared the forest and began to learn its true story.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The town is haunted by rumors of a forest ghost, and the townspeople are afraid to go out at night.",
+            "A young girl decides to uncover the secret and enters the forest to find the ghost.",
+            "The ghost reveals she was a princess cursed by a wizard and trapped in the forest.",
+            "The girl helps the ghost break the curse by finding the wizard’s ancient relic and using its power.",
+            "The ghost regains her original form and becomes the girl’s friend, and the townspeople learn the true story."
+        ]
+    },
+    {
+        "prompt_en": "A young female warrior, after her family was invaded by a foreign kingdom, set off to find a mysterious treasure to save her family. Her journey was filled with challenges, from crossing dangerous swamps to climbing tall mountains. Eventually, she found the guarded treasure, which emitted a mysterious glow and gave its bearer immense power. She returned home with the treasure but realized that power alone could not truly change fate. She chose to forgo the treasure and instead used her wisdom and courage to unite various forces, eventually defeating the enemy and restoring her family’s honor.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The young female warrior sets off to find a treasure to save her family after an invasion.",
+            "She faces challenges, from crossing dangerous swamps to climbing tall mountains.",
+            "She finds the guarded treasure, which gives its bearer immense power.",
+            "She returns home but realizes that power alone cannot change fate.",
+            "She unites various forces with wisdom and courage, defeating the enemy and restoring her family’s honor."
+        ]
+    },
+    {
+        "prompt_en": "In a kingdom shrouded by dark magic, a prince and a princess discovered the source of the black magic during an accidental encounter. The prince decided to search for the sacred relic that could break the curse of the dark magic, while the princess used her wisdom to solve the ancient riddle in the relic. Through their combined efforts, they faced many trials and finally found the key to sealing the dark magic. Together, they broke the dark magic’s hold, and the kingdom was restored to light.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The prince and princess discover the source of the dark magic in their kingdom.",
+            "The prince searches for a sacred relic to break the curse of the dark magic.",
+            "The princess solves the ancient riddle in the relic using her wisdom.",
+            "Together, they face many trials and find the key to sealing the dark magic.",
+            "They break the dark magic’s hold, restoring the kingdom to light."
+        ]
+    },
+    {
+        "prompt_en": "In a distant village, there were legends about a temple and ghosts. The villagers were afraid to go out at night, believing that evil forces were sealed within the temple. A young archaeologist decided to unravel these mysteries. Deep within the temple, he discovered an ancient scroll that revealed the true identity of the ghosts—they were once guardian deities of the temple, sealed due to a rebellion. As the truth was revealed, the archaeologist found the key to the seal, restoring the ghosts’ powers. However, they were no longer evil; instead, they became protectors, guarding the temple from any harm.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The villagers are afraid of a temple sealed with evil forces, and legends of ghosts surround it.",
+            "A young archaeologist sets out to uncover the truth behind the ghosts and the temple.",
+            "He discovers an ancient scroll revealing that the ghosts were once guardian deities sealed after a rebellion.",
+            "The archaeologist finds the key to the seal and restores the ghosts' powers.",
+            "The ghosts, now protectors, guard the temple from harm instead of being evil."
+        ]
+    },
+    {
+        "prompt_en": "On an island surrounded by volcanoes, there was a legend about the Volcano God. The legend said that the volcano contained an immortal power, and every generation of island guardians must undergo a trial to gain the god’s power. A young guardian decided to accept the challenge and climbed the volcano. In the deepest part of the volcano, he faced a life-or-death decision. In the end, using his courage and wisdom, he defeated the mysterious enemy within the volcano and gained the god’s power, successfully protecting the island.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "A legend on an island tells of the Volcano God and a trial to gain the god’s power.",
+            "A young guardian decides to accept the challenge and climbs the volcano.",
+            "In the deepest part of the volcano, he faces a life-or-death decision.",
+            "Using his courage and wisdom, the guardian defeats the mysterious enemy within the volcano.",
+            "The guardian gains the god’s power and successfully protects the island."
+        ]
+    },
+    {
+        "prompt_en": "There was an ancient maze that was said to grant endless wealth to whoever could successfully escape it. To uncover the mystery of his missing father, a young adventurer named Allen decided to enter the maze. On the first level, he met a mysterious cat that told him the maze had five levels, each testing one’s wisdom and courage. Allen successfully passed the first two levels, but on the third level, he encountered an illusion of himself and lost his way. After an awakening moment, he overcame the illusion and successfully passed the remaining two levels. In the end, Allen discovered that the maze’s exit didn’t lead to wealth but to the key to his family’s hidden secrets.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Allen enters an ancient maze to uncover the mystery of his missing father.",
+            "A mysterious cat tells Allen the maze has five levels, each testing wisdom and courage.",
+            "Allen passes the first two levels but loses his way on the third after encountering an illusion of himself.",
+            "After an awakening moment, Allen overcomes the illusion and passes the remaining two levels.",
+            "Allen discovers the maze’s exit leads to the key to his family’s hidden secrets, not wealth."
+        ]
+    },
+    {
+        "prompt_en": "On a clear morning, astronomy enthusiast Lily noticed a mysterious light in the sky. She followed the light to an abandoned observatory, where she found an ancient time machine. Lily decided to try out the machine, but unexpectedly, she was transported hundreds of years into the past and witnessed the lives of her ancestors. As time passed, Lily realized that the time machine wasn’t just for travel—it was designed to stop an impending disaster. Ultimately, she returned to the present with knowledge of the future, successfully preventing the upcoming catastrophe.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Lily notices a mysterious light in the sky and follows it to an abandoned observatory.",
+            "She discovers an ancient time machine and decides to try it out.",
+            "Lily is transported hundreds of years into the past, witnessing the lives of her ancestors.",
+            "She realizes the time machine is designed to stop an impending disaster.",
+            "Lily returns to the present with knowledge of the future and prevents the upcoming catastrophe."
+        ]
+    },
+    {
+        "prompt_en": "In a town full of legends, a rainbow bridge appeared in the valley after every rain, leading to a mysterious world. Everyone had heard the story of the bridge, but no one dared to cross it. Young artist Emily was curious about the bridge and decided to walk across it herself. At the end of the bridge, she discovered an ancient, forgotten city, full of lost civilizations and strange creatures. Emily met an ancient guardian there, who revealed that the city’s secret would change humanity’s future. She ultimately uncovered the mystery behind the rainbow bridge and returned to the real world with an important message.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "A rainbow bridge appears after every rain, leading to a mysterious world that no one dares to cross.",
+            "Emily, a curious young artist, decides to walk across the bridge herself.",
+            "She discovers an ancient, forgotten city full of lost civilizations and strange creatures.",
+            "Emily meets an ancient guardian who reveals that the city’s secret will change humanity’s future.",
+            "Emily uncovers the mystery behind the rainbow bridge and returns with an important message."
+        ]
+    },
+    {
+        "prompt_en": "The Violet Flower glowed mysteriously at night, and it was said to heal any ailment. To save his ill mother, a young man named Oscar decided to find this magical flower. He crossed vast grasslands and ventured deep into the mountains, where he encountered a hidden fairy village. The fairies told him that the violet was not just a flower, but a rare and mystical plant that could only be found by those with pure hearts. After several trials, Oscar finally found the violet and brought it back home, curing his mother and learning to cherish the precious things in life.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The Violet Flower glows mysteriously and is said to heal any ailment.",
+            "Oscar embarks on a journey to find the flower to save his ill mother.",
+            "He crosses grasslands and mountains, encountering a hidden fairy village.",
+            "The fairies explain that the flower can only be found by those with pure hearts.",
+            "Oscar completes the trials, finds the violet, and cures his mother, learning to cherish life."
+        ]
+    },
+    {
+        "prompt_en": "In a frigid northern kingdom, winter never seems to end. Princess Elsa, cursed to be unable to control the ice and snow powers within her, caused the kingdom to fall into an eternal winter. She decided to search for a magical artifact that could break the curse. Along the way, she met an old wizard who told her that only by collecting five magical crystals could she seal her powers. She journeyed to glaciers, volcanoes, dense forests, deserts, and the sea, facing numerous challenges. In the end, she successfully gathered all five crystals. When she fused them together, the curse was lifted, the kingdom regained warmth, and Elsa learned to control her powers, becoming the new queen.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Princess Elsa is cursed with uncontrollable ice and snow powers, causing an eternal winter in the kingdom.",
+            "Elsa decides to search for a magical artifact that can break the curse.",
+            "She meets an old wizard who tells her that five magical crystals are needed to seal her powers.",
+            "Elsa journeys through glaciers, volcanoes, forests, deserts, and the sea, facing numerous challenges.",
+            "After gathering all five crystals and fusing them, the curse is lifted, and Elsa gains control over her powers, becoming the new queen."
+        ]
+    },
+    {
+        "prompt_en": "On a night when falling stars could always be seen, Ella and her friends stood on a mountaintop, making wishes. However, Ella’s wish accidentally triggered a mysterious disaster, causing meteors to fall from the sky, bringing devastating shockwaves. To stop the disaster, Ella decided to trace the meteors' origin. Along the way, she met a Star Guardian, who told her that the meteors were not ordinary celestial bodies but exiled stars. Using her courage and wisdom, Ella ultimately quelled the disaster and restored peace to the sky. The falling stars' promise became a symbol of her future happiness.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Ella and her friends make wishes on falling stars, but Ella’s wish triggers a mysterious disaster.",
+            "Meteors fall from the sky, bringing devastating shockwaves.",
+            "Ella decides to trace the origin of the meteors and meets a Star Guardian.",
+            "The Star Guardian reveals the meteors are exiled stars, and Ella must stop the disaster.",
+            "Using her courage and wisdom, Ella quells the disaster, restoring peace to the sky, and the falling stars symbolize her future happiness."
+        ]
+    },
+    {
+        "prompt_en": "It is said that the ancient Dragon Tribe left behind a vast treasure, accessible only through a series of trials. Young adventurer Lucas set off on his own journey to find this legacy. In the first trial, he had to defeat a fire dragon; in the second, he crossed a labyrinth full of giant beasts; in the third, he met an ancient dragon scholar, who gave him a riddle to solve. After cracking the riddle, Lucas entered the dragon’s legacy site and found the treasure. However, he chose not to take the gold but instead took an ancient relic of the dragon tribe back to his homeland, becoming the legendary heir of the dragons.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Lucas embarks on a journey to find the ancient Dragon Tribe’s treasure, passing a series of trials.",
+            "In the first trial, he defeats a fire dragon; in the second, he crosses a labyrinth full of beasts.",
+            "In the third trial, Lucas meets an ancient dragon scholar who gives him a riddle.",
+            "Lucas solves the riddle and finds the treasure but chooses an ancient relic instead of gold.",
+            "He returns home with the relic and becomes the legendary heir of the dragons."
+        ]
+    },
+    {
+        "prompt_en": "In a kingdom surrounded by fire, it was said that every red lotus flower represented a great vow. To protect her kingdom, Princess Lilya decided to pluck a red lotus from the mysterious Flame Mountain. She crossed a scorching desert and climbed a towering volcano, finally reaching the Flame Mountain. There, she engaged in a thrilling battle with a giant dragon guarding the fire. Showing unprecedented bravery, the princess succeeded in picking the red lotus and returned to the kingdom, swearing to protect her people from harm forever.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "In a kingdom surrounded by fire, every red lotus represents a great vow.",
+            "Princess Lilya decides to pluck a red lotus from the Flame Mountain to protect her kingdom.",
+            "She crosses a desert and climbs a volcano, facing numerous challenges.",
+            "At the Flame Mountain, she battles a giant dragon guarding the fire.",
+            "Lilya picks the red lotus and swears to protect her people from harm forever."
+        ]
+    },
+    {
+        "prompt_en": "In a mysterious ancient tomb, there was a treasure said to have the power to change history. Young archaeologist Zhang Peng ventured into the tomb with a group of tomb raiders. Inside the tomb, they discovered strange symbols carved on the walls, which seemed to warn them of forbidden areas. Zhang Peng used his knowledge to decipher the symbols, but the following traps led them into danger. After a series of failures, Zhang Peng and the raiders finally found a mysterious artifact. However, when they took it, a powerful gust of wind sent them into an unknown space. In the end, Zhang Peng realized that this artifact was not wealth but a seal, one that contained an ancient curse, unveiling a larger conspiracy.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Zhang Peng and his group venture into a mysterious tomb in search of a treasure that could change history.",
+            "They discover strange symbols warning of forbidden areas, which Zhang deciphers.",
+            "After encountering numerous traps, they find an artifact, but a powerful wind sends them to an unknown space.",
+            "Zhang Peng realizes that the artifact is not wealth but a seal containing an ancient curse.",
+            "This discovery unveils a larger conspiracy tied to the tomb."
+        ]
+    },
+    {
+        "prompt_en": "An ancient tomb, long abandoned, became a target for tomb raiders. The tomb was known as the Yin Tomb and was considered a legend. Li Yang, a member of the raiding team, led the group into the tomb, disregarding the dangers. Inside, they found an ancient wooden box, possibly containing treasure. When they opened the box, the tomb’s lights suddenly went out, plunging them into darkness. After a series of trials, they discovered that the treasure was not gold or jewels but relics of ancient gods, capable of controlling life and death. Li Yang ultimately decided to forgo the treasure and led his team to retreat. However, their actions triggered the wrath of the gods, and they were cursed, never to leave the tomb.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Li Yang leads a raiding team into the ancient Yin Tomb, known for its legend and hidden treasure.",
+            "They find an ancient wooden box, which, when opened, plunges the tomb into darkness.",
+            "The team faces trials and discovers the treasure contains relics of ancient gods, capable of controlling life and death.",
+            "Li Yang decides to forgo the treasure and leads the team to retreat.",
+            "Their actions trigger the wrath of the gods, cursing them to never leave the tomb."
+        ]
+    },
+    {
+        "prompt_en": "In an ancient tomb deep in the mountains, the tomb raiders discovered a massive dragon bone structure. Legend had it that the skeleton belonged to an ancient dragon god. Captain Old Li led his team into the tomb, seeking to uncover the secret of the dragon bones. When they attempted to remove a part of the bones, a strange sound suddenly echoed, and the tomb’s traps began to activate. The passage grew more complex, with each step forward bringing deadly new dangers. Eventually, Old Li discovered that the dragon bones were not mere remains, but a seal, once used to imprison an evil force. To avoid releasing this dangerous power, they decided to leave, but it was already too late.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Tomb raiders discover a massive dragon bone structure, believed to belong to an ancient dragon god.",
+            "Captain Old Li leads his team to uncover the secret of the dragon bones.",
+            "Attempting to remove a bone activates tomb traps, creating deadly dangers.",
+            "Old Li discovers the dragon bones were a seal imprisoning an evil force.",
+            "They decide to leave, but it's too late — the evil force is released."
+        ]
+    },
+    {
+        "prompt_en": "Inside the tomb, the tomb raiders found a stone tablet adorned with blood-red totems. According to legend, this tablet would lead to an endless treasure. Captain Wang Kai believed it was just a myth and chose to continue exploring. Upon breaking the tablet open, the tomb was bathed in a blood-red glow, and the air grew heavy and suffocating. One by one, the team members began to experience strange phenomena — losing consciousness and seeing hallucinations. After persistent exploration, they realized that the totem was the core of ancient sorcery, and the tomb was a sacrificial site, intended to seal evil spirits. When they decided to return the tablet, a monster appeared, trying to trap them in the tomb forever.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "The raiders find a stone tablet with blood-red totems, believed to lead to endless treasure.",
+            "Captain Wang Kai dismisses it as a myth, but they continue to explore.",
+            "Breaking the tablet activates a blood-red glow and strange phenomena occur.",
+            "The team realizes the totem is part of ancient sorcery and the tomb is a sacrificial site.",
+            "As they attempt to return the tablet, a monster traps them in the tomb."
+        ]
+    },
+    {
+        "prompt_en": "In the deepest recesses of a forgotten tomb, there was said to be a path leading to the realm of the dead. Tomb raider Huang Fei and his team entered the tomb, hoping to find treasure. Upon entering the passage, they found strange symbols and traps all around them, making retreat impossible. After they solved one of the tomb’s mechanisms, they unexpectedly entered a vast underground lake, where countless bones floated. Huang Fei realized that this path didn’t lead to riches but to the world of the dead. As they decided to leave, they were pursued by the spirits of the dead, and their fate became an unavoidable tragedy.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Tomb raider Huang Fei and his team enter a forgotten tomb in search of treasure.",
+            "They find strange symbols and traps, making retreat impossible.",
+            "Solving a tomb mechanism leads them to an underground lake filled with bones.",
+            "Huang Fei realizes the path leads to the realm of the dead, not treasure.",
+            "As they try to leave, they are pursued by spirits, leading to their tragic fate."
+        ]
+    },
+    {
+        "prompt_en": "A tomb raiding team entered an ancient tomb sealed by mysterious magic, hoping to uncover the inheritance of the underworld king. Once inside, the team discovered a tombstone with an inscription warning that anyone attempting to steal the king’s legacy would face dire consequences. The team ignored the warning and continued deeper into the tomb. As they unraveled the tomb’s mechanisms, the interior began to reveal scenes from the underworld, and the souls of the deceased began to rise. Captain Chen Yong realized that the underworld king’s inheritance was not just wealth but the right to rule the underworld. To avoid even greater disaster, they decided to leave, but the spirits would not let them go.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "A tomb raiding team enters an ancient tomb sealed by magic, seeking the underworld king’s inheritance.",
+            "They discover a tombstone warning against stealing the king's legacy but ignore it.",
+            "As they explore, they uncover underworld scenes and the souls of the deceased rise.",
+            "Captain Chen Yong realizes the inheritance is the right to rule the underworld.",
+            "The spirits prevent them from leaving, leading to their inevitable fate."
+        ]
+    },
+    {
+        "prompt_en": "In an ancient tomb, the raiders found a jade box, said to be a relic of an ancient emperor. As they opened the box, a strange black mist enveloped the entire chamber, sending a chill through the air. Inside the box, there was no treasure, only a jade stone inscribed with mystical symbols. Just as they were about to take the jade stone, a violent storm hit, shaking the tomb and causing eerie sounds to come from the shadows. The raiders realized that the stone contained evil power, meant to seal an ancient malevolent spirit. They decided to return the stone, but it was too late — the evil spirit had already awakened and dragged them into an endless darkness.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Raiders find a jade box, believed to be a relic of an ancient emperor.",
+            "Opening the box releases a black mist and reveals a jade stone inscribed with mystical symbols.",
+            "A violent storm hits the tomb, causing eerie sounds and unsettling phenomena.",
+            "The raiders realize the jade stone contains evil power meant to seal a malevolent spirit.",
+            "They decide to return the stone, but the spirit is already awakened, dragging them into darkness."
+        ]
+    },
+    {
+        "prompt_en": "In a hidden tomb, the raiders discovered a shiny copper mirror. Legend claimed this mirror could reveal the future. Raider Xiao Wang was drawn to the mirror and tried to use it to glimpse the location of treasure. However, when he gazed into it, he saw a premonition of his own death. The other raiders were also affected, each seeing different, twisted visions of the future. As time passed, the future reflected in the mirror became increasingly distorted, and the raiders began to lose their sanity. Xiao Wang eventually discovered that the copper mirror was originally created to control the dead, and its power was meant to seal evil spirits. In the end, they had no choice but to destroy the mirror, though it came at a great cost.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Raiders discover a shiny copper mirror said to reveal the future.",
+            "Xiao Wang is drawn to the mirror and sees a premonition of his own death.",
+            "The mirror distorts the future, affecting the other raiders with twisted visions.",
+            "As time passes, the raiders lose their sanity due to the mirror’s power.",
+            "Xiao Wang discovers the mirror was meant to control the dead and seal evil spirits.",
+            "They destroy the mirror, but it comes at a great cost."
+        ]
+    },
+    {
+        "prompt_en": "In an ancient tomb, the raiders discovered five statues, each representing one of the five elements. Captain Zhao Fei carefully studied the statues and believed they would lead them to the treasure. One by one, they unlocked the mechanisms of the statues, moving deeper into the tomb’s core. However, as the statues were activated, a tremendous force began to press against their bodies, making the air unbearably heavy. Zhao Fei soon realized that the statues were not merely guides; they were the source of the five elements’ power. If one statue became unbalanced, it could bring about a catastrophe. In the end, Zhao Fei decided to destroy the statues to prevent further damage, but the power within them consumed him.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Raiders discover five statues, each representing one of the five elements.",
+            "Captain Zhao Fei believes the statues will lead them to treasure.",
+            "As the statues are activated, a tremendous force begins to press against their bodies.",
+            "Zhao Fei realizes the statues are the source of the elements’ power and must remain balanced.",
+            "Zhao Fei decides to destroy the statues to prevent catastrophe, but is consumed by their power."
+        ]
+    },
+    {
+        "prompt_en": "The raiders entered an ancient royal tomb, where they found a peculiar coffin containing a perfectly preserved corpse. The walls of the tomb were inscribed with a prophecy about a thousand-year curse. The team dismissed it as just a legend, but when they opened the coffin, a foul stench filled the air. The corpse began to reanimate, transforming into an invisible evil spirit, which began attacking the team. As the corpse revived, the tomb’s traps and mechanisms were triggered, causing the entire chamber to collapse. In the end, the raiders managed to fend off the evil spirit, but they were trapped in the tomb forever, becoming the new souls of the tomb.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Raiders enter an ancient royal tomb and discover a peculiar coffin with a preserved corpse.",
+            "The tomb walls bear a prophecy about a thousand-year curse, which the team dismisses.",
+            "Opening the coffin releases a foul stench, and the corpse reanimates into an evil spirit.",
+            "The tomb’s traps and mechanisms are triggered, causing the chamber to collapse.",
+            "The raiders fend off the spirit but are trapped in the tomb, becoming its new souls."
+        ]
+    },
+    {
+        "prompt_en": "After a global zombie virus outbreak, the surviving humans lived in a wasteland. Young survivor Li Hao and his team were tasked with crossing a zombie-infested city to find a biological research lab that could provide safety. Along the way, they faced zombie hordes and a food shortage, but they discovered that some zombies had developed higher intelligence. Eventually, Li Hao uncovered that the virus was the result of a failed military experiment that had not entirely failed.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Surviving humans live in a wasteland after a global zombie virus outbreak.",
+            "Li Hao and his team are tasked with crossing a zombie-infested city to reach a safe lab.",
+            "They encounter zombie hordes and food shortages along the way.",
+            "They discover that some zombies have developed higher intelligence.",
+            "Li Hao uncovers that the virus was the result of a failed military experiment that still had consequences."
+        ]
+    },
+    {
+        "prompt_en": "A young girl named Emily lived in a small village surrounded by a dense forest. Near the village was a mysterious silver lake, its waters shimmering with a mystical glow. One day, while playing by the lake, Emily discovered a sleeping sea monster. She carefully approached it and found a shiny blue gemstone hidden within its scales. Emily decided to use the gemstone to awaken the sea monster, who revealed that it was once a cursed prince. He told Emily that only by finding three lost royal relics could the curse be broken. With courage, Emily embarked on an adventure to find the relics. After many trials, she found the relics and broke the curse. The sea monster regained his human form, and Emily returned to the village, where they became lifelong friends.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Emily discovers a sleeping sea monster by a shimmering silver lake.",
+            "She finds a shiny blue gemstone hidden in the monster’s scales and awakens it.",
+            "The sea monster reveals it is a cursed prince and gives Emily a quest to find three royal relics.",
+            "Emily embarks on an adventure to find the relics and breaks the curse.",
+            "The sea monster regains his human form, and they become lifelong friends."
+        ]
+    },
+    {
+        "prompt_en": "In a kingdom surrounded by towering mountains stood the legendary Sky Tower, said to reach the heavens. According to legend, within the tower lay a mysterious stone that could grant any wish. A young adventurer named Kyle heard of the tale and set off to find the stone. At the bottom of the tower, Kyle met a wise sage who told him that only by passing five trials could he reach the top and obtain the stone. After overcoming numerous obstacles, Kyle reached the top, only to discover that the stone wasn’t the true source of power — sincerity and courage were. Kyle understood this lesson and left the stone behind, returning home as a symbol of wisdom and bravery.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Kyle sets off to find the legendary Sky Tower, where a stone can grant any wish.",
+            "At the base of the tower, Kyle meets a wise sage who tells him he must pass five trials.",
+            "Kyle overcomes the trials and reaches the top of the tower.",
+            "He discovers that the stone isn’t the true source of power, but sincerity and courage are.",
+            "Kyle leaves the stone behind and returns home, wiser and braver."
+        ]
+    },
+    {
+        "prompt_en": "In a forgotten, ancient village, all the clocks had stopped, and time seemed to stand still. The villagers were trapped in a perpetual state of idleness. A young clockmaker named Daniel decided to find the cause and repair the clock tower. He discovered that the heart of the tower’s clock had been stolen by a giant mechanical bird, which hid in an underground palace. Daniel ventured deep into the palace, fighting monsters and avoiding traps, and eventually found the bird and repaired it. By fixing the bird’s mechanism, he restored the flow of time in the village. However, Daniel realized that every time he restored time, a certain memory of the village would be lost. In the end, Daniel chose to sacrifice his own memories to restart time, giving the villagers a new beginning.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Daniel, a young clockmaker, seeks to fix the clock tower in an ancient village where time has stopped.",
+            "He discovers that a giant mechanical bird has stolen the heart of the clock.",
+            "Daniel ventures into an underground palace, battling monsters and avoiding traps.",
+            "He repairs the bird and restores the flow of time to the village.",
+            "Daniel sacrifices his own memories to restart time and give the villagers a new beginning."
+        ]
+    },
+    {
+        "prompt_en": "In a kingdom covered by eternal snow, there lived a legendary Snow Queen, whose palace hid countless treasures. A young girl named Nora, searching for her missing father, decided to venture into the Snow Queen’s palace. In the frozen wilderness, Nora encountered the Queen’s embodiment — a giant ice wolf. Through a battle of wits and courage, Nora entered the palace, only to discover that her father was imprisoned by the Queen. With her father’s help, Nora defeated the Snow Queen’s magic, freed her father, and returned home with the treasures left by the Queen, bringing prosperity to her kingdom.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Nora searches for her missing father in a kingdom of eternal snow.",
+            "She encounters a giant ice wolf, an embodiment of the Snow Queen.",
+            "Nora uses wit and courage to enter the palace and find her father imprisoned by the Queen.",
+            "With her father’s help, Nora defeats the Queen’s magic and frees him.",
+            "They return home with treasures, bringing prosperity to the kingdom."
+        ]
+    },
+    {
+        "prompt_en": "A young prince named Alvin became lost in the forest and accidentally discovered a shiny green gemstone. The gemstone radiated powerful natural energy, capable of communicating with all the creatures of the forest. The forest elves told Alvin that the gemstone had been cursed by the Guardian of the Forest, and only by finding five ancient plants could the curse be lifted. Alvin journeyed through the forest, facing wild beasts and harsh weather, and eventually found the plants needed to break the curse. After lifting the curse, Alvin returned to his kingdom, restoring harmony between humans and nature.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Prince Alvin finds a shiny green gemstone in the forest that can communicate with creatures.",
+            "The forest elves reveal that the gemstone is cursed by the Guardian of the Forest.",
+            "Alvin embarks on a journey to find five ancient plants to lift the curse.",
+            "He faces wild beasts and harsh weather but successfully finds the plants.",
+            "Alvin lifts the curse and returns to his kingdom, restoring harmony between humans and nature."
+        ]
+    },
+    {
+        "prompt_en": "In a distant mountain range, there was said to be a legendary red dragon. Whenever it hatched a golden egg, the world’s wealth and fortune would explode. A young adventurer named Leon heard of the legend and decided to find the dragon. Along the way, he faced numerous dangers, but with determination, he eventually found the dragon’s lair and successfully stole the golden egg. However, upon returning to his kingdom with the egg, Leon realized that the kingdom had fallen into chaos because of his actions. Ultimately, Leon decided to return the egg and used his wisdom to restore peace to the kingdom.",
+        "dimension": "Complex_Plot",
+        "auxiliary_info": [
+            "Leon hears of the legendary red dragon whose golden egg brings immense wealth and fortune.",
+            "He sets off on an adventure to find the dragon and steals the golden egg.",
+            "Upon returning to his kingdom, Leon discovers chaos has ensued because of the egg.",
+            "He returns the egg and uses his wisdom to restore peace to the kingdom."
+        ]
+    }
+]

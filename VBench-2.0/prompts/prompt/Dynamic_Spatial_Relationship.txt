@@ -1,0 +1,69 @@
+A dog is on the left of a table, then the dog runs to the front of the table.  
+A dog is on the left of a sofa, then the dog runs to the front of the sofa.  
+A dog is on the right of a table, then the dog runs to the left of the table.  
+A dog is on the right of a sofa, then the dog runs to the front of the sofa.
+A dog is on the right of a rock, then the dog runs to the left of the rock.  
+A dog is behind a chair, then the dog runs to the right of the chair.  
+A cat is on the left of a chair, then the cat runs to the front of the chair.  
+A cat is on the right of a box, then the cat runs to the left of the box.  
+A cat is in front of a table, then the cat jumps to the bottom of the table.  
+A cat is on the right of a rock, then the cat runs to the left of the rock.  
+A cat is on the table, then the cat runs to the bottom of the table.
+A cat is on the table, then the cat runs to the left of the table.
+A cat is on the table, then the cat runs to the front of the table.
+A cat is on the table, then the cat runs to the back of the table.
+A cat is under the table, then the cat runs onto the table.
+A cat is under the table, then the cat runs to the left of the table.
+A cat is under the table, then the cat runs to the right of the table.
+A cat is under the table, then the cat runs to the front of the table.
+A cat is under the table, then the cat runs to the back of the table.
+A rabbit is in front of a table, then the rabbit jumps to the left of the table. 
+A rabbit is on the left of a table, then the rabbit jumps to the front of the table.  
+A rabbit is in front of a flowerpot, then the rabbit jumps to the right of the flowerpot.  
+A squirrel is on the right of a branch, then the squirrel jumps to the bottom of the branch.  
+A squirrel is behind a rock, then the squirrel jumps to the left of the rock.  
+A squirrel is on the left of a hut, then the squirrel jumps to the right of the hut.  
+A squirrel is on the left of a rock, then the squirrel jumps to the top of the rock.  
+A fox is in front of a shoe, then the fox runs to the left of the shoe.
+A fox is in front of a shoe, then the fox runs to the right of the shoe.
+A fox is in front of a shoe, then the fox runs to the behind of the shoe.
+A fox is on the right of a shoe, then the fox runs to the left of the shoe.
+A fox is on the right of a shoe, then the fox runs to the front of the shoe.
+A fox is on the right of a shoe, then the fox runs to the behind of the shoe.
+A kangaroo is on the left of a small box, then the kangaroo jumps to the right of the box.  
+A kangaroo is in front of a basket, then the kangaroo jumps to the right of the basket.  
+A kangaroo is on the left of a board, then the kangaroo jumps behind the board.  
+A kangaroo is behind a rock, then the kangaroo jumps to the left of the rock.  
+A bird is behind a apple, then the bird flies to the right of the apple.  
+A bird is behind a apple, then the bird flies to the left of the apple. 
+A bird is behind a apple, then the bird flies to the front of the apple. 
+A bird is on the left of a apple, then the bird flies to the front of the apple. 
+A bird is on the right of a apple, then the bird flies to the front of the apple. 
+A bird is on the left of a lightbulb, then the bird flies behind the lightbulb.  
+A bird is in front of a table, then the bird flies to the right of the table.  
+A bird is on the right of a lightbulb, then the bird flies behind the lightbulb.  
+A bird is above a tree, then the bird flies to the left of the tree.
+A bird is above a tree, then the bird flies to the right of the tree.
+A bird is above a tree, then the bird flies to the front of the tree.
+A bird is above a tree, then the bird flies to the back of the tree.
+A bird is on the left a tree, then the bird flies to the above of the tree.
+A bird is on the right a tree, then the bird flies to the above of the tree.
+A bird is in the front a tree, then the bird flies to the above of the tree.
+A bird is behind a tree, then the bird flies to the above of the tree.
+A monkey is behind a apple, then the monkey jumps to the right of the apple.  
+A monkey is behind a apple, then the monkey jumps to the left of the apple.  
+A monkey is behind a apple, then the monkey jumps to the front of the apple.  
+A monkey is on the left of a apple, then the monkey jumps to the behind of the apple.  
+A monkey is on the left of a apple, then the monkey jumps to the front of the apple.  
+A monkey is on the right of a apple, then the monkey jumps to the left of the apple.  
+A monkey is on the right of a apple, then the monkey jumps to the behind of the apple.  
+A monkey is on the right of a apple, then the monkey jumps to the front of the apple.  
+A monkey is in the front of a apple, then the monkey jumps to the right of the apple.  
+A monkey is in the front of a apple, then the monkey jumps to the left of the apple.  
+A monkey is in the front of a apple, then the monkey jumps to the behind of the apple.  
+An elephant is on the left of a car, then the elephant walks to the back of the car.  
+An elephant is on the right of a car, then the elephant walks to the back of the car.
+An elephant is in front of a car, then the elephant walks to back of the car.
+An elephant is on the left of a car, then the elephant walks to the front of the car.  
+An elephant is on the right of a car, then the elephant walks to the front of the car.
+An elephant is in front of a car, then the elephant walks to the back of the car.

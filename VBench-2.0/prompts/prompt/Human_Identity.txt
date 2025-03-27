@@ -1,0 +1,46 @@
+A man is doing yoga.
+A man is running.
+A man is dancing.
+A woman is dancing.
+A man is playing basketball.
+A woman is playing basketball.
+A man is cutting objects.
+A man is playing badminton.
+A man is playing ping-pong.
+A woman is playing ping-pong.
+A woman is doing gymnastics.
+A woman is doing exercises.
+A woman is jumping.
+A person is drinking a glass of water, then they suddenly start cleaning the windows.
+A person is reading a book, then they suddenly start folding laundry.
+A person is checking their phone, then they suddenly start watering the plants.
+A person is eating a sandwich, then they suddenly start organizing the bookshelf.
+A person is sitting in a chair, then they suddenly get up and start stretching.
+A person is cleaning the kitchen, then they suddenly start mopping the floor.
+A person is writing an email, then they suddenly get up and start baking cookies.
+A person is exercising, then they suddenly start making lunch.
+A person is organizing their closet, then they suddenly start tidying the garage.
+A person is sitting at the table, then they suddenly start drawing on a notepad.
+A person is drinking tea, then they suddenly start folding the laundry.
+A person is watching a movie, then they suddenly get up and start sweeping the porch.
+A person is eating lunch, then they suddenly start cleaning the car.
+A person is sitting at a desk, then they suddenly get up and start doing push-ups.
+A person is playing a game on their phone, then they suddenly start cleaning the bathroom.
+A person is brushing their teeth, then they suddenly start making breakfast.
+A person is drinking coffee, then they suddenly get up and start sweeping the garage.
+A person is texting, then they suddenly get up and start vacuuming the floor.
+A person is reading the news, then they suddenly start watering the plants.
+A person is sitting in a chair, then they suddenly stand up and start stretching.
+A person is washing the dishes, then they suddenly start sweeping the floor.
+A person is checking their email, then they suddenly start making a phone call.
+A person is drinking water, then they suddenly start organizing their desk.
+A person is working on a project, then they suddenly start cooking dinner.
+A person is folding clothes, then they suddenly get up and start reading a book.
+A person is sitting on a chair, then they suddenly start cleaning the desk.
+A person is drinking tea, then they suddenly start making a phone call.
+A person is watching a video, then they suddenly get up and start sweeping the yard.
+A person is doing yoga, then they suddenly get up and start making dinner.
+A person is organizing their desk, then they suddenly start doing the dishes.
+A person is getting ready for work, then they suddenly start cleaning the kitchen.
+A person is drinking a smoothie, then they suddenly start folding clothes.
+A person is reading a magazine, then they suddenly get up and start organizing the closet.

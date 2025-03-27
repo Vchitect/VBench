@@ -1,0 +1,57 @@
+An orange dog is running.
+Two orange dogs are running.
+A brown dog is on the left of an apple, then the dog moves to the right of the apple.
+An orange cat is running.
+An orange cat and a white cat are running.
+An orange cat and a white cat are fighting.
+An orange cat is on the left of an apple, then the cat moves to the right of the apple.
+A beige tiger is running.
+Two sandy kangaroos are jumping.
+Two sandy kangaroos are fighting.
+A giraffe is walking.
+Two giraffes are walking.
+A brown bear is running.
+Two brown bears are running.
+A orange fox is running.
+A white sheep is walking.
+Two white sheep are walking.
+Two white sheep are eating grass.
+Two blue birds flies through the sky, coming close to each other and forming a complex formation.
+A ball rolls off the table.
+A blue ball rolls off the table.
+A red ball bouncing down stairs
+A red ball and a blue ball bouncing down stairs
+A red ball falls from a height, hits the ground, and bounces back up.
+A red ball and a blue ball fall from a height, hits the ground, and bounces back up.
+Aerial view, aerial view. Aerial view, aerial view. One blue balls and one red balls are on the wooden table and collide horizontally, bird's-eye view.
+Two basketballs spin rapidly on the floor.
+Two footballs spin rapidly on the floor.
+A red car is moving along the road.
+A car speeds along a winding mountain road, with trees rapidly passing by.
+A man and a woman is doing yoga.
+Two people are doing yoga.
+A person is running.
+Two people are running.
+A man is playing basketball.
+Two men are playing basketball.
+Two red balloons are floating in the air.
+A top is spinning.
+A red top and a blue top are spinning.
+Two red tops are spinning.
+A drone is floating in the air.
+A black drone is floating in the air.
+Two black drones are floating in the air.
+A black drone and a blue drone are floating in the air.
+A droplet of water is falling.
+A panda changes from small to big.
+A panda changes from big to small.
+An orange dog changes from small to big.
+An orange dog changes from big to small.
+An orange cat changes from big to small.
+A fish changes from small to big.
+A fish changes from big to small.
+A beige lion changes from big to small.
+A beige tiger changes from small to big.
+An orange cat is in front of a tree, then the cat moves to the left of the tree.
+A beige tiger is in front of a tree, then the tiger moves to the left of the tree.
+A white sheep is in front of a tree, then the sheep moves to the left of the tree.

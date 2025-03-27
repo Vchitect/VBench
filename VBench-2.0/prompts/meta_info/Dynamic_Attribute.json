@@ -1,0 +1,749 @@
+[
+    {
+        "prompt_en": "The leaves gradually change from red to green.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of leaves mostly red? (yes or no)",
+            "Finally, is the color of leaves mostly green? (yes or no)",
+            "Does the color of leaves change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A river changes from blue to brown.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the river mostly blue? (yes or no)",
+            "Finally, is the color of the river mostly brown? (yes or no)",
+            "Does the color of the river change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A river changes from brown to blue.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the river mostly brown? (yes or no)",
+            "Finally, is the color of the river mostly blue? (yes or no)",
+            "Does the color of the river change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A car changes from white to red.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the car mostly white? (yes or no)",
+            "Finally, is the color of the car mostly red? (yes or no)",
+            "Does the color of the car change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A car changes from red to white.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the car mostly red? (yes or no)",
+            "Finally, is the color of the car mostly white? (yes or no)",
+            "Does the color of the car change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A car changes from white to golden.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the car mostly white? (yes or no)",
+            "Finally, is the color of the car mostly golden? (yes or no)",
+            "Does the color of the car change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A car changes from golden to white.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the car mostly golden? (yes or no)",
+            "Finally, is the color of the car mostly white? (yes or no)",
+            "Does the color of the car change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A car changes from black to white.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the car mostly black? (yes or no)",
+            "Finally, is the color of the car mostly white? (yes or no)",
+            "Does the color of the car change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A pair of shoes changes from red to yellow.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the shoes mostly red? (yes or no)",
+            "Finally, is the color of the shoes mostly yellow? (yes or no)",
+            "Does the color of the shoes change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A pair of shoes changes from yellow to red.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the shoes mostly yellow? (yes or no)",
+            "Finally, is the color of the shoes mostly red? (yes or no)",
+            "Does the color of the shoes change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A flower changes from purple to orange.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the flower mostly purple? (yes or no)",
+            "Finally, is the color of the flower mostly orange? (yes or no)",
+            "Does the color of the flower change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A flower changes from orange to purple.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the flower mostly orange? (yes or no)",
+            "Finally, is the color of the flower mostly purple? (yes or no)",
+            "Does the color of the flower change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A butterfly's wings change from yellow to white.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the butterfly's wings mostly yellow? (yes or no)",
+            "Finally, is the color of the butterfly's wings mostly white? (yes or no)",
+            "Does the color of the butterfly's wings change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A butterfly's wings change from white to yellow.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the butterfly's wings mostly white? (yes or no)",
+            "Finally, is the color of the butterfly's wings mostly yellow? (yes or no)",
+            "Does the color of the butterfly's wings change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A wall changes from grey to yellow.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the wall mostly grey? (yes or no)",
+            "Finally, is the color of the wall mostly yellow? (yes or no)",
+            "Does the color of the wall change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A wall changes from yellow to grey.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the wall mostly yellow? (yes or no)",
+            "Finally, is the color of the wall mostly grey? (yes or no)",
+            "Does the color of the wall change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A wall changes from black to white.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the wall mostly black? (yes or no)",
+            "Finally, is the color of the wall mostly white? (yes or no)",
+            "Does the color of the wall change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A wall changes from white to black.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the wall mostly white? (yes or no)",
+            "Finally, is the color of the wall mostly black? (yes or no)",
+            "Does the color of the wall change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A seashell changes from beige to pink.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the seashell mostly beige? (yes or no)",
+            "Finally, is the color of the seashell mostly pink? (yes or no)",
+            "Does the color of the seashell change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A fish changes from silver to blue.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the fish mostly silver? (yes or no)",
+            "Finally, is the color of the fish mostly blue? (yes or no)",
+            "Does the color of the fish change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A fish changes from blue to silver.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the fish mostly blue? (yes or no)",
+            "Finally, is the color of the fish mostly silver? (yes or no)",
+            "Does the color of the fish change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A piece of fabric changes from blue to pink.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the fabric mostly blue? (yes or no)",
+            "Finally, is the color of the fabric mostly pink? (yes or no)",
+            "Does the color of the fabric change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A piece of fabric changes from pink to blue.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the fabric mostly pink? (yes or no)",
+            "Finally, is the color of the fabric mostly blue? (yes or no)",
+            "Does the color of the fabric change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The moon changes from yellow to silver.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the moon mostly yellow? (yes or no)",
+            "Finally, is the color of the moon mostly silver? (yes or no)",
+            "Does the color of the moon change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The moon changes from silver to yellow.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the moon mostly silver? (yes or no)",
+            "Finally, is the color of the moon mostly yellow? (yes or no)",
+            "Does the color of the moon change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A rock changes from red to grey.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the rock mostly red? (yes or no)",
+            "Finally, is the color of the rock mostly grey? (yes or no)",
+            "Does the color of the rock change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A cloud changes from white to grey.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the cloud mostly white? (yes or no)",
+            "Finally, is the color of the cloud mostly grey? (yes or no)",
+            "Does the color of the cloud change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A cloud changes from white to black.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the cloud mostly white? (yes or no)",
+            "Finally, is the color of the cloud mostly black? (yes or no)",
+            "Does the color of the cloud change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A cloud changes from black to grey.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the cloud mostly black? (yes or no)",
+            "Finally, is the color of the cloud mostly grey? (yes or no)",
+            "Does the color of the cloud change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A cloud changes from black to white.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the cloud mostly black? (yes or no)",
+            "Finally, is the color of the cloud mostly white? (yes or no)",
+            "Does the color of the cloud change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person's hair changes from black to blonde.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the color of the person's hair mostly black? (yes or no)",
+            "Finally, is the color of the person's hair mostly blonde? (yes or no)",
+            "Does the color of the person's hair change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The sky changes from deep black to white as dawn breaks.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the scene change from dark to bright? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The sky changes from bright to dark.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the scene change from bright to dark? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A lamp changes from dim to bright.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the light from the lamp increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A torch changes from dim to bright.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the light from the torch increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A screen changes from dark to bright.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the brightness of the screen increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A streetlight changes from off to on.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the streetlight turn on? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A star changes from faint to bright.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the brightness of the star increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A room changes from dark to bright as sunlight enters.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the room become brighter? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A room changes from bright to dark.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the room become darker? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A gemstone changes from dull to bright.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the brightness of the gemstone increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A candle changes from flickering dimly to steady bright.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the brightness of the candle increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A computer screen changes from off to bright.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the screen turn on and become bright? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A panda changes from small to big.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the panda increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A panda changes from big to small.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the panda decrease? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A dog changes from small to big.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the dog increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A dog changes from big to small.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the dog decrease? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A cat changes from small to big.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the cat increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A cat changes from big to small.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the cat decrease? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A fish changes from small to big.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the fish increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A fish changes from big to small.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the fish decrease? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A lion changes from small to big.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the lion increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A lion changes from big to small.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the lion decrease? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A tiger changes from small to big.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the tiger increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A tiger changes from big to small.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the tiger decrease? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A balloon changes from small to large.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the balloon increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A balloon changes from large to small.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the balloon decrease? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A mountain erodes and changes from large to small.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the mountain decrease due to erosion? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A snowman changes from large to small.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the snowman decrease? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A tree stump changes from small to large as it decays.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the tree stump increase as it decays? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A sandcastle changes from small to large.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the sandcastle increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A sponge changes from small to large as it absorbs water.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the sponge increase as it absorbs water? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A cloud changes from small to large as it gathers moisture.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the cloud increase as it gathers moisture? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A cloud changes from large to small as it gathers moisture.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the cloud decrease as it gathers moisture? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A sculpture changes from large to small as it’s carved.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the sculpture decrease as it’s carved? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A puddle changes from small to large as rain continues to fall.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the puddle increase as rain continues to fall? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "An ant gradually grow big.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Does the size of the ant increase? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The wooden wheel turned into a metal wheel.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the material of the wheel wooden? (yes or no)",
+            "Finally, is the material of the wheel metal? (yes or no)",
+            "Does the material of the wheel change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The plastic toy transformed into a glass toy.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the material of the toy plastic? (yes or no)",
+            "Finally, is the material of the toy glass? (yes or no)",
+            "Does the material of the toy change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The wooden floor turned into a metal floor.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the material of the floor wooden? (yes or no)",
+            "Finally, is the material of the floor metal? (yes or no)",
+            "Does the material of the floor change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The glass car window changed into a wooden car window.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the material of the car window glass? (yes or no)",
+            "Finally, is the material of the car window wooden? (yes or no)",
+            "Does the material of the car window change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The plastic water cup turned into a metal water cup.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the material of the water cup plastic? (yes or no)",
+            "Finally, is the material of the water cup metal? (yes or no)",
+            "Does the material of the water cup change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The wooden door handle transformed into a plastic door handle.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the material of the door handle wooden? (yes or no)",
+            "Finally, is the material of the door handle plastic? (yes or no)",
+            "Does the material of the door handle change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The glass window turned into a metal window.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the material of the window glass? (yes or no)",
+            "Finally, is the material of the window metal? (yes or no)",
+            "Does the material of the window change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The plastic seat turned into a wooden seat.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the material of the seat plastic? (yes or no)",
+            "Finally, is the material of the seat wooden? (yes or no)",
+            "Does the material of the seat change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The wooden car body turned into a metal car body.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the material of the car body wooden? (yes or no)",
+            "Finally, is the material of the car body metal? (yes or no)",
+            "Does the material of the car body change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The glass bottle turned into a wooden bottle.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the material of the bottle glass? (yes or no)",
+            "Finally, is the material of the bottle wooden? (yes or no)",
+            "Does the material of the bottle change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The plastic utensils turned into glass utensils.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, are the utensils made of plastic? (yes or no)",
+            "Finally, are the utensils made of glass? (yes or no)",
+            "Does the material of the utensils change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The wooden frame transformed into a metal frame.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the frame made of wood? (yes or no)",
+            "Finally, is the frame made of metal? (yes or no)",
+            "Does the material of the frame change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The plastic boat hull turned into a wooden boat hull.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the boat hull made of plastic? (yes or no)",
+            "Finally, is the boat hull made of wood? (yes or no)",
+            "Does the material of the boat hull change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The glass tabletop changed into a wooden tabletop.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the tabletop made of glass? (yes or no)",
+            "Finally, is the tabletop made of wood? (yes or no)",
+            "Does the material of the tabletop change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The wooden furniture turned into plastic furniture.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the furniture made of wood? (yes or no)",
+            "Finally, is the furniture made of plastic? (yes or no)",
+            "Does the material of the furniture change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The glass car light turned into a plastic car light.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the car light made of glass? (yes or no)",
+            "Finally, is the car light made of plastic? (yes or no)",
+            "Does the material of the car light change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The wooden staircase turned into a metal staircase.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the staircase made of wood? (yes or no)",
+            "Finally, is the staircase made of metal? (yes or no)",
+            "Does the material of the staircase change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The plastic bottle cap turned into a glass bottle cap.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the bottle cap made of plastic? (yes or no)",
+            "Finally, is the bottle cap made of glass? (yes or no)",
+            "Does the material of the bottle cap change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The wooden stair railing transformed into a plastic railing.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the stair railing made of wood? (yes or no)",
+            "Finally, is the stair railing made of plastic? (yes or no)",
+            "Does the material of the stair railing change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The glass door turned into a metal door.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the door made of glass? (yes or no)",
+            "Finally, is the door made of metal? (yes or no)",
+            "Does the material of the door change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The plastic door transformed into a wooden door.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the door made of plastic? (yes or no)",
+            "Finally, is the door made of wood? (yes or no)",
+            "Does the material of the door change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The wooden toy turned into a glass toy.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the toy made of wood? (yes or no)",
+            "Finally, is the toy made of glass? (yes or no)",
+            "Does the material of the toy change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The plastic car shell changed into a metal car shell.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the car shell made of plastic? (yes or no)",
+            "Finally, is the car shell made of metal? (yes or no)",
+            "Does the material of the car shell change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "The glass mirror transformed into a wooden mirror.",
+        "dimension": "Dynamic_Attribute",
+        "auxiliary_info": [
+            "Initially, is the mirror made of glass? (yes or no)",
+            "Finally, is the mirror made of wood? (yes or no)",
+            "Does the material of the mirror change? (yes or no)"
+        ]
+    }
+]

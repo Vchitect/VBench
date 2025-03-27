@@ -1,0 +1,794 @@
+[
+    {
+        "prompt_en": "A person is sitting on the couch, then suddenly they get up and start sweeping the floor.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting",
+            "get up and sweeping"
+        ]
+    },
+    {
+        "prompt_en": "A dog is playing with a ball, then it suddenly starts lying down on the carpet.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "playing with a ball",
+            "lying down"
+        ]
+    },
+    {
+        "prompt_en": "A person is cooking dinner, then they suddenly start organizing the pantry.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "cooking",
+            "organizing the pantry"
+        ]
+    },
+    {
+        "prompt_en": "A cat is watching birds through the window, then it suddenly starts grooming itself.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "watching",
+            "grooming itself"
+        ]
+    },
+    {
+        "prompt_en": "A person is typing on a keyboard, then they suddenly get up and start making the bed.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "typing on a keyboard",
+            "get up and make the bed"
+        ]
+    },
+    {
+        "prompt_en": "A horse is trotting in the field, then it suddenly starts drinking from a stream.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "trotting in the field",
+            "drinking from a stream"
+        ]
+    },
+    {
+        "prompt_en": "A person is drinking a glass of water, then they suddenly start cleaning the windows.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "drinking a glass of water",
+            "cleaning the windows"
+        ]
+    },
+    {
+        "prompt_en": "A dog is sitting in the yard, then it suddenly starts running in circles.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting in the yard",
+            "running in circles"
+        ]
+    },
+    {
+        "prompt_en": "A person is reading a book, then they suddenly start folding laundry.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "reading a book",
+            "folding laundry"
+        ]
+    },
+    {
+        "prompt_en": "A cat is lying in the sun, then it suddenly starts chasing its tail.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "lying in the sun",
+            "chasing its tail"
+        ]
+    },
+    {
+        "prompt_en": "A person is watching TV, then they suddenly get up and start washing dishes.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "watching TV",
+            "get up and wash dishes"
+        ]
+    },
+    {
+        "prompt_en": "A bird is perched on a branch, then it suddenly flies down to the ground.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "perched on a branch",
+            "flying down to the ground"
+        ]
+    },
+    {
+        "prompt_en": "A person is checking their phone, then they suddenly start watering the plants.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "checking their phone",
+            "watering the plants"
+        ]
+    },
+    {
+        "prompt_en": "A horse is grazing in the field, then it suddenly starts running across the meadow.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "grazing in the field",
+            "running across the meadow"
+        ]
+    },
+    {
+        "prompt_en": "A person is eating a sandwich, then they suddenly start organizing the bookshelf.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "eating a sandwich",
+            "organizing the bookshelf"
+        ]
+    },
+    {
+        "prompt_en": "A dog is barking at a stranger, then it suddenly starts wagging its tail.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "barking at a stranger",
+            "wagging its tail"
+        ]
+    },
+    {
+        "prompt_en": "A person is sitting in a chair, then they suddenly get up and start stretching.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting in a chair",
+            "get up and stretch"
+        ]
+    },
+    {
+        "prompt_en": "A cat is playing with a toy, then it suddenly jumps onto a shelf.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "playing with a toy",
+            "jumping onto a shelf"
+        ]
+    },
+    {
+        "prompt_en": "A person is preparing a salad, then they suddenly start rearranging the furniture.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "preparing a salad",
+            "rearranging the furniture"
+        ]
+    },
+    {
+        "prompt_en": "A horse is standing still, then it suddenly starts trotting around in a circle.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "standing still",
+            "trotting around in a circle"
+        ]
+    },
+    {
+        "prompt_en": "A person is talking on the phone, then they suddenly start folding paper airplanes.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "talking on the phone",
+            "folding paper airplanes"
+        ]
+    },
+    {
+        "prompt_en": "A dog is playing with a stick, then it suddenly starts digging a hole.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "playing with a stick",
+            "digging a hole"
+        ]
+    },
+    {
+        "prompt_en": "A person is cleaning the kitchen, then they suddenly start mopping the floor.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "cleaning the kitchen",
+            "mopping the floor"
+        ]
+    },
+    {
+        "prompt_en": "A cat is sitting by the door, then it suddenly starts chasing a fly.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting by the door",
+            "chasing a fly"
+        ]
+    },
+    {
+        "prompt_en": "A person is writing an email, then they suddenly get up and start baking cookies.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "writing an email",
+            "get up and bake cookies"
+        ]
+    },
+    {
+        "prompt_en": "A bird is pecking at the ground, then it suddenly flies into the tree.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "pecking",
+            "flying"
+        ]
+    },
+    {
+        "prompt_en": "A person is sitting at a desk, then they suddenly start making coffee.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting",
+            "making coffee"
+        ]
+    },
+    {
+        "prompt_en": "A horse is running in the field, then it suddenly starts walking calmly.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "running",
+            "walking calmly"
+        ]
+    },
+    {
+        "prompt_en": "A dog is sleeping on the couch, then it suddenly gets up and starts wagging its tail.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sleeping",
+            "get up and wag tail"
+        ]
+    },
+    {
+        "prompt_en": "A person is washing their hands, then they suddenly start arranging the pillows on the couch.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "washing hands",
+            "arranging pillows"
+        ]
+    },
+    {
+        "prompt_en": "A person is exercising, then they suddenly start making lunch.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "exercising",
+            "making lunch"
+        ]
+    },
+    {
+        "prompt_en": "A cat is chasing a laser pointer, then it suddenly sits down and starts licking its paws.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "chasing",
+            "sit down and lick paws"
+        ]
+    },
+    {
+        "prompt_en": "A dog is running around the yard, then it suddenly stops and lies down in the shade.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "running",
+            "lying down in the shade"
+        ]
+    },
+    {
+        "prompt_en": "A person is organizing their closet, then they suddenly start tidying the garage.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "organizing closet",
+            "tidying garage"
+        ]
+    },
+    {
+        "prompt_en": "A horse is walking slowly, then it suddenly starts trotting.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "walking slowly",
+            "trotting"
+        ]
+    },
+    {
+        "prompt_en": "A person is sitting at the table, then they suddenly start drawing on a notepad.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting",
+            "drawing on a notepad"
+        ]
+    },
+    {
+        "prompt_en": "A person is drinking tea, then they suddenly start folding the laundry.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "drinking tea",
+            "folding laundry"
+        ]
+    },
+    {
+        "prompt_en": "A cat is hiding under the table, then it suddenly jumps out and starts scratching the furniture.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "hiding",
+            "jumping out and scratching furniture"
+        ]
+    },
+    {
+        "prompt_en": "A person is watching a movie, then they suddenly get up and start sweeping the porch.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "watching movie",
+            "get up and sweep porch"
+        ]
+    },
+    {
+        "prompt_en": "A bird is perched on a fence, then it suddenly flies off to the tree.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "perched",
+            "flying off to the tree"
+        ]
+    },
+    {
+        "prompt_en": "A person is eating lunch, then they suddenly start cleaning the car.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "eating lunch",
+            "cleaning the car"
+        ]
+    },
+    {
+        "prompt_en": "A person is sitting at a desk, then they suddenly get up and start doing push-ups.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting",
+            "get up and do push-ups"
+        ]
+    },
+    {
+        "prompt_en": "A dog is sitting by the door, then it suddenly starts running in circles.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting",
+            "running in circles"
+        ]
+    },
+    {
+        "prompt_en": "A person is playing a game on their phone, then they suddenly start cleaning the bathroom.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "playing game",
+            "cleaning the bathroom"
+        ]
+    },
+    {
+        "prompt_en": "A cat is watching outside, then it suddenly starts stretching.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "watching outside",
+            "stretching"
+        ]
+    },
+    {
+        "prompt_en": "A person is folding towels, then they suddenly start painting a picture.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "folding towels",
+            "painting a picture"
+        ]
+    },
+    {
+        "prompt_en": "A dog is running through the park, then it suddenly starts jumping over logs.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "running through the park",
+            "jumping over logs"
+        ]
+    },
+    {
+        "prompt_en": "A person is brushing their teeth, then they suddenly start making breakfast.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "brushing teeth",
+            "making breakfast"
+        ]
+    },
+    {
+        "prompt_en": "A horse is standing in the stable, then it suddenly starts chewing hay.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "standing",
+            "chewing hay"
+        ]
+    },
+    {
+        "prompt_en": "A person is sitting at the kitchen table, then they suddenly get up and start doing the dishes.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting",
+            "get up and do the dishes"
+        ]
+    },
+    {
+        "prompt_en": "A bird is resting in its nest, then it suddenly flies out to catch insects.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "resting in its nest",
+            "flying out and catching insects"
+        ]
+    },
+    {
+        "prompt_en": "A person is drinking coffee, then they suddenly get up and start sweeping the garage.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "drinking coffee",
+            "get up and sweep the garage"
+        ]
+    },
+    {
+        "prompt_en": "A horse is grazing near a fence, then it suddenly starts running across the field.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "grazing near a fence",
+            "running across the field"
+        ]
+    },
+    {
+        "prompt_en": "A cat is curled up on the couch, then it suddenly jumps to the window sill.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "curled up on the couch",
+            "jumping to the window sill"
+        ]
+    },
+    {
+        "prompt_en": "A person is texting, then they suddenly get up and start vacuuming the floor.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "texting",
+            "get up and vacuume the floor"
+        ]
+    },
+    {
+        "prompt_en": "A dog is digging a hole in the yard, then it suddenly stops and starts licking its paw.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "digging a hole in the yard",
+            "licking its paw"
+        ]
+    },
+    {
+        "prompt_en": "A person is reading the news, then they suddenly start watering the plants.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "reading the news",
+            "watering the plants"
+        ]
+    },
+    {
+        "prompt_en": "A cat is playing with a ball of yarn, then it suddenly starts lying down to rest.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "playing with a ball of yarn",
+            "lying down to rest"
+        ]
+    },
+    {
+        "prompt_en": "A person is sitting in a chair, then they suddenly stand up and start stretching.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting in a chair",
+            "stand up and stretch"
+        ]
+    },
+    {
+        "prompt_en": "A dog is lying on the couch, then it suddenly jumps off and starts running around.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "lying on the couch",
+            "jumping off and running around"
+        ]
+    },
+    {
+        "prompt_en": "A person is washing the dishes, then they suddenly start sweeping the floor.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "washing the dishes",
+            "sweeping the floor"
+        ]
+    },
+    {
+        "prompt_en": "A horse is standing in the barn, then it suddenly starts shaking its mane.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "standing in the barn",
+            "shaking its mane"
+        ]
+    },
+    {
+        "prompt_en": "A horse is walking along a trail, then it suddenly starts galloping.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "walking along a trail",
+            "galloping"
+        ]
+    },
+    {
+        "prompt_en": "A person is scrolling through their phone, then they suddenly get up and start organizing the kitchen.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "scrolling through their phone",
+            "get up and organize the kitchen"
+        ]
+    },
+    {
+        "prompt_en": "A person is checking their email, then they suddenly start making a phone call.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "checking their email",
+            "making a phone call"
+        ]
+    },
+    {
+        "prompt_en": "A dog is playing in the yard, then it suddenly starts laying on the porch.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "playing in the yard",
+            "laying on the porch"
+        ]
+    },
+    {
+        "prompt_en": "A cat is playing with a toy mouse, then it suddenly starts running up the stairs.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "playing with a toy mouse",
+            "running up the stairs"
+        ]
+    },
+    {
+        "prompt_en": "A person is sitting at a desk, then they suddenly start cleaning the floor.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting at a desk",
+            "cleaning the floor"
+        ]
+    },
+    {
+        "prompt_en": "A horse is standing by the fence, then it suddenly starts walking to the barn.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "standing by the fence",
+            "walking to the barn"
+        ]
+    },
+    {
+        "prompt_en": "A person is drinking water, then they suddenly start organizing their desk.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "drinking water",
+            "organizing their desk"
+        ]
+    },
+    {
+        "prompt_en": "A dog is lying in the sun, then it suddenly jumps up and starts playing with its owner.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "lying in the sun",
+            "jumping up and playing with its owner"
+        ]
+    },
+    {
+        "prompt_en": "A person is working on a project, then they suddenly start cooking dinner.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "working on a project",
+            "cooking dinner"
+        ]
+    },
+    {
+        "prompt_en": "A person is eating dinner, then they suddenly start washing the dishes.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "eating dinner",
+            "washing the dishes"
+        ]
+    },
+    {
+        "prompt_en": "A dog is barking at a bird, then it suddenly stops and starts sitting quietly.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "barking at a bird",
+            "sitting quietly"
+        ]
+    },
+    {
+        "prompt_en": "A person is folding clothes, then they suddenly get up and start reading a book.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "folding clothes",
+            "get up and read a book"
+        ]
+    },
+    {
+        "prompt_en": "A horse is running along the beach, then it suddenly stops and starts grazing.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "running along the beach",
+            "grazing"
+        ]
+    },
+    {
+        "prompt_en": "A person is sitting on a chair, then they suddenly start cleaning the desk.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting on a chair",
+            "cleaning the desk"
+        ]
+    },
+    {
+        "prompt_en": "A dog is resting on the bed, then it suddenly gets up and starts playing with a toy.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "resting on the bed",
+            "gets up and play with a toy"
+        ]
+    },
+    {
+        "prompt_en": "A person is drinking tea, then they suddenly start making a phone call.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "drinking tea",
+            "making a phone call"
+        ]
+    },
+    {
+        "prompt_en": "A horse is eating grass, then it suddenly starts trotting around in a circle.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "eating grass",
+            "trotting around in a circle"
+        ]
+    },
+    {
+        "prompt_en": "A person is watching a video, then they suddenly get up and start sweeping the yard.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "watching a video",
+            "get up and sweep the yard"
+        ]
+    },
+    {
+        "prompt_en": "A dog is running through the house, then it suddenly jumps onto the couch.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "running through the house",
+            "jumping onto the couch"
+        ]
+    },
+    {
+        "prompt_en": "A person is putting on shoes, then they suddenly start making a sandwich.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "putting on shoes",
+            "making a sandwich"
+        ]
+    },
+    {
+        "prompt_en": "A cat is grooming itself, then it suddenly starts chasing a bug.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "grooming itself",
+            "chasing a bug"
+        ]
+    },
+    {
+        "prompt_en": "A horse is walking in the field, then it suddenly starts galloping in the distance.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "walking in the field",
+            "galloping in the distance"
+        ]
+    },
+    {
+        "prompt_en": "A person is checking their calendar, then they suddenly get up and start folding clothes.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "checking their calendar",
+            "get up and fold clothes"
+        ]
+    },
+    {
+        "prompt_en": "A dog is barking at the mailman, then it suddenly starts lying down on the mat.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "barking at the mailman",
+            "lying down on the mat"
+        ]
+    },
+    {
+        "prompt_en": "A person is doing yoga, then they suddenly get up and start making dinner.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "doing yoga",
+            "get up and make dinner"
+        ]
+    },
+    {
+        "prompt_en": "A horse is grazing on grass, then it suddenly starts trotting to the barn.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "grazing on grass",
+            "trotting to the barn"
+        ]
+    },
+    {
+        "prompt_en": "A cat is sitting on the windowsill, then it suddenly jumps down and starts exploring the room.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting on the windowsill",
+            "jumps down and explore the room"
+        ]
+    },
+    {
+        "prompt_en": "A person is organizing their desk, then they suddenly start doing the dishes.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "organizing their desk",
+            "doing the dishes"
+        ]
+    },
+    {
+        "prompt_en": "A dog is running in the yard, then it suddenly starts sitting under a tree.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "running in the yard",
+            "sitting under a tree"
+        ]
+    },
+    {
+        "prompt_en": "A person is getting ready for work, then they suddenly start cleaning the kitchen.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "getting ready for work",
+            "cleaning the kitchen"
+        ]
+    },
+    {
+        "prompt_en": "A cat is sitting on a chair, then it suddenly starts playing with a feather toy.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "sitting on a chair",
+            "playing with a feather toy"
+        ]
+    },
+    {
+        "prompt_en": "A person is drinking a smoothie, then they suddenly start folding clothes.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "drinking a smoothie",
+            "folding clothes"
+        ]
+    },
+    {
+        "prompt_en": "A horse is trotting around a stable, then it suddenly stops to drink water.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "trotting around a stable",
+            "drinking water"
+        ]
+    },
+    {
+        "prompt_en": "A person is reading a magazine, then they suddenly get up and start organizing the closet.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "reading a magazine",
+            "get up and organize the closet"
+        ]
+    },
+    {
+        "prompt_en": "A person is listening to music, then they suddenly start washing the dishes.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "listening to music",
+            "washing the dishes"
+        ]
+    },
+    {
+        "prompt_en": "A dog is chasing a ball, then it suddenly stops and lies down to rest.",
+        "dimension": "Motion_Order_Understanding",
+        "auxiliary_info": [
+            "chasing a ball",
+            "lying down to rest"
+        ]
+    }
+]

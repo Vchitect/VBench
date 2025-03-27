@@ -1,0 +1,58 @@
+A person is slurping noodles from a steaming bowl.
+A person is eating hamburger.
+A person is eating ice cream.
+A person is drinking coffee from a cup.
+A person is spreading butter on toast.
+A person is eating spaghetti with a fork.
+A person is biting into an apple.
+A person is peeling a banana.
+A person is cutting a watermelon.
+A person is eating a slice of pizza.
+A person is breaking a chocolate bar into pieces.
+A person is peeling a boiled egg.
+A person is slicing a cucumber.
+A person is pouring olive oil into a frying pan.
+A person is cracking a crab shell.
+A person is cutting a carrot into sticks.
+A person is eating a hot dog.
+A person is slicing bread with a knife.
+A person is eating cereal with milk.
+A person is spreading jam on bread.
+A person is slicing a peach in half.
+A person is eating popcorn.
+A person is peeling a potato.
+A person is rolling sushi.
+A person is eating a chocolate truffle.
+A person is drinking a smoothie from a glass.
+A person is cutting a bell pepper.
+A person is squeezing ketchup onto a plate.
+A person is eating pudding with a spoon.
+A person is drinking juice from a glass.
+A person is eating chili with a spoon.
+A person is walking down the street.
+A person is walking with a backpack.
+A person is walking backwards.
+A person is walking up the stairs.
+A person is running on the track.
+A woman is cutting her hair.
+A person is folding clothes.
+A person is painting.
+A person is turning on the desk lamp.
+A person is turning off the desk lamp.
+A person is closing the door.
+A person is opening the window.
+A person is closing the window.
+A person is turning on the television.
+A person is turning off the television.
+A person is opening a book.
+A person is turning on the fan.
+A person is turning off the fan.
+A person is picking up the phone.
+A person is opening the laptop.
+A person is folding the blanket.
+A person is turning off the stove.
+A person is opening the curtains.
+A person is closing the curtains.
+A person is pulling the blinds up.
+A person is pulling the blinds down.
+A person is moving the chair.

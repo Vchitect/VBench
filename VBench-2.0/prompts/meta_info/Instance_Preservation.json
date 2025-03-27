@@ -1,0 +1,287 @@
+[
+    {
+        "prompt_en": "An orange dog is running.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.orange dog"
+    },
+    {
+        "prompt_en": "Two orange dogs are running.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.orange dog"
+    },
+    {
+        "prompt_en": "A brown dog is on the left of an apple, then the dog moves to the right of the apple.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.brown dog"
+    },
+    {
+        "prompt_en": "An orange cat is running.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.orange cat"
+    },
+    {
+        "prompt_en": "An orange cat and a white cat are running.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.orange cat and 1.white cat"
+    },
+    {
+        "prompt_en": "An orange cat and a white cat are fighting.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.orange cat and 1.white cat"
+    },
+    {
+        "prompt_en": "An orange cat is on the left of an apple, then the cat moves to the right of the apple.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.orange cat"
+    },
+    {
+        "prompt_en": "A beige tiger is running.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.beige tiger"
+    },
+    {
+        "prompt_en": "Two sandy kangaroos are jumping.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.sandy kangaroo"
+    },
+    {
+        "prompt_en": "Two sandy kangaroos are fighting.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.sandy kangaroo"
+    },
+    {
+        "prompt_en": "A giraffe is walking.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.giraffe"
+    },
+    {
+        "prompt_en": "Two giraffes are walking.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.giraffe"
+    },
+    {
+        "prompt_en": "A brown bear is running.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.brown bear"
+    },
+    {
+        "prompt_en": "Two brown bears are running.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.brown bear"
+    },
+    {
+        "prompt_en": "A orange fox is running.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.orange fox"
+    },
+    {
+        "prompt_en": "A white sheep is walking.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.white sheep"
+    },
+    {
+        "prompt_en": "Two white sheep are walking.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.white sheep"
+    },
+    {
+        "prompt_en": "Two white sheep are eating grass.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.white sheep"
+    },
+    {
+        "prompt_en": "Two blue birds flies through the sky, coming close to each other and forming a complex formation.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.blue bird"
+    },
+    {
+        "prompt_en": "A ball rolls off the table.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.ball"
+    },
+    {
+        "prompt_en": "A blue ball rolls off the table.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.blue ball"
+    },
+    {
+        "prompt_en": "A red ball bouncing down stairs",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.red ball"
+    },
+    {
+        "prompt_en": "A red ball and a blue ball bouncing down stairs",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.red ball and 1.blue ball"
+    },
+    {
+        "prompt_en": "A red ball falls from a height, hits the ground, and bounces back up.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.red ball"
+    },
+    {
+        "prompt_en": "A red ball and a blue ball fall from a height, hits the ground, and bounces back up.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.red ball and 1.blue ball"
+    },
+    {
+        "prompt_en": "Aerial view, aerial view. Aerial view, aerial view. One blue balls and one red balls are on the wooden table and collide horizontally, bird's-eye view.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.blue ball and 1.red ball"
+    },
+    {
+        "prompt_en": "Two basketballs spin rapidly on the floor.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.basketball"
+    },
+    {
+        "prompt_en": "Two footballs spin rapidly on the floor.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.football"
+    },
+    {
+        "prompt_en": "A red car is moving along the road.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.red car"
+    },
+    {
+        "prompt_en": "A car speeds along a winding mountain road, with trees rapidly passing by.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.car"
+    },
+    {
+        "prompt_en": "A man and a woman is doing yoga.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.man and 1.woman"
+    },
+    {
+        "prompt_en": "Two people are doing yoga.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.person"
+    },
+    {
+        "prompt_en": "A person is running.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.person"
+    },
+    {
+        "prompt_en": "Two people are running.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.person"
+    },
+    {
+        "prompt_en": "A man is playing basketball.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.man"
+    },
+    {
+        "prompt_en": "Two men are playing basketball.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.man"
+    },
+    {
+        "prompt_en": "Two red balloons are floating in the air.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.red balloon"
+    },
+    {
+        "prompt_en": "A top is spinning.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.top"
+    },
+    {
+        "prompt_en": "A red top and a blue top are spinning.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.red top and 1.blue top"
+    },
+    {
+        "prompt_en": "Two red tops are spinning.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.red top"
+    },
+    {
+        "prompt_en": "A drone is floating in the air.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.drone"
+    },
+    {
+        "prompt_en": "A black drone is floating in the air.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.black drone"
+    },
+    {
+        "prompt_en": "Two black drones are floating in the air.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "2.black drone"
+    },
+    {
+        "prompt_en": "A black drone and a blue drone are floating in the air.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.black drone and 1.blue drone"
+    },
+    {
+        "prompt_en": "A droplet of water is falling.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.droplet of water"
+    },
+    {
+        "prompt_en": "A panda changes from small to big.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.panda"
+    },
+    {
+        "prompt_en": "A panda changes from big to small.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.panda"
+    },
+    {
+        "prompt_en": "An orange dog changes from small to big.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.orange dog"
+    },
+    {
+        "prompt_en": "An orange dog changes from big to small.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.orange dog"
+    },
+    {
+        "prompt_en": "An orange cat changes from big to small.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.orange cat"
+    },
+    {
+        "prompt_en": "A fish changes from small to big.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.fish"
+    },
+    {
+        "prompt_en": "A fish changes from big to small.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.fish"
+    },
+    {
+        "prompt_en": "A beige lion changes from big to small.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.beige lion"
+    },
+    {
+        "prompt_en": "A beige tiger changes from small to big.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.beige tiger"
+    },
+    {
+        "prompt_en": "An orange cat is in front of a tree, then the cat moves to the left of the tree.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.orange cat"
+    },
+    {
+        "prompt_en": "A beige tiger is in front of a tree, then the tiger moves to the left of the tree.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.beige tiger"
+    },
+    {
+        "prompt_en": "A white sheep is in front of a tree, then the sheep moves to the left of the tree.",
+        "dimension": "Instance_Preservation",
+        "auxiliary_info": "1.white sheep"
+    }
+]

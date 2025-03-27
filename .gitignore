@@ -173,3 +173,6 @@ prepublish-ci/*
 
 # image suite
 vbench2_beta_i2v/data
+VBench-2.0/src
+VBench-2.0/evaluation_results
+VBench-2.0/evaluate_multi_temp.sh

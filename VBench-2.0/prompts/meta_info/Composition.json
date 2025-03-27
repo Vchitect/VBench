@@ -1,0 +1,780 @@
+[
+    {
+        "prompt_en": "A lion with the wings of an eagle, soaring through the sky with majestic ease.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The wings of an eagle",
+                "A lion"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A giraffe with the scales of a fish, able to glide smoothly through the water.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "Fish scales",
+                "A giraffe"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A wolf with the body of a horse, galloping across a vast plains with wild abandon.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The body of the horse",
+                "A wolf"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A bear with the antlers of a deer, roaming the forest with a regal presence.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The deer's antlers",
+                "A bear"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A cheetah with the shell of a tortoise, moving quickly but with a protective outer layer.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The shell of the turtle",
+                "A cheetah"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A butterfly with the eyes of an owl, its wings shimmering in moonlight as it hunts at night.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "Owl's eyes",
+                "A butterfly"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A shark with the legs of a lion, prowling the shores like a beast of land and sea.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The lion's leg",
+                "A shark"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A zebra with the horns of a ram, charging through the savannah with both grace and power.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "Ram's horn",
+                "A zebra"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A whale with the wings of a bat, soaring over the ocean surface under the full moon.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "Bat's wings",
+                "A whale"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A spider with the body of a rabbit, scurrying across the ground with immense speed.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The rabbit's body",
+                "A spider"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "An owl with the body of a tiger, prowling the night skies with sharp talons.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The body of the tiger",
+                "An owl"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A giraffe with the wings of a bat, soaring above the trees in a mysterious flight.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "Bat's wings",
+                "A giraffe"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A chameleon with the body of a snake, slithering through bushes while changing colors.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The body of a snake",
+                "A chameleon"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A rabbit with the horns of a goat, hopping energetically while butting through obstacles.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "Goat's horn",
+                "A rabbit"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A penguin with the legs of a cheetah, racing across icy terrain at lightning speed.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "Cheetah's legs",
+                "A penguin"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A giraffe with the body of a whale, the legs of a kangaroo, and the tail of a flamingo, allowing it to leap from one ocean wave to another with remarkable grace.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The body of a whale.",
+                "The legs of a kangaroo",
+                "The flamingo's tail",
+                "A giraffe"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A wolf with the fur of a zebra, the wings of a hawk, and the claws of a bear, blending in the forest and the sky, capable of both hunting and flying.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The fur of the zebra",
+                "The wings of an eagle",
+                "Bear's paw",
+                "A wolf"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A crocodile with the arms of a gorilla, the legs of a cheetah, the scales of a snake, and the eyes of a chameleon, an apex predator in both land and water.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The arms of a gorilla.",
+                "The legs of the cheetah",
+                "Snake scales",
+                "The Eyes of the Chameleon",
+                "A crocodile"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A rabbit with the legs of a frog, the ears of a bat, the body of a turtle, and the tail of a squirrel, combining agility, stealth, and the ability to survive in any environment.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "Frog's legs",
+                "Bat's ears",
+                "The body of the turtle",
+                "Squirrel's tail",
+                "A rabbit"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A whale with the horns of a ram, the wings of an eagle, and the skin of an octopus, able to both soar through the skies and dive deep into the ocean.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The ram's horn",
+                "The wings of an eagle",
+                "Octopus skin",
+                "A whale"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A panda with the antlers of a deer, the body of a lion, the tail of a monkey, and the wings of a bat, a majestic creature roaming forests and skies.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The deer's antlers",
+                "The body of the lion",
+                "The monkey's tail",
+                "Bat's wings",
+                "A panda"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A giraffe with the tail of a lizard, the body of an eagle, the eyes of a hawk, and the wings of a bat, soaring and surveying vast landscapes from the sky.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The tail of the lizard",
+                "Eagle's body",
+                "The Eyes of the Falcon",
+                "Bat's wings",
+                "A giraffe"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A lion with the ears of a bat, the body of a whale, the claws of an eagle, and the wings of a dragon, an unstoppable predator both in the sea and in the sky.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "Bat's ears",
+                "The body of a whale",
+                "Eagle's claws",
+                "Dragon's Wings",
+                "A lion"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "An octopus with the shell of a tortoise, the body of a deer, the wings of a butterfly, and the eyes of an eagle, blending speed, defense, and perception.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "The shell of the turtle",
+                "Deer's body",
+                "The Wings of a Butterfly",
+                "Eagle's eyes",
+                "An octopus"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A frog with the head of a crocodile, the legs of a horse, the body of a panda, and the wings of a dragonfly, adapting to land, water, and air with ease.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "Crocodile's head",
+                "Horse's leg",
+                "The body of the panda.",
+                "The Wings of a Dragonfly",
+                "A frog"
+            ],
+            "judge": [
+                true,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A lion doing a handstand, balancing perfectly on its front paws while gazing confidently at the audience.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A lion is doing a handstand."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A giraffe breakdancing, spinning on its back and flipping gracefully despite its towering height.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A giraffe is breakdancing."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A cheetah doing yoga poses, stretching out its limbs with remarkable flexibility and focus.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A cheetah doing yoga poses."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A whale performing a backflip in the ocean, leaping gracefully out of the water and flipping mid-air.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A whale does a backflip.",
+                "Whale leaping out of the water.",
+                "Whale falling back into the water."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A toaster jumping over an obstacle course, popping up bread slices as it leaps.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A toaster jumps over an obstacle course."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A vacuum cleaner jumping over hurdles, its hose flapping in the wind.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A vacuum cleaner jumps over obstacles."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A broomstick breakdancing, twisting and spinning on the floor with flair.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A broomstick breakdancing",
+                "No human in the video"
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A suitcase swimming in the ocean, paddling through the waves like a professional swimmer.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A suitcase is swimming in the ocean, paddling through the waves like a professional swimmer."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A vacuum cleaner playing soccer, dribbling a ball around cones with surprising agility.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A vacuum cleaner plays soccer."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A dog and a cat playing video games together, each holding a controller and laughing.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A dog and a cat are playing video games together."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A whale and a seagull flying side by side, the whale soaring through the clouds while the seagull glides effortlessly.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A whale and a seagull flying side by side."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A chair and a table having a tea party, both elegantly setting out cups and pastries.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A chair and a table are having a tea party."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A sandwich and a soup having a conversation, debating which is the best comfort food.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A sandwich and a bowl of soup are having a conversation."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A hammer and a nail playing tag, chasing each other around in a game of high-speed pursuit.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A hammer and a nail are playing hide and seek."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A snowflake and a flame performing a duet, the snowflake twirling while the flame dances around it.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A snowflake and a flame are performing a duet.",
+                "Both snowflake and flame are moving"
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A book and a cup of tea exchanging stories, each telling the other about their adventures.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A book and a cup of tea exchanging stories."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A toothbrush and toothpaste singing a duet, their melodies harmonizing perfectly.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A toothbrush and a tube of toothpaste are singing a duet."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A kite and a balloon flying side by side, each drifting gracefully in the wind.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A kite and a balloon are flying side by side."
+            ],
+            "judge": [
+                false,
+                true
+            ]
+        }
+    },
+    {
+        "prompt_en": "A penguin, a car, a rope, and a tiger are playing basketball. The penguin dribbles the ball while riding on the car, which is speeding across the court. The tiger tries to leap and catch the ball, but the rope tangles itself around the tiger’s legs, causing it to fall while the penguin shoots a three-pointer.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A penguin, a car, a rope, and a tiger are playing basketball.",
+                "The penguin is dribbling a ball on the car.",
+                "The car is speeding across the field.",
+                "The tiger tried to jump up and catch the ball.",
+                "The rope got tangled around the tiger's leg, causing it to fall.",
+                "The penguin made a three-point shot."
+            ],
+            "judge": [
+                false,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A giraffe, a vacuum cleaner, a skateboard, and a book are in a race. The giraffe uses its long neck to try to reach the finish line first, while the vacuum cleaner moves backwards, accidentally sucking up the skateboard. The book flies off the shelf and lands on the giraffe's back, causing it to trip and stumble.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A giraffe, a vacuum cleaner, a skateboard, and a book are having a race.",
+                "The giraffe tried to reach the finish line first with its long neck.",
+                "The vacuum cleaner moved backward and accidentally sucked up the skateboard.",
+                "The book flew off the shelf and landed on the giraffe's back, causing it to trip."
+            ],
+            "judge": [
+                false,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A lion, a lamp, a skateboard, and a bowl of soup are trying to perform a circus trick. The lion is balancing on the skateboard while sipping the soup from the bowl, but the lamp starts spinning wildly, casting light in all directions and blinding the lion, causing it to fall off the skateboard and spill the soup everywhere.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A lion, a lamp, a skateboard, and a bowl of soup are performing a circus acrobatics act.",
+                "The lion balances on the skateboard while drinking soup from the bowl.",
+                "The lights began to spin wildly, scattering beams in all directions.",
+                "The glaring lights caused the lion to fall off the skateboard, spilling soup everywhere."
+            ],
+            "judge": [
+                false,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A monkey, a piano, a backpack, and a traffic cone are on stage for a performance. The monkey plays the piano with its feet, but the backpack suddenly jumps onto the keys, causing the piano to play random notes. The traffic cone starts rolling around the stage, knocking over the backpack and creating chaos.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A monkey, a piano, a backpack, and a traffic cone are performing on stage.",
+                "The monkey plays the piano with its feet.",
+                "The backpack suddenly jumped onto the piano keys, causing random notes to sound.",
+                "The traffic cone started rolling across the stage, knocking over backpacks and creating chaos."
+            ],
+            "judge": [
+                false,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A rabbit, a frisbee, a chair, and a broomstick are playing tag. The rabbit throws the frisbee to the chair, but the broomstick catches it mid-air with its bristles, causing the frisbee to spin out of control and hit the rabbit in the face. The chair then flips itself over in confusion.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A rabbit, a frisbee, a chair, and a broomstick are playing hide and seek.",
+                "The rabbit threw the frisbee to the chair.",
+                "The broomstick caught the flying disc in mid-air with its bristles, causing the disc to go out of control and hit the rabbit's face.",
+                "The chair flipped over in confusion."
+            ],
+            "judge": [
+                false,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A whale, a bicycle, a notebook, and a lamp are having a race. The whale is swimming in the ocean and the bicycle is moving across land, but the notebook keeps opening and closing, trying to write down results. The lamp starts flickering, causing the whale to get confused and swim the wrong way.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A whale, a bicycle, a notebook, and a lamp are in a race.",
+                "The whale swims in the ocean, while the bicycle travels on land.",
+                "The notebook kept opening and closing, trying to record the results.",
+                "The lights began to flicker, causing the whale to become confused and swim in the wrong direction."
+            ],
+            "judge": [
+                false,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A tiger, a bicycle, a spoon, and a door are in the middle of a race. The tiger is racing alongside the bicycle, but the spoon keeps slipping out of the door's handle and landing on the tiger's back. The door keeps swinging open and shut, blocking the tiger’s path and causing the bicycle to crash into it.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A tiger, a bicycle, a spoon, and a door are having a race.",
+                "The tiger and the bicycle are racing together.",
+                "The spoon kept sliding down from the doorknob and fell onto the tiger's back.",
+                "The door kept opening and closing, blocking the tiger's path, causing a bicycle to crash into it."
+            ],
+            "judge": [
+                false,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A sloth, a paintbrush, a cup of tea, and a kite are participating in a race. The sloth is moving incredibly slowly while holding the paintbrush, but the cup of tea spills over, causing the sloth to slip. The kite flies into the sloth's path, causing the sloth to get tangled in its strings while trying to avoid the spilled tea.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A sloth, a paintbrush, a cup of tea, and a kite are participating in a competition.",
+                "The sloth moves very slowly while holding a paintbrush.",
+                "The teacup spilled, causing the sloth to slip.",
+                "The kite flew into the sloth's path, and as the sloth tried to avoid the spilled tea, it got tangled in the kite string."
+            ],
+            "judge": [
+                false,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A lion, a skateboard, a pillow, and a mug are playing a game of tag. The lion is chasing the skateboard, but the pillow keeps bouncing in front of it, causing the lion to trip over it. The mug is constantly thrown into the air by the pillow’s jumps, landing on the skateboard and blocking the lion’s path.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A lion, a skateboard, a pillow, and a cup are playing hide and seek.",
+                "The lion is chasing the skateboard.",
+                "The pillow kept bouncing in front of the lion, causing the lion to trip.",
+                "The pillow's jumps continuously tossed the cup into the air.",
+                "The cup fell onto the skateboard, blocking the lion's path."
+            ],
+            "judge": [
+                false,
+                false
+            ]
+        }
+    },
+    {
+        "prompt_en": "A zebra, a guitar, a skateboard, and a kettle are preparing for a concert. The zebra strums the guitar while balancing on the skateboard, but the kettle starts whistling loudly, distracting the zebra and causing it to fall off the skateboard. The guitar starts vibrating on its own as the kettle continues to whistle.",
+        "dimension": "Composition",
+        "auxiliary_info": {
+            "question": [
+                "A zebra, a guitar, a skateboard, and a water bottle are getting ready for a concert.",
+                "The zebra maintains balance on a skateboard while playing the guitar.",
+                "The kettle started to emit a loud whistle, distracting the zebra and causing it to fall off the skateboard.",
+                "The guitar began to vibrate on its own, and the kettle continued to whistle."
+            ],
+            "judge": [
+                false,
+                false
+            ]
+        }
+    }
+]

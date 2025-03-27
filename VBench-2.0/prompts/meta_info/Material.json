@@ -1,0 +1,396 @@
+[
+    {
+        "prompt_en": "Equal amounts of yellow and blue paint are rapidly combined, with the mixture being vigorously stirred until fully blended.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the blue and yellow paints visibly exist and mix? (yes or no)",
+            "Finally, does the paint become green? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "Equal amounts of black and white paint are rapidly combined, with the mixture being vigorously stirred until fully blended.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the black and white paints visibly exist and mix? (yes or no)",
+            "Finally, does the paint become grey? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "Equal amounts of white and black paint are rapidly combined, with the mixture being vigorously stirred until fully blended.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the white and black paints visibly exist and mix? (yes or no)",
+            "Finally, does the paint become grey? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "Equal amounts of red and purple paint are rapidly combined, with the mixture being vigorously stirred until fully blended.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the red and purple paints visibly exist and mix? (yes or no)",
+            "Finally, does the paint become burgundy shade? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "Equal amounts of blue and magenta paint are rapidly combined, with the mixture being vigorously stirred until fully blended.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the blue and magenta paints visibly exist and mix? (yes or no)",
+            "Finally, does the paint become purple? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "Equal amounts of brown and yellow paint are rapidly combined, with the mixture being vigorously stirred until fully blended.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the brown and yellow paints visibly exist and mix? (yes or no)",
+            "Finally, does the paint become olive color? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A piece of calcium is ignited, emitting a vivid and unique flame as it burns steadily.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the calcium emit flame? (yes or no)",
+            "Does the flame display a orange-red hue? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A piece of barium is ignited, emitting a vivid and unique flame as it burns steadily.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the barium emit flame? (yes or no)",
+            "Does the flame display a green hue? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A piece of boric acid is ignited, emitting a vivid and unique flame as it burns steadily.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the boric acid emit flame? (yes or no)",
+            "Does the flame display a green hue? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A piece of sodium chloride is ignited, emitting a vivid and unique flame as it burns steadily.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the sodium chloride emit flame? (yes or no)",
+            "Does the flame display a yellow hue? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A piece of iron is ignited, emitting a vivid and unique flame as it burns steadily.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the iron emit flame? (yes or no)",
+            "Does the flame display an orange hue? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A piece of aluminum is ignited, emitting a vivid and unique flame as it burns steadily.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the aluminum emit flame? (yes or no)",
+            "Does the flame display a white hue? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A piece of lead is ignited, emitting a vivid and unique flame as it burns steadily.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the lead emit flame? (yes or no)",
+            "Does the flame display a bluish-white hue? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A fragile egg is dropped onto a hard, concrete floor",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the egg intact, falling and contacting with the floor? (yes or no)",
+            "After contacting with floor, does the egg shatter? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A sturdy steel key is dropped onto a hard marble floor",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the steel key fall and contact with the floor? (yes or no)",
+            "After contacting with floor, does the steel key stay no change? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A heavy iron rod is struck with force against a wooden board",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the iron rod fall and contact with the board? (yes or no)",
+            "After contacting with board, does the wooden board cause a visible dent or splinter? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A rubber eraser is rubbed against a rough sandpaper surface",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the eraser contact with sandpaper surface? (yes or no)",
+            "After rubbing, does the eraser clearly wear down or deform? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A clear glass of salt is gently poured into a glass of water.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the water exist, and is the salt poured into it? (yes or no)",
+            "After pouring, does the salt dissolve in the water? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A clear glass of oil is gently poured into a glass of milk.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the milk exist, and is the oil poured into it? (yes or no)",
+            "After pouring, is there a distinct layer on top, with no mixing? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A clear glass of flour is gently poured into a glass of water.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the water exist, and is the flour poured into it? (yes or no)",
+            "After pouring, does the flour disperse throughout the water, creating a cloudy suspension? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A clear glass of orange juice is gently poured into a glass of water.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the water exist, and is the orange juice poured into it? (yes or no)",
+            "After pouring, does the orange juice mix with water? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A clear glass of coffee is gently poured into a glass of milk.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the milk exist, and is the coffee poured into it? (yes or no)",
+            "After pouring, does the coffee mix with milk? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A clear glass of glycerin is gently poured into a glass of water.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the water exist, and is the glycerin poured into it? (yes or no)",
+            "After pouring, does the glycerin mix with water? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A clear glass of coconut oil is gently poured into a glass of water.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the water exist, and is the coconut oil poured into it? (yes or no)",
+            "After pouring, is there a distinct layer above the water without any mixing? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A clear glass of baking soda is gently poured into a glass of vinegar.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the vinegar exist, and is the soda poured into it? (yes or no)",
+            "After pouring, does the soda dissolve in the vinegar with bubbles forming at the interface? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A small burning piece of cardboard was thrown into a pile of dry leaves.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the cardboard burning? (yes or no)",
+            "Finally, does the fire spread with the leaves burning? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A small burning matchstick was thrown into a pile of dried hay.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the matchstick burning? (yes or no)",
+            "Finally, does the fire spread with the hay burning? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A small burning candle was thrown into a pile of dry twigs.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the candle burning? (yes or no)",
+            "Finally, does the fire spread with the twigs burning? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A small burning piece of paper was thrown into a pile of dried flowers.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the paper burning? (yes or no)",
+            "Finally, does the fire spread with the dried flowers burning? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A small burning match was thrown into a pile of dry paper towels.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the match burning? (yes or no)",
+            "Finally, does the fire spread with the dry paper towels burning? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A small burning piece of wood was thrown into a pile of dry corn stalks.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, does the wood burning? (yes or no)",
+            "Finally, does the fire spread with the dry corn stalks burning? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the transformation as sodium hydroxide is added to a glass of red litmus solution.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, is something added to the solution and is the solution red? (yes or no)",
+            "Finally, is the solution blue? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the transformation as ammonia solution is poured into a glass of red cabbage juice.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, is something added to the solution and is the solution purple? (yes or no)",
+            "Finally, is the solution green? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the transformation as potassium hydroxide is added to a glass of litmus paper.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, is something added to the glass and is the litmus paper red? (yes or no)",
+            "Finally, is the litmus paper blue? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the transformation as sodium bicarbonate is added to a cup of vinegar.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, is something added to the cup? (yes or no)",
+            "After adding something, does bubbling and fizzing phenomenon occur? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the transformation as lime juice is added to a solution of blue litmus paper.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, is juice added to the solution and is the litmus paper blue? (yes or no)",
+            "Finally, is the litmus paper red? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the transformation as sulfuric acid is added to a solution of sodium bicarbonate.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, is some liquid added to the solution? (yes or no)",
+            "After adding liquid, is bubbles forming and releasing gas? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the transformation as a drop of hydrochloric acid is added to a blue litmus solution.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, is liquid added to the solution and is the litmus paper blue? (yes or no)",
+            "Finally, is the litmus paper red? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the reaction as concentrated sulfuric acid is poured onto a piece of toast.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, is liquid poured to the toast? (yes or no)",
+            "Finally, does the toast shrink and release gas? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the reaction as concentrated sulfuric acid is poured onto a glass bottle.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, is liquid poured to the bottle? (yes or no)",
+            "Finally, does the bottle remain unchanged? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the reaction as concentrated sulfuric acid is poured onto a rubber balloon.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, is liquid poured to the balloon? (yes or no)",
+            "Finally, does the balloon shrink, turn black, and emit gas? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the reaction as concentrated sulfuric acid is poured onto a plastic spoon.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, is liquid poured to the spoon? (yes or no)",
+            "Finally, does the spoon shrink, turn black, and emit gas? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the reaction as concentrated sulfuric acid is poured onto a bar of soap.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, is liquid poured to the soap? (yes or no)",
+            "Finally, does the soap shrink, turn black, and emit gas? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the reaction as concentrated sulfuric acid is poured onto a piece of chewing gum.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Initially, is liquid poured to the chewing gum? (yes or no)",
+            "Finally, does the chewing gum shrink, turn black, and emit gas? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the rusting of a metal fence exposed to outdoor elements over several years.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the color of fence visibly change and become reddish-brown? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse captures the oxidation of a metal garden trowel left outdoors in the rain over several seasons.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the color of trowel visibly change and become reddish-brown? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse documents the oxidation process of a metal door knocker exposed to outdoor elements for a long time.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the color of knocker visibly change and become reddish-brown? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse shows the corrosion of a metal barbecue grill exposed to rain and humidity over several seasons.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the color of grill visibly change and become reddish-brown? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse records the rusting of a metal water pipe left exposed to air and moisture over several years.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the color of pipe visibly change and become reddish-brown? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse records the corrosion of a metal toolbox left outside in humid weather for several years.",
+        "dimension": "Material",
+        "auxiliary_info": [
+            "Does the color of toolbox visibly change and become reddish-brown? (yes or no)"
+        ]
+    }
+]
