@@ -1,0 +1,302 @@
+[
+    {
+        "prompt_en": "A man is doing yoga.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A woman is doing yoga.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A man is running.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A woman is running.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A man is walking.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A woman is walking.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A man is dancing.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A woman is dancing.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A man is playing basketball.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A woman is playing basketball.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A man is playing football.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A woman is playing football.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A man is cutting objects.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A woman is cutting objects.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A man is playing badminton.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A woman is playing badminton.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A man is playing ping-pong.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A woman is playing ping-pong.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A man is doing gymnastics.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A woman is doing gymnastics.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A man is doing exercises.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A woman is doing exercises.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A man is riding a bike.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A woman is riding a bike.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A man is jumping.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A woman is jumping.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is sitting on the couch, then suddenly they get up and start sweeping the floor.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is cooking dinner, then they suddenly start organizing the pantry.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is typing on a keyboard, then they suddenly get up and start making the bed.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is drinking a glass of water, then they suddenly start cleaning the windows.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is reading a book, then they suddenly start folding laundry.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is watching TV, then they suddenly get up and start washing dishes.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is checking their phone, then they suddenly start watering the plants.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is eating a sandwich, then they suddenly start organizing the bookshelf.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is sitting in a chair, then they suddenly get up and start stretching.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is preparing a salad, then they suddenly start rearranging the furniture.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is talking on the phone, then they suddenly start folding paper airplanes.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is cleaning the kitchen, then they suddenly start mopping the floor.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is writing an email, then they suddenly get up and start baking cookies.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is sitting at a desk, then they suddenly start making coffee.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is washing their hands, then they suddenly start arranging the pillows on the couch.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is exercising, then they suddenly start making lunch.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is organizing their closet, then they suddenly start tidying the garage.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is sitting at the table, then they suddenly start drawing on a notepad.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is drinking tea, then they suddenly start folding the laundry.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is watching a movie, then they suddenly get up and start sweeping the porch.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is eating lunch, then they suddenly start cleaning the car.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is sitting at a desk, then they suddenly get up and start doing push-ups.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is playing a game on their phone, then they suddenly start cleaning the bathroom.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is folding towels, then they suddenly start painting a picture.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is brushing their teeth, then they suddenly start making breakfast.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is sitting at the kitchen table, then they suddenly get up and start doing the dishes.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is drinking coffee, then they suddenly get up and start sweeping the garage.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is texting, then they suddenly get up and start vacuuming the floor.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is reading the news, then they suddenly start watering the plants.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is sitting in a chair, then they suddenly stand up and start stretching.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is washing the dishes, then they suddenly start sweeping the floor.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is scrolling through their phone, then they suddenly get up and start organizing the kitchen.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is checking their email, then they suddenly start making a phone call.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is sitting at a desk, then they suddenly start cleaning the floor.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is drinking water, then they suddenly start organizing their desk.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is working on a project, then they suddenly start cooking dinner.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is eating dinner, then they suddenly start washing the dishes.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is folding clothes, then they suddenly get up and start reading a book.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is sitting on a chair, then they suddenly start cleaning the desk.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is drinking tea, then they suddenly start making a phone call.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is watching a video, then they suddenly get up and start sweeping the yard.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is putting on shoes, then they suddenly start making a sandwich.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is checking their calendar, then they suddenly get up and start folding clothes.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is doing yoga, then they suddenly get up and start making dinner.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is organizing their desk, then they suddenly start doing the dishes.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is getting ready for work, then they suddenly start cleaning the kitchen.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is drinking a smoothie, then they suddenly start folding clothes.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is reading a magazine, then they suddenly get up and start organizing the closet.",
+        "dimension": "Human_Clothes"
+    },
+    {
+        "prompt_en": "A person is listening to music, then they suddenly start washing the dishes.",
+        "dimension": "Human_Clothes"
+    }
+]

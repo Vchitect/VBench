@@ -1,0 +1,542 @@
+[
+    {
+        "prompt_en": "Garden, zoom in.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_in"
+    },
+    {
+        "prompt_en": "Garden, zoom out.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_out"
+    },
+    {
+        "prompt_en": "Garden, tilt up.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_up"
+    },
+    {
+        "prompt_en": "Garden, tilt down.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_down"
+    },
+    {
+        "prompt_en": "Garden, pan left.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_left"
+    },
+    {
+        "prompt_en": "Garden, pan right.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_right"
+    },
+    {
+        "prompt_en": "The camera movement is static. Garden, static shot, the camera is fixed.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "static"
+    },
+    {
+        "prompt_en": "The camera orbits around in a clockwise direction. Garden.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "orbits"
+    },
+    {
+        "prompt_en": "Garden, First-person perspective, oblique shot, airborne dolly movement.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "oblique"
+    },
+    {
+        "prompt_en": "Pyramid, zoom in.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_in"
+    },
+    {
+        "prompt_en": "Pyramid, zoom out.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_out"
+    },
+    {
+        "prompt_en": "Pyramid, tilt up.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_up"
+    },
+    {
+        "prompt_en": "Pyramid, tilt down.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_down"
+    },
+    {
+        "prompt_en": "Pyramid, pan left.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_left"
+    },
+    {
+        "prompt_en": "Pyramid, pan right.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_right"
+    },
+    {
+        "prompt_en": "The camera movement is static. Pyramid, static shot, the camera is fixed.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "static"
+    },
+    {
+        "prompt_en": "The camera orbits around in a clockwise direction. Pyramid.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "orbits"
+    },
+    {
+        "prompt_en": "Pyramid, First-person perspective, oblique shot, airborne dolly movement.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "oblique"
+    },
+    {
+        "prompt_en": "Mount Fuji, zoom in.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_in"
+    },
+    {
+        "prompt_en": "Mount Fuji, zoom out.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_out"
+    },
+    {
+        "prompt_en": "Mount Fuji, tilt up.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_up"
+    },
+    {
+        "prompt_en": "Mount Fuji, tilt down.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_down"
+    },
+    {
+        "prompt_en": "Mount Fuji, pan left.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_left"
+    },
+    {
+        "prompt_en": "Mount Fuji, pan right.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_right"
+    },
+    {
+        "prompt_en": "The camera movement is static. Mount Fuji, static shot, the camera is fixed.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "static"
+    },
+    {
+        "prompt_en": "The camera orbits around in a clockwise direction. Mount Fuji.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "orbits"
+    },
+    {
+        "prompt_en": "Mount Fuji, First-person perspective, oblique shot, airborne dolly movement.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "oblique"
+    },
+    {
+        "prompt_en": "Blue Lagoon, zoom in.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_in"
+    },
+    {
+        "prompt_en": "Blue Lagoon, zoom out.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_out"
+    },
+    {
+        "prompt_en": "Blue Lagoon, tilt up.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_up"
+    },
+    {
+        "prompt_en": "Blue Lagoon, tilt down.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_down"
+    },
+    {
+        "prompt_en": "Blue Lagoon, pan left.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_left"
+    },
+    {
+        "prompt_en": "Blue Lagoon, pan right.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_right"
+    },
+    {
+        "prompt_en": "The camera movement is static. Blue Lagoon, static shot, the camera is fixed.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "static"
+    },
+    {
+        "prompt_en": "The camera orbits around in a clockwise direction. Blue Lagoon.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "orbits"
+    },
+    {
+        "prompt_en": "Blue Lagoon, First-person perspective, oblique shot, airborne dolly movement.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "oblique"
+    },
+    {
+        "prompt_en": "Table, zoom in.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_in"
+    },
+    {
+        "prompt_en": "Table, zoom out.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_out"
+    },
+    {
+        "prompt_en": "Table, tilt up.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_up"
+    },
+    {
+        "prompt_en": "Table, tilt down.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_down"
+    },
+    {
+        "prompt_en": "Table, pan left.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_left"
+    },
+    {
+        "prompt_en": "Table, pan right.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_right"
+    },
+    {
+        "prompt_en": "The camera movement is static. Table, static shot, the camera is fixed.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "static"
+    },
+    {
+        "prompt_en": "The camera orbits around in a clockwise direction. Table.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "orbits"
+    },
+    {
+        "prompt_en": "Table, First-person perspective, oblique shot, airborne dolly movement.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "oblique"
+    },
+    {
+        "prompt_en": "Alhambra, zoom in.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_in"
+    },
+    {
+        "prompt_en": "Alhambra, zoom out.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_out"
+    },
+    {
+        "prompt_en": "Alhambra, tilt up.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_up"
+    },
+    {
+        "prompt_en": "Alhambra, tilt down.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_down"
+    },
+    {
+        "prompt_en": "Alhambra, pan left.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_left"
+    },
+    {
+        "prompt_en": "Alhambra, pan right.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_right"
+    },
+    {
+        "prompt_en": "The camera movement is static. Alhambra, static shot, the camera is fixed.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "static"
+    },
+    {
+        "prompt_en": "The camera orbits around in a clockwise direction. Alhambra.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "orbits"
+    },
+    {
+        "prompt_en": "Alhambra, First-person perspective, oblique shot, airborne dolly movement.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "oblique"
+    },
+    {
+        "prompt_en": "Vase, zoom in.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_in"
+    },
+    {
+        "prompt_en": "Vase, zoom out.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_out"
+    },
+    {
+        "prompt_en": "Vase, tilt up.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_up"
+    },
+    {
+        "prompt_en": "Vase, tilt down.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_down"
+    },
+    {
+        "prompt_en": "Vase, pan left.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_left"
+    },
+    {
+        "prompt_en": "Vase, pan right.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_right"
+    },
+    {
+        "prompt_en": "The camera movement is static. Vase, static shot, the camera is fixed.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "static"
+    },
+    {
+        "prompt_en": "The camera orbits around in a clockwise direction. Vase.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "orbits"
+    },
+    {
+        "prompt_en": "Vase, First-person perspective, oblique shot, airborne dolly movement.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "oblique"
+    },
+    {
+        "prompt_en": "Burj Khalifa, zoom in.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_in"
+    },
+    {
+        "prompt_en": "Burj Khalifa, zoom out.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_out"
+    },
+    {
+        "prompt_en": "Burj Khalifa, tilt up.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_up"
+    },
+    {
+        "prompt_en": "Burj Khalifa, tilt down.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_down"
+    },
+    {
+        "prompt_en": "Burj Khalifa, pan left.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_left"
+    },
+    {
+        "prompt_en": "Burj Khalifa, pan right.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_right"
+    },
+    {
+        "prompt_en": "The camera movement is static. Burj Khalifa, static shot, the camera is fixed.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "static"
+    },
+    {
+        "prompt_en": "The camera orbits around in a clockwise direction. Burj Khalifa.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "orbits"
+    },
+    {
+        "prompt_en": "Burj Khalifa, First-person perspective, oblique shot, airborne dolly movement.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "oblique"
+    },
+    {
+        "prompt_en": "Machu Picchu, zoom in.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_in"
+    },
+    {
+        "prompt_en": "Machu Picchu, zoom out.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_out"
+    },
+    {
+        "prompt_en": "Machu Picchu, tilt up.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_up"
+    },
+    {
+        "prompt_en": "Machu Picchu, tilt down.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_down"
+    },
+    {
+        "prompt_en": "Machu Picchu, pan left.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_left"
+    },
+    {
+        "prompt_en": "Machu Picchu, pan right.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_right"
+    },
+    {
+        "prompt_en": "The camera movement is static. Machu Picchu, static shot, the camera is fixed.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "static"
+    },
+    {
+        "prompt_en": "The camera orbits around in a clockwise direction. Machu Picchu.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "orbits"
+    },
+    {
+        "prompt_en": "Machu Picchu, First-person perspective, oblique shot, airborne dolly movement.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "oblique"
+    },
+    {
+        "prompt_en": "Forbidden City, zoom in.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_in"
+    },
+    {
+        "prompt_en": "Forbidden City, zoom out.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_out"
+    },
+    {
+        "prompt_en": "Forbidden City, tilt up.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_up"
+    },
+    {
+        "prompt_en": "Forbidden City, tilt down.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_down"
+    },
+    {
+        "prompt_en": "Forbidden City, pan left.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_left"
+    },
+    {
+        "prompt_en": "Forbidden City, pan right.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_right"
+    },
+    {
+        "prompt_en": "The camera movement is static. Forbidden City, static shot, the camera is fixed.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "static"
+    },
+    {
+        "prompt_en": "The camera orbits around in a clockwise direction. Forbidden City.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "orbits"
+    },
+    {
+        "prompt_en": "Forbidden City, First-person perspective, oblique shot, airborne dolly movement.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "oblique"
+    },
+    {
+        "prompt_en": "Laptop, zoom in.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_in"
+    },
+    {
+        "prompt_en": "Laptop, zoom out.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_out"
+    },
+    {
+        "prompt_en": "Laptop, tilt up.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_up"
+    },
+    {
+        "prompt_en": "Laptop, tilt down.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_down"
+    },
+    {
+        "prompt_en": "Laptop, pan left.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_left"
+    },
+    {
+        "prompt_en": "Laptop, pan right.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_right"
+    },
+    {
+        "prompt_en": "The camera movement is static. Laptop, static shot, the camera is fixed.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "static"
+    },
+    {
+        "prompt_en": "The camera orbits around in a clockwise direction. Laptop.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "orbits"
+    },
+    {
+        "prompt_en": "Laptop, First-person perspective, oblique shot, airborne dolly movement.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "oblique"
+    },
+    {
+        "prompt_en": "Watch, zoom in.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_in"
+    },
+    {
+        "prompt_en": "Watch, zoom out.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "zoom_out"
+    },
+    {
+        "prompt_en": "Watch, tilt up.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_up"
+    },
+    {
+        "prompt_en": "Watch, tilt down.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "tilt_down"
+    },
+    {
+        "prompt_en": "Watch, pan left.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_left"
+    },
+    {
+        "prompt_en": "Watch, pan right.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "pan_right"
+    },
+    {
+        "prompt_en": "The camera movement is static. Watch, static shot, the camera is fixed.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "static"
+    },
+    {
+        "prompt_en": "The camera orbits around in a clockwise direction. Watch.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "orbits"
+    },
+    {
+        "prompt_en": "Wristwatch, First-person perspective, oblique shot, airborne dolly movement.",
+        "dimension": "Camera_Motion",
+        "auxiliary_info": "oblique"
+    }
+]

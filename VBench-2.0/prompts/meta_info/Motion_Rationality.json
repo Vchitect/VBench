@@ -1,0 +1,582 @@
+[
+    {
+        "prompt_en": "A person is slurping noodles from a steaming bowl.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be slurping noodles? (yes or no)",
+            "Is the person's mouth in contact with the noodles? (yes or no)",
+            "After slurping, is the amount of noodles visibly reduced? (yes or no)",
+            "Is the bowl of noodles remaining after slurping? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is eating hamburger.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be eating a hamburger? (yes or no)",
+            "Is the person's mouth in contact with the hamburger? (yes or no)",
+            "After eating, is the hamburger visibly reduced or divided? (yes or no)",
+            "Is the hamburger still there after eating? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is eating ice cream.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be eating ice cream? (yes or no)",
+            "Is the person's mouth in contact with the ice cream? (yes or no)",
+            "After eating, is the ice cream visibly reduced or changed in shape? (yes or no)",
+            "Is the ice cream still there after eating? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is drinking coffee from a cup.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be drinking coffee? (yes or no)",
+            "Is the person's mouth in contact with the cup? (yes or no)",
+            "After drinking, is the amount of coffee visibly reduced? (yes or no)",
+            "Is the cup remaining after drinking? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is spreading butter on toast.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be spreading butter on the toast? (yes or no)",
+            "Is the butter in contact with the surface of the toast? (yes or no)",
+            "Does the person spread the butter evenly on the toast? (yes or no)",
+            "After spreading, is the surface of the toast visibly changed by the butter? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is eating spaghetti with a fork.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be eating spaghetti? (yes or no)",
+            "Is the person's mouth in contact with the spaghetti? (yes or no)",
+            "After eating, is the amount of spaghetti visibly reduced? (yes or no)",
+            "Is the spaghetti still there after eating? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is biting into an apple.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be biting into the apple? (yes or no)",
+            "Is the person's mouth in contact with the apple? (yes or no)",
+            "After biting, is the apple visibly reduced or damaged? (yes or no)",
+            "Is the part of the apple which interacted with the person remaining? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is peeling a banana.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be peeling the banana? (yes or no)",
+            "Is the banana intact at the beginning of the video? (yes or no)",
+            "Does the person remove the peel from the banana? (yes or no)",
+            "After peeling, is part of the banana's peel visibly removed? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is cutting a watermelon.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person cutting the watermelon? (yes or no)",
+            "Is the watermelon intact at the beginning of the video? (yes or no)",
+            "Does the person leave cuts or marks on the surface of the watermelon? (yes or no)",
+            "After cutting, is part of the watermelon visibly separated? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is eating a slice of pizza.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be eating a slice of pizza? (yes or no)",
+            "Is the person's mouth in contact with the pizza slice? (yes or no)",
+            "After eating, is the pizza slice visibly reduced? (yes or no)",
+            "Is the pizza slice still there after eating? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is breaking a chocolate bar into pieces.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be breaking the chocolate bar? (yes or no)",
+            "Is the chocolate bar intact at the beginning of the video? (yes or no)",
+            "Does the person leave cracks or marks on the chocolate bar? (yes or no)",
+            "After breaking, is the chocolate bar visibly separated into pieces? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is peeling a boiled egg.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be peeling the boiled egg? (yes or no)",
+            "Is the egg intact at the beginning of the video? (yes or no)",
+            "Is the peel of the boiled egg being removed? (yes or no)",
+            "After peeling, is the egg visibly separated from its shell? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is slicing a cucumber.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person slicing the cucumber? (yes or no)",
+            "Is the cucumber intact at the beginning of the video? (yes or no)",
+            "Does the person leave cuts on the surface of the cucumber? (yes or no)",
+            "After slicing, is part of the cucumber visibly separated? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is pouring olive oil into a frying pan.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be pouring olive oil into the frying pan? (yes or no)",
+            "Is the olive oil in contact with the frying pan? (yes or no)",
+            "Does the amount of olive oil in the frying pan visibly increase? (yes or no)",
+            "Is the oil remaining after pouring? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is cracking a crab shell.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be cracking the crab shell? (yes or no)",
+            "Is the crab shell intact at the beginning of the video? (yes or no)",
+            "Does the person leave cracks or breaks on the shell? (yes or no)",
+            "After cracking, is part of the crab shell visibly separated? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is cutting a carrot into sticks.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person cutting the carrot? (yes or no)",
+            "Is the carrot intact at the beginning of the video? (yes or no)",
+            "Does the person leave cuts or marks on the surface of the carrot? (yes or no)",
+            "After cutting, is part of the carrot visibly separated into sticks? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is eating a hot dog.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be eating a hot dog? (yes or no)",
+            "Is the person's mouth in contact with the hot dog? (yes or no)",
+            "After eating, is the hot dog visibly reduced? (yes or no)",
+            "Is the hot dog still there after eating? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is slicing bread with a knife.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person slicing the bread with a knife? (yes or no)",
+            "Is the bread intact at the beginning of the video? (yes or no)",
+            "Does the person leave cuts or marks on the surface of the bread? (yes or no)",
+            "After slicing, is part of the bread visibly separated into pieces? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is eating cereal with milk.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be eating cereal with milk? (yes or no)",
+            "Is the person's mouth in contact with the cereal? (yes or no)",
+            "After eating, is the amount of cereal or milk visibly reduced? (yes or no)",
+            "Is the cereal or milk still there after eating? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is spreading jam on bread.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be spreading jam on the bread? (yes or no)",
+            "Is the jam in contact with the surface of the bread? (yes or no)",
+            "Does the person spread the jam evenly on the bread? (yes or no)",
+            "After spreading, is the surface of the bread visibly changed by the jam? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is slicing a peach in half.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person slicing the peach in half? (yes or no)",
+            "Is the peach intact at the beginning of the video? (yes or no)",
+            "Does the person leave cuts on the surface of the peach? (yes or no)",
+            "After slicing, is the peach visibly separated into two halves? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is eating popcorn.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be eating popcorn? (yes or no)",
+            "Is the person's mouth in contact with the popcorn? (yes or no)",
+            "After eating, is the amount of popcorn visibly reduced? (yes or no)",
+            "Is the popcorn still there after eating? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is peeling a potato.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be peeling the potato? (yes or no)",
+            "Is the potato intact at the beginning of the video? (yes or no)",
+            "Is the skin of the potato being removed during the peeling process? (yes or no)",
+            "After peeling, is the potato visibly separated from its skin? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is rolling sushi.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person rolling sushi? (yes or no)",
+            "Are the ingredients for the sushi intact at the beginning of the video? (yes or no)",
+            "Does the person roll the sushi ingredients into a cylindrical shape? (yes or no)",
+            "After rolling, is the sushi visibly formed into a roll? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is eating a chocolate truffle.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be eating a chocolate truffle? (yes or no)",
+            "Is the person's mouth in contact with the chocolate truffle? (yes or no)",
+            "After eating, is the chocolate truffle visibly reduced? (yes or no)",
+            "Is the chocolate truffle still there after eating? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is drinking a smoothie from a glass.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be drinking a smoothie? (yes or no)",
+            "Is the person's mouth in contact with the glass? (yes or no)",
+            "After drinking, is the amount of smoothie visibly reduced? (yes or no)",
+            "Is the glass remaining after drinking? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is cutting a bell pepper.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person cutting the bell pepper? (yes or no)",
+            "Is the bell pepper intact at the beginning of the video? (yes or no)",
+            "Does the person leave cuts on the surface of the bell pepper? (yes or no)",
+            "After cutting, is part of the bell pepper visibly separated? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is squeezing ketchup onto a plate.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person squeezing ketchup onto the plate? (yes or no)",
+            "Is the ketchup bottle in contact with the plate? (yes or no)",
+            "Is the amount of ketchup visibly increased on the plate? (yes or no)",
+            "Is the ketchup deformed after squeezing? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is eating pudding with a spoon.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be eating pudding? (yes or no)",
+            "Is the person's mouth in contact with the spoon? (yes or no)",
+            "After eating, is the amount of pudding visibly reduced? (yes or no)",
+            "Is the spoon remaining after eating? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is drinking juice from a glass.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be drinking juice? (yes or no)",
+            "Is the person's mouth in contact with the glass? (yes or no)",
+            "After drinking, is the amount of juice visibly reduced? (yes or no)",
+            "Is the glass remaining after drinking? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is eating chili with a spoon.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be eating chili with a spoon? (yes or no)",
+            "Is the person's mouth in contact with the spoon? (yes or no)",
+            "After eating, is the amount of chili in the bowl visibly reduced? (yes or no)",
+            "Is the spoon still there after eating? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is walking down the street.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be walking down the street? (yes or no)",
+            "Is the person moving forward in a consistent direction, rather than staying in the same place or moving backward? (yes or no)",
+            "Is the person's position changing relative to the environment (e.g., background, objects) in a way that suggests forward motion? (yes or no)",
+            "Does the person maintain a consistent direction of movement without random or unnatural shifts in their path? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is walking with a backpack.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be walking with a backpack? (yes or no)",
+            "Is the person moving, rather than staying in one place? (yes or no)",
+            "Does the person’s posture appear affected by the weight of the backpack (e.g., slight leaning forward or shoulder strain)? (yes or no)",
+            "Does the person walk smoothly with a natural gait, despite carrying the backpack? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is walking backwards.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be walking backwards? (yes or no)",
+            "Is the person moving backward in a consistent direction, rather than staying in place or moving forward? (yes or no)",
+            "Is the person’s position changing relative to the environment (e.g., background, objects) in a way that suggests backward motion? (yes or no)",
+            "Does the person maintain a consistent direction of movement without random or unnatural shifts in their path while walking backwards? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is walking up the stairs.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be walking up the stairs? (yes or no)",
+            "Is the person moving upward in a consistent direction, rather than staying on the same step or moving downward? (yes or no)",
+            "Does the person’s foot make contact with each stair in a way that suggests natural upward motion? (yes or no)",
+            "Does the person maintain a stable posture and balance while walking up the stairs, without excessive leaning or instability? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is running on the track.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be running on the track? (yes or no)",
+            "Is the person moving forward in a consistent direction, rather than staying in the same place or moving backward? (yes or no)",
+            "Is the person’s position changing relative to the track (e.g., foot movement, distance covered) in a way that suggests forward motion? (yes or no)",
+            "Does the person maintain a consistent direction of movement without random or unnatural shifts in their path while running? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A woman is cutting her hair.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the woman cutting her hair? (yes or no)",
+            "Is the hair intact before the cutting begins? (yes or no)",
+            "Does the woman use scissors or a similar tool to cut the hair? (yes or no)",
+            "After cutting, is the length or shape of the hair visibly changed? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is folding clothes.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Does the person appear to be folding clothes? (yes or no)",
+            "Is the clothing item intact and unfolded at the beginning of the video? (yes or no)",
+            "Does the person fold the clothing item in half or in a specific pattern? (yes or no)",
+            "After folding, is the clothing item visibly compact or organized? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is painting.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person holding a paintbrush or painting tool? (yes or no)",
+            "Is the person applying paint to a surface? (yes or no)",
+            "Does the person make visible strokes with the paintbrush or tool? (yes or no)",
+            "After painting, does the painted area visibly change in color or texture? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is turning on the desk lamp.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person turning on the desk lamp? (yes or no)",
+            "Is the desk lamp in the off position before being turned on? (yes or no)",
+            "Does the desk lamp visibly light up when turned on? (yes or no)",
+            "Is the person’s hand in contact with the lamp switch while turning it on? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is turning off the desk lamp.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person turning off the desk lamp? (yes or no)",
+            "Is the desk lamp lit before being turned off? (yes or no)",
+            "Does the desk lamp visibly turn off when switched? (yes or no)",
+            "Is the person’s hand in contact with the lamp switch while turning it off? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is closing the door.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person closing the door? (yes or no)",
+            "Is the door open before being closed? (yes or no)",
+            "Does the person’s hand make contact with the door handle or knob? (yes or no)",
+            "After closing, is the door visibly shut and in a closed position? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is opening the window.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person opening the window? (yes or no)",
+            "Is the window closed and intact before being opened? (yes or no)",
+            "Does the person’s hand make contact with the window handle or latch? (yes or no)",
+            "After opening, is the window visibly ajar or fully opened? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is closing the window.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person closing the window? (yes or no)",
+            "Is the window open before being closed? (yes or no)",
+            "Does the person’s hand make contact with the window handle or latch? (yes or no)",
+            "After closing, is the window visibly shut and in a closed position? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is turning on the television.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person turning on the television? (yes or no)",
+            "Is the television off before being turned on? (yes or no)",
+            "Does the television visibly turn on or light up when switched? (yes or no)",
+            "Is the person’s hand in contact with the television remote or power button? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is turning off the television.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person turning off the television? (yes or no)",
+            "Is the television on before being turned off? (yes or no)",
+            "Does the television visibly turn off or stop displaying when switched? (yes or no)",
+            "Is the person’s hand in contact with the television remote or power button? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is opening a book.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person opening a book? (yes or no)",
+            "Is the book closed and intact before being opened? (yes or no)",
+            "Does the person make contact with the book’s cover or pages? (yes or no)",
+            "After opening, are the pages visible and the book held open? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is turning on the fan.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person turning on the fan? (yes or no)",
+            "Is the fan off before being turned on? (yes or no)",
+            "Does the fan visibly start spinning or light up when turned on? (yes or no)",
+            "Is the person’s hand in contact with the fan's switch or power button? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is turning off the fan.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person turning off the fan? (yes or no)",
+            "Is the fan on before being turned off? (yes or no)",
+            "Does the fan visibly stop spinning or turn off when switched? (yes or no)",
+            "Is the person’s hand in contact with the fan's switch or power button? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is picking up the phone.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person picking up the phone? (yes or no)",
+            "Is the phone stationary or resting on a surface before being picked up? (yes or no)",
+            "Does the person’s hand make contact with the phone receiver or handset? (yes or no)",
+            "After picking up, is the phone visibly held to the person’s ear or hand? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is opening the laptop.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person opening the laptop? (yes or no)",
+            "Is the laptop closed and intact before being opened? (yes or no)",
+            "Does the person’s hand make contact with the laptop lid or hinge? (yes or no)",
+            "After opening, is the laptop screen visible and the laptop held in an open position? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is folding the blanket.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person folding the blanket? (yes or no)",
+            "Is the blanket unfolded and intact at the beginning of the video? (yes or no)",
+            "Does the person fold the blanket in half or in a specific pattern? (yes or no)",
+            "After folding, is the blanket visibly compact and organized? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is turning off the stove.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person turning off the stove? (yes or no)",
+            "Is the stove on before being turned off? (yes or no)",
+            "Does the stove visibly turn off when the controls are adjusted? (yes or no)",
+            "Is the person’s hand in contact with the stove knobs or controls while turning it off? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is opening the curtains.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person opening the curtains? (yes or no)",
+            "Are the curtains closed and intact before being opened? (yes or no)",
+            "Does the person’s hand make contact with the curtain or curtain pull? (yes or no)",
+            "After opening, are the curtains visibly parted or pulled back? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is closing the curtains.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person closing the curtains? (yes or no)",
+            "Are the curtains open before being closed? (yes or no)",
+            "Does the person’s hand make contact with the curtain or curtain pull? (yes or no)",
+            "After closing, are the curtains visibly shut and covering the window? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is pulling the blinds up.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person pulling the blinds up? (yes or no)",
+            "Are the blinds down and covering the window before being pulled up? (yes or no)",
+            "Does the person’s hand make contact with the blind cord or mechanism? (yes or no)",
+            "After pulling, are the blinds visibly raised or opened? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is pulling the blinds down.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person pulling the blinds down? (yes or no)",
+            "Are the blinds up or open before being pulled down? (yes or no)",
+            "Does the person’s hand make contact with the blind cord or mechanism? (yes or no)",
+            "After pulling, are the blinds visibly lowered or closed? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A person is moving the chair.",
+        "dimension": "Motion_Rationality",
+        "auxiliary_info": [
+            "Is the person moving the chair? (yes or no)",
+            "Is the chair stationary or resting in one place before being moved? (yes or no)",
+            "Does the person make physical contact with the chair while moving it? (yes or no)",
+            "After moving, is the chair visibly repositioned or placed in a different location? (yes or no)"
+        ]
+    }
+]

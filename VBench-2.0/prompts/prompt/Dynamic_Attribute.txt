@@ -1,0 +1,91 @@
+The leaves gradually change from red to green.
+A river changes from blue to brown.
+A river changes from brown to blue.
+A car changes from white to red.
+A car changes from red to white.
+A car changes from white to golden.
+A car changes from golden to white.
+A car changes from black to white.
+A pair of shoes changes from red to yellow.
+A pair of shoes changes from yellow to red.
+A flower changes from purple to orange.
+A flower changes from orange to purple.
+A butterfly's wings change from yellow to white.
+A butterfly's wings change from white to yellow.
+A wall changes from grey to yellow.
+A wall changes from yellow to grey.
+A wall changes from black to white.
+A wall changes from white to black.
+A seashell changes from beige to pink.
+A fish changes from silver to blue.
+A fish changes from blue to silver.
+A piece of fabric changes from blue to pink.
+A piece of fabric changes from pink to blue.
+The moon changes from yellow to silver.
+The moon changes from silver to yellow.
+A rock changes from red to grey.
+A cloud changes from white to grey.
+A cloud changes from white to black.
+A cloud changes from black to grey.
+A cloud changes from black to white.
+A person's hair changes from black to blonde.
+The sky changes from deep black to white as dawn breaks.
+The sky changes from bright to dark.
+A lamp changes from dim to bright.
+A torch changes from dim to bright.
+A screen changes from dark to bright.
+A streetlight changes from off to on.
+A star changes from faint to bright.
+A room changes from dark to bright as sunlight enters.
+A room changes from bright to dark.
+A gemstone changes from dull to bright.
+A candle changes from flickering dimly to steady bright.
+A computer screen changes from off to bright.
+A panda changes from small to big.
+A panda changes from big to small.
+A dog changes from small to big.
+A dog changes from big to small.
+A cat changes from small to big.
+A cat changes from big to small.
+A fish changes from small to big.
+A fish changes from big to small.
+A lion changes from small to big.
+A lion changes from big to small.
+A tiger changes from small to big.
+A tiger changes from big to small.
+A balloon changes from small to large.
+A balloon changes from large to small.
+A mountain erodes and changes from large to small.
+A snowman changes from large to small.
+A tree stump changes from small to large as it decays.
+A sandcastle changes from small to large.
+A sponge changes from small to large as it absorbs water.
+A cloud changes from small to large as it gathers moisture.
+A cloud changes from large to small as it gathers moisture.
+A sculpture changes from large to small as it’s carved.
+A puddle changes from small to large as rain continues to fall.
+An ant gradually grow big.
+The wooden wheel turned into a metal wheel.
+The plastic toy transformed into a glass toy.
+The wooden floor turned into a metal floor.
+The glass car window changed into a wooden car window.
+The plastic water cup turned into a metal water cup.
+The wooden door handle transformed into a plastic door handle.
+The glass window turned into a metal window.
+The plastic seat turned into a wooden seat.
+The wooden car body turned into a metal car body.
+The glass bottle turned into a wooden bottle.
+The plastic utensils turned into glass utensils.
+The wooden frame transformed into a metal frame.
+The plastic boat hull turned into a wooden boat hull.
+The glass tabletop changed into a wooden tabletop.
+The wooden furniture turned into plastic furniture.
+The glass car light turned into a plastic car light.
+The wooden staircase turned into a metal staircase.
+The plastic bottle cap turned into a glass bottle cap.
+The wooden stair railing transformed into a plastic railing.
+The glass door turned into a metal door.
+The plastic door transformed into a wooden door.
+The wooden toy turned into a glass toy.
+The plastic car shell changed into a metal car shell.
+The glass mirror transformed into a wooden mirror.

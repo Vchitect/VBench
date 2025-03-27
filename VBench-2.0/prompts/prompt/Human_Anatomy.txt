@@ -1,0 +1,120 @@
+A man is doing yoga.
+A woman is doing yoga.
+people are doing yoga.
+A man is running.
+A woman is running.
+people are running.
+A man is walking.
+A woman is walking.
+people are walking.
+A man is dancing.
+A woman is dancing.
+people are dancing.
+A man is playing basketball.
+A woman is playing basketball.
+people are playing basketball.
+A man is playing football.
+A woman is playing football.
+people are playing football.
+A man is cutting objects.
+A woman is cutting objects.
+A man is playing badminton.
+A woman is playing badminton.
+people are playing badminton.
+A man is playing ping-pong.
+A woman is playing ping-pong.
+people are playing ping-pong.
+A man is doing gymnastics.
+A woman is doing gymnastics.
+people are doing gymnastics.
+A man is doing exercises.
+A woman is doing exercises.
+people are doing exercises.
+A man is riding a bike.
+A woman is riding a bike.
+A man is jumping.
+A woman is jumping.
+A person is sitting on the couch, then suddenly they get up and start sweeping the floor.
+A person is cooking dinner, then they suddenly start organizing the pantry.
+A person is typing on a keyboard, then they suddenly get up and start making the bed.
+A person is drinking a glass of water, then they suddenly start cleaning the windows.
+A person is reading a book, then they suddenly start folding laundry.
+A person is watching TV, then they suddenly get up and start washing dishes.
+A person is checking their phone, then they suddenly start watering the plants.
+A person is eating a sandwich, then they suddenly start organizing the bookshelf.
+A person is sitting in a chair, then they suddenly get up and start stretching.
+A person is preparing a salad, then they suddenly start rearranging the furniture.
+A person is talking on the phone, then they suddenly start folding paper airplanes.
+A person is cleaning the kitchen, then they suddenly start mopping the floor.
+A person is writing an email, then they suddenly get up and start baking cookies.
+A person is sitting at a desk, then they suddenly start making coffee.
+A person is washing their hands, then they suddenly start arranging the pillows on the couch.
+A person is exercising, then they suddenly start making lunch.
+A person is organizing their closet, then they suddenly start tidying the garage.
+A person is sitting at the table, then they suddenly start drawing on a notepad.
+A person is drinking tea, then they suddenly start folding the laundry.
+A person is watching a movie, then they suddenly get up and start sweeping the porch.
+A person is eating lunch, then they suddenly start cleaning the car.
+A person is sitting at a desk, then they suddenly get up and start doing push-ups.
+A person is playing a game on their phone, then they suddenly start cleaning the bathroom.
+A person is folding towels, then they suddenly start painting a picture.
+A person is brushing their teeth, then they suddenly start making breakfast.
+A person is sitting at the kitchen table, then they suddenly get up and start doing the dishes.
+A person is drinking coffee, then they suddenly get up and start sweeping the garage.
+A person is texting, then they suddenly get up and start vacuuming the floor.
+A person is reading the news, then they suddenly start watering the plants.
+A person is sitting in a chair, then they suddenly stand up and start stretching.
+A person is washing the dishes, then they suddenly start sweeping the floor.
+A person is scrolling through their phone, then they suddenly get up and start organizing the kitchen.
+A person is checking their email, then they suddenly start making a phone call.
+A person is sitting at a desk, then they suddenly start cleaning the floor.
+A person is drinking water, then they suddenly start organizing their desk.
+A person is working on a project, then they suddenly start cooking dinner.
+A person is eating dinner, then they suddenly start washing the dishes.
+A person is folding clothes, then they suddenly get up and start reading a book. 
+A person is sitting on a chair, then they suddenly start cleaning the desk.
+A person is drinking tea, then they suddenly start making a phone call.
+A person is watching a video, then they suddenly get up and start sweeping the yard. 
+A person is putting on shoes, then they suddenly start making a sandwich.
+A person is checking their calendar, then they suddenly get up and start folding clothes.
+A person is doing yoga, then they suddenly get up and start making dinner.
+A person is organizing their desk, then they suddenly start doing the dishes.
+A person is getting ready for work, then they suddenly start cleaning the kitchen.
+A person is drinking a smoothie, then they suddenly start folding clothes.
+A person is reading a magazine, then they suddenly get up and start organizing the closet.
+A person is listening to music, then they suddenly start washing the dishes.
+One person hands a cup of water to another.
+One person passes a ball to another.
+Two people shake hands.
+One person ties the shoelaces of another person.
+One person opens the door for another person.
+Two people exchange a book.
+One person puts a coat on another person.
+One person places a chair for another to sit in.
+Two people are passing a stack of papers between them.
+One person hands a pen to another person.
+Two people are playing catch.
+One person picks up something dropped by another.
+One person helps another into a car.
+Two people push a heavy cart together.
+One person places a blanket over another person.
+Two people are building a puzzle together.
+One person picks up a fallen hat and hands it to another.
+One person adjusts the glasses of another.
+Two people are helping each other lift a large box.
+One person hands a tissue to another person.
+Two people hold a ladder while the other climbs.
+One person hands another person a glass of juice.
+Two people are playing tug-of-war with a rope.
+One person ties a scarf around another person’s neck.
+Two people exchange a handshake while holding a suitcase.
+One person helps another person put on a helmet.
+Two people are lifting a table together.
+One person hands a phone to another person.
+Two people are assembling furniture together.
+One person adjusts the collar of another person’s shirt.
+Two people are feeding each other at a picnic.
+One person hands another a piece of cake.
+Two people are hanging a picture on the wall.
+One person points to something while the other looks.
+Two people are exchanging keys.

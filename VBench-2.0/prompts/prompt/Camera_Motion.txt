@@ -1,0 +1,108 @@
+Garden, zoom in.
+Garden, zoom out.
+Garden, tilt up.
+Garden, tilt down.
+Garden, pan left.
+Garden, pan right.
+The camera movement is static. Garden, static shot, the camera is fixed.
+The camera orbits around in a clockwise direction. Garden.
+Garden, First-person perspective, oblique shot, airborne dolly movement.
+Pyramid, zoom in.
+Pyramid, zoom out.
+Pyramid, tilt up.
+Pyramid, tilt down.
+Pyramid, pan left.
+Pyramid, pan right.
+The camera movement is static. Pyramid, static shot, the camera is fixed.
+The camera orbits around in a clockwise direction. Pyramid.
+Pyramid, First-person perspective, oblique shot, airborne dolly movement.
+Mount Fuji, zoom in.
+Mount Fuji, zoom out.
+Mount Fuji, tilt up.
+Mount Fuji, tilt down.
+Mount Fuji, pan left.
+Mount Fuji, pan right.
+The camera movement is static. Mount Fuji, static shot, the camera is fixed.
+The camera orbits around in a clockwise direction. Mount Fuji.
+Mount Fuji, First-person perspective, oblique shot, airborne dolly movement.
+Blue Lagoon, zoom in.
+Blue Lagoon, zoom out.
+Blue Lagoon, tilt up.
+Blue Lagoon, tilt down.
+Blue Lagoon, pan left.
+Blue Lagoon, pan right.
+The camera movement is static. Blue Lagoon, static shot, the camera is fixed.
+The camera orbits around in a clockwise direction. Blue Lagoon.
+Blue Lagoon, First-person perspective, oblique shot, airborne dolly movement.
+Table, zoom in.
+Table, zoom out.
+Table, tilt up.
+Table, tilt down.
+Table, pan left.
+Table, pan right.
+The camera movement is static. Table, static shot, the camera is fixed.
+The camera orbits around in a clockwise direction. Table.
+Table, First-person perspective, oblique shot, airborne dolly movement.
+Alhambra, zoom in.
+Alhambra, zoom out.
+Alhambra, tilt up.
+Alhambra, tilt down.
+Alhambra, pan left.
+Alhambra, pan right.
+The camera movement is static. Alhambra, static shot, the camera is fixed.
+The camera orbits around in a clockwise direction. Alhambra.
+Alhambra, First-person perspective, oblique shot, airborne dolly movement.
+Vase, zoom in.
+Vase, zoom out.
+Vase, tilt up.
+Vase, tilt down.
+Vase, pan left.
+Vase, pan right.
+The camera movement is static. Vase, static shot, the camera is fixed.
+The camera orbits around in a clockwise direction. Vase.
+Vase, First-person perspective, oblique shot, airborne dolly movement.
+Burj Khalifa, zoom in.
+Burj Khalifa, zoom out.
+Burj Khalifa, tilt up.
+Burj Khalifa, tilt down.
+Burj Khalifa, pan left.
+Burj Khalifa, pan right.
+The camera movement is static. Burj Khalifa, static shot, the camera is fixed.
+The camera orbits around in a clockwise direction. Burj Khalifa.
+Burj Khalifa, First-person perspective, oblique shot, airborne dolly movement.
+Machu Picchu, zoom in.
+Machu Picchu, zoom out.
+Machu Picchu, tilt up.
+Machu Picchu, tilt down.
+Machu Picchu, pan left.
+Machu Picchu, pan right.
+The camera movement is static. Machu Picchu, static shot, the camera is fixed.
+The camera orbits around in a clockwise direction. Machu Picchu.
+Machu Picchu, First-person perspective, oblique shot, airborne dolly movement.
+Forbidden City, zoom in.
+Forbidden City, zoom out.
+Forbidden City, tilt up.
+Forbidden City, tilt down.
+Forbidden City, pan left.
+Forbidden City, pan right.
+The camera movement is static. Forbidden City, static shot, the camera is fixed.
+The camera orbits around in a clockwise direction. Forbidden City.
+Forbidden City, First-person perspective, oblique shot, airborne dolly movement.
+Laptop, zoom in.
+Laptop, zoom out.
+Laptop, tilt up.
+Laptop, tilt down.
+Laptop, pan left.
+Laptop, pan right.
+The camera movement is static. Laptop, static shot, the camera is fixed.
+The camera orbits around in a clockwise direction. Laptop.
+Laptop, First-person perspective, oblique shot, airborne dolly movement.
+Watch, zoom in.
+Watch, zoom out.
+Watch, tilt up.
+Watch, tilt down.
+Watch, pan left.
+Watch, pan right.
+The camera movement is static. Watch, static shot, the camera is fixed.
+The camera orbits around in a clockwise direction. Watch.
+Wristwatch, First-person perspective, oblique shot, airborne dolly movement.

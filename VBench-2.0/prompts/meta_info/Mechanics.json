@@ -1,0 +1,444 @@
+[
+    {
+        "prompt_en": "A bowl of soup is tilted in the space station, with the liquid slowly spreading in all directions.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Is the background of the video a space station? (yes or no)",
+            "Does the liquid form floating blobs and spread in all directions? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A jar of peanut butter is opened in the space station, with the viscous liquid slowly dispersing.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Is the background of the video a space station? (yes or no)",
+            "Does the peanut butter form floating blobs and spread in all directions? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A container of cream is opened in the space station, with the liquid slowly dispersing into the air.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Is the background of the video a space station? (yes or no)",
+            "Does the cream form floating blobs and spread in all directions? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A cup of tea is carefully tilted in the space station, and the liquid floats in various directions.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Is the background of the video a space station? (yes or no)",
+            "Does the tea form floating blobs and spread in all directions? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A bottle of ketchup is gently squeezed in the space station, with the thick liquid spreading into the environment.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Is the background of the video a space station? (yes or no)",
+            "Does the ketchup form floating blobs and spread in all directions? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A bottle of water is opened in the space station, and the water starts to float out in irregular shapes.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Is the background of the video a space station? (yes or no)",
+            "Does the water form floating blobs and spread in all directions? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A container of whipped cream is opened in the space station, and the foam slowly expands in all directions.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Is the background of the video a space station? (yes or no)",
+            "Does the whipped cream form floating blobs and spread in all directions? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A glass of apple juice is slowly poured out in the space station, with the liquid floating and splitting into droplets.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Is the background of the video a space station? (yes or no)",
+            "Does the apple form floating blobs and spread in all directions? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A metal spoon is gently placed on the surface of a glass of water.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the metal spoon float on the surface of the water? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A cork is placed on the surface of a bucket filled with water.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the cork float on the surface of the water? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A wooden toy is placed gently on the surface of a small bowl of water.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the wooden toy float on the surface of the water? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A plastic toy is placed on the surface of a pond filled with water.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the plastic toy float on the surface of the water? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A metal coin is gently placed on the surface of a shallow pool of water.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Iinitally, does a coin be placed on the water? (yes or no)",
+            "Does the metal coin sink into the water? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A fishing net is gently placed on the surface of a pond filled with water.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the fishing net float on the surface of the water? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A piece of styrofoam is placed on the surface of a bowl filled with water.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the styrofoam float on the surface of the water? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of a wet sponge being compressed between two hands, with the pressure increasing rapidly.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the sponge contact with hands? (yes or no)",
+            "Does the sponge be compressed and the water be expelled out of the sponge? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of a cotton ball soaked in water being squeezed by hand, with the pressure increasing rapidly.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the cotton ball contact with hands? (yes or no)",
+            "Does the cotton ball be compressed and the water be expelled out of the cotton ball? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of a plastic bottle being squeezed by hand, with the pressure intensifying over time.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the plastic bottle contact with hands? (yes or no)",
+            "Does the plastic bottle deform? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of a wet cloth being compressed by hand, with the pressure gradually increasing.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the cloth contact with hands? (yes or no)",
+            "Does the cloth be compressed and the water be expelled out of the cloth? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of a juice box being squeezed by hand, with pressure intensifying over time.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the juice box contact with hands? (yes or no)",
+            "Does the juice box be compressed and the water be expelled out of the juice box? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of a toothpaste tube being squeezed by hand, with the pressure rapidly increasing.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the toothpaste tube contact with hands? (yes or no)",
+            "Does the toothpaste tube be compressed and the water be expelled out of the toothpaste tube? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of a foam mattress being compressed under pressure, with the pressure increasing over time.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the foam mattress be compressed under pressure over time? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of air being gradually and forcefully removed from a sealed, empty soda can.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the soda can collapse inward? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of air being gradually extracted from a sealed, empty plastic bottle with a flexible body.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the plastic bottle crumple and shrink? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of air being gradually extracted from a sealed, empty rubber balloon.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the balloon shrink and deform? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of air being gradually and forcefully pulled out from a sealed, empty metal pipe.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the metal pipe crumple inward? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of air being extracted from a sealed, empty plastic pouch.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the plastic pouch crumple and shrink? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of air being extracted from a sealed, empty plastic container.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the plastic container shrink? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A timelapse of air being extracted from a sealed, empty vacuum chamber.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the vacuum chamber deform inward? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A hand presses a pencil into the surface of a thin plastic bag, with the tip gradually penetrating the material.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the pencil contact with plastic bag? (yes or no)",
+            "Does the pencil presse into the plastic bag? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A sharp object slowly presses into the surface of a soft balloon, with the point gradually sinking into the rubber.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the sharp object contact with balloon? (yes or no)",
+            "Does the balloon pop? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A pencil slowly presses into the surface of a tightly stretched rubber sheet, with the tip gradually tearing through the material.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the pencil contact with rubber sheet? (yes or no)",
+            "Does the rubber sheet tear? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A hand slowly presses a pin into the surface of a stretched plastic sheet, with the tip gradually puncturing the material.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the pin contact with plastic sheet? (yes or no)",
+            "Does the plastic sheet be punctured? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A sharp needle slowly presses into the surface of an inflated rubber balloon, with the point gradually puncturing the outer layer.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the needle contact with balloon? (yes or no)",
+            "Does the balloon be punctured and pop? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A hand presses a sharp pencil into the surface of a thin rubber glove, with the tip gradually sinking into the material.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the pencil contact with rubber glove? (yes or no)",
+            "Does the rubber glove be punctured? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A needle slowly presses into the surface of an inflated air mattress, with the tip gradually penetrating the fabric.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the needle contact with air mattress? (yes or no)",
+            "Does the air mattress deflate and flatten? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A small, elastic rubber bouncy ball is thrown onto the ground, showing its rapid bounce back upon impact.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the ball fall and impact the floor? (yes or no)",
+            "Does the ball bounce back? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A soft rubber duck is tossed onto the floor, showing its energetic bounce as it strikes the surface.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the rubber duck fall and impact the floor? (yes or no)",
+            "Does the rubber duck bounce back? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A rubber dog ball is thrown down onto the floor, displaying its bounce as it hits the ground.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the ball fall and impact the floor? (yes or no)",
+            "Does the ball bounce back? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A bouncing rubber ball is rolled forcefully towards a wall, with its dynamic bounce captured as it rebounds off the surface.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the ball impact the wall? (yes or no)",
+            "Does the ball bounce back? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A small rubber beach ball is thrown towards the ground, showing the ball's high bounce after impact with the surface.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the ball fall and impact the ground? (yes or no)",
+            "Does the ball bounce back? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "An inflatable rubber toy ball is dropped onto the floor, with the bounce showing the material’s elasticity as it rebounds.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the ball fall and impact the floor? (yes or no)",
+            "Does the ball bounce back? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A colorful rubber ball is dropped from a height, showing the bounce of the ball as it makes contact with the hard floor.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the ball fall and impact the floor? (yes or no)",
+            "Does the ball bounce back? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A piece of yellow chalk is used to write on the smooth, white surface of a porcelain board, showing the interaction between the chalk and the surface.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the chalk contact with the board? (yes or no)",
+            "Does the lines be tracing out exactly where the chalk contacts the surface? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A piece of white chalk is used to draw on the rough, grey surface of a concrete wall, showing the frictional interaction between the chalk and the wall.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the chalk contact with the wall? (yes or no)",
+            "Does the continuous mark leave where the chalk contacts the wall? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A blue pen is used to write on the rough, brown paper of a shopping bag, showcasing the interaction between the pen and the bag's surface.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the pen contact with the paper? (yes or no)",
+            "Does the continuous ink leave where the pen contacts the paper? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A red paintbrush is used to apply paint to the rough surface of a canvas, showing how the bristles interact with the canvas texture.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the paintbrush contact with the canvas? (yes or no)",
+            "Does the paint mark leave where the paintbrush contacts the canvas? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A silver pen is used to write on the rough, textured surface of a cardboard box, capturing the mark left by the pen due to friction.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the pen contact with the cardboard box? (yes or no)",
+            "Does the mark leave where the pen contacts the cardboard box? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A pink gel pen is used to write on the rough, textured surface of a piece of fabric, with the pen leaving a mark due to friction.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the pen contact with the fabric? (yes or no)",
+            "Does the mark leave where the pen contacts the fabric? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A dark brown pencil is used to write on the rough, textured surface of an old book page, leaving a mark from the pencil's graphite.",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the pencil contact with the book page? (yes or no)",
+            "Does the mark leave where the pencil contacts the book page? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A water droplet slides down the surface of a freshly washed car window, forming a spherical shape as it moves",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the water droplet slides down? (yes or no)",
+            "Does the water droplet maintain a spherical shape? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A droplet of water glides down the edge of a ceramic plate, remaining spherical due to surface tension",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the water droplet slides down? (yes or no)",
+            "Does the water droplet maintain a spherical shape? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A water droplet slides off the edge of a porcelain teacup, maintaining a spherical form as it falls",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the water droplet slides down? (yes or no)",
+            "Does the water droplet maintain a spherical shape? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A water droplet slides down the smooth surface of a marble countertop, remaining spherical due to surface tension",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the water droplet slides down? (yes or no)",
+            "Does the water droplet maintain a spherical shape? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A droplet of water clings to the edge of a smooth mirror, demonstrating surface tension as it forms a spherical shape",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the water droplet slides down? (yes or no)",
+            "Does the water droplet maintain a spherical shape? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A water droplet forms on the smooth edge of a plastic cup, maintaining its spherical shape as it rests",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the water droplet slides down? (yes or no)",
+            "Does the water droplet maintain a spherical shape? (yes or no)"
+        ]
+    },
+    {
+        "prompt_en": "A water droplet slides down the edge of a smooth sheet of aluminum, maintaining its spherical form",
+        "dimension": "Mechanics",
+        "auxiliary_info": [
+            "Does the water droplet slides down? (yes or no)",
+            "Does the water droplet maintain a spherical shape? (yes or no)"
+        ]
+    }
+]

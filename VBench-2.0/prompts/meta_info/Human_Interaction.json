@@ -1,0 +1,402 @@
+[
+    {
+        "prompt_en": "One person hands a cup of water to another.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person passes a ball to another.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people shake hands.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person ties the shoelaces of another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person opens the door for another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people exchange a book.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person puts a coat on another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person places a chair for another to sit in.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are passing a stack of papers between them.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person hands a pen to another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are playing catch.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person picks up something dropped by another.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person helps another into a car.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people push a heavy cart together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person places a blanket over another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are building a puzzle together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person picks up a fallen hat and hands it to another.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person adjusts the glasses of another.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are helping each other lift a large box.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person hands a tissue to another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people hold a ladder while the other climbs.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person hands another person a glass of juice.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are playing tug-of-war with a rope.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person ties a scarf around another person’s neck.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people exchange a handshake while holding a suitcase.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person helps another person put on a helmet.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are lifting a table together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person hands a phone to another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are assembling furniture together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person adjusts the collar of another person’s shirt.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are feeding each other at a picnic.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person hands another a piece of cake.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are hanging a picture on the wall.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person points to something while the other looks.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are exchanging keys.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person lifts another person’s suitcase.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are riding a tandem bicycle together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person pushes another person in a wheelchair.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are carrying a large painting together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person passes a pen to another person to sign something.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are holding hands while walking.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person brushes the hair of another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are clearing a table together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person holds an umbrella over another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are packing a suitcase together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person is handing a remote control to another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are walking side by side down a hallway.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person helps another person tie a bow tie.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are exchanging business cards.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person gently lifts another person’s chin.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are pushing a stroller together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person ties a ribbon around another person’s wrist.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are holding hands while sitting on a bench.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person adjusts the tie of another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are unloading groceries from a car.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person helps another person pick up their books.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are placing food on a barbecue grill together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person hands a map to another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are sweeping the floor together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person holds a flashlight while another searches for something.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are measuring something with a tape measure.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person opens a window for another.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are holding a ladder while the other climbs.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person picks out clothes for another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are planting a tree together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person helps another person onto a boat.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are putting up Christmas decorations together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person fills another person’s cup with tea.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are tying balloons together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person is passing a towel to another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are carrying a heavy box up the stairs.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person cleans another person’s shoes.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are changing a flat tire on a car together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person passes a drink to another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are cutting vegetables together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person helps another person put on a glove.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are practicing martial arts together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person folds a shirt for another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are pushing a cart of laundry.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person helps another person tie their shoes.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are assembling a tent together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person hands a notebook to another person.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are folding towels together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person holds a door open while the other walks through.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are wrapping a gift together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person lifts a suitcase for another person to carry.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are drawing a picture together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person cleans another person’s glasses.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are loading boxes into a car together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person helps another person set the table.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are cleaning windows together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person hands another person a glass of wine.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are putting on makeup together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person brushes the dust off another person’s jacket.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are fixing a broken chair together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person adjusts the settings on another person’s phone.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are washing a car together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person helps another person clean their shoes.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "Two people are putting away groceries together.",
+        "dimension": "Human_Interaction"
+    },
+    {
+        "prompt_en": "One person hands a camera to another person to take a photo.",
+        "dimension": "Human_Interaction"
+    }
+]
