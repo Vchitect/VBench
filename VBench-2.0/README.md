@@ -207,9 +207,8 @@ bash evaluate.sh
 
 ## :hearts: Acknowledgement
 
-#### :muscle: VBench-2.0 Contributors
-Order is based on the time joining the project: 
-> [Dian Zheng](https://zhengdian1.github.io/), [Ziqi Huang](https://ziqihuangg.github.io/), [Hongbo Liu](https://github.com/Alexios-hub), [Kai Zou](https://github.com/Jacky-hate), [Yinan He](https://github.com/yinanhe), [Fan Zhang](https://github.com/zhangfan-p).
+**VBench-2.0** is currently maintained by [Dian Zheng](https://zhengdian1.github.io/) and [Ziqi Huang](https://ziqihuangg.github.io/).
+
 
 #### :hugs: Open-Sourced Repositories
 This project wouldn't be possible without the following open-sourced repositories:
