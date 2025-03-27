@@ -8,7 +8,7 @@
 This repository contains the implementation of the following paper and its related serial works in progress. We evaluate video generative models!
 
 > **VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness**<br>
-> [Dian Zheng](https://zhengdian1.github.io/)<sup>∗</sup>, [Ziqi Huang](https://ziqihuangg.github.io/)<sup>∗</sup>, [Hongbo Liu](github:https://github.com/Alexios-hub), [Kai Zou](https://github.com/Jacky-hate), [Yinan He](https://github.com/yinanhe), [Fan Zhang](https://github.com/zhangfan-p), [Yuanhan Zhang](https://zhangyuanhan-ai.github.io/),  [Jingwen He](https://scholar.google.com/citations?user=GUxrycUAAAAJ&hl=zh-CN), [Wei-Shi Zheng](https://www.isee-ai.cn/~zhwshi/)<sup>+</sup>, [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/index.html)<sup>+</sup>, [Ziwei Liu](https://liuziwei7.github.io/)<sup>+</sup><br>
+> [Dian Zheng](https://zhengdian1.github.io/)<sup>∗</sup>, [Ziqi Huang](https://ziqihuangg.github.io/)<sup>∗</sup>, [Hongbo Liu](https://github.com/Alexios-hub), [Kai Zou](https://github.com/Jacky-hate), [Yinan He](https://github.com/yinanhe), [Fan Zhang](https://github.com/zhangfan-p), [Yuanhan Zhang](https://zhangyuanhan-ai.github.io/),  [Jingwen He](https://scholar.google.com/citations?user=GUxrycUAAAAJ&hl=zh-CN), [Wei-Shi Zheng](https://www.isee-ai.cn/~zhwshi/)<sup>+</sup>, [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/index.html)<sup>+</sup>, [Ziwei Liu](https://liuziwei7.github.io/)<sup>+</sup><br>
 
 
 ### Table of Contents
@@ -197,7 +197,7 @@ bash evaluate.sh
    If you find our repo useful for your research, please consider citing our paper:
 
    ```bibtex
-    @article{zheng2025vbench2,
+    @article{zheng2025vbench,
         title={VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness},
         author={Zheng, Dian and Huang, Ziqi and Liu, Hongbo and Zou, Kai and He, Yinan and Zhang, Fan and Zhang, Yuanhan and He, Jingwen and Zheng, Wei-Shi and Qiao, Yu and Liu, Ziwei},
         year={2025}
@@ -209,7 +209,7 @@ bash evaluate.sh
 
 #### :muscle: VBench-2.0 Contributors
 Order is based on the time joining the project: 
-> [Dian Zheng](https://zhengdian1.github.io/), [Ziqi Huang](https://ziqihuangg.github.io/), [Hongbo Liu](github:https://github.com/Alexios-hub), [Kai Zou](https://github.com/Jacky-hate), [Yinan He](https://github.com/yinanhe), [Fan Zhang](https://github.com/zhangfan-p).
+> [Dian Zheng](https://zhengdian1.github.io/), [Ziqi Huang](https://ziqihuangg.github.io/), [Hongbo Liu](https://github.com/Alexios-hub), [Kai Zou](https://github.com/Jacky-hate), [Yinan He](https://github.com/yinanhe), [Fan Zhang](https://github.com/zhangfan-p).
 
 #### :hugs: Open-Sourced Repositories
 This project wouldn't be possible without the following open-sourced repositories:
