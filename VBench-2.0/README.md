@@ -1,6 +1,6 @@
 ![vbench_logo](https://raw.githubusercontent.com/Vchitect/VBench/master/asset/vbench_logo_github_20240605.jpg)
 
-[![VBench-2.0 Report (arXiv)](https://img.shields.io/badge/VBench-2.0%20Report-b31b1b?logo=arxiv&logoColor=red)](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/asset/VBench-2.0_paper.pdf)
+[![VBench-2.0 Report (arXiv)](https://img.shields.io/badge/VBench-2.0%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2503.21755)
 
 [![Project Page](https://img.shields.io/badge/Project-Page-green?logo=googlechrome&logoColor=green)](https://vchitect.github.io/VBench-2.0-project/)
 [![Video](https://img.shields.io/badge/YouTube-Video-c4302b?logo=youtube&logoColor=red)](https://www.youtube.com/watch?v=kJrzKy9tgAc)
@@ -92,9 +92,10 @@ Check out [details of prompt suites](https://github.com/Vchitect/VBench/tree/mas
    If you find our repo useful for your research, please consider citing our paper:
 
    ```bibtex
-    @article{zheng2025vbench,
+    @article{zheng2025vbench2,
         title={VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness},
         author={Zheng, Dian and Huang, Ziqi and Liu, Hongbo and Zou, Kai and He, Yinan and Zhang, Fan and Zhang, Yuanhan and He, Jingwen and Zheng, Wei-Shi and Qiao, Yu and Liu, Ziwei},
+        journal={arXiv preprint arXiv:2503.21755},
         year={2025}
     }
 

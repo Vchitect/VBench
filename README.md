@@ -3,12 +3,15 @@
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2311.99999-b31b1b.svg)](https://arxiv.org/abs/2311.99999) -->
 [![VBench Paper (CVPR 2024)](https://img.shields.io/badge/VBench-CVPR%202024-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2311.17982)
 [![VBench++ Report (arXiv)](https://img.shields.io/badge/VBench++-arXiv%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2411.13503)
+[![VBench-2.0 Report (arXiv)](https://img.shields.io/badge/VBench-2.0%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2503.21755)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
 [![Arena (View Generated Videos Here!)](https://img.shields.io/badge/%F0%9F%A4%97%20VBench%20Arena-blue)](https://huggingface.co/spaces/Vchitect/VBench_Video_Arena)
 [![Project Page](https://img.shields.io/badge/VBench-Website-green?logo=googlechrome&logoColor=green)](https://vchitect.github.io/VBench-project/)
+[![Project Page](https://img.shields.io/badge/VBench%202.0-Website-green?logo=googlechrome&logoColor=green)](https://vchitect.github.io/VBench-2.0-project/)
 [![Dataset Download](https://img.shields.io/badge/Dataset-Download-red?logo=googlechrome&logoColor=red)](https://drive.google.com/drive/folders/1on66fnZ8atRoLDimcAXMxSwRxqN8_0yS?usp=sharing)
 [![PyPI](https://img.shields.io/pypi/v/vbench)](https://pypi.org/project/vbench/)
-[![Video](https://img.shields.io/badge/YouTube-Video-c4302b?logo=youtube&logoColor=red)](https://www.youtube.com/watch?v=7IhCC8Qqn8Y)
+[![Video](https://img.shields.io/badge/VBench-Video-c4302b?logo=youtube&logoColor=red)](https://www.youtube.com/watch?v=7IhCC8Qqn8Y)
+[![Video](https://img.shields.io/badge/VBench%202.0-Video-c4302b?logo=youtube&logoColor=red)](https://www.youtube.com/watch?v=kJrzKy9tgAc)
 [![Visitor](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FVchitect%2FVBench&count_bg=%23FFA500&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false)](https://hits.seeyoufarm.com)
 
 
@@ -356,9 +359,10 @@ python static_filter.py --videos_path $VIDEOS_PATH --filter_scope $filename
         year={2024}
     }
 
-    @article{zheng2025vbench,
+    @article{zheng2025vbench2,
         title={VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness},
         author={Zheng, Dian and Huang, Ziqi and Liu, Hongbo and Zou, Kai and He, Yinan and Zhang, Fan and Zhang, Yuanhan and He, Jingwen and Zheng, Wei-Shi and Qiao, Yu and Liu, Ziwei},
+        journal={arXiv preprint arXiv:2503.21755},
         year={2025}
     }
    ```
