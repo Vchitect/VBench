@@ -92,7 +92,7 @@ Check out [details of prompt suites](https://github.com/Vchitect/VBench/tree/mas
    If you find our repo useful for your research, please consider citing our paper:
 
    ```bibtex
-    @article{zheng2025vbench2,
+    @article{zheng2025vbench,
         title={VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness},
         author={Zheng, Dian and Huang, Ziqi and Liu, Hongbo and Zou, Kai and He, Yinan and Zhang, Fan and Zhang, Yuanhan and He, Jingwen and Zheng, Wei-Shi and Qiao, Yu and Liu, Ziwei},
         journal={arXiv preprint arXiv:2503.21755},
