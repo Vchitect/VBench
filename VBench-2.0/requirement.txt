@@ -196,5 +196,3 @@ mediapipe
 retina-face
 retinaface-pytorch
 supervision
---extra-index-url https://download.openmmlab.com/mmcv/dist/cu118/torch2.4/
-mmcv==2.2.0
