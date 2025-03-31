@@ -1,5 +1,10 @@
 ![vbench_logo](https://raw.githubusercontent.com/Vchitect/VBench/master/asset/vbench_logo_github_20240605.jpg)
 
+**How to Reach Us:**
+- Code Issues: Please open an [issue](https://github.com/Vchitect/VBench/issues) in our GitHub repository for any problems or bugs.
+- Evaluation Requests: To submit your sampled videos for evaluation, create an [issue](https://github.com/Vchitect/VBench/issues) titled "Evaluation Request - Model Name" in the GitHub repository with the relevant model information.
+- General Inquiries: For other questions, contact Ziqi Huang at ZIQI002 [at] e [dot] ntu [dot] edu [dot] sg
+
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2311.99999-b31b1b.svg)](https://arxiv.org/abs/2311.99999) -->
 [![VBench Paper (CVPR 2024)](https://img.shields.io/badge/VBench-CVPR%202024-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2311.17982)
 [![VBench++ Report (arXiv)](https://img.shields.io/badge/VBench++-arXiv%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2411.13503)
