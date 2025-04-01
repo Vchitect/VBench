@@ -54,6 +54,7 @@ python -m pip install ninja
 python -m pip install git+https://github.com/Dao-AILab/flash-attention.git@v2.7.2.post1
 pip install -r requirement.txt
 pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.4/index.html --no-cache-dir
+pip install retinaface_pytorch==0.0.8 --no-deps
 ```
 There will be an error about the mmcv version exceeds 2.1.0, users could directly change the `mmcv_maximum_version` to `2.3.0` in `Your_PATH_to_Anaconda/env/vbench2/lib/python3.10/site-packages/mmdet/__init__.py` and `Your_PATH_to_Anaconda/env/vbench2/lib/python3.10/site-packages/mmyolo/__init__.py`
 
