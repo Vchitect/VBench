@@ -45,6 +45,7 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
      ```bash
      git clone https://huggingface.co/datasets/Vchitect/VBench-2.0_human_anomaly
      ```
+     or [Google Drive](https://drive.google.com/drive/folders/1_NyiLa861EbDQdDp4Lsy4jTzH2ynCiFw?usp=drive_link)
 
 1. **Extract Images**:
    - Unzip the `all_images.zip` file into the `dataset/` directory:
