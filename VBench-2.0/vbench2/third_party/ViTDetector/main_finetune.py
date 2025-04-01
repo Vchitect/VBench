@@ -51,21 +51,6 @@ class FocalLoss(nn.Module):
         return F_loss
 
 
-'''
-
-srun -p video-aigc-1 --nodes=1  --gres=gpu:1 --cpus-per-task=16 torchrun main_finetune.py --cfg '/mnt/petrelfs/zoukai/code/SimMIM/configs/vit_base__800ep/simmim_finetune__vit_base__img224__800ep.yaml' --train-path /mnt/petrelfs/zoukai/code/vbench2/data/face_img_train.jsonl --val-path /mnt/petrelfs/zoukai/code/vbench2/data/test_hand_face/face.jsonl --pretrained '/mnt/petrelfs/zoukai/model/simmim/simmim_pretrain__vit_base__img224__800ep.pth' --batch-size 128 --output outputs/face_base_2v1_repeat
-
-srun -p video-aigc-1 --nodes=1  --gres=gpu:1 --cpus-per-task=16 torchrun main_finetune.py --cfg '/mnt/petrelfs/zoukai/code/SimMIM/configs/vit_base__800ep/simmim_finetune__vit_base__img224__800ep.yaml' --train-path /mnt/petrelfs/zoukai/code/vbench2/data/face_img_train.jsonl --val-path /mnt/petrelfs/zoukai/code/vbench2/data/test_hand_face/face.jsonl --pretrained '/mnt/petrelfs/zoukai/model/simmim/simmim_pretrain__vit_base__img224__800ep.pth' --batch-size 128 --output outputs/face_base_2v1_focal --focal-loss
-
-
-srun -p video-aigc-1 --nodes=1  --gres=gpu:1 --cpus-per-task=16 torchrun --master_port 29502 main_finetune.py --cfg '/mnt/petrelfs/zoukai/code/SimMIM/configs/vit_base__800ep/simmim_finetune__vit_base__img224__800ep.yaml' --train-path /mnt/petrelfs/zoukai/code/vbench2/data/hand_img_train_1w_balanced.jsonl --val-path /mnt/petrelfs/zoukai/code/vbench2/data/test_hand_face/hand.jsonl --pretrained '/mnt/petrelfs/zoukai/model/simmim/simmim_pretrain__vit_base__img224__800ep.pth' --batch-size 128 --output outputs/hand_base_1v1_add_gen_2w_focol --focal-loss
-
-
-srun -p video-aigc-1 --nodes=1  --gres=gpu:1 --cpus-per-task=16 torchrun --master_port 29502 main_finetune.py --cfg '/mnt/petrelfs/zoukai/code/SimMIM/configs/vit_base__800ep/simmim_finetune__vit_base__img224__800ep.yaml' --train-path /mnt/petrelfs/zoukai/code/vbench2/data/human_img_train_2w.jsonl --val-path /mnt/petrelfs/zoukai/code/vbench2/data/human_img_val_2w.jsonl --pretrained '/mnt/petrelfs/zoukai/model/simmim/simmim_pretrain__vit_base__img224__800ep.pth' --batch-size 128 --output outputs/human_4w_focal_2w --focal-loss
-
-
-
-'''
 def parse_option():
     parser = argparse.ArgumentParser('training and evaluation script', add_help=False)
     parser.add_argument('--cfg', type=str, required=True, metavar="FILE", help='path to config file', )
