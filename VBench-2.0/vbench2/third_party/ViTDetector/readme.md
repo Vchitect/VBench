@@ -48,9 +48,12 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
      or [Google Drive](https://drive.google.com/drive/folders/1_NyiLa861EbDQdDp4Lsy4jTzH2ynCiFw?usp=drive_link)
 
 2. **Extract Images**:
-   - Unzip the `all_images.zip` file into the `dataset/` directory:
+   - Unzip the `opensource.zip` file:
      ```bash
-     unzip VBench-2.0_human_anomaly/dataset/all_images.zip -d VBench-2.0_human_anomaly/dataset/
+    cd "VBench-2.0_human_anomaly"
+    zip -s 0 --out merged.zip "opensource.zip"
+    unzip merged.zip
+    rm merged.zip
      ```
 
 3. **Download Pre-trained Model**:
