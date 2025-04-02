@@ -63,8 +63,8 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
      ```python
      torchrun main_finetune.py \
       --cfg 'configs/vit_base__800ep/simmim_finetune__vit_base__img224__800ep.yaml' \
-      --train-path "VBench-2.0_human_anomaly/face_train.json" \
-      --val-path "VBench-2.0_human_anomaly/face_train.json" \
+      --train-path "VBench-2.0_human_anomaly/dataset/face_train.json" \
+      --val-path "VBench-2.0_human_anomaly/dataset/face_train.json" \
       --pretrained 'pretrain/simmim_pretrain__vit_base__img224__800ep.pth' \
       --batch-size 128 \
       --output "checkpoint/face"
