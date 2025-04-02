@@ -56,7 +56,7 @@ def save_checkpoint(config, epoch, model, max_accuracy, optimizer, lr_scheduler,
     if config.AMP_OPT_LEVEL != "O0":
         save_state['amp'] = amp.state_dict()
 
-    save_path = os.path.join(config.OUTPUT, f'ckpt_epoch_{epoch}.pth')
+    save_path = os.path.join(config.OUTPUT.split('/')[0], f'ckpt{epoch}.pth')
     logger.info(f"{save_path} saving......")
     torch.save(save_state, save_path)
     logger.info(f"{save_path} saved !!!")
