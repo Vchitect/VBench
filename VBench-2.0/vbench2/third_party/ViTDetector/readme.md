@@ -40,56 +40,76 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
 - Follow VBench2.0 environment set-up
 
 ### Steps to Train
-1. **Download Dataset**:
-   - Download the dataset files from the following URL:
+
+1. **Download Pre-trained Model**:
+   - Download the pre-trained simmim model from [Google Drive](https://drive.google.com/file/d/1dJn6GYkwMIcoP3zqOEyW1_iQfpBi8UOw/view?usp=sharing)
+   - Download the pre-trained YOLO-World model from [Google Drive](https://drive.google.com/file/d/1qo-K1kum7yiEwIlN1TWDvABXX6qriUen/view?usp=drive_link)
+   - put the models into `pretrain/`
+   - or use the following command:
+   ```bash
+   gdown https://drive.google.com/uc?id=1dJn6GYkwMIcoP3zqOEyW1_iQfpBi8UOw -O pretrain/
+   gdown https://drive.google.com/uc?id=1qo-K1kum7yiEwIlN1TWDvABXX6qriUen -O pretrain/
+   ```
+
+2. **Download Dataset**:
+   - Download the dataset files from [Google Drive](https://drive.google.com/drive/folders/1_NyiLa861EbDQdDp4Lsy4jTzH2ynCiFw?usp=drive_link) or the following URL:
      ```bash
      git clone https://huggingface.co/datasets/Vchitect/VBench-2.0_human_anomaly
      ```
-     or [Google Drive](https://drive.google.com/drive/folders/1_NyiLa861EbDQdDp4Lsy4jTzH2ynCiFw?usp=drive_link)
-
-2. **Extract Images**:
-   - Unzip the `opensource.zip` file:
-     ```bash
-        cd "VBench-2.0_human_anomaly"
-        zip -s 0 --out merged.zip "opensource.zip"
-        unzip merged.zip
-        rm merged.zip
+   - If the large folder does not download, use the following command (You need to configure Git LFS in advance, or we suggest using the Google Drive link above.):
+      ```bash
+      cd "VBench-2.0_human_anomaly"
+      git lfs install
+      git lfs pull
      ```
 
-3. **Download Pre-trained Model**:
-   - Download the pre-trained simmim model from [Google Drive](https://drive.google.com/file/d/1dJn6GYkwMIcoP3zqOEyW1_iQfpBi8UOw/view?usp=sharing)
-   - Download the pre-trained YOLO-World model from [Google Drive](https://drive.google.com/file/d/1qo-K1kum7yiEwIlN1TWDvABXX6qriUen/view?usp=drive_link)
-   - put the models into pretrain/
+3. **Extract Images**:
+   - Unzip the `opensource.zip` file:
+      ```bash
+      cd "VBench-2.0_human_anomaly"
+      zip -s 0 --out merged.zip "opensource.zip"
+      unzip merged.zip
+      mv opensource/* ./
+      rm -rf opensource
+      rm merged.zip
+      rm opensource.*
+      ```
 
 4. **Run Training**:
    - Execute the training code (we take face detector training as an example, for human and hand detectors, change the corresponding names):
      ```python
-     torchrun main_finetune.py \
+     torchrun --master_port 15690 main_finetune.py \
       --cfg 'configs/vit_base__800ep/simmim_finetune__vit_base__img224__800ep.yaml' \
-      --train-path "VBench-2.0_human_anomaly/dataset/face_train.json" \
-      --val-path "VBench-2.0_human_anomaly/dataset/face_train.json" \
+      --train-path "VBench-2.0_human_anomaly/dataset/human_train.jsonl" \
+      --val-path "VBench-2.0_human_anomaly/dataset/human_test.jsonl" \
       --pretrained 'pretrain/simmim_pretrain__vit_base__img224__800ep.pth' \
       --batch-size 128 \
-      --output "checkpoint/face"
+      --output "checkpoint/human"
      ```
 
 
 5. **Run Inference**:
-   - Note that you need to train all of the three detectors to run the inference code:
+   - Note that you need to train all of the three detectors to run the inference code (By default, we train for 30 epochs):
     ```python
-    python detect.py \
+    python inference.py \
       --cfg 'configs/vit_base__800ep/simmim_finetune__vit_base__img224__800ep.yaml' \
-      --detector_config 'configs/yolo_world_v2_xl_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_lvis_minival.py' \
+      --detector_config 'third_party/YOLO-World/yolo_world_v2_xl_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_lvis_minival.py' \
       --detector_weights 'pretrain/yolo_world_v2_xl_obj365v1_goldg_cc3mlite_pretrain-5daf1395.pth' \
       --human_model 'checkpoint/human/ckpt29.pth' \
       --face_model 'checkpoint/face/ckpt29.pth' \
-      --hand_model 'checkpoint/hand/ckpt29.pth' \
+      --hand_model 'checkpoint/hand/ckpt29.pth' 
     ```
 
 ### Notes
 - Ensure that all paths in the JSONL files correctly point to the extracted images.
 - Modify the configuration file (`config.yaml` or similar) if you wish to customize training parameters.
 
+
+### Results
+- We show some results of our anomaly detector below
+<p align="center">
+  <img src="./assets/anomaly.jpg" width="65%"/>
+</p>
 
 <a name="citation_and_acknowledgement"></a>
 ## :black_nib: Citation

@@ -180,3 +180,5 @@ VBench-2.0/evaluate_multi.sh
 VBench-2.0/result_all.py
 VBench-2.0/log_rank0.txt
 VBench-2.0/vbench2/third_party/ViTDetector/outputs
+VBench-2.0/vbench2/third_party/ViTDetector/VBench-2.0_human_anomaly
+VBench-2.0/vbench2/third_party/ViTDetector/checkpoint

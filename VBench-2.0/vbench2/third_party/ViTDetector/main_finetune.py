@@ -362,6 +362,7 @@ if __name__ == '__main__':
     config.TRAIN.BASE_LR = linear_scaled_lr
     config.TRAIN.WARMUP_LR = linear_scaled_warmup_lr
     config.TRAIN.MIN_LR = linear_scaled_min_lr
+    config.OUTPUT = os.path.join(config.OUTPUT.split('/')[0], config.OUTPUT.split('/')[1])
     config.freeze()
 
     os.makedirs(config.OUTPUT, exist_ok=True)

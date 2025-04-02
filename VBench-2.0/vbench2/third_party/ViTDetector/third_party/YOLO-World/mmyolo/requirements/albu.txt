@@ -1,0 +1,1 @@
+albumentations --no-binary qudida,albumentations

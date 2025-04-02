@@ -49,7 +49,7 @@ conda create -n vbench2 python=3.10 -y
 conda activate vbench2
 conda install psutil
 pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu118 # or cu121
-#ensure your cuda version is 11.8 or 12.1
+#ensure your cuda version is 11.8 or 12.1, and ensure the gcc in a high version (we use 11.2)
 python -m pip install ninja
 python -m pip install git+https://github.com/Dao-AILab/flash-attention.git@v2.7.2.post1
 pip install -r requirement.txt
