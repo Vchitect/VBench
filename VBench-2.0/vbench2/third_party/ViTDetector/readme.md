@@ -47,19 +47,24 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
      ```
      or [Google Drive](https://drive.google.com/drive/folders/1_NyiLa861EbDQdDp4Lsy4jTzH2ynCiFw?usp=drive_link)
 
-1. **Extract Images**:
+2. **Extract Images**:
    - Unzip the `all_images.zip` file into the `dataset/` directory:
      ```bash
      unzip dataset/all_images.zip -d dataset/
      ```
 
-2. **Run Training**:
+3. **Run Training**:
    - Execute the training script:
      ```bash
      ./run_train.sh
      ```
-   - This script will automatically load the training and testing datasets, configure the model, and begin training.
 
+
+4. **Run Inference**:
+   - Set model path in detect.py and run Video Human Anomaly Detection:
+    ```bash
+    python detect.py
+    ```
 
 ### Notes
 - Ensure that all paths in the JSONL files correctly point to the extracted images.
