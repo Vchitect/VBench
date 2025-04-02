@@ -408,21 +408,20 @@ def compute_abnormality(video_paths, device, submodules_dict, **kwargs):
 
 
 if __name__ == "__main__":
-    default_config = '/mnt/petrelfs/zoukai/code/SimMIM/configs/vit_base__800ep/simmim_finetune__vit_base__img224__800ep.yaml'
+    default_config = 'configs/vit_base__800ep/simmim_finetune__vit_base__img224__800ep.yaml'
     submodules = {
-        "detector_config": "/mnt/petrelfs/zoukai/code/YOLO-World_Tencent/configs/pretrain/yolo_world_v2_xl_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_lvis_minival.py",
-        "detector_weights": "/mnt/petrelfs/zoukai/code/YOLO-World_Tencent/yolo_world_v2_xl_obj365v1_goldg_cc3mlite_pretrain-5daf1395.pth",
+        "detector_config": "path to yolo_world_v2_xl_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_lvis_minival.py",
+        "detector_weights": "path to yolo_world_v2_xl_obj365v1_goldg_cc3mlite_pretrain-5daf1395.pth",
         "analyzer_configs": {
-            "human": {"cfg_path": default_config, "weight_path": "/mnt/petrelfs/zoukai/code/SimMIM/outputs/human_4w_focal/simmim_finetune/simmim_finetune__vit_base__img224__800ep/ckpt_epoch_29.pth", "threshold": 0.4545454545454546},
-            "face": {"cfg_path": default_config, "weight_path": "/mnt/petrelfs/zoukai/code/SimMIM/outputs/face_base_2v1_focal/simmim_finetune/simmim_finetune__vit_base__img224__800ep/ckpt_epoch_29.pth", "threshold": 0.30303030303030304},
-            "hand": {"cfg_path": default_config, "weight_path": "/mnt/petrelfs/zoukai/code/SimMIM/outputs/hand_base_1v1_add_gen_2w_focol/simmim_finetune/simmim_finetune__vit_base__img224__800ep/ckpt_epoch_15.pth", "threshold": 0.3232}
+            "human": {"cfg_path": default_config, "weight_path": "path to human.pth", "threshold": 0.4545454545454546},
+            "face": {"cfg_path": default_config, "weight_path": "path to face.pth", "threshold": 0.30303030303030304},
+            "hand": {"cfg_path": default_config, "weight_path": "path to hand.pth", "threshold": 0.3232}
         },
         "batch_size" : 128
     }
     
     video_paths = [
-        "/mnt/petrelfs/zoukai/code/vbench2/test_data/On a vibrant outdoor basketball court, a group of energetic players engage in an intense game under the bright afternoon sun. The court is surrounded by tall trees, their leaves ru_66.mp4",
-        "/mnt/petrelfs/zoukai/code/vbench2/test_data/A focused man in a red jersey and black shorts dribbles a basketball on an outdoor court, surrounded by tall chain-link fences and urban buildings in the background. The sun casts _2025.mp4",
+        "path to example video.mp4",
     ]
     
     final_score, detailed_results = compute_abnormality(
