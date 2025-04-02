@@ -80,11 +80,11 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
      ```python
      torchrun --master_port 15690 main_finetune.py \
       --cfg 'configs/vit_base__800ep/simmim_finetune__vit_base__img224__800ep.yaml' \
-      --train-path "VBench-2.0_human_anomaly/dataset/human_train.jsonl" \
-      --val-path "VBench-2.0_human_anomaly/dataset/human_test.jsonl" \
+      --train-path "VBench-2.0_human_anomaly/dataset/face_train.jsonl" \
+      --val-path "VBench-2.0_human_anomaly/dataset/face_test.jsonl" \
       --pretrained 'pretrain/simmim_pretrain__vit_base__img224__800ep.pth' \
       --batch-size 128 \
-      --output "checkpoint/human"
+      --output "checkpoint/face"
      ```
 
 
@@ -108,7 +108,7 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
 ### Results
 - We show some results of our anomaly detector below
 <p align="center">
-  <img src="./assets/anomaly.jpg" width="65%"/>
+  <img src="./assets/anomaly.jpg" width="95%"/>
 </p>
 
 <a name="citation_and_acknowledgement"></a>
