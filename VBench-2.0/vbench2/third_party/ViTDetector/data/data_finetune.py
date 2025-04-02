@@ -75,7 +75,7 @@ class binary_dataset(torch.utils.data.Dataset):
 
     def __getitem__(self, idx):
         path, label, score = self.data[idx]
-        img = Image.open(path)
+        img = Image.open(os.path.join("VBench-2.0_human_anomaly/dataset/all_images", path))
         if self.transform:
             img = self.transform(img)
         return img, label
