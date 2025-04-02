@@ -50,10 +50,10 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
 2. **Extract Images**:
    - Unzip the `opensource.zip` file:
      ```bash
-    cd "VBench-2.0_human_anomaly"
-    zip -s 0 --out merged.zip "opensource.zip"
-    unzip merged.zip
-    rm merged.zip
+        cd "VBench-2.0_human_anomaly"
+        zip -s 0 --out merged.zip "opensource.zip"
+        unzip merged.zip
+        rm merged.zip
      ```
 
 3. **Download Pre-trained Model**:
