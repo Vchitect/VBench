@@ -434,7 +434,7 @@ if __name__ == "__main__":
     }
     
     video_paths = [
-        "path to example video.mp4",
+        "exmaple/people are walking.-1.mp4",
     ]
     
     final_score, detailed_results = compute_abnormality(
