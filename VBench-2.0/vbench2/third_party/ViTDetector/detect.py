@@ -406,16 +406,29 @@ def compute_abnormality(video_paths, device, submodules_dict, **kwargs):
     
     return global_score, all_results
 
+def parse_option():
+    parser = argparse.ArgumentParser('training and evaluation script', add_help=False)
+    # easy config modification
+    parser.add_argument('--human_model', type=str, required=True, help='path to pre-trained model')
+    parser.add_argument('--face_model', type=str, required=True, help='path to pre-trained model')
+    parser.add_argument('--hand_model', type=str, required=True, help='path to pre-trained model')
+    parser.add_argument('--detector_config', type=str, required=True, help='path to pre-trained model')
+    parser.add_argument('--detector_weights', type=str, required=True, help='path to pre-trained model')
+    parser.add_argument('--cfg', type=str, required=True, help='path to pre-trained model')
+
+    args = parser.parse_args()
+
+    return args
 
 if __name__ == "__main__":
-    default_config = 'configs/vit_base__800ep/simmim_finetune__vit_base__img224__800ep.yaml'
+    args = parse_option()
     submodules = {
-        "detector_config": "path to yolo_world_v2_xl_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_lvis_minival.py",
-        "detector_weights": "path to yolo_world_v2_xl_obj365v1_goldg_cc3mlite_pretrain-5daf1395.pth",
+        "detector_config": args.detector_config, #"yolo_world_v2_xl_vlpan_bn_2e-3_100e_4x8gpus_obj365v1_goldg_train_lvis_minival.py",
+        "detector_weights": args.detector_weights, #"yolo_world_v2_xl_obj365v1_goldg_cc3mlite_pretrain-5daf1395.pth",
         "analyzer_configs": {
-            "human": {"cfg_path": default_config, "weight_path": "path to human.pth", "threshold": 0.4545454545454546},
-            "face": {"cfg_path": default_config, "weight_path": "path to face.pth", "threshold": 0.30303030303030304},
-            "hand": {"cfg_path": default_config, "weight_path": "path to hand.pth", "threshold": 0.3232}
+            "human": {"cfg_path": args.cfg, "weight_path": args.human_model, "threshold": 0.4545454545454546},
+            "face": {"cfg_path": args.cfg, "weight_path": args.face_model, "threshold": 0.30303030303030304},
+            "hand": {"cfg_path": args.cfg, "weight_path": args.hand_model, "threshold": 0.3232}
         },
         "batch_size" : 128
     }
