@@ -80,6 +80,10 @@ Evaluate 18 dimensions on different GPUs, one dimension per GPU. You can set the
 bash evaluate.sh --max_parallel_tasks 9
 ```
 
+### Use Human Anomaly Detector of VBench-2.0
+
+Detecting human anomalies is crucial for video generation, as it can be used for evaluation or as feedback for fine-tuning. We fully release the training data (including unlabeled raw videos and labeled images), along with the training and inference code of it. See [Human_Anomaly](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/vbench2/third_party/ViTDetector) for details.
+
 <a name="prompt_suite"></a>
 ## :bookmark_tabs: Prompt Suite
 
