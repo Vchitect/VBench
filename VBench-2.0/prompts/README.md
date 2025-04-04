@@ -11,6 +11,7 @@ We provide a combined list `prompts/VBench2_full_text.txt`, which combines all t
 `prompts/prompt_aug/VBench2_aug_prompt`: The augmented prompt of each VBench-2.0 evaluation dimension we used in the paper for `HunyuanVideo`, `CogVideoX-1.5` and `Kling 1.6`.
 
 `prompts/prompt_aug/Wanx_aug_prompt`: The augmented prompt of each VBench-2.0 evaluation dimension we used in the paper for `Wan2.1`.
+
 For the model used augmented prompt, we also provide a combined list in `prompts/prompt_aug/`, such as `VBench2_full_text_aug.txt` and `Wanx_full_text_aug.txt`
 
 ## Metadata

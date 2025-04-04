@@ -7,7 +7,7 @@ To facilitate future research and to ensure full transparency, we release all th
 ## What Videos Do We Provide?
 - **6 T2V Models**:
     - including [HunyuanVideo](https://github.com/Tencent/HunyuanVideo), [Wanx](https://github.com/Wan-Video/Wan2.1), [CogVideo](https://github.com/THUDM/CogVideo), [StepVideo](https://github.com/stepfun-ai/Step-Video-T2V), Sora, Kling. More details of models are provided below.
-- **2 Suites of Videos for each Model**: 
+- **Suite of Videos for each Model**: 
     - *Per Dimension*: The sampled videos for each ability dimension evaluated by VBench-2.0. The per-dimension prompts are available under [`prompts/prompt`](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/prompts/prompt), and we also provide a combined list of all the dimensions' prompts at [`prompts/VBench2_full_text.txt`](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/prompts/VBench2_full_text.txt).
   
 What's the potential usage of these videos:
@@ -17,12 +17,12 @@ What's the potential usage of these videos:
 Below is the folder structure of different models' sampled videos:
 ```
 t2v_sampled_videos
-│── CogVideo.zip
-│── HunyuanVideo.zip
-│── Sora.zip
-│── Kling.zip
-│── StepVideo.zip
-│── Wanx.zip
+│── CogVideo+sample.zip
+│── HunyuanVideo+sample.zip
+│── Sora-480p+sample.zip
+│── Kling-1.6+sample.zip
+│── StepVideo+sample.zip
+│── Wanx+sample.zip
 
 ```
 ## How to Download the Videos?
@@ -43,12 +43,12 @@ gdown --id 1FCRj48-Yv7LM7XGgfDCvIo7Kb9EId5KX --output HunyuanVideo.zip
 We list the setting for sampling videos from these models.
 | Model | Evaluation Party | Release Time | Resolution | FPS | Frame Count | Video Length | Checkpoint | Code Commit ID | Video Format | Sampled Videos (Dimension) |                             Other Settings       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                        |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |------------------------------|
-| [`CogVideoX1.5-5B (10s Diffusers prompt-optimized)`](https://github.com/THUDM/CogVideo) | VBench Team | 2024-11-08 | 1360x768 | 16 | 161 | 10s | [link](https://huggingface.co/THUDM/CogVideoX1.5-5B/tree/main) |  [Commit ID](https://github.com/THUDM/CogVideo/tree/68d93ce8fc030f260e4a75eadfc318ed002eccce) | MP4 | [Google Drive]() | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/prompts/prompt_aug/)</small>|
-| [`HunyuanVideo (Open-Source Version)`](https://github.com/Tencent/HunyuanVideo) | VBench Team | 2024-12-03 | 1280x720 | 24 | 129 | 5.3s | [link](https://huggingface.co/tencent/HunyuanVideo/tree/main) |  [Commit ID](https://github.com/Tencent/HunyuanVideo/tree/3579dbc7862b01106029a16f2172eec85629cce5) | MP4 | [Google Drive]() | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/prompts/prompt_aug/)</small>|
-| [`Sora`](https://sora.com/library) | VBench Team | 2025-01-14 | 854x480 | 30 | 150 | 5.0s | - | - | MP4 | [Google Drive]() | - |
-| [`Kling 1.6`](https://sora.com/library) | VBench Team | 2025-12-09 | 1280x720 | 24 | 241 | 10.0s | - | - | MP4 | [Google Drive]() | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/prompts/prompt_aug/)</small> |
-| [`Step-Video-T2V`](https://github.com/stepfun-ai/Step-Video-T2V) | VBench Team | 2025-03-13 | 992x544 | 25 | 200 | 8s | - | [Commit ID](https://github.com/stepfun-ai/Step-Video-T2V/tree/d3ca3d68513bf18d75ff50ff3452c8c8407f924f) | MP4 |[Google Drive]() | - |
-| [`Wan2.1-T2V-14B`](https://github.com/Wan-Video/Wan2.1/tree/main) | VBench Team | 2025-03-20 | 1280x720 | 16 | 81 | 5s | - | [Commit ID](https://github.com/Wan-Video/Wan2.1/tree/b58b7c573776b76b6fe8d36086590e033173f9b1) | MP4 | [Google Drive]() | <small>applied [augmented prompts](https://github.com/Wan-Video/Wan2.1?tab=readme-ov-file#2-using-prompt-extension) provided by Wan |
+| [`CogVideoX1.5-5B (10s Diffusers prompt-optimized)`](https://github.com/THUDM/CogVideo) | VBench Team | 2024-11-08 | 1360x768 | 16 | 161 | 10s | [link](https://huggingface.co/THUDM/CogVideoX1.5-5B/tree/main) |  [Commit ID](https://github.com/THUDM/CogVideo/tree/68d93ce8fc030f260e4a75eadfc318ed002eccce) | MP4 | [Google Drive]() | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/prompts/prompt_aug/VBench2_full_text_aug.txt)</small>|
+| [`HunyuanVideo (Open-Source Version)`](https://github.com/Tencent/HunyuanVideo) | VBench Team | 2024-12-03 | 1280x720 | 24 | 129 | 5.3s | [link](https://huggingface.co/tencent/HunyuanVideo/tree/main) |  [Commit ID](https://github.com/Tencent/HunyuanVideo/tree/3579dbc7862b01106029a16f2172eec85629cce5) | MP4 | [Google Drive]() | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/prompts/prompt_aug/VBench2_full_text_aug.txt)</small>|
+| [`Sora`](https://sora.com/library) | VBench Team | 2025-01-14 | 854x480 | 30 | 150 | 5.0s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1yK3xiD7HhpGjMKMFddcgouaV1bymSqSw?usp=sharing) | - |
+| [`Kling 1.6`](https://sora.com/library) | VBench Team | 2025-12-09 | 1280x720 | 24 | 241 | 10.0s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1VhlbBXQ_P9unUkxP8xsOhCAf3_9Iu1pn?usp=sharing) | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/prompts/prompt_aug/VBench2_full_text_aug.txt)</small> |
+| [`Step-Video-T2V`](https://github.com/stepfun-ai/Step-Video-T2V) | VBench Team | 2025-03-13 | 992x544 | 25 | 200 | 8s | - | [Commit ID](https://github.com/stepfun-ai/Step-Video-T2V/tree/d3ca3d68513bf18d75ff50ff3452c8c8407f924f) | MP4 |[Google Drive](https://drive.google.com/drive/folders/1BeQ1iGspQ3bSCW9VLaeXyuOKjwtJSLTF?usp=drive_link) | - |
+| [`Wan2.1-T2V-14B`](https://github.com/Wan-Video/Wan2.1/tree/main) | VBench Team | 2025-03-20 | 1280x720 | 16 | 81 | 5s | - | [Commit ID](https://github.com/Wan-Video/Wan2.1/tree/b58b7c573776b76b6fe8d36086590e033173f9b1) | MP4 | [Google Drive]() | <small>applied [Prompt Rewrite](https://github.com/Wan-Video/Wan2.1?tab=readme-ov-file#2-using-prompt-extension) provided by Wan, [augmented prompts](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/prompts/prompt_aug/Wanx_full_text_aug.txt)  |
 
 ## How are Files Structured in Google Drive?
 
