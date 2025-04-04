@@ -4,11 +4,8 @@ import re
 import shutil
 
 json_path = 'prompts/VBench2_full_text_info.json'
-text_path = 'prompts/VBench2_full_text.txt'
-source_video_file = 'YOUR_SOURCE_PATH'
+source_video_file = 'YOUR_SOURCE_PATH' # CHANGE
 target_video_file = 'vbench2_videos' # DEFAULT
-with open(text_path, 'r', encoding='utf-8') as file:
-    lines = [line.strip() for line in file.readlines()]
 with open(json_path, 'r', encoding='utf-8') as f:
     data = json.load(f)
 

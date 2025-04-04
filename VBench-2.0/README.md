@@ -92,6 +92,18 @@ We provide prompt lists are at `prompts/`.
 Check out [details of prompt suites](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/prompts), and instructions for [**how to sample videos for evaluation**](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/prompts#how-to-sample-videos-for-evaluation).
 
 
+<a name="sampled_videos"></a>
+## :bookmark_tabs: Sampled Videos
+
+[![Dataset Download](https://img.shields.io/badge/Dataset-Download-red?logo=googlechrome&logoColor=red)](https://drive.google.com/drive/folders/19nXdrNFw-PxxYJcd9HyWmbLVe5Agmlc2)
+
+To facilitate future research and to ensure full transparency, we release all the videos we sampled and used for VBench-2.0 evaluation. You can download them on [Google Drive](https://drive.google.com/drive/folders/19nXdrNFw-PxxYJcd9HyWmbLVe5Agmlc2).
+
+See detailed explanations of the sampled videos [here](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/sampled_videos).
+
+We also provide detailed setting for the models under evaluation [here](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/sampled_videos#what-are-the-details-of-the-video-generation-models).
+
+
 <a name="citation_and_acknowledgement"></a>
 ## :black_nib: Citation
 

@@ -8,7 +8,9 @@ We design compact yet representative prompts in terms of the evaluation dimensio
 We provide a combined list `prompts/VBench2_full_text.txt`, which combines all the prompts under `prompts/prompt`.
 
 ## Augmented Prompts per Dimension
-`prompts/prompt_aug`: The augmented prompt we used in the paper for `HunyuanVideo`, `CogVideoX-1.5` and `Kling 1.6`.
+`prompts/prompt_aug/VBench2_aug_prompt`: The augmented prompt of each VBench-2.0 evaluation dimension we used in the paper for `HunyuanVideo`, `CogVideoX-1.5` and `Kling 1.6`.
+`prompts/prompt_aug/Wanx_aug_prompt`: The augmented prompt of each VBench-2.0 evaluation dimension we used in the paper for `Wan2.1`.
+For the model used augmented prompt, we also provide a combined list in `prompts/prompt_aug/`, such as `VBench2_full_text_aug.txt` and `Wanx_full_text_aug.txt`
 
 ## Metadata
 `prompts/metainfo`: metadata for some prompt lists, such as the `camera_motion` and `extensive_description` labels for prompts that need to be semantically parsed.
@@ -104,6 +106,42 @@ To sample videos for VBench-2.0 evaluation:
             # Note that VBench-2.0 contains prompts which exceed the max length of naming, so we use the first 180 characters of the prompt as the name.
             # If you use the prompt refiner, please still name the video by our given prompts.
             cur_save_path = f'{args.save_path}/{prompt[:180]}-{index}.mp4'
+            # The fps depends on your model.
+            torchvision.io.write_video(cur_save_path, video, fps=8)
+    
+    # `divide_video.py`, modify the `source_video_file` into yours, the `target_video_file` is set to `vbench2_videos` as default.
+    # users could also directly send the whole video files to us and we will do the remaining process.
+    divide_video(args.save_path) 
+    ```
+
+- If you want to evaluate all the dimensions with the augmented prompts `prompt_aug/VBench2_full_text_aug.txt`, or augmented prompts used in other methods (Wanx, `prompt_aug/Wanx_full_text_aug.txt`), below are the pseudo-code for sampling.
+    ```python
+    # set random seed
+    if args.seed:
+        torch.manual_seed(args.seed)    
+    
+    # read prompt list
+    with open(f'./prompts/VBench2_full_text.txt', 'r') as f:
+        prompt_list_short = f.readlines()
+    prompt_list_short = [prompt.strip() for prompt in prompt_list_short]
+    with open(f'./prompts/prompt_aug/VBench2_full_text_aug.txt', 'r') as f:
+        prompt_list = f.readlines()
+    prompt_list = [prompt.strip() for prompt in prompt_list]
+    
+    for idx, prompt in enumerate(prompt_list):
+
+        # sample 20 videos for `Diversity` and 3 videos for others, in `VBench2_full_text.txt`, we put the prompts of `Diversity` in the beginning.
+        if idx<10:
+            iter=20
+        else:
+            iter=3
+        for index in range(iter):
+
+            # perform sampling
+            video = sample_func(prompt, index)    
+            # Note that VBench-2.0 contains prompts which exceed the max length of naming, so we use the first 180 characters of the prompt as the name.
+            # If you use the prompt refiner, please still name the video by our given prompts.
+            cur_save_path = f'{args.save_path}/{prompt_list_short[idx][:180]}-{index}.mp4'
             # The fps depends on your model.
             torchvision.io.write_video(cur_save_path, video, fps=8)
     
