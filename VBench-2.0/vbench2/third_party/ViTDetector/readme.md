@@ -40,7 +40,7 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
 
 - We first use YOLO-World as the open-vocaburary detector to detect the human in each frame, then detect the face and hand from the croped human image. The detection threshold is set to 0.1.
 - To meet the input size requirement (square) of SimMIM, we extend the bounding boxes into square. 
-- The human, face, hand will be saved to different folders to the following three anomaly detectors.
+- The human, face, hand will be saved to different folders for the following three anomaly detectors.
 - We show the data processing pipeline below.
 <p align="center">
   <img src="./assets/data_process.jpg" width="95%"/>
