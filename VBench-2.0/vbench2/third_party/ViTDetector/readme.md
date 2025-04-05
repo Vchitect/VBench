@@ -49,8 +49,8 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
 ### Training Pipeline
 
 - We utilize the pre-trained weight of SimMIM and finetune the whole network with an additional anomaly detector that consists of a MLP layer.
-- For the anomaly score, 1 means the image is normal and 0 means the image is abnormal, we use the binary cross entropy loss.
-- The human, human face and human hand anomaly detectors need to be trained separately.
+- For the anomaly score, 0 means the image is normal and 1 means the image is abnormal, we use the binary cross entropy loss.
+- The human, human face and human hand anomaly detectors need to be trained separately, the higher the score, the more possible it is an anomaly.
 - We show the training pipeline below.
 <p align="center">
   <img src="./assets/anomaly_framework.jpg" width="95%"/>
