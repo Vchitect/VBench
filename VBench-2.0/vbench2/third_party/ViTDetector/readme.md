@@ -34,6 +34,12 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
 
 ---
 
+## Framework
+
+
+
+---
+
 ## How to Train
 
 ### Prerequisites
@@ -144,6 +150,9 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
 ## :hearts: Acknowledgement
 
 **VBench-2.0** is currently maintained by [Dian Zheng](https://zhengdian1.github.io/), [Ziqi Huang](https://ziqihuangg.github.io/) and [Kai Zou](https://github.com/Jacky-hate).
+
+#### :hugs: Open-Sourced Repositories
+This project wouldn't be possible without the following open-sourced repositories: [YOLO_World](https://github.com/AILab-CVC/YOLO-World), [simMIM](https://github.com/microsoft/SimMIM)
 
 ---
 
