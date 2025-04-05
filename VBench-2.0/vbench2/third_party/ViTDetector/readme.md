@@ -36,8 +36,33 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
 
 ## Framework
 
+### Data Pre-processing for training and inference
 
+- We first use YOLO-World as the open-vocaburary detector to detect the human in each frame, then detect the face and hand from the croped human image. The detection threshold is set to 0.1.
+- To meet the input size requirement (square) of SimMIM, we extend the bounding boxes into square. 
+- The human, face, hand will be saved to different folders to the following three anomaly detectors.
+- We show the data processing pipeline below.
+<p align="center">
+  <img src="./assets/data_process.jpg" width="95%"/>
+</p>
 
+### Training Pipeline
+
+- We utilize the pre-trained weight of SimMIM and finetune the whole network with an additional anomaly detector that consists of a MLP layer.
+- For the anomaly score, 1 means the image is normal and 0 means the image is abnormal, we use the binary cross entropy loss.
+- The human, human face and human hand anomaly detectors need to be trained separately.
+- We show the training pipeline below.
+<p align="center">
+  <img src="./assets/anomaly_framework.jpg" width="95%"/>
+</p>
+
+### Inference Pipeline
+
+- Given a generated video, we do frame-wise anomaly detection.
+- Firstly, we detect and crop the human, human face and hand by YOLO-World as shown in ``data pre-processing`` in each frame.
+- Then the detected image will be fed into corresponding anomaly detector with different anomaly threshold (i.e., 0.45, 0.3, 0.32 for human, human face, and human hands respectively).
+- For each frame, we calculate the average score of the anomaly score of each human (sometimes there is more than one person in the frame). 
+- For each human, it is flagged as abnormal if any of the three models predict an anomaly and the score will be 0, otherwise 1.
 ---
 
 ## How to Train
