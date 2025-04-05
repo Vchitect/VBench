@@ -73,7 +73,7 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
 ### Steps to Train
 
 1. **Download Pre-trained Model**:
-   - Download the pre-trained simmim model from [Google Drive](https://drive.google.com/file/d/1dJn6GYkwMIcoP3zqOEyW1_iQfpBi8UOw/view?usp=sharing)
+   - Download the pre-trained SimMIM model from [Google Drive](https://drive.google.com/file/d/1dJn6GYkwMIcoP3zqOEyW1_iQfpBi8UOw/view?usp=sharing)
    - Download the pre-trained YOLO-World model from [Google Drive](https://drive.google.com/file/d/1qo-K1kum7yiEwIlN1TWDvABXX6qriUen/view?usp=drive_link)
    - put the models into `pretrain/`
    - or use the following command:
@@ -177,7 +177,7 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
 **VBench-2.0** is currently maintained by [Dian Zheng](https://zhengdian1.github.io/), [Ziqi Huang](https://ziqihuangg.github.io/) and [Kai Zou](https://github.com/Jacky-hate).
 
 #### :hugs: Open-Sourced Repositories
-This project wouldn't be possible without the following open-sourced repositories: [YOLO_World](https://github.com/AILab-CVC/YOLO-World), [simMIM](https://github.com/microsoft/SimMIM)
+This project wouldn't be possible without the following open-sourced repositories: [YOLO_World](https://github.com/AILab-CVC/YOLO-World), [SimMIM](https://github.com/microsoft/SimMIM)
 
 ---
 
