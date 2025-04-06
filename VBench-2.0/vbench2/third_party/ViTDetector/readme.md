@@ -141,6 +141,13 @@ Each JSONL file contains annotations for the corresponding images. Each line in 
 <p align="center">
   <img src="./assets/anomaly.jpg" width="95%"/>
 </p>
+More Cases
+<p align="center">
+  <img src="./assets/fig.png" width="95%"/>
+</p>
+<p align="center">
+  <img src="./assets/fig1.png" width="95%"/>
+</p>
 
 <a name="citation_and_acknowledgement"></a>
 ## :black_nib: Citation
