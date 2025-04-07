@@ -110,8 +110,8 @@ We also provide detailed setting for the models under evaluation [here](https://
    If you find our repo useful for your research, please consider citing our paper:
 
    ```bibtex
-    @article{zheng2025vbench,
-        title={VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness},
+    @article{zheng2025vbench2,
+        title={{VBench-2.0}: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness},
         author={Zheng, Dian and Huang, Ziqi and Liu, Hongbo and Zou, Kai and He, Yinan and Zhang, Fan and Zhang, Yuanhan and He, Jingwen and Zheng, Wei-Shi and Qiao, Yu and Liu, Ziwei},
         journal={arXiv preprint arXiv:2503.21755},
         year={2025}
@@ -125,7 +125,7 @@ We also provide detailed setting for the models under evaluation [here](https://
     }
 
     @article{huang2024vbench++,
-        title={VBench++: Comprehensive and Versatile Benchmark Suite for Video Generative Models},
+        title={{VBench++}: Comprehensive and Versatile Benchmark Suite for Video Generative Models},
         author={Huang, Ziqi and Zhang, Fan and Xu, Xiaojie and He, Yinan and Yu, Jiashuo and Dong, Ziyue and Ma, Qianli and Chanpaisit, Nattapol and Si, Chenyang and Jiang, Yuming and Wang, Yaohui and Chen, Xinyuan and Chen, Ying-Cong and Wang, Limin and Lin, Dahua and Qiao, Yu and Liu, Ziwei},
         journal={arXiv preprint arXiv:2411.13503},
         year={2024}
