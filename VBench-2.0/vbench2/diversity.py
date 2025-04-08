@@ -75,6 +75,7 @@ def Diversity(prompt_dict_ls, model, device):
             torch.cuda.empty_cache()
 
         content_diversity, style_diversity, diversity=evaluate(style_features, content_features)
+        diversity = torch.clamp(diversity, min=0, max=1)
         new_item={
                 'video_path':video_paths[0],
                 'video_results':diversity.tolist()
