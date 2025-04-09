@@ -2,8 +2,8 @@
 
 **How to Reach Us:**
 - Code Issues: Please open an [issue](https://github.com/Vchitect/VBench/issues) in our GitHub repository for any problems or bugs.
-- Evaluation Requests: To submit your sampled videos for evaluation, create an [issue](https://github.com/Vchitect/VBench/issues) titled "Evaluation Request - Model Name" in the GitHub repository with the relevant model information.
-- General Inquiries: For other questions, contact Ziqi Huang at ZIQI002 [at] e [dot] ntu [dot] edu [dot] sg
+- Evaluation Requests: To submit your sampled videos for evaluation, please complete this [Google Form](https://forms.gle/wHk1xe7ecvVNj7yAA).
+- General Inquiries: **Check our [FAQ](https://github.com/Vchitect/VBench/blob/master/README-FAQ.md)** for common questions. For other questions, contact Ziqi Huang at ZIQI002 [at] e [dot] ntu [dot] edu [dot] sg. 
 
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2311.99999-b31b1b.svg)](https://arxiv.org/abs/2311.99999) -->
 [![VBench Paper (CVPR 2024)](https://img.shields.io/badge/VBench-CVPR%202024-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2311.17982)
@@ -103,13 +103,6 @@ Additionally, we present radar charts separately for the evaluation results of o
 
 See numeric values at our [Leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard) :1st_place_medal::2nd_place_medal::3rd_place_medal:
 
-**How to join VBench Leaderboard?**
-See the 3 options below:
-| Sampling Party | Evaluation Party |              Comments                         |
-| :---: |  :---: |        :--------------    | 
-| VBench Team | VBench Team | We periodically allocate resources to sample newly released models and perform evaluations. You can request us to perform sampling and evaluation, but the progress depends on our available resources. |
-| Your Team | VBench Team | For non-open-source models interested in joining our leaderboard, submit your video samples to us for evaluation. If you prefer to provide the evaluation results directly, see the row below. |
-| Your Team | Your Team | If you have already used VBench for full evaluation in your report/paper, submit your `eval_results.zip` files to the [VBench Leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard) using the `Submit here!` form. The evaluation results will be automatically updated to the leaderboard. Also, share your model information for our records for any columns [here](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models).  |
 
 
 #### :film_projector: Model Info
