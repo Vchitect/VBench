@@ -12,14 +12,24 @@ Option | Sampling Party | Evaluation Party |              Comments              
 
 
 
-**Q: What if my model has been updated and now performs better? Can I make a new submission to the VBench Leaderboard?**<br>
+**Q: For option 2️⃣ and 3️⃣ - What if my model has been updated and now performs better? Can I make a new submission to the VBench Leaderboard?**<br>
 A: Yes, you can submit an updated version of your model. Please clearly specify what changes have been made and how this version differs from your previous submission. Updates will only be evaluated if the modifications are explicitly described.
 
-**Q: After sharing a cloud storage link to our sampled videos, how long will it take to receive the evaluation results?**<br>
-Once we receive both your cloud storage link and the corresponding model information, evaluation typically takes 1–2 weeks, depending on the current queue.
+**Q: For option 2️⃣ - After sharing a cloud storage link to our sampled videos, how long will it take to receive the evaluation results?**<br>
+A: Once we receive both your cloud storage link and the corresponding model information, evaluation typically takes 1–2 weeks, depending on the current queue.
 
-**Q: Does the evaluation process use the same method as in the code repository, or is there any manual intervention?**<br>
-The evaluation strictly follows the open-source procedure provided in the official code repository. There is no manual intervention or human judgment involved.
+**Q: For option 1️⃣ and 2️⃣ - Is the evaluation fully automated?**<br>
+A: Yes. The evaluation strictly follows the open-source procedure available in our official code repository. It is fully reproducible, with no manual intervention or subjective judgment involved.
 
-**Q: If the evaluation results are unsatisfactory, can we resubmit new videos for the same model?**<br>
-Evaluation results are final and tied to the specific model version submitted. However, you may submit a newer checkpoint or updated version of the model for a fresh evaluation. In such cases, please include a brief explanation of the updates. Previous results will remain on the leaderboard and will not be removed.
+**Q: For option 2️⃣ - If the evaluation results are unsatisfactory, can we resubmit new videos for the same model?**<br>
+A: Evaluation results are final and tied to the specific model version submitted. However, you may submit a newer checkpoint or updated version of the model for a fresh evaluation. In such cases, please include a brief explanation of the updates. Previous results will remain on the leaderboard and will not be removed.
+
+**Q: For option 2️⃣ - how should I organize the sampled videos for submission?**
+A: You can place all sampled videos in a single folder. The filenames should follow the format shown in [this example list](https://github.com/Vchitect/VBench/blob/master/sampled_videos/sampled_videos.txt).
+
+
+**Q: What’s the difference between VBench and VBench-Long?**
+A: Use [**VBench**](https://github.com/Vchitect/VBench?tab=readme-ov-file#usage) for evaluating videos shorter than 5.0 seconds (< 5.0s).
+Use [**VBench-Long**](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_long) for evaluating videos 5.0 seconds or longer (≥ 5.0s).
+Each benchmark is optimized for its respective video length to ensure fair and consistent evaluation.
+
