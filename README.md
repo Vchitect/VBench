@@ -374,3 +374,5 @@ This project wouldn't be possible without the following open-sourced repositorie
 ## Related Links
 
 We are putting together [Awesome-Evaluation-of-Visual-Generation](https://github.com/ziqihuangg/Awesome-Evaluation-of-Visual-Generation), which collects works for evaluating visual generation.
+
+One notable example is [Evaluation Agent](https://vchitect.github.io/Evaluation-Agent-project/), a human-inspired evaluation framework for visual generative models. It conducts dynamic, multi-round assessments using only a few samples per round, tailored to open-ended user queries. This approach reduces evaluation time by over 90% while offering detailed, interpretable analysis beyond numerical scores.
