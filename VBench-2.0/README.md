@@ -1,7 +1,12 @@
 ![vbench_logo](https://raw.githubusercontent.com/Vchitect/VBench/master/asset/vbench_logo_github_20240605.jpg)
 
-[![VBench-2.0 Report (arXiv)](https://img.shields.io/badge/VBench-2.0%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2503.21755)
+**How to Reach Us:**
+- Code Issues: Please open an [issue](https://github.com/Vchitect/VBench/issues) in our GitHub repository for any problems or bugs.
+- Evaluation Requests: To submit your sampled videos for evaluation, please complete this [Google Form](https://forms.gle/wHk1xe7ecvVNj7yAA).
+- General Inquiries: **Check our [FAQ](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/README-FAQ.md)** for common questions. For other questions, contact Dian Zheng at zhengd35 [at] mail2 [at] sysu [at] edu [at] cn or Ziqi Huang at ZIQI002 [at] e [dot] ntu [dot] edu [dot] sg. 
 
+[![VBench-2.0 Report (arXiv)](https://img.shields.io/badge/VBench-2.0%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2503.21755)
+[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
 [![Project Page](https://img.shields.io/badge/Project-Page-green?logo=googlechrome&logoColor=green)](https://vchitect.github.io/VBench-2.0-project/)
 [![Video](https://img.shields.io/badge/YouTube-Video-c4302b?logo=youtube&logoColor=red)](https://www.youtube.com/watch?v=kJrzKy9tgAc)
 
