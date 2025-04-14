@@ -121,7 +121,7 @@ We list the setting for sampling videos from these models.
 | [`Wan2.1-T2V-1.3B`](https://github.com/Wan-Video/Wan2.1/tree/main) | VBench Team | 2025-03-20 | 832x480 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1asyr8ytkumWh3qXWlPMm89Fq3tCdJxaA?usp=drive_link) | - | |
 | [`Open-Sora 2.0(2025-03-18)`](https://hpcaitech.github.io/Open-Sora/) | VBench Team | 2025-03-31 | 1024x576 | 24 | 120 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1iNBcAGakVLZge9BtIFgwccR0RD9w52it/view?usp=drive_link) | - | |
 | [`AccVideo`](https://aejion.github.io/accvideo/) | VBench Team | 2025-03-31 | 960x544 | 24 | 72 | 3s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1GN6x-jKvZjW_UK87McJwZw8jexaRH23S?usp=drive_link) | - | |
-| [`IPOC(2025-04-14)`]([https://aejion.github.io/accvideo/](https://yangxlarge.github.io/ipoc/)) | VBench Team | 2025-04-14 | 1360x768 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1YFSVvcEUfejmXZxHRuYh723R2Iv_NCU5/view?usp=sharing) | - | |
+| [`IPOC(2025-04-14)`](https://yangxlarge.github.io/ipoc/) | VBench Team | 2025-04-14 | 1360x768 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1YFSVvcEUfejmXZxHRuYh723R2Iv_NCU5/view?usp=sharing) | - | |
 
 ## How are Files Structured in Google Drive?
 
