@@ -1,0 +1,5 @@
+include version.txt 
+include requirement.txt
+recursive-include vbench2/third_party *.yaml
+recursive-include vbench2 *.json
+recursive-include vbench2 *.txt

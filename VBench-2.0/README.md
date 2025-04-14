@@ -17,10 +17,12 @@ This repository contains the implementation of the following paper.
 - [Updates](#updates)
 - [Overview](#overview)
 - [Evaluation Results](#evaluation_results)
+- [Video Generation Models Info](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/sampled_videos#what-are-the-details-of-the-video-generation-models)
 - [Installation](#installation)
 - [Pretrained Models](#pretrained_models)
 - [Usage](#usage)
 - [Prompt Suite](#prompt_suite)
+- [Sampled Videos](#sampled_videos)
 - [Citation and Acknowledgement](#citation_and_acknowledgement)
 
 <a name="updates"></a>
@@ -69,7 +71,7 @@ There will be an error about the mmcv version exceeds 2.1.0, users could directl
 Use VBench-2.0 to evaluate videos, and video generative models.
 - A Side Note: VBench-2.0 is designed for evaluating different models on a standard benchmark. Therefore, by default, we enforce evaluation on the **standard VBench-2.0 prompt lists** to ensure **fair comparisons** among different video generation models. That's also why we give warnings when a required video is not found. This is done via defining the set of prompts in [VBench2_full_info.json](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/vbench2/VBench2_full_info.json). 
 
-### Evaluation on the Standard Prompt Suite of VBench-2.0
+### Evaluating All of the Dimensions on the Standard Prompt Suite of VBench-2.0
 
 Evaluate 18 dimensions sequentially on a single GPU (not recommended):
 ```bash
@@ -80,9 +82,84 @@ Evaluate 18 dimensions on different GPUs, one dimension per GPU. You can set the
 bash evaluate.sh --max_parallel_tasks 9
 ```
 
+### Evaluating Single Dimension on the Standard Prompt Suite of VBench-2.0
+
+##### command line 
+```bash
+    vbench2 evaluate --videos_path $VIDEO_PATH --dimension $DIMENSION
+```
+For example:
+```bash
+    vbench2 evaluate --videos_path "sampled_videos/HunyuanVideo/Human_Interaction" --dimension "Human_Interaction"
+```
+##### python
+```python
+    from vbench2 import VBench2
+    my_VBench = VBench2(device, <path/to/VBench_full_info.json>, <path/to/save/dir>)
+    my_VBench.evaluate(
+        videos_path = <video_path>,
+        name = <name>,
+        dimension_list = [<dimension>, <dimension>, ...],
+    )
+```
+For example: 
+```python
+    from vbench2 import VBench2
+    my_VBench = VBench2(device, "vbench2/VBench2_full_info.json", "evaluation_results")
+    my_VBench.evaluate(
+        videos_path = "sampled_videos/HunyuanVideo/Human_Interaction",
+        name = "HunyuanVideo_Human_Interaction",
+        dimension_list = ["Human_Interaction"],
+    )
+```
+
 ### Use Human Anomaly Detector of VBench-2.0
 
 Detecting human anomalies is crucial for video generation, as it can be used for evaluation or as feedback for fine-tuning. We fully release the training data (including unlabeled raw videos and labeled images), along with the training and inference code of it. See [Human_Anomaly](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/vbench2/third_party/ViTDetector) for details.
+
+### Submit to Leaderboard
+We have provided scripts for calculating the `Total Score`, `Creativity Score`, `Commonsense Score`, `Controllability Score`, `Human Fidelity Score` and `Physics Score` in the Leaderboard. You can run them locally to obtain the aggregate scores or as a final check before submitting to the Leaderboard.
+
+```bash
+# Pack the evaluation results into a zip file.
+cd evaluation_results
+zip -r ../evaluation_results.zip .
+
+# [Optional] get the total score of your submission file.
+python scripts/cal_final_score.py --zip_file {path_to_evaluation_results.zip} --model_name {your_model_name}
+```
+
+You can submit the json file to [HuggingFace](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
+
+### How to Calculate Total Score
+
+To calculate the **Total Score**, we follow these steps:
+
+1. **Creativity Score**:  
+   The `Creativity Score` is the average of the following dimensions:  
+   **Diversity**, and **Composition**.
+
+2. **Commonsense Score**:  
+   The `Commonsense Score` is the average of the following dimensions:  
+   **Motion Rationality**, and **Instance Preservation**.
+
+3. **Controllability Score**:  
+   The `Controllability Score` is the average of the following dimensions:  
+   **Dynamic Spatial Relationship**, **Dynamic Attribute**, **Motion Order Understanding**, **Human Interaction**, **Complex Landscape**, **Complex Plot**, and **Camera Motion**.
+
+4. **Human Fidelity Score**:  
+   The `Human Fidelity Score` is the average of the following dimensions:  
+   **Human Anatomy**, **Human Identity**, and **Human Clothes**.
+
+5. **Physics Score**:  
+   The `Physics Score` is the average of the following dimensions:  
+   **Mechanics**, **Thermotics**, **Material**, and **Multi-View Consistency**.
+
+6. **Average Calculation**:  
+   The **Total Score** is the average of the `Creativity Score`, `Commonsense Score`, `Controllability Score`, `Human Fidelity Score` and `Physics Score`:
+    ```bash
+    Total Score = 0.2 * (Creativity Score + Commonsense Score + Controllability Score + Human Fidelity Score + Physics Score)
+    ```
 
 <a name="prompt_suite"></a>
 ## :bookmark_tabs: Prompt Suite
