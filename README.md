@@ -11,7 +11,7 @@
 [![VBench-2.0 Report (arXiv)](https://img.shields.io/badge/VBench-2.0%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2503.21755)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
 [![VBench Arena (View Generated Videos Here!)](https://img.shields.io/badge/%F0%9F%A4%97%20VBench%20Arena-blue)](https://huggingface.co/spaces/Vchitect/VBench_Video_Arena)
-[![VBench-2.0 Arena (View Generated Videos Here!)](https://img.shields.io/badge/%F0%9F%A4%97%20VBench%20Arena-blue)](https://huggingface.co/spaces/Vchitect/VBench2.0_Video_Arena)
+[![VBench-2.0 Arena (View Generated Videos Here!)](https://img.shields.io/badge/%F0%9F%A4%97%20VBench-2.0%20Arena-blue)](https://huggingface.co/spaces/Vchitect/VBench2.0_Video_Arena)
 [![Project Page](https://img.shields.io/badge/VBench-Website-green?logo=googlechrome&logoColor=green)](https://vchitect.github.io/VBench-project/)
 [![Project Page](https://img.shields.io/badge/VBench%202.0-Website-green?logo=googlechrome&logoColor=green)](https://vchitect.github.io/VBench-2.0-project/)
 [![Dataset Download](https://img.shields.io/badge/Dataset-Download-red?logo=googlechrome&logoColor=red)](https://drive.google.com/drive/folders/1on66fnZ8atRoLDimcAXMxSwRxqN8_0yS?usp=sharing)
