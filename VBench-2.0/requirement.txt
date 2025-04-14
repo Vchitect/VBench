@@ -23,7 +23,7 @@ certifi==2024.12.14
 charset-normalizer==3.4.1
 click==8.1.8
 clint==0.5.1
-clip @ git+https://github.com/openai/CLIP.git@dcba3cb2e2827b402d2701e7e1c7d9fed8a20ef1
+-e git+https://github.com/openai/CLIP.git@dcba3cb2e2827b402d2701e7e1c7d9fed8a20ef1#egg=clip
 cloudpickle==3.1.1
 confection==0.1.5
 contourpy==1.3.1
