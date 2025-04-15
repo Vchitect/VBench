@@ -29,8 +29,7 @@ for ((start=0; start<total_dimensions; start+=max_parallel_tasks)); do
 
         echo "Evaluating '$dimension' in $videos_path"
         suffix="evaluation_results"
-        postfix=""
-        output_path="${suffix}/${dimension}${postfix}/${model}"
+        output_path="${suffix}/${dimension}"
 
         # Run the evaluation script in parallel with srun
         python evaluate.py --videos_path $videos_path --dimension $dimension --output_path $output_path &
