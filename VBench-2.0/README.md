@@ -2,7 +2,7 @@
 
 **How to Reach Us:**
 - Code Issues: Please open an [issue](https://github.com/Vchitect/VBench/issues) in our GitHub repository for any problems or bugs.
-- Evaluation Requests: To submit your sampled videos for evaluation, please complete this [Google Form](https://forms.gle/wHk1xe7ecvVNj7yAA).
+- Evaluation Requests: To submit your sampled videos for evaluation, please complete this [Google Form](https://forms.gle/rjH6hmAHpZhRGdkv5).
 - General Inquiries: **Check our [FAQ](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/README-FAQ.md)** for common questions. For other questions, contact Dian Zheng at zhengd35 [at] mail2 [at] sysu [at] edu [at] cn or Ziqi Huang at ZIQI002 [at] e [dot] ntu [dot] edu [dot] sg. 
 
 [![VBench-2.0 Report (arXiv)](https://img.shields.io/badge/VBench-2.0%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2503.21755)
