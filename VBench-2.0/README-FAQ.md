@@ -1,5 +1,14 @@
 # FAQ
 
+**Q: How should I sample the videos using VBench-2.0 prompt suite?**<br>
+A: We offer two ways: sampling based on per-dimension prompt or directly sampling by the full text list. The detailed instruction in [How to sample](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/prompts#evaluate-all-dimensions)
+
+**Q: If the name of the prompt exceeds the saving limit, what should I do?**<br>
+A: In VBench-2.0, some prompt will exceed the saving limit, we will save the first 180 characters. The detailed instruction in [How to sample](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/prompts#evaluate-all-dimensions)
+
+**Q: How to name the videos if using augmented prompts (whatever by myself or VBench-2.0)?**<br>
+A: Note that the naming must follow the instruction of [How to sample](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/prompts#evaluate-all-dimensions). We also provide our video name list and you can check the correctness [sample_videos.txt](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/sampled_videos/sampled_videos.txt) 
+
 **Q: How can I join VBench-2.0 Leaderboard?**<br>
 A: There are 3 options to join the leaderboard:<br>
 Option | Sampling Party | Evaluation Party |              Comments                         |
