@@ -61,7 +61,7 @@ def background_consistency(clip_model, preprocess, video_list, device, read_fram
             'video_sim': video_sim,
             'cnt_per_video': cnt_per_video})
     # sim_per_video = sim / (len(video_list) - 1)
-    sim_per_frame = sim / cnt
+    sim_per_frame = sim / cnt if cnt != 0 else None
     return sim_per_frame, video_results
 
 
