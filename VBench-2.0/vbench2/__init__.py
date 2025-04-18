@@ -94,6 +94,7 @@ class VBench2(object):
                                 print(f'Successfully found video: {intended_video_name}')
                         else:
                             print(f'WARNING!!! This required video is not found! Missing benchmark videos can lead to unfair evaluation result. The missing video is: {intended_video_name}')
+                            raise
                     cur_full_info_list.append(prompt_dict)
 
         cur_full_info_path = os.path.join(self.output_path, name+'_full_info.json')
