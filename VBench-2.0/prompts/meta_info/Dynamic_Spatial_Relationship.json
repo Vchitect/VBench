@@ -520,7 +520,7 @@
         ]
     },
     {
-        "prompt_en": "An elephant is in front of a car, then the elephant walks to the back of the car.",
+        "prompt_en": "An elephant is in front of a car, then the elephant walks to back of the car.",
         "dimension": "Dynamic_Spatial_Relationship",
         "auxiliary_info": [
             "Is the elephant in front of the car? (yes or no)",
