@@ -122,7 +122,7 @@ def main():
     if (args.prompt_file is not None) and (args.prompt != "None"):
         raise Exception("--prompt_file and --prompt cannot be used together")
     if (args.prompt_file is not None or args.prompt != "None") and (args.mode!='custom_input'):
-        raise Exception("must set --mode=custom_input for using external prompt")
+        raise Exception("must set the --mode=custom_input for using external prompt")
 
     if args.prompt_file:
         with open(args.prompt_file, 'r') as f:
