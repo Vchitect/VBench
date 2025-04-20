@@ -24,12 +24,13 @@ We specify how to sample from `Prompt` for VBench-2.0 evaluation.
 #### Please make sure to use a different `random seed` for sampling each video to ensure diversity in the sampled content.
 #### Please make sure to name the video based on our given prompts in `prompts/prompt` or `prompts/VBench2_full_text.txt` whatever you use the prompt refiner.
 #### We offer two methods to sample the the video, dimension-based or full_prompt_list-based. See the pseudo-codes below for the difference.
-## Sample Some Dimensions
+
+## Sample based on Dimensions Folder
 
 ### Pseudo-Code for Sampling
 - If you only want to evaluate certain dimensions or all dimension without post-processing, below are the pseudo-code for sampling.
     ```python
-    dimension_list = ['Camera_Motion', 'Complex_Plot']
+    dimension_list = ['Camera_Motion', 'Complex_Plot', 'Human_Anatomy', 'Human_Identity', 'Human_Clothes', 'Diversity', 'Composition', 'Dynamic_Spatial_Relationship', 'Dynamic_Attribute', 'Motion_Order_Understanding', 'Human_Interaction', 'Complex_Landscape', 'Motion_Rationality', 'Instance_Preservation', 'Mechanics', 'Thermotics', 'Material', 'Multi-View_Consistency']
 
     for dimension in dimension_list:
 
@@ -62,6 +63,44 @@ We specify how to sample from `Prompt` for VBench-2.0 evaluation.
                 torchvision.io.write_video(cur_save_path, video, fps=8)
     ```
 
+- If you want to use our augmented prompts (or yours), below are the pseudo-code
+    ```python
+    dimension_list = ['Camera_Motion', 'Complex_Plot', 'Human_Anatomy', 'Human_Identity', 'Human_Clothes', 'Diversity', 'Composition', 'Dynamic_Spatial_Relationship', 'Dynamic_Attribute', 'Motion_Order_Understanding', 'Human_Interaction', 'Complex_Landscape', 'Motion_Rationality', 'Instance_Preservation', 'Mechanics', 'Thermotics', 'Material', 'Multi-View_Consistency']
+
+    for dimension in dimension_list:
+
+        # set random seed
+        if args.seed:
+            torch.manual_seed(args.seed)    
+        
+        # read prompt list
+        with open(f'./prompts/prompt/{dimension}.txt', 'r') as f:
+            prompt_list_short = f.readlines()
+        prompt_list_short = [prompt.strip() for prompt in prompt_list_short]
+        with open(f'./prompts/prompt_aug/VBench2_aug_prompt/{dimension}.txt', 'r') as f:
+            prompt_list = f.readlines()
+        prompt_list = [prompt.strip() for prompt in prompt_list]
+
+        for idx, prompt in enumerate(prompt_list):
+
+            # sample 20 videos for `Diversity` and 3 videos for others
+            if dimension=='Diversity':
+                iter=20
+            else:
+                iter=3
+            for index in range(iter):
+
+                # perform sampling
+                video = sample_func(prompt, index)    
+                # Note that VBench-2.0 contains prompts which exceed the max length of naming, so we use the first 180 characters of the prompt as the name.
+                # If users use the prompt refiner, please still name the video by our given prompts.
+                # If users use this type to sample the video, ensuring that the video is saved based on the dimension as the prompts between dimensions have overlap.
+                os.makedirs(f'{args.save_path}/{dimension}', exist_ok=True)
+                cur_save_path = f'{args.save_path}/{dimension}/{prompt_list_short[idx][:180]}-{index}.mp4'
+                # The fps depends on your model.
+                torchvision.io.write_video(cur_save_path, video, fps=8)
+    ```
+
 ### Further Explanations
 
 To sample videos for VBench-2.0 evaluation:
@@ -81,7 +120,7 @@ To sample videos for VBench-2.0 evaluation:
         ├── A man is playing basketball.-19.mp4 
     ......
     ```
-## Evaluate All Dimensions
+## Sample based on full prompt list 
 
 - If you want to evaluate all the dimensions with the `VBench2_full_text.txt`, below are the pseudo-code for sampling.
     ```python
