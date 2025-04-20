@@ -5,7 +5,7 @@ dimensions=("Human_Anatomy" "Human_Identity" "Human_Clothes" "Diversity" "Compos
 folders=("Human_Anatomy" "Human_Identity" "Human_Clothes" "Diversity" "Composition" "Dynamic_Spatial_Relationship" "Dynamic_Attribute" "Motion_Order_Understanding" "Human_Interaction" "Complex_Landscape" "Complex_Plot" "Camera_Motion" "Motion_Rationality" "Instance_Preservation" "Mechanics" "Thermotics" "Material" "Multi-View_Consistency")
 
 # Number of tasks to run in parallel
-max_parallel_tasks=9
+max_parallel_tasks=8
 model="vbench2_videos"
 
 # Split dimensions into batches of size `max_parallel_tasks`
@@ -31,8 +31,14 @@ for ((start=0; start<total_dimensions; start+=max_parallel_tasks)); do
         suffix="evaluation_results"
         output_path="${suffix}/${dimension}"
 
-        # Run the evaluation script in parallel with srun
-        python evaluate.py --videos_path $videos_path --dimension $dimension --output_path $output_path &
+        # if excute the code directly by python
+        gpu_id=$(( (start + i) % max_parallel_tasks ))
+        echo "Running '$dimension' on GPU $gpu_id"
+        CUDA_VISIBLE_DEVICES=$gpu_id python evaluate.py --videos_path $videos_path --dimension $dimension --output_path $output_path &
+
+        # elif excute the code by slurm
+        # srun -p YOUR_PARTITION --gres=gpu:1 python evaluate.py --videos_path $videos_path --dimension $dimension --output_path $output_path &
+
         sleep 1
     done
 

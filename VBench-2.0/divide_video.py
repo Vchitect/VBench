@@ -4,8 +4,8 @@ import re
 import shutil
 
 json_path = 'prompts/VBench2_full_text_info.json'
-source_video_file = 'YOUR_SOURCE_PATH' # CHANGE
-target_video_file = 'vbench2_videos' # DEFAULT
+source_video_file = '/mnt/petrelfs/zhengdian/zhengdian/VBench2.0/sample_video/vbench2_videos' # CHANGE
+target_video_file = '/mnt/petrelfs/zhengdian/zhengdian/VBench2.0/sample_video/Vidu_Q1' # DEFAULT
 with open(json_path, 'r', encoding='utf-8') as f:
     data = json.load(f)
 
