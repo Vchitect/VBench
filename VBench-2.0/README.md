@@ -82,9 +82,9 @@ Evaluate 18 dimensions sequentially on a single GPU (not recommended):
 ```bash
 bash evaluate.sh --max_parallel_tasks 1
 ```
-Evaluate 18 dimensions on different GPUs, one dimension per GPU. You can set the total number of GPUs available for evaluation:
+Evaluate 18 dimensions on different GPUs, one dimension per GPU. You can set the total number of GPUs available for evaluation (do not exceed 8):
 ```bash
-bash evaluate.sh --max_parallel_tasks 9
+bash evaluate.sh --max_parallel_tasks 8
 ```
 
 ### Evaluating Single Dimension on the Standard Prompt Suite of VBench-2.0
