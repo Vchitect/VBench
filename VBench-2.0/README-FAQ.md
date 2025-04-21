@@ -38,4 +38,5 @@ A: You can place all sampled videos in a single folder. The filenames should fol
 
 **Q: There seem to be some unreasonable parts in the prompt?**<br>
 A: 'A person is doing xxx, suddenly they start to do xxx.' The `they` here is a singular, gender-neutral pronoun, which aims to avoid specifying the gender.
+
 A: 'Aerial view, aerial view. Aerial view, aerial view. One blue balls and one red balls are on the wooden table and collide horizontally, bird's-eye view.' in `Instance Preservation`. The repetition of `aerial view` here is intentional to ensure that some models can successfully generate a top-down perspective.
