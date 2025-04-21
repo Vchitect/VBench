@@ -6,7 +6,7 @@ A: We offer two ways: sampling based on per-dimension prompt or directly samplin
 **Q: If the name of the prompt exceeds the saving limit, what should I do?**<br>
 A: In VBench-2.0, some prompt will exceed the saving limit, we will save the first 180 characters. The detailed instruction in [How to sample](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/prompts#evaluate-all-dimensions)
 
-**Q: How to name the videos if using augmented prompts (whatever by myself or VBench-2.0)?**<br>
+**Q: How to name the videos if using augmented prompts or chinese prompts (whatever by myself or VBench-2.0)?**<br>
 A: Note that the naming must follow the instruction of [How to sample](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/prompts#evaluate-all-dimensions). We also provide our video name list and you can check the correctness [sample_videos.txt](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/sampled_videos/sampled_videos.txt) 
 
 **Q: How can I join VBench-2.0 Leaderboard?**<br>
@@ -35,3 +35,7 @@ A: Evaluation results are final and tied to the specific model version submitted
 
 **Q: For option 2️⃣ - how should I organize the sampled videos for submission?**<br>
 A: You can place all sampled videos in a single folder. The filenames should follow the format shown in [this example list](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/sampled_videos/sampled_videos.txt).
+
+**Q: There seem to be some unreasonable parts in the prompt?**<br>
+A: 'A person is doing xxx, suddenly they start to do xxx.' The `they` here is a singular, gender-neutral pronoun, which aims to avoid specifying the gender.
+A: 'Aerial view, aerial view. Aerial view, aerial view. One blue balls and one red balls are on the wooden table and collide horizontally, bird's-eye view.' in `Instance Preservation`. The repetition of `aerial view` here is intentional to ensure that some models can successfully generate a top-down perspective.
