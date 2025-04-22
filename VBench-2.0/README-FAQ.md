@@ -37,6 +37,6 @@ A: Evaluation results are final and tied to the specific model version submitted
 A: You can place all sampled videos in a single folder. The filenames should follow the format shown in [this example list](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/sampled_videos/sampled_videos.txt).
 
 **Q: There seem to be some unreasonable parts in the prompt?**<br>
-A1: 'A person is doing xxx, suddenly they start to do xxx.' The `they` here is a singular, gender-neutral pronoun, which aims to avoid specifying the gender.
+A1: `A person is doing xxx, suddenly they start to do xxx.` The `they` here is a singular, gender-neutral pronoun, which aims to avoid specifying the gender.
 
-A2: 'Aerial view, aerial view. Aerial view, aerial view. One blue balls and one red balls are on the wooden table and collide horizontally, bird's-eye view.' in `Instance Preservation`. The repetition of `aerial view` here is intentional to ensure that some models can successfully generate a top-down perspective.
+A2: `Aerial view, aerial view. Aerial view, aerial view. One blue balls and one red balls are on the wooden table and collide horizontally, bird's-eye view.` in `Instance Preservation`. The repetition of `aerial view` here is intentional to ensure that some models can successfully generate a top-down perspective.
