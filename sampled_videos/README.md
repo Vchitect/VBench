@@ -123,7 +123,7 @@ We list the setting for sampling videos from these models.
 | [`AccVideo`](https://aejion.github.io/accvideo/) | VBench Team | 2025-03-31 | 960x544 | 24 | 72 | 3s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1GN6x-jKvZjW_UK87McJwZw8jexaRH23S?usp=drive_link) | - | |
 | [`IPOC (2025-04-14)`](https://yangxlarge.github.io/ipoc/) | VBench Team | 2025-04-14 | 1360x768 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1YFSVvcEUfejmXZxHRuYh723R2Iv_NCU5/view?usp=sharing) | - | |
 | [`Vidu Q1 (2025-04-17)`](https://www.vidu.studio/) | VBench Team | 2025-04-21 | 1280x720 | 24 | 125 | 5.2s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/15MntPOIUZXER4cCTZK8Yq97202PAlz10?usp=sharing) | - | |
-| [`CogVideoX1.5-5B`](https://github.com/THUDM/CogVideo) | VBench Team | 2025-04-23 | 1360x768 | 16 | 161 | 10s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1FSAccPXyJR_uw5ldkQJAMzIVphLRuh39/view?usp=drive_link](https://drive.google.com/drive/folders/1v2UBa8XdUlpWwHwSDpNRVWad_pJfAtWR?usp=drive_link) | - | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/prompts/augmented_prompts/gpt_enhanced_prompts/all_dimension_longer.txt)</small> |
+| [`CogVideoX1.5-5B`](https://github.com/THUDM/CogVideo) | VBench Team | 2025-04-23 | 1360x768 | 16 | 161 | 10s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1v2UBa8XdUlpWwHwSDpNRVWad_pJfAtWR?usp=drive_link) | - | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/prompts/augmented_prompts/gpt_enhanced_prompts/all_dimension_longer.txt)</small> |
 
 ## How are Files Structured in Google Drive?
 
