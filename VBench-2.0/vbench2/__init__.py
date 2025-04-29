@@ -21,7 +21,7 @@ class VBench2(object):
     def check_dimension_requires_extra_info(self, dimension_list):
         dim_custom_not_supported = set(dimension_list) & set([
             'Composition', 'Dynamic_Attribute', 'Dynamic_Spatial_Relationship', 'Instance_Preservation', 'Complex_Plot', 'Complex_Landscape', 
-            'Motion_Rationality', 'Motion_Order_Understanding', 'Mechanics', 'Thermotics', 'Material', "Camera_Motion"
+            'Motion_Rationality', 'Motion_Order_Understanding', 'Mechanics', 'Thermotics', 'Material', "Camera_Motion", "Human_Interaction"
         ])
 
         assert len(dim_custom_not_supported) == 0, f"dimensions : {dim_custom_not_supported} not supported for custom input"
@@ -31,46 +31,33 @@ class VBench2(object):
         cur_full_info_list=[] # to save the prompt and video path info for the current dimensions
         if mode=='custom_input':
             self.check_dimension_requires_extra_info(dimension_list)
-            if os.path.isfile(videos_path):
-                cur_full_info_list = [{"prompt_en": get_prompt_from_filename(videos_path), "dimension": dimension_list, "video_list": [videos_path]}]
-                if len(prompt_list) == 1:
-                    cur_full_info_list[0]["prompt_en"] = prompt_list[0]
-            else:
-                video_names = os.listdir(videos_path)
-
-                cur_full_info_list = []
-
-                for filename in video_names:
-                    postfix = Path(os.path.join(videos_path, filename)).suffix
-                    if postfix.lower() not in ['.mp4', '.gif', '.jpg', '.png']:
+            video_names = os.listdir(videos_path)
+            assert len(video_names)>0, f"ERROR : The video files is empty"
+            cur_full_info_list = []
+            prompt_check_list = []
+            for filename in video_names:
+                postfix = Path(os.path.join(videos_path, filename)).suffix
+                if postfix.lower() not in ['.mp4']:
+                    continue
+                if dimension_list[0]=='Diversity':
+                    prompt_en = get_prompt_from_filename(filename)
+                    if prompt_en in prompt_check_list:
                         continue
+                    prompt_check_list.append(prompt_en)
+                    item = {
+                        "prompt_en": prompt_en, 
+                        "dimension": dimension_list, 
+                        "video_list": []
+                    }
+                    for ite in range(20):
+                        item['video_list'].append(os.path.join(videos_path, f'{prompt_en}{special_str}-{str(ite)}{postfix}'))
+                    cur_full_info_list.append(item)
+                else:
                     cur_full_info_list.append({
                         "prompt_en": get_prompt_from_filename(filename), 
                         "dimension": dimension_list, 
                         "video_list": [os.path.join(videos_path, filename)]
                     })
-
-                if len(prompt_list) > 0:
-                    prompt_list = {os.path.join(videos_path, path): prompt_list[path] for path in prompt_list}
-                    assert len(prompt_list) >= len(cur_full_info_list), """
-                        Number of prompts should match with number of videos.\n
-                        Got {len(prompt_list)=}, {len(cur_full_info_list)=}\n
-                        To read the prompt from filename, delete --prompt_file and --prompt_list
-                        """
-
-                    all_video_path = [os.path.abspath(file) for file in list(chain.from_iterable(vid["video_list"] for vid in cur_full_info_list))]
-                    backslash = "\n"
-                    assert len(set(all_video_path) - set([os.path.abspath(path_key) for path_key in prompt_list])) == 0, f"""
-                    The prompts for the following videos are not found in the prompt file: \n
-                    {backslash.join(set(all_video_path) - set([os.path.abspath(path_key) for path_key in prompt_list]))}
-                    """
-
-                    video_map = {}
-                    for prompt_key in prompt_list:
-                        video_map[os.path.abspath(prompt_key)] = prompt_list[prompt_key]
-
-                    for video_info in cur_full_info_list:
-                        video_info["prompt_en"] = video_map[os.path.abspath(video_info["video_list"][0])]
 
         else:
             full_info_list = load_json(self.full_info_dir)

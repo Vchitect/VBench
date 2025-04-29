@@ -87,16 +87,39 @@ Evaluate 18 dimensions on different GPUs, one dimension per GPU. You can set the
 bash evaluate.sh --max_parallel_tasks 8
 ```
 
+### **[New]** Evaluating Single Dimension of Your Own Videos
+We support evaluating any video. Simply provide the path to the video file. There is no requirement on the videos' names except `Diversity` dimension.
+- Note: We support customized videos / prompts for the following dimensions: `'Human_Anatomy', 'Human_Identity', 'Human_Clothes', 'Diversity', 'Multi-View_Consistency'`
+- Note: `Diversity` requires at least 20 videos for one prompt to robustly test the diversity of your model and the naming format should be `prompt-index.mp4` where index ranges from 0 to 19
+- Note: `Diversity` and `Multi-View_Consistency` should be placed in separate folders while `'Human_Anatomy', 'Human_Identity', 'Human_Clothes'` can share a folder (save your time). 
+
+To evaluate videos with customized input prompt, run our script with `--mode=custom_input`:
+```bash
+python evaluate.py \
+    --dimension $DIMENSION \
+    --videos_path /path/to/folder_or_video/ \
+    --output_path "evaluation_results/$DIMENSION" \
+    --mode=custom_input
+```
+For example:
+```bash
+python evaluate.py \
+    --dimension "Diversity" \
+    --videos_path "YOUR_VIDEO_PATH" \
+    --output_path "evaluation_results/Diversity" \
+    --mode=custom_input
+```
+
 ### Evaluating Single Dimension on the Standard Prompt Suite of VBench-2.0
 
-##### command line 
+<!-- ##### command line 
 ```bash
     vbench2 evaluate --videos_path $VIDEO_PATH --dimension $DIMENSION
 ```
 For example:
 ```bash
     vbench2 evaluate --videos_path "sampled_videos/HunyuanVideo/Human_Interaction" --dimension "Human_Interaction"
-```
+``` -->
 ##### python
 ```python
     from vbench2 import VBench2
