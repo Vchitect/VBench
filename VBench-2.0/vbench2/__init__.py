@@ -15,7 +15,7 @@ class VBench2(object):
 
     def build_full_dimension_list(self, ):
         return ["Human_Anatomy", "Human_Identity", "Human_Clothes", "Diversity", "Composition", "Dynamic_Spatial_Relationship", 
-                "Dynamic_Attribute", "Motion_Order_Understanding", "Human_Interaction", "Complex_LandScape", 'Complex_Plot', "Camera_Motion", 
+                "Dynamic_Attribute", "Motion_Order_Understanding", "Human_Interaction", "Complex_Landscape", 'Complex_Plot', "Camera_Motion", 
                 "Motion_Rationality", "Instance_Preservation", "Mechanics", "Thermotics", "Material", "Multi-View_Consistency"]        
 
     def check_dimension_requires_extra_info(self, dimension_list):
