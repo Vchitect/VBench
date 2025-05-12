@@ -118,22 +118,16 @@ We list the setting for sampling videos from these models.
 | [`CogVideoX-5B (Diffusers)`](https://github.com/THUDM/CogVideo) | VBench Team | 2025-03-04 | 720x480 | 8 | 49 | 6.1s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1FSAccPXyJR_uw5ldkQJAMzIVphLRuh39/view?usp=drive_link) | - | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/prompts/augmented_prompts/gpt_enhanced_prompts/all_dimension_longer.txt)</small> |
 | [`Step-Video-T2V`](https://yuewen.cn/videos) | VBench Team | 2025-03-13 | 992x544 | 25 | 200 | 8s | - | - | MP4 |[Google Drive](https://drive.google.com/file/d/124XdmyfZOjnrHy9DPMTwvdVANOgVJJBQ/view?usp=drive_link) | - |  |
 | [`Open-Sora-2.0`](https://hpcaitech.github.io/Open-Sora/) | VBench Team | 2025-03-14 | 1024x576 | 24 | 120 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1TnABYBauOJicjpYkxW2ixr_t_klD0S67?usp=drive_link) | - | |
-<<<<<<< HEAD
 | [`Wan2.1-T2V-1.3B`](https://github.com/Wan-Video/Wan2.1/tree/main) | VBench Team | 2025-03-20 | 832x480 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1asyr8ytkumWh3qXWlPMm89Fq3tCdJxaA?usp=drive_link) | - | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/tree/master/prompts/augmented_prompts/Wan2.1-T2V-1.3B)</small> |
-=======
 | [`Wan2.1-T2V-1.3B`](https://github.com/Wan-Video/Wan2.1/tree/main) | VBench Team | 2025-03-20 | 832x480 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1asyr8ytkumWh3qXWlPMm89Fq3tCdJxaA?usp=drive_link) | - | |
->>>>>>> 8c95bbe40b4a2020217bb9a69a5802d33eaea403
 | [`Open-Sora 2.0 (2025-03-18)`](https://hpcaitech.github.io/Open-Sora/) | VBench Team | 2025-03-31 | 1024x576 | 24 | 120 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1iNBcAGakVLZge9BtIFgwccR0RD9w52it/view?usp=drive_link) | - | |
 | [`AccVideo`](https://aejion.github.io/accvideo/) | VBench Team | 2025-03-31 | 960x544 | 24 | 72 | 3s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1GN6x-jKvZjW_UK87McJwZw8jexaRH23S?usp=drive_link) | - | |
 | [`IPOC (2025-04-14)`](https://yangxlarge.github.io/ipoc/) | VBench Team | 2025-04-14 | 1360x768 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1YFSVvcEUfejmXZxHRuYh723R2Iv_NCU5/view?usp=sharing) | - | |
 | [`Vidu Q1 (2025-04-17)`](https://www.vidu.studio/) | VBench Team | 2025-04-21 | 1280x720 | 24 | 125 | 5.2s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/15MntPOIUZXER4cCTZK8Yq97202PAlz10?usp=sharing) | - | |
 | [`CogVideoX1.5-5B`](https://github.com/THUDM/CogVideo) | VBench Team | 2025-04-23 | 1360x768 | 16 | 161 | 10s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1v2UBa8XdUlpWwHwSDpNRVWad_pJfAtWR?usp=drive_link) | - | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/prompts/augmented_prompts/gpt_enhanced_prompts/all_dimension_longer.txt)</small> |
-<<<<<<< HEAD
-
-=======
 | [`Wan2.1-T2V-1.3B (2025-05-03)`](https://github.com/Wan-Video/Wan2.1/tree/main) | VBench Team | 2025-05-03 | 832x480 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1jJmhAzgg_p0mhp5TNPgVT3hUUUaSX1Xo?usp=drive_link) | - | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/prompts/augmented_prompts/Wan2.1-T2V-1.3B/all_dimension_aug_wanx_seed42.txt)</small> guidance_scale=6.0, flow_shift=3.0, num_inference_steps=50, sampler=unipc, negative prompt='色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走|
-| [`Kling-1.6`](https://klingai.kuaishou.com/) | VBench Team | 2025-05-08 | 1280x720 | 24 | 216 | 9s | - | - | MP4 | [Google Drive]() | - ||
->>>>>>> 8c95bbe40b4a2020217bb9a69a5802d33eaea403
+| [`Kling-1.6`](https://klingai.kuaishou.com/) | VBench Team | 2025-05-08 | 1280x720 | 24 | 216 | 9s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1DGnYY6yu_0DwtLevxYuNDcP69egQSWva?usp=drive_link) | - ||
+
 ## How are Files Structured in Google Drive?
 
 
