@@ -37,8 +37,9 @@ pip install gdown
 gdown --id <file_id> --output <output_filename>
 
 # Example for HunyuanVideo
-gdown --id 1FCRj48-Yv7LM7XGgfDCvIo7Kb9EId5KX --output HunyuanVideo.zip
+gdown --folder https://drive.google.com/drive/folders/1OmL7HComkNWqhV6Yr9CA8YufAAErK4gu
 ```
+- Then, follow the instruction in README.md.
 
 ## What are the Details of the Video Generation Models?
 We list the setting for sampling videos from these models.
