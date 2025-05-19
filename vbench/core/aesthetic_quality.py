@@ -8,7 +8,7 @@ from urllib.request import urlretrieve
 from vbench.utils import load_video, load_dimension_info, clip_transform
 from tqdm import tqdm
 
-from .distributed import (
+from vbench.distributed import (
     get_world_size,
     get_rank,
     all_gather,
@@ -76,7 +76,6 @@ def laion_aesthetic(aesthetic_model, clip_model, video_list, device):
 
     aesthetic_avg /= num
     return aesthetic_avg, video_results
-
 
 def compute_aesthetic_quality(json_dir, device, submodules_list, **kwargs):
     vit_path = submodules_list[0]

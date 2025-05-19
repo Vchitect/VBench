@@ -10,7 +10,7 @@ import torch.nn.functional as F
 from vbench.utils import load_video, load_dimension_info, clip_transform
 from tqdm import tqdm
 
-from .distributed import (
+from vbench.distributed import (
     get_world_size,
     get_rank,
     all_gather,

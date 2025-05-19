@@ -9,7 +9,7 @@ from vbench.third_party.grit_model import DenseCaptioning
 from torchvision import transforms
 import logging
 
-from .distributed import (
+from vbench.distributed import (
     get_world_size,
     get_rank,
     all_gather,
@@ -71,7 +71,6 @@ def multiple_objects(model, video_dict, device):
                 'frame_count': len(cur_video_pred)})
     success_rate = success_frame_count / frame_count
     return success_rate, video_results
-        
 
 def compute_multiple_objects(json_dir, device, submodules_dict, **kwargs):
     dense_caption_model = DenseCaptioning(device)

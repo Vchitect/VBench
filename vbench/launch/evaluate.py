@@ -135,6 +135,10 @@ def main():
         kwargs['category'] = args.category
 
     kwargs['imaging_quality_preprocessing_mode'] = args.imaging_quality_preprocessing_mode
+    
+    print0("--------------------------------")
+    print0(args.videos_path)
+    print0("--------------------------------")
 
     my_VBench.evaluate(
         videos_path = args.videos_path,

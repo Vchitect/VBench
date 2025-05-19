@@ -14,7 +14,7 @@ import torchvision.transforms as transforms
 from vbench.utils import load_video, load_dimension_info, dino_transform, dino_transform_Image
 import logging
 
-from .distributed import (
+from vbench.distributed import (
     get_world_size,
     get_rank,
     all_gather,

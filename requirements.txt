@@ -24,4 +24,5 @@ boto3
 omegaconf
 transformers==4.33.2
 pycocoevalcap
+scenedetect
 # detectron2@git+https://github.com/facebookresearch/detectron2.git

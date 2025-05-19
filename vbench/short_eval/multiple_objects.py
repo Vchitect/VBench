@@ -1,0 +1,1 @@
+from vbench.core.multiple_objects import compute_multiple_objects

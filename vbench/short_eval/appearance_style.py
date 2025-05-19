@@ -1,0 +1,1 @@
+from vbench.core.appearance_style import compute_appearance_style

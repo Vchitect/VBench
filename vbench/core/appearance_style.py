@@ -8,7 +8,7 @@ import clip
 from PIL import Image
 from vbench.utils import load_video, load_dimension_info, clip_transform, read_frames_decord_by_fps, clip_transform_Image
 
-from .distributed import (
+from vbench.distributed import (
     get_world_size,
     get_rank,
     all_gather,

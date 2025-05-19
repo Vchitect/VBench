@@ -9,7 +9,7 @@ from vbench.third_party.tag2Text.tag2text import tag2text_caption
 
 import logging
 
-from .distributed import (
+from vbench.distributed import (
     get_world_size,
     get_rank,
     all_gather,
@@ -61,7 +61,6 @@ def scene(model, video_dict, device):
                 'frame_count': len(cur_video_pred)})
     success_rate = success_frame_count / frame_count
     return success_rate, video_results
-        
 
 def compute_scene(json_dir, device, submodules_dict, **kwargs):
     model = tag2text_caption(**submodules_dict)

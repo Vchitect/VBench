@@ -4,7 +4,7 @@ from torchvision import transforms
 from pyiqa.archs.musiq_arch import MUSIQ
 from vbench.utils import load_video, load_dimension_info
 
-from .distributed import (
+from vbench.distributed import (
     get_world_size,
     get_rank,
     all_gather,
@@ -54,7 +54,6 @@ def technical_quality(model, video_list, device, **kwargs):
     average_score = sum([o['video_results'] for o in video_results]) / len(video_results)
     average_score = average_score / 100.
     return average_score, video_results
-
 
 def compute_imaging_quality(json_dir, device, submodules_list, **kwargs):
     model_path = submodules_list['model_path']

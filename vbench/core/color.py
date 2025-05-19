@@ -9,7 +9,7 @@ from vbench.third_party.grit_model import DenseCaptioning
 
 import logging
 
-from .distributed import (
+from vbench.distributed import (
     get_world_size,
     get_rank,
     all_gather,
@@ -88,7 +88,6 @@ def color(model, video_dict, device):
                     'cur_success_frame_rate': cur_success_frame_rate,})
     success_rate = success_frame_count_all / video_count
     return success_rate, video_results
-        
 
 def compute_color(json_dir, device, submodules_dict, **kwargs):
     dense_caption_model = DenseCaptioning(device)

@@ -18,7 +18,7 @@ from timm.models import create_model
 from vbench.third_party.umt.models.modeling_finetune import vit_large_patch16_224
 from tqdm import tqdm
 
-from .distributed import (
+from vbench.distributed import (
     get_world_size,
     get_rank,
     all_gather,
@@ -108,7 +108,6 @@ def human_action(umt_path, video_list, device):
     # print(f"cor num: {cor_num}, total: {cnt}")
     acc = cor_num / cnt
     return acc, video_results
-
 
 def compute_human_action(json_dir, device, submodules_list, **kwargs):
     umt_path = submodules_list[0]

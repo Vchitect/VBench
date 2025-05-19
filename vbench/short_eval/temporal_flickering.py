@@ -3,7 +3,7 @@ from tqdm import tqdm
 import cv2
 from vbench.utils import load_dimension_info
 
-from .distributed import (
+from vbench.distributed import (
     get_world_size,
     get_rank,
     all_gather,
@@ -71,12 +71,3 @@ def compute_temporal_flickering(json_dir, device, submodules_list, **kwargs):
         video_results = gather_list_of_dict(video_results)
         all_results = sum([d['video_results'] for d in video_results]) / len(video_results)
     return all_results, video_results
-
-
-
-
-
-
-
-
-

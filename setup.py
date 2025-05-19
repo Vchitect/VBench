@@ -35,7 +35,7 @@ def fetch_requirements():
     return envs
 
 install_requires = fetch_requirements()
-check_torch_version()
+# check_torch_version()
 setup(name='vbench',
       version='0.1.5',
       description='Video generation benchmark',

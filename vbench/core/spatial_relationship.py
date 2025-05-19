@@ -9,7 +9,7 @@ from vbench.third_party.grit_model import DenseCaptioning
 from torchvision import transforms
 import logging
 
-from .distributed import (
+from vbench.distributed import (
     get_world_size,
     get_rank,
     all_gather,
@@ -135,7 +135,6 @@ def spatial_relationship(model, video_dict, device):
             video_results.append({'video_path': video_path, 'video_results': cur_success_frame_rate, 'frame_results':cur_video_frame_score})
     success_rate = np.mean(frame_score_overall)
     return success_rate, video_results
-        
 
 def compute_spatial_relationship(json_dir, device, submodules_dict, **kwargs):
     dense_caption_model = DenseCaptioning(device)

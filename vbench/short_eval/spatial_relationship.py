@@ -1,0 +1,1 @@
+from vbench.core.spatial_relationship import compute_spatial_relationship

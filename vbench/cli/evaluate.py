@@ -1,6 +1,7 @@
 import os
 import subprocess
 import argparse
+from vbench.cli import stringify_cmd
 
 CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 def register_subparsers(subparser):
@@ -102,12 +103,6 @@ def register_subparsers(subparser):
     )
     parser.set_defaults(func=evaluate)
 
-def stringify_cmd(cmd_ls):
-    cmd = ""
-    for string in cmd_ls:
-        cmd += string + " "
-    return cmd
-
 ## TODO
 def evaluate(args):
     cmd = ['python', '-m', 'torch.distributed.run', '--standalone', '--nproc_per_node', str(args.ngpus), f'{CUR_DIR}/../launch/evaluate.py']
@@ -116,10 +111,14 @@ def evaluate(args):
         if arg == "ngpus" or (args_dict[arg] == None) or arg == "func":
             continue
         if arg in ["videos_path", "prompt", "prompt_file", "output_path", "full_json_dir"]:
-            cmd.append(f"--videos_path=\"{str(args_dict[arg])}\"")
+            cmd.append(f"--{arg}=\"{str(args_dict[arg])}\"")
             continue
         cmd.append(f'--{arg}')
         cmd.append(str(args_dict[arg]))
+    
+    print('##########################')
+    print(cmd)
+    print('##########################')
     
     subprocess.run(stringify_cmd(cmd), shell=True)
 

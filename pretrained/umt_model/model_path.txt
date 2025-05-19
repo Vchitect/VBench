@@ -1,1 +1,1 @@
-wget https://huggingface.co/OpenGVLab/VBench_Used_Models/resolve/main/l16_ptk710_ftk710_ftk400_f16_res224.pth -P  ~/.cache/vbench/umt_model/
+wget https://huggingface.co/OpenGVLab/VBench_Used_Models/resolve/main/l16_ptk710_ftk710_ftk400_f16_res224.pth -P  /scratch/users/ntu/nattapol/vbench_pretrained/umt_model/
