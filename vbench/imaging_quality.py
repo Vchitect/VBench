@@ -51,7 +51,7 @@ def technical_quality(model, video_list, device, **kwargs):
             score = model(frame)
             acc_score_video += float(score)
         video_results.append({'video_path': video_path, 'video_results': acc_score_video/len(images)})
-    average_score = sum([o['video_results'] for o in video_results]) / len(video_results)
+    average_score = sum([o['video_results'] for o in video_results]) / len(video_results) if video_results else 0
     average_score = average_score / 100.
     return average_score, video_results
 
