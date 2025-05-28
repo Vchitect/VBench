@@ -93,3 +93,29 @@ To sample videos for VBench evaluation:
             torchvision.io.write_video(cur_save_path, video, fps=8)
     ```
 
+#### Evaluation Setting
+- For different ability dimensions of VBench, we use different benchmark data for evaluation. Our evaluation code use `vbench/VBench_full_info.json` to automatically obtain the corresponding data for different dimensions on-the-fly.
+- The tables below show the prompts used for different dimensions:
+    | Dimension | Prompt Suite | Prompt Count |
+    | :---: | :---: | :---: |
+    | `subject_consistency` | `subject_consistency` | 72 |
+    | `background_consistency` | `scene` | 86 |
+    | `temporal_flickering` | `temporal_flickering` | 75 |
+    | `motion_smoothness` | `subject_consistency` | 72 |
+    | `dynamic_degree` | `subject_consistency` | 72 |
+    | `aesthetic_quality` | `overall_consistency` | 93 |
+    | `imaging_quality` | `overall_consistency` | 93 |
+    | `object_class` | `object_class` | 79 |
+    | `multiple_objects` | `multiple_objects` | 82 |
+    | `human_action` | `human_action` | 100 |
+    | `color` | `color` | 85 |
+    | `spatial_relationship` | `spatial_relationship` | 84 |
+    | `scene` | `scene` | 86 |
+    | `temporal_style` | `temporal_style` | 100 |
+    | `appearance_style` | `appearance_style` | 90 |
+    | `overall_consistency` | `overall_consistency` | 93 |
+
+
+
+    
+
