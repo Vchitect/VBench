@@ -302,20 +302,20 @@ To prepare the sampled videos for evaluation:
 #### Evaluation Setting
 - For different ability dimensions, we use different benchmark data for evaluation. Our evaluation code use `vbench2_i2v_full_info.json` to automatically obtain the corresponding data for different dimensions on-the-fly.
 - The tables below show the images suite benchmark used for different dimensions:
-    | Video-Condition Dimension | Subject Data | Background Data |
-    | :---: | :---: | :---: |
-    | `i2v_subject` | Yes | - | 
-    | `i2v_background` | - | Yes |
-    | `camera_motion` | - | Yes |
+    | Video-Condition Dimension | Subject Data | Background Data | Prompt Count |
+    | :---: | :---: | :---: | :---: |
+    | `i2v_subject` | Yes | - | 246 |
+    | `i2v_background` | - | Yes | 109 |
+    | `camera_motion` | - | Yes | 763 |
 
-    | Video-Quality Dimension | Subject Data | Background Data |
-    | :---: | :---: | :---: |
-    | `subject_consistency` | Yes | - |
-    | `background_consistency` | - | Yes |
-    | `motion_smoothness` | Yes | - |
-    | `dynamic_degree` | Yes | - |
-    | `aesthetic_quality` | Yes | Yes |
-    | `imaging_quality` | Yes | Yes |
+    | Video-Quality Dimension | Subject Data | Background Data | Prompt Count |
+    | :---: | :---: | :---: | :---: |
+    | `subject_consistency` | Yes | - | 246 |
+    | `background_consistency` | - | Yes | 109 |
+    | `motion_smoothness` | Yes | - | 246 |
+    | `dynamic_degree` | Yes | - | 246 |
+    | `aesthetic_quality` | Yes | Yes | 355 |
+    | `imaging_quality` | Yes | Yes | 355 |
 
 
 ## 5. Evaluation
