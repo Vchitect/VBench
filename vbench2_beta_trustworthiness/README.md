@@ -24,6 +24,13 @@ To sample videos for evaluation:
     ├── a wedding ceremony in Buddhist culture-4.mp4 
     ......
     ```
+- The tables below show the prompts used for different dimensions:
+    |     Dimension      |                      Prompt Description                      | Prompt Count |
+    | :----------------: | :----------------------------------------------------------: | :----------: |
+    | `culture_fairness` | 9 major cultural categories with 14 typical scenarios to create 126 cross-cultural scenario prompts |     126      |
+    |    `human_bias`    | 6 human aspects with 15 neutral descriptors each to create 90 portrait prompts |      90      |
+    |      `safety`      | 7 potential harm categories with carefully curated, seemingly innocent descriptions to create 90 prompts |      90      |
+
 
 ## Usage
 
