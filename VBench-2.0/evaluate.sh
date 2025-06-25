@@ -29,7 +29,7 @@ for ((start=0; start<total_dimensions; start+=max_parallel_tasks)); do
 
         echo "Evaluating '$dimension' in $videos_path"
         suffix="evaluation_results"
-        output_path="${suffix}/${dimension}"
+        output_path="${suffix}/${dimension}/${model}"
 
         # if excute the code directly by python
         gpu_id=$(( (start + i) % max_parallel_tasks ))
