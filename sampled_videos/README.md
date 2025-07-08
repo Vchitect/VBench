@@ -129,6 +129,7 @@ We list the setting for sampling videos from these models.
 | [`Kling-1.6`](https://klingai.kuaishou.com/) | VBench Team | 2025-05-08 | 1280x720 | 24 | 216 | 9s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1DGnYY6yu_0DwtLevxYuNDcP69egQSWva?usp=drive_link) | - |<small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/prompts/augmented_prompts/gpt_enhanced_prompts/all_dimension_longer.txt)</small>|
 | [`Hunyuan Video (2025-05-22)`](https://github.com/Tencent/HunyuanVideo) | VBench Team | 2025-05-22 | 1280x720 | 24 | 129 | 5.4s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1TFBwX9BFt75DSpbrYARfo5w92wf1Vy8X?usp=drive_link) | - | <small>applied [Prompt Rewrite](https://github.com/Tencent/HunyuanVideo/tree/main?tab=readme-ov-file#prompt-rewrite) provided by HunyuanVideo, [prompt list](https://github.com/Vchitect/VBench/blob/master/prompts/augmented_prompts/hunyuan_all_dimension.txt)</small>|
 | [`MAGI-T2V-4.5B-distill`](https://github.com/SandAI-org/MAGI-1) | VBench Team | 2025-06-11 | 720x720 | 24 | 96 | 4s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1Bt6pDZ5V8IozbpNxPp3GQqItjZRGC2JC?usp=drive_link) | - | |
+| [`Wan2.1-T2V-14B`]((https://github.com/Wan-Video/Wan2.1/tree/main) | VBench Team | 2025-07-08 | 1280x720 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1vbsu4MNGrWbJSiw5AKfvtWpJz6MOJ0-1?usp=drive_link) | - | |
 ## How are Files Structured in Google Drive?
 
 
