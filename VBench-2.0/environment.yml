@@ -1,40 +1,50 @@
-name: vbencht
+name: vbench2
 channels:
   - defaults
   - https://repo.anaconda.com/pkgs/main
   - https://repo.anaconda.com/pkgs/r
 dependencies:
-  - _libgcc_mutex=0.1
-  - _openmp_mutex=5.1
-  - bzip2=1.0.8
-  - ca-certificates=2025.2.25
-  - ld_impl_linux-64=2.40
-  - libffi=3.4.4
-  - libgcc-ng=11.2.0
-  - libgomp=11.2.0
-  - libstdcxx-ng=11.2.0
-  - libuuid=1.41.5
-  - ncurses=6.4
-  - openssl=3.0.16
-  - pip=25.0
-  - psutil=5.9.0
-  - python=3.10.16
-  - readline=8.2
-  - setuptools=75.8.0
-  - sqlite=3.45.3
-  - tk=8.6.14
-  - wheel=0.45.1
-  - xz=5.6.4
-  - zlib=1.2.13
+  - _libgcc_mutex=0.1=main
+  - _openmp_mutex=5.1=1_gnu
+  - bzip2=1.0.8=h5eee18b_6
+  - ca-certificates=2025.2.25=h06a4308_0
+  - expat=2.7.1=h6a678d5_0
+  - ld_impl_linux-64=2.40=h12ee557_0
+  - libffi=3.4.4=h6a678d5_1
+  - libgcc-ng=11.2.0=h1234567_1
+  - libgomp=11.2.0=h1234567_1
+  - libstdcxx-ng=11.2.0=h1234567_1
+  - libuuid=1.41.5=h5eee18b_0
+  - libxcb=1.17.0=h9b100fa_0
+  - ncurses=6.4=h6a678d5_0
+  - openssl=3.0.16=h5eee18b_0
+  - pip=25.1=pyhc872135_2
+  - psutil=5.9.0=py310h5eee18b_1
+  - pthread-stubs=0.3=h0ce48e5_1
+  - python=3.10.18=h1a3bd86_0
+  - readline=8.2=h5eee18b_0
+  - setuptools=78.1.1=py310h06a4308_0
+  - sqlite=3.50.2=hb25bd0a_1
+  - tk=8.6.14=h993c535_1
+  - wheel=0.45.1=py310h06a4308_0
+  - xorg-libx11=1.8.12=h9b100fa_1
+  - xorg-libxau=1.0.12=h9b100fa_0
+  - xorg-libxdmcp=1.1.5=h9b100fa_0
+  - xorg-xorgproto=2024.1=h5eee18b_1
+  - xz=5.6.4=h5eee18b_1
+  - zlib=1.2.13=h5eee18b_1
   - pip:
-      - absl-py==2.2.1
-      - accelerate==1.2.1
+      - absl-py==2.3.1
+      - accelerate==1.9.0
       - addict==2.4.0
+      - aiofiles==24.1.0
       - aiohappyeyeballs==2.4.4
       - aiohttp==3.11.11
       - aiosignal==1.3.2
       - albucore==0.0.19
       - albumentations==1.4.19
+      - aliyun-python-sdk-core==2.16.0
+      - aliyun-python-sdk-kms==2.16.5
       - altair==5.5.0
       - annotated-types==0.7.0
       - antlr4-python3-runtime==4.9.3
@@ -43,41 +53,45 @@ dependencies:
       - asttokens==3.0.0
       - astunparse==1.6.3
       - async-timeout==5.0.1
+      - attrdict==2.0.1
       - attrs==24.3.0
       - av==14.0.1
-      - backports-tarfile==1.2.0
       - bcrypt==4.3.0
       - beautifulsoup4==4.12.3
+      - binpacking==1.5.2
       - bitsandbytes==0.42.0
       - blinker==1.9.0
       - blis==1.2.0
       - boto3==1.26.90
       - botocore==1.29.165
       - braceexpand==0.1.7
-      - cachetools==5.5.2
+      - brotli==1.1.0
+      - cachetools==6.1.0
       - catalogue==2.0.10
       - certifi==2024.12.14
       - cffi==1.17.1
       - charset-normalizer==3.4.1
       - click==8.1.8
       - clint==0.5.1
-      - clip==1.0
-      - cloudpathlib==0.21.0
+      - cloudpathlib==0.21.1
       - cloudpickle==3.1.1
       - colorama==0.4.6
       - coloredlogs==15.0.1
       - confection==0.1.5
       - configobj==5.0.9
       - contourpy==1.3.1
-      - cryptography==44.0.2
+      - cpm-kernels==1.0.11
+      - crcmod==1.7
+      - cryptography==45.0.5
       - cycler==0.12.1
       - cymem==2.0.11
-      - cython==3.0.12
+      - cython==3.1.2
+      - dacite==1.9.2
       - datasets==3.2.0
       - decorator==5.1.1
       - decord==0.6.0
       - deep-sort-realtime==1.3.2
-      - deepspeed==0.12.6
+      - deepspeed==0.14.4
       - defusedxml==0.7.1
       - deprecated==1.2.18
       - diffusers==0.32.1
@@ -85,7 +99,6 @@ dependencies:
       - distro==1.9.0
       - docker-pycreds==0.4.0
       - docopt==0.6.2
-      - docutils==0.21.2
       - easydict==1.13
       - einops==0.8.0
       - einops-exts==0.0.4
@@ -95,6 +108,7 @@ dependencies:
       - fabric==3.2.2
       - fairscale==0.4.13
       - fastapi==0.115.6
+      - ffmpy==0.6.0
       - filelock==3.13.1
       - filterpy==1.4.5
       - fire==0.4.0
@@ -105,25 +119,27 @@ dependencies:
       - frozenlist==1.5.0
       - fsspec==2024.2.0
       - ftfy==6.3.1
+      - future==1.0.0
       - fvcore==0.1.5.post20221221
       - gast==0.6.0
       - gdown==5.2.0
-      - gevent==24.11.1
+      - gevent==25.5.1
       - gitdb==4.0.12
       - gitpython==3.1.44
       - google-pasta==0.2.0
-      - greenlet==3.1.1
-      - grpcio==1.71.0
+      - gradio==5.38.0
+      - gradio-client==1.11.0
+      - greenlet==3.2.3
+      - groovy==0.1.2
+      - grpcio==1.73.1
       - h11==0.14.0
       - h5py==3.12.1
-      - hf-xet==1.1.5
       - hjson==3.1.0
       - hpsv2==1.2.0
       - httpcore==1.0.7
       - httpx==0.28.1
-      - huggingface-hub==0.33.4
+      - huggingface-hub==0.30.0
       - humanfriendly==10.0
-      - id==1.5.0
       - idna==3.10
       - iglovikov-helper-functions==0.0.53
       - imagecorruptions==1.1.2
@@ -135,22 +151,18 @@ dependencies:
       - iopath==0.1.10
       - ipdb==0.13.13
       - ipython==8.32.0
-      - jaraco-classes==3.4.0
-      - jaraco-context==6.0.1
-      - jaraco-functools==4.1.0
-      - jax==0.5.3
-      - jaxlib==0.5.3
+      - jax==0.6.2
+      - jaxlib==0.6.2
       - jedi==0.19.2
-      - jeepney==0.9.0
+      - jieba==0.42.1
       - jinja2==3.1.3
       - jiter==0.8.2
-      - jmespath==1.0.1
+      - jmespath==0.10.0
       - joblib==1.4.2
       - jpeg4py==0.1.4
-      - jsonschema==4.23.0
-      - jsonschema-specifications==2024.10.1
-      - keras==3.9.1
-      - keyring==25.6.0
+      - jsonschema==4.25.0
+      - jsonschema-specifications==2025.4.1
+      - keras==3.10.0
       - kiwisolver==1.4.8
       - kornia==0.5.6
       - kornia-rs==0.1.8
@@ -162,7 +174,7 @@ dependencies:
       - logger==1.4
       - lvis==0.5.3
       - marisa-trie==1.2.1
-      - markdown==3.7
+      - markdown==3.8.2
       - markdown-it-py==3.0.0
       - markupsafe==2.1.5
       - matplotlib==3.10.0
@@ -177,16 +189,14 @@ dependencies:
       - mmyolo==0.6.0
       - model-index==0.1.11
       - modelscope==1.28.0
-      - more-itertools==10.6.0
       - mpmath==1.3.0
       - msgpack==1.1.0
       - multidict==6.1.0
       - multiprocess==0.70.16
       - murmurhash==1.0.12
-      - namex==0.0.8
-      - narwhals==1.32.0
+      - namex==0.1.0
+      - narwhals==1.48.0
       - networkx==3.2.1
-      - nh3==0.2.21
       - ninja==1.11.1.4
       - nltk==3.9.1
       - numpy==1.26.3
@@ -199,7 +209,7 @@ dependencies:
       - nvidia-curand-cu11==10.3.0.86
       - nvidia-cusolver-cu11==11.4.1.48
       - nvidia-cusparse-cu11==11.7.5.86
-      - nvidia-ml-py==12.570.86
+      - nvidia-ml-py==12.575.51
       - nvidia-nccl-cu11==2.21.5
       - nvidia-nvtx-cu11==11.8.86
       - omegaconf==2.3.0
@@ -214,14 +224,16 @@ dependencies:
       - openmim==0.3.9
       - openxlab==0.0.11
       - opt-einsum==3.4.0
-      - optree==0.14.1
+      - optree==0.16.0
       - ordered-set==4.1.0
+      - orjson==3.11.0
+      - oss2==2.19.1
       - outcome==1.3.0.post0
       - packaging==24.2
       - pandas==2.2.3
       - paramiko==3.5.1
       - parso==0.8.4
-      - peft==0.14.0
+      - peft==0.15.2
       - pexpect==4.9.0
       - pillow==10.2.0
       - platformdirs==4.3.6
@@ -229,7 +241,7 @@ dependencies:
       - portalocker==3.1.1
       - preshed==3.0.9
       - prettytable==3.14.0
-      - prompt-toolkit==3.0.50
+      - prompt-toolkit==3.0.51
       - propcache==0.2.1
       - protobuf==3.20.3
       - ptyprocess==0.7.0
@@ -240,12 +252,13 @@ dependencies:
       - pycocoevalcap==1.2
       - pycocotools==2.0.8
       - pycparser==2.22
-      - pycryptodome==3.22.0
+      - pycryptodome==3.23.0
       - pydantic==2.10.4
       - pydantic-core==2.27.2
       - pydeck==0.9.1
+      - pydub==0.25.1
       - pyecharts==2.0.8
-      - pygments==2.19.1
+      - pygments==2.19.2
       - pynacl==1.5.0
       - pynvml==12.0.0
       - pyparsing==3.2.1
@@ -253,29 +266,31 @@ dependencies:
       - pytest==7.2.0
       - pytest-split==0.8.0
       - python-dateutil==2.9.0.post0
+      - python-multipart==0.0.20
       - pytz==2024.2
       - pyyaml==6.0.2
       - qudida==0.0.4
-      - readme-renderer==44.0
+      - qwen-vl-utils==0.0.11
       - referencing==0.36.2
       - regex==2024.11.6
       - requests==2.32.3
-      - requests-toolbelt==1.0.0
       - retina-face==0.0.17
       - retinaface-pytorch==0.0.8
-      - rfc3986==2.0.0
       - rich==13.9.4
-      - rpds-py==0.24.0
+      - rouge==1.0.1
+      - rpds-py==0.26.0
+      - ruff==0.12.4
       - s3transfer==0.6.2
+      - safehttpx==0.1.6
       - safetensors==0.5.2
-      - sahi==0.11.22
+      - sahi==0.11.31
       - scenedetect==0.6.5.2
       - scikit-image==0.25.0
       - scikit-learn==1.6.0
       - scipy==1.15.0
       - seaborn==0.13.2
-      - secretstorage==3.3.3
       - selenium==4.29.0
+      - semantic-version==2.10.0
       - sentencepiece==0.2.0
       - sentry-sdk==2.19.2
       - setproctitle==1.3.4
@@ -284,12 +299,12 @@ dependencies:
       - shellingham==1.5.4
       - simplejson==3.20.1
       - six==1.17.0
-      - smart-open==7.1.0
+      - smart-open==7.3.0.post1
       - smmap==5.0.2
       - snapshot-selenium==0.0.2
       - sniffio==1.3.1
       - sortedcontainers==2.4.0
-      - sounddevice==0.5.1
+      - sounddevice==0.5.2
       - soupsieve==2.6
       - spacy==3.8.4
       - spacy-legacy==3.0.12
@@ -297,12 +312,12 @@ dependencies:
       - srsly==2.5.1
       - stack-data==0.6.3
       - starlette==0.41.3
-      - streamlit==1.44.0
-      - stringzilla==3.12.3
+      - streamlit==1.47.0
+      - stringzilla==3.12.5
       - supervision==0.19.0
       - sympy==1.13.1
       - tabulate==0.9.0
-      - tenacity==9.0.0
+      - tenacity==9.1.2
       - tensorboard==2.19.0
       - tensorboard-data-server==0.7.2
       - tensorflow==2.19.0
@@ -320,24 +335,27 @@ dependencies:
       - tokenizers==0.21.1
       - toml==0.10.2
       - tomli==2.2.1
+      - tomlkit==0.13.3
       - torch==2.5.1+cu118
       - torchaudio==2.5.1+cu118
       - torchvision==0.20.1+cu118
-      - tornado==6.4.2
+      - tornado==6.5.1
       - tqdm==4.67.1
       - traitlets==5.14.3
-      - transformers==4.52.4
-      - trio==0.29.0
+      - transformers==4.51.0
+      - transformers-stream-generator==0.0.5
+      - trio==0.30.0
       - trio-websocket==0.12.2
       - triton==3.1.0
-      - twine==6.1.0
-      - typer==0.15.2
+      - trl==0.19.1
+      - typer==0.16.0
       - typing-extensions==4.12.2
       - tzdata==2024.2
       - ultralytics==8.3.68
       - ultralytics-thop==2.0.14
       - unicorn==2.1.1
       - urllib3==1.26.15
+      - uvicorn==0.35.0
       - wandb==0.19.2
       - wasabi==1.1.3
       - watchdog==6.0.0
@@ -346,6 +364,7 @@ dependencies:
       - webdataset==0.2.100
       - websocket==0.2.1
       - websocket-client==1.8.0
+      - websockets==15.0.1
       - werkzeug==3.1.3
       - wordcloud==1.9.4
       - wrapt==1.17.2
@@ -357,6 +376,7 @@ dependencies:
       - yolo-world==0.1.0
       - yolov5==7.0.10
       - zipp==3.21.0
-      - zope-event==5.0
+      - zope-event==5.1
       - zope-interface==7.2
-prefix: /mnt/petrelfs/zhengdian/anaconda3/envs/vbencht
+      - zstandard==0.23.0
+prefix: ./anaconda3/envs/vbench2
