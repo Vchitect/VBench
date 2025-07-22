@@ -338,19 +338,18 @@ def init_submodules(dimension_list, local=False, read_frame=False):
         
         elif dimension == 'Instance_Preservation':
             submodules_dict[dimension] = {
-                "model":f'{CACHE_DIR}/YOLO-World/yolo_world_v2_l_obj365v1_goldg_pretrain_1280ft-9babe3f6.pth'
+                "model":f'{CACHE_DIR}/instance_anomaly_detector/model'
             }
             details = submodules_dict[dimension]
-            if not os.path.isfile(details['model']):
+            if not os.path.isdir(details['model']):
                 print(f"File {details['model']} does not exist. Downloading...")
                 
-                file = f"{CACHE_DIR}/YOLO-World"
-                file_id = "1Jm05vcIKzETX-mSLXeKijbd1sv2PaTSe"
-                url = f"https://drive.google.com/uc?id={file_id}"
+                file = f"{CACHE_DIR}/instance_anomaly_detector"
+                url = 'https://drive.google.com/drive/folders/106rnzZvH-VUKkz8dMPFflD6tqtbSgXwh?usp=sharing'
                 os.makedirs(file, exist_ok=True)
                 output_path = details['model']
                 try:
-                    gdown.download(url, output_path, quiet=False)
+                    gdown.download_folder(url=url, output=output_path, quiet=False, use_cookies=False)
                     print(f"Model downloaded successfully to: {output_path}")
                 except Exception as e:
                     print(f"An error occurred: {e}")

@@ -22,16 +22,20 @@ from vbench2.utils import load_dimension_info
 from tqdm import tqdm
 warnings.filterwarnings("ignore")
 
+sys_prompt_sum = """You are Qwen, created by Alibaba Cloud. You are a helpful assistant and a brilliant landscape plot summarizer. 
+You need to summerize and divide the detailed <video_caption> into several key landscape plots up to the given <template>, each plot should be a complete sentence.
+"""
+
 sys_prompt = """You are Qwen, created by Alibaba Cloud. You are a helpful assistant and a brilliant landscape consistency judger. 
 You need to judge whether the content in prompt1 occurs in prompt2, similar semantic should be compromised.
 Note that you should only focus on the landscape mentioned in prompt1 when assessing the prompt2, unrelated contents in prompt2 should not be judged and considered.
 First return yes or no, then giving the reason.
 """
-def judge(prompt, tokenizer, model):
+def judge(prompt, sysp, tokenizer, model):
     messages = [
         {
             "role": "system", 
-            "content": sys_prompt
+            "content": sysp
         },
         {
             "role": "user", 
@@ -99,9 +103,9 @@ def LLaVA_Video(prompt_dict_ls, llava_model, llava_tokenizer, image_processor, q
             video = image_processor.preprocess(video, return_tensors="pt")["pixel_values"].to(device).bfloat16()
             video = [video]
             conv_template = "qwen_1_5"  # Make sure you use correct chat template for different models
-            time_instruciton = f"The video lasts for {video_time:.2f} seconds, and {len(video[0])} frames are uniformly sampled from it. These frames are located at {frame_time}. Describe the landscape in video and segment to five plots. Here is the template."
-            template = "1. ; 2. ; 3. ; 4. ; 5. ."
-            question = DEFAULT_IMAGE_TOKEN + f"{time_instruciton}\n"+f"{template}"
+            time_instruciton = f"The video lasts for {video_time:.2f} seconds, and {len(video[0])} frames are uniformly sampled from it. These frames are located at {frame_time}. Describe the landscape in video in detail."
+            
+            question = DEFAULT_IMAGE_TOKEN + f"{time_instruciton}\n"
             conv = copy.deepcopy(conv_templates[conv_template])
             conv.append_message(conv.roles[0], question)
             conv.append_message(conv.roles[1], None)
@@ -116,21 +120,27 @@ def LLaVA_Video(prompt_dict_ls, llava_model, llava_tokenizer, image_processor, q
                 max_new_tokens=4096,
             )
             answer_llava = llava_tokenizer.batch_decode(cont, skip_special_tokens=True)[0].strip()
+            template = "1. ; 2. ; 3. ; 4. ; 5. ."
+            prompt = f"""
+                video_caption: {answer_llava}
+                template: {template}
+                """
+            response = judge(prompt, sys_prompt_sum, qwen_tokenizer, qwen_model)
             score=0
-            if '1. ' not in answer_llava:
+            if '1. ' not in response:
                 for q, item in enumerate(ground_truth_text):
                     prompt1 = item.strip()
                     prompt = f"""
                         prompt1: {prompt1}
-                        prompt2: {answer_llava}
+                        prompt2: {response}
                         """
-                    response = judge(prompt, qwen_tokenizer, qwen_model)
+                    response = judge(prompt, sys_prompt, qwen_tokenizer, qwen_model)
                     if 'yes' in response.lower():
                         score+=1
                     else:
                         break
             else:
-                prompt_list = split_by_numbered_list(answer_llava)
+                prompt_list = split_by_numbered_list(response)
                 for q, item in enumerate(prompt_list):
                     prompt1 = ground_truth_text[q]
                     prompt2 = item.strip()
@@ -138,7 +148,7 @@ def LLaVA_Video(prompt_dict_ls, llava_model, llava_tokenizer, image_processor, q
                         prompt1: {prompt1}
                         prompt2: {prompt2}
                         """
-                    response = judge(prompt, qwen_tokenizer, qwen_model)
+                    response = judge(prompt, sys_prompt, qwen_tokenizer, qwen_model)
                     if 'yes' in response.lower():
                         score+=1
                     else:

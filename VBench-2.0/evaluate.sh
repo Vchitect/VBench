@@ -1,8 +1,8 @@
 # Define the dimension list
-dimensions=("Human_Anatomy" "Human_Identity" "Human_Clothes" "Diversity" "Composition" "Dynamic_Spatial_Relationship" "Dynamic_Attribute" "Motion_Order_Understanding" "Human_Interaction" "Complex_Landscape" "Complex_Plot" "Camera_Motion" "Motion_Rationality" "Instance_Preservation" "Mechanics" "Thermotics" "Material" "Multi-View_Consistency")
+dimensions=("Human_Anatomy" "Human_Identity" "Human_Clothes" "Diversity" "Composition" "Dynamic_Spatial_Relationship" "Dynamic_Attribute" "Motion_Order_Understanding" "Human_Interaction" "Complex_Landscape" "Complex_Plot" "Camera_Motion" "Motion_Rationality" "Mechanics" "Thermotics" "Material" "Multi-View_Consistency" "Instance_Preservation")
 
 # Corresponding folder names
-folders=("Human_Anatomy" "Human_Identity" "Human_Clothes" "Diversity" "Composition" "Dynamic_Spatial_Relationship" "Dynamic_Attribute" "Motion_Order_Understanding" "Human_Interaction" "Complex_Landscape" "Complex_Plot" "Camera_Motion" "Motion_Rationality" "Instance_Preservation" "Mechanics" "Thermotics" "Material" "Multi-View_Consistency")
+folders=("Human_Anatomy" "Human_Identity" "Human_Clothes" "Diversity" "Composition" "Dynamic_Spatial_Relationship" "Dynamic_Attribute" "Motion_Order_Understanding" "Human_Interaction" "Complex_Landscape" "Complex_Plot" "Camera_Motion" "Motion_Rationality" "Mechanics" "Thermotics" "Material" "Multi-View_Consistency" "Instance_Preservation")
 
 # Number of tasks to run in parallel
 max_parallel_tasks=8

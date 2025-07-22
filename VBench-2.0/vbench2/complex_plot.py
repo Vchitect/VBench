@@ -21,6 +21,10 @@ from vbench2.utils import load_dimension_info
 from tqdm import tqdm
 warnings.filterwarnings("ignore")
 
+sys_prompt_sum = """You are Qwen, created by Alibaba Cloud. You are a helpful assistant and a brilliant plot summarizer. 
+You need to summerize and divide the detailed <video_caption> into several key plots up to the given <template>, each plot should be a complete sentence.
+"""
+
 sys_prompt = """You are Qwen, created by Alibaba Cloud. You are a helpful assistant and a brilliant plot consistency judger. 
 You need to judge whether prompt2 contains the key elements described in prompt1 , similar semantic should be compromised.
 Note that you should not care about the detailed name in prompt when judging the consistency, it is trival.
@@ -30,11 +34,11 @@ Be sensitive to the consistency, "the runner from one team accelerated in the se
 First return yes or no, then giving the reason.
 """
 
-def judge(prompt, tokenizer, model):
+def judge(prompt, sysp, tokenizer, model):
     messages = [
         {
             "role": "system", 
-            "content": sys_prompt
+            "content": sysp
         },
         {
             "role": "user", 
@@ -130,13 +134,36 @@ def LLaVA_Video(prompt_dict_ls, llava_model, llava_tokenizer, image_processor, q
                         prompt1: {prompt1}
                         prompt2: {answer_llava}
                         """
-                    response = judge(prompt, qwen_tokenizer, qwen_model)
+                    response = judge(prompt, sys_prompt, qwen_tokenizer, qwen_model)
                     if 'yes' in response.lower():
                         score+=1
                     else:
                         break
             else:
                 prompt_list = split_by_numbered_list(answer_llava)
+                if len(prompt_list) > length:
+                    time_instruciton = f"The video lasts for {video_time:.2f} seconds, and {len(video[0])} frames are uniformly sampled from it. These frames are located at {frame_time}. Describe the video in detail."
+                    question = DEFAULT_IMAGE_TOKEN + f"{time_instruciton}\n"
+                    conv = copy.deepcopy(conv_templates[conv_template])
+                    conv.append_message(conv.roles[0], question)
+                    conv.append_message(conv.roles[1], None)
+                    prompt_question = conv.get_prompt()
+                    input_ids = tokenizer_image_token(prompt_question, llava_tokenizer, IMAGE_TOKEN_INDEX, return_tensors="pt").unsqueeze(0).to(device)
+                    cont = llava_model.generate(
+                        input_ids,
+                        images=video,
+                        modalities= ["video"],
+                        do_sample=False,
+                        temperature=0,
+                        max_new_tokens=4096,
+                    )
+                    answer_llava = llava_tokenizer.batch_decode(cont, skip_special_tokens=True)[0].strip()
+                    prompt = f"""
+                        video_caption: {answer_llava}
+                        template: {template}
+                        """
+                    response = judge(prompt, sys_prompt_sum, qwen_tokenizer, qwen_model)
+                    prompt_list = split_by_numbered_list(response)
                 for q, item in enumerate(prompt_list):
                     prompt1 = ground_truth_text[q]
                     prompt2 = item.strip()
@@ -144,7 +171,7 @@ def LLaVA_Video(prompt_dict_ls, llava_model, llava_tokenizer, image_processor, q
                         prompt1: {prompt1}
                         prompt2: {prompt2}
                         """
-                    response = judge(prompt, qwen_tokenizer, qwen_model)
+                    response = judge(prompt, sys_prompt, qwen_tokenizer, qwen_model)
                     if 'yes' in response.lower():
                         score+=1
                     else:

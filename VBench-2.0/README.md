@@ -56,13 +56,17 @@ We visualize the evaluation results of the 6 recent top-performing video generat
 conda create -n vbench2 python=3.10 -y
 conda activate vbench2
 conda install psutil
-pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu118 # or cu121
-#ensure your cuda version is 11.8 or 12.1, and ensure the gcc in a high version (we use 11.2)
+pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu118 
+#ensure your cuda version is 11.8, and ensure the gcc in a high version (we use 11.2)
 python -m pip install ninja
 python -m pip install git+https://github.com/Dao-AILab/flash-attention.git@v2.7.2.post1
 pip install -r requirement.txt
-pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.4/index.html --no-cache-dir
 pip install retinaface_pytorch==0.0.8 --no-deps
+#ensure you have set up the ffmpeg with the version 4.x
+cd vbench2/third_party/Instance_detector
+pip install -e .
+cd ../../..
+pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.4/index.html --no-cache-dir
 ```
 There will be an error about the mmcv version exceeds 2.1.0, users could directly change the `mmcv_maximum_version` to `2.3.0` in `Your_PATH_to_Anaconda/env/vbench2/lib/python3.10/site-packages/mmdet/__init__.py` and `Your_PATH_to_Anaconda/env/vbench2/lib/python3.10/site-packages/mmyolo/__init__.py`
 
