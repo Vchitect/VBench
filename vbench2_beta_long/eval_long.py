@@ -4,6 +4,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 from vbench2_beta_long import VBenchLong
 from datetime import datetime
+from vbench.distributed import print0, dist_init
 import argparse
 import json
 
@@ -216,12 +217,13 @@ def parse_args():
 
 def main():
     args = parse_args()
-    print(f'args: {args}')
+    dist_init()
+    print0(f'args: {args}')
 
     device = torch.device("cuda")
     my_VBench = VBenchLong(device, args.full_json_dir, args.output_path)
     
-    print(f'start evaluation')
+    print0(f'start evaluation')
 
     current_time = datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
 

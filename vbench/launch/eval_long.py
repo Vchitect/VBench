@@ -58,15 +58,9 @@ def parse_args():
         """,
     )
     parser.add_argument(
-        "--custom_input",
-        action="store_true",
-        required=False,
-        help="(deprecated) use --mode=\"custom_input\" instead",
-    )
-    parser.add_argument(
         "--prompt",
         type=str,
-        default="",
+        default="None",
         help="""Specify the input prompt
         If not specified, filenames will be used as input prompts
         * Mutually exclusive to --prompt_file.
@@ -110,7 +104,8 @@ def parse_args():
 
     parser.add_argument(
         "--use_semantic_splitting",
-        action="store_true",
+        default=False,
+        type=bool,
         required=False,
         help="""Whether to use semantic splitting tools
         """,
@@ -188,7 +183,9 @@ def parse_args():
     # for dev branch
     parser.add_argument(
         "--dev_flag",
-        action="store_true",
+        default=False,
+        type=bool,
+        required=False,
         help="""Denote the current state of pipeline
         """,
     )
@@ -205,7 +202,9 @@ def parse_args():
     # for dev branch
     parser.add_argument(
         "--static_filter_flag",
-        action="store_true",
+        default=False,
+        type=bool,
+        required=False,
         help="""Denote the current state of pipeline
         """,
     )
@@ -216,6 +215,9 @@ def parse_args():
 
 def main():
     args = parse_args()
+    print("after parse args 00000000000000000")
+
+    dist_init()
     print0(f'args: {args}')
 
     device = torch.device("cuda")
@@ -228,23 +230,24 @@ def main():
     kwargs = {}
 
     prompt = []
-
-    assert args.custom_input == False, "(Deprecated) use --mode=custom_input instead"
     
-    if (args.prompt_file is not None) and (args.prompt != ""):
+    print0(args)
+    if (args.prompt_file is not None) and (args.prompt != "None"):
         raise Exception("--prompt_file and --prompt cannot be used together")
-    if (args.prompt_file is not None or args.prompt != "") and (not args.mode=='custom_input'):
+    if (args.prompt_file is not None or args.prompt != "None") and (not args.mode=='custom_input'):
         raise Exception("must set --mode=custom_input for using external prompt")
 
     if args.prompt_file:
         with open(args.prompt_file, 'r') as f:
             prompt = json.load(f)
         assert type(prompt) == dict, "Invalid prompt file format. The correct format is {\"video_path\": prompt, ... }"
-    elif args.prompt != "":
+    elif args.prompt != "None":
         prompt = [args.prompt]
 
     if args.category != "":
         kwargs['category'] = args.category
+    print0("before dev flag")
+    print0("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& dev flag")
 
     if not args.dev_flag:
         args.sb_clip2clip_feat_extractor = 'dino'

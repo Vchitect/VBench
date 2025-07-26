@@ -4,9 +4,11 @@ import sys
 from vbench.long_eval import VBenchLong
 from datetime import datetime
 import argparse
+import subprocess
 import json
 from vbench.cli import stringify_cmd
 
+CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 def register_subparsers(subparser):
 
     CUR_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -37,7 +39,7 @@ def register_subparsers(subparser):
     )
     parser.add_argument(
         "--dimension",
-        nargs='+',
+        type=str,
         required=True,
         help="list of evaluation dimensions, usage: --dimension <dim_1> <dim_2>",
     )
@@ -64,15 +66,9 @@ def register_subparsers(subparser):
         """,
     )
     parser.add_argument(
-        "--custom_input",
-        action="store_true",
-        required=False,
-        help="(deprecated) use --mode=\"custom_input\" instead",
-    )
-    parser.add_argument(
         "--prompt",
         type=str,
-        default="",
+        default="None",
         help="""Specify the input prompt
         If not specified, filenames will be used as input prompts
         * Mutually exclusive to --prompt_file.
@@ -116,8 +112,9 @@ def register_subparsers(subparser):
 
     parser.add_argument(
         "--use_semantic_splitting",
-        action="store_true",
         required=False,
+        default=False,
+        type=bool,
         help="""Whether to use semantic splitting tools
         """,
     )
@@ -194,7 +191,9 @@ def register_subparsers(subparser):
     # for dev branch
     parser.add_argument(
         "--dev_flag",
-        action="store_true",
+        required=False,
+        default=False,
+        type=bool,
         help="""Denote the current state of pipeline
         """,
     )
@@ -211,23 +210,41 @@ def register_subparsers(subparser):
     # for dev branch
     parser.add_argument(
         "--static_filter_flag",
-        action="store_true",
+        required=False,
+        default=False,
+        type=bool,
         help="""Denote the current state of pipeline
         """,
     )
     parser.set_defaults(func=evaluate_long)
 
 def evaluate_long(args):
-    args = parse_args()
+#     args = parse_args()
+#     cmd = ['python', '-m', 'torch.distributed.run', '--standalone', '--nproc_per_node', str(args.ngpus), f'{CUR_DIR}/../launch/eval_long.py']
+#     args_dict = vars(args)
+#     for arg in args_dict:
+#         if arg == "ngpus" or (args_dict[arg] == None) or arg == "func":
+#             continue
+#         if arg in ["videos_path", "prompt", "prompt_file", "output_path", "full_json_dir"]:
+#             cmd.append(f"--videos_path=\"{str(args_dict[arg])}\"")
+#             continue
+#         cmd.append(f'--{arg}')
+#         cmd.append(str(args_dict[arg]))
+#     
+#     subprocess.run(stringify_cmd(cmd), shell=True)
     cmd = ['python', '-m', 'torch.distributed.run', '--standalone', '--nproc_per_node', str(args.ngpus), f'{CUR_DIR}/../launch/eval_long.py']
     args_dict = vars(args)
     for arg in args_dict:
         if arg == "ngpus" or (args_dict[arg] == None) or arg == "func":
             continue
         if arg in ["videos_path", "prompt", "prompt_file", "output_path", "full_json_dir"]:
-            cmd.append(f"--videos_path=\"{str(args_dict[arg])}\"")
+            cmd.append(f"--{arg}=\"{str(args_dict[arg])}\"")
             continue
         cmd.append(f'--{arg}')
         cmd.append(str(args_dict[arg]))
+    
+    print('##########################')
+    print(cmd)
+    print('##########################')
     
     subprocess.run(stringify_cmd(cmd), shell=True)

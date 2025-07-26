@@ -3,6 +3,7 @@ import re
 import importlib
 from itertools import chain
 from pathlib import Path
+from vbench.distributed import get_rank
 from vbench.utils import get_prompt_from_filename, init_submodules, save_json, load_json
 from vbench.long_eval.utils import split_video_into_scenes, split_video_into_clips, load_clip_lengths, get_duration_from_json
 # from vbench.long_eval.temporal_flickering import filter_static_clips
@@ -100,7 +101,7 @@ class VBenchLong(VBench):
         # print('AFTER BUILDING')
         for dimension in dimension_list:
             try:
-                dimension_module = importlib.import_module(f'vbench2_beta_long.{dimension}')
+                dimension_module = importlib.import_module(f'vbench.long_eval.{dimension}')
                 evaluate_func = getattr(dimension_module, f'compute_long_{dimension}')
             except Exception as e:
                 raise NotImplementedError(f'UnImplemented dimension {dimension}!, {e}')
@@ -109,9 +110,12 @@ class VBenchLong(VBench):
 
             results = evaluate_func(cur_full_info_path, self.device, submodules_list, **kwargs)
             results_dict[dimension] = results
+
         output_name = os.path.join(self.output_path, name+'_eval_results.json')
-        save_json(results_dict, output_name)
-        print(f'Evaluation results saved to {output_name}')
+
+        if get_rank() == 0:
+            save_json(results_dict, output_name)
+            print(f'Evaluation results saved to {output_name}')
 
 
     def build_full_info_json(self, videos_path, name, dimension_list, prompt_list=[], special_str='', verbose=False, mode='vbench_standard', **kwargs):

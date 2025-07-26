@@ -30,7 +30,7 @@ from vbench.distributed import (
 
 def build_dict():
     CUR_DIR = os.path.dirname(os.path.abspath(__file__))
-    path = f'{CUR_DIR}/third_party/umt/kinetics_400_categories.txt'
+    path = os.path.join(os.path.dirname(CUR_DIR), "third_party", "umt", "kinetics_400_categories.txt")
     results = {}
     with open(path, 'r') as f:
         cat_list = f.readlines()

@@ -143,8 +143,6 @@ class VBench(object):
 
         else:
             full_info_list = load_json(self.full_info_dir)
-            print0("=====================================================")
-            print0(videos_path)
             video_names = os.listdir(videos_path)
             postfix = Path(video_names[0]).suffix
             for prompt_dict in full_info_list:
