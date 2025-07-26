@@ -22,7 +22,7 @@ from vbench.distributed import (
     gather_list_of_dict,
 )
 
-from vbench.core.dynamic_degree import DynamicDegree
+from vbench.core.dynamic_degree import DynamicDegree, dynamic_degree
 
 
 def compute_dynamic_degree(json_dir, device, submodules_list, **kwargs):

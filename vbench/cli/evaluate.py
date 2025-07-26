@@ -116,9 +116,5 @@ def evaluate(args):
         cmd.append(f'--{arg}')
         cmd.append(str(args_dict[arg]))
     
-    print('##########################')
-    print(cmd)
-    print('##########################')
-    
     subprocess.run(stringify_cmd(cmd), shell=True)
 

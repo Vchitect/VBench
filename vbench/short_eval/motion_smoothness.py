@@ -24,7 +24,7 @@ from vbench.distributed import (
     gather_list_of_dict,
 )
 
-from vbench.core.motion_smoothness import motion_smoothness
+from vbench.core.motion_smoothness import MotionSmoothness, motion_smoothness
 
 def compute_motion_smoothness(json_dir, device, submodules_list, **kwargs):
     config = submodules_list["config"] # pretrained/amt_model/AMT-S.yaml
