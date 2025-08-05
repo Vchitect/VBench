@@ -4,6 +4,7 @@ import pickle
 
 import torch.distributed
 
+from vbench.distributed.utils import *
 
 # ------------------------------------------------------- #
 #                        distributed                      #
