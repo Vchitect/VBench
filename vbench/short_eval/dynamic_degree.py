@@ -24,7 +24,6 @@ from vbench.distributed import (
 
 from vbench.core.dynamic_degree import DynamicDegree, dynamic_degree
 
-
 def compute_dynamic_degree(json_dir, device, submodules_list, **kwargs):
     model_path = submodules_list["model"] 
     # set_args

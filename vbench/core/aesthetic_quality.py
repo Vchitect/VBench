@@ -5,7 +5,15 @@ import torch.nn as nn
 import torch.nn.functional as F
 import subprocess
 from urllib.request import urlretrieve
-from vbench.utils import load_video, load_dimension_info, clip_transform
+from vbench.utils import (
+    load_video,
+    load_dimension_info,
+    clip_transform,
+    MEMORY_USAGE_PROFILE,
+    MemoryEstimate,
+    DimensionEvaluationBase
+)
+from typing import Optional
 from tqdm import tqdm
 
 from abc import ABC, abstractmethod
@@ -21,47 +29,14 @@ from vbench.distributed import (
 
 batch_size = 32
 
-from dataclasses import dataclass
-
-@dataclass
-class MemoryEstimate:
-    model_size_gb: int = 0
-    activation_base_gb: int = 0 # normalize to 512x320x16
-    temporal_scaling: float = 1.0
-    resolution_scaling: float = 1.0
-
-class DimensionEvaluationBase(ABC):
-    def __init__(self, memory_profile: MemoryEstimate):
-        self.memory_profile = memory_profile
-
-    @abstractmethod
-    def init_model(self, cache_folder):
-        pass
-    
-    @abstractmethod
-    def calculate_score(self, json_dir, device, submodules_list, **kwargs):
-        pass
-    
-    def estimate_memory_usage(self, resolution: tuple, timestep: int):
-
-        assert len(resolution) == 2
-
-        activation_scaling = self.memory_profile.temporal_scaling * self.memory_profile.resolution_scaling
-        activation_scaling *= (timestep * resolution[0] * resolution[1] / (512 * 320 * 16))
-        return activation_scaling * self.memory_profile.activation_base_gb + self.memory_profile.model_size_gb
-
-
 class AestheticQuality(DimensionEvaluationBase):
-    def __init__(self):
-        super().__init__(
-            memory_profile = MemoryEstimate(
-                model_size_gb=0.91,
-                activation_base_gb=1.0,
-                temporal_scaling=0.0, # scaling logic is incorrect
-                resolution_scaling=1.0,
-            )
-        )
-        pass
+    def __init__(self, device, memory_profile):
+        super().__init__(device=deivce, memory_profile=memory_profile)
+
+    def preprocess_video(self, video) -> torch.Tensor:
+        images = load_video(video_path)
+        image_transform = clip_transform(224)
+        return image_transforms
 
     def init_model(self, cache_folder):
         path_to_model = cache_folder + "/sa_0_4_vit_l_14_linear.pth"
@@ -92,8 +67,7 @@ class AestheticQuality(DimensionEvaluationBase):
         num = 0
         video_results = []
         for video_path in tqdm(video_list, disable=get_rank() > 0):
-            images = load_video(video_path)
-            image_transform = clip_transform(224)
+            image_transform = self.preprocess_video(video_path)
 
             aesthetic_scores_list = []
             for i in range(0, len(images), batch_size):

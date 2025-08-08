@@ -7,7 +7,7 @@ import torch
 from tqdm import tqdm
 from easydict import EasyDict as edict
 
-from vbench.utils import load_dimension_info
+from vbench.utils import load_dimension_info, MEMORY_USAGE_PROFILE, MemoryEstimate, DimensionEvaluationBase
 
 from vbench.third_party.RAFT.core.raft import RAFT
 from vbench.third_party.RAFT.core.utils_core.utils import InputPadder
@@ -23,13 +23,13 @@ from vbench.distributed import (
 )
 
 
-class DynamicDegree:
-    def __init__(self, args, device):
+class DynamicDegree(DimensionEvaluationBase):
+    def __init__(self, device, args):
         self.args = args
         self.device = device
         self.load_model()
+        super().__init__(device, MEMORY_USAGE_PROFILE["DynamicDegree"])
     
-
     def load_model(self):
         self.model = RAFT(self.args)
         ckpt = torch.load(self.args.model, map_location="cpu")

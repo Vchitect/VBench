@@ -18,6 +18,8 @@ except ImportError:
     BICUBIC = Image.BICUBIC
     BILINEAR = Image.BILINEAR
 
+from dataclasses import dataclass
+
 CACHE_DIR = os.environ.get('VBENCH_CACHE_DIR')
 if CACHE_DIR is None:
     CACHE_DIR = os.path.join(os.path.expanduser('~'), '.cache', 'vbench')
@@ -30,8 +32,67 @@ from .distributed import (
 logging.basicConfig(level = logging.INFO,format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-def clip_transform(n_px):
-    return Compose([
+@dataclass
+class MemoryEstimate:
+    model_size_gb: int = 0
+    activation_base_gb: int = 0 # normalize to 512x320x16
+    temporal_scaling: bool = False
+    resolution_scale: bool = False
+    max_resolution_scaling: Optional[int] = None
+
+MEMORY_USAGE_PROFILE = {
+        "AestheticQuality": MemoryEstimate( model_size_gb=0.9, activation_base_gb=1.1, temporal_scaling=false, resolution_scaling=false, max_resolution_scaling=224),
+        "ApperanceStyle": MemoryEstimate( model_size_gb=1.6, activation_base_gb=0.6, temporal_scaling=false, resolution_scaling=false, max_resolution_scaling=224),
+        "Color": MemoryEstimate( model_size_gb=1.8, activation_base_gb=2.3, temporal_scaling=false, resolution_scaling=false, max_resolution_scaling=768),
+        "DynamicDegree": MemoryEstimate( model_size_gb=1.1, activation_base_gb=1.0, temporal_scaling=false, resolution_scaling=false),
+        "HumanAction": MemoryEstimate( model_size_gb=1.8, activation_base_gb=3.0, temporal_scaling=false, resolution_scaling=false, max_resolution_scaling=256),
+        "ImagingQuality": MemoryEstimate( model_size_gb=1.8, activation_base_gb=1.4, temporal_scaling=false, resolution_scaling=false, max_resolution_scaling=512),
+        "MotionSmoothness": MemoryEstimate( model_size_gb=1.0, activation_base_gb=1.2, temporal_scaling=false, resolution_scaling=false),
+        "MultipleObjects": MemoryEstimate( model_size_gb=2.7, activation_base_gb=1.8, temporal_scaling=false, resolution_scaling=false, max_resolution_scaling=768),
+        "ObjectClass": MemoryEstimate( model_size_gb=1.7, activation_base_gb=2.1, temporal_scaling=false, resolution_scaling=false, max_resolution_scaling=768),
+        "OverallConsistency": MemoryEstimate( model_size_gb=1.7, activation_base_gb=1.8, temporal_scaling=false, resolution_scaling=false, max_resolution_scaling=224),
+        "Scene": MemoryEstimate( model_size_gb=3.8, activation_base_gb=20.2, temporal_scaling=false, resolution_scaling=false, max_resolution_scaling=384),
+        "SpatialRelationship": MemoryEstimate( model_size_gb=2.5, activation_base_gb=2.2, temporal_scaling=false, resolution_scaling=false, max_resolution_scaling=768),
+        "TemporalStyle": MemoryEstimate( model_size_gb=2.5, activation_base_gb=2.2, temporal_scaling=false, resolution_scaling=false, max_resolution_scaling=224),
+}
+
+class DimensionEvaluationBase(ABC):
+    def __init__(self, memory_profile: MemoryEstimate):
+        self.memory_profile = memory_profile
+    
+    @abstractmethod
+    def preprocess_video(self, video):
+        pass
+
+    @abstractmethod
+    def init_model(self, cache_folder):
+        pass
+    
+    @abstractmethod
+    def calculate_score(self, json_dir, device, submodules_list, **kwargs):
+        pass
+    
+    def estimate_memory_usage(self, resolution: tuple, timestep: int):
+
+        assert len(resolution) == 2, "resolution should be tuple(H, W)"
+        
+        activation_scaling = 1.
+        if self.memory_profile.temporal_scaling:
+            activation_scaling = timestep / 16
+        
+        max_res_prod = resolution[0] * resolution[1]
+        if (
+            resolution.memory_profile.max_resolution_scaling is not None and 
+            resolution.memory_profile.max_resolution_scaling > max(resolution)
+        ):
+            max_res_prod = resolution.memory_profile.max_resolution_scaling**2 * min(resolution) / max(resolution)
+            
+        if self.memory_profile.resolution_scaling:
+            activation_scaling *= ( (max_res_prod) / (512 * 320) )
+        return activation_scaling * self.memory_profile.activation_base_gb + self.memory_profile.model_size_gb
+
+
+def clip_transform(n_px): return Compose([
         Resize(n_px, interpolation=BICUBIC, antialias=False),
         CenterCrop(n_px),
         transforms.Lambda(lambda x: x.float().div(255.0)),
