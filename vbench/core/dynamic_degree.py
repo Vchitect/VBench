@@ -4,14 +4,16 @@ import cv2
 import glob
 import numpy as np
 import torch
+import zipfile
 from tqdm import tqdm
 from easydict import EasyDict as edict
 
-from vbench.utils import load_dimension_info
+from vbench.utils import load_dimension_info, CACHE_DIR, ensure_download
 
 from vbench.third_party.RAFT.core.raft import RAFT
 from vbench.third_party.RAFT.core.utils_core.utils import InputPadder
 
+from vbench.core import DimensionEvaluationBase, MEMORY_USAGE_PROFILE, EvaluationResult
 
 from vbench.distributed import (
     get_world_size,
@@ -23,21 +25,34 @@ from vbench.distributed import (
 )
 
 
-class DynamicDegree:
-    def __init__(self, args, device):
-        self.args = args
-        self.device = device
-        self.load_model()
+class DynamicDegree(DimensionEvaluationBase):
+    def __init__(self, device="cuda", batch_size=1):
+        super().__init__(
+            memory_profile = MEMORY_USAGE_PROFILE["dynamic_degree"],
+            device=device,
+            batch_size=batch_size
+        )
     
+    def init_model(self, cache_folder=CACHE_DIR):
+        path = os.path.join(cache_folder, "raft_model", "models", "raft-things.pth")
+        ensure_download(
+            path, 'https://dl.dropboxusercontent.com/s/4j4z58wuv8o0mfz/models.zip',
+            post_process = lambda temp_path, path: (
+                zipfile.ZipFile(temp_path, 'r').extractall(os.path.dirname(temp_path)),
+                os.remove(temp_path),
+            )
+        )
+        self.model["raft"] = RAFT({
+            "model": path,
+            "small": False,
+            "mixed_precision": False,
+            "alternate_corr": False
+        })
 
-    def load_model(self):
-        self.model = RAFT(self.args)
-        ckpt = torch.load(self.args.model, map_location="cpu")
+        ckpt = torch.load(path, map_location="cpu")
         new_ckpt = {k.replace('module.', ''): v for k, v in ckpt.items()}
-        self.model.load_state_dict(new_ckpt)
-        self.model.to(self.device)
-        self.model.eval()
-
+        self.model["raft"].load_state_dict(new_ckpt)
+        self.model["raft"].eval()
 
     def get_score(self, img, flo):
         img = img[0].permute(1,2,0).cpu().numpy()
@@ -74,7 +89,7 @@ class DynamicDegree:
             for image1, image2 in zip(frames[:-1], frames[1:]):
                 padder = InputPadder(image1.shape)
                 image1, image2 = padder.pad(image1, image2)
-                _, flow_up = self.model(image1, image2, iters=20, test_mode=True)
+                _, flow_up = self.model["raft"](image1, image2, iters=20, test_mode=True)
                 max_rad = self.get_score(image1, flow_up)
                 static_score.append(max_rad)
             whether_move = self.check_move(static_score)
@@ -138,12 +153,25 @@ class DynamicDegree:
 
 
 
-def dynamic_degree(dynamic, video_list):
-    sim = []
-    video_results = []
-    for video_path in tqdm(video_list, disable=get_rank() > 0):
-        score_per_video = dynamic.infer(video_path)
-        video_results.append({'video_path': video_path, 'video_results': score_per_video})
-        sim.append(score_per_video)
-    avg_score = np.mean(sim)
-    return avg_score, video_results
+    def dynamic_degree(self, dynamic, video_list):
+        sim = []
+        video_results = []
+        for video_path in tqdm(video_list, disable=get_rank() > 0):
+            score_per_video = self.infer(video_path)
+            video_results.append({'video_path': video_path, 'video_results': score_per_video})
+            sim.append(score_per_video)
+        avg_score = np.mean(sim)
+        return avg_score, video_results
+
+    def compute_dynamic_degree(self, json_dir, submodules_list, **kwargs):
+        video_list, _ = load_dimension_info(json_dir, dimension='dynamic_degree', lang='en')
+        video_list = distribute_list_to_rank(video_list)
+        all_results, video_results = self.dynamic_degree(dynamic, video_list)
+        if get_world_size() > 1:
+            video_results = gather_list_of_dict(video_results)
+            all_results = sum([d['video_results'] for d in video_results]) / len(video_results)
+        return EvaluationResult(
+            dimension="dynamic_degree",
+            overall_score=all_results,
+            per_video_scores=video_results
+        )

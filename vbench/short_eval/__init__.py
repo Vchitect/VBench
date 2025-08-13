@@ -7,6 +7,7 @@ from pathlib import Path
 
 from vbench.distributed import get_rank, print0  
 
+from vbench.core import get_dimension_evaluator, DimensionEvaluationBase, EvaluationResult
 
 class VBench(object):
     def __init__(self, device, full_info_dir, output_path):
@@ -15,7 +16,7 @@ class VBench(object):
         self.output_path = output_path              # output directory to save VBench results
         os.makedirs(self.output_path, exist_ok=True)
 
-    def build_full_dimension_list(self, ):
+    def build_full_dimension_list(self):
         return ["subject_consistency", "background_consistency", "aesthetic_quality", "imaging_quality", "object_class", "multiple_objects", "color", "spatial_relationship", "scene", "temporal_style", 'overall_consistency', "human_action", "temporal_flickering", "motion_smoothness", "dynamic_degree", "appearance_style"]        
 
     def check_dimension_requires_extra_info(self, dimension_list):
@@ -169,7 +170,7 @@ class VBench(object):
 
 
     def evaluate(self, videos_path, name, prompt_list=[], dimension_list=None, local=False, read_frame=False, mode='vbench_standard', **kwargs):
-        results_dict = {}
+        results_list = []
         if dimension_list is None:
             dimension_list = self.build_full_dimension_list()
         submodules_dict = init_submodules(dimension_list, local=local, read_frame=read_frame)
@@ -177,16 +178,20 @@ class VBench(object):
         cur_full_info_path = self.build_full_info_json(videos_path, name, dimension_list, prompt_list, mode=mode, **kwargs)
         
         for dimension in dimension_list:
+            assert self.build_full_dimension_list().include(dimension), "Invalid dimension name"
             try:
                 dimension_module = importlib.import_module(f'vbench.short_eval.{dimension}')
-                evaluate_func = getattr(dimension_module, f'compute_{dimension}')
+                evaluator: DimensionEvaluationBase = getattr(dimension_module, get_dimension_evaluator(dimension))
             except Exception as e:
-                raise NotImplementedError(f'UnImplemented dimension {dimension}!, {e}')
-            submodules_list = submodules_dict[dimension]
+                raise ImportError(f'Failed to import dimension {dimension}!, {e}')
+            submodules_list = [] if dimension not in submodules_dict else submodules_dict[dimension]
             print0(f'cur_full_info_path: {cur_full_info_path}') # TODO: to delete
-            results = evaluate_func(cur_full_info_path, self.device, submodules_list, **kwargs)
-            results_dict[dimension] = results
+            evaluator.init_model()
+            evaluator.to(self.device)
+            results: EvaluationResult = evaluator.compute_score(cur_full_info_path, submodules_list, **kwargs)
+            # results = evaluate_func(cur_full_info_path, self.device, submodules_list, **kwargs)
+            results_list.append(results)
         output_name = os.path.join(self.output_path, name+'_eval_results.json')
         if get_rank() == 0:
-            save_json(results_dict, output_name)
+            EvaluationResult.write(results_list, output_name)
             print0(f'Evaluation results saved to {output_name}')

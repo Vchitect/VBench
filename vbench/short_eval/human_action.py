@@ -1,1 +1,1 @@
-from vbench.core.human_action import compute_human_action
+from vbench.core.human_action import HumanAction

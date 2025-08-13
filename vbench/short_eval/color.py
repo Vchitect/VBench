@@ -1,1 +1,1 @@
-from vbench.core.color import compute_color
+from vbench.core.color import Color

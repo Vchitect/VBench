@@ -1,1 +1,1 @@
-from vbench.core.aesthetic_quality import compute_aesthetic_quality
+from vbench.core.aesthetic_quality import AestheticQuality
