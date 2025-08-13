@@ -23,25 +23,17 @@ class EvaluationResult:
     @classmethod
     def write(cls, results: List["EvaluationResult"], output_path: str):
         output_dict = {}
-
         for result in results:
-            dimension_data = {
-                "overall_score": self.overall_score,
-                "per_video_scores": self.per_video_scores
-            }
+            output_dict[result.dimension] = [result.overall_score, result.per_video_scores]
 
-            if self.metadata is not None:
-                dimension_data["metadata"] = self.metadata
-
-            result_dict = {self.dimension: dimension_data}
-            output_dict.update(result_dict)
+        if results.metadata is not None:
+            output_dict[result.dimension].append(result.metadata)
 
         json_string = json.dumps(output_dict, indent=4)
-
         with open(output_path, 'w') as f:
             f.write(json_string)
-
         return json_string
+
 
 class DimensionEvaluationBase(ABC):
     def __init__(self, memory_profile: MemoryEstimate, device="cuda", batch_size=1):
