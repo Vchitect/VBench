@@ -52,7 +52,7 @@ We list the setting for sampling videos from these models.
 | [`Step-Video-T2V`](https://github.com/stepfun-ai/Step-Video-T2V) | VBench Team | 2025-03-13 | 992x544 | 25 | 200 | 8s | [link](https://huggingface.co/stepfun-ai/stepvideo-t2v/tree/main) | [Commit ID](https://github.com/stepfun-ai/Step-Video-T2V/tree/d3ca3d68513bf18d75ff50ff3452c8c8407f924f) | MP4 |[Google Drive](https://drive.google.com/drive/folders/1BeQ1iGspQ3bSCW9VLaeXyuOKjwtJSLTF?usp=drive_link) | - |
 | [`Wan2.1-T2V-14B`](https://github.com/Wan-Video/Wan2.1/tree/main) | VBench Team | 2025-03-20 | 1280x720 | 16 | 81 | 5s | [link](https://huggingface.co/Wan-AI/Wan2.1-T2V-14B/tree/main) | [Commit ID](https://github.com/Wan-Video/Wan2.1/tree/b58b7c573776b76b6fe8d36086590e033173f9b1) | MP4 | [Google Drive](https://drive.google.com/drive/folders/1ZLK7Naq9jH0f9cbnpvo_s5IOpJzQn-w3?usp=drive_link) | <small>applied [Prompt Rewrite](https://github.com/Wan-Video/Wan2.1?tab=readme-ov-file#2-using-prompt-extension) provided by Wan, [augmented prompts](https://github.com/Vchitect/VBench/blob/master/VBench-2.0/prompts/prompt_aug/Wanx_full_text_aug.txt)  |
 | [`Vidu Q1 (2025-04-17)`](https://www.vidu.studio/) | Shengshu Team | 2025-04-21 | 1280x720 | 24 | 125 | 5.2s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1ZP6kgldD0akcqfu_IANdZIiNJGAFiGet?usp=drive_link) | - |
-| [`Veo 3`](https://cloud.google.com/vertex-ai/generative-ai/docs/models/veo/3-0-generate-001?hl=zh-cn) | VBench Team | 2025-08-15 | 1280x720 | 24 | 192 | 8s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1ULr1sIMNuDATK1SlMpq73wIQjdsDiYZ7) | - |
+
 ## How are Files Structured in Google Drive?
 
 ### 1. Sub-Folder Organization
