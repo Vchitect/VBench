@@ -96,16 +96,32 @@ class SpatialRelationship(DimensionEvaluationBase):
 
     def _get_detection_from_grit(self, model, image_arrays):
         pred = []
+        pred_batch = []
         if type(image_arrays) is not list:
             image_arrays = image_arrays.numpy()
         with torch.no_grad():
+
+            pred_cur_batch = []
+
+            for i in range(0, len(image_arrays), self.batch_size):
+                image_batch = image_arrays[i * self.batch_size: (i+1) * self.batch_size]
+                ret_batch = model.run_caption_tensor_batch(image_batch)
+                pred_cur_batch = [
+                    [[info[0], info[1]] for info in ret] if len(ret) > 0 else []
+                    for ret in ret_batch
+                ]
+
+                pred_batch.extend(pred_cur_batch)
+
             for frame in image_arrays:
                 ret = model.run_caption_tensor(frame)
                 pred_cur = []
-                if len(ret[0]) > 0:
-                    for info in ret[0]:
+                if len(ret) > 0:
+                    for info in ret:
                         pred_cur.append([info[0], info[1]])
                 pred.append(pred_cur)
+            
+            assert pred_batch == pred, f"these 2 should equal {pred}, {pred_batch}"
         return pred
 
     def _check_generate(self, key_info, predictions):

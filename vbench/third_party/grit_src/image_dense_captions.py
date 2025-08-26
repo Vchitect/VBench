@@ -96,13 +96,13 @@ def image_caption_api(image_src, device, model_weight):
     demo = VisualizationDemo(cfg)
     if image_src:
         img = read_image(image_src, format="BGR")
-        predictions, visualized_output = demo.run_on_image(img)
+        predictions = demo.run_on_image(img)
         new_caption = dense_pred_to_caption(predictions)
     return new_caption
 
 def init_demo(device, model_weight, task="DenseCap"):
     args2 = get_parser(device, model_weight)
-    if task!="DenseCap":
+    if task != "DenseCap":
         args2["test_task"]=task
     cfg = setup_cfg(args2)
     

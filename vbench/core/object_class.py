@@ -43,14 +43,27 @@ class ObjectClass(DimensionEvaluationBase):
         
     def _get_detection_from_grit(self, model, image_arrays):
         pred = []
+        pred_batch = []
         if type(image_arrays) is not list:
             image_arrays = image_arrays.numpy()
         with torch.no_grad():
+            
+            for i in range(0, len(image_arrays), self.batch_size):
+                image_batch = image_arrays[i * self.batch_size, (i*1) * self.batch_size]
+                predictions = model.run_caption_tensor_batch(image_batch)
+
+                pred_batch.extend([
+                    set() if len(prediction) > 0 and len(prediction[0]) >= 2 else set(prediction[0][2]) 
+                    for prediction in predictions
+                ])
+
             for frame in image_arrays:
                 try:
-                    pred.append(set(model.run_caption_tensor(frame)[0][0][2]))
+                    pred.append(set(model.run_caption_tensor(frame)[0][2]))
                 except:
                     pred.append(set())
+
+            assert pred == pred_batch, f"shoudl be equal {pred} == {pred_batch}"
         return pred
         
     def _check_generate(self, key_info, predictions):

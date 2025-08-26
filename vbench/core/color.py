@@ -30,18 +30,29 @@ class Color(DimensionEvaluationBase):
 
     def get_dect_from_grit(self, model, image_arrays):
         pred = []
+        pred_batch = []
         if type(image_arrays) is not list and type(image_arrays) is not np.ndarray:
             image_arrays = image_arrays.numpy()
         with torch.no_grad():
+
+            for i in range(0, len(image_arrays), self.batch_size)
+                image_batch = image_arrays[i*self.batch_size: (i+1) * self.batch_size]
+                predictions = model.run_caption_tensor_batch(image_batch)
+                pred_batch.extend([['', ''] if len(prediction)<1 else  
+                                   [each[0], each[2][0]] for each in prediction
+                                   for prediction in predictions])
+
             for frame in image_arrays:
                 ret = model.run_caption_tensor(frame)
                 cur_pred = []
-                if len(ret[0])<1:
+                if len(ret)<1:
                     cur_pred.append(['',''])
                 else:
-                    for idx, cap_det in enumerate(ret[0]):
+                    for idx, cap_det in enumerate(ret):
                         cur_pred.append([cap_det[0], cap_det[2][0]])
                 pred.append(cur_pred)
+
+        assert pred_batch == pred, f" {pred} == {pred_batch}"
         return pred
 
     def check_generate(self, color_key, object_key, predictions):

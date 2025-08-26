@@ -10,7 +10,7 @@ class BatchDefaultPredictor(DefaultPredictor):
     def __call__(self, original_images):
         """
         Args:
-            original_image (np.ndarray): an image of shape (H, W, C) (in BGR order).
+            original_image (np.ndarray): an image of shape (N, H, W, C) (in BGR order).
 
         Returns:
             predictions (dict):
@@ -27,7 +27,7 @@ class BatchDefaultPredictor(DefaultPredictor):
 
                 inputs = {"image": image, "height": height, "width": width}
                 batch_inputs.append(inputs)
-            predictions = self.model(batch_inputs)[0]
+            predictions = self.model(batch_inputs)
             return predictions
         
 class SingleDefaultPredictor(DefaultPredictor):
@@ -98,7 +98,8 @@ class VisualizationDemo(object):
     def __init__(self, cfg, instance_mode=ColorMode.IMAGE):
         self.cpu_device = torch.device("cpu")
         self.instance_mode = instance_mode
-
+        
+        self.predictor_batch = BatchDefaultPredictor(crg)
         self.predictor = SingleDefaultPredictor(cfg)
 
     def run_on_image(self, image):
@@ -111,3 +112,8 @@ class VisualizationDemo(object):
         vis_output = visualizer.draw_instance_predictions(predictions=instances)
 
         return predictions, vis_output
+
+    def run_on_batch(self, images):
+        predictions = self.predictor_batch(images)
+        image = image[:, :, ::-1]
+        return predictions, None
