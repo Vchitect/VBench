@@ -1,6 +1,6 @@
 import os
 
-from vbench.utils import get_prompt_from_filename, init_submodules, save_json, load_json
+from vbench.utils import get_prompt_from_filename, save_json, load_json
 import importlib
 from itertools import chain
 from pathlib import Path
@@ -173,7 +173,6 @@ class VBench(object):
         results_list = []
         if dimension_list is None:
             dimension_list = self.build_full_dimension_list()
-        submodules_dict = init_submodules(dimension_list, local=local, read_frame=read_frame)
 
         cur_full_info_path = self.build_full_info_json(videos_path, name, dimension_list, prompt_list, mode=mode, **kwargs)
         
@@ -184,11 +183,10 @@ class VBench(object):
                 evaluator: DimensionEvaluationBase = getattr(dimension_module, get_dimension_evaluator(dimension))
             except Exception as e:
                 raise ImportError(f'Failed to import dimension {dimension}!, {e}')
-            submodules_list = [] if dimension not in submodules_dict else submodules_dict[dimension]
             print0(f'cur_full_info_path: {cur_full_info_path}') # TODO: to delete
             evaluator.init_model()
             evaluator.to(self.device)
-            results: EvaluationResult = evaluator.compute_score(cur_full_info_path, submodules_list, **kwargs)
+            results: EvaluationResult = evaluator.compute_score(cur_full_info_path, **kwargs)
             # results = evaluate_func(cur_full_info_path, self.device, submodules_list, **kwargs)
             results_list.append(results)
         output_name = os.path.join(self.output_path, name+'_eval_results.json')

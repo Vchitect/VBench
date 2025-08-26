@@ -82,16 +82,16 @@ class Color(DimensionEvaluationBase):
                     for i in range(video_arrays.shape[0]):
                         resized_video[i] = cv2.resize(video_arrays[i], (new_w, new_h), interpolation=cv2.INTER_LINEAR)
                     video_arrays = resized_video
-                cur_video_pred = get_dect_from_grit(model ,video_arrays)
-                cur_object, cur_object_color = check_generate(color_info, object_info, cur_video_pred)
+                cur_video_pred = self.get_dect_from_grit(model, video_arrays)
+                cur_object, cur_object_color = self.check_generate(color_info, object_info, cur_video_pred)
                 if cur_object>0:
                     cur_success_frame_rate = cur_object_color/cur_object
                     success_frame_count_all += cur_success_frame_rate
                     video_count += 1
                     video_results.append({
                         'video_path': video_path, 
-                        'video_results': cur_success_frame_rate,
-                        'cur_success_frame_rate': cur_success_frame_rate,})
+                        'video_results': cur_success_frame_rate
+                    })
         success_rate = success_frame_count_all / video_count
         return success_rate, video_results
 

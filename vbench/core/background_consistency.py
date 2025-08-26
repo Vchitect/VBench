@@ -55,36 +55,35 @@ class BackgroundConsistency(DimensionEvaluationBase):
                 images = load_video(video_path)
                 images = image_transform(images)
             images = images.to(self.device)
-            image_features = clip_model.encode_image(images)
+            image_features = clip_model.encode_image(images) # batch
             image_features = F.normalize(image_features, dim=-1, p=2)
-            for i in range(len(image_features)):
+
+            first_image_feature = image_features[0].unsqueeze(0)
+            former_image_feature = image_features[0].unsqueeze(0)
+
+            for i in range(1, len(image_features)):
                 image_feature = image_features[i].unsqueeze(0)
-                if i == 0:
-                    first_image_feature = image_feature
-                else:
-                    sim_pre = max(0.0, F.cosine_similarity(former_image_feature, image_feature).item())
-                    sim_fir = max(0.0, F.cosine_similarity(first_image_feature, image_feature).item())
-                    cur_sim = (sim_pre + sim_fir) / 2
-                    video_sim += cur_sim
-                    cnt += 1
-                    cnt_per_video += 1
+                sim_pre = max(0.0, F.cosine_similarity(former_image_feature, image_feature).item())
+                sim_fir = max(0.0, F.cosine_similarity(first_image_feature, image_feature).item())
+                cur_sim = (sim_pre + sim_fir) / 2
+                video_sim += cur_sim
+                cnt += 1
+                cnt_per_video += 1
                 former_image_feature = image_feature
             sim_per_image = video_sim / (len(image_features) - 1)
             sim += video_sim
             video_results.append({
                 'video_path': video_path, 
-                'video_results': sim_per_image,
-                'video_sim': video_sim,
-                'cnt_per_video': cnt_per_video})
+                'video_results': sim_per_image
+            })
         # sim_per_video = sim / (len(video_list) - 1)
         sim_per_frame = sim / cnt
         return sim_per_frame, video_results
 
 
-    def compute_score(self, json_dir, submodules_list, **kwargs):
-        # vit_path, read_frame = submodules_list[0], submodules_list[1] # TODO: cleanup utils.py logic
-        read_frame = submodules_list[1]
+    def compute_score(self, json_dir, **kwargs):
         clip_model = self.model["clip_vit_B_32"].to(self.device)
+        read_frame = kwargs.get("read_frame", False)
 
         video_list, _ = load_dimension_info(json_dir, dimension='background_consistency', lang='en')
         video_list = distribute_list_to_rank(video_list)

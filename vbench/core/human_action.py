@@ -116,8 +116,8 @@ class HumanAction(DimensionEvaluationBase):
                 pass
             video_results.append({
                 'video_path': video_path, 
-                'video_results': flag,
-                'cor_num_per_video': cor_num_per_video,})
+                'video_results': flag
+            })
         # print(f"cor num: {cor_num}, total: {cnt}")
         acc = cor_num / cnt
         return acc, video_results

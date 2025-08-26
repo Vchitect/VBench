@@ -135,6 +135,7 @@ def main():
         kwargs['category'] = args.category
 
     kwargs['imaging_quality_preprocessing_mode'] = args.imaging_quality_preprocessing_mode
+    kwargs['read_frame'] = args.read_frame
     
     print0("--------------------------------")
     print0(args.videos_path)

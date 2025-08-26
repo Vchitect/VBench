@@ -163,7 +163,7 @@ class DynamicDegree(DimensionEvaluationBase):
         avg_score = np.mean(sim)
         return avg_score, video_results
 
-    def compute_dynamic_degree(self, json_dir, submodules_list, **kwargs):
+    def compute_dynamic_degree(self, json_dir, **kwargs):
         video_list, _ = load_dimension_info(json_dir, dimension='dynamic_degree', lang='en')
         video_list = distribute_list_to_rank(video_list)
         all_results, video_results = self.dynamic_degree(dynamic, video_list)

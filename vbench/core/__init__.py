@@ -53,7 +53,7 @@ class DimensionEvaluationBase(ABC):
         pass
     
     @abstractmethod
-    def compute_score(self, json_dir, submodules_list, **kwargs) -> EvaluationResult:
+    def compute_score(self, json_dir, **kwargs) -> EvaluationResult:
         pass
     
     def estimate_memory_usage(self, resolution: tuple, timestep: int) -> float:
@@ -91,6 +91,7 @@ MEMORY_USAGE_PROFILE = {
         "multiple_objects": MemoryEstimate( model_size_gb=2.7, activation_base_gb=1.8, temporal_scaling=False, resolution_scaling=False, max_resolution_scaling=768),
         "object_class": MemoryEstimate( model_size_gb=1.7, activation_base_gb=2.1, temporal_scaling=False, resolution_scaling=False, max_resolution_scaling=768),
         "overall_consistency": MemoryEstimate( model_size_gb=1.7, activation_base_gb=1.8, temporal_scaling=False, resolution_scaling=False, max_resolution_scaling=224),
+        "subject_consistency": MemoryEstimate( model_size_gb=1.7, activation_base_gb=1.8, temporal_scaling=False, resolution_scaling=False, max_resolution_scaling=224),
         "scene": MemoryEstimate( model_size_gb=3.8, activation_base_gb=20.2, temporal_scaling=False, resolution_scaling=False, max_resolution_scaling=384),
         "spatial_relationship": MemoryEstimate( model_size_gb=2.5, activation_base_gb=2.2, temporal_scaling=False, resolution_scaling=False, max_resolution_scaling=768),
         "temporal_style": MemoryEstimate( model_size_gb=2.5, activation_base_gb=2.2, temporal_scaling=False, resolution_scaling=False, max_resolution_scaling=224),

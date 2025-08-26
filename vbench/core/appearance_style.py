@@ -6,7 +6,7 @@ from tqdm import tqdm
 import torch
 import clip
 from PIL import Image
-from vbench.utils import load_video, load_dimension_info, clip_transform, read_frames_decord_by_fps, clip_transform_Image, CACHE_DIR, ensure_download
+from vbench.utils import load_video, load_dimension_info, clip_transform, read_frames_decord_by_fps, clip_transform, CACHE_DIR, ensure_download
 
 from vbench.distributed import (
     get_world_size,
@@ -37,7 +37,7 @@ class ApperanceStyle(DimensionEvaluationBase):
         sim = 0.0
         cnt = 0
         video_results = []
-        image_transform = clip_transform_Image(224)
+        image_transform = clip_transform(224)
         for info in tqdm(video_dict, disable=get_rank() > 0):
             if 'auxiliary_info' not in info:
                 raise "Auxiliary info is not in json, please check your json."
@@ -45,29 +45,27 @@ class ApperanceStyle(DimensionEvaluationBase):
             text = clip.tokenize([query]).to(self.device)
             video_list = info['video_list']
             for video_path in video_list:
-                cur_video = []
+                cur_video = torch.tensor([0])
                 with torch.no_grad():
                     video_arrays = load_video(video_path, return_tensor=False)
                     images = [Image.fromarray(i) for i in video_arrays]
-                    for image in images:
-                        image = image_transform(image)
-                        image = image.to(self.device)
-                        logits_per_image, logits_per_text = clip_model(image.unsqueeze(0), text)
-                        cur_sim = float(logits_per_text[0][0].cpu())
-                        cur_sim = cur_sim / 100
-                        cur_video.append(cur_sim)
-                        sim += cur_sim
-                        cnt +=1
-                    video_sim = np.mean(cur_video)
+                    for batch_idx in range(0, len(images), self.batch_size):
+                        images_batch = images_batch[batch_idx * self.batch_size, (batch_idx+1) * self.batch_size]
+                        images_batch = images_batch.to(self.device)
+                        logits_per_images, logits_per_text = clip_model(images_batch, text)
+                        cur_sim = logits_per_text[:, 0].cpu() / 100
+                        cur_video = torch.cat((cur_video, cur_sim))
+                    cur_video = cur_video[1:]
+                    video_sim = torch.mean(cur_video)
                     video_results.append({
                         'video_path': video_path, 
                         'video_results': video_sim, 
-                        'frame_results': cur_video,
-                        'cur_sim': cur_sim})
+                        'frame_results': list(cur_video)
+                    })
         sim_per_frame = sim / cnt
         return sim_per_frame, video_results
 
-    def compute_score(self, json_dir, submodules_list, **kwargs) -> Evaluationresult:
+    def compute_score(self, json_dir, **kwargs) -> Evaluationresult:
         clip_model = self.model["clip_vit_B_32"].to(self.device)
 
         _, video_dict = load_dimension_info(json_dir, dimension='appearance_style', lang='en')

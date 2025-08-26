@@ -73,7 +73,7 @@ class AestheticQuality(DimensionEvaluationBase):
         aesthetic_avg /= num
         return aesthetic_avg, video_results
 
-    def compute_score(self, json_dir, submodules_list, **kwargs) -> EvaluationResult:
+    def compute_score(self, json_dir, **kwargs) -> EvaluationResult:
         clip_model = self.model["clip_vit_L_14"].to(self.device)
         aesthetic_model = self.model["aesthetic_model"].to(self.device)
 
