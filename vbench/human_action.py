@@ -106,7 +106,7 @@ def human_action(umt_path, video_list, device):
             'video_results': flag,
             'cor_num_per_video': cor_num_per_video,})
     # print(f"cor num: {cor_num}, total: {cnt}")
-    acc = cor_num / cnt
+    acc = cor_num / cnt if cnt != 0 else None
     return acc, video_results
 
 
