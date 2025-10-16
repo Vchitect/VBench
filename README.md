@@ -18,7 +18,7 @@
 [![PyPI](https://img.shields.io/pypi/v/vbench)](https://pypi.org/project/vbench/)
 [![Video](https://img.shields.io/badge/VBench-Video-c4302b?logo=youtube&logoColor=red)](https://www.youtube.com/watch?v=7IhCC8Qqn8Y)
 [![Video](https://img.shields.io/badge/VBench%202.0-Video-c4302b?logo=youtube&logoColor=red)](https://www.youtube.com/watch?v=kJrzKy9tgAc)
-[![Visitor](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FVchitect%2FVBench&count_bg=%23FFA500&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false)](https://hits.seeyoufarm.com)
+![Visitors](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2FVchitect%2FVBench&label=Visitors&icon=people&color=%23FFA500)
 
 
 This repository contains the implementation of the following paper and its related serial works in progress. We evaluate video generative models!

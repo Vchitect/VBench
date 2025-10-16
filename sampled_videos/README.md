@@ -131,6 +131,11 @@ We list the setting for sampling videos from these models.
 | [`MAGI-T2V-4.5B-distill`](https://github.com/SandAI-org/MAGI-1) | VBench Team | 2025-06-11 | 720x720 | 24 | 96 | 4s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1Bt6pDZ5V8IozbpNxPp3GQqItjZRGC2JC?usp=drive_link) | - | |
 | [`Wan2.1-T2V-14B`](https://github.com/Wan-Video/Wan2.1/tree/main) | VBench Team | 2025-07-25 | 1280x720 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1vbsu4MNGrWbJSiw5AKfvtWpJz6MOJ0-1?usp=drive_link) | - | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/blob/master/prompts/augmented_prompts/Wan2.1-T2V-1.3B/all_dimension_aug_wanx_seed42.txt)</small> |
 | [`JT-CV-9B`](https://jiutiancv.github.io/JV-CV-T2V/) | VBench Team | 2025-07-30 | 2158 × 1214 | 24 | 51 | 2.1s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1Qqb0OGgSxIRl1HSIT5i93NRcuhXNxGar) | - | <small>applied [augmented prompts](https://github.com/Vchitect/VBench/tree/master/prompts/augmented_prompts/gpt_enhanced_prompts) </small>|
+| [`LanDiff`](https://landiff.github.io/) | VBench Team | 2025-08-06 | 720x480 | 8 | 49 | 6s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1acFlUVpmk7I_kHyJlUAkFnzhC7Z6sXsL) | - | |
+| [`IPOW`](https://github.com/SAIS-FUXI/IPO) | VBench Team | 2025-08-06 | 832x480 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1A47N1-CahUwy3pu_KwULiNXsEfqIgOQP) | - | |
+| [`Veo 3`](https://cloud.google.com/vertex-ai/generative-ai/docs/models/veo/3-0-generate-001?hl=zh-cn) | VBench Team | 2025-08-06 | 1280×720 | 24 | 192 | 8s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/16EWQAHzQtozM9tezyBGQrzMsWZCS-LkM) | - | |
+| [`MAGI-T2V-24B-distill`](https://github.com/SandAI-org/MAGI-1) | VBench Team | 2025-08-06 | 1280×720 | 24 | 96 | 4s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1B_mf_2xOozMrEoKjZgQwDFotUqlTuD_Z) | - | |
+
 ## How are Files Structured in Google Drive?
 
 
