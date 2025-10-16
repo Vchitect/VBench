@@ -75,7 +75,11 @@ def compute_anomaly(prompt_dict_ls, device, submodules_dict):
                         ]
                 }]
                 infer_request = InferRequest(messages=message)
-                output_text = infer_lora(engine, request_config, infer_request)
+                try:
+                    output_text = infer_lora(engine, request_config, infer_request)
+                except:
+                    output_text = 'no'
+                    print(f"Error processing video: {clip_path}")
                 if '(A)' in output_text or 'yes' in output_text.lower() or 'A'==output_text:
                     valid=False
                     break

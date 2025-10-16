@@ -175,6 +175,8 @@ prepublish-ci/*
 vbench2_beta_i2v/data
 VBench-2.0/src
 VBench-2.0/evaluation_results
+VBench-2.0/evaluation_results_ToMoviee
+VBench-2.0/evaluation_results_Veo3
 VBench-2.0/evaluate_multi_temp.sh
 VBench-2.0/evaluate_multi_model.sh
 VBench-2.0/evaluate_v.sh

@@ -26,7 +26,6 @@ class VBench2(object):
 
         assert len(dim_custom_not_supported) == 0, f"dimensions : {dim_custom_not_supported} not supported for custom input"
 
-
     def build_full_info_json(self, videos_path, name, dimension_list, prompt_list=[], special_str='', verbose=False, mode='vbench_standard', **kwargs):
         cur_full_info_list=[] # to save the prompt and video path info for the current dimensions
         if mode=='custom_input':
@@ -62,6 +61,7 @@ class VBench2(object):
         else:
             full_info_list = load_json(self.full_info_dir)
             video_names = os.listdir(videos_path)
+            
             postfix = Path(video_names[0]).suffix
             for prompt_dict in full_info_list:
                 # if the prompt belongs to any dimension we want to evaluate
@@ -74,6 +74,10 @@ class VBench2(object):
                         num=3
                     for i in range(num): # video index for the same prompt
                         intended_video_name = f'{prompt[:180]}{special_str}-{str(i)}{postfix}'
+                        # print(intended_video_name)
+                        # print('----------------------------')
+                        # print(video_names)
+                        
                         if intended_video_name in video_names: # if the video exists
                             intended_video_path = os.path.join(videos_path, intended_video_name)
                             prompt_dict['video_list'].append(intended_video_path)
