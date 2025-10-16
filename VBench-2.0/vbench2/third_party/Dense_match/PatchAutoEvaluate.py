@@ -48,11 +48,7 @@ def PatchAutoEvaluate(video_path, skip_frame, end_frame, flow, fps):
         interval_num = int(interval_nums / ((flow/10)* max(1, round(fps / 8))))
     else:
         return -1
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 57c7ef50e86e7c12007caafb53f862a63fddaf1f
     match_inter = int((end_frame - 1 - interval_num) / interval_num)
     if match_inter<1:
         return -1
