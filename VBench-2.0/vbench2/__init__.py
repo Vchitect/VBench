@@ -74,10 +74,6 @@ class VBench2(object):
                         num=3
                     for i in range(num): # video index for the same prompt
                         intended_video_name = f'{prompt[:180]}{special_str}-{str(i)}{postfix}'
-                        # print(intended_video_name)
-                        # print('----------------------------')
-                        # print(video_names)
-                        
                         if intended_video_name in video_names: # if the video exists
                             intended_video_path = os.path.join(videos_path, intended_video_name)
                             prompt_dict['video_list'].append(intended_video_path)
