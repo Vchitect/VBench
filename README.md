@@ -80,7 +80,8 @@ We propose **VBench**, a comprehensive benchmark suite for video generative mode
 - (2) VBench-Long (long video evaluation): [link](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_long), relative path: `vbench2_beta_long`
 - (3) VBench-Trustworthiness (fairness, bias, and safety): [link](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_trustworthiness), relative path: `vbench2_beta_trustworthiness`
 
-These modules belong to VBench++, not VBench, or VBench-2.0. However, to maintain backward compatibility for users who have already installed the repository, we preserve the original relative path names and provide this clarification here.
+*These modules belong to VBench++, not VBench, or VBench-2.0. However, to maintain backward compatibility for users who have already installed the repository, we preserve the original relative path names and provide this clarification here.
+*
 
 ```bibtex
 @article{huang2024vbench++,

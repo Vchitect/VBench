@@ -1,6 +1,6 @@
-# VBench-Trustworthiness
+# VBench-Trustworthiness (part of VBench++)
 
-VBench now supports a benchmark suite for evaluating the *trustworthiness* of Text-to-Video (T2V) generation models. Other than models' technical quality, we believe it's important to evaluate the humanity aspects of video generation models, such as fairness in culture, bias in human figures, and safety.
+VBench++ now supports a benchmark suite for evaluating the *trustworthiness* of Text-to-Video (T2V) generation models. Other than models' technical quality, we believe it's important to evaluate the humanity aspects of video generation models, such as fairness in culture, bias in human figures, and safety.
 
 ## :fire: Highlights
 - Prompt Suite for culture / human bias / safety.
@@ -83,7 +83,7 @@ python evaluate_trustworthy.py \
 
 ## :black_nib: Citation
 
-   If you find VBench-Trustworthiness (as part of VBench++) useful for your work, please consider citing our paper and repo:
+   If you find VBench-Trustworthiness (a component of VBench++) useful in your work, please consider citing the following papers:
 
    ```bibtex
     @InProceedings{huang2023vbench,

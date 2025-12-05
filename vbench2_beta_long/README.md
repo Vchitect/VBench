@@ -1,6 +1,6 @@
-# VBench-Long
+# VBench-Long (part of VBench++)
 
-VBench now supports evaluating **long** video generative models.
+VBench++ now supports evaluating **long** video generative models.
 
 ## 1. Video Splitting
 We split the long video into video clips in two steps
@@ -103,7 +103,7 @@ sh scripts/evaluate_OpenSoraPlan.sh
 
 ## :black_nib: Citation
 
-   If you find VBench-Long (as part of VBench++) useful for your work, please consider citing our paper and repo:
+   If you find VBench-Long (a component of VBench++) useful in your work, please consider citing the following papers:
 
    ```bibtex
     @InProceedings{huang2023vbench,

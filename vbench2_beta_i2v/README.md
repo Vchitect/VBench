@@ -1,6 +1,6 @@
-# VBench-I2V
+# VBench-I2V (part of VBench++)
 
-VBench now supports evaluating Image-to-Video (I2V) generation models.
+VBench++ now supports evaluating Image-to-Video (I2V) generation models.
 
 ## 1. :fire: Highlights 
 - 🖼️ Image Suite: multi-scale, multi-aspect-ratio, comprehensive content variety
@@ -456,7 +456,7 @@ The minimum and maximum values used for normalization in each dimension, as well
 
 ## :black_nib: Citation
 
-   If you find VBench-I2V (as part of VBench++) useful for your work, please consider citing our paper and repo:
+   If you find VBench-I2V (a component of VBench++) useful in your work, please consider citing the following papers:
 
    ```bibtex
     @InProceedings{huang2023vbench,
