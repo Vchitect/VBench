@@ -1,14 +1,7 @@
 ![vbench_logo](https://raw.githubusercontent.com/Vchitect/VBench/master/asset/vbench_logo_github_20240605.jpg)
 
-**How to Reach Us:**
-- Code Issues: Please open an [issue](https://github.com/Vchitect/VBench/issues) in our GitHub repository for any problems or bugs.
-- Evaluation Requests: To submit your sampled videos for evaluation, please complete this [Google Form](https://forms.gle/wHk1xe7ecvVNj7yAA).
-- General Inquiries: **Check our [FAQ](https://github.com/Vchitect/VBench/blob/master/README-FAQ.md)** for common questions. For other questions, contact Ziqi Huang at ZIQI002 [at] e [dot] ntu [dot] edu [dot] sg. 
 
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2311.99999-b31b1b.svg)](https://arxiv.org/abs/2311.99999) -->
-[![VBench Paper (CVPR 2024)](https://img.shields.io/badge/VBench-CVPR%202024-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2311.17982)
-[![VBench++ Report (arXiv)](https://img.shields.io/badge/VBench++-arXiv%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2411.13503)
-[![VBench-2.0 Report (arXiv)](https://img.shields.io/badge/VBench-2.0%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2503.21755)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)
 [![VBench Arena (View Generated Videos Here!)](https://img.shields.io/badge/%F0%9F%A4%97%20VBench%20Arena-blue)](https://huggingface.co/spaces/Vchitect/VBench_Video_Arena)
 [![VBench-2.0 Arena (View Generated Videos Here!)](https://img.shields.io/badge/%F0%9F%A4%97%20VBench2.0%20Arena-blue)](https://huggingface.co/spaces/Vchitect/VBench2.0_Video_Arena)
@@ -21,23 +14,13 @@
 ![Visitors](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2FVchitect%2FVBench&label=Visitors&icon=people&color=%23FFA500)
 
 
-This repository contains the implementation of the following paper and its related serial works in progress. We evaluate video generative models!
-> **VBench: Comprehensive Benchmark Suite for Video Generative Models**<br>
-> [Ziqi Huang](https://ziqihuangg.github.io/)<sup>∗</sup>, [Yinan He](https://github.com/yinanhe)<sup>∗</sup>, [Jiashuo Yu](https://scholar.google.com/citations?user=iH0Aq0YAAAAJ&hl=zh-CN)<sup>∗</sup>, [Fan Zhang](https://github.com/zhangfan-p)<sup>∗</sup>, [Chenyang Si](https://chenyangsi.top/), [Yuming Jiang](https://yumingj.github.io/), [Yuanhan Zhang](https://zhangyuanhan-ai.github.io/),  [Tianxing Wu](https://tianxingwu.github.io/), [Qingyang Jin](https://github.com/Vchitect/VBench), [Nattapol Chanpaisit](https://nattapolchan.github.io/me), [Yaohui Wang](https://wyhsirius.github.io/), [Xinyuan Chen](https://scholar.google.com/citations?user=3fWSC8YAAAAJ), [Limin Wang](https://wanglimin.github.io), [Dahua Lin](http://dahua.site/)<sup>+</sup>, [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/index.html)<sup>+</sup>, [Ziwei Liu](https://liuziwei7.github.io/)<sup>+</sup><br>
-> IEEE/CVF Conference on Computer Vision and Pattern Recognition (**CVPR**), 2024
+This repository provides unified implementations for the **VBench series** of works, supporting comprehensive evaluation of video generative models across a wide spectrum of capabilities and settings.
 
+If your questions are not addressed in this README, please contact Ziqi Huang at ZIQI002 [at] e [dot] ntu [dot] edu [dot] sg.
 
-> **VBench++: Comprehensive and Versatile Benchmark Suite for Video Generative Models**<br>
-> [Ziqi Huang](https://ziqihuangg.github.io/)<sup>∗</sup>, [Fan Zhang](https://github.com/zhangfan-p)<sup>∗</sup>, [Xiaojie Xu](https://github.com/xjxu21), [Yinan He](https://github.com/yinanhe), [Jiashuo Yu](https://scholar.google.com/citations?user=iH0Aq0YAAAAJ&hl=zh-CN), [Ziyue Dong](https://github.com/DZY-irene), [Qianli Ma](https://github.com/MqLeet), [Nattapol Chanpaisit](https://nattapolchan.github.io/me), [Chenyang Si](https://chenyangsi.top/), [Yuming Jiang](https://yumingj.github.io/), [Yaohui Wang](https://wyhsirius.github.io/), [Xinyuan Chen](https://scholar.google.com/citations?user=3fWSC8YAAAAJ), [Ying-Cong Chen](https://www.yingcong.me/), [Limin Wang](https://wanglimin.github.io), [Dahua Lin](http://dahua.site/)<sup>+</sup>, [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/index.html)<sup>+</sup>, [Ziwei Liu](https://liuziwei7.github.io/)<sup>+</sup><br>
-<!-- > IEEE/CVF Conference on Computer Vision and Pattern Recognition (**CVPR**), 2024 -->
-
-> **VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness**<br>
-> [Dian Zheng](https://zhengdian1.github.io/)<sup>∗</sup>, [Ziqi Huang](https://ziqihuangg.github.io/)<sup>∗</sup>, [Hongbo Liu](https://github.com/Alexios-hub), [Kai Zou](https://github.com/Jacky-hate), [Yinan He](https://github.com/yinanhe), [Fan Zhang](https://github.com/zhangfan-p), [Yuanhan Zhang](https://zhangyuanhan-ai.github.io/),  [Jingwen He](https://scholar.google.com/citations?user=GUxrycUAAAAJ&hl=zh-CN), [Wei-Shi Zheng](https://www.isee-ai.cn/~zhwshi/)<sup>+</sup>, [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/index.html)<sup>+</sup>, [Ziwei Liu](https://liuziwei7.github.io/)<sup>+</sup><br>
-
-
-### Table of Contents
-- [Updates](#updates)
+## Table of Contents
 - [Overview](#overview)
+- [Updates](#updates)
 - [Evaluation Results](#evaluation_results)
 - [Video Generation Models Info](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models)
 - [Installation](#installation)
@@ -47,8 +30,52 @@ This repository contains the implementation of the following paper and its relat
 - [Evaluation Method Suite](#evaluation_method_suite)
 - [Citation and Acknowledgement](#citation_and_acknowledgement)
 
+
+<a name="overview"></a>
+## :mega: Overview
+
+This repository provides unified implementations for the **VBench series** of works, supporting comprehensive evaluation of video generative models across a wide spectrum of capabilities and settings.
+
+### VBench
+
+***TL;DR: Evaluating Video Generation — Benchmark • Evaluation Dimensions • Evaluation Methods • Human Alignment • Insights***
+
+> [![VBench Paper (CVPR 2024)](https://img.shields.io/badge/VBench-CVPR%202024-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2311.17982) **VBench: Comprehensive Benchmark Suite for Video Generative Models**  <br>
+> [Ziqi Huang](https://ziqihuangg.github.io/)<sup>∗</sup>, [Yinan He](https://github.com/yinanhe)<sup>∗</sup>, [Jiashuo Yu](https://scholar.google.com/citations?user=iH0Aq0YAAAAJ&hl=zh-CN)<sup>∗</sup>, [Fan Zhang](https://github.com/zhangfan-p)<sup>∗</sup>, [Chenyang Si](https://chenyangsi.top/), [Yuming Jiang](https://yumingj.github.io/), [Yuanhan Zhang](https://zhangyuanhan-ai.github.io/),  [Tianxing Wu](https://tianxingwu.github.io/), [Qingyang Jin](https://github.com/Vchitect/VBench), [Nattapol Chanpaisit](https://nattapolchan.github.io/me), [Yaohui Wang](https://wyhsirius.github.io/), [Xinyuan Chen](https://scholar.google.com/citations?user=3fWSC8YAAAAJ), [Limin Wang](https://wanglimin.github.io), [Dahua Lin](http://dahua.site/)<sup>+</sup>, [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/index.html)<sup>+</sup>, [Ziwei Liu](https://liuziwei7.github.io/)<sup>+</sup><br>
+> IEEE/CVF Conference on Computer Vision and Pattern Recognition (**CVPR**), 2024
+
+![overall_structure](./asset/fig_paper_teaser_vbench.jpg)
+
+
+We propose **VBench**, a comprehensive benchmark suite for video generative models. We design a comprehensive and hierarchical <b>Evaluation Dimension Suite</b> to decompose "video generation quality" into multiple well-defined dimensions to facilitate fine-grained and objective evaluation. For each dimension and each content category, we carefully design a <b>Prompt Suite</b> as test cases, and sample <b>Generated Videos</b> from a set of video generation models. For each evaluation dimension, we specifically design an <b>Evaluation Method Suite</b>, which uses carefully crafted method or designated pipeline for automatic objective evaluation. We also conduct <b>Human Preference Annotation</b> for the generated videos for each dimension, and show that VBench evaluation results are <b>well aligned with human perceptions</b>. VBench can provide valuable insights from multiple perspectives. 
+
+### VBench++
+
+***TL;DR: Extends VBench with (1) VBench-I2V for image-to-video, (2) VBench-Long for long videos, and (3) VBench-Trustworthiness covering fairness, bias, and safety.***
+
+> [![VBench++ (TPAMI 2025)](https://img.shields.io/badge/VBench++-TPAMI%202025-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2411.13503)  **VBench++: Comprehensive and Versatile Benchmark Suite for Video Generative Models** <br>
+> [Ziqi Huang](https://ziqihuangg.github.io/)<sup>∗</sup>, [Fan Zhang](https://github.com/zhangfan-p)<sup>∗</sup>, [Xiaojie Xu](https://github.com/xjxu21), [Yinan He](https://github.com/yinanhe), [Jiashuo Yu](https://scholar.google.com/citations?user=iH0Aq0YAAAAJ&hl=zh-CN), [Ziyue Dong](https://github.com/DZY-irene), [Qianli Ma](https://github.com/MqLeet), [Nattapol Chanpaisit](https://nattapolchan.github.io/me), [Chenyang Si](https://chenyangsi.top/), [Yuming Jiang](https://yumingj.github.io/), [Yaohui Wang](https://wyhsirius.github.io/), [Xinyuan Chen](https://scholar.google.com/citations?user=3fWSC8YAAAAJ), [Ying-Cong Chen](https://www.yingcong.me/), [Limin Wang](https://wanglimin.github.io), [Dahua Lin](http://dahua.site/)<sup>+</sup>, [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/index.html)<sup>+</sup>, [Ziwei Liu](https://liuziwei7.github.io/)<sup>+</sup><br>
+> IEEE Transactions on Pattern Analysis and Machine Intelligence (**TPAMI**), 2025
+
+![overall_structure](./asset/fig_extention_teaser.jpg)
+
+
+<b>VBench++</b> supports a wide range of video generation tasks, including text-to-video and image-to-video, with an adaptive Image Suite for fair evaluation across different settings. It evaluates not only technical quality but also the trustworthiness of generative models, offering a comprehensive view of model performance. We continually incorporate more video generative models into VBench to inform the community about the evolving landscape of video generation.
+
+
+### VBench-2.0
+
+***TL;DR: Extends VBench to evaluate intrinsic faithfulness—a key challenge for next-generation video generation models.***
+
+> [![VBench-2.0 Report (arXiv)](https://img.shields.io/badge/VBench-2.0%20Report-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2503.21755) **VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness**<br>
+> [Dian Zheng](https://zhengdian1.github.io/)<sup>∗</sup>, [Ziqi Huang](https://ziqihuangg.github.io/)<sup>∗</sup>, [Hongbo Liu](https://github.com/Alexios-hub), [Kai Zou](https://github.com/Jacky-hate), [Yinan He](https://github.com/yinanhe), [Fan Zhang](https://github.com/zhangfan-p), [Yuanhan Zhang](https://zhangyuanhan-ai.github.io/),  [Jingwen He](https://scholar.google.com/citations?user=GUxrycUAAAAJ&hl=zh-CN), [Wei-Shi Zheng](https://www.isee-ai.cn/~zhwshi/)<sup>+</sup>, [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/index.html)<sup>+</sup>, [Ziwei Liu](https://liuziwei7.github.io/)<sup>+</sup><br>
+
+![overall_structure](./VBench-2.0/asset/fig_paper_teaser.jpg)
+Overview of VBench-2.0. (a) Scope of VBench-2.0. Video generative models have progressed from achieving superficial faithfulness in fundamental technical aspects such as pixel fidelity and basic prompt adherence, to addressing more complex challenges associated with intrinsic faithfulness, including commonsense reasoning, physics-based realism, human motion, and creative composition. While VBench primarily assessed early-stage technical quality, VBench-2.0 expands the benchmarking framework to evaluate these advanced capabilities, ensuring a more comprehensive assessment of next-generation models. (b) Evaluation Dimension of VBench-2.0. VBench-2.0 introduces a structured evaluation suite comprising five broad categories and 18 fine-grained capability dimensions.
+
 <a name="updates"></a>
 ## :fire: Updates
+- [11/2025] **VBench++** accepted to TPAMI: [![VBench++ (TPAMI 2025)](https://img.shields.io/badge/VBench++-TPAMI%202025-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2411.13503)
 - [05/2025] We support **evaluating customized videos** for VBench-2.0! See [here](https://github.com/Vchitect/VBench/tree/master/VBench-2.0#new-evaluating-single-dimension-of-your-own-videos) for instructions.
 - [04/2025] **[Human Anomaly Detection for AIGC Videos](https://github.com/Vchitect/VBench/tree/master/VBench-2.0/vbench2/third_party/ViTDetector):** We release the pipeline for evaluating human anatomical quality in AIGC videos, including a manually human anomaly dataset on real and AIGC videos, and the training pipeline for anomaly detection.
 - [03/2025] :fire: **Major Update! We released [VBench-2.0](https://github.com/Vchitect/VBench/tree/master/VBench-2.0)!** :fire: Video generative models have progressed from achieving *superficial faithfulness* in fundamental technical aspects such as pixel fidelity and basic prompt adherence, to addressing more complex challenges associated with *intrinsic faithfulness*, including commonsense reasoning, physics-based realism, human motion, and creative composition. While VBench primarily assessed early-stage technical quality, VBench-2.0 expands the benchmarking framework to evaluate these advanced capabilities, ensuring a more comprehensive assessment of next-generation models.
@@ -68,21 +95,12 @@ This repository contains the implementation of the following paper and its relat
 - [03/2024] :fire: **[VBench-Trustworthiness](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_trustworthiness)** :fire: We now support evaluating the **trustworthiness** (*e.g.*, culture, fairness, bias, safety) of video generative models.
 - [03/2024] :fire: **[VBench-I2V](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_i2v)** :fire: We now support evaluating **Image-to-Video (I2V)** models. We also provide [Image Suite](https://drive.google.com/drive/folders/1fdOZKQ7HWZtgutCKKA7CMzOhMFUGv4Zx?usp=sharing).
 - [03/2024] We support **evaluating customized videos**! See [here](https://github.com/Vchitect/VBench/?tab=readme-ov-file#new-evaluate-your-own-videos) for instructions.
+- [02/2024] **VBench** accepted to CVPR 2024 as Highlight: [![VBench Paper (CVPR 2024)](https://img.shields.io/badge/VBench-CVPR%202024-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2311.17982)
 - [01/2024] PyPI package is released! [![PyPI](https://img.shields.io/pypi/v/vbench)](https://pypi.org/project/vbench/). Simply `pip install vbench`.
 - [12/2023] :fire: **[VBench](https://github.com/Vchitect/VBench?tab=readme-ov-file#usage)** :fire: Evaluation code released for 16 **Text-to-Video (T2V) evaluation** dimensions. 
     - `['subject_consistency', 'background_consistency', 'temporal_flickering', 'motion_smoothness', 'dynamic_degree', 'aesthetic_quality', 'imaging_quality', 'object_class', 'multiple_objects', 'human_action', 'color', 'spatial_relationship', 'scene', 'temporal_style', 'appearance_style', 'overall_consistency']`
 - [11/2023] Prompt Suites released. (See prompt lists [here](https://github.com/Vchitect/VBench/tree/master/prompts))
   
-<a name="overview"></a>
-## :mega: Overview
-
-### VBench-1.0
-![overall_structure](./asset/fig_extention_teaser.jpg)
-We propose **VBench**, a comprehensive benchmark suite for video generative models. We design a comprehensive and hierarchical <b>Evaluation Dimension Suite</b> to decompose "video generation quality" into multiple well-defined dimensions to facilitate fine-grained and objective evaluation. For each dimension and each content category, we carefully design a <b>Prompt Suite</b> as test cases, and sample <b>Generated Videos</b> from a set of video generation models. For each evaluation dimension, we specifically design an <b>Evaluation Method Suite</b>, which uses carefully crafted method or designated pipeline for automatic objective evaluation. We also conduct <b>Human Preference Annotation</b> for the generated videos for each dimension, and show that VBench evaluation results are <b>well aligned with human perceptions</b>. VBench can provide valuable insights from multiple perspectives. <b>VBench++</b> supports a wide range of video generation tasks, including text-to-video and image-to-video, with an adaptive Image Suite for fair evaluation across different settings. It evaluates not only technical quality but also the trustworthiness of generative models, offering a comprehensive view of model performance. We continually incorporate more video generative models into VBench to inform the community about the evolving landscape of video generation.
-
-### VBench-2.0
-![overall_structure](./VBench-2.0/asset/fig_paper_teaser.jpg)
-Overview of VBench-2.0. (a) Scope of VBench-2.0. Video generative models have progressed from achieving superficial faithfulness in fundamental technical aspects such as pixel fidelity and basic prompt adherence, to addressing more complex challenges associated with intrinsic faithfulness, including commonsense reasoning, physics-based realism, human motion, and creative composition. While VBench primarily assessed early-stage technical quality, VBench-2.0 expands the benchmarking framework to evaluate these advanced capabilities, ensuring a more comprehensive assessment of next-generation models. (b) Evaluation Dimension of VBench-2.0. VBench-2.0 introduces a structured evaluation suite comprising five broad categories and 18 fine-grained capability dimensions.
 
 <a name="evaluation_results"></a>
 ## :mortar_board: Evaluation Results
@@ -351,8 +369,8 @@ python static_filter.py --videos_path $VIDEOS_PATH --filter_scope $filename
     @article{huang2024vbench++,
         title={{VBench++}: Comprehensive and Versatile Benchmark Suite for Video Generative Models},
         author={Huang, Ziqi and Zhang, Fan and Xu, Xiaojie and He, Yinan and Yu, Jiashuo and Dong, Ziyue and Ma, Qianli and Chanpaisit, Nattapol and Si, Chenyang and Jiang, Yuming and Wang, Yaohui and Chen, Xinyuan and Chen, Ying-Cong and Wang, Limin and Lin, Dahua and Qiao, Yu and Liu, Ziwei},
-        journal={arXiv preprint arXiv:2411.13503},
-        year={2024}
+        journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+        year={2025}
     }
 
     @article{zheng2025vbench2,
@@ -377,13 +395,27 @@ This project wouldn't be possible without the following open-sourced repositorie
 
 We are putting together [Awesome-Evaluation-of-Visual-Generation](https://github.com/ziqihuangg/Awesome-Evaluation-of-Visual-Generation), which collects works for evaluating visual generation.
 
-Our related projects: [Evaluation Agent](https://vchitect.github.io/Evaluation-Agent-project/)
+Our related projects: [Evaluation Agent](https://vchitect.github.io/Evaluation-Agent-project/) and [Uni-MMMU](https://vchitect.github.io/Uni-MMMU-Project/).
 
 ```bibtex
-@article{zhang2024evaluationagent,
-    title = {Evaluation Agent: Efficient and Promptable Evaluation Framework for Visual Generative Models},
-    author = {Zhang, Fan and Tian, Shulin and Huang, Ziqi and Qiao, Yu and Liu, Ziwei},
-    journal={arXiv preprint arXiv:2412.09645},
-    year = {2024}
+@InProceedings{zhang2024evaluationagent,
+      title = {Evaluation Agent: Efficient and Promptable Evaluation Framework for Visual Generative Models},
+      author = {Zhang, Fan and Tian, Shulin and Huang, Ziqi and Qiao, Yu and Liu, Ziwei},
+      booktitle={Annual Meeting of the Association for Computational Linguistics (ACL), 2025},
+      year = {2025}
+}
+
+@article{zou2025unimmmumassivemultidisciplinemultimodal,
+      title={{Uni-MMMU}: A Massive Multi-discipline Multimodal Unified Benchmark},
+      author = {Kai Zou and Ziqi Huang and Yuhao Dong and Shulin Tian and Dian Zheng and Hongbo Liu and Jingwen He and Bin Liu and Yu Qiao and Ziwei Liu},
+      journal={arXiv preprint arXiv:2510.13759},
+      year = {2025}
 }
 ```
+
+## Contact Details
+
+**How to Reach Us:**
+- Code Issues: Please open an [issue](https://github.com/Vchitect/VBench/issues) in our GitHub repository for any problems or bugs.
+- Evaluation Requests: To submit your sampled videos for evaluation, please complete this [Google Form](https://forms.gle/wHk1xe7ecvVNj7yAA).
+- General Inquiries: **Check our [FAQ](https://github.com/Vchitect/VBench/blob/master/README-FAQ.md)** for common questions. For other questions, contact Ziqi Huang at ZIQI002 [at] e [dot] ntu [dot] edu [dot] sg. 
