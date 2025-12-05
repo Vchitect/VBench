@@ -1,4 +1,4 @@
-# VBench-Long (Beta Version, May 2024)
+# VBench-Long
 
 VBench now supports evaluating **long** video generative models.
 

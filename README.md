@@ -19,7 +19,7 @@ This repository provides unified implementations for the **VBench series** of wo
 If your questions are not addressed in this README, please contact Ziqi Huang at ZIQI002 [at] e [dot] ntu [dot] edu [dot] sg.
 
 ## Table of Contents
-- [Overview](#overview)
+- [Overview](#overview) - *See this section for component locations and the differences between VBench, VBench++, and VBench-2.0.*
 - [Updates](#updates)
 - [Evaluation Results](#evaluation_results)
 - [Video Generation Models Info](https://github.com/Vchitect/VBench/tree/master/sampled_videos#what-are-the-details-of-the-video-generation-models)
@@ -36,7 +36,7 @@ If your questions are not addressed in this README, please contact Ziqi Huang at
 
 This repository provides unified implementations for the **VBench series** of works, supporting comprehensive evaluation of video generative models across a wide spectrum of capabilities and settings.
 
-### VBench
+### (1) VBench
 
 ***TL;DR: Evaluating Video Generation — Benchmark • Evaluation Dimensions • Evaluation Methods • Human Alignment • Insights***
 
@@ -49,7 +49,19 @@ This repository provides unified implementations for the **VBench series** of wo
 
 We propose **VBench**, a comprehensive benchmark suite for video generative models. We design a comprehensive and hierarchical <b>Evaluation Dimension Suite</b> to decompose "video generation quality" into multiple well-defined dimensions to facilitate fine-grained and objective evaluation. For each dimension and each content category, we carefully design a <b>Prompt Suite</b> as test cases, and sample <b>Generated Videos</b> from a set of video generation models. For each evaluation dimension, we specifically design an <b>Evaluation Method Suite</b>, which uses carefully crafted method or designated pipeline for automatic objective evaluation. We also conduct <b>Human Preference Annotation</b> for the generated videos for each dimension, and show that VBench evaluation results are <b>well aligned with human perceptions</b>. VBench can provide valuable insights from multiple perspectives. 
 
-### VBench++
+
+**Note**: The code and README for the VBench components are located [here](https://github.com/Vchitect/VBench/tree/master/VBench), relative path: `.`.
+
+```bibtex
+    @InProceedings{huang2023vbench,
+        title={{VBench}: Comprehensive Benchmark Suite for Video Generative Models},
+        author={Huang, Ziqi and He, Yinan and Yu, Jiashuo and Zhang, Fan and Si, Chenyang and Jiang, Yuming and Zhang, Yuanhan and Wu, Tianxing and Jin, Qingyang and Chanpaisit, Nattapol and Wang, Yaohui and Chen, Xinyuan and Wang, Limin and Lin, Dahua and Qiao, Yu and Liu, Ziwei},
+        booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+        year={2024}
+    }
+```
+
+### (2) VBench++
 
 ***TL;DR: Extends VBench with (1) VBench-I2V for image-to-video, (2) VBench-Long for long videos, and (3) VBench-Trustworthiness covering fairness, bias, and safety.***
 
@@ -63,7 +75,23 @@ We propose **VBench**, a comprehensive benchmark suite for video generative mode
 <b>VBench++</b> supports a wide range of video generation tasks, including text-to-video and image-to-video, with an adaptive Image Suite for fair evaluation across different settings. It evaluates not only technical quality but also the trustworthiness of generative models, offering a comprehensive view of model performance. We continually incorporate more video generative models into VBench to inform the community about the evolving landscape of video generation.
 
 
-### VBench-2.0
+**Note**: The code and README for the VBench++ components are located at:
+- (1) VBench-I2V (image-to-video): [link](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_i2v), relative path: `vbench2_beta_i2v`
+- (2) VBench-Long (long video evaluation): [link](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_long), relative path: `vbench2_beta_long`
+- (3) VBench-Trustworthiness (fairness, bias, and safety): [link](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_trustworthiness), relative path: `vbench2_beta_trustworthiness`
+
+These modules belong to VBench++, not VBench, or VBench-2.0. However, to maintain backward compatibility for users who have already installed the repository, we preserve the original relative path names and provide this clarification here.
+
+   ```bibtex
+    @article{huang2024vbench++,
+        title={{VBench++}: Comprehensive and Versatile Benchmark Suite for Video Generative Models},
+        author={Huang, Ziqi and Zhang, Fan and Xu, Xiaojie and He, Yinan and Yu, Jiashuo and Dong, Ziyue and Ma, Qianli and Chanpaisit, Nattapol and Si, Chenyang and Jiang, Yuming and Wang, Yaohui and Chen, Xinyuan and Chen, Ying-Cong and Wang, Limin and Lin, Dahua and Qiao, Yu and Liu, Ziwei},
+        journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+        year={2025}
+    }
+   ```
+
+### (3) VBench-2.0
 
 ***TL;DR: Extends VBench to evaluate intrinsic faithfulness—a key challenge for next-generation video generation models.***
 
@@ -72,6 +100,19 @@ We propose **VBench**, a comprehensive benchmark suite for video generative mode
 
 ![overall_structure](./VBench-2.0/asset/fig_paper_teaser.jpg)
 Overview of VBench-2.0. (a) Scope of VBench-2.0. Video generative models have progressed from achieving superficial faithfulness in fundamental technical aspects such as pixel fidelity and basic prompt adherence, to addressing more complex challenges associated with intrinsic faithfulness, including commonsense reasoning, physics-based realism, human motion, and creative composition. While VBench primarily assessed early-stage technical quality, VBench-2.0 expands the benchmarking framework to evaluate these advanced capabilities, ensuring a more comprehensive assessment of next-generation models. (b) Evaluation Dimension of VBench-2.0. VBench-2.0 introduces a structured evaluation suite comprising five broad categories and 18 fine-grained capability dimensions.
+
+**Note**: The code and README for the VBench-2.0 components are located at [link](https://github.com/Vchitect/VBench/tree/master/VBench-2.0), relative path: `VBench-2.0`.
+
+   ```bibtex
+    @article{zheng2025vbench2,
+        title={{VBench-2.0}: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness},
+        author={Zheng, Dian and Huang, Ziqi and Liu, Hongbo and Zou, Kai and He, Yinan and Zhang, Fan and Zhang, Yuanhan and He, Jingwen and Zheng, Wei-Shi and Qiao, Yu and Liu, Ziwei},
+        journal={arXiv preprint arXiv:2503.21755},
+        year={2025}
+    }
+   ```
+
+
 
 <a name="updates"></a>
 ## :fire: Updates

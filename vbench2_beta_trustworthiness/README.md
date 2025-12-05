@@ -1,4 +1,4 @@
-# VBench-Trustworthiness (Beta Version, Mar 2024)
+# VBench-Trustworthiness
 
 VBench now supports a benchmark suite for evaluating the *trustworthiness* of Text-to-Video (T2V) generation models. Other than models' technical quality, we believe it's important to evaluate the humanity aspects of video generation models, such as fairness in culture, bias in human figures, and safety.
 

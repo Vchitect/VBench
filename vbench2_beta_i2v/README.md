@@ -1,4 +1,4 @@
-# VBench-I2V (Beta Version, Mar 2024)
+# VBench-I2V
 
 VBench now supports evaluating Image-to-Video (I2V) generation models.
 
