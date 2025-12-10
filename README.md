@@ -84,11 +84,12 @@ We propose **VBench**, a comprehensive benchmark suite for video generative mode
 *
 
 ```bibtex
-@article{huang2024vbench++,
+@article{huang2025vbench++,
     title={{VBench++}: Comprehensive and Versatile Benchmark Suite for Video Generative Models},
     author={Huang, Ziqi and Zhang, Fan and Xu, Xiaojie and He, Yinan and Yu, Jiashuo and Dong, Ziyue and Ma, Qianli and Chanpaisit, Nattapol and Si, Chenyang and Jiang, Yuming and Wang, Yaohui and Chen, Xinyuan and Chen, Ying-Cong and Wang, Limin and Lin, Dahua and Qiao, Yu and Liu, Ziwei},
-    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-    year={2025}
+    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+    year={2025},
+    doi={10.1109/TPAMI.2025.3633890}
 }
 ```
 
@@ -409,7 +410,7 @@ This project wouldn't be possible without the following open-sourced repositorie
 
 We are putting together [Awesome-Evaluation-of-Visual-Generation](https://github.com/ziqihuangg/Awesome-Evaluation-of-Visual-Generation), which collects works for evaluating visual generation.
 
-Our related projects: [Evaluation Agent](https://vchitect.github.io/Evaluation-Agent-project/) and [Uni-MMMU](https://vchitect.github.io/Uni-MMMU-Project/).
+Our related projects: [Evaluation Agent](https://vchitect.github.io/Evaluation-Agent-project/), [Uni-MMMU](https://vchitect.github.io/Uni-MMMU-Project/), and [WorldLens](https://worldbench.github.io/worldlens).
 
 ```bibtex
 @InProceedings{zhang2024evaluationagent,
@@ -424,6 +425,13 @@ Our related projects: [Evaluation Agent](https://vchitect.github.io/Evaluation-A
       author = {Kai Zou and Ziqi Huang and Yuhao Dong and Shulin Tian and Dian Zheng and Hongbo Liu and Jingwen He and Bin Liu and Yu Qiao and Ziwei Liu},
       journal={arXiv preprint arXiv:2510.13759},
       year = {2025}
+}
+
+@article{worldlens,
+    title   = {{WorldLens}: Full-Spectrum Evaluations of Driving World Models in Real World},
+    author  = {Ao Liang and Lingdong Kong and Tianyi Yan and Hongsi Liu and Wesley Yang and Ziqi Huang and Wei Yin and Jialong Zuo and Yixuan Hu and Dekai Zhu and Dongyue Lu and Youquan Liu and Guangfeng Jiang and Linfeng Li and Xiangtai Li and Long Zhuo and Lai Xing Ng and Benoit R. Cottereau and Changxin Gao and Liang Pan and Wei Tsang Ooi and Ziwei Liu},
+    journal = {arXiv preprint arXiv:2512.xxxxx}
+    year    = {2025}
 }
 ```
 
@@ -449,11 +457,12 @@ Our related projects: [Evaluation Agent](https://vchitect.github.io/Evaluation-A
         year={2024}
     }
 
-    @article{huang2024vbench++,
+    @article{huang2025vbench++,
         title={{VBench++}: Comprehensive and Versatile Benchmark Suite for Video Generative Models},
         author={Huang, Ziqi and Zhang, Fan and Xu, Xiaojie and He, Yinan and Yu, Jiashuo and Dong, Ziyue and Ma, Qianli and Chanpaisit, Nattapol and Si, Chenyang and Jiang, Yuming and Wang, Yaohui and Chen, Xinyuan and Chen, Ying-Cong and Wang, Limin and Lin, Dahua and Qiao, Yu and Liu, Ziwei},
-        journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-        year={2025}
+        journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+        year={2025},
+        doi={10.1109/TPAMI.2025.3633890}
     }
 
     @article{zheng2025vbench2,
