@@ -135,7 +135,9 @@ We list the setting for sampling videos from these models.
 | [`IPOW`](https://github.com/SAIS-FUXI/IPO) | VBench Team | 2025-08-06 | 832x480 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1A47N1-CahUwy3pu_KwULiNXsEfqIgOQP) | - | |
 | [`Veo 3`](https://cloud.google.com/vertex-ai/generative-ai/docs/models/veo/3-0-generate-001?hl=zh-cn) | VBench Team | 2025-08-06 | 1280×720 | 24 | 192 | 8s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/16EWQAHzQtozM9tezyBGQrzMsWZCS-LkM) | - | |
 | [`MAGI-T2V-24B-distill`](https://github.com/SandAI-org/MAGI-1) | VBench Team | 2025-08-06 | 1280×720 | 24 | 96 | 4s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1B_mf_2xOozMrEoKjZgQwDFotUqlTuD_Z) | - | |
+| [`ToMovie 2.0`](https://www.tomoviee.ai/) | VBench Team | 2025-09-08 | 720x1280 | 24 | 120 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1BBlqlfgztFBtwnUZ555HRL2ay6t5T0ds) | - | |
 
+https://www.tomoviee.ai/
 ## How are Files Structured in Google Drive?
 
 
