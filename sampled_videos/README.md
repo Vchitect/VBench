@@ -137,7 +137,6 @@ We list the setting for sampling videos from these models.
 | [`MAGI-T2V-24B-distill`](https://github.com/SandAI-org/MAGI-1) | VBench Team | 2025-08-06 | 1280×720 | 24 | 96 | 4s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1B_mf_2xOozMrEoKjZgQwDFotUqlTuD_Z) | - | |
 | [`ToMovie 2.0`](https://www.tomoviee.ai/) | VBench Team | 2025-09-08 | 720x1280 | 24 | 120 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1BBlqlfgztFBtwnUZ555HRL2ay6t5T0ds) | - | |
 
-https://www.tomoviee.ai/
 ## How are Files Structured in Google Drive?
 
 
