@@ -318,6 +318,14 @@ To prepare the sampled videos for evaluation:
     | `imaging_quality` | Yes | Yes | 355 |
 
 
+#### What are the Details of the Video Generation Models?
+We list the setting for sampling videos from these models.
+| Model | Evaluation Party | Release Time | Resolution | FPS | Frame Count | Video Length | Checkpoint | Code Commit ID | Video Format | Sampled Videos (Dimension) | Sampled Videos (Category) |                             Other Settings       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                        |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |------------------------------|
+| [`HunYuan-Video`](https://video.hunyuan.tencent.com/) | VBench Team | 2025-04-14 | 1280x720 | 24 | 129 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1BBlqlfgztFBtwnUZ555HRL2ay6t5T0ds) | - | |
+| [`ToMovie 2.0`](https://www.tomoviee.ai/) | VBench Team | 2025-09-08 | 720x1280 | 24 | 120 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1BBlqlfgztFBtwnUZ555HRL2ay6t5T0ds) | - | |
+
+
 ## 5. Evaluation
 
 We have introduced three new dimensions for the image-to-video task, namely: `i2v_subject`, `i2v_background`, and `camera_motion`. 
