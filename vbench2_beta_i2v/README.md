@@ -323,15 +323,15 @@ We list the setting for sampling videos from these models.
 | Model | Evaluation Party | Release Time | Resolution | FPS | Frame Count | Video Length | Checkpoint | Code Commit ID | Video Format | Sampled Videos (Dimension) | Sampled Videos (Category) |                             Other Settings       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                        |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |------------------------------|
 | [`HunYuan-Video`](https://video.hunyuan.tencent.com/) | VBench Team | 2025-04-14 | 1280x720 | 24 | 129 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1W02wg6_p-v5BB3jwYbfAKSgoJyXyFIEK) | - | |
-| [`CogVideoX-5b-I2V`](https://github.com/zai-org/CogVideo) | - | - | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/11Nd1gaEM7eIaDwWAhKv8nfIAAUFFCivS) | - | |
-| [`CogVideoX1.5-5B-I2V`](https://github.com/zai-org/CogVideo) | - | - | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1fGyVyqxKdKSD6zjOFEWWt4fZrOA4oYIH) | - | |
+| [`CogVideoX-5b-I2V`](https://github.com/zai-org/CogVideo) | VBench Team | 2025-03-31 | 720x480 | 8 | 49 | 6s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/11Nd1gaEM7eIaDwWAhKv8nfIAAUFFCivS) | - | |
+| [`CogVideoX1.5-5B-I2V`](https://github.com/zai-org/CogVideo) | VBench Team | 2025-03-31 | 1360x768 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1fGyVyqxKdKSD6zjOFEWWt4fZrOA4oYIH) | - | |
 | [`Gen-4-I2V`](https://app.runwayml.com/login) | - | - | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1JpSUBvWhL7sZW96PxH8ayb252ohgJdPL) | - | |
-| [`WAN2.1-I2V-14B`](https://github.com/thu-ml/cond-image-leakage) | - | - | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1PEsSdFdqGUkbdT4UHz-n0_PjRQwbTw8g) | - | |
-| [`I2VGen-XL`] | VBench Team | - | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1t-Q7G2z99g6eJRp4tQf1IaTy-8Muqfkd) | - | |
-| [`VideoCrafter-I2V`] | VBench Team | - | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/11cgACr--DfOvEo-tFmOLWzLAnf3TC3bz/view?usp=drive_link) | - | |
-| [`Animate-Anything`] | VBench Team | - | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1uFteS9Aq4kiNhFYeo7Ox1zEKXy_J4bvF/view?usp=drive_link) | - | |
-| [`ConsistI2V`] | VBench Team | - | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1xAZLefw42_cZPu5lOTt-VkV5B93szmDs/view?usp=drive_link) | - | |
-| [`SEINE-512x320`] | VBench Team | - | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1W-WTnYZXlwHWdYx_4m3qxmU20uHDQExG/view?usp=drive_link) | - | |
+| [`WAN2.1-I2V-14B`](https://github.com/Wan-Video/Wan2.1) | VBench Team | 2025-05-08 | 1280x720 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1PEsSdFdqGUkbdT4UHz-n0_PjRQwbTw8g) | - | |
+| [`I2VGen-XL`] | VBench Team | 2024-07-22 | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1t-Q7G2z99g6eJRp4tQf1IaTy-8Muqfkd) | - | |
+| [`VideoCrafter-I2V`] | VBench Team | 2024-07-22 | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/11cgACr--DfOvEo-tFmOLWzLAnf3TC3bz/view?usp=drive_link) | - | |
+| [`Animate-Anything`] | VBench Team | 2024-07-22 | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1uFteS9Aq4kiNhFYeo7Ox1zEKXy_J4bvF/view?usp=drive_link) | - | |
+| [`ConsistI2V`] | VBench Team | 2024-07-22 | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1xAZLefw42_cZPu5lOTt-VkV5B93szmDs/view?usp=drive_link) | - | |
+| [`SEINE-512x320`] | VBench Team | 2024-07-22 | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1W-WTnYZXlwHWdYx_4m3qxmU20uHDQExG/view?usp=drive_link) | - | |
 | [`DynamiCrafter`](https://github.com/thu-ml/cond-image-leakage) | VBench Team | - | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1VPbIoXHNYBxUjq5D53VpulrxA0adNADW) | - | |
 | [`ToMovie 2.0`](https://www.tomoviee.ai/) | VBench Team | 2025-09-08 | 720x1280 | 24 | 120 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1BBlqlfgztFBtwnUZ555HRL2ay6t5T0ds) | - | |
 
