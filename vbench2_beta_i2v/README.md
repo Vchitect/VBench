@@ -322,7 +322,7 @@ To prepare the sampled videos for evaluation:
 We list the setting for sampling videos from these models.
 | Model | Evaluation Party | Release Time | Resolution | FPS | Frame Count | Video Length | Checkpoint | Code Commit ID | Video Format | Sampled Videos (Dimension) | Sampled Videos (Category) |                             Other Settings       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                        |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |------------------------------|
-| [`HunYuan-Video`](https://video.hunyuan.tencent.com/) | VBench Team | 2025-04-14 | 1280x720 | 24 | 129 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1W02wg6_p-v5BB3jwYbfAKSgoJyXyFIEK) | - | |
+| [`HunYuan-Video`](https://video.hunyuan.tencent.com/) | VBench Team | 2025-04-14 | 1280x720 | 24 | 120 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1W02wg6_p-v5BB3jwYbfAKSgoJyXyFIEK) | - | |
 | [`CogVideoX-5b-I2V`](https://github.com/zai-org/CogVideo) | VBench Team | 2025-03-31 | 720x480 | 8 | 49 | 6s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/11Nd1gaEM7eIaDwWAhKv8nfIAAUFFCivS) | - | |
 | [`CogVideoX1.5-5B-I2V`](https://github.com/zai-org/CogVideo) | VBench Team | 2025-03-31 | 1360x768 | 16 | 81 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1fGyVyqxKdKSD6zjOFEWWt4fZrOA4oYIH) | - | |
 | [`Gen-4-I2V`](https://app.runwayml.com/login) | - | - | - | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1JpSUBvWhL7sZW96PxH8ayb252ohgJdPL) | - | |
