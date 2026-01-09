@@ -330,8 +330,8 @@ We list the setting for sampling videos from these models.
 | [`I2VGen-XL`](https://github.com/dailingx/i2vgen-xl) | VBench Team | 2024-07-22 | 1280×720 | 7 | 16 | 2s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1t-Q7G2z99g6eJRp4tQf1IaTy-8Muqfkd) | - | |
 | [`VideoCrafter-I2V`](https://github.com/AILab-CVC/VideoCrafter) | VBench Team | 2024-07-22 | 640x1024 | 16 | 32 | 2s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/11cgACr--DfOvEo-tFmOLWzLAnf3TC3bz/view?usp=drive_link) | - | |
 | [`Animate-Anything`] | VBench Team | 2024-07-22 | - | 8 | 49 | 6s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1uFteS9Aq4kiNhFYeo7Ox1zEKXy_J4bvF/view?usp=drive_link) | - | |
-| [`ConsistI2V`](https://github.com/TIGER-AI-Lab/ConsistI2V) | VBench Team | 2024-07-22 | 256x256 | - | 16 | - | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1xAZLefw42_cZPu5lOTt-VkV5B93szmDs/view?usp=drive_link) | - | |
-| [`SEINE-512x320`](https://github.com/Vchitect/SEINE) | VBench Team | 2024-07-22 | 512x320 | - | - | - | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1W-WTnYZXlwHWdYx_4m3qxmU20uHDQExG/view?usp=drive_link) | - | |
+| [`ConsistI2V`](https://github.com/TIGER-AI-Lab/ConsistI2V) | VBench Team | 2024-07-22 | 256x256 | 8 | 16 | 2s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1xAZLefw42_cZPu5lOTt-VkV5B93szmDs/view?usp=drive_link) | - | |
+| [`SEINE-512x320`](https://github.com/Vchitect/SEINE) | VBench Team | 2024-07-22 | 512x320 | 8 | 16 | 2s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1W-WTnYZXlwHWdYx_4m3qxmU20uHDQExG/view?usp=drive_link) | - | |
 | [`DynamiCrafter`](https://github.com/Doubiiu/DynamiCrafter) | VBench Team | 2024-07-22 | 576x1024 | 8 | 16 | 2s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1VPbIoXHNYBxUjq5D53VpulrxA0adNADW) | - | |
 | [`ToMovie 2.0`](https://www.tomoviee.ai/) | VBench Team | 2025-09-08 | 720x1280 | 24 | 120 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1BBlqlfgztFBtwnUZ555HRL2ay6t5T0ds) | - | |
 
