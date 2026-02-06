@@ -334,6 +334,7 @@ We list the setting for sampling videos from these models.
 | [`SEINE-512x320`](https://github.com/Vchitect/SEINE) | VBench Team | 2024-07-22 | 512x320 | 8 | 16 | 2s | - | - | MP4 | [Google Drive](https://drive.google.com/file/d/1W-WTnYZXlwHWdYx_4m3qxmU20uHDQExG/view?usp=drive_link) | - | |
 | [`DynamiCrafter`](https://github.com/Doubiiu/DynamiCrafter) | VBench Team | 2024-07-22 | 576x1024 | 8 | 16 | 2s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1VPbIoXHNYBxUjq5D53VpulrxA0adNADW) | - | |
 | [`ToMovie 2.0`](https://www.tomoviee.ai/) | VBench Team | 2025-09-08 | 720x1280 | 24 | 120 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/folders/1BBlqlfgztFBtwnUZ555HRL2ay6t5T0ds) | - | |
+| [`LTX-2-I2V`]([https://github.com/Lightricks/LTX-2/tree/main]) | VBench Team | 2026-02-06 | 1536x1024 | 24 | 120 | 5s | - | - | MP4 | [Google Drive](https://drive.google.com/drive/u/0/folders/1Kd5piR4qf6GTv4cXuQUNIAvYWub7b37x) | - | |
 
 
 ## 5. Evaluation
