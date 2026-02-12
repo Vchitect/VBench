@@ -90,6 +90,6 @@ if __name__ == "__main__":
     # Function to check if the correct number of videos are sampled
     check_num_videos()
 
-    # Function to check which videos are not missing
+    # Function to check which videos are missing
     # Checking based on the naming of 'xxx-0.mp4', you might want to change this
     filter_missing_videos()
