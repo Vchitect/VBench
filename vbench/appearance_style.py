@@ -70,7 +70,7 @@ def appearance_style(clip_model, video_dict, device, sample="rand"):
                     'video_results': video_sim, 
                     'frame_results': cur_video,
                     'cur_sim': cur_sim})
-    sim_per_frame = sim / cnt
+    sim_per_frame = sim / cnt if cnt != 0 else None
     return sim_per_frame, video_results
 
 def compute_appearance_style(json_dir, device, submodules_list, **kwargs):
