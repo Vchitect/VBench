@@ -1,7 +1,6 @@
 import gzip
 import html
 import os
-import subprocess
 from functools import lru_cache
 import ftfy
 import regex as re
@@ -10,9 +9,13 @@ from vbench.utils import CACHE_DIR
 def default_bpe():
     tokenizer_file = os.path.join(CACHE_DIR, "ViCLIP/bpe_simple_vocab_16e6.txt.gz")
     if not os.path.exists(tokenizer_file):
+        import urllib.request
         print(f'Downloading ViCLIP tokenizer to {tokenizer_file}')
-        wget_command = ['wget', 'https://raw.githubusercontent.com/openai/CLIP/main/clip/bpe_simple_vocab_16e6.txt.gz', '-P', os.path.dirname(tokenizer_file)]
-        subprocess.run(wget_command)
+        os.makedirs(os.path.dirname(tokenizer_file), exist_ok=True)
+        urllib.request.urlretrieve(
+            'https://raw.githubusercontent.com/openai/CLIP/main/clip/bpe_simple_vocab_16e6.txt.gz',
+            tokenizer_file
+        )
     return tokenizer_file
 
 
