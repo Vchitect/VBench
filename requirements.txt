@@ -1,9 +1,11 @@
+--prefer-binary
 Pillow
 numpy<2.0.0
 matplotlib
 timm>=0.9,<=1.0.12
 wheel
 cython
+ligthin
 tensorboard
 scipy
 opencv-python
@@ -17,11 +19,10 @@ easydict
 pyiqa
 lvis
 fvcore
-easydict
 urllib3
 boto3
 omegaconf
 transformers==4.33.2
 pycocoevalcap
-fairscale>=0.4.4
+#fairscale>=0.4.4
 # detectron2@git+https://github.com/facebookresearch/detectron2.git
