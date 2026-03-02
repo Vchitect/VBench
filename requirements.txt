@@ -23,6 +23,7 @@ urllib3
 boto3
 omegaconf
 transformers==4.33.2
+#4.57.6
 pycocoevalcap
 #fairscale>=0.4.4
 # detectron2@git+https://github.com/facebookresearch/detectron2.git

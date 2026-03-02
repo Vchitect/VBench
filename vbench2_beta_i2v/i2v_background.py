@@ -1,7 +1,4 @@
-import io
-import os
-import cv2
-import json
+import sys, os; sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import numpy as np
 from PIL import Image
 from tqdm import tqdm
