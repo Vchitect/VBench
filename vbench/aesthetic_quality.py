@@ -74,7 +74,7 @@ def laion_aesthetic(aesthetic_model, clip_model, video_list, device):
         num += 1
         video_results.append({'video_path': video_path, 'video_results': cur_avg.item()})
 
-    aesthetic_avg /= num
+    aesthetic_avg = aesthetic_avg / num if num > 0 else 0.0
     return aesthetic_avg, video_results
 
 

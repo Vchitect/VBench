@@ -61,11 +61,12 @@ def subject_consistency(model, video_list, device, read_frame):
                     video_sim += cur_sim
                     cnt += 1
             former_image_features = image_features
-        sim_per_images = video_sim / (len(images) - 1)
+        n_pairs = len(images) - 1
+        sim_per_images = video_sim / n_pairs if n_pairs > 0 else 1.0
         sim += video_sim
         video_results.append({'video_path': video_path, 'video_results': sim_per_images})
     # sim_per_video = sim / (len(video_list) - 1)
-    sim_per_frame = sim / cnt
+    sim_per_frame = sim / cnt if cnt > 0 else 1.0
     return sim_per_frame, video_results
 
 
