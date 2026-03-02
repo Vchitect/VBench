@@ -142,6 +142,7 @@ def dynamic_degree(dynamic, video_list):
     sim = []
     video_results = []
     for video_path in tqdm(video_list, disable=get_rank() > 0):
+        tqdm.write(video_path)
         score_per_video = dynamic.infer(video_path)
         video_results.append({'video_path': video_path, 'video_results': score_per_video})
         sim.append(score_per_video)

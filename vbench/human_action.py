@@ -74,6 +74,7 @@ def human_action(umt_path, video_list, device):
     cor_num = 0
     video_results = []
     for video_path in tqdm(video_list, disable=get_rank() > 0):
+        tqdm.write(video_path)
         cor_num_per_video = 0
         video_label_ls = video_path.split('/')[-1].lower().split('-')[0].split("person is ")[-1].split('_')[0]
         cnt += 1
@@ -113,6 +114,8 @@ def human_action(umt_path, video_list, device):
 def compute_human_action(json_dir, device, submodules_list, **kwargs):
     umt_path = submodules_list[0]
     video_list, _ = load_dimension_info(json_dir, dimension='human_action', lang='en')
+    if not video_list:
+        return 0.0, []
     video_list = distribute_list_to_rank(video_list)
     all_results, video_results = human_action(umt_path, video_list, device)
     if get_world_size() > 1:

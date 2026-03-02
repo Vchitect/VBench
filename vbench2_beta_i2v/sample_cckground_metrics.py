@@ -18,7 +18,9 @@ Or from vbench2_beta_i2v dir:
 """
 
 import argparse
+import csv
 import json
+import math
 import os
 import re
 import sys
@@ -43,26 +45,25 @@ def _iw_stem(prompt):
     return prompt[:30].replace(" ", "_")
 
 
-def _find_iw_video(videos_path, prompt):
+def _find_iw_videos(videos_path, prompt, num_samples):
     """
-    Find the last cumulative video for a given prompt, ignoring the 4-digit task prefix.
-    Pattern: ????_{prompt[:30]}_chunk{N:03d}_cumulative.mp4
-    Returns the path of the highest chunk, else None.
+    Find up to num_samples videos for a given prompt, ignoring the 4-digit task prefix.
+    Matches any ????_{stem}*.mp4 (excluding _individual); returns sorted matches.
     """
     stem   = _iw_stem(prompt)
-    needle = f"_{stem}_chunk"
-    suffix = "_cumulative.mp4"
+    needle = f"_{stem}"
     found  = []
     try:
-        for fname in os.listdir(videos_path):
-            if needle in fname and fname.endswith(suffix):
-                found.append(os.path.join(videos_path, fname))
+        for root, _, files in os.walk(videos_path):
+            for fname in files:
+                if needle in fname and fname.endswith(".mp4") and "_individual" not in fname:
+                    found.append(os.path.join(root, fname))
     except FileNotFoundError:
-        return None
-    return sorted(found)[-1] if found else None
+        return []
+    return sorted(found)[:num_samples]
 
 
-def build_video_pairs(videos_path, dimensions, image_types, resolution, num_samples):
+def build_video_pairs(videos_path, image_types, resolution, num_samples):
     """
     Return list of (image_path, video_path) matching the JSON filters.
 
@@ -81,8 +82,6 @@ def build_video_pairs(videos_path, dimensions, image_types, resolution, num_samp
     missing = []   # descriptions of what wasn't found
 
     for info in info_list:
-        if not any(d in info.get("dimension", []) for d in dimensions):
-            continue
         if allowed_types and info.get("image_type") not in allowed_types:
             continue
 
@@ -106,8 +105,7 @@ def build_video_pairs(videos_path, dimensions, image_types, resolution, num_samp
 
         # ── Fall back to Infinite-World cumulative naming ─────────────────
         if not found_any:
-            iw_path = _find_iw_video(videos_path, prompt)
-            if iw_path:
+            for iw_path in _find_iw_videos(videos_path, prompt, num_samples):
                 pairs.append((image_path, iw_path))
                 found_any = True
 
@@ -118,21 +116,59 @@ def build_video_pairs(videos_path, dimensions, image_types, resolution, num_samp
     return pairs, missing
 
 
+def _fmt(v):
+    return "" if (v is None or (isinstance(v, float) and math.isnan(v))) else str(v)
+
+
+def write_csv(eval_results_path, csv_path):
+    """Write dimension scores + per-video rows from {name}_eval_results.json to CSV."""
+    with open(eval_results_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    rows = []
+    for dim, val in data.items():
+        # val layout:  [score, per_video_list]
+        #              [score, {subcategory_dict}, per_video_list]  (camera_motion)
+        overall_score = val[0]
+        if isinstance(val[1], dict):
+            subcats     = val[1]
+            per_video   = val[2] if len(val) > 2 else []
+        else:
+            subcats     = {}
+            per_video   = val[1] if len(val) > 1 else []
+
+        # Overall row
+        rows.append({"dimension": dim, "video": "(overall)", "score": _fmt(overall_score)})
+
+        # Subcategory rows (camera_motion)
+        for sub, sub_score in subcats.items():
+            rows.append({"dimension": f"{dim}/{sub}", "video": "(overall)", "score": _fmt(sub_score)})
+
+        # Per-video rows
+        for entry in per_video:
+            video = os.path.basename(entry.get("video_path", ""))
+            rows.append({"dimension": dim, "video": video, "score": _fmt(entry.get("video_results"))})
+
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["dimension", "video", "score"])
+        writer.writeheader()
+        writer.writerows(rows)
+
+    print(f"CSV results: {csv_path}")
+
+
 def run_evaluation(videos_path, dimensions, output_path, resolution, image_types, num_samples):
     import torch
     from vbench2_beta_i2v import VBenchI2V
 
     pairs, missing = build_video_pairs(
-        videos_path, dimensions, image_types, resolution, num_samples
+        videos_path, image_types, resolution, num_samples
     )
 
-    print(f"\nFound : {len(pairs)} videos")
-    if missing:
-        print(f"Missing: {len(missing)} videos")
-        for p in missing[:10]:
-            print(f"  {p}")
-        if len(missing) > 10:
-            print(f"  ... and {len(missing) - 10} more")
+    unique_vids = sorted(set(vid for _, vid in pairs))
+    print(f"\nFound: {len(pairs)} pairs | {len(unique_vids)} unique videos | Missing: {len(missing)}")
+    for vid in unique_vids:
+        print(f"  {vid}")
 
     if not pairs:
         print("No videos found — nothing to evaluate.")
@@ -148,6 +184,12 @@ def run_evaluation(videos_path, dimensions, output_path, resolution, image_types
         dimension_list=dimensions,
         resolution=resolution,
     )
+
+    eval_json = os.path.join(output_path, "results_eval_results.json")
+    csv_path  = os.path.join(output_path, "results_eval_results.csv")
+    if os.path.exists(eval_json):
+        write_csv(eval_json, csv_path)
+
     print(f"\nEvaluation results saved to: {output_path}")
 
 
@@ -179,13 +221,13 @@ def main():
 
     if args.list_only:
         pairs, missing = build_video_pairs(
-            args.videos_path, args.dimensions, args.image_types,
+            args.videos_path, args.image_types,
             args.resolution, args.num_samples,
         )
-        print(f"Found : {len(pairs)}")
-        print(f"Missing: {len(missing)}")
-        for img, vid in pairs:
-            print(f"  {os.path.basename(vid)}")
+        unique_vids = sorted(set(vid for _, vid in pairs))
+        print(f"Found: {len(pairs)} pairs | {len(unique_vids)} unique videos | Missing: {len(missing)}")
+        for vid in unique_vids:
+            print(f"  {vid}")
     else:
         run_evaluation(
             videos_path=args.videos_path,

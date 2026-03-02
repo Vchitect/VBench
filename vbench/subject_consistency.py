@@ -36,6 +36,7 @@ def subject_consistency(model, video_list, device, read_frame):
     else:
         image_transform = dino_transform(224)
     for video_path in tqdm(video_list, disable=get_rank() > 0):
+        tqdm.write(video_path)
         video_sim = 0.0
         if read_frame:
             video_path = video_path[:-4].replace('videos', 'frames').replace(' ', '_')
@@ -75,6 +76,8 @@ def compute_subject_consistency(json_dir, device, submodules_list, **kwargs):
     read_frame = submodules_list['read_frame']
     logger.info("Initialize DINO success")
     video_list, _ = load_dimension_info(json_dir, dimension='subject_consistency', lang='en')
+    if not video_list:
+        return 1.0, []
     video_list = distribute_list_to_rank(video_list)
     all_results, video_results = subject_consistency(dino_model, video_list, device, read_frame)
     if get_world_size() > 1:
