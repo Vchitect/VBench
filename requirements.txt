@@ -21,7 +21,7 @@ fvcore
 urllib3
 boto3
 omegaconf
-transformers==4.33.2
+transformers>=4.39
 #4.57.6
 pycocoevalcap
 pyiqa
