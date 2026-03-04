@@ -472,3 +472,7 @@ Our related projects: [Evaluation Agent](https://vchitect.github.io/Evaluation-A
         year={2025}
     }
    ```
+python evaluate.py --dimension subject_consistency background_consistency aesthetic_quality imaging_quality spatial_relationship scene temporal_style overall_consistency human_action temporal_flickering motion_smoothness dynamic_degree appearance_style
+
+
+python evaluate.py --dimension subject_consistency background_consistency --videos_path C:\workspace\world\Infinite-World\out\vbench\videos --mode custom_input 

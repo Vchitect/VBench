@@ -185,7 +185,14 @@ class VBench(object):
             submodules_dict = init_submodules(dimension_list, local=local, read_frame=read_frame)
 
         cur_full_info_path = self.build_full_info_json(videos_path, name, dimension_list, prompt_list, mode=mode, **kwargs)
-        
+
+        full_info = load_json(cur_full_info_path)
+        if not full_info:
+            raise RuntimeError(
+                f"No videos found in '{videos_path}' matching the evaluation criteria.\n"
+                f"Mode: {mode}. Check that filenames match the expected pattern (e.g. 'prompt-0.mp4')."
+            )
+
         for dimension in dimension_list:
             try:
                 dimension_module = importlib.import_module(f'vbench.{dimension}')
