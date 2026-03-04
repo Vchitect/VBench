@@ -209,10 +209,29 @@ class VBench(object):
         if get_rank() == 0:
             save_json(results_dict, output_name)
             print0(f'Evaluation results saved to {output_name}')
+            # collect all extra per-video keys across all dimensions
+            extra_keys = []
+            for val in results_dict.values():
+                if isinstance(val, (list, tuple)) and len(val) > 1 and isinstance(val[1], list):
+                    for entry in val[1]:
+                        for k in entry:
+                            if k not in ('video_path', 'video_results') and k not in extra_keys:
+                                extra_keys.append(k)
             with open(csv_name, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f)
-                writer.writerow(['dimension', 'score'])
+                # summary block
+                writer.writerow(['dimension', 'overall_score'])
                 for dim, val in results_dict.items():
                     score = val[0] if isinstance(val, (list, tuple)) else val
                     writer.writerow([dim, score])
+                writer.writerow([])
+                # per-video detail block
+                writer.writerow(['dimension', 'video_path', 'video_results'] + extra_keys)
+                for dim, val in results_dict.items():
+                    if not (isinstance(val, (list, tuple)) and len(val) > 1 and isinstance(val[1], list)):
+                        continue
+                    for entry in val[1]:
+                        row = [dim, entry.get('video_path', ''), entry.get('video_results', '')]
+                        row += [entry.get(k, '') for k in extra_keys]
+                        writer.writerow(row)
             print0(f'Evaluation results saved to {csv_name}')
