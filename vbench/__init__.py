@@ -1,3 +1,4 @@
+import csv
 import os
 
 from .utils import get_prompt_from_filename, init_submodules, save_json, load_json
@@ -204,6 +205,14 @@ class VBench(object):
             results = evaluate_func(cur_full_info_path, self.device, submodules_list, **kwargs)
             results_dict[dimension] = results
         output_name = os.path.join(self.output_path, name+'_eval_results.json')
+        csv_name = os.path.join(self.output_path, name+'_eval_results.csv')
         if get_rank() == 0:
             save_json(results_dict, output_name)
             print0(f'Evaluation results saved to {output_name}')
+            with open(csv_name, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerow(['dimension', 'score'])
+                for dim, val in results_dict.items():
+                    score = val[0] if isinstance(val, (list, tuple)) else val
+                    writer.writerow([dim, score])
+            print0(f'Evaluation results saved to {csv_name}')
