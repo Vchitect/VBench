@@ -31,7 +31,8 @@ def parse_args():
     parser.add_argument(
         "--dimension",
         nargs='+',
-        required=True,
+        required=False,
+        default=["subject_consistency", "background_consistency", "aesthetic_quality", "imaging_quality", "temporal_style", "overall_consistency", "human_action", "temporal_flickering", "motion_smoothness", "dynamic_degree"],
         help="list of evaluation dimensions, usage: --dimension <dim_1> <dim_2>",
     )
     parser.add_argument(
