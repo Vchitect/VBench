@@ -15,6 +15,10 @@ class VBenchI2V(VBench):
         return self.i2v_dims + self.quality_dims
 
     def evaluate(self, videos_path, name, dimension_list=None, custom_image_folder=None, mode='vbench_standard', local=False, read_frame=False, resolution="1-1", **kwargs):
+        if os.path.isdir(videos_path):
+            video_files = [f for f in os.listdir(videos_path) if os.path.splitext(f)[1].lower() in ('.mp4', '.avi', '.mov', '.mkv', '.webm')]
+            if not video_files:
+                raise ValueError(f"No video files found in '{videos_path}'. Evaluation aborted.")
         results_dict = {}
         if dimension_list is None:
             dimension_list = self.build_full_dimension_list()
