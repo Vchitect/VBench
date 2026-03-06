@@ -171,6 +171,55 @@ class VBench(object):
         return cur_full_info_path
 
 
+    def _write_csvs(self, results_dict, prefix, output_name, csv_name):
+        save_json(results_dict, output_name)
+        # per-dimension CSVs
+        for dim, val in results_dict.items():
+            if not (isinstance(val, (list, tuple)) and len(val) > 1 and isinstance(val[1], list)):
+                continue
+            videos = val[1]
+            extra_keys = [k for k in (videos[0].keys() if videos else [])
+                          if k not in ('video_path', 'video_results')]
+            dim_path = os.path.join(self.output_path, f'{prefix}_{dim}.csv')
+            with open(dim_path, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerow(['video_path', 'video_results'] + extra_keys)
+                for v in videos:
+                    writer.writerow([v.get('video_path', ''), v.get('video_results', '')] +
+                                    [v.get(k, '') for k in extra_keys])
+        # overall CSV
+        overall_path = os.path.join(self.output_path, f'{prefix}_overall.csv')
+        with open(overall_path, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerow(['dimension', 'overall_score'])
+            for dim, val in results_dict.items():
+                score = val[0] if isinstance(val, (list, tuple)) else val
+                writer.writerow([dim, score])
+        # combined CSV
+        extra_keys = []
+        for val in results_dict.values():
+            if isinstance(val, (list, tuple)) and len(val) > 1 and isinstance(val[1], list):
+                for entry in val[1]:
+                    for k in entry:
+                        if k not in ('video_path', 'video_results') and k not in extra_keys:
+                            extra_keys.append(k)
+        with open(csv_name, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerow(['dimension', 'overall_score'])
+            for dim, val in results_dict.items():
+                score = val[0] if isinstance(val, (list, tuple)) else val
+                writer.writerow([dim, score])
+            writer.writerow([])
+            writer.writerow(['dimension', 'video_path', 'video_results'] + extra_keys)
+            for dim, val in results_dict.items():
+                if not (isinstance(val, (list, tuple)) and len(val) > 1 and isinstance(val[1], list)):
+                    continue
+                for entry in val[1]:
+                    row = [dim, entry.get('video_path', ''), entry.get('video_results', '')]
+                    row += [entry.get(k, '') for k in extra_keys]
+                    writer.writerow(row)
+        print0(f'[after {list(results_dict.keys())[-1]}] CSVs updated in {self.output_path}')
+
     def preload(self, dimension_list, local=False, read_frame=False):
         """Download/verify all model checkpoints for the given dimensions."""
         if dimension_list is None:
@@ -194,6 +243,10 @@ class VBench(object):
                 f"Mode: {mode}. Check that filenames match the expected pattern (e.g. 'prompt-0.mp4')."
             )
 
+        prefix = os.path.basename(os.path.normpath(os.path.dirname(videos_path)))
+        output_name = os.path.join(self.output_path, name+'_eval_results.json')
+        csv_name = os.path.join(self.output_path, name+'_eval_results.csv')
+
         for dimension in dimension_list:
             try:
                 dimension_module = importlib.import_module(f'vbench.{dimension}')
@@ -201,37 +254,11 @@ class VBench(object):
             except Exception as e:
                 raise NotImplementedError(f'UnImplemented dimension {dimension}!, {e}')
             submodules_list = submodules_dict[dimension]
-            print0(f'cur_full_info_path: {cur_full_info_path}') # TODO: to delete
             results = evaluate_func(cur_full_info_path, self.device, submodules_list, **kwargs)
             results_dict[dimension] = results
-        output_name = os.path.join(self.output_path, name+'_eval_results.json')
-        csv_name = os.path.join(self.output_path, name+'_eval_results.csv')
+            if get_rank() == 0:
+                self._write_csvs(results_dict, prefix, output_name, csv_name)
+
         if get_rank() == 0:
-            save_json(results_dict, output_name)
             print0(f'Evaluation results saved to {output_name}')
-            # collect all extra per-video keys across all dimensions
-            extra_keys = []
-            for val in results_dict.values():
-                if isinstance(val, (list, tuple)) and len(val) > 1 and isinstance(val[1], list):
-                    for entry in val[1]:
-                        for k in entry:
-                            if k not in ('video_path', 'video_results') and k not in extra_keys:
-                                extra_keys.append(k)
-            with open(csv_name, 'w', newline='', encoding='utf-8') as f:
-                writer = csv.writer(f)
-                # summary block
-                writer.writerow(['dimension', 'overall_score'])
-                for dim, val in results_dict.items():
-                    score = val[0] if isinstance(val, (list, tuple)) else val
-                    writer.writerow([dim, score])
-                writer.writerow([])
-                # per-video detail block
-                writer.writerow(['dimension', 'video_path', 'video_results'] + extra_keys)
-                for dim, val in results_dict.items():
-                    if not (isinstance(val, (list, tuple)) and len(val) > 1 and isinstance(val[1], list)):
-                        continue
-                    for entry in val[1]:
-                        row = [dim, entry.get('video_path', ''), entry.get('video_results', '')]
-                        row += [entry.get(k, '') for k in extra_keys]
-                        writer.writerow(row)
             print0(f'Evaluation results saved to {csv_name}')
