@@ -7,7 +7,7 @@ set ALL_DIMS=subject_consistency background_consistency aesthetic_quality imagin
 
 :: Parse --videos_path and --output_path from args
 set VIDEOS_PATH=
-set OUTPUT_PATH=./evaluation_results
+set OUTPUT_PATH=
 set _NEXT=
 for %%A in (%*) do (
     if defined _NEXT (
@@ -20,11 +20,14 @@ for %%A in (%*) do (
     )
 )
 
-:: Get basename of videos_path for CSV prefix
+:: Get parent folder name of videos_path for subfolder + CSV prefix
 set FOLDER_NAME=results
 if defined VIDEOS_PATH (
-    for %%F in ("!VIDEOS_PATH!") do set FOLDER_NAME=%%~nxF
+    for %%F in ("!VIDEOS_PATH!\..") do set FOLDER_NAME=%%~nxF
 )
+
+:: Default output_path to evaluation_results\<folder_name> subfolder
+if not defined OUTPUT_PATH set OUTPUT_PATH=./evaluation_results/!FOLDER_NAME!
 
 :: If first arg doesn't start with --, treat it as a shorthand dimension name
 set FIRST_ARG=%~1
@@ -40,7 +43,7 @@ if defined FIRST_ARG (
         shift
         goto argloop
         :argdone
-        python evaluate.py !REST! --dimension !DIM! --mode custom_input
+        python evaluate.py !REST! --dimension !DIM! --mode custom_input --output_path "!OUTPUT_PATH!"
         goto :postprocess
     )
 )
@@ -48,9 +51,9 @@ if defined FIRST_ARG (
 :: Inject --dimension ALL_DIMS if not already specified
 echo.%* | findstr /i /c:"--dimension" >nul
 if errorlevel 1 (
-    python evaluate.py %* --dimension %ALL_DIMS% --mode custom_input
+    python evaluate.py %* --dimension %ALL_DIMS% --mode custom_input --output_path "!OUTPUT_PATH!"
 ) else (
-    python evaluate.py %* --mode custom_input
+    python evaluate.py %* --mode custom_input --output_path "!OUTPUT_PATH!"
 )
 
 :postprocess
