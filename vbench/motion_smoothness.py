@@ -171,7 +171,7 @@ class MotionSmoothness:
 def motion_smoothness(motion, video_list):
     sim = []
     video_results = []
-    for video_path in tqdm(video_list, disable=get_rank() > 0):
+    for video_path in tqdm(video_list, desc='motion_smoothness', disable=get_rank() > 0):
         tqdm.write(video_path)
         score_per_video = motion.motion_score(video_path)
         video_results.append({'video_path': video_path, 'video_results': score_per_video})

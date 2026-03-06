@@ -50,7 +50,7 @@ def laion_aesthetic(aesthetic_model, clip_model, video_list, device):
     aesthetic_avg = 0.0
     num = 0
     video_results = []
-    for video_path in tqdm(video_list, disable=get_rank() > 0):
+    for video_path in tqdm(video_list, desc='aesthetic_quality', disable=get_rank() > 0):
         tqdm.write(video_path)
         images = load_video(video_path)
         image_transform = clip_transform(224)

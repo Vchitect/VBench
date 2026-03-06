@@ -25,7 +25,7 @@ def background_consistency(clip_model, preprocess, video_list, device, read_fram
     cnt = 0
     video_results = []
     image_transform = clip_transform(224)
-    for video_path in tqdm(video_list, disable=get_rank() > 0):
+    for video_path in tqdm(video_list, desc='background_consistency', disable=get_rank() > 0):
         tqdm.write(video_path)
         video_sim = 0.0
         cnt_per_video = 0

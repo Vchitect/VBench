@@ -52,7 +52,7 @@ def cal_score(video_path):
 def temporal_flickering(video_list):
     sim = []
     video_results = []
-    for video_path in tqdm(video_list, disable=get_rank() > 0):
+    for video_path in tqdm(video_list, desc='temporal_flickering', disable=get_rank() > 0):
         tqdm.write(video_path)
         try:
             score_per_video = cal_score(video_path)

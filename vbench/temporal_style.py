@@ -44,7 +44,7 @@ def temporal_style(clip_model, video_dict, tokenizer, device, sample="middle"):
     sim = []
     video_results = []
     image_transform = clip_transform(224)
-    for info in tqdm(video_dict, disable=get_rank() > 0):
+    for info in tqdm(video_dict, desc='temporal_style', disable=get_rank() > 0):
         query = info['prompt']
         # text = clip.tokenize([query]).to(device)
         video_list = info['video_list']

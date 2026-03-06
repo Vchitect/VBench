@@ -73,7 +73,7 @@ def human_action(umt_path, video_list, device):
     cnt= 0
     cor_num = 0
     video_results = []
-    for video_path in tqdm(video_list, disable=get_rank() > 0):
+    for video_path in tqdm(video_list, desc='human_action', disable=get_rank() > 0):
         tqdm.write(video_path)
         cor_num_per_video = 0
         video_label_ls = video_path.split('/')[-1].lower().split('-')[0].split("person is ")[-1].split('_')[0]

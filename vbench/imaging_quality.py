@@ -42,7 +42,7 @@ def technical_quality(model, video_list, device, **kwargs):
     else:
         preprocess_mode = kwargs['imaging_quality_preprocessing_mode']
     video_results = []
-    for video_path in tqdm(video_list, disable=get_rank() > 0):
+    for video_path in tqdm(video_list, desc='imaging_quality', disable=get_rank() > 0):
         tqdm.write(video_path)
         images = load_video(video_path)
         images = transform(images, preprocess_mode)
