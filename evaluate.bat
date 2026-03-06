@@ -5,6 +5,27 @@ set ALL_DIMS=subject_consistency background_consistency aesthetic_quality imagin
 :: object_class multiple_objects needs perceptron2
 :: appearance_style scene spatial_relationship color not supported for custom_input
 
+:: Parse --videos_path and --output_path from args
+set VIDEOS_PATH=
+set OUTPUT_PATH=./evaluation_results
+set _NEXT=
+for %%A in (%*) do (
+    if defined _NEXT (
+        if "!_NEXT!"=="videos_path" set VIDEOS_PATH=%%~A
+        if "!_NEXT!"=="output_path" set OUTPUT_PATH=%%~A
+        set _NEXT=
+    ) else (
+        if "%%~A"=="--videos_path" set _NEXT=videos_path
+        if "%%~A"=="--output_path" set _NEXT=output_path
+    )
+)
+
+:: Get basename of videos_path for CSV prefix
+set FOLDER_NAME=results
+if defined VIDEOS_PATH (
+    for %%F in ("!VIDEOS_PATH!") do set FOLDER_NAME=%%~nxF
+)
+
 :: If first arg doesn't start with --, treat it as a shorthand dimension name
 set FIRST_ARG=%~1
 if defined FIRST_ARG (
@@ -20,7 +41,7 @@ if defined FIRST_ARG (
         goto argloop
         :argdone
         python evaluate.py !REST! --dimension !DIM! --mode custom_input
-        goto :eof
+        goto :postprocess
     )
 )
 
@@ -31,5 +52,8 @@ if errorlevel 1 (
 ) else (
     python evaluate.py %* --mode custom_input
 )
+
+:postprocess
+python write_csvs.py --output_path "!OUTPUT_PATH!" --prefix "!FOLDER_NAME!"
 
 endlocal
