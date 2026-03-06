@@ -187,6 +187,7 @@ class VBench(object):
                 for v in videos:
                     writer.writerow([v.get('video_path', ''), v.get('video_results', '')] +
                                     [v.get(k, '') for k in extra_keys])
+            print0(f'[write_csvs] {dim_path}')
         # overall CSV
         overall_path = os.path.join(self.output_path, f'{prefix}_overall.csv')
         with open(overall_path, 'w', newline='', encoding='utf-8') as f:
@@ -195,6 +196,7 @@ class VBench(object):
             for dim, val in results_dict.items():
                 score = val[0] if isinstance(val, (list, tuple)) else val
                 writer.writerow([dim, score])
+        print0(f'[write_csvs] {overall_path}')
         # combined CSV
         extra_keys = []
         for val in results_dict.values():
@@ -218,7 +220,7 @@ class VBench(object):
                     row = [dim, entry.get('video_path', ''), entry.get('video_results', '')]
                     row += [entry.get(k, '') for k in extra_keys]
                     writer.writerow(row)
-        print0(f'[after {list(results_dict.keys())[-1]}] CSVs updated in {self.output_path}')
+        print0(f'[write_csvs] {csv_name}')
 
     def preload(self, dimension_list, local=False, read_frame=False):
         """Download/verify all model checkpoints for the given dimensions."""
