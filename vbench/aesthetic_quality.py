@@ -21,24 +21,19 @@ batch_size = 32
 
 
 def get_aesthetic_model(cache_folder):
-    """load the aethetic model"""
-    path_to_model = cache_folder + "/sa_0_4_vit_l_14_linear.pth"
+    """load the aesthetic model"""
+    path_to_model = os.path.join(cache_folder, "sa_0_4_vit_l_14_linear.pth")
     if not os.path.exists(path_to_model):
         os.makedirs(cache_folder, exist_ok=True)
-        url_model = (
-            "https://github.com/LAION-AI/aesthetic-predictor/blob/main/sa_0_4_vit_l_14_linear.pth?raw=true"
-        )
-        # download aesthetic predictor
-        if not os.path.isfile(path_to_model):
-            try:
-                print(f'trying urlretrieve to download {url_model} to {path_to_model}')
-                urlretrieve(url_model, path_to_model) # unable to download https://github.com/LAION-AI/aesthetic-predictor/blob/main/sa_0_4_vit_l_14_linear.pth?raw=true to pretrained/aesthetic_model/emb_reader/sa_0_4_vit_l_14_linear.pth 
-            except:
-                print(f'unable to download {url_model} to {path_to_model} using urlretrieve, trying wget')
-                wget_command = ['wget', url_model, '-P', os.path.dirname(path_to_model)]
-                subprocess.run(wget_command)
+        url_model = "https://raw.githubusercontent.com/LAION-AI/aesthetic-predictor/main/sa_0_4_vit_l_14_linear.pth"
+        try:
+            print(f'trying urlretrieve to download {url_model} to {path_to_model}')
+            urlretrieve(url_model, path_to_model)
+        except Exception as e:
+            print(f'urlretrieve failed: {e}, trying wget')
+            subprocess.run(['wget', '-O', path_to_model, url_model], check=True)
     m = nn.Linear(768, 1)
-    s = torch.load(path_to_model)
+    s = torch.load(path_to_model, map_location="cpu")
     m.load_state_dict(s)
     m.eval()
     return m
@@ -95,3 +90,4 @@ def compute_aesthetic_quality(json_dir, device, submodules_list, **kwargs):
         video_results = gather_list_of_dict(video_results)
         all_results = sum([d['video_results'] for d in video_results]) / len(video_results)
     return all_results, video_results
+    
