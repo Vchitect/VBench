@@ -246,7 +246,7 @@ vbench evaluate --videos_path "sampled_videos/lavie/human_action" --dimension "h
 ##### Python
 ```python
 from vbench import VBench
-my_VBench = VBench(device, <path/to/VBench_full_info.json>, <path/to/save/dir>)
+my_VBench = VBench(<your_device: cpu/cuda/npu>, <path/to/VBench_full_info.json>, <path/to/save/dir>)
 my_VBench.evaluate(
     videos_path = <video_path>,
     name = <name>,

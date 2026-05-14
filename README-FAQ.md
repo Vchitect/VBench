@@ -33,3 +33,5 @@ A: Use [**VBench**](https://github.com/Vchitect/VBench?tab=readme-ov-file#usage)
 Use [**VBench-Long**](https://github.com/Vchitect/VBench/tree/master/vbench2_beta_long) for evaluating videos 5.0 seconds or longer (≥ 5.0s).
 Each benchmark is optimized for its respective video length to ensure fair and consistent evaluation.
 
+**Q: Does VBench support running on Huawei Ascend NPU?**<br>
+A: Yes. [Ascend Extension for PyTorch](https://github.com/Ascend/pytorch) develops `torch_npu` to adapt Ascend NPU to PyTorch so that developers who use the PyTorch can obtain powerful compute capabilities of Ascend AI Processors. Please install `torch` and `torch_npu` before installing vbench if you are using Ascend NPU devices. For more details, please refer to the official [installation guide](https://github.com/Ascend/pytorch#installation).
