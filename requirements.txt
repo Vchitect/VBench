@@ -18,7 +18,6 @@ pyiqa
 lvis
 fairscale>=0.4.4
 fvcore
-easydict
 urllib3
 boto3
 omegaconf
