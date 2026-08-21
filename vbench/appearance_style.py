@@ -80,5 +80,5 @@ def compute_appearance_style(json_dir, device, submodules_list, **kwargs):
     all_results, video_results = appearance_style(clip_model, video_dict, device)
     if get_world_size() > 1:
         video_results = gather_list_of_dict(video_results)
-        all_results = sum([d['cur_sim'] for d in video_results]) / len(video_results)
+        all_results = sum([d['video_results'] for d in video_results]) / len(video_results)
     return all_results, video_results
