@@ -15,9 +15,9 @@ neck_num_heads = [4, 8, _base_.last_stage_out_channels // 2 // 32]
 base_lr = 2e-3
 weight_decay = 0.05 / 2
 train_batch_size_per_gpu = 16
-text_model_name = '../pretrained_models/clip-vit-base-patch32-projection'
-# text_model_name = 'openai/clip-vit-base-patch32'
-text_model_name = '/mnt/petrelfs/zhengdian/code/ckpt/clip-vit-base-patch32'
+# text_model_name = '../pretrained_models/clip-vit-base-patch32-projection'
+text_model_name = 'openai/clip-vit-base-patch32'
+# text_model_name = '/mnt/petrelfs/zhengdian/code/ckpt/clip-vit-base-patch32'
 
 # scaling model from X to XL
 deepen_factor = 1.0
