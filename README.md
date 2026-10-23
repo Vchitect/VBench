@@ -176,6 +176,11 @@ See [model info](https://github.com/Vchitect/VBench/tree/master/sampled_videos#w
 
 <a name="installation"></a>
 ## :hammer: Installation
+
+For **Ascend NPU**, follow the [Ascend NPU guide](docs/Quick-start-Ascend.md)
+for environment setup, source installation, usage examples, and current
+compatibility. The installation instructions below target CUDA.
+
 ### Install with pip 
 ```
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118 # or any other PyTorch version with CUDA<=12.1
