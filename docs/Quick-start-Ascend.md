@@ -1,15 +1,13 @@
-# Quick start: VBench on Ascend NPU
+# Quick start: human_action on Ascend NPU
 
-Select one Ascend NPU through the installed CLI, source entry point or public
-Python API. Device selection applies across the original VBench evaluators and
-does not restrict evaluation to a particular dimension. This quick start uses
-`human_action` as its example, retaining the UMT model, 16-frame sampling and
-original scoring and JSON result format.
+Run the original VBench `human_action` example on one Ascend NPU, using either
+the installed CLI or the public Python API. The UMT model, 16-frame sampling,
+preprocessing, scoring and JSON result format are unchanged.
 
 This guide uses five original LaVie videos for **A person is strumming guitar**.
 It demonstrates the evaluation flow; it does not reproduce a full benchmark or
-leaderboard score. See the per-dimension status below before selecting other
-evaluators. Multiple NPUs, VBench++ and VBench-2.0 are outside this guide's scope.
+leaderboard score. Other dimensions, multiple NPUs, VBench++ and VBench-2.0 are
+outside the scope of this support.
 
 ## Prerequisites
 
@@ -90,9 +88,8 @@ python -m pip install --no-build-isolation -e . \
 python -c "import vbench.human_action; print('human_action import: OK')"
 ```
 
-No separate dependency profile is required. Evaluators such as the GRiT-based
-dimensions require additional third-party components described in the main
-README. A selectable NPU device does not guarantee those components support it.
+No separate dependency profile is required. The supported NPU evaluation path
+in this guide remains limited to single-device `human_action`.
 
 ## Prepare the five official videos
 
@@ -136,7 +133,8 @@ scoring code are used.
 
 ## Evaluate with the CLI
 
-Use the installed `vbench evaluate` entry point for NPU evaluation:
+Use the installed `vbench evaluate` entry point for NPU evaluation, not the
+legacy CUDA-only `python evaluate.py` entry point:
 
 ```bash
 vbench evaluate \
@@ -148,34 +146,23 @@ vbench evaluate \
     --output_path evaluation_results/npu-cli
 ```
 
-The source entry point accepts the same device selection:
-
-```bash
-python evaluate.py \
-    --device npu:0 \
-    --dimension human_action \
-    --videos_path sampled_videos/lavie/human_action \
-    --full_json_dir human_action_full_info.json \
-    --output_path evaluation_results/npu-source
-```
-
 An explicit NPU request fails if `torch_npu` or the device is unavailable; it
-does not fall back to CPU or CUDA. Multi-NPU launches are rejected. Both command
-line entry points accept multiple dimensions after `--dimension`, provided the
-input videos and metadata cover them. Existing CUDA launches keep their default
-device and distributed initialization.
+does not fall back to CPU or CUDA. The CLI rejects multi-NPU launches and other
+dimensions for this NPU path. Existing CUDA commands keep their default device
+and distributed initialization.
 
 ## Evaluate with the Python API
 
-The public API accepts a device string and initializes the selected NPU. It
-also accepts a `torch.device`; import `torch_npu` before constructing an NPU
-device object yourself. Use the same input files as above:
+The public API already accepts a PyTorch device. Import `torch_npu` before
+creating the NPU device, then use the same input files as above:
 
 ```python
+import torch
+import torch_npu
 from vbench import VBench
 
 benchmark = VBench(
-    "npu:0",
+    torch.device("npu:0"),
     "human_action_full_info.json",
     "evaluation_results/npu-api",
 )
@@ -191,35 +178,3 @@ The API example writes `evaluation_results/npu-api/lavie_human_action_eval_resul
 Each result contains the aggregate `human_action` score and per-video records.
 A zero score is valid; completing the evaluation does not imply the generated
 videos perform the requested action correctly.
-
-## Per-dimension NPU status
-
-The common device path is enabled for all 16 original VBench dimensions. The
-table records implementation and validation status, not a claim of successful
-NPU benchmark results for every evaluator. This branch still needs fresh NPU
-end-to-end testing, including installation with the full dependency list.
-
-| Dimension | Evaluator | NPU validation status |
-| --- | --- | --- |
-| `human_action` | UMT | Example provided; this branch awaits hardware regression |
-| `subject_consistency` | DINO | Device passed through; model/operator validation pending |
-| `background_consistency` | CLIP | Device passed through; model/operator validation pending |
-| `aesthetic_quality` | CLIP + aesthetic predictor | Device passed through; model/operator validation pending |
-| `imaging_quality` | MUSIQ / PyIQA | Device passed through; dependency/operator validation pending |
-| `object_class` | GRiT / Detectron2 | Device configuration fixed; NPU inference errors propagate; operators pending |
-| `multiple_objects` | GRiT / Detectron2 | Device configuration fixed; third-party operators pending |
-| `color` | GRiT / Detectron2 | Device configuration fixed; third-party operators pending |
-| `spatial_relationship` | GRiT / Detectron2 | Device configuration fixed; third-party operators pending |
-| `scene` | Tag2Text | Device passed through; model/operator validation pending |
-| `temporal_style` | ViCLIP | Device passed through; model/operator validation pending |
-| `overall_consistency` | ViCLIP | Device passed through; model/operator validation pending |
-| `temporal_flickering` | CPU pixel metric | Keeps its CPU algorithm; end-to-end regression pending |
-| `motion_smoothness` | AMT | NPU memory handling added; model/operator validation pending |
-| `dynamic_degree` | RAFT | Default path disables CUDA alternate correlation and mixed precision; validation pending |
-| `appearance_style` | CLIP | Device passed through; model/operator validation pending |
-
-CPU video decoding and preprocessing remain part of the pipeline. Choosing
-`--device npu:0` does not convert custom CUDA extensions into NPU kernels. If an
-evaluator reports an unsupported operator, that dimension needs additional
-adaptation before its scores can be used. The separate `vbench static_filter`
-utility is not included in this evaluation-device change.

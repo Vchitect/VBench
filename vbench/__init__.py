@@ -6,12 +6,11 @@ from itertools import chain
 from pathlib import Path
 
 from .distributed import get_rank, print0  
-from .device import resolve_device
 
 
 class VBench(object):
     def __init__(self, device, full_info_dir, output_path):
-        self.device = resolve_device(device)         # cuda, cpu or single-process npu
+        self.device = device                        # cuda or cpu
         self.full_info_dir = full_info_dir          # full json file that VBench originally provides
         self.output_path = output_path              # output directory to save VBench results
         os.makedirs(self.output_path, exist_ok=True)

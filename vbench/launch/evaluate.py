@@ -1,8 +1,7 @@
 import torch
 import os
 from vbench import VBench
-from vbench.distributed import print0
-from vbench.device import initialize_device
+from vbench.distributed import dist_init, print0
 from datetime import datetime
 import argparse
 import json
@@ -11,7 +10,7 @@ def parse_args():
 
     CUR_DIR = os.path.dirname(os.path.abspath(__file__))
     parser = argparse.ArgumentParser(description='VBench', formatter_class=argparse.RawTextHelpFormatter)
-    parser.add_argument('--device', default='cuda', help='Evaluation device: cuda (default) or npu:<index> (single NPU)')
+    parser.add_argument('--device', default='cuda', help='Evaluation device: cuda (default) or npu:<index> for single-NPU human_action')
     parser.add_argument(
         "--output_path",
         type=str,
@@ -105,10 +104,27 @@ def parse_args():
     return args
 
 
+def initialize_device(device, dimensions):
+    if device == 'cuda':
+        dist_init()
+    elif device.startswith('npu:'):
+        if int(os.environ.get('WORLD_SIZE', '1')) != 1:
+            raise RuntimeError('Ascend evaluation supports a single NPU only')
+        if dimensions != ['human_action']:
+            raise ValueError('Ascend NPU support is currently limited to human_action')
+        import torch_npu
+        if not torch.npu.is_available():
+            raise RuntimeError('The requested Ascend NPU is not available')
+        torch.npu.set_device(device)
+    else:
+        raise ValueError(f'Unsupported evaluation device: {device}; use cuda or npu:<index>')
+    return torch.device(device)
+
+
 def main():
     args = parse_args()
 
-    device = initialize_device(args.device)
+    device = initialize_device(args.device, args.dimension)
     print0(f'args: {args}')
     my_VBench = VBench(device, args.full_json_dir, args.output_path)
     

@@ -88,7 +88,6 @@ def get_parser(device, model_weight=f"{CACHE_DIR}/grit_model/grit_b_densecap_obj
     arg_dict = {'config_file': f"{CUR_DIR}/configs/GRiT_B_DenseCap_ObjectDet.yaml", 'cpu': False, 'confidence_threshold': 0.5, 'test_task': 'DenseCap', 'opts': ["MODEL.WEIGHTS", model_weight]}
     if device.type == "cpu":
         arg_dict["cpu"] = True
-    arg_dict["opts"] += ["MODEL.DEVICE", str(device)]
     return arg_dict
 
 def image_caption_api(image_src, device, model_weight):
