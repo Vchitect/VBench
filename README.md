@@ -177,9 +177,9 @@ See [model info](https://github.com/Vchitect/VBench/tree/master/sampled_videos#w
 <a name="installation"></a>
 ## :hammer: Installation
 
-For **Ascend NPU support**, see the [Ascend NPU guide](docs/Quick-start-Ascend.md)
-for environment setup, installation, device selection and usage examples.
-The guide also describes the current compatibility scope. CUDA remains the default.
+For **Ascend NPU**, follow the [Ascend NPU guide](docs/Quick-start-Ascend.md)
+for environment setup, source installation, usage examples, and current
+compatibility. The installation instructions below target CUDA.
 
 ### Install with pip 
 ```
