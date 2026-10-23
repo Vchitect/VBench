@@ -7,20 +7,28 @@ def check_torch_version():
     try:
         import torch
         if not torch.cuda.is_available():
-            raise RuntimeError("\033[91mCUDA is not available. Please install a CUDA 11- or 12.1-enabled PyTorch version.\033[0m")
+            try:
+                import torch_npu
+            except ImportError:
+                pass
+            else:
+                if torch.npu.is_available():
+                    return
+            raise RuntimeError("\033[91mCUDA or Ascend NPU is not available. Please install a supported PyTorch accelerator stack.\033[0m")
 
         cuda_version = torch.version.cuda
         print(cuda_version)
         if cuda_version not in ["11.6", "11.7", "11.8", "12.1"]:
             raise RuntimeError(f"\033[91mUnsupported CUDA version: {cuda_version}. Please install PyTorch with 11.6<=CUDA<=12.1.\033[0m")
     except:
-        print("\033[93mPlease install torch and torchvision compiled with cuda 11.8 before installing vbench\033[0m")
+        print("\033[93mPlease install a supported CUDA or Ascend NPU PyTorch stack before installing vbench\033[0m")
         print("\033[93mFor CUDA 11.8, run:\033[0m")
         print("\033[93m    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118\033[0m")
         print("\033[93mFor CUDA 12.1, run:\033[0m")
         print("\033[93m    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121\033[0m")
         print("\033[93mFor CUDA 11 with PyTorch < 2.0 run:\033[0m")
         print("\033[93m    pip install torch==1.13.1 torchvision==0.14.1\033[0m")
+        print("\033[93mFor Ascend NPU, see docs/Quick-start-Ascend.md for matching torch, torch_npu and CANN versions.\033[0m")
         raise
 
 def fetch_readme():

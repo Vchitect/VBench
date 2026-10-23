@@ -1,5 +1,6 @@
 include version.txt 
 include requirements.txt
+include requirements-human-action.txt
 recursive-include vbench/third_party *.yaml
 recursive-include vbench *.json
 recursive-include vbench *.txt

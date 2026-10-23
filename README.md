@@ -176,6 +176,11 @@ See [model info](https://github.com/Vchitect/VBench/tree/master/sampled_videos#w
 
 <a name="installation"></a>
 ## :hammer: Installation
+
+For the single-device **Ascend NPU `human_action`** example, see the
+[Ascend NPU quick start](docs/Quick-start-Ascend.md). CUDA remains the default;
+other evaluation dimensions and multi-NPU evaluation are not covered by this support.
+
 ### Install with pip 
 ```
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118 # or any other PyTorch version with CUDA<=12.1

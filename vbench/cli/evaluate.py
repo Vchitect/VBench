@@ -5,6 +5,7 @@ import argparse
 CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 def register_subparsers(subparser):
     parser = subparser.add_parser('evaluate', formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument('--device', default='cuda', help='Evaluation device: cuda (default) or npu:<index> for single-NPU human_action')
     parser.add_argument(
         "--ngpus",
         type=int,
@@ -110,6 +111,8 @@ def stringify_cmd(cmd_ls):
 
 ## TODO
 def evaluate(args):
+    if getattr(args, 'device', 'cuda').startswith('npu') and args.ngpus != 1:
+        raise ValueError('Ascend evaluation supports a single NPU only; use --ngpus=1')
     cmd = ['python', '-m', 'torch.distributed.run', '--standalone', '--nproc_per_node', str(args.ngpus), f'{CUR_DIR}/../launch/evaluate.py']
     args_dict = vars(args)
     for arg in args_dict:
@@ -121,5 +124,5 @@ def evaluate(args):
         cmd.append(f'--{arg}')
         cmd.append(str(args_dict[arg]))
     
-    subprocess.run(stringify_cmd(cmd), shell=True)
+    subprocess.run(stringify_cmd(cmd), shell=True, check=True)
 
