@@ -79,19 +79,17 @@ cmake --build decord-src/build --parallel 4
 python -m pip install --no-build-isolation --no-deps ./decord-src/python
 ```
 
-Install only the dependencies used by `human_action`, keeping the prepared NPU
-PyTorch stack. The full dependency list includes other evaluators that are not
-needed for this example, so `--no-deps` is intentional for this limited install:
+Install VBench normally, using the repository's existing `requirements.txt`.
+Keep the prepared NPU PyTorch stack and the reference preprocessing versions:
 
 ```bash
-python -m pip install -r requirements-human-action.txt \
+python -m pip install --no-build-isolation -e . \
     "timm==0.9.12" "numpy==1.26.4" "opencv-python==4.11.0.86"
-python -m pip install --no-build-isolation --no-deps -e .
 python -c "import vbench.human_action; print('human_action import: OK')"
 ```
 
-This is a source-only installation path for the example, not a claim that all
-VBench evaluators work with the minimal dependency set or on Ascend NPU.
+No separate dependency profile is required. The supported NPU evaluation path
+in this guide remains limited to single-device `human_action`.
 
 ## Prepare the five official videos
 

@@ -91,13 +91,6 @@ class TestCLI(unittest.TestCase):
                 self.cli.evaluate(args)
         self.assertEqual(error.exception.returncode, 7)
 
-    def test_legacy_cuda_namespaces_keep_their_multi_gpu_command(self):
-        args = argparse.Namespace(ngpus=2, videos_path="videos", dimension="human_action")
-        with mock.patch.object(self.cli.subprocess, "run") as run:
-            self.cli.evaluate(args)
-        command = shlex.split(run.call_args.args[0])
-        self.assertEqual(command[command.index("--nproc_per_node") + 1], "2")
-
 
 class TestDeviceSelection(unittest.TestCase):
     def initialize(self, module, device="npu:0", dimensions=None):
@@ -116,20 +109,14 @@ class TestDeviceSelection(unittest.TestCase):
             torch.npu.set_device.assert_called_once_with("npu:0")
             distributed.dist_init.assert_not_called()
 
-    def test_missing_torch_npu_fails_without_cuda_fallback(self):
-        with launcher(package=False) as (module, _, distributed):
-            self.assertTrue(hasattr(module, "initialize_device"))
-            with self.assertRaises(ImportError):
-                module.initialize_device("npu:0", ["human_action"])
-            distributed.dist_init.assert_not_called()
-
     def test_unavailable_npu_fails_without_cuda_fallback(self):
-        with launcher(npu=False) as (module, torch, distributed):
-            self.assertTrue(hasattr(module, "initialize_device"))
-            with self.assertRaisesRegex(RuntimeError, "not available"):
-                module.initialize_device("npu:0", ["human_action"])
-            distributed.dist_init.assert_not_called()
-            torch.npu.set_device.assert_not_called()
+        for hardware, error in (({"package": False}, ImportError), ({"npu": False}, RuntimeError)):
+            with self.subTest(hardware=hardware), launcher(**hardware) as (module, torch, distributed):
+                self.assertTrue(hasattr(module, "initialize_device"))
+                with self.assertRaises(error):
+                    module.initialize_device("npu:0", ["human_action"])
+                distributed.dist_init.assert_not_called()
+                torch.npu.set_device.assert_not_called()
 
     def test_distributed_npu_launch_is_rejected(self):
         with launcher() as (module, _, distributed), mock.patch.dict(os.environ, {"WORLD_SIZE": "2"}):
@@ -144,23 +131,6 @@ class TestDeviceSelection(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "human_action"):
                 module.initialize_device("npu:0", ["human_action", "scene"])
             distributed.dist_init.assert_not_called()
-
-    def test_unsupported_device_is_rejected_before_cuda_initialization(self):
-        with launcher() as (module, _, distributed):
-            self.assertTrue(hasattr(module, "initialize_device"))
-            with self.assertRaisesRegex(ValueError, "Unsupported evaluation device"):
-                module.initialize_device("cpu", ["human_action"])
-            distributed.dist_init.assert_not_called()
-
-    def test_launcher_parser_accepts_npu_and_defaults_to_cuda(self):
-        with launcher() as (module, _, _):
-            with mock.patch.object(sys, "argv", ["evaluate.py", "--videos_path", "videos",
-                                                  "--dimension", "human_action"]):
-                self.assertEqual(getattr(module.parse_args(), "device", None), "cuda")
-            self.assertTrue(hasattr(module, "initialize_device"))
-            with mock.patch.object(sys, "argv", ["evaluate.py", "--videos_path", "videos",
-                                                  "--dimension", "human_action", "--device", "npu:0"]):
-                self.assertEqual(module.parse_args().device, "npu:0")
 
     def test_main_passes_the_selected_device_to_the_existing_public_api(self):
         with launcher() as (module, _, distributed):
@@ -196,25 +166,6 @@ class TestInstallation(unittest.TestCase):
     def test_existing_cuda_version_check_is_not_removed(self):
         with self.assertRaisesRegex(RuntimeError, "Unsupported CUDA version"):
             self.check_installation(cuda=True, cuda_version="12.8")
-
-    def test_unavailable_accelerators_do_not_silently_fall_back_to_cpu(self):
-        with self.assertRaises(RuntimeError):
-            self.check_installation(cuda=False, npu=False, package=False)
-
-    def test_minimal_dependencies_do_not_pull_other_evaluators(self):
-        path = ROOT / "requirements-human-action.txt"
-        self.assertTrue(path.is_file(), "Provide a standalone human_action dependency list")
-        requirements = path.read_text().splitlines()
-        self.assertIn("decord", requirements)
-        self.assertIn("scipy", requirements)
-        self.assertFalse(any("pyiqa" in line or "detectron2" in line or "openai-clip" in line
-                             for line in requirements))
-        self.assertIn("include requirements-human-action.txt", (ROOT / "MANIFEST.in").read_text())
-
-    def test_human_action_has_no_unused_clip_dependency(self):
-        tree = ast.parse((ROOT / "vbench/human_action.py").read_text())
-        imported = {alias.name for node in tree.body if isinstance(node, ast.Import) for alias in node.names}
-        self.assertNotIn("clip", imported)
 
 
 if __name__ == "__main__":

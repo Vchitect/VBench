@@ -1,9 +1,0 @@
-torch>=1.12
-torchvision>=0.13
-numpy<2.0.0
-Pillow
-timm>=0.9,<=1.0.12
-opencv-python
-decord
-tqdm
-scipy
