@@ -177,9 +177,11 @@ See [model info](https://github.com/Vchitect/VBench/tree/master/sampled_videos#w
 <a name="installation"></a>
 ## :hammer: Installation
 
-For the single-device **Ascend NPU `human_action`** example, see the
-[Ascend NPU quick start](docs/Quick-start-Ascend.md). CUDA remains the default;
-other evaluation dimensions and multi-NPU evaluation are not covered by this support.
+For **single-device Ascend NPU** evaluation, see the
+[Ascend NPU quick start and dimension status](docs/Quick-start-Ascend.md).
+The CLI, source entry point and Python API share device selection across evaluation
+dimensions. CUDA remains the default. Individual evaluators and their third-party
+operators still require NPU validation; multi-NPU evaluation is not supported.
 
 ### Install with pip 
 ```

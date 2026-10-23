@@ -29,8 +29,11 @@ def get_dect_from_grit(model, image_arrays):
     with torch.no_grad():
         for frame in image_arrays:
             try:
-                pred.append(set(model.run_caption_tensor(frame)[0][0][2]))
-            except:
+                captions = model.run_caption_tensor(frame)[0]
+                pred.append(set(captions[0][2]) if captions else set())
+            except Exception:
+                if torch.device(model.device).type == "npu":
+                    raise
                 pred.append(set())
     return pred
 

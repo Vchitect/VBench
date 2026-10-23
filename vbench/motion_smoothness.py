@@ -91,11 +91,12 @@ class MotionSmoothness:
 
 
     def initialization(self):
-        if self.device == 'cuda':
+        device_type = torch.device(self.device).type
+        if device_type in ('cuda', 'npu'):
             self.anchor_resolution = 1024 * 512
             self.anchor_memory = 1500 * 1024**2
             self.anchor_memory_bias = 2500 * 1024**2
-            self.vram_avail = torch.cuda.get_device_properties(self.device).total_memory
+            self.vram_avail = getattr(torch, device_type).get_device_properties(self.device).total_memory
             print("VRAM available: {:.1f} MB".format(self.vram_avail / 1024 ** 2))
         else:
             # Do not resize in cpu mode

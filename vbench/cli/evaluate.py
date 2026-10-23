@@ -1,11 +1,12 @@
 import os
 import subprocess
 import argparse
+import shlex
 
 CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 def register_subparsers(subparser):
     parser = subparser.add_parser('evaluate', formatter_class=argparse.RawTextHelpFormatter)
-    parser.add_argument('--device', default='cuda', help='Evaluation device: cuda (default) or npu:<index> for single-NPU human_action')
+    parser.add_argument('--device', default='cuda', help='Evaluation device: cuda (default) or npu:<index> (single NPU)')
     parser.add_argument(
         "--ngpus",
         type=int,
@@ -33,6 +34,7 @@ def register_subparsers(subparser):
     parser.add_argument(
         "--dimension",
         type=str,
+        nargs='+',
         required=True,
         help="list of evaluation dimensions, usage: --dimension <dim_1> <dim_2>",
     )
@@ -117,6 +119,14 @@ def evaluate(args):
     args_dict = vars(args)
     for arg in args_dict:
         if arg == "ngpus" or (args_dict[arg] == None) or arg == "func":
+            continue
+        if arg == "dimension":
+            dimensions = args_dict[arg]
+            if isinstance(dimensions, str):
+                dimensions = [dimensions]
+            dimensions = [name for value in dimensions for name in value.split()]
+            cmd.append('--dimension')
+            cmd.extend(shlex.quote(dimension) for dimension in dimensions)
             continue
         if arg in ["videos_path", "prompt", "prompt_file", "output_path", "full_json_dir"]:
             cmd.append(f"--{arg}=\"{str(args_dict[arg])}\"")

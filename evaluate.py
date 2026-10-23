@@ -1,7 +1,8 @@
 import torch
 import os
 from vbench import VBench
-from vbench.distributed import dist_init, print0
+from vbench.distributed import print0
+from vbench.device import initialize_device
 from datetime import datetime
 import argparse
 import json
@@ -10,6 +11,7 @@ def parse_args():
 
     CUR_DIR = os.path.dirname(os.path.abspath(__file__))
     parser = argparse.ArgumentParser(description='VBench', formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument('--device', default='cuda', help='Evaluation device: cuda (default) or npu:<index> (single NPU)')
     parser.add_argument(
         "--output_path",
         type=str,
@@ -106,9 +108,8 @@ def parse_args():
 def main():
     args = parse_args()
 
-    dist_init()
+    device = initialize_device(args.device)
     print0(f'args: {args}')
-    device = torch.device("cuda")
     my_VBench = VBench(device, args.full_json_dir, args.output_path)
     
     print0(f'start evaluation')
