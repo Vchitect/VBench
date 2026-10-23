@@ -1,13 +1,9 @@
-# Quick start: human_action on Ascend NPU
+# Ascend NPU support
 
-Run the original VBench `human_action` example on one Ascend NPU, using either
-the installed CLI or the public Python API. The UMT model, 16-frame sampling,
-preprocessing, scoring and JSON result format are unchanged.
-
-This guide uses five original LaVie videos for **A person is strumming guitar**.
-It demonstrates the evaluation flow; it does not reproduce a full benchmark or
-leaderboard score. Other dimensions, multiple NPUs, VBench++ and VBench-2.0 are
-outside the scope of this support.
+Use Ascend NPU with VBench through the `torch_npu` PyTorch extension. This guide
+covers environment preparation, source installation, NPU device selection and
+evaluation through the CLI and Python API. See [Compatibility](#compatibility)
+for the scope of the current implementation.
 
 ## Prerequisites
 
@@ -33,12 +29,13 @@ Reference environment:
 | timm / NumPy | 0.9.12 / 1.26.4 |
 | Decord | 0.6.0, CPU decoder |
 
-CPU Decord and torchvision handle input preprocessing; UMT inference runs on
-the NPU. `torch_npu` is optional for CUDA users and is not installed automatically.
+CPU Decord and torchvision handle video decoding and input preprocessing;
+the evaluation model uses the selected device. `torch_npu` is optional for CUDA
+users and is not installed automatically.
 
 ## Check the environment
 
-Activate your prepared Python environment, then load CANN and select one NPU:
+Activate your prepared Python environment, then load CANN and select an NPU:
 
 ```bash
 source /usr/local/Ascend/ascend-toolkit/set_env.sh
@@ -48,7 +45,7 @@ import torch
 import torch_npu
 
 assert torch.npu.is_available(), "Ascend NPU is not available"
-assert torch.npu.device_count() == 1, "Select one visible NPU for this example"
+assert torch.npu.device_count() >= 1, "No visible NPU"
 print("NPU:", torch.npu.get_device_name(0))
 PY
 ```
@@ -85,13 +82,31 @@ Keep the prepared NPU PyTorch stack and the reference preprocessing versions:
 ```bash
 python -m pip install --no-build-isolation -e . \
     "timm==0.9.12" "numpy==1.26.4" "opencv-python==4.11.0.86"
-python -c "import vbench.human_action; print('human_action import: OK')"
+python -c "import vbench; print('VBench import: OK')"
 ```
 
-No separate dependency profile is required. The supported NPU evaluation path
-in this guide remains limited to single-device `human_action`.
+VBench uses its existing dependency declarations; no separate NPU dependency
+profile is required.
 
-## Prepare the five official videos
+## Select an NPU device
+
+For the installed CLI, pass `--device npu:0` and use `--ngpus 1` to launch one
+evaluation process. For the Python API, import `torch_npu` and pass
+`torch.device("npu:0")` to `VBench`.
+
+The device index is relative to the devices exposed by `ASCEND_RT_VISIBLE_DEVICES`.
+An explicit NPU request fails if the extension or selected device is unavailable.
+CUDA remains the default when no CLI device is specified.
+
+## Example: evaluate videos
+
+The following example uses the original VBench `human_action` workflow and five
+official LaVie videos for **A person is strumming guitar**. It illustrates input
+preparation, device selection and result output while retaining the original
+UMT model, 16-frame sampling, preprocessing and scoring. This small input set
+does not reproduce a complete benchmark or leaderboard score.
+
+### Prepare inputs
 
 Request access to the [official sampled-video dataset](https://huggingface.co/datasets/Vchitect/VBench_sampled_video)
 with your own Hugging Face account. After access is granted, download the five
@@ -131,10 +146,10 @@ VBench downloads the official UMT checkpoint on the first evaluation if it is
 not already available. No alternative weights, generated test videos or modified
 scoring code are used.
 
-## Evaluate with the CLI
+### Run the CLI
 
-Use the installed `vbench evaluate` entry point for NPU evaluation, not the
-legacy CUDA-only `python evaluate.py` entry point:
+Run the installed `vbench evaluate` command with the selected NPU and the
+prepared input files:
 
 ```bash
 vbench evaluate \
@@ -146,12 +161,7 @@ vbench evaluate \
     --output_path evaluation_results/npu-cli
 ```
 
-An explicit NPU request fails if `torch_npu` or the device is unavailable; it
-does not fall back to CPU or CUDA. The CLI rejects multi-NPU launches and other
-dimensions for this NPU path. Existing CUDA commands keep their default device
-and distributed initialization.
-
-## Evaluate with the Python API
+### Use the Python API
 
 The public API already accepts a PyTorch device. Import `torch_npu` before
 creating the NPU device, then use the same input files as above:
@@ -173,8 +183,21 @@ benchmark.evaluate(
 )
 ```
 
+### Read the results
+
 CLI results are written to `evaluation_results/npu-cli/*_eval_results.json`.
 The API example writes `evaluation_results/npu-api/lavie_human_action_eval_results.json`.
 Each result contains the aggregate `human_action` score and per-video records.
 A zero score is valid; completing the evaluation does not imply the generated
 videos perform the requested action correctly.
+
+## Compatibility
+
+The current CLI implementation accepts single-NPU `human_action` evaluation.
+The example above follows that supported path; other dimensions and multi-NPU
+execution are not enabled by the current CLI. The Python API accepts a device,
+but other evaluators and their third-party operators still need individual NPU
+validation. The root `python evaluate.py` entry point remains CUDA-only.
+
+This guide addresses the original VBench package. VBench++ and VBench-2.0 have
+their own implementations and are not covered here.
